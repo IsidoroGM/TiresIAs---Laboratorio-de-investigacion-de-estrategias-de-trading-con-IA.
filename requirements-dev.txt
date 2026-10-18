@@ -1,0 +1,2 @@
+# Herramienta de pruebas; no es necesaria para ejecutar el lector.
+pytest==9.1.1
