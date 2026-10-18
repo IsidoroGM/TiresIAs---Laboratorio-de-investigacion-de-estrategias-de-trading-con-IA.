@@ -4,9 +4,10 @@
 
 ## Fase activa
 
-**FASE 0 — Preparación y fundamentos.** Ninguna fase completa se ha dado por
-terminada. Las fases 1 a 8 siguen pendientes; la fase 8, dedicada a evaluar una
-posible ejecución real supervisada, es opcional.
+**FASE 0 — Preparación y fundamentos: completada.** El entorno, el arranque del
+paquete y el primer commit local están comprobados. La FASE 1 está pendiente de
+aprobar su primera tarea. Las fases 2 a 8 siguen pendientes; la fase 8, dedicada
+a evaluar una posible ejecución real supervisada, es opcional.
 
 El objetivo y el alcance inicial se describen en el [README](../README.md).
 
@@ -99,9 +100,9 @@ La ruta exacta de Trading AI se registró en `safe.directory` de la configuraci�
 global de Git del usuario habitual de Windows. Esta excepción permite utilizar
 el repositorio cuyo directorio `.git` fue creado por el usuario de la sesión aislada.
 
-El primer punto de control local aprobado reúne estos cinco archivos:
+El primer commit local aprobado, `12c2da4`, reúne estos cinco archivos:
 `.gitignore`, `README.md`, `docs/PROJECT_STATUS.md`, `trading_ai/__init__.py` y
-`trading_ai/__main__.py`. El mensaje acordado es:
+`trading_ai/__main__.py`. Su mensaje es:
 
 ```text
 chore: preparar base inicial de Trading AI
@@ -122,10 +123,11 @@ y está excluido del seguimiento. Los futuros commits requieren nueva aprobació
 
 ## Próximo paso propuesto
 
-Revisar el cierre de la FASE 0 y presentar la primera tarea de la FASE 1:
-seleccionar una fuente de datos educativos EUR/USD D1, explicando su significado
+Primera tarea de la FASE 1: seleccionar una fuente de datos educativos EUR/USD
+D1, explicando su significado
 y limitaciones. La selección del proveedor y cualquier implementación posterior
 requieren aprobación antes de comenzar.
 
-Actualizar este documento al finalizar tareas aprobadas, reflejando únicamente
-resultados comprobados y señalando las limitaciones que sigan pendientes.
+Por indicación del usuario, actualizar este documento únicamente al terminar
+una fase, no después de cada tarea. Registrar resultados comprobados y las
+limitaciones que sigan pendientes. Esta regla sustituye la frecuencia anterior.
