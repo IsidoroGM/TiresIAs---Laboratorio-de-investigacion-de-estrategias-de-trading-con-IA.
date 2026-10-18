@@ -4,10 +4,17 @@
 
 ## Fase activa
 
+<<<<<<< HEAD
 **FASES 0 y 1 completadas.** La FASE 1 termina con datos, validación básica,
 SMA20/SMA60, señales, backtest educativo, métricas e informe reproducible.
 La FASE 2 está pendiente de proponer y aprobar su primera tarea. Las fases 3 a 8
 siguen pendientes; la fase 8 de ejecución real supervisada es opcional.
+=======
+**FASE 0 — Preparación y fundamentos: completada.** El entorno, el arranque del
+paquete y el primer commit local están comprobados. La FASE 1 está pendiente de
+aprobar su primera tarea. Las fases 2 a 8 siguen pendientes; la fase 8, dedicada
+a evaluar una posible ejecución real supervisada, es opcional.
+>>>>>>> 638028febb9f67c519664efb59553f8a56fc3b09
 
 El objetivo y el alcance inicial se describen en el [README](../README.md).
 
@@ -150,9 +157,16 @@ de cierre siguen sin commit. Esta tarea no ha realizado commits ni pushes.
 
 ## Próximo paso propuesto
 
+<<<<<<< HEAD
 Proponer la primera tarea de FASE 2: configuración explícita de ventanas y
 supuestos para comparar estrategias, seguida de costes y mayor realismo de
 simulación. Acordar el alcance de esa tarea antes de implementarla.
+=======
+Primera tarea de la FASE 1: seleccionar una fuente de datos educativos EUR/USD
+D1, explicando su significado
+y limitaciones. La selección del proveedor y cualquier implementación posterior
+requieren aprobación antes de comenzar.
+>>>>>>> 638028febb9f67c519664efb59553f8a56fc3b09
 
 Por indicación del usuario, actualizar este documento únicamente al terminar
 una fase, no después de cada tarea. Registrar resultados comprobados y las

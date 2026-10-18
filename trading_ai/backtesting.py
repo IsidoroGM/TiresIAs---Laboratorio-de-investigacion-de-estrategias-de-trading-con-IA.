@@ -1,9 +1,17 @@
+<<<<<<< HEAD
 """Backtest educativo: tamaño configurable, costes y ejecución en referencia siguiente."""
+=======
+"""Backtest educativo: una unidad base, compras, costes cero y referencia siguiente."""
+>>>>>>> 638028febb9f67c519664efb59553f8a56fc3b09
 
 from collections.abc import Sequence
 from dataclasses import dataclass
 from datetime import date
+<<<<<<< HEAD
 from decimal import Context, Decimal, ROUND_DOWN, localcontext
+=======
+from decimal import Context, Decimal, localcontext
+>>>>>>> 638028febb9f67c519664efb59553f8a56fc3b09
 
 from trading_ai.data import SUPPORTED_PAIRS
 from trading_ai.strategies import Signal
@@ -11,24 +19,36 @@ from trading_ai.strategies import Signal
 
 @dataclass(frozen=True)
 class Position:
+<<<<<<< HEAD
     """Compra con cantidad en moneda base; distingue señal y ejecución simulada."""
+=======
+    """Compra de una unidad base; distingue señal y ejecución simulada."""
+>>>>>>> 638028febb9f67c519664efb59553f8a56fc3b09
 
     entry_signal_date: date
     entry_date: date
     entry_price: Decimal
+<<<<<<< HEAD
     entry_cost: Decimal = Decimal("0")
     quantity: Decimal = Decimal("1")
+=======
+>>>>>>> 638028febb9f67c519664efb59553f8a56fc3b09
 
 
 @dataclass(frozen=True)
 class Trade:
+<<<<<<< HEAD
     """Posición cerrada; pnl descuenta entrada y salida, en moneda cotizada."""
+=======
+    """Posición cerrada y resultado en moneda cotizada, con costes cero."""
+>>>>>>> 638028febb9f67c519664efb59553f8a56fc3b09
 
     position: Position
     exit_signal_date: date
     exit_date: date
     exit_price: Decimal
     pnl: Decimal
+<<<<<<< HEAD
     exit_cost: Decimal = Decimal("0")
 
     @property
@@ -53,6 +73,8 @@ class EquityPoint:
     equity: Decimal
     drawdown: Decimal
     drawdown_percent: Decimal
+=======
+>>>>>>> 638028febb9f67c519664efb59553f8a56fc3b09
 
 
 @dataclass(frozen=True)
@@ -62,6 +84,7 @@ class BacktestResult:
     closed_trades: tuple[Trade, ...]
     open_position: Position | None
     realized_pnl: Decimal
+<<<<<<< HEAD
     cost_rate: Decimal = Decimal("0")
     initial_capital: Decimal = Decimal("1000")
     equity_curve: tuple[EquityPoint, ...] = ()
@@ -179,6 +202,22 @@ def run_backtest(
     validate_cost_rate(cost_rate)
     validate_initial_capital(initial_capital)
     validate_allocation_fraction(allocation_fraction)
+=======
+
+
+def run_backtest(
+    rates: Sequence[tuple[date, Decimal]], signals: Sequence[Signal], pair: str
+) -> BacktestResult:
+    """Ejecuta la señal de la posición i en la referencia i+1, si existe.
+
+    Empieza sin posición, permite una compra de una unidad base y no piramida.
+    Ignora entradas estando dentro y salidas estando fuera. La última señal no
+    se ejecuta. No liquida ni valora la posición abierta al finalizar.
+    El llamante debe alinear señales y referencias del mismo par por posición.
+    Se rechazan fechas no crecientes, referencias no positivas y señales inválidas.
+    No modela capital, margen, costes ni precios ejecutables: no es un bróker.
+    """
+>>>>>>> 638028febb9f67c519664efb59553f8a56fc3b09
     if pair not in SUPPORTED_PAIRS:
         raise ValueError(f"Par no admitido: {pair}.")
     if len(rates) != len(signals):
@@ -200,6 +239,7 @@ def run_backtest(
     position: Position | None = None
     trades: list[Trade] = []
     realized_pnl = Decimal("0")
+<<<<<<< HEAD
     cash = peak = initial_capital
     curve: list[EquityPoint] = []
     rejected_entries = 0
@@ -234,3 +274,19 @@ def run_backtest(
 
     return BacktestResult(pair, pair.split("/")[1], tuple(trades), position, realized_pnl,
                           cost_rate, initial_capital, tuple(curve), rejected_entries, allocation_fraction)
+=======
+    with localcontext(Context(prec=28)):
+        for index in range(1, len(rates)):
+            signal = signals[index - 1]
+            signal_date = rates[index - 1][0]
+            execution_date, execution_price = rates[index]
+            if signal == Signal.ENTER_LONG and position is None:
+                position = Position(signal_date, execution_date, execution_price)
+            elif signal == Signal.EXIT_LONG and position is not None:
+                pnl = execution_price - position.entry_price  # Una unidad base.
+                trades.append(Trade(position, signal_date, execution_date, execution_price, pnl))
+                realized_pnl += pnl
+                position = None
+
+    return BacktestResult(pair, pair.split("/")[1], tuple(trades), position, realized_pnl)
+>>>>>>> 638028febb9f67c519664efb59553f8a56fc3b09

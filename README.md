@@ -23,10 +23,15 @@ comprobada se describen en [data/README.md](data/README.md).
 
 ## Estado actual
 
+<<<<<<< HEAD
 Las **FASES 0 y 1 están completadas**; la FASE 2 incorpora costes, capital,
 drawdown y tamaño por porcentaje de capital.
 El laboratorio produce un informe
 reproducible para los cuatro pares. Están comprobados
+=======
+La **FASE 0: preparación y fundamentos está completada**. Hemos comenzado la
+FASE 1 con la descarga e inspección del histórico educativo del BCE. Están comprobados
+>>>>>>> 638028febb9f67c519664efb59553f8a56fc3b09
 Python 3.14.8 de 64 bits, el entorno virtual `.venv`, su uso desde la terminal de
 VS Code y el repositorio Git local.
 
@@ -42,8 +47,12 @@ Todavía no hay un descargador integrado en la aplicación.
 
 La estrategia inicial detecta cruces SMA20/SMA60 y genera señales de entrada
 y salida. El backtest educativo gestiona una compra por par y registra cierres
+<<<<<<< HEAD
 y posiciones abiertas con ejecución en la referencia siguiente y costes
 proporcionales configurables (cero por defecto).
+=======
+y posiciones abiertas con ejecución en la referencia siguiente y costes cero.
+>>>>>>> 638028febb9f67c519664efb59553f8a56fc3b09
 El módulo `trading_ai.metrics` resume los cierres e indica si queda una posición abierta.
 Todavía no hay API, dashboard, agentes ni conexión con un bróker. Los resultados
 actuales son ejercicios con referencias informativas, no validación de viabilidad.
@@ -166,10 +175,15 @@ De vuelta en PowerShell, ejecuta:
 python -m pytest -q
 ```
 
+<<<<<<< HEAD
 Resultado comprobado de la suite completa: **250 passed** (26 del lector, 34 de
 indicadores, 35 de estrategia, 37 del backtest, 24 de métricas, 19 de costes
 y 22 de capital/drawdown, 25 de tamaño y 28 del informe/CLI).
 Las pruebas del lector usan XML pequeños en carpetas
+=======
+Resultado comprobado de la suite completa: **156 passed** (26 del lector, 34 de
+indicadores, 35 de estrategia, 37 del backtest y 24 de métricas). Las pruebas del lector usan XML pequeños en carpetas
+>>>>>>> 638028febb9f67c519664efb59553f8a56fc3b09
 temporales, sin red ni dependencia del histórico descargado. Comprueban las
 cuatro conversiones con resultados conocidos, orden y correspondencia por fecha,
 datos ausentes o duplicados, números inválidos, fechas erróneas, XML vacío o
@@ -342,6 +356,7 @@ una referencia posterior.
 
 Reglas de esta versión:
 
+<<<<<<< HEAD
 - Una sola compra abierta por par, sin posiciones
   cortas ni acumulación de entradas. Cuenta en moneda cotizada con capital
   inicial configurable (1000 por defecto), sin margen ni financiación.
@@ -371,6 +386,30 @@ el constructor y la comparación de campos, parecida a un `record` de Java;
 - `BacktestResult`: par, moneda cotizada, tupla de operaciones cerradas, posición
   abierta opcional, `realized_pnl`, capital inicial, curva diaria y entradas rechazadas.
 - `EquityPoint`: fecha, efectivo, valor de posición, capital, drawdown absoluto y porcentual.
+=======
+- Una sola compra abierta por par, de una unidad de moneda base, sin posiciones
+  cortas ni acumulación de entradas. No se modela una cuenta ni capital disponible,
+  margen o financiación; se supone disponible la cantidad necesaria para esa unidad.
+- Entradas estando dentro y salidas estando fuera se ignoran.
+- Costes cero: no se aplican spread, comisiones, slippage ni swaps.
+- Precio simulado: referencia del BCE de la siguiente observación. Retrasar la
+  ejecución evita usar la señal antes de conocerla, pero no convierte esa
+  referencia en un precio ejecutable.
+- Una posición abierta al final permanece abierta, sin cierre forzado ni
+  valoración de su ganancia/pérdida latente.
+- Resultado de cada cierre: precio de salida menos precio de entrada, por una
+  unidad base. Se expresa en moneda cotizada; no es un porcentaje de rentabilidad.
+
+Tres `@dataclass(frozen=True)` representan los resultados. Una dataclass genera
+el constructor y la comparación de campos, parecida a un `record` de Java;
+`frozen=True` impide reasignar sus campos normalmente:
+
+- `Position`: fecha de señal de entrada, fecha de ejecución y precio de compra.
+- `Trade`: posición cerrada, fecha de señal de salida, fecha de ejecución, precio
+  de venta y `pnl` (ganancia o pérdida).
+- `BacktestResult`: par, moneda cotizada, tupla de operaciones cerradas, posición
+  abierta opcional y `realized_pnl`, suma de resultados de los cierres.
+>>>>>>> 638028febb9f67c519664efb59553f8a56fc3b09
 
 La variable local `position` vale `None` estando fuera y contiene una `Position`
 estando dentro. El bucle lee `signals[index - 1]` y ejecuta con `rates[index]`.
@@ -412,8 +451,12 @@ una unidad base por operación y costes cero (redondeados aquí a seis decimales
 | USD/CHF | 70 | Sí | -0.616511 CHF |
 
 No sumar directamente monedas diferentes ni interpretar esta tabla como una
+<<<<<<< HEAD
 comparación de rentabilidad: son importes en monedas distintas y exposiciones diferentes;
 todavía faltan costes reales y validación adicional.
+=======
+comparación de rentabilidad: todavía faltan capital, costes, exposición y riesgo.
+>>>>>>> 638028febb9f67c519664efb59553f8a56fc3b09
 El resultado USD/CHF excluye la posición abierta. No se ha optimizado la estrategia.
 
 Las 37 pruebas nuevas comprueban ganancias, pérdidas y resultado cero conocidos,
@@ -490,8 +533,13 @@ una unidad base y costes cero (redondeados solo para presentación):
 | USD/CHF | 20 / 50 / 0 | 28.57 | -0.008807 CHF | 0.4223 | Sí |
 
 Estos valores describen únicamente los cierres del modelo educativo sin costes.
+<<<<<<< HEAD
 La valoración de la cuenta y el drawdown están en una sección separada del informe;
 estas métricas de cierres no incluyen la posición abierta. Falta validación fuera de muestra. El porcentaje de
+=======
+Todavía no hay rentabilidad sobre capital, curva de capital, drawdown ni valoración
+de la posición abierta. Tampoco validación fuera de muestra. El porcentaje de
+>>>>>>> 638028febb9f67c519664efb59553f8a56fc3b09
 aciertos y el profit factor no bastan para decidir si una estrategia es viable.
 
 Las 24 pruebas nuevas cubren resultados conocidos, cierres a cero, series sin
@@ -506,6 +554,7 @@ python -m pytest tests/test_metrics.py -q
 Ejercicio: con cierres `[3, -1, -1, 0]`, calcula el porcentaje ganador y el profit
 factor. Observa que ganar pocas veces no determina por sí solo el resultado total.
 
+<<<<<<< HEAD
 ## Generar el informe completo
 
 Desde la raíz del proyecto, con `.venv` activo:
@@ -710,6 +759,8 @@ compatibilidad del modo fijo, asignación del 100 %, redondeos, capital pequeño
 parámetros inválidos y causalidad. Se comprobó además el presupuesto de todas
 las entradas de los cuatro históricos, sin efectivo negativo.
 
+=======
+>>>>>>> 638028febb9f67c519664efb59553f8a56fc3b09
 ## Organización
 
 ```text
@@ -727,6 +778,7 @@ tests/
     test_strategies.py
     test_backtesting.py
     test_metrics.py
+<<<<<<< HEAD
     test_reporting.py
     test_costs.py
     test_equity.py
@@ -736,6 +788,8 @@ reports/
     costs-0_1pct.md
     capital-1000-costs-0_1pct.md
     allocation-10pct.md
+=======
+>>>>>>> 638028febb9f67c519664efb59553f8a56fc3b09
 trading_ai/
     __init__.py
     __main__.py
@@ -744,7 +798,10 @@ trading_ai/
     strategies.py
     backtesting.py
     metrics.py
+<<<<<<< HEAD
     reporting.py
+=======
+>>>>>>> 638028febb9f67c519664efb59553f8a56fc3b09
 ```
 
 El paquete está directamente en la raíz del repositorio. `__init__.py` contiene
