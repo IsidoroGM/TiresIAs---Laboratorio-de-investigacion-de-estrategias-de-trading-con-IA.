@@ -4,10 +4,10 @@
 
 ## Fase activa
 
-**FASE 0 — Preparación y fundamentos: completada.** El entorno, el arranque del
-paquete y el primer commit local están comprobados. La FASE 1 está pendiente de
-aprobar su primera tarea. Las fases 2 a 8 siguen pendientes; la fase 8, dedicada
-a evaluar una posible ejecución real supervisada, es opcional.
+**FASES 0 y 1 completadas.** La FASE 1 termina con datos, validación básica,
+SMA20/SMA60, señales, backtest educativo, métricas e informe reproducible.
+La FASE 2 está pendiente de proponer y aprobar su primera tarea. Las fases 3 a 8
+siguen pendientes; la fase 8 de ejecución real supervisada es opcional.
 
 El objetivo y el alcance inicial se describen en el [README](../README.md).
 
@@ -39,12 +39,33 @@ El proyecto contiene la configuración de Git, documentación, un entorno virtua
 local y el paquete `trading_ai` en la raíz del repositorio.
 
 - `trading_ai/__init__.py`: descripción del paquete convencional.
-- `trading_ai/__main__.py`: función `main() -> None` que muestra la presentación
-  del laboratorio; su llamada está protegida por la condición de ejecución directa.
+- `trading_ai/__main__.py`: CLI con `--report`, `--data` y `--output`.
+- `data.py`: lector local del XML BCE para EUR/USD, GBP/USD, USD/JPY y USD/CHF.
+- `indicators.py`: SMA con valores iniciales `None`, sin información futura.
+- `strategies.py`: señales de cruce alcista para comprar y bajista para cerrar.
+- `backtesting.py`: una unidad base por operación, ejecución en la referencia
+  siguiente, costes cero y posición abierta conservada al finalizar.
+- `metrics.py`: métricas de cierres, moneda cotizada y valores no disponibles.
+- `reporting.py`: informe Markdown determinista, con hash de datos y supuestos.
+- `tests/`: 165 pruebas aprobadas. Temporales de Codex separados según `AGENTS.md`.
 
-Todavía no hay lógica de mercado, tests automatizados persistentes ni carpeta
-`tests/`. No se han generado datos de mercado, resultados de backtesting ni
-operaciones.
+Comprobaciones de cierre de FASE 1:
+
+- Copia BCE `data/raw/ecb-eurofxref-hist-2026-10-18.xml`, 7.116 fechas compartidas
+  por los cuatro pares, de 1999-01-04 a 2026-10-16. Procedencia y SHA-256 en `data/README.md`.
+- Fechas y referencias necesarias válidas, sin duplicados; calendario completo
+  de publicación todavía no contrastado.
+- Pruebas de conversiones, medias, señales, ejecución posterior, métricas,
+  errores y estabilidad de resultados pasados frente a datos futuros.
+- `python -m trading_ai --report` genera `reports/phase1.md`; revisado contra
+  los resultados calculados. Contenido idéntico permite repetir el comando;
+  un archivo distinto ya existente no se sobrescribe.
+- Cierres: EUR/USD 69, GBP/USD 70, USD/JPY 67, USD/CHF 70; queda una posición
+  USD/CHF abierta. Resultados educativos sin costes, no operaciones reales.
+- Importar el paquete y su entrada sigue sin imprimir ni ejecutar el informe.
+- Incidente de permisos pytest resuelto: carpetas creadas por la identidad
+  aislada impedían las pruebas del usuario. Permisos reparados y verificados
+  con su cuenta; las ejecuciones aisladas usan temporales propios y caché desactivada.
 
 La arquitectura propuesta es un monolito modular. La separación entre datos,
 indicadores, señales, gestión de posiciones, simulación y análisis se incorporará
@@ -56,16 +77,15 @@ progresivamente, tras aprobar cada tarea.
 |---|---|
 | Python 3.14.8 de 64 bits | Instalado y comprobado |
 | `venv` | Módulo de la biblioteca estándar; entorno `.venv` creado |
-| `pip` 26.2.1 | Único paquete instalado en `.venv` al verificar esta tarea |
+| `pip` 26.2.1 | Disponible en `.venv` |
 | VS Code y extensiones Python | Disponibles; terminal del proyecto comprobada |
 | Git | Repositorio local inicializado |
 | Pandas y NumPy | Previstos para datos y cálculos; no instalados |
-| pytest | Previsto para pruebas; no instalado |
+| pytest 9.1.1 | Instalado con dependencias auxiliares; declarado en `requirements-dev.txt` |
 | Frameworks, bases de datos y APIs externas | Pendientes de evaluación cuando sean necesarios |
 
-La compatibilidad documentada de Pandas, NumPy y pytest con Python 3.14 fue
-revisada antes de elegir la versión. Sus versiones concretas y su funcionamiento
-conjunto se comprobarán cuando se apruebe instalarlos.
+El código de aplicación solo usa la biblioteca estándar. pytest funciona con
+Python 3.14.8. Pandas y NumPy siguen pendientes de aprobación si llegan a necesitarse.
 
 ## Decisiones acordadas
 
@@ -74,10 +94,12 @@ conjunto se comprobarán cuando se apruebe instalarlos.
 - Consultar cambios de arquitectura, dependencias, proveedores y alcance.
 - Usar inicialmente el paquete `trading_ai` en la raíz (estructura plana) para
   ejecutarlo desde el proyecto sin configurar su instalación como paquete.
-- Mantener el arranque en `__main__.py` y evitar que importar el paquete ejecute
-  la función de inicio. Incorporar `tests/` y pytest con la primera lógica que
-  necesite pruebas automatizadas, en una tarea aprobada aparte.
-- Empezar por EUR/USD D1, swing trading y una estrategia didáctica SMA20/SMA60.
+- Mantener el arranque en `__main__.py` sin efectos al importar; pruebas con pytest.
+- EUR/USD, GBP/USD, USD/JPY y USD/CHF diarios; SMA20/SMA60 educativa.
+- El agente investigador está previsto en FASE 3; optimización y validación
+  fuera de muestra en FASE 4. Las propuestas se verificarán con herramientas.
+- Comunicación concisa, menos actualizaciones informativas y lecturas repetidas,
+  según preferencia del usuario para reducir consumo de tokens.
 - Mantener cálculos y reglas reproducibles, separados de las propuestas del LLM.
 - Permitir en el futuro seleccionar entre backtesting, paper trading y ejecución
   real supervisada. La ejecución real requiere validación y nueva autorización.
@@ -111,11 +133,16 @@ chore: preparar base inicial de Trading AI
 El identificador y el contenido del commit se consultan mediante `git log` y
 `git show`. No hay remotos configurados. El entorno virtual permanece en disco
 y está excluido del seguimiento. Los futuros commits requieren nueva aprobación.
+Al cierre también consta el commit `638028f` (`feat: implement backtesting
+framework with educational focus`). Los cambios del informe y la documentación
+de cierre siguen sin commit. Esta tarea no ha realizado commits ni pushes.
 
 ## Asuntos pendientes y observaciones
 
-- Elegir la fuente de datos. El BCE es una posibilidad educativa, no un proveedor
-  de precios ejecutables para validar una estrategia real.
+- El BCE es la fuente educativa aprobada; faltan datos ejecutables y validación
+  del calendario. Los cruces respecto al euro son referencias derivadas.
+- Faltan costes, cuenta de capital, curva de capital, drawdown, valoración de
+  posiciones abiertas y validación fuera de muestra. No hay agentes ni bróker.
 - En una captura se observó un comando de creación de `.venv` ejecutado desde el
   directorio personal. Puede existir un entorno adicional allí; no se ha
   inspeccionado ni eliminado. El entorno del proyecto sí está comprobado.
@@ -123,10 +150,9 @@ y está excluido del seguimiento. Los futuros commits requieren nueva aprobació
 
 ## Próximo paso propuesto
 
-Primera tarea de la FASE 1: seleccionar una fuente de datos educativos EUR/USD
-D1, explicando su significado
-y limitaciones. La selección del proveedor y cualquier implementación posterior
-requieren aprobación antes de comenzar.
+Proponer la primera tarea de FASE 2: configuración explícita de ventanas y
+supuestos para comparar estrategias, seguida de costes y mayor realismo de
+simulación. Acordar el alcance de esa tarea antes de implementarla.
 
 Por indicación del usuario, actualizar este documento únicamente al terminar
 una fase, no después de cada tarea. Registrar resultados comprobados y las

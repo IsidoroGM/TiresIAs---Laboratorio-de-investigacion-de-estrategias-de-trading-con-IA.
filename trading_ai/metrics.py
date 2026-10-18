@@ -30,8 +30,9 @@ def calculate_metrics(result: BacktestResult) -> BacktestMetrics:
     Sin cierres, porcentaje y promedio son None. Gross_loss es la magnitud
     positiva de las pérdidas. Profit_factor es None cuando no hay pérdidas,
     incluso si existen ganancias; nunca se presenta un infinito como puntuación.
-    Las sumas vacías son cero. Importes en moneda cotizada, costes cero según
-    el backtest actual; no son rentabilidades sobre capital ni métricas de riesgo.
+    Las sumas vacías son cero. Importes netos de costes de los cierres en moneda
+    cotizada; no son rentabilidades sobre capital ni métricas de riesgo.
+    Gross_profit/loss suman ganancias/pérdidas de cierres ya netos de costes.
     Rechaza pnl no Decimal, no finitos o un total incoherente con los cierres.
     """
     winning = losing = breakeven = 0

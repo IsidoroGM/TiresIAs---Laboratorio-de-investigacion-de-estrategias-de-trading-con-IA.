@@ -23,8 +23,10 @@ comprobada se describen en [data/README.md](data/README.md).
 
 ## Estado actual
 
-La **FASE 0: preparación y fundamentos está completada**. Hemos comenzado la
-FASE 1 con la descarga e inspección del histórico educativo del BCE. Están comprobados
+Las **FASES 0 y 1 están completadas**; la FASE 2 incorpora costes, capital,
+drawdown y tamaño por porcentaje de capital.
+El laboratorio produce un informe
+reproducible para los cuatro pares. Están comprobados
 Python 3.14.8 de 64 bits, el entorno virtual `.venv`, su uso desde la terminal de
 VS Code y el repositorio Git local.
 
@@ -40,7 +42,8 @@ Todavía no hay un descargador integrado en la aplicación.
 
 La estrategia inicial detecta cruces SMA20/SMA60 y genera señales de entrada
 y salida. El backtest educativo gestiona una compra por par y registra cierres
-y posiciones abiertas con ejecución en la referencia siguiente y costes cero.
+y posiciones abiertas con ejecución en la referencia siguiente y costes
+proporcionales configurables (cero por defecto).
 El módulo `trading_ai.metrics` resume los cierres e indica si queda una posición abierta.
 Todavía no hay API, dashboard, agentes ni conexión con un bróker. Los resultados
 actuales son ejercicios con referencias informativas, no validación de viabilidad.
@@ -96,7 +99,7 @@ La salida esperada es:
 
 ```text
 Trading AI - laboratorio educativo
-Estado: FASE 0 - entorno de desarrollo.
+FASE 2 - capital, costes y drawdown. Genera el informe con --report.
 ```
 
 `-m` busca el paquete y ejecuta su archivo `__main__.py`. También puedes ejecutar
@@ -163,8 +166,10 @@ De vuelta en PowerShell, ejecuta:
 python -m pytest -q
 ```
 
-Resultado comprobado de la suite completa: **156 passed** (26 del lector, 34 de
-indicadores, 35 de estrategia, 37 del backtest y 24 de métricas). Las pruebas del lector usan XML pequeños en carpetas
+Resultado comprobado de la suite completa: **250 passed** (26 del lector, 34 de
+indicadores, 35 de estrategia, 37 del backtest, 24 de métricas, 19 de costes
+y 22 de capital/drawdown, 25 de tamaño y 28 del informe/CLI).
+Las pruebas del lector usan XML pequeños en carpetas
 temporales, sin red ni dependencia del histórico descargado. Comprueban las
 cuatro conversiones con resultados conocidos, orden y correspondencia por fecha,
 datos ausentes o duplicados, números inválidos, fechas erróneas, XML vacío o
@@ -337,28 +342,35 @@ una referencia posterior.
 
 Reglas de esta versión:
 
-- Una sola compra abierta por par, de una unidad de moneda base, sin posiciones
-  cortas ni acumulación de entradas. No se modela una cuenta ni capital disponible,
-  margen o financiación; se supone disponible la cantidad necesaria para esa unidad.
+- Una sola compra abierta por par, sin posiciones
+  cortas ni acumulación de entradas. Cuenta en moneda cotizada con capital
+  inicial configurable (1000 por defecto), sin margen ni financiación.
+  Tamaño predeterminado de una unidad base; alternativamente porcentaje del
+  efectivo actual incluyendo el coste de compra.
+  Si no alcanza para precio y coste, la entrada se rechaza sin dejarla pendiente.
 - Entradas estando dentro y salidas estando fuera se ignoran.
-- Costes cero: no se aplican spread, comisiones, slippage ni swaps.
+- Costes proporcionales opcionales por ejecución, cero por defecto. No se
+  modelan por separado spread, comisiones, slippage ni swaps reales.
 - Precio simulado: referencia del BCE de la siguiente observación. Retrasar la
   ejecución evita usar la señal antes de conocerla, pero no convierte esa
   referencia en un precio ejecutable.
-- Una posición abierta al final permanece abierta, sin cierre forzado ni
-  valoración de su ganancia/pérdida latente.
-- Resultado de cada cierre: precio de salida menos precio de entrada, por una
-  unidad base. Se expresa en moneda cotizada; no es un porcentaje de rentabilidad.
+- Una posición abierta al final permanece abierta, sin cierre forzado. Su valor
+  a la referencia actual se incluye en el capital diario y su variación se
+  registra como resultado latente, separado de las métricas de cierres.
+- Resultado de cada cierre: importe de venta menos importe de compra y costes
+  de ambas ejecuciones, para la cantidad comprada. Se expresa en moneda cotizada;
+  no es un porcentaje de rentabilidad.
 
-Tres `@dataclass(frozen=True)` representan los resultados. Una dataclass genera
+Las `@dataclass(frozen=True)` representan los resultados. Una dataclass genera
 el constructor y la comparación de campos, parecida a un `record` de Java;
 `frozen=True` impide reasignar sus campos normalmente:
 
-- `Position`: fecha de señal de entrada, fecha de ejecución y precio de compra.
+- `Position`: fecha de señal de entrada, fecha de ejecución, precio, coste y cantidad comprada.
 - `Trade`: posición cerrada, fecha de señal de salida, fecha de ejecución, precio
-  de venta y `pnl` (ganancia o pérdida).
+  de venta, coste de salida y `pnl` (ganancia o pérdida después de ambos costes).
 - `BacktestResult`: par, moneda cotizada, tupla de operaciones cerradas, posición
-  abierta opcional y `realized_pnl`, suma de resultados de los cierres.
+  abierta opcional, `realized_pnl`, capital inicial, curva diaria y entradas rechazadas.
+- `EquityPoint`: fecha, efectivo, valor de posición, capital, drawdown absoluto y porcentual.
 
 La variable local `position` vale `None` estando fuera y contiene una `Position`
 estando dentro. El bucle lee `signals[index - 1]` y ejecuta con `rates[index]`.
@@ -400,7 +412,8 @@ una unidad base por operación y costes cero (redondeados aquí a seis decimales
 | USD/CHF | 70 | Sí | -0.616511 CHF |
 
 No sumar directamente monedas diferentes ni interpretar esta tabla como una
-comparación de rentabilidad: todavía faltan capital, costes, exposición y riesgo.
+comparación de rentabilidad: son importes en monedas distintas y exposiciones diferentes;
+todavía faltan costes reales y validación adicional.
 El resultado USD/CHF excluye la posición abierta. No se ha optimizado la estrategia.
 
 Las 37 pruebas nuevas comprueban ganancias, pérdidas y resultado cero conocidos,
@@ -477,8 +490,8 @@ una unidad base y costes cero (redondeados solo para presentación):
 | USD/CHF | 20 / 50 / 0 | 28.57 | -0.008807 CHF | 0.4223 | Sí |
 
 Estos valores describen únicamente los cierres del modelo educativo sin costes.
-Todavía no hay rentabilidad sobre capital, curva de capital, drawdown ni valoración
-de la posición abierta. Tampoco validación fuera de muestra. El porcentaje de
+La valoración de la cuenta y el drawdown están en una sección separada del informe;
+estas métricas de cierres no incluyen la posición abierta. Falta validación fuera de muestra. El porcentaje de
 aciertos y el profit factor no bastan para decidir si una estrategia es viable.
 
 Las 24 pruebas nuevas cubren resultados conocidos, cierres a cero, series sin
@@ -492,6 +505,210 @@ python -m pytest tests/test_metrics.py -q
 
 Ejercicio: con cierres `[3, -1, -1, 0]`, calcula el porcentaje ganador y el profit
 factor. Observa que ganar pocas veces no determina por sí solo el resultado total.
+
+## Generar el informe completo
+
+Desde la raíz del proyecto, con `.venv` activo:
+
+```powershell
+python -m trading_ai --report
+```
+
+Genera `reports/report.md` con el histórico local, los cuatro
+pares, reglas SMA20/SMA60, métricas, posición abierta y limitaciones. Incluye el
+SHA-256 de los datos. No descarga nada ni necesita dependencias nuevas.
+
+Para elegir otras rutas:
+
+```powershell
+python -m trading_ai --report --data data/raw/ecb-eurofxref-hist-2026-10-18.xml --output reports/otro-informe.md
+```
+
+`argparse` interpreta las opciones de la terminal. `build_report(path)` conecta
+lector, indicadores, estrategia, backtest y métricas, y devuelve texto Markdown.
+`write_report(source, output)` lo guarda en UTF-8. Repetir el mismo contenido
+está permitido; si la salida contiene otro texto, el comando pide otra ruta
+mediante un error y conserva el archivo. Nunca puede sobrescribir el XML de entrada.
+
+El informe es determinista para la misma copia y código: no añade marcas de
+tiempo de ejecución ni rutas personales. Los errores de datos o escritura se
+comunican en la terminal con código de salida 1. `python -m trading_ai --help`
+muestra las opciones. Las 28 pruebas comprueban cifras, fuente, valores N/D,
+repetición idéntica, costes, capital y tamaño configurados, CLI y conservación de archivos existentes.
+
+## Costes hipotéticos por ejecución (FASE 2)
+
+```powershell
+python -m trading_ai --report --cost-percent 0.1 --output reports/costs-0_1pct.md
+```
+
+`0.1` significa **0,1 % en cada compra y cada venta**, no un coste total por
+operación completa. Es un escenario hipotético elegido para comprobar sensibilidad,
+no una tarifa de bróker ni una estimación de los costes reales de Forex.
+El [informe con costes](reports/costs-0_1pct.md) compara resultados antes y después.
+El [informe de FASE 1](reports/phase1.md) se conserva como registro sin costes.
+El formato nuevo usa `reports/report.md` por defecto; para cambiar supuestos,
+elige otro `--output` si ese archivo ya existe con contenido distinto.
+
+En Python:
+
+```python
+from decimal import Decimal
+result = run_backtest(rates, signals, pair, cost_rate=Decimal("0.001"))
+```
+
+El parámetro Python es una **fracción**: `0.001 = 0.1 %`. La CLI divide el
+porcentaje entre 100. Se rechazan valores negativos, no finitos o iguales o
+superiores al 100 %; Python requiere `Decimal`. No hay dependencias nuevas.
+
+Por una unidad base, el coste en moneda cotizada es `precio × cost_rate`.
+Comprar a 100 y vender a 110 con coste del 1 % produce: resultado bruto 10,
+coste de entrada 1, coste de salida 1,10 y resultado neto 7,90.
+Las señales ignoradas o sin ejecución no generan costes; el precio simulado
+no cambia. Los costes se descuentan del resultado, no alteran las SMA.
+
+- `Trade.pnl` y `BacktestResult.realized_pnl` son netos de costes de cierres.
+- `Trade.gross_pnl` y `result.gross_realized_pnl` son resultados antes de costes.
+- `result.closed_costs` suma los costes de las operaciones cerradas.
+- `result.total_costs` incluye también la entrada de una posición todavía abierta.
+- `result.pnl_after_incurred_costs` resta ese coste abierto de los cierres netos,
+  sin valorar su variación de precio. No representa patrimonio total.
+
+Los campos calculados usan `@property`: se leen como atributos, pero se calculan
+a partir de los datos guardados, evitando mantener totales duplicados. Las nuevas
+tasas y costes tienen valor predeterminado cero para conservar las llamadas anteriores.
+
+Las métricas clasifican las operaciones por su resultado **después de costes**;
+una ganadora bruta puede convertirse en perdedora. Los campos `gross_profit` y
+`gross_loss` de métricas mantienen sus nombres, pero suman respectivamente pnl
+positivos y negativos ya netos; no confundirlos con resultados antes de costes.
+Las tablas históricas anteriores de este README siguen correspondiendo a tasa cero.
+
+Las 19 pruebas de costes cubren importes conocidos, coste cero, cambios de signo,
+posiciones abiertas, señales ignoradas, tasas inválidas, contexto decimal y el
+efecto de aumentar costes. El informe registra la tasa exacta para reproducirlo.
+Con `--cost-percent 0.1`, los cierres simulados resultan en 0.097081 USD (EUR/USD),
+-0.390345 USD (GBP/USD), 29.313503 JPY (USD/JPY) y -0.765682 CHF (USD/CHF).
+En este último, al descontar además la entrada abierta, quedan -0.766507 CHF,
+sin incluir la variación de precio de esa posición.
+
+## Capital diario y drawdown
+
+```powershell
+python -m trading_ai --report --cost-percent 0.1 --initial-capital 1000 --output reports/capital-1000-costs-0_1pct.md
+```
+
+[Informe con capital y drawdown](reports/capital-1000-costs-0_1pct.md).
+Cada par tiene su propia cuenta: 1000 USD para EUR/USD, otra de 1000 USD para
+GBP/USD, 1000 JPY para USD/JPY y 1000 CHF para USD/CHF. No forman una cartera
+compartida ni tienen exposiciones monetarias equivalentes.
+
+En Python, `run_backtest(..., initial_capital=Decimal("1000"))` requiere un
+Decimal finito y positivo. Sin opción de asignación, el tamaño es una unidad base por compra.
+La compra resta precio y coste del efectivo; la venta suma precio menos coste.
+Una compra sin saldo suficiente se rechaza, no genera coste y no se reintenta
+automáticamente. Una señal nueva puede volver a solicitar entrada.
+
+Después de cada observación se guarda un `EquityPoint` en `result.equity_curve`:
+
+- `cash`: efectivo restante.
+- `position_value`: referencia actual multiplicada por la cantidad, o cero estando fuera.
+- `equity`: efectivo más valor de posición.
+- `drawdown`: máximo de capital alcanzado hasta entonces menos capital actual.
+- `drawdown_percent`: drawdown dividido entre ese máximo, multiplicado por 100.
+
+El capital inicial se incluye como máximo de partida. Por ejemplo, si el
+capital sube a 1100 y luego baja a 990, el drawdown es 110 y el 10 %.
+`result.max_drawdown` y `result.max_drawdown_percent` toman sus máximos por
+separado: pueden ocurrir en fechas distintas. Sin datos, el capital final es
+el inicial y los drawdowns son cero.
+
+`result.final_equity` incluye la posición abierta valorada a la última referencia.
+`result.unrealized_pnl` representa su variación de precio desde la entrada;
+el coste de entrada ya está en el efectivo y no se cobra una salida inexistente.
+La identidad comprobada es capital final = inicial + cierres netos − coste de
+entrada abierta + variación de precio abierta, con precisión decimal de 28 dígitos.
+
+El informe muestra el resumen de capital, rechazos y drawdown, y una tabla de
+evolución con la última observación de cada año. La curva diaria completa queda
+disponible en `result.equity_curve`; los máximos usan todos los días publicados,
+no solo la muestra anual. No se mide drawdown intradiario ni hay gráfico todavía.
+
+Con la copia actual y el comando anterior:
+
+| Par | Capital final | Drawdown máximo | Drawdown máximo % |
+|---|---:|---:|---:|
+| EUR/USD | 1000.097081 USD | 0.341592 USD | 0.034146 |
+| GBP/USD | 999.609655 USD | 0.792183 USD | 0.079189 |
+| USD/JPY | 1029.313503 JPY | 39.256597 JPY | 3.890975 |
+| USD/CHF | 999.231796 CHF | 0.914781 CHF | 0.091466 |
+
+No se rechazó ninguna entrada en este escenario. Son resultados con exposición
+de una unidad base: un porcentaje de caída pequeño no permite inferir que la
+estrategia sea segura al aumentar el tamaño. Siguen siendo referencias educativas.
+Los informes anteriores conservan sus supuestos originales y no se sobrescriben.
+
+Las 22 pruebas nuevas verifican efectivo, valoración, costes, pérdidas abiertas,
+saldo exacto e insuficiente, rechazo sin reintento, reutilización del efectivo,
+drawdowns conocidos, entradas inválidas y que el futuro no altere la curva pasada.
+
+## Tamaño por porcentaje del capital disponible
+
+```powershell
+python -m trading_ai --report --cost-percent 0.1 --initial-capital 1000 --allocation-percent 10 --output reports/allocation-10pct.md
+```
+
+[Informe con asignación del 10 %](reports/allocation-10pct.md). Sin
+`--allocation-percent` se conserva el modo anterior de una unidad base.
+Se admite un porcentaje mayor que cero y como máximo 100. En Python, el
+equivalente es `run_backtest(..., allocation_fraction=Decimal("0.1"))`;
+`None` significa una unidad fija.
+
+El porcentaje se aplica al efectivo disponible **al ejecutar** la entrada, no
+al capital inicial. Como solo compramos estando fuera, en ese momento efectivo
+y capital coinciden. El presupuesto incluye el coste de entrada:
+
+```text
+presupuesto = efectivo actual × fracción asignada
+cantidad = presupuesto / (precio de entrada × (1 + tasa de coste))
+```
+
+Por ejemplo, con capital 1010, asignación 10 %, precio 10 y coste 1 %:
+presupuesto 101, cantidad 10, importe comprado 100 y coste 1; quedan 909 en
+efectivo. Si se vende a 12, entran 120 menos coste 1,20, y el capital termina
+en 1027,80. Cada nueva compra recalcula el tamaño con el saldo actualizado.
+
+`Position.quantity` guarda las unidades base. La cantidad se mantiene hasta
+el cierre: no se rebalancea diariamente. Costes, ingresos de venta, valor de
+posición y resultados abiertos/cerrados utilizan esa cantidad. Se admiten
+fracciones sin mínimos, lotes ni incrementos de bróker: es una simplificación.
+La asignación es capital invertido, **no riesgo máximo ni stop-loss**.
+
+`_entry_quantity` calcula la cantidad con redondeo hacia abajo y comprueba que
+el importe más coste no exceda el presupuesto; si hace falta reduce la última
+cifra representable. Evita gastar más de lo permitido por redondeo decimal.
+El informe muestra cantidades mínima/máxima de las entradas y la cantidad
+exacta de la posición abierta, además del porcentaje para reproducir el cálculo.
+
+Con el comando anterior, sobre la misma copia histórica:
+
+| Par | Capital final | Drawdown máximo % |
+|---|---:|---:|
+| EUR/USD | 1015.009331 USD | 2.508037 |
+| GBP/USD | 977.844806 USD | 4.729938 |
+| USD/JPY | 1029.441001 JPY | 3.674652 |
+| USD/CHF | 930.922718 CHF | 7.825079 |
+
+Las cuentas siguen separadas por moneda. La fracción de capital común permite
+comparar bajo un criterio de exposición más consistente, pero no iguala la
+volatilidad ni el riesgo de los pares. Los informes anteriores conservan su
+modo de una unidad fija y no se sobrescriben.
+
+Las 25 pruebas nuevas comprueban cantidades conocidas, costes dentro del
+presupuesto, valoración proporcional, ganancias/pérdidas y reinversión,
+compatibilidad del modo fijo, asignación del 100 %, redondeos, capital pequeño,
+parámetros inválidos y causalidad. Se comprobó además el presupuesto de todas
+las entradas de los cuatro históricos, sin efectivo negativo.
 
 ## Organización
 
@@ -510,6 +727,15 @@ tests/
     test_strategies.py
     test_backtesting.py
     test_metrics.py
+    test_reporting.py
+    test_costs.py
+    test_equity.py
+    test_sizing.py
+reports/
+    phase1.md
+    costs-0_1pct.md
+    capital-1000-costs-0_1pct.md
+    allocation-10pct.md
 trading_ai/
     __init__.py
     __main__.py
@@ -518,11 +744,12 @@ trading_ai/
     strategies.py
     backtesting.py
     metrics.py
+    reporting.py
 ```
 
 El paquete está directamente en la raíz del repositorio. `__init__.py` contiene
 su descripción y lo identifica como un paquete convencional. `__main__.py`
-define la función de arranque `main()`, sin parámetros y con retorno `None`.
+define `main(argv=None)`, con argumentos opcionales para pruebas y retorno `None`.
 
 La arquitectura prevista es un monolito modular, con responsabilidades separadas
 para datos, indicadores, señales, simulación e informes. Por ahora existe el
