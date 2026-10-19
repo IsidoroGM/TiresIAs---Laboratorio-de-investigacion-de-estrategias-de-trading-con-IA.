@@ -1,0 +1,9 @@
+{
+  "provider": "ollama",
+  "model": "qwen3.5:4b",
+  "base_url": "http://127.0.0.1:11435",
+  "timeout_seconds": 180,
+  "context_tokens": 4096,
+  "output_tokens": 384,
+  "gpu_layers": 0
+}

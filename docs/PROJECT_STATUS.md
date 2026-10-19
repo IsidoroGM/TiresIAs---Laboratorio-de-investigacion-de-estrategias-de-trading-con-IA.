@@ -1,13 +1,14 @@
 # Estado de Trading AI
 
-Última actualización: **19 de octubre de 2026** (Europe/Madrid), cierre de FASE 2.
+Última actualización: **19 de octubre de 2026** (Europe/Madrid), cierre de FASE 3.
 
 ## Fase activa
 
-**FASES 0, 1 y 2 completadas.** La FASE 2 cierra el motor educativo ampliado:
+**FASES 0, 1, 2 y 3 completadas.** La FASE 2 cerró el motor educativo ampliado:
 estrategias SMA/EMA configurables, costes, capital, tamaño de posición,
-drawdown, comparaciones y sensibilidad local. La FASE 3 (primer agente de IA)
-está pendiente de seleccionar proveedor/modelo y acordar la primera integración.
+drawdown, comparaciones y sensibilidad local. La FASE 3 incorpora un investigador
+local con Ollama y Qwen3.5:4b, propuestas acotadas, herramientas Python,
+conclusiones verificadas y registros de resultados, errores y consumo.
 Las fases 4 a 8 siguen pendientes; la fase 8 de ejecución real supervisada es opcional.
 
 Completar esta fase significa cumplir su alcance de desarrollo, no demostrar
@@ -57,7 +58,11 @@ local y el paquete `trading_ai` en la raíz del repositorio.
   con hash de datos, supuestos y protección contra sobrescrituras.
 - `sensitivity.py`: variaciones fijas de un factor cada vez, omisiones explícitas
   de escenarios inválidos y cambios frente a la base; sin búsqueda de parámetros.
-- `tests/`: **343 pruebas aprobadas**. Temporales de Codex separados según `AGENTS.md`.
+- `ai.py`: contrato de proveedores y adaptador Ollama local; OpenAI reservado y desactivado.
+- `experiments.py`: validación de propuestas, comparación base/variante y criterios verificables.
+- `research.py`: CLI independiente, máximo dos consultas, registro duradero y conclusiones contrastadas.
+- `scripts/`: instalación portátil, arranque y parada explícitos de la instancia local.
+- `tests/`: **399 pruebas aprobadas**. Temporales de Codex separados según `AGENTS.md`.
 
 Comprobaciones de cierre de FASE 1:
 
@@ -131,6 +136,71 @@ Se encontró y corrigió una dependencia del redondeo mostrado respecto al conte
 Decimal externo. Tres regresiones fallaban antes del arreglo y pasan después;
 los resultados y los cuatro informes guardados conservan su contenido habitual.
 
+## Cierre de FASE 3 — Primer investigador local
+
+El usuario eligió un agente local y autorizó la instalación y las comprobaciones
+de Ollama con Qwen3.5:4b. La integración usa la biblioteca estándar de Python;
+no se añadieron dependencias Python de ejecución. Ollama portátil v0.40.6 se
+descarga desde su distribución oficial con SHA-256 fijado. Binarios, modelos,
+configuración personal y registros de trabajo quedan excluidos de Git.
+
+| Objetivo | Implementación y comprobación |
+|---|---|
+| Proponer hipótesis y experimentos | JSON validado; variante SMA/EMA y ventanas limitadas, distinta de la base |
+| Usar herramientas controladas | Solo `run_experiment`; el modelo no elige rutas, capital, costes, tamaño ni código |
+| Separar IA y cálculos | El motor existente calcula ambas estrategias sobre los mismos datos y supuestos |
+| Contrastar conclusiones | Comparaciones y veredicto deben coincidir con el criterio y las cifras calculadas |
+| Tratar casos insuficientes | Cero cierres en cualquiera de las estrategias: conclusión inconclusa de Python, sin consulta de análisis |
+| Registrar actividad y consumo | JSONL con propuestas, parámetros, respuestas, resultados, errores, tokens, tiempos y hashes |
+| Prever futuras APIs | Contrato `ResearchProvider`; opción OpenAI desactivada antes de leer credenciales o abrir conexiones |
+
+Configuración comprobada: CPU, contexto 4096, salida máxima 384 tokens,
+temperatura 0, sin razonamiento emitido y sin reintentos automáticos. El servidor
+escucha en `127.0.0.1:11435`, con funciones cloud desactivadas; el adaptador bloquea
+proxies, redirecciones y destinos remotos. No se inicia ni descarga nada al
+ejecutar el investigador. La GPU se descartó por incompatibilidad CUDA/PTX con
+el controlador actual; no se modificaron controladores.
+
+Validación de cierre: **399 passed**, caché desactivada y temporal nuevo exclusivo.
+Comprobados el arranque del laboratorio, la ayuda del investigador y `--check`
+contra el modelo instalado. Las pruebas verifican también que OpenAI se detiene
+antes de crear una investigación o abrir la red. No hubo llamadas de pago.
+
+Evidencia conservada:
+
+- [Investigaciones sobre los cuatro pares](../reports/local-agent-check-2026-10-19.md):
+  propuestas, cálculos y conclusiones contrastados; una mejora relativa puede seguir teniendo pérdidas.
+- [Evaluación aislada del modelo](../reports/local-agent-consistency-2026-10-19.md):
+  **4/6 respuestas correctas**. Las dos interpretaciones de historia insuficiente
+  fueron incorrectas y se rechazaron; no se borraron ni se reintentaron.
+- [Control previo posterior](../reports/local-agent-sufficiency-2026-10-19.md):
+  **3/3 flujos correctos**, con una consulta de propuesta y conclusión de Python
+  en el caso sin cierres, y dos consultas en los dos casos normales. Tres
+  regresiones fallaban antes del cambio y pasan después. Esta comprobación de la
+  aplicación no cambia el resultado aislado 4/6 del modelo.
+
+Los informes anteriores conservan su fecha y estado histórico; este documento
+registra el cierre posterior autorizado. Los registros identifican la versión
+del código y del modelo usada en cada ejecución. El último ajuste de la ayuda
+CLI elimina la indicación de fase en desarrollo; no cambia los cálculos.
+Se verificaron los enlaces locales y los hashes de las evidencias;
+`.gitattributes` conserva sus bytes al clonar, sin convertir finales de línea.
+
+Coste de API registrado en las comprobaciones locales: **0 USD**; siguen
+existiendo consumo de electricidad, memoria y tiempo. Una futura API OpenAI
+requerirá acordar modelo, credenciales, presupuesto y controles de gasto.
+No hay sustitución automática por un proveedor de pago.
+
+Este cierre acredita el primer flujo investigador acotado, no fiabilidad general
+de la IA, suficiencia estadística ni rentabilidad. La comprobación de cero
+cierres no garantiza que cualquier número positivo sea suficiente. Continúan
+pendientes la validación fuera de muestra y la búsqueda controlada de parámetros
+de FASE 4. TradingView sigue planificado y sin conexión implementada según
+[su plan](TRADINGVIEW_PLAN.md); no hay operaciones con dinero real.
+
+Uso, configuración, instalación y referencias oficiales en
+[LOCAL_AI.md](LOCAL_AI.md).
+
 ## Herramientas y dependencias
 
 | Elemento | Estado |
@@ -142,7 +212,9 @@ los resultados y los cuatro informes guardados conservan su contenido habitual.
 | Git | Repositorio local inicializado |
 | Pandas y NumPy | Previstos para datos y cálculos; no instalados |
 | pytest 9.1.1 | Instalado con dependencias auxiliares; declarado en `requirements-dev.txt` |
-| Frameworks, bases de datos y APIs externas | Pendientes de evaluación cuando sean necesarios |
+| Ollama portátil v0.40.6 y Qwen3.5:4b | Instalados y comprobados en CPU; archivos locales excluidos de Git |
+| API OpenAI | Reserva desactivada; sin credenciales ni llamadas facturables |
+| Otros frameworks, bases de datos y APIs externas | Pendientes de evaluación cuando sean necesarios |
 
 El código de aplicación solo usa la biblioteca estándar. pytest funciona con
 Python 3.14.8. Pandas y NumPy siguen pendientes de aprobación si llegan a necesitarse.
@@ -156,8 +228,10 @@ Python 3.14.8. Pandas y NumPy siguen pendientes de aprobación si llegan a neces
   ejecutarlo desde el proyecto sin configurar su instalación como paquete.
 - Mantener el arranque en `__main__.py` sin efectos al importar; pruebas con pytest.
 - EUR/USD, GBP/USD, USD/JPY y USD/CHF diarios; SMA/EMA educativas, 20/60 por defecto.
-- El agente investigador está previsto en FASE 3; optimización y validación
-  fuera de muestra en FASE 4. Las propuestas se verificarán con herramientas.
+- El primer agente investigador local queda completado en FASE 3; optimización
+  y validación fuera de muestra en FASE 4. Las propuestas se verifican con herramientas.
+- Mantener Ollama local como proveedor inicial y permitir una futura integración
+  OpenAI sin activar pagos ni leer credenciales hasta acordar presupuesto y acceso.
 - Comunicación concisa, menos actualizaciones informativas y lecturas repetidas,
   según preferencia del usuario para reducir consumo de tokens.
 - Mantener cálculos y reglas reproducibles, separados de las propuestas del LLM.
@@ -198,7 +272,16 @@ El entorno virtual permanece en disco y está excluido del seguimiento.
 El usuario autorizó explícitamente el commit y push de este cierre a GitHub.
 El commit de cierre usa el mensaje `feat: close phase 2 strategy research engine`;
 su identificador y la confirmación del push se comunican al finalizar la tarea.
-Esta autorización corresponde al cierre actual; futuros commits requieren nueva autorización.
+Esa autorización correspondió al cierre de FASE 2.
+
+El cierre de FASE 2 quedó publicado en `main` como `f94b867`. Después quedaron
+pendientes cambios en README y el nuevo plan de TradingView, conservados e
+incluidos junto al desarrollo de FASE 3. Antes de preparar este cierre se
+actualizaron las referencias de `origin` y se comprobó la relación con `main`.
+El usuario autorizó expresamente cerrar FASE 3, actualizar este documento y
+realizar commit y push. El commit usa el mensaje
+`feat: close phase 3 local research agent`; su identificador y el resultado
+del push se comunican al finalizar. Futuros commits y pushes requieren nueva autorización.
 
 ## Asuntos pendientes y observaciones
 
@@ -208,8 +291,11 @@ Esta autorización corresponde al cierre actual; futuros commits requieren nueva
   financiación y restricciones de negociación verificadas para un bróker real.
 - La sensibilidad reutiliza el histórico completo; faltan separación de datos,
   validación fuera de muestra, walk-forward y análisis de cambios simultáneos.
-- No hay agentes, acceso a modelos, paper trading en tiempo real, interfaz
-  gráfica ni conexión con un bróker. No se han elegido parámetros ganadores.
+- El investigador local está disponible; su fiabilidad general sigue sin
+  demostrarse. No hay paper trading en tiempo real, interfaz gráfica ni conexión
+  con un bróker. No se han elegido parámetros ganadores.
+- TradingView: Pine, gráficos, consultas, alertas e importaciones al simulador
+  continúan pendientes de implementación; no se activa esa conexión en este cierre.
 - En una captura se observó un comando de creación de `.venv` ejecutado desde el
   directorio personal. Puede existir un entorno adicional allí; no se ha
   inspeccionado ni eliminado. El entorno del proyecto sí está comprobado.
@@ -217,14 +303,17 @@ Esta autorización corresponde al cierre actual; futuros commits requieren nueva
 
 ## Próximo paso propuesto
 
-Primera tarea de FASE 3: acordar proveedor, modelo y presupuesto de uso del
-agente investigador. Revisar documentación oficial vigente antes de recomendar
-una integración. Después, configurar acceso seguro y herramientas Python
-limitadas a los experimentos reproducibles existentes, registrando propuestas,
-errores y costes. La decisión del modelo no sustituirá a los cálculos.
+Primera tarea de FASE 4: definir y comprobar una separación cronológica entre
+datos de desarrollo y de evaluación, con una frontera explícita y sin que el
+agente consulte el bloque reservado para proponer cambios. Después, comparar una
+propuesta fijada contra la base con los mismos supuestos, registrando resultados
+dentro y fuera de muestra. La selección de ventanas no debe reutilizar el bloque
+reservado. El histórico completo ya se exploró en fases anteriores: una partición
+posterior de esta copia sirve para verificar el procedimiento, no constituye
+evidencia totalmente inédita. El primer paso será acordar ese protocolo.
 
-Las dependencias, credenciales y llamadas externas se acordarán en esa tarea;
-el cierre actual solo prepara la continuidad y no activa un servicio de IA.
+La FASE 4 no se inicia con este cierre. No se añaden dependencias, credenciales
+ni conexiones externas; las decisiones adicionales se acordarán cuando proceda.
 
 Por indicación del usuario, actualizar este documento únicamente al terminar
 una fase, no después de cada tarea. Registrar resultados comprobados y las

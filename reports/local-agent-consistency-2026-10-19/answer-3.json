@@ -1,0 +1,28 @@
+{
+  "case": "criterion_not_met",
+  "wording": 1,
+  "expected": {
+    "verdict": "not_supported_in_sample",
+    "return_comparison": "lower",
+    "drawdown_comparison": "higher",
+    "scope": "historical_sample_only"
+  },
+  "parsed": {
+    "verdict": "not_supported_in_sample",
+    "return_comparison": "lower",
+    "drawdown_comparison": "higher",
+    "scope": "historical_sample_only"
+  },
+  "content": "{\n  \"verdict\": \"not_supported_in_sample\",\n  \"return_comparison\": \"lower\",\n  \"drawdown_comparison\": \"higher\",\n  \"scope\": \"historical_sample_only\"\n}",
+  "usage": {
+    "input_tokens": 882,
+    "output_tokens": 46,
+    "cached_input_tokens": 0,
+    "duration_ns": 22587183400,
+    "api_cost_usd": "0"
+  },
+  "accepted": true,
+  "error": null,
+  "model": "qwen3.5:4b",
+  "elapsed_seconds": 22.609
+}

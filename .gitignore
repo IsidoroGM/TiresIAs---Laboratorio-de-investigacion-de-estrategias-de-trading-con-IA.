@@ -12,3 +12,7 @@ __pycache__/
 .env
 .env.*
 !.env.example
+
+# IA local: ejecutables, modelos, registros y configuración personal
+.local/
+config/ai.local.json

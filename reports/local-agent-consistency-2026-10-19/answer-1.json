@@ -1,0 +1,28 @@
+{
+  "case": "relative_improvement",
+  "wording": 1,
+  "expected": {
+    "verdict": "supported_in_sample",
+    "return_comparison": "higher",
+    "drawdown_comparison": "lower",
+    "scope": "historical_sample_only"
+  },
+  "parsed": {
+    "verdict": "supported_in_sample",
+    "return_comparison": "higher",
+    "drawdown_comparison": "lower",
+    "scope": "historical_sample_only"
+  },
+  "content": "{\n  \"verdict\": \"supported_in_sample\",\n  \"return_comparison\": \"higher\",\n  \"drawdown_comparison\": \"lower\",\n  \"scope\": \"historical_sample_only\"\n}",
+  "usage": {
+    "input_tokens": 882,
+    "output_tokens": 45,
+    "cached_input_tokens": 0,
+    "duration_ns": 28497621500,
+    "api_cost_usd": "0"
+  },
+  "accepted": true,
+  "error": null,
+  "model": "qwen3.5:4b",
+  "elapsed_seconds": 28.521
+}

@@ -1,0 +1,428 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-19",
+  "new_successes": 3,
+  "api_cost_usd": "0",
+  "runs": [
+    {
+      "pair": "EUR/USD",
+      "previous_run": true,
+      "run_id": "d429de06630c47018629c19d949899ca",
+      "provider": {
+        "provider": "ollama",
+        "model": "qwen3.5:4b",
+        "model_digest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04",
+        "base_url": "http://127.0.0.1:11435",
+        "api_cost_usd": "0",
+        "context_tokens": 4096,
+        "output_tokens": 384,
+        "gpu_layers": 0,
+        "timeout_seconds": 180,
+        "think": false,
+        "temperature": 0
+      },
+      "engine_sha256": {
+        "data.py": "286b822fbb6dd5e46f65f64bb387bb7f7d246c7c9c17dc523a52d7ce3e7dfd94",
+        "indicators.py": "13cce9a32399a309694a83f52c8bdb93b0f86075612c825d5be3d9bfc2c366a3",
+        "strategies.py": "9607a659a352e31f2192c237eaecc8191ba90f9b2e78bcaa3919cfaa3489527e",
+        "backtesting.py": "81e6a34dd715d192c730fe407c7cdd037e2340e387e4ea37c90b0549d07a3c4f",
+        "metrics.py": "3d85bab9c1ee6da88a632a08b3a600f12ce7ee9335fbce1b4c56e0cfc865ec2f",
+        "experiments.py": "6d807f71450e6dd8706fd30b5d435283ea3cc47c0bfa90394bfd5002cd252692",
+        "ai.py": "9c43b2f13b1b9264810cb1710c081acc0c476071870842617c9a451cb58cc1f3",
+        "research.py": "4c82ab8082b2cb5d0f1ed9d6c3b3c32af6fee9436c1434638d9243e02246e461"
+      },
+      "results": {
+        "source": {
+          "name": "BCE",
+          "sha256": "3cb610894f5098c82e39c476e1593033565565eb66570051c9304fbf708978e9",
+          "first_date": "1999-01-04",
+          "last_date": "2026-10-16",
+          "observations": 7116
+        },
+        "policy": {
+          "pair": "EUR/USD",
+          "baseline_strategy": "sma",
+          "fast_window": 20,
+          "slow_window": 60,
+          "cost_rate": "0.001",
+          "initial_capital": "1000",
+          "allocation_fraction": "0.1"
+        },
+        "proposal": {
+          "hypothesis": "La variante de medias móviles con ventana rápida de 15 y lenta de 45 generará una rentabilidad estrictamente superior a la base (ventana rápida de 20, lenta de 60) manteniendo un drawdown no mayor.",
+          "criterion": "higher_return_without_more_drawdown",
+          "tool": "run_experiment",
+          "arguments": {
+            "strategy": "ema",
+            "fast_window": 15,
+            "slow_window": 45
+          }
+        },
+        "baseline": {
+          "strategy": "SMA20/SMA60",
+          "quote_currency": "USD",
+          "final_equity": "1015.009330793108646845680949",
+          "return_percent": "1.500933079310864684568094900",
+          "max_drawdown_percent": "2.508037497608682586090015248",
+          "total_costs": "14.05375080356005718685929246",
+          "closed_trades": 69,
+          "has_open_position": false,
+          "rejected_entries": 0
+        },
+        "candidate": {
+          "strategy": "EMA15/EMA45",
+          "quote_currency": "USD",
+          "final_equity": "1000.689189570226542973038993",
+          "return_percent": "0.068918957022654297303899300",
+          "max_drawdown_percent": "4.500939144856642788030413284",
+          "total_costs": "17.92722848928655055440314806",
+          "closed_trades": 89,
+          "has_open_position": false,
+          "rejected_entries": 0
+        },
+        "experiment_id": "d429de06630c47018629c19d949899ca"
+      },
+      "analysis": {
+        "verdict": "not_supported_in_sample",
+        "return_comparison": "lower",
+        "drawdown_comparison": "higher",
+        "scope": "historical_sample_only"
+      },
+      "usage": [
+        {
+          "input_tokens": 247,
+          "output_tokens": 124,
+          "cached_input_tokens": 0,
+          "duration_ns": 25223527800,
+          "api_cost_usd": "0"
+        },
+        {
+          "input_tokens": 855,
+          "output_tokens": 46,
+          "cached_input_tokens": 0,
+          "duration_ns": 20145502300,
+          "api_cost_usd": "0"
+        }
+      ],
+      "elapsed_seconds": 46.033,
+      "report": "eur-usd.md",
+      "report_sha256": "6f2b9b8f0dd00c44862223c4645162e03222ce69807580fb5af0b4a3b54d579b",
+      "error": null
+    },
+    {
+      "pair": "GBP/USD",
+      "previous_run": false,
+      "run_id": "0839074998c24bdb8f1baf033175baf1",
+      "provider": {
+        "provider": "ollama",
+        "model": "qwen3.5:4b",
+        "model_digest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04",
+        "base_url": "http://127.0.0.1:11435",
+        "api_cost_usd": "0",
+        "context_tokens": 4096,
+        "output_tokens": 384,
+        "gpu_layers": 0,
+        "timeout_seconds": 180,
+        "think": false,
+        "temperature": 0
+      },
+      "engine_sha256": {
+        "data.py": "286b822fbb6dd5e46f65f64bb387bb7f7d246c7c9c17dc523a52d7ce3e7dfd94",
+        "indicators.py": "13cce9a32399a309694a83f52c8bdb93b0f86075612c825d5be3d9bfc2c366a3",
+        "strategies.py": "9607a659a352e31f2192c237eaecc8191ba90f9b2e78bcaa3919cfaa3489527e",
+        "backtesting.py": "81e6a34dd715d192c730fe407c7cdd037e2340e387e4ea37c90b0549d07a3c4f",
+        "metrics.py": "3d85bab9c1ee6da88a632a08b3a600f12ce7ee9335fbce1b4c56e0cfc865ec2f",
+        "experiments.py": "6d807f71450e6dd8706fd30b5d435283ea3cc47c0bfa90394bfd5002cd252692",
+        "ai.py": "9c43b2f13b1b9264810cb1710c081acc0c476071870842617c9a451cb58cc1f3",
+        "research.py": "aac4d62a1689e0282f3b85a0856e939c932dab28b9fb0a9ef298a747a8f510f5"
+      },
+      "results": {
+        "source": {
+          "name": "BCE",
+          "sha256": "3cb610894f5098c82e39c476e1593033565565eb66570051c9304fbf708978e9",
+          "first_date": "1999-01-04",
+          "last_date": "2026-10-16",
+          "observations": 7116
+        },
+        "policy": {
+          "pair": "GBP/USD",
+          "baseline_strategy": "sma",
+          "fast_window": 20,
+          "slow_window": 60,
+          "cost_rate": "0.001",
+          "initial_capital": "1000",
+          "allocation_fraction": "0.1"
+        },
+        "proposal": {
+          "hypothesis": "La variante de medias móviles con ventanas ajustadas (fast_window: 15, slow_window: 45) en GBP/USD podría generar una rentabilidad estrictamente superior al mantener el drawdown igual o inferior a la estrategia base.",
+          "criterion": "higher_return_without_more_drawdown",
+          "tool": "run_experiment",
+          "arguments": {
+            "strategy": "ema",
+            "fast_window": 15,
+            "slow_window": 45
+          }
+        },
+        "baseline": {
+          "strategy": "SMA20/SMA60",
+          "quote_currency": "USD",
+          "final_equity": "977.8448062553010480542588137",
+          "return_percent": "-2.215519374469895194574118630",
+          "max_drawdown_percent": "4.729937675456297299107831175",
+          "total_costs": "13.94086638790534388841970447",
+          "closed_trades": 70,
+          "has_open_position": false,
+          "rejected_entries": 0
+        },
+        "candidate": {
+          "strategy": "EMA15/EMA45",
+          "quote_currency": "USD",
+          "final_equity": "984.7039051232538910891651957",
+          "return_percent": "-1.529609487674610891083480430",
+          "max_drawdown_percent": "4.038446442630158646240332149",
+          "total_costs": "15.63874293712206872180306046",
+          "closed_trades": 79,
+          "has_open_position": false,
+          "rejected_entries": 0
+        },
+        "experiment_id": "0839074998c24bdb8f1baf033175baf1"
+      },
+      "analysis": {
+        "verdict": "supported_in_sample",
+        "return_comparison": "higher",
+        "drawdown_comparison": "lower",
+        "scope": "historical_sample_only"
+      },
+      "usage": [
+        {
+          "input_tokens": 247,
+          "output_tokens": 121,
+          "cached_input_tokens": 0,
+          "duration_ns": 29734591400,
+          "api_cost_usd": "0"
+        },
+        {
+          "input_tokens": 850,
+          "output_tokens": 46,
+          "cached_input_tokens": 0,
+          "duration_ns": 22793742700,
+          "api_cost_usd": "0"
+        }
+      ],
+      "elapsed_seconds": 53.337,
+      "report": "gbp-usd.md",
+      "report_sha256": "59886c0cce7fdce4b28a76ace302db63690299d865d5c8d7305b84c85583c674",
+      "error": null
+    },
+    {
+      "pair": "USD/JPY",
+      "previous_run": false,
+      "run_id": "e9692c3c0b5d4dd9a79fac1427617428",
+      "provider": {
+        "provider": "ollama",
+        "model": "qwen3.5:4b",
+        "model_digest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04",
+        "base_url": "http://127.0.0.1:11435",
+        "api_cost_usd": "0",
+        "context_tokens": 4096,
+        "output_tokens": 384,
+        "gpu_layers": 0,
+        "timeout_seconds": 180,
+        "think": false,
+        "temperature": 0
+      },
+      "engine_sha256": {
+        "data.py": "286b822fbb6dd5e46f65f64bb387bb7f7d246c7c9c17dc523a52d7ce3e7dfd94",
+        "indicators.py": "13cce9a32399a309694a83f52c8bdb93b0f86075612c825d5be3d9bfc2c366a3",
+        "strategies.py": "9607a659a352e31f2192c237eaecc8191ba90f9b2e78bcaa3919cfaa3489527e",
+        "backtesting.py": "81e6a34dd715d192c730fe407c7cdd037e2340e387e4ea37c90b0549d07a3c4f",
+        "metrics.py": "3d85bab9c1ee6da88a632a08b3a600f12ce7ee9335fbce1b4c56e0cfc865ec2f",
+        "experiments.py": "6d807f71450e6dd8706fd30b5d435283ea3cc47c0bfa90394bfd5002cd252692",
+        "ai.py": "9c43b2f13b1b9264810cb1710c081acc0c476071870842617c9a451cb58cc1f3",
+        "research.py": "aac4d62a1689e0282f3b85a0856e939c932dab28b9fb0a9ef298a747a8f510f5"
+      },
+      "results": {
+        "source": {
+          "name": "BCE",
+          "sha256": "3cb610894f5098c82e39c476e1593033565565eb66570051c9304fbf708978e9",
+          "first_date": "1999-01-04",
+          "last_date": "2026-10-16",
+          "observations": 7116
+        },
+        "policy": {
+          "pair": "USD/JPY",
+          "baseline_strategy": "sma",
+          "fast_window": 20,
+          "slow_window": 60,
+          "cost_rate": "0.001",
+          "initial_capital": "1000",
+          "allocation_fraction": "0.1"
+        },
+        "proposal": {
+          "hypothesis": "La variante de medias móviles con ventanas ajustadas (fast_window: 15, slow_window: 45) en USD/JPY podría generar una rentabilidad estrictamente superior al mantener el drawdown igual o inferior a la estrategia base.",
+          "criterion": "higher_return_without_more_drawdown",
+          "tool": "run_experiment",
+          "arguments": {
+            "strategy": "sma",
+            "fast_window": 15,
+            "slow_window": 45
+          }
+        },
+        "baseline": {
+          "strategy": "SMA20/SMA60",
+          "quote_currency": "JPY",
+          "final_equity": "1029.441001187376584727199980",
+          "return_percent": "2.94410011873765847271999800",
+          "max_drawdown_percent": "3.674652031053367469434874747",
+          "total_costs": "13.40191335325012091484303176",
+          "closed_trades": 67,
+          "has_open_position": false,
+          "rejected_entries": 0
+        },
+        "candidate": {
+          "strategy": "SMA15/SMA45",
+          "quote_currency": "JPY",
+          "final_equity": "1003.067176496888864050379221",
+          "return_percent": "0.306717649688886405037922100",
+          "max_drawdown_percent": "4.456884419194747182653432563",
+          "total_costs": "18.67234883665153281422042604",
+          "closed_trades": 94,
+          "has_open_position": true,
+          "rejected_entries": 0
+        },
+        "experiment_id": "e9692c3c0b5d4dd9a79fac1427617428"
+      },
+      "analysis": {
+        "verdict": "not_supported_in_sample",
+        "return_comparison": "lower",
+        "drawdown_comparison": "higher",
+        "scope": "historical_sample_only"
+      },
+      "usage": [
+        {
+          "input_tokens": 248,
+          "output_tokens": 123,
+          "cached_input_tokens": 0,
+          "duration_ns": 20961821300,
+          "api_cost_usd": "0"
+        },
+        {
+          "input_tokens": 856,
+          "output_tokens": 46,
+          "cached_input_tokens": 0,
+          "duration_ns": 20661328400,
+          "api_cost_usd": "0"
+        }
+      ],
+      "elapsed_seconds": 42.437,
+      "report": "usd-jpy.md",
+      "report_sha256": "4a556b6e7bf2898d4f9fb513e77d5f3c28ea0c6e42ac230d3b39f5881d11e668",
+      "error": null
+    },
+    {
+      "pair": "USD/CHF",
+      "previous_run": false,
+      "run_id": "7a1a51fd89f840b8920b04ba9489468d",
+      "provider": {
+        "provider": "ollama",
+        "model": "qwen3.5:4b",
+        "model_digest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04",
+        "base_url": "http://127.0.0.1:11435",
+        "api_cost_usd": "0",
+        "context_tokens": 4096,
+        "output_tokens": 384,
+        "gpu_layers": 0,
+        "timeout_seconds": 180,
+        "think": false,
+        "temperature": 0
+      },
+      "engine_sha256": {
+        "data.py": "286b822fbb6dd5e46f65f64bb387bb7f7d246c7c9c17dc523a52d7ce3e7dfd94",
+        "indicators.py": "13cce9a32399a309694a83f52c8bdb93b0f86075612c825d5be3d9bfc2c366a3",
+        "strategies.py": "9607a659a352e31f2192c237eaecc8191ba90f9b2e78bcaa3919cfaa3489527e",
+        "backtesting.py": "81e6a34dd715d192c730fe407c7cdd037e2340e387e4ea37c90b0549d07a3c4f",
+        "metrics.py": "3d85bab9c1ee6da88a632a08b3a600f12ce7ee9335fbce1b4c56e0cfc865ec2f",
+        "experiments.py": "6d807f71450e6dd8706fd30b5d435283ea3cc47c0bfa90394bfd5002cd252692",
+        "ai.py": "9c43b2f13b1b9264810cb1710c081acc0c476071870842617c9a451cb58cc1f3",
+        "research.py": "aac4d62a1689e0282f3b85a0856e939c932dab28b9fb0a9ef298a747a8f510f5"
+      },
+      "results": {
+        "source": {
+          "name": "BCE",
+          "sha256": "3cb610894f5098c82e39c476e1593033565565eb66570051c9304fbf708978e9",
+          "first_date": "1999-01-04",
+          "last_date": "2026-10-16",
+          "observations": 7116
+        },
+        "policy": {
+          "pair": "USD/CHF",
+          "baseline_strategy": "sma",
+          "fast_window": 20,
+          "slow_window": 60,
+          "cost_rate": "0.001",
+          "initial_capital": "1000",
+          "allocation_fraction": "0.1"
+        },
+        "proposal": {
+          "hypothesis": "La variante de medias móviles con ventanas ajustadas (fast_window: 15, slow_window: 45) en USD/CHF podría generar una rentabilidad estrictamente superior al mantener el drawdown igual o inferior a la estrategia base SMA.",
+          "criterion": "higher_return_without_more_drawdown",
+          "tool": "run_experiment",
+          "arguments": {
+            "strategy": "ema",
+            "fast_window": 15,
+            "slow_window": 45
+          }
+        },
+        "baseline": {
+          "strategy": "SMA20/SMA60",
+          "quote_currency": "CHF",
+          "final_equity": "930.9227179457106933206155105",
+          "return_percent": "-6.907728205428930667938448950",
+          "max_drawdown_percent": "7.825078515058370666876696435",
+          "total_costs": "13.49083745234146730029672926",
+          "closed_trades": 70,
+          "has_open_position": true,
+          "rejected_entries": 0
+        },
+        "candidate": {
+          "strategy": "EMA15/EMA45",
+          "quote_currency": "CHF",
+          "final_equity": "935.6588811459404577530079587",
+          "return_percent": "-6.434111885405954224699204130",
+          "max_drawdown_percent": "7.721900053914400586668780101",
+          "total_costs": "16.78971900877902248491513732",
+          "closed_trades": 87,
+          "has_open_position": true,
+          "rejected_entries": 0
+        },
+        "experiment_id": "7a1a51fd89f840b8920b04ba9489468d"
+      },
+      "analysis": {
+        "verdict": "supported_in_sample",
+        "return_comparison": "higher",
+        "drawdown_comparison": "lower",
+        "scope": "historical_sample_only"
+      },
+      "usage": [
+        {
+          "input_tokens": 247,
+          "output_tokens": 122,
+          "cached_input_tokens": 0,
+          "duration_ns": 20574089500,
+          "api_cost_usd": "0"
+        },
+        {
+          "input_tokens": 853,
+          "output_tokens": 46,
+          "cached_input_tokens": 0,
+          "duration_ns": 20446868500,
+          "api_cost_usd": "0"
+        }
+      ],
+      "elapsed_seconds": 41.794,
+      "report": "usd-chf.md",
+      "report_sha256": "1427f4a9fcbcd74cc31edd9e958d3ff9360a8e523c0d897f01f78f0cd7f152dc",
+      "error": null
+    }
+  ]
+}

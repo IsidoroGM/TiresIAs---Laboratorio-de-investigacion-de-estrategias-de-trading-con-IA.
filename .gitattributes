@@ -1,0 +1,3 @@
+# Las evidencias incluyen SHA-256 de archivos: conservar sus bytes al clonar.
+reports/local-agent-* -text whitespace=trailing-space,space-before-tab,cr-at-eol
+reports/local-agent-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol

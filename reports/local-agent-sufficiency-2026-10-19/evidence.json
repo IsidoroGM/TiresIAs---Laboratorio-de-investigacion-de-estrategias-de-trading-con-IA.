@@ -1,0 +1,878 @@
+{
+  "summary": {
+    "completed_flows": 3,
+    "total_flows": 3,
+    "model_requests": 5,
+    "input_tokens": 2518,
+    "output_tokens": 469,
+    "elapsed_seconds": "116.159",
+    "api_cost_usd": "0",
+    "previous_model_accuracy": "4/6 unchanged",
+    "automated_tests": 399
+  },
+  "previous_evidence_sha256": [
+    {
+      "path": "reports/local-agent-consistency-2026-10-19.md",
+      "sha256": "9987999D156C99914B66AC2D31BCBC49393AD0A346D6DAA1D5129C03C027CCCC"
+    },
+    {
+      "path": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\reports\\local-agent-consistency-2026-10-19\\answer-1.json",
+      "sha256": "BD065FE4D54A58AAB409BB885A9A05BA1EE78DCFC1A86A4064FF4C266A7E1AF2"
+    },
+    {
+      "path": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\reports\\local-agent-consistency-2026-10-19\\answer-2.json",
+      "sha256": "F88FD20BFDCA8B5311918D6CF9AC02C70AFAE8EF93340DDD32CC0D0910342FDE"
+    },
+    {
+      "path": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\reports\\local-agent-consistency-2026-10-19\\answer-3.json",
+      "sha256": "41EC672FC5BBB5BD2B182FA59D90A6AA4CFD21A90D58AA1FC496C378476239D9"
+    },
+    {
+      "path": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\reports\\local-agent-consistency-2026-10-19\\answer-4.json",
+      "sha256": "4BF641979501EAB1EAB06FD313E98B182286EB59457180A881D0CB2B9E85A301"
+    },
+    {
+      "path": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\reports\\local-agent-consistency-2026-10-19\\answer-5.json",
+      "sha256": "AAA729A71259F2BBE800E6951081054C4161CB9EFDDF908202BAB4EEADF30379"
+    },
+    {
+      "path": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\reports\\local-agent-consistency-2026-10-19\\answer-6.json",
+      "sha256": "D7950467CDC23E5B609D206505BE0F8407D66226E793F9226E489A3F06A6EA32"
+    },
+    {
+      "path": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\reports\\local-agent-consistency-2026-10-19\\audit.json",
+      "sha256": "977DF271DA9AB91AAE030B72A15ADCF6709EE5AB166B188E99C5F81FE1BA16AD"
+    },
+    {
+      "path": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\reports\\local-agent-consistency-2026-10-19\\ecb-first-40-observations.xml",
+      "sha256": "C8F0119FD08F552A00C28BA7B2BCD17E5FD75CD810FE159E0BED7D2005DAFCD1"
+    },
+    {
+      "path": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\reports\\local-agent-consistency-2026-10-19\\events.jsonl",
+      "sha256": "F5B3BD0E4A2E52B3635BC617997E60C00208D86C7F619B94F4A83588EAE22339"
+    },
+    {
+      "path": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\reports\\local-agent-consistency-2026-10-19\\plan.json",
+      "sha256": "47158180D5BB27CF1ACB1075F0269BA77A71E1EF69C2A3D79D5680530C315364"
+    },
+    {
+      "path": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\reports\\local-agent-consistency-2026-10-19\\provider.json",
+      "sha256": "B4CF86AD09EF1EAA2F126567A6BBFBB504BB847C531EA5604A730E22254DAAC5"
+    },
+    {
+      "path": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\reports\\local-agent-consistency-2026-10-19\\summary.json",
+      "sha256": "FA2F839198C595F4F799FCE1ED47091DB112A3422C819C2B202A0EB85732C970"
+    }
+  ],
+  "runs": [
+    {
+      "id": "insufficient_history",
+      "directory": ".local/sufficiency-check-2026-10-19-4ce48a61ffdb473ea5afcca63a695fcf/57b6c01002564c3391bd134a4f063e87",
+      "results": {
+        "source": {
+          "name": "BCE",
+          "sha256": "c8f0119fd08f552a00c28ba7b2bcd17e5fd75cd810fe159e0bed7d2005dafcd1",
+          "first_date": "1999-01-04",
+          "last_date": "1999-02-26",
+          "observations": 40
+        },
+        "policy": {
+          "pair": "EUR/USD",
+          "baseline_strategy": "sma",
+          "fast_window": 20,
+          "slow_window": 60,
+          "cost_rate": "0.001",
+          "initial_capital": "1000",
+          "allocation_fraction": "0.1"
+        },
+        "proposal": {
+          "hypothesis": "La estrategia EMA con ventanas rápidas de 1 y lentas de 2 podría generar una rentabilidad estrictamente superior a la SMA (ventanas 20, 60) sin incrementar el drawdown máximo en muestras del par EUR/USD.",
+          "criterion": "higher_return_without_more_drawdown",
+          "tool": "run_experiment",
+          "arguments": {
+            "strategy": "ema",
+            "fast_window": 1,
+            "slow_window": 2
+          }
+        },
+        "baseline": {
+          "strategy": "SMA20/SMA60",
+          "quote_currency": "USD",
+          "final_equity": "1000",
+          "return_percent": "0",
+          "max_drawdown_percent": "0",
+          "total_costs": "0",
+          "closed_trades": 0,
+          "has_open_position": false,
+          "rejected_entries": 0
+        },
+        "candidate": {
+          "strategy": "EMA1/EMA2",
+          "quote_currency": "USD",
+          "final_equity": "996.3706997267845045655694735",
+          "return_percent": "-0.3629300273215495434430526500",
+          "max_drawdown_percent": "0.3629300273215495434430526500",
+          "total_costs": "1.094807164319775279652508860",
+          "closed_trades": 5,
+          "has_open_position": true,
+          "rejected_entries": 0
+        },
+        "experiment_id": "57b6c01002564c3391bd134a4f063e87"
+      },
+      "analysis": {
+        "verdict": "inconclusive",
+        "return_comparison": "lower",
+        "drawdown_comparison": "higher",
+        "scope": "historical_sample_only"
+      },
+      "analysis_origin": {
+        "source": "python",
+        "reason": "no_closed_trades",
+        "strategies_without_closed_trades": [
+          "baseline"
+        ]
+      },
+      "model_requests": 1,
+      "elapsed_seconds": 29.397,
+      "usage": [
+        {
+          "input_tokens": 267,
+          "output_tokens": 123,
+          "cached_input_tokens": 0,
+          "duration_ns": 29260465600,
+          "api_cost_usd": "0"
+        }
+      ],
+      "engine_sha256": {
+        "data.py": "286b822fbb6dd5e46f65f64bb387bb7f7d246c7c9c17dc523a52d7ce3e7dfd94",
+        "indicators.py": "13cce9a32399a309694a83f52c8bdb93b0f86075612c825d5be3d9bfc2c366a3",
+        "strategies.py": "9607a659a352e31f2192c237eaecc8191ba90f9b2e78bcaa3919cfaa3489527e",
+        "backtesting.py": "81e6a34dd715d192c730fe407c7cdd037e2340e387e4ea37c90b0549d07a3c4f",
+        "metrics.py": "3d85bab9c1ee6da88a632a08b3a600f12ce7ee9335fbce1b4c56e0cfc865ec2f",
+        "experiments.py": "57c5638f293d9e4c5102a091227970ac1d2fd3b9774fa3f839fd6ed044a26e4d",
+        "ai.py": "9c43b2f13b1b9264810cb1710c081acc0c476071870842617c9a451cb58cc1f3",
+        "research.py": "61dd8ad0479ac168f0421d84f9e8ece34285546027220309870b3f4662bea556"
+      },
+      "provider": {
+        "provider": "ollama",
+        "model": "qwen3.5:4b",
+        "model_digest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04",
+        "base_url": "http://127.0.0.1:11435",
+        "api_cost_usd": "0",
+        "context_tokens": 4096,
+        "output_tokens": 384,
+        "gpu_layers": 0,
+        "timeout_seconds": 180,
+        "think": false,
+        "temperature": 0
+      },
+      "control_events": [
+        {
+          "schema_version": 1,
+          "at": "2026-10-19T10:13:01.663847+00:00",
+          "event": "model_request",
+          "data": {
+            "stage": "proposal",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Eres un investigador educativo. Devuelve solo JSON conforme al esquema. Solicita exactamente una llamada a run_experiment, con una variante distinta de la base. Formula una hipótesis, sin afirmar resultados aún no calculados. No puedes cambiar los controles. higher_return_without_more_drawdown: rentabilidad estrictamente mayor y drawdown no mayor. lower_drawdown_without_lower_return: drawdown estrictamente menor y rentabilidad no menor. Si cualquiera de las dos estrategias no tiene cierres, o ambas métricas empatan, el veredicto es inconclusive. Si cumple el criterio, supported_in_sample; si no lo cumple, not_supported_in_sample. Compara siempre variante frente a base."
+              },
+              {
+                "role": "user",
+                "content": "En esta comprobación solicita exactamente strategy=ema, fast_window=1, slow_window=2 y criterion=higher_return_without_more_drawdown. Formula una hipótesis sin afirmar resultados ya calculados.\nControles y base: {\"pair\": \"EUR/USD\", \"baseline_strategy\": \"sma\", \"fast_window\": 20, \"slow_window\": 60, \"cost_rate\": \"0.001\", \"initial_capital\": \"1000\", \"allocation_fraction\": \"0.1\"}"
+              }
+            ],
+            "schema": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "hypothesis": {
+                  "type": "string",
+                  "maxLength": 400
+                },
+                "criterion": {
+                  "type": "string",
+                  "enum": [
+                    "higher_return_without_more_drawdown",
+                    "lower_drawdown_without_lower_return"
+                  ]
+                },
+                "tool": {
+                  "type": "string",
+                  "enum": [
+                    "run_experiment"
+                  ]
+                },
+                "arguments": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "strategy": {
+                      "type": "string",
+                      "enum": [
+                        "sma",
+                        "ema"
+                      ]
+                    },
+                    "fast_window": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 120
+                    },
+                    "slow_window": {
+                      "type": "integer",
+                      "minimum": 2,
+                      "maximum": 252
+                    }
+                  },
+                  "required": [
+                    "strategy",
+                    "fast_window",
+                    "slow_window"
+                  ]
+                }
+              },
+              "required": [
+                "hypothesis",
+                "criterion",
+                "tool",
+                "arguments"
+              ]
+            }
+          }
+        },
+        {
+          "schema_version": 1,
+          "at": "2026-10-19T10:13:30.970480+00:00",
+          "event": "model_response",
+          "data": {
+            "stage": "proposal",
+            "model": "qwen3.5:4b",
+            "content": "{\n  \"hypothesis\": \"La estrategia EMA con ventanas rápidas de 1 y lentas de 2 podría generar una rentabilidad estrictamente superior a la SMA (ventanas 20, 60) sin incrementar el drawdown máximo en muestras del par EUR/USD.\",\n  \"criterion\": \"higher_return_without_more_drawdown\",\n  \"tool\": \"run_experiment\",\n  \"arguments\": {\n    \"strategy\": \"ema\",\n    \"fast_window\": 1,\n    \"slow_window\": 2\n  }\n}",
+            "usage": {
+              "input_tokens": 267,
+              "output_tokens": 123,
+              "cached_input_tokens": 0,
+              "duration_ns": 29260465600,
+              "api_cost_usd": "0"
+            }
+          }
+        },
+        {
+          "schema_version": 1,
+          "at": "2026-10-19T10:13:30.989437+00:00",
+          "event": "assessment_precheck",
+          "data": {
+            "passed": false,
+            "closed_trades": {
+              "baseline": 0,
+              "candidate": 5
+            },
+            "strategies_without_closed_trades": [
+              "baseline"
+            ]
+          }
+        },
+        {
+          "schema_version": 1,
+          "at": "2026-10-19T10:13:30.991736+00:00",
+          "event": "assessment_skipped",
+          "data": {
+            "source": "python",
+            "reason": "no_closed_trades",
+            "strategies_without_closed_trades": [
+              "baseline"
+            ]
+          }
+        }
+      ],
+      "report": "insufficient-history.md",
+      "report_sha256": "a88164df6a6829bcf218d6f9ca7db6ca00e8a1ce7ec3f45516eb9274e9bfb893"
+    },
+    {
+      "id": "relative_improvement",
+      "directory": ".local/sufficiency-check-2026-10-19-4ce48a61ffdb473ea5afcca63a695fcf/86c4104df8c14256b3b5ac73ea55f1e0",
+      "results": {
+        "source": {
+          "name": "BCE",
+          "sha256": "3cb610894f5098c82e39c476e1593033565565eb66570051c9304fbf708978e9",
+          "first_date": "1999-01-04",
+          "last_date": "2026-10-16",
+          "observations": 7116
+        },
+        "policy": {
+          "pair": "GBP/USD",
+          "baseline_strategy": "sma",
+          "fast_window": 20,
+          "slow_window": 60,
+          "cost_rate": "0.001",
+          "initial_capital": "1000",
+          "allocation_fraction": "0.1"
+        },
+        "proposal": {
+          "hypothesis": "La estrategia EMA con ventanas rápidas de 15 y lentas de 45 podría generar una rentabilidad estrictamente superior a la SMA (ventanas 20, 60) sin incrementar el drawdown máximo en muestras del par GBP/USD.",
+          "criterion": "higher_return_without_more_drawdown",
+          "tool": "run_experiment",
+          "arguments": {
+            "strategy": "ema",
+            "fast_window": 15,
+            "slow_window": 45
+          }
+        },
+        "baseline": {
+          "strategy": "SMA20/SMA60",
+          "quote_currency": "USD",
+          "final_equity": "977.8448062553010480542588137",
+          "return_percent": "-2.215519374469895194574118630",
+          "max_drawdown_percent": "4.729937675456297299107831175",
+          "total_costs": "13.94086638790534388841970447",
+          "closed_trades": 70,
+          "has_open_position": false,
+          "rejected_entries": 0
+        },
+        "candidate": {
+          "strategy": "EMA15/EMA45",
+          "quote_currency": "USD",
+          "final_equity": "984.7039051232538910891651957",
+          "return_percent": "-1.529609487674610891083480430",
+          "max_drawdown_percent": "4.038446442630158646240332149",
+          "total_costs": "15.63874293712206872180306046",
+          "closed_trades": 79,
+          "has_open_position": false,
+          "rejected_entries": 0
+        },
+        "experiment_id": "86c4104df8c14256b3b5ac73ea55f1e0"
+      },
+      "analysis": {
+        "verdict": "supported_in_sample",
+        "return_comparison": "higher",
+        "drawdown_comparison": "lower",
+        "scope": "historical_sample_only"
+      },
+      "analysis_origin": {
+        "source": "model",
+        "verified_by": "python"
+      },
+      "model_requests": 2,
+      "elapsed_seconds": 43.687,
+      "usage": [
+        {
+          "input_tokens": 269,
+          "output_tokens": 127,
+          "cached_input_tokens": 0,
+          "duration_ns": 21958910300,
+          "api_cost_usd": "0"
+        },
+        {
+          "input_tokens": 856,
+          "output_tokens": 46,
+          "cached_input_tokens": 0,
+          "duration_ns": 20918143700,
+          "api_cost_usd": "0"
+        }
+      ],
+      "engine_sha256": {
+        "data.py": "286b822fbb6dd5e46f65f64bb387bb7f7d246c7c9c17dc523a52d7ce3e7dfd94",
+        "indicators.py": "13cce9a32399a309694a83f52c8bdb93b0f86075612c825d5be3d9bfc2c366a3",
+        "strategies.py": "9607a659a352e31f2192c237eaecc8191ba90f9b2e78bcaa3919cfaa3489527e",
+        "backtesting.py": "81e6a34dd715d192c730fe407c7cdd037e2340e387e4ea37c90b0549d07a3c4f",
+        "metrics.py": "3d85bab9c1ee6da88a632a08b3a600f12ce7ee9335fbce1b4c56e0cfc865ec2f",
+        "experiments.py": "57c5638f293d9e4c5102a091227970ac1d2fd3b9774fa3f839fd6ed044a26e4d",
+        "ai.py": "9c43b2f13b1b9264810cb1710c081acc0c476071870842617c9a451cb58cc1f3",
+        "research.py": "61dd8ad0479ac168f0421d84f9e8ece34285546027220309870b3f4662bea556"
+      },
+      "provider": {
+        "provider": "ollama",
+        "model": "qwen3.5:4b",
+        "model_digest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04",
+        "base_url": "http://127.0.0.1:11435",
+        "api_cost_usd": "0",
+        "context_tokens": 4096,
+        "output_tokens": 384,
+        "gpu_layers": 0,
+        "timeout_seconds": 180,
+        "think": false,
+        "temperature": 0
+      },
+      "control_events": [
+        {
+          "schema_version": 1,
+          "at": "2026-10-19T10:13:31.297843+00:00",
+          "event": "model_request",
+          "data": {
+            "stage": "proposal",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Eres un investigador educativo. Devuelve solo JSON conforme al esquema. Solicita exactamente una llamada a run_experiment, con una variante distinta de la base. Formula una hipótesis, sin afirmar resultados aún no calculados. No puedes cambiar los controles. higher_return_without_more_drawdown: rentabilidad estrictamente mayor y drawdown no mayor. lower_drawdown_without_lower_return: drawdown estrictamente menor y rentabilidad no menor. Si cualquiera de las dos estrategias no tiene cierres, o ambas métricas empatan, el veredicto es inconclusive. Si cumple el criterio, supported_in_sample; si no lo cumple, not_supported_in_sample. Compara siempre variante frente a base."
+              },
+              {
+                "role": "user",
+                "content": "En esta comprobación solicita exactamente strategy=ema, fast_window=15, slow_window=45 y criterion=higher_return_without_more_drawdown. Formula una hipótesis sin afirmar resultados ya calculados.\nControles y base: {\"pair\": \"GBP/USD\", \"baseline_strategy\": \"sma\", \"fast_window\": 20, \"slow_window\": 60, \"cost_rate\": \"0.001\", \"initial_capital\": \"1000\", \"allocation_fraction\": \"0.1\"}"
+              }
+            ],
+            "schema": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "hypothesis": {
+                  "type": "string",
+                  "maxLength": 400
+                },
+                "criterion": {
+                  "type": "string",
+                  "enum": [
+                    "higher_return_without_more_drawdown",
+                    "lower_drawdown_without_lower_return"
+                  ]
+                },
+                "tool": {
+                  "type": "string",
+                  "enum": [
+                    "run_experiment"
+                  ]
+                },
+                "arguments": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "strategy": {
+                      "type": "string",
+                      "enum": [
+                        "sma",
+                        "ema"
+                      ]
+                    },
+                    "fast_window": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 120
+                    },
+                    "slow_window": {
+                      "type": "integer",
+                      "minimum": 2,
+                      "maximum": 252
+                    }
+                  },
+                  "required": [
+                    "strategy",
+                    "fast_window",
+                    "slow_window"
+                  ]
+                }
+              },
+              "required": [
+                "hypothesis",
+                "criterion",
+                "tool",
+                "arguments"
+              ]
+            }
+          }
+        },
+        {
+          "schema_version": 1,
+          "at": "2026-10-19T10:13:53.303301+00:00",
+          "event": "model_response",
+          "data": {
+            "stage": "proposal",
+            "model": "qwen3.5:4b",
+            "content": "{\n  \"hypothesis\": \"La estrategia EMA con ventanas rápidas de 15 y lentas de 45 podría generar una rentabilidad estrictamente superior a la SMA (ventanas 20, 60) sin incrementar el drawdown máximo en muestras del par GBP/USD.\",\n  \"criterion\": \"higher_return_without_more_drawdown\",\n  \"tool\": \"run_experiment\",\n  \"arguments\": {\n    \"strategy\": \"ema\",\n    \"fast_window\": 15,\n    \"slow_window\": 45\n  }\n}",
+            "usage": {
+              "input_tokens": 269,
+              "output_tokens": 127,
+              "cached_input_tokens": 0,
+              "duration_ns": 21958910300,
+              "api_cost_usd": "0"
+            }
+          }
+        },
+        {
+          "schema_version": 1,
+          "at": "2026-10-19T10:13:53.956053+00:00",
+          "event": "assessment_precheck",
+          "data": {
+            "passed": true,
+            "closed_trades": {
+              "baseline": 70,
+              "candidate": 79
+            },
+            "strategies_without_closed_trades": []
+          }
+        },
+        {
+          "schema_version": 1,
+          "at": "2026-10-19T10:13:53.958487+00:00",
+          "event": "model_request",
+          "data": {
+            "stage": "assessment",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Analiza únicamente los resultados calculados adjuntos. Devuelve solo JSON. return_comparison y drawdown_comparison usan higher/lower/equal para la variante frente a la base. scope siempre es historical_sample_only. higher_return_without_more_drawdown: rentabilidad estrictamente mayor y drawdown no mayor. lower_drawdown_without_lower_return: drawdown estrictamente menor y rentabilidad no menor. Si cualquiera de las dos estrategias no tiene cierres, o ambas métricas empatan, el veredicto es inconclusive. Si cumple el criterio, supported_in_sample; si no lo cumple, not_supported_in_sample. Compara siempre variante frente a base."
+              },
+              {
+                "role": "user",
+                "content": "{\"source\": {\"name\": \"BCE\", \"sha256\": \"3cb610894f5098c82e39c476e1593033565565eb66570051c9304fbf708978e9\", \"first_date\": \"1999-01-04\", \"last_date\": \"2026-10-16\", \"observations\": 7116}, \"policy\": {\"pair\": \"GBP/USD\", \"baseline_strategy\": \"sma\", \"fast_window\": 20, \"slow_window\": 60, \"cost_rate\": \"0.001\", \"initial_capital\": \"1000\", \"allocation_fraction\": \"0.1\"}, \"proposal\": {\"hypothesis\": \"La estrategia EMA con ventanas rápidas de 15 y lentas de 45 podría generar una rentabilidad estrictamente superior a la SMA (ventanas 20, 60) sin incrementar el drawdown máximo en muestras del par GBP/USD.\", \"criterion\": \"higher_return_without_more_drawdown\", \"tool\": \"run_experiment\", \"arguments\": {\"strategy\": \"ema\", \"fast_window\": 15, \"slow_window\": 45}}, \"baseline\": {\"strategy\": \"SMA20/SMA60\", \"quote_currency\": \"USD\", \"final_equity\": \"977.8448062553010480542588137\", \"return_percent\": \"-2.215519374469895194574118630\", \"max_drawdown_percent\": \"4.729937675456297299107831175\", \"total_costs\": \"13.94086638790534388841970447\", \"closed_trades\": 70, \"has_open_position\": false, \"rejected_entries\": 0}, \"candidate\": {\"strategy\": \"EMA15/EMA45\", \"quote_currency\": \"USD\", \"final_equity\": \"984.7039051232538910891651957\", \"return_percent\": \"-1.529609487674610891083480430\", \"max_drawdown_percent\": \"4.038446442630158646240332149\", \"total_costs\": \"15.63874293712206872180306046\", \"closed_trades\": 79, \"has_open_position\": false, \"rejected_entries\": 0}, \"experiment_id\": \"86c4104df8c14256b3b5ac73ea55f1e0\"}"
+              }
+            ],
+            "schema": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "verdict": {
+                  "type": "string",
+                  "enum": [
+                    "supported_in_sample",
+                    "not_supported_in_sample",
+                    "inconclusive"
+                  ]
+                },
+                "return_comparison": {
+                  "type": "string",
+                  "enum": [
+                    "higher",
+                    "lower",
+                    "equal"
+                  ]
+                },
+                "drawdown_comparison": {
+                  "type": "string",
+                  "enum": [
+                    "higher",
+                    "lower",
+                    "equal"
+                  ]
+                },
+                "scope": {
+                  "type": "string",
+                  "enum": [
+                    "historical_sample_only"
+                  ]
+                }
+              },
+              "required": [
+                "verdict",
+                "return_comparison",
+                "drawdown_comparison",
+                "scope"
+              ]
+            }
+          }
+        },
+        {
+          "schema_version": 1,
+          "at": "2026-10-19T10:14:14.915045+00:00",
+          "event": "model_response",
+          "data": {
+            "stage": "assessment",
+            "model": "qwen3.5:4b",
+            "content": "{\n  \"verdict\": \"supported_in_sample\",\n  \"return_comparison\": \"higher\",\n  \"drawdown_comparison\": \"lower\",\n  \"scope\": \"historical_sample_only\"\n}",
+            "usage": {
+              "input_tokens": 856,
+              "output_tokens": 46,
+              "cached_input_tokens": 0,
+              "duration_ns": 20918143700,
+              "api_cost_usd": "0"
+            }
+          }
+        }
+      ],
+      "report": "relative-improvement.md",
+      "report_sha256": "17ebec432646a5c575a46c05130b73bb1b7971ef1e2d65001ded5b41ddac5be9"
+    },
+    {
+      "id": "criterion_not_met",
+      "directory": ".local/sufficiency-check-2026-10-19-4ce48a61ffdb473ea5afcca63a695fcf/91570c2ee9fa4b4b93e2861e72f775a5",
+      "results": {
+        "source": {
+          "name": "BCE",
+          "sha256": "3cb610894f5098c82e39c476e1593033565565eb66570051c9304fbf708978e9",
+          "first_date": "1999-01-04",
+          "last_date": "2026-10-16",
+          "observations": 7116
+        },
+        "policy": {
+          "pair": "EUR/USD",
+          "baseline_strategy": "sma",
+          "fast_window": 20,
+          "slow_window": 60,
+          "cost_rate": "0.001",
+          "initial_capital": "1000",
+          "allocation_fraction": "0.1"
+        },
+        "proposal": {
+          "hypothesis": "La estrategia EMA con ventanas rápidas de 15 y lentas de 45 podría generar una rentabilidad estrictamente superior a la SMA (ventanas 20, 60) sin incrementar el drawdown máximo en muestras del par EUR/USD.",
+          "criterion": "higher_return_without_more_drawdown",
+          "tool": "run_experiment",
+          "arguments": {
+            "strategy": "ema",
+            "fast_window": 15,
+            "slow_window": 45
+          }
+        },
+        "baseline": {
+          "strategy": "SMA20/SMA60",
+          "quote_currency": "USD",
+          "final_equity": "1015.009330793108646845680949",
+          "return_percent": "1.500933079310864684568094900",
+          "max_drawdown_percent": "2.508037497608682586090015248",
+          "total_costs": "14.05375080356005718685929246",
+          "closed_trades": 69,
+          "has_open_position": false,
+          "rejected_entries": 0
+        },
+        "candidate": {
+          "strategy": "EMA15/EMA45",
+          "quote_currency": "USD",
+          "final_equity": "1000.689189570226542973038993",
+          "return_percent": "0.068918957022654297303899300",
+          "max_drawdown_percent": "4.500939144856642788030413284",
+          "total_costs": "17.92722848928655055440314806",
+          "closed_trades": 89,
+          "has_open_position": false,
+          "rejected_entries": 0
+        },
+        "experiment_id": "91570c2ee9fa4b4b93e2861e72f775a5"
+      },
+      "analysis": {
+        "verdict": "not_supported_in_sample",
+        "return_comparison": "lower",
+        "drawdown_comparison": "higher",
+        "scope": "historical_sample_only"
+      },
+      "analysis_origin": {
+        "source": "model",
+        "verified_by": "python"
+      },
+      "model_requests": 2,
+      "elapsed_seconds": 43.075,
+      "usage": [
+        {
+          "input_tokens": 269,
+          "output_tokens": 127,
+          "cached_input_tokens": 0,
+          "duration_ns": 21676404600,
+          "api_cost_usd": "0"
+        },
+        {
+          "input_tokens": 857,
+          "output_tokens": 46,
+          "cached_input_tokens": 0,
+          "duration_ns": 20733263200,
+          "api_cost_usd": "0"
+        }
+      ],
+      "engine_sha256": {
+        "data.py": "286b822fbb6dd5e46f65f64bb387bb7f7d246c7c9c17dc523a52d7ce3e7dfd94",
+        "indicators.py": "13cce9a32399a309694a83f52c8bdb93b0f86075612c825d5be3d9bfc2c366a3",
+        "strategies.py": "9607a659a352e31f2192c237eaecc8191ba90f9b2e78bcaa3919cfaa3489527e",
+        "backtesting.py": "81e6a34dd715d192c730fe407c7cdd037e2340e387e4ea37c90b0549d07a3c4f",
+        "metrics.py": "3d85bab9c1ee6da88a632a08b3a600f12ce7ee9335fbce1b4c56e0cfc865ec2f",
+        "experiments.py": "57c5638f293d9e4c5102a091227970ac1d2fd3b9774fa3f839fd6ed044a26e4d",
+        "ai.py": "9c43b2f13b1b9264810cb1710c081acc0c476071870842617c9a451cb58cc1f3",
+        "research.py": "61dd8ad0479ac168f0421d84f9e8ece34285546027220309870b3f4662bea556"
+      },
+      "provider": {
+        "provider": "ollama",
+        "model": "qwen3.5:4b",
+        "model_digest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04",
+        "base_url": "http://127.0.0.1:11435",
+        "api_cost_usd": "0",
+        "context_tokens": 4096,
+        "output_tokens": 384,
+        "gpu_layers": 0,
+        "timeout_seconds": 180,
+        "think": false,
+        "temperature": 0
+      },
+      "control_events": [
+        {
+          "schema_version": 1,
+          "at": "2026-10-19T10:14:15.169118+00:00",
+          "event": "model_request",
+          "data": {
+            "stage": "proposal",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Eres un investigador educativo. Devuelve solo JSON conforme al esquema. Solicita exactamente una llamada a run_experiment, con una variante distinta de la base. Formula una hipótesis, sin afirmar resultados aún no calculados. No puedes cambiar los controles. higher_return_without_more_drawdown: rentabilidad estrictamente mayor y drawdown no mayor. lower_drawdown_without_lower_return: drawdown estrictamente menor y rentabilidad no menor. Si cualquiera de las dos estrategias no tiene cierres, o ambas métricas empatan, el veredicto es inconclusive. Si cumple el criterio, supported_in_sample; si no lo cumple, not_supported_in_sample. Compara siempre variante frente a base."
+              },
+              {
+                "role": "user",
+                "content": "En esta comprobación solicita exactamente strategy=ema, fast_window=15, slow_window=45 y criterion=higher_return_without_more_drawdown. Formula una hipótesis sin afirmar resultados ya calculados.\nControles y base: {\"pair\": \"EUR/USD\", \"baseline_strategy\": \"sma\", \"fast_window\": 20, \"slow_window\": 60, \"cost_rate\": \"0.001\", \"initial_capital\": \"1000\", \"allocation_fraction\": \"0.1\"}"
+              }
+            ],
+            "schema": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "hypothesis": {
+                  "type": "string",
+                  "maxLength": 400
+                },
+                "criterion": {
+                  "type": "string",
+                  "enum": [
+                    "higher_return_without_more_drawdown",
+                    "lower_drawdown_without_lower_return"
+                  ]
+                },
+                "tool": {
+                  "type": "string",
+                  "enum": [
+                    "run_experiment"
+                  ]
+                },
+                "arguments": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "strategy": {
+                      "type": "string",
+                      "enum": [
+                        "sma",
+                        "ema"
+                      ]
+                    },
+                    "fast_window": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 120
+                    },
+                    "slow_window": {
+                      "type": "integer",
+                      "minimum": 2,
+                      "maximum": 252
+                    }
+                  },
+                  "required": [
+                    "strategy",
+                    "fast_window",
+                    "slow_window"
+                  ]
+                }
+              },
+              "required": [
+                "hypothesis",
+                "criterion",
+                "tool",
+                "arguments"
+              ]
+            }
+          }
+        },
+        {
+          "schema_version": 1,
+          "at": "2026-10-19T10:14:36.879659+00:00",
+          "event": "model_response",
+          "data": {
+            "stage": "proposal",
+            "model": "qwen3.5:4b",
+            "content": "{\n  \"hypothesis\": \"La estrategia EMA con ventanas rápidas de 15 y lentas de 45 podría generar una rentabilidad estrictamente superior a la SMA (ventanas 20, 60) sin incrementar el drawdown máximo en muestras del par EUR/USD.\",\n  \"criterion\": \"higher_return_without_more_drawdown\",\n  \"tool\": \"run_experiment\",\n  \"arguments\": {\n    \"strategy\": \"ema\",\n    \"fast_window\": 15,\n    \"slow_window\": 45\n  }\n}",
+            "usage": {
+              "input_tokens": 269,
+              "output_tokens": 127,
+              "cached_input_tokens": 0,
+              "duration_ns": 21676404600,
+              "api_cost_usd": "0"
+            }
+          }
+        },
+        {
+          "schema_version": 1,
+          "at": "2026-10-19T10:14:37.414966+00:00",
+          "event": "assessment_precheck",
+          "data": {
+            "passed": true,
+            "closed_trades": {
+              "baseline": 69,
+              "candidate": 89
+            },
+            "strategies_without_closed_trades": []
+          }
+        },
+        {
+          "schema_version": 1,
+          "at": "2026-10-19T10:14:37.417237+00:00",
+          "event": "model_request",
+          "data": {
+            "stage": "assessment",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Analiza únicamente los resultados calculados adjuntos. Devuelve solo JSON. return_comparison y drawdown_comparison usan higher/lower/equal para la variante frente a la base. scope siempre es historical_sample_only. higher_return_without_more_drawdown: rentabilidad estrictamente mayor y drawdown no mayor. lower_drawdown_without_lower_return: drawdown estrictamente menor y rentabilidad no menor. Si cualquiera de las dos estrategias no tiene cierres, o ambas métricas empatan, el veredicto es inconclusive. Si cumple el criterio, supported_in_sample; si no lo cumple, not_supported_in_sample. Compara siempre variante frente a base."
+              },
+              {
+                "role": "user",
+                "content": "{\"source\": {\"name\": \"BCE\", \"sha256\": \"3cb610894f5098c82e39c476e1593033565565eb66570051c9304fbf708978e9\", \"first_date\": \"1999-01-04\", \"last_date\": \"2026-10-16\", \"observations\": 7116}, \"policy\": {\"pair\": \"EUR/USD\", \"baseline_strategy\": \"sma\", \"fast_window\": 20, \"slow_window\": 60, \"cost_rate\": \"0.001\", \"initial_capital\": \"1000\", \"allocation_fraction\": \"0.1\"}, \"proposal\": {\"hypothesis\": \"La estrategia EMA con ventanas rápidas de 15 y lentas de 45 podría generar una rentabilidad estrictamente superior a la SMA (ventanas 20, 60) sin incrementar el drawdown máximo en muestras del par EUR/USD.\", \"criterion\": \"higher_return_without_more_drawdown\", \"tool\": \"run_experiment\", \"arguments\": {\"strategy\": \"ema\", \"fast_window\": 15, \"slow_window\": 45}}, \"baseline\": {\"strategy\": \"SMA20/SMA60\", \"quote_currency\": \"USD\", \"final_equity\": \"1015.009330793108646845680949\", \"return_percent\": \"1.500933079310864684568094900\", \"max_drawdown_percent\": \"2.508037497608682586090015248\", \"total_costs\": \"14.05375080356005718685929246\", \"closed_trades\": 69, \"has_open_position\": false, \"rejected_entries\": 0}, \"candidate\": {\"strategy\": \"EMA15/EMA45\", \"quote_currency\": \"USD\", \"final_equity\": \"1000.689189570226542973038993\", \"return_percent\": \"0.068918957022654297303899300\", \"max_drawdown_percent\": \"4.500939144856642788030413284\", \"total_costs\": \"17.92722848928655055440314806\", \"closed_trades\": 89, \"has_open_position\": false, \"rejected_entries\": 0}, \"experiment_id\": \"91570c2ee9fa4b4b93e2861e72f775a5\"}"
+              }
+            ],
+            "schema": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "verdict": {
+                  "type": "string",
+                  "enum": [
+                    "supported_in_sample",
+                    "not_supported_in_sample",
+                    "inconclusive"
+                  ]
+                },
+                "return_comparison": {
+                  "type": "string",
+                  "enum": [
+                    "higher",
+                    "lower",
+                    "equal"
+                  ]
+                },
+                "drawdown_comparison": {
+                  "type": "string",
+                  "enum": [
+                    "higher",
+                    "lower",
+                    "equal"
+                  ]
+                },
+                "scope": {
+                  "type": "string",
+                  "enum": [
+                    "historical_sample_only"
+                  ]
+                }
+              },
+              "required": [
+                "verdict",
+                "return_comparison",
+                "drawdown_comparison",
+                "scope"
+              ]
+            }
+          }
+        },
+        {
+          "schema_version": 1,
+          "at": "2026-10-19T10:14:58.193265+00:00",
+          "event": "model_response",
+          "data": {
+            "stage": "assessment",
+            "model": "qwen3.5:4b",
+            "content": "{\n  \"verdict\": \"not_supported_in_sample\",\n  \"return_comparison\": \"lower\",\n  \"drawdown_comparison\": \"higher\",\n  \"scope\": \"historical_sample_only\"\n}",
+            "usage": {
+              "input_tokens": 857,
+              "output_tokens": 46,
+              "cached_input_tokens": 0,
+              "duration_ns": 20733263200,
+              "api_cost_usd": "0"
+            }
+          }
+        }
+      ],
+      "report": "criterion-not-met.md",
+      "report_sha256": "5f158f52ca650ea59a6b5271495e919ae7863247b4d89641bb2bc5e5d3323a2c"
+    }
+  ]
+}

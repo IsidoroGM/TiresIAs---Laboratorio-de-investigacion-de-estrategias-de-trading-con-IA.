@@ -1,0 +1,50 @@
+{
+  "requests": 6,
+  "correct_answers": 4,
+  "rejected_answers": 2,
+  "identical_answer_cases": 3,
+  "fully_correct_cases": 2,
+  "differences": [
+    {
+      "case": "insufficient_base_history",
+      "wording": 1,
+      "field": "verdict",
+      "expected": "inconclusive",
+      "received": "not_supported_in_sample"
+    },
+    {
+      "case": "insufficient_base_history",
+      "wording": 1,
+      "field": "drawdown_comparison",
+      "expected": "higher",
+      "received": "equal"
+    },
+    {
+      "case": "insufficient_base_history",
+      "wording": 2,
+      "field": "verdict",
+      "expected": "inconclusive",
+      "received": "not_supported_in_sample"
+    },
+    {
+      "case": "insufficient_base_history",
+      "wording": 2,
+      "field": "drawdown_comparison",
+      "expected": "higher",
+      "received": "equal"
+    }
+  ],
+  "artifacts_sha256": {
+    "answer-1.json": "bd065fe4d54a58aab409bb885a9a05ba1ee78dcfc1a86a4064ff4c266a7e1af2",
+    "answer-2.json": "f88fd20bfdca8b5311918d6cf9ac02c70afae8ef93340ddd32cc0d0910342fde",
+    "answer-3.json": "41ec672fc5bbb5bd2b182fa59d90a6aa4cfd21a90d58aa1fc496c378476239d9",
+    "answer-4.json": "4bf641979501eab1eab06fd313e98b182286eb59457180a881d0cb2b9e85a301",
+    "answer-5.json": "aaa729a71259f2bbe800e6951081054c4161cb9efddf908202bab4eeadf30379",
+    "answer-6.json": "d7950467cdc23e5b609d206505be0f8407d66226e793f9226e489a3f06a6ea32",
+    "ecb-first-40-observations.xml": "c8f0119fd08f552a00c28ba7b2bcd17e5fd75cd810fe159e0bed7d2005dafcd1",
+    "events.jsonl": "f5b3bd0e4a2e52b3635bc617997e60c00208d86c7f619b94f4a83588eae22339",
+    "plan.json": "47158180d5bb27cf1acb1075f0269ba77a71e1ef69c2a3d79d5680530c315364",
+    "provider.json": "b4cf86ad09ef1eaa2f126567a6bbfbb504bb847c531ea5604a730e22254daac5",
+    "summary.json": "fa2f839198c595f4f799fce1ed47091db112a3422c819c2b202a0eb85732c970"
+  }
+}

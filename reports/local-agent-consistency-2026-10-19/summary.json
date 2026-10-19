@@ -1,0 +1,10 @@
+{
+  "accepted": 4,
+  "total": 6,
+  "consistent_cases": 2,
+  "input_tokens": 5150,
+  "output_tokens": 275,
+  "elapsed_seconds": 137.513,
+  "api_cost_usd": "0",
+  "no_retries": true
+}

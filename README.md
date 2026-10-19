@@ -23,10 +23,11 @@ comprobada se describen en [data/README.md](data/README.md).
 
 ## Estado actual
 
-Las **FASES 0, 1 y 2 están completadas**. El motor incorpora costes, capital,
+Las **FASES 0, 1, 2 y 3 están completadas**. El motor incorpora costes, capital,
 drawdown, tamaño por porcentaje de capital, estrategias SMA/EMA configurables,
-comparación y sensibilidad local. La FASE 3 comenzará con la elección del
-proveedor, modelo y presupuesto para el agente investigador.
+comparación y sensibilidad local. La FASE 3 incorpora un primer
+investigador local mediante Ollama; OpenAI queda previsto como proveedor futuro
+desactivado. Consulta [la preparación y los controles](docs/LOCAL_AI.md).
 El laboratorio produce un informe
 reproducible para los cuatro pares. Están comprobados
 Python 3.14.8 de 64 bits, el entorno virtual `.venv`, su uso desde la terminal de
@@ -47,7 +48,8 @@ y salida. El backtest educativo gestiona una compra por par y registra cierres
 y posiciones abiertas con ejecución en la referencia siguiente y costes
 proporcionales configurables (cero por defecto).
 El módulo `trading_ai.metrics` resume los cierres e indica si queda una posición abierta.
-Todavía no hay API, dashboard, agentes ni conexión con un bróker. Los resultados
+El investigador se ejecuta por separado del motor. Todavía no hay dashboard
+ni conexión con un bróker. Los resultados
 actuales son ejercicios con referencias informativas, no validación de viabilidad.
 
 ## Trabajar con el entorno preparado
@@ -101,7 +103,7 @@ La salida esperada es:
 
 ```text
 Trading AI - laboratorio educativo
-FASE 2 - capital, costes y drawdown. Genera el informe con --report.
+FASE 2 completada - simulación educativa. Usa --report, --compare o --sensitivity.
 ```
 
 `-m` busca el paquete y ejecuta su archivo `__main__.py`. También puedes ejecutar
@@ -168,7 +170,7 @@ De vuelta en PowerShell, ejecuta:
 python -m pytest -q
 ```
 
-Resultado comprobado de la suite completa: **343 passed** (26 del lector, 34 de
+Resultado comprobado al cerrar FASE 2: **343 passed** (26 del lector, 34 de
 indicadores, 56 de estrategia, 37 del backtest, 24 de métricas, 19 de costes
 y 22 de capital/drawdown, 25 de tamaño, 21 de EMA, 47 del informe/CLI,
 15 de comparación y 17 de sensibilidad).
@@ -863,6 +865,14 @@ data/
     raw/
 docs/
     PROJECT_STATUS.md
+    TRADINGVIEW_PLAN.md
+    LOCAL_AI.md
+config/
+    ai.example.json
+scripts/
+    Install-LocalAI.ps1
+    Start-LocalAI.ps1
+    Stop-LocalAI.ps1
 tests/
     test_data.py
     test_indicators.py
@@ -876,6 +886,8 @@ tests/
     test_ema.py
     test_comparison.py
     test_sensitivity.py
+    test_ai.py
+    test_research.py
 reports/
     phase1.md
     costs-0_1pct.md
@@ -896,6 +908,9 @@ trading_ai/
     metrics.py
     reporting.py
     sensitivity.py
+    ai.py
+    experiments.py
+    research.py
 ```
 
 El paquete está directamente en la raíz del repositorio. `__init__.py` contiene
@@ -905,13 +920,37 @@ define `main(argv=None)`, con argumentos opcionales para pruebas y retorno `None
 La arquitectura prevista es un monolito modular, con responsabilidades separadas
 para datos, indicadores, señales, simulación e informes. Por ahora existe el
 lector de datos, los indicadores SMA/EMA, las señales de cruce, el backtest educativo
-y las métricas de cierres con sus pruebas; los demás módulos quedan
-para tareas posteriores.
+y las métricas de cierres con sus pruebas, además del investigador, su contrato
+de proveedores y la herramienta de experimentos controlados.
+
+## Primer investigador local (FASE 3 completada)
+
+Tras preparar Ollama y el modelo según [docs/LOCAL_AI.md](docs/LOCAL_AI.md):
+
+```powershell
+.\scripts\Start-LocalAI.ps1
+.\.venv\Scripts\python.exe -m trading_ai.research --check
+.\.venv\Scripts\python.exe -m trading_ai.research --pair EUR/USD
+```
+
+La IA propone una variante acotada, solicita un experimento y analiza los
+resultados del motor. Python valida los parámetros y contrasta las conclusiones.
+Si la base o la variante tiene cero cierres, Python marca la comparación como
+inconclusa, registra el motivo y omite el análisis de IA. El informe identifica
+si la conclusión procede de Python o de una respuesta de IA verificada.
+Se registran datos, hashes, parámetros, resultados, errores y consumo en `.local/`.
+La ejecución local no tiene cargos por consultas a una API. El contrato de
+proveedores permite añadir OpenAI posteriormente; esa opción está desactivada
+y requiere acordar credenciales y presupuesto antes de implementarla.
+
+Comprobación actual: **399 pruebas aprobadas**, incluidas las pruebas del
+investigador con respuestas simuladas y sin red. Una ejecución real con
+`qwen3.5:4b` en CPU completó propuesta, cálculo y análisis contrastado sobre EUR/USD.
 
 ## Evolución y controles
 
-En la FASE 3 se construirá un agente investigador que proponga hipótesis y
-solicite experimentos mediante herramientas controladas. En la FASE 4 se añadirá
+En la FASE 3 se incorporó un agente investigador que propone hipótesis y
+solicita experimentos mediante herramientas controladas. En la FASE 4 se añadirá
 optimización y validación fuera de muestra. Los cálculos y backtests verificarán
 las propuestas con resultados reproducibles; el juicio del LLM no sustituye
 esa evidencia. SMA20/SMA60 es el primer ejemplo educativo, no la estrategia
@@ -920,6 +959,20 @@ definitiva, y una propuesta de mejora puede ser rechazada por los resultados.
 La aplicación deberá distinguir entre backtesting histórico, paper trading y una
 posible ejecución real en una fase avanzada. Esta última requerirá una nueva
 autorización explícita y estará deshabilitada por defecto cuando se implemente.
+
+Se han acordado dos objetivos para la integración futura con TradingView:
+
+1. Generar estrategias Pine Script, probarlas sobre el gráfico y consultar
+   información actualizada de señales, operaciones simuladas y resultados.
+2. Recibir esa información mediante alertas e importaciones para registrar
+   compras, ventas, posiciones y capital virtual en nuestro simulador.
+
+El [plan de TradingView](docs/TRADINGVIEW_PLAN.md) detalla el flujo, las etapas y
+las condiciones de aceptación. Las consultas mostrarán la fuente y la fecha de
+actualización; se verificarán las capacidades oficiales antes de automatizarlas.
+Se usará el emulador de estrategias Pine y la cuenta virtual de Trading AI:
+las estrategias Pine no ejecutan órdenes en la cuenta Paper Trading integrada.
+Esta integración está planificada y todavía no está implementada.
 
 Los agentes accederán a herramientas controladas. Las órdenes deberán pasar por
 validaciones y un motor de riesgo cuyos límites no podrá modificar el LLM.
@@ -933,4 +986,5 @@ garantizan rentabilidad futura. Las credenciales nunca deben incluirse en Git.
 
 Consulta [el estado del proyecto](docs/PROJECT_STATUS.md) para conocer el último
 cierre de fase. Ese documento solo se actualiza al completar una fase; este
-README describe el uso del código actual.
+README describe el uso del código actual. Para la decisión posterior al cierre
+sobre TradingView, consulta [su plan de integración](docs/TRADINGVIEW_PLAN.md).

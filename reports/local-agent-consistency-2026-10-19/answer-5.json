@@ -1,0 +1,28 @@
+{
+  "case": "insufficient_base_history",
+  "wording": 1,
+  "expected": {
+    "verdict": "inconclusive",
+    "return_comparison": "lower",
+    "drawdown_comparison": "higher",
+    "scope": "historical_sample_only"
+  },
+  "parsed": {
+    "verdict": "not_supported_in_sample",
+    "return_comparison": "lower",
+    "drawdown_comparison": "equal",
+    "scope": "historical_sample_only"
+  },
+  "content": "{\n  \"verdict\": \"not_supported_in_sample\",\n  \"return_comparison\": \"lower\",\n  \"drawdown_comparison\": \"equal\",\n  \"scope\": \"historical_sample_only\"\n}",
+  "usage": {
+    "input_tokens": 805,
+    "output_tokens": 46,
+    "cached_input_tokens": 0,
+    "duration_ns": 20474761900,
+    "api_cost_usd": "0"
+  },
+  "accepted": false,
+  "error": "ValueError: El análisis de la IA no coincide con las métricas o con el criterio registrado.",
+  "model": "qwen3.5:4b",
+  "elapsed_seconds": 20.502
+}
