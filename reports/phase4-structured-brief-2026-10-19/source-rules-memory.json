@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "reference": {
+    "frozen_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2",
+    "frozen_sha256": "1f64b917cc88993ca496798ef98e4aadf8a266f7b7f3fce9cf45d6b86d61483a",
+    "manifest_sha256": "c432a2795917c500e0ee5fc474ed8f5a5b096346857a67c4b7f19b7f1a8dff42",
+    "development_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+    "outer_cutoff": "2020-01-01"
+  },
+  "entries": [
+    {
+      "spec": {
+        "entry": {
+          "conditions": [
+            {
+              "left": {
+                "kind": "ema",
+                "lag": 0,
+                "window": 20
+              },
+              "operator": "crosses_above",
+              "right": {
+                "kind": "sma",
+                "lag": 0,
+                "window": 60
+              }
+            }
+          ],
+          "match": "all"
+        },
+        "exit": {
+          "conditions": [
+            {
+              "left": {
+                "kind": "ema",
+                "lag": 1,
+                "window": 20
+              },
+              "operator": "crosses_below",
+              "right": {
+                "kind": "sma",
+                "lag": 1,
+                "window": 60
+              }
+            }
+          ],
+          "match": "all"
+        },
+        "name": "structured_candidate",
+        "schema_version": 1
+      },
+      "spec_sha256": "e4269c98cfef73b916c822ec7728b6a7c7d227bee3bea411857c807e214d43d0",
+      "origin": {
+        "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-ideas\\18fdf9274baa4b96973b8c2f67dab92b",
+        "sha256": {
+          "proposal.json": "7fdb4748fb0ae4c0a3bfb2f1c68b146fe0ba64b3c746db9e5d19f20455f763c7",
+          "events.jsonl": "59559d7d8c3ab09418212f5e684cb0172605f3a69a405d190753d282ad5eb5d4"
+        }
+      }
+    }
+  ]
+}

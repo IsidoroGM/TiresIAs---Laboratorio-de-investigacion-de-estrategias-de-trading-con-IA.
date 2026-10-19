@@ -1,0 +1,51 @@
+{
+  "source": {
+    "name": "BCE",
+    "sha256": "4b59d2f1877476051fd012517b657361e4bac75c2c0578361d9e257e9dd79496",
+    "first_date": "2025-01-01",
+    "last_date": "2025-01-22",
+    "observations": 22
+  },
+  "policy": {
+    "pair": "EUR/USD",
+    "baseline_strategy": "sma",
+    "fast_window": 2,
+    "slow_window": 4,
+    "cost_rate": "0.001",
+    "initial_capital": "1000",
+    "allocation_fraction": "0.1"
+  },
+  "proposal": {
+    "hypothesis": "Ejemplo artificial de preparación.",
+    "criterion": "higher_return_without_more_drawdown",
+    "tool": "run_experiment",
+    "arguments": {
+      "strategy": "ema",
+      "fast_window": 1,
+      "slow_window": 3
+    }
+  },
+  "baseline": {
+    "strategy": "SMA2/SMA4",
+    "quote_currency": "USD",
+    "final_equity": "826.9008846835818191136199802",
+    "return_percent": "-17.30991153164181808863800198",
+    "max_drawdown_percent": "17.30991153164181808863800198",
+    "total_costs": "0.3905172217052020565190711726",
+    "closed_trades": 3,
+    "has_open_position": false,
+    "rejected_entries": 0
+  },
+  "candidate": {
+    "strategy": "EMA1/EMA3",
+    "quote_currency": "USD",
+    "final_equity": "856.7561425440397504410301916",
+    "return_percent": "-14.32438574559602495589698084",
+    "max_drawdown_percent": "14.32438574559602495589698084",
+    "total_costs": "0.5095796349908983416447867194",
+    "closed_trades": 3,
+    "has_open_position": true,
+    "rejected_entries": 0
+  },
+  "experiment_id": "41fc066e5fa14200b29df6bd0639bac0"
+}

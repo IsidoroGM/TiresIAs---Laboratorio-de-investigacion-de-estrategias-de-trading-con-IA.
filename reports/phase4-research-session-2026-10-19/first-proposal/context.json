@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "state": {
+    "session": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research-sessions\\6fad6f1f23324fdb9e69c0ae71f77e1d",
+    "state": "propose_incomplete_or_invalid",
+    "active_or_interrupted": false,
+    "budget": {
+      "initial_ideas": 1,
+      "revisions": 1,
+      "model_requests": 5,
+      "backtests": 2,
+      "max_output_tokens_per_request": 384,
+      "automatic_retries": 0
+    },
+    "usage": {
+      "reserved_model_requests": 2,
+      "reserved_output_tokens": 768,
+      "input_tokens": 888,
+      "output_tokens": 395,
+      "api_cost_usd": "0",
+      "reserved_backtests": 0
+    },
+    "scope": "known_development_history_only"
+  },
+  "outcome": "Existing revision budget for the identical root idea was already consumed.",
+  "original_idea_repeated_exactly": true,
+  "idea_id": "a59f988282c8de81e0aff2695e55147cd024a6cd7d2ab55acba31be2aa826d7e",
+  "translation_status": "needs_clarification",
+  "model_usage": {
+    "idea": [
+      {
+        "input_tokens": 445,
+        "output_tokens": 228,
+        "cached_input_tokens": 0,
+        "duration_ns": 58950660700,
+        "api_cost_usd": "0"
+      }
+    ],
+    "translation": [
+      {
+        "input_tokens": 443,
+        "output_tokens": 167,
+        "cached_input_tokens": 0,
+        "duration_ns": 36548995100,
+        "api_cost_usd": "0"
+      }
+    ]
+  },
+  "new_simulations": 0,
+  "automatic_retries": 0,
+  "paid_api_calls": 0
+}

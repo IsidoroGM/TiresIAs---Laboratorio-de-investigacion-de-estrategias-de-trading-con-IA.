@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "status": "verified_not_authorized",
+  "executable": false,
+  "request_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-draft-requests\\1646833181eb44c386eb32872f245afa",
+  "request_sha256": "d6588e2c00396a6de0177c3b58f8830dfc4f65d9b3b3473b3ba9b805886e8e68",
+  "freshness_at_audit_only": {
+    "legacy_memory_matches_current": true,
+    "rules_memory_matches_current": true,
+    "rule_claims_match_current": true,
+    "session_claims_match_current": true
+  },
+  "archive_copies_and_originals_unchanged": 201,
+  "submitted": false,
+  "generation_ready": false,
+  "provider_context_fit_verified": false,
+  "remaining_gates": [
+    "atomic freshness check at future reservation",
+    "provider token limits",
+    "explicit controlled generation reservation and provenance"
+  ],
+  "new_usage": {
+    "model_requests": 0,
+    "api_cost_usd": "0",
+    "backtests": 0
+  },
+  "audit_script_sha256": "b4c5687d0bcd92977889581c866bf4ac297deb5d1bcdc41bf1c06ae9353ac70a"
+}

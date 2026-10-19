@@ -1,0 +1,18 @@
+{
+  "revision_run": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-revisions\\2d0040bbd7184c1d9cbde9a8eef3ce3b",
+  "error": null,
+  "status": "pending_semantic_review",
+  "child": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-revisions\\2d0040bbd7184c1d9cbde9a8eef3ce3b\\i\\a1bacf3e52c743c2b4088cad0c82ee45",
+  "new_usage": [
+    {
+      "input_tokens": 1289,
+      "output_tokens": 239,
+      "cached_input_tokens": 0,
+      "duration_ns": 62952430600,
+      "api_cost_usd": "0"
+    }
+  ],
+  "new_api_cost_usd": "0",
+  "backtests": 0,
+  "executable": false
+}

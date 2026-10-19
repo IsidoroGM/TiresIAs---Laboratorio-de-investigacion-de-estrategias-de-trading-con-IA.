@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "source": {
+    "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\discovery\\f99dc2258e2b4b3bb799af9a85dd8f2e",
+    "idea_id": "a59f988282c8de81e0aff2695e55147cd024a6cd7d2ab55acba31be2aa826d7e",
+    "reference": {
+      "frozen_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2",
+      "frozen_sha256": "1f64b917cc88993ca496798ef98e4aadf8a266f7b7f3fce9cf45d6b86d61483a",
+      "manifest_sha256": "c432a2795917c500e0ee5fc474ed8f5a5b096346857a67c4b7f19b7f1a8dff42",
+      "development_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+      "outer_cutoff": "2020-01-01"
+    },
+    "sha256": {
+      "idea.json": "0960596e1ae58aba59356c7c04dba542b45afe945aa053f2b00c5143b69110cd",
+      "events.jsonl": "fc97bcb160efdffef5fbe3f339d41423f846fab42360cc3c67e193e368acfa99"
+    }
+  },
+  "original_proposal": {
+    "title": "Cruces SMA/EMA con ventana BCE fija",
+    "hypothesis": "El cambio de referencia a la serie BCE podría mejorar la señal de cruce sin alterar las ventanas.",
+    "entry_rule": "Entrar largo cuando EMA cruza por arriba a SMA en el siguiente observación disponible.",
+    "exit_rule": "Salir al cierre del día o al siguiente cruce inverso, sin apalancamiento ni corto plazo.",
+    "parameters": [
+      {
+        "name": "reference_series",
+        "value": 1
+      },
+      {
+        "name": "fast_window",
+        "value": 20
+      },
+      {
+        "name": "slow_window",
+        "value": 60
+      }
+    ],
+    "data_requirements": {
+      "reference_series": true,
+      "ohlc": false,
+      "volume": false,
+      "intraday": false,
+      "other": false
+    }
+  },
+  "status": "needs_clarification",
+  "reason": "La idea original contiene ambigüedades y contradicciones respecto al esquema definido: 1) La regla de entrada menciona 'el siguiente observación disponible', pero el motor opera basándose en la observación actual para mantener posiciones; se requiere clarificar si la señal debe confirmarse en la siguiente barra o ejecutarse inmediatamente. 2) La condición de salida 'al cierre del día' contradice los requisitos de datos que excluyen intradía y volumen, ya que no existe un 'cierre del día' en una serie sin OHLC ni volumen. 3) El parámetro 'reference_series' con valor 1 es ambiguo: según el texto",
+  "missing_declared_inputs": [],
+  "model_translation": {
+    "status": "needs_clarification",
+    "reason": "La idea original contiene ambigüedades y contradicciones respecto al esquema definido: 1) La regla de entrada menciona 'el siguiente observación disponible', pero el motor opera basándose en la observación actual para mantener posiciones; se requiere clarificar si la señal debe confirmarse en la siguiente barra o ejecutarse inmediatamente. 2) La condición de salida 'al cierre del día' contradice los requisitos de datos que excluyen intradía y volumen, ya que no existe un 'cierre del día' en una serie sin OHLC ni volumen. 3) El parámetro 'reference_series' con valor 1 es ambiguo: según el texto",
+    "spec": null
+  },
+  "spec": null,
+  "spec_sha256": null,
+  "validation_scope": "source_link_and_rule_structure_only",
+  "semantic_equivalence_verified": false,
+  "executable": false,
+  "calculated_results": null,
+  "provider": {
+    "provider": "ollama",
+    "model": "qwen3.5:4b",
+    "model_digest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04",
+    "base_url": "http://127.0.0.1:11435",
+    "api_cost_usd": "0",
+    "context_tokens": 4096,
+    "output_tokens": 384,
+    "gpu_layers": 0,
+    "timeout_seconds": 180,
+    "think": false,
+    "temperature": 0
+  },
+  "model_requests": 1,
+  "usage": [
+    {
+      "input_tokens": 443,
+      "output_tokens": 167,
+      "cached_input_tokens": 0,
+      "duration_ns": 36222636800,
+      "api_cost_usd": "0"
+    }
+  ],
+  "api_cost_usd": "0"
+}

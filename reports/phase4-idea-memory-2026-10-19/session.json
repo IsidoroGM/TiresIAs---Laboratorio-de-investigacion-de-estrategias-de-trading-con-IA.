@@ -1,0 +1,55 @@
+{
+  "schema_version": 2,
+  "protocol": "bounded_research_session_v2",
+  "session_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research-sessions\\869b4d81509e490399a4e5d102a8235b",
+  "reference": {
+    "frozen_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2",
+    "frozen_sha256": "1f64b917cc88993ca496798ef98e4aadf8a266f7b7f3fce9cf45d6b86d61483a",
+    "manifest_sha256": "c432a2795917c500e0ee5fc474ed8f5a5b096346857a67c4b7f19b7f1a8dff42",
+    "development_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+    "outer_cutoff": "2020-01-01"
+  },
+  "ai_config": {
+    "provider": "ollama",
+    "model": "qwen3.5:4b",
+    "base_url": "http://127.0.0.1:11435",
+    "timeout_seconds": 180,
+    "context_tokens": 4096,
+    "output_tokens": 384,
+    "gpu_layers": 0
+  },
+  "question": "Propón una hipótesis distinta de variar ventanas de cruces SMA/EMA. Define entrada y salida, sin afirmar resultados no calculados.",
+  "memory_sha256": "07141af23c3ac3e10e6a64bbab633257c16d28ec16875c5e3e37e9e875b6f8b0",
+  "budget": {
+    "initial_ideas": 1,
+    "revisions": 1,
+    "model_requests": 5,
+    "backtests": 2,
+    "max_output_tokens_per_request": 384,
+    "automatic_retries": 0
+  },
+  "scope": "known_development_history_only",
+  "technical_review_required": true,
+  "outer_evaluation_allowed": false,
+  "code_sha256": {
+    "data.py": "286b822fbb6dd5e46f65f64bb387bb7f7d246c7c9c17dc523a52d7ce3e7dfd94",
+    "indicators.py": "13cce9a32399a309694a83f52c8bdb93b0f86075612c825d5be3d9bfc2c366a3",
+    "strategies.py": "9607a659a352e31f2192c237eaecc8191ba90f9b2e78bcaa3919cfaa3489527e",
+    "backtesting.py": "81e6a34dd715d192c730fe407c7cdd037e2340e387e4ea37c90b0549d07a3c4f",
+    "metrics.py": "3d85bab9c1ee6da88a632a08b3a600f12ce7ee9335fbce1b4c56e0cfc865ec2f",
+    "experiments.py": "57c5638f293d9e4c5102a091227970ac1d2fd3b9774fa3f839fd6ed044a26e4d",
+    "ai.py": "9c43b2f13b1b9264810cb1710c081acc0c476071870842617c9a451cb58cc1f3",
+    "research.py": "7e53374a3768800de2d75be9bc67d2299d16620c6b4fe92a3438d1f4c0c63340",
+    "validation.py": "ac2aa655af324a352107753e3b53e0aa986958aeb9e2e2374c4791c3a8afb1b6",
+    "holdout.py": "a048adf93b2a58b3177e80d1077597a0bd849932fd42f714326a43fc68fecbb2",
+    "rule_planning.py": "ec26a75932f10db35fc2ebdb4ef56a1062eba0059a621125f8d8d2166bb6708d",
+    "rules.py": "09bbc9d25ed27d4e27961dd0431c95a73e10f21aa8500e47430373a93c500361",
+    "formalization.py": "43eea12e59e441712914f5449c66a410d33928dcbd2c5de31ec9d89f8d795098",
+    "discovery.py": "b680ab835f96dc1e917760309a19aad93bb51beee70eaf9d2dfb96da0fd211a2",
+    "robustness.py": "906ea3f6c07d5f5aeac03d049c0852b9d863e29a3864ac61009fa811a0a11ae5",
+    "rule_execution.py": "0aeeeb9fb859e9d26e2225adbe16990ddaaed5cb7661d7284a66b5f469b8f218",
+    "agent_feedback.py": "bf191f16f50e41e86eed10ea9b8c742928de346abb9a386a4c24620a1ea06560",
+    "research_session.py": "64adb3617b31d16546443488fc992b8a8a43862f6896ff25ec38fcd795961015",
+    "idea_memory.py": "dbf1d5ef1f32c9df3e945da9e1e74491aa8c3a7fbcb92f0c93187558c6193f40"
+  }
+}

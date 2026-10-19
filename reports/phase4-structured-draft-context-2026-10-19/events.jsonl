@@ -1,0 +1,2 @@
+{"schema_version": 1, "at": "2026-10-19T17:06:57.908942+00:00", "event": "structured_draft_context_started", "data": {"frozen_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2"}}
+{"schema_version": 1, "at": "2026-10-19T17:07:02.623602+00:00", "event": "structured_draft_context_completed", "data": {"sha256": "04ab2a19f1e6e5ee6d6539c738d082994044b9f9fc457e38eb41195e14cf3444", "status": "context_snapshot_only", "executable": false}}

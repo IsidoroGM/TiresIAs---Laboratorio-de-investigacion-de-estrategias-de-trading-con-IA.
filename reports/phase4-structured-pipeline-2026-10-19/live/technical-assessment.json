@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "proposal_sha256": "7fdb4748fb0ae4c0a3bfb2f1c68b146fe0ba64b3c746db9e5d19f20455f763c7",
+  "spec_sha256": "e4269c98cfef73b916c822ec7728b6a7c7d227bee3bea411857c807e214d43d0",
+  "reviewer": "Codex: revisión separada del investigador local",
+  "decision": "needs_clarification",
+  "checks": {
+    "entry_matches_hypothesis": true,
+    "exit_matches_hypothesis": false,
+    "windows_understood": true,
+    "lags_understood": true,
+    "data_sufficient": true,
+    "no_unresolved_ambiguity": false
+  },
+  "rationale": "Entrada EMA20/SMA60 explícita. La salida usa ambas series con lag=1: retrasa la señal bajista una observación, además de la ejecución posterior del motor. La hipótesis no explica ese retardo adicional. No se presume equivalencia ni se cambia lag a cero para aprobar o simular."
+}

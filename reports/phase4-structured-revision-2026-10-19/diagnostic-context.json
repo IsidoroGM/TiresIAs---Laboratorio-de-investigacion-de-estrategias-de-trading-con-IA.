@@ -1,0 +1,67 @@
+{
+  "parent": {
+    "run": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-diagnostics\\a89e46ae841b44b7a74f7f3da8220045",
+    "diagnostics": {
+      "title_characters": 60,
+      "hypothesis_characters": 159,
+      "title_at_character_limit": true,
+      "hypothesis_at_character_limit": false,
+      "operand_lags": {
+        "entry": [
+          0,
+          0
+        ],
+        "exit": [
+          1,
+          1
+        ]
+      },
+      "condition_truth_after_warmup": {
+        "entry": "unknown",
+        "exit": "unknown"
+      },
+      "earliest_signal_index": 61,
+      "earliest_execution_index": 62,
+      "observations": 5375,
+      "defined_signal_observations": 5314,
+      "entry_ruled_out": false,
+      "findings": [
+        "different_entry_exit_lags"
+      ],
+      "scope": "structural_properties_and_text_hints_only_not_performance_or_semantic_proof"
+    }
+  },
+  "child": {
+    "run": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-diagnostics\\6f704ced3b334455879a5fad097f7f51",
+    "diagnostics": {
+      "title_characters": 60,
+      "hypothesis_characters": 159,
+      "title_at_character_limit": true,
+      "hypothesis_at_character_limit": false,
+      "operand_lags": {
+        "entry": [
+          0,
+          0
+        ],
+        "exit": [
+          0,
+          0
+        ]
+      },
+      "condition_truth_after_warmup": {
+        "entry": "unknown",
+        "exit": "unknown"
+      },
+      "earliest_signal_index": 60,
+      "earliest_execution_index": 61,
+      "observations": 5375,
+      "defined_signal_observations": 5315,
+      "entry_ruled_out": false,
+      "findings": [
+        "hypothesis_has_no_sentence_terminator",
+        "hypothesis_ends_with_linking_word"
+      ],
+      "scope": "structural_properties_and_text_hints_only_not_performance_or_semantic_proof"
+    }
+  }
+}

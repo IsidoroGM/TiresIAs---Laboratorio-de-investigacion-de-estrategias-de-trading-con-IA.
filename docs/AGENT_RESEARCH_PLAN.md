@@ -135,9 +135,30 @@ simulada. La lectura exige coincidencia exacta con las conclusiones de Python.
 
 Quedan pendientes:
 
-1. Integrar las [reformulaciones y lecturas contrastadas](AGENT_FEEDBACK.md) en
-   un ciclo de investigación con presupuesto global por sesión. Estas tareas
-   conservan antecedentes y límites por origen, sin bucles automáticos.
+1. Comprobar propuestas estructuradas y su reformulación acotada conservando
+   descartes y linaje. El [flujo estructurado](STRUCTURED_WORKFLOW.md) ya integra
+   revisión, plan y sesión: **993 pruebas aprobadas**, incluidas 174 nuevas desde
+   la entrada estructurada inicial. Una demostración artificial completó dos
+   simulaciones; la propuesta local con retardo no explicado quedó pendiente.
+   Véase [evidencia](../reports/phase4-structured-pipeline-2026-10-19.md).
+   La reformulación admite un intento por origen y bloquea cadenas. El
+   [controlador v2](RESEARCH_SESSION.md) y sus evidencias permanecen conservados.
+   Las ayudas de diagnóstico revisan propiedades estáticas; no aprueban la
+   hipótesis ni predicen rentabilidad. La descripción de la hija local sigue
+   incompleta y no se ha simulado ni reformulado de nuevo.
+   Una ayuda mecánica describe las reglas completas desde sus campos exactos,
+   con origen Python explícito. Conserva la hipótesis original sin completar
+   ni aprobar: [comprobación](../reports/phase4-structured-brief-2026-10-19.md).
+   El [borrador compacto experimental](STRUCTURED_DRAFTS.md) elimina prosa libre
+   de su contrato y describe las reglas con origen Python. Su comprobación es
+   sin modelo y no está integrada en propuestas o sesiones.
+   Ya puede prepararse por separado un contexto con ideas y reservas
+   compartidas del desarrollo, incluidas las interrumpidas; permanece sin
+   permisos de generación. Una memoria complementaria ya conserva decisiones
+   y motivos de las revisiones de sesiones registradas, sin leer su resultado
+   financiero o reabrirlas. Ya se prepara una petición compacta inspeccionable,
+   sin enviarla, truncar motivos o habilitar generación. Faltan comprobación de
+   vigencia, límites reales del proveedor y reserva de la generación futura.
 2. Ampliar las capacidades solo con comprobaciones de causalidad, calentamiento
    y ejecución posterior. Nunca ejecutar código libre generado.
 3. Extender la investigación de desarrollo conservando descartes y errores.

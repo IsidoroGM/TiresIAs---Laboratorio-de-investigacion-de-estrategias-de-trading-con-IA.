@@ -1,0 +1,24 @@
+{
+  "run": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-draft-requests\\1646833181eb44c386eb32872f245afa",
+  "memory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-review-memory\\ad12b5680d6a4cb3aab5fa7d6f0fec7a",
+  "request_bytes": 10970,
+  "coverage": {
+    "legacy_ideas": 4,
+    "registered_rules": 2,
+    "consumed_claims": 2,
+    "session_reviews": 2
+  },
+  "token_count": null,
+  "provider_context_fit_verified": false,
+  "new_usage": {
+    "model_requests": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "api_cost_usd": "0",
+    "backtests": 0
+  },
+  "protected_files_unchanged": 29,
+  "consumed_revision_reused": false,
+  "pending_session_reopened": false,
+  "submitted": false
+}

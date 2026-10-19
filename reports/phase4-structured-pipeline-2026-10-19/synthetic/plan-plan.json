@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "protocol": "structured_development_plan_v1",
+  "stage": "registered_not_run",
+  "review": {
+    "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\s\\64afbf4ec9e74453b671eb6ba428392d\\a\\r\\bf8d6121ce5d4eb7848a203f8dbf6366",
+    "sha256": {
+      "review.json": "cd39a0b896f60c15c2182c5a73b7350e8b89205ac924e2d412e734af1091deed",
+      "events.jsonl": "df6e4d51beda086bd833b67bd667622e485f990b6acce0f201d7c41be74b07f4"
+    }
+  },
+  "proposal_id": "5450e2634c1f437dcbe643a55573fd7300242b660c6343881cc6291d17592496",
+  "reference": {
+    "frozen_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\f\\0bea6372fff74cf1b6d1284c7538e633",
+    "frozen_sha256": "e2126dacd12da5ce76d33b8af18ba100177527fe46f40a055d78975f9659f6d1",
+    "manifest_sha256": "6197ea8592cd568362e65f115516b9557fe92d396e3a524e59ef09af4ee1e55b",
+    "development_sha256": "4b59d2f1877476051fd012517b657361e4bac75c2c0578361d9e257e9dd79496",
+    "outer_cutoff": "2025-01-23"
+  },
+  "candidate": {
+    "spec": {
+      "entry": {
+        "conditions": [
+          {
+            "left": {
+              "kind": "reference",
+              "lag": 0
+            },
+            "operator": "gt",
+            "right": {
+              "kind": "constant",
+              "value": "1"
+            }
+          }
+        ],
+        "match": "all"
+      },
+      "exit": {
+        "conditions": [
+          {
+            "left": {
+              "kind": "reference",
+              "lag": 0
+            },
+            "operator": "lte",
+            "right": {
+              "kind": "constant",
+              "value": "1"
+            }
+          }
+        ],
+        "match": "all"
+      },
+      "name": "structured_candidate",
+      "schema_version": 1
+    },
+    "spec_sha256": "8730076caaab37fadd9ace1574d62c58691eb38e56b0d405bf2da100cb8e4c73"
+  },
+  "baseline": {
+    "strategy": "sma",
+    "fast_window": 2,
+    "slow_window": 4
+  },
+  "policy": {
+    "pair": "EUR/USD",
+    "baseline_strategy": "sma",
+    "fast_window": 2,
+    "slow_window": 4,
+    "cost_rate": "0.001",
+    "initial_capital": "1000",
+    "allocation_fraction": "0.1"
+  },
+  "criterion": "higher_return_without_more_drawdown",
+  "assessment_rules": {
+    "implementation": "experiments.expected_assessment",
+    "minimum_closed_trades_each": 1,
+    "both_metrics_equal": "inconclusive"
+  },
+  "data": {
+    "name": "BCE",
+    "sha256": "4b59d2f1877476051fd012517b657361e4bac75c2c0578361d9e257e9dd79496",
+    "first_date": "2025-01-01",
+    "last_date": "2025-01-22",
+    "observations": 22,
+    "file": "development.xml"
+  },
+  "budget": {
+    "candidate_backtests": 1,
+    "baseline_backtests": 1,
+    "max_model_requests": 0,
+    "max_parameter_variations": 0,
+    "automatic_retries": 0
+  },
+  "execution_policy": {
+    "accounts": "independent_per_partition_and_pair",
+    "carry_positions": false,
+    "carry_signals": false,
+    "indicator_warmup": "inside_each_partition"
+  },
+  "execution_timing": "next_observation",
+  "direction": "long_only",
+  "executable": false,
+  "scope": "known_development_history_only",
+  "outer_evaluation_allowed": false,
+  "calculated_results": null,
+  "model_requests": 0,
+  "api_cost_usd": "0",
+  "code_sha256": {
+    "data.py": "286b822fbb6dd5e46f65f64bb387bb7f7d246c7c9c17dc523a52d7ce3e7dfd94",
+    "indicators.py": "13cce9a32399a309694a83f52c8bdb93b0f86075612c825d5be3d9bfc2c366a3",
+    "strategies.py": "9607a659a352e31f2192c237eaecc8191ba90f9b2e78bcaa3919cfaa3489527e",
+    "backtesting.py": "81e6a34dd715d192c730fe407c7cdd037e2340e387e4ea37c90b0549d07a3c4f",
+    "metrics.py": "3d85bab9c1ee6da88a632a08b3a600f12ce7ee9335fbce1b4c56e0cfc865ec2f",
+    "experiments.py": "57c5638f293d9e4c5102a091227970ac1d2fd3b9774fa3f839fd6ed044a26e4d",
+    "ai.py": "9c43b2f13b1b9264810cb1710c081acc0c476071870842617c9a451cb58cc1f3",
+    "research.py": "7e53374a3768800de2d75be9bc67d2299d16620c6b4fe92a3438d1f4c0c63340",
+    "validation.py": "ac2aa655af324a352107753e3b53e0aa986958aeb9e2e2374c4791c3a8afb1b6",
+    "holdout.py": "a048adf93b2a58b3177e80d1077597a0bd849932fd42f714326a43fc68fecbb2",
+    "rule_planning.py": "ec26a75932f10db35fc2ebdb4ef56a1062eba0059a621125f8d8d2166bb6708d",
+    "rules.py": "09bbc9d25ed27d4e27961dd0431c95a73e10f21aa8500e47430373a93c500361",
+    "formalization.py": "43eea12e59e441712914f5449c66a410d33928dcbd2c5de31ec9d89f8d795098",
+    "discovery.py": "b680ab835f96dc1e917760309a19aad93bb51beee70eaf9d2dfb96da0fd211a2",
+    "robustness.py": "906ea3f6c07d5f5aeac03d049c0852b9d863e29a3864ac61009fa811a0a11ae5",
+    "idea_memory.py": "dbf1d5ef1f32c9df3e945da9e1e74491aa8c3a7fbcb92f0c93187558c6193f40",
+    "structured_ideas.py": "66bebb4f2077bd77d622e256420e87090325cd03ba346d545f6b92def5f5009a",
+    "structured_planning.py": "70e7b127ea9af5a1c712cd87f08090458bc45e0f3757a24660765ceb9fea8968"
+  }
+}

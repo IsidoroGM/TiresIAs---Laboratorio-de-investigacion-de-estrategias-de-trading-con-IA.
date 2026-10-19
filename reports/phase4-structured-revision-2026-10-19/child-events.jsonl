@@ -1,0 +1,2 @@
+{"schema_version": 1, "at": "2026-10-19T16:12:11.335412+00:00", "event": "structured_diagnostics_started", "data": {"proposal_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-revisions\\2d0040bbd7184c1d9cbde9a8eef3ce3b\\i\\a1bacf3e52c743c2b4088cad0c82ee45"}}
+{"schema_version": 1, "at": "2026-10-19T16:12:12.551385+00:00", "event": "structured_diagnostics_completed", "data": {"sha256": "c3ea69ca36362fd5a2246a9111e09afd00092e2fee6f0eef7fdf459b365cf79d", "status": "review_aid_only", "executable": false}}

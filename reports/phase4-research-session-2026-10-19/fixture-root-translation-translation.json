@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "source": {
+    "directory": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\a\\i\\ef725001a6f547e0920f21706b112d4f",
+    "idea_id": "1aa63558f04ea4f9c5624af1ebf5c196310b3afadb4dfa2d37c6308985411dab",
+    "reference": {
+      "frozen_dir": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\frozen\\4a9b80cc8fe444d88fdcd07a89f437f6",
+      "frozen_sha256": "50938ecd2be35fd1b1960770ee07ef53b7698264e50d7fecdf643ffa7184c93c",
+      "manifest_sha256": "4f97fd51110a84e093701252b3ffbfeee83247a15d67dc0a493dfa1398ee2b1d",
+      "development_sha256": "4b59d2f1877476051fd012517b657361e4bac75c2c0578361d9e257e9dd79496",
+      "outer_cutoff": "2025-01-23"
+    },
+    "sha256": {
+      "idea.json": "6552b16bd79cace3c8277e58b1638756df15941aa850051b5b02ad27d0f877d8",
+      "events.jsonl": "f5eaec56e7cf1e2d3d86019c4d5e7ad91aee5b41f0ac74538a55b26af2560618"
+    }
+  },
+  "original_proposal": {
+    "title": "Idea sintética",
+    "hypothesis": "Contrastar una regla distinta de los cruces.",
+    "entry_rule": "Referencia estrictamente mayor que umbral.",
+    "exit_rule": "Referencia menor o igual que umbral. O cerrar al final del periodo.",
+    "parameters": [
+      {
+        "name": "threshold",
+        "value": 1
+      }
+    ],
+    "data_requirements": {
+      "reference_series": true,
+      "ohlc": false,
+      "volume": false,
+      "intraday": false,
+      "other": false
+    }
+  },
+  "status": "needs_clarification",
+  "reason": "Alternativas sin decidir.",
+  "missing_declared_inputs": [],
+  "model_translation": {
+    "status": "needs_clarification",
+    "reason": "Alternativas sin decidir.",
+    "spec": null
+  },
+  "spec": null,
+  "spec_sha256": null,
+  "validation_scope": "source_link_and_rule_structure_only",
+  "semantic_equivalence_verified": false,
+  "executable": false,
+  "calculated_results": null,
+  "provider": {
+    "provider": "test",
+    "model": "offline"
+  },
+  "model_requests": 1,
+  "usage": [
+    {
+      "input_tokens": 25,
+      "output_tokens": 40,
+      "api_cost_usd": "0"
+    }
+  ],
+  "api_cost_usd": "0"
+}

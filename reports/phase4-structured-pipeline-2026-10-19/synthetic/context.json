@@ -1,0 +1,41 @@
+{
+  "kind": "artificial_fixture_not_market_evidence",
+  "demo": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206",
+  "frozen": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\f\\0bea6372fff74cf1b6d1284c7538e633",
+  "proposal": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\i\\91b4c3b0f8364bde98f0b704f4b6eb04",
+  "session": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\s\\64afbf4ec9e74453b671eb6ba428392d",
+  "attempt": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\s\\64afbf4ec9e74453b671eb6ba428392d\\attempts\\efed4f19b95e4caebfb764a90e88233f",
+  "execution": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\s\\64afbf4ec9e74453b671eb6ba428392d\\a\\x\\7aef6b47cae848868a508b7c0218d913",
+  "status": {
+    "session": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\s\\64afbf4ec9e74453b671eb6ba428392d",
+    "state": "completed",
+    "assessment": {
+      "criterion_status": "met",
+      "return_comparison": "higher",
+      "drawdown_comparison": "lower",
+      "scope": "known_development_history_only",
+      "origin": "python"
+    },
+    "active_or_interrupted": false,
+    "budget": {
+      "source_model_requests": 1,
+      "new_model_requests": 0,
+      "backtests": 2,
+      "parameter_variations": 0,
+      "automatic_retries": 0
+    },
+    "usage": {
+      "source_model_requests": 1,
+      "new_model_requests": 0,
+      "source_input_tokens": 0,
+      "source_output_tokens": 0,
+      "source_api_cost_usd": "0",
+      "new_api_cost_usd": "0",
+      "reserved_backtests": 2
+    },
+    "scope": "known_development_history_only"
+  },
+  "structured_execution_backtests": 2,
+  "real_model_calls": 0,
+  "note": "La preparación de la fixture también calcula ejemplos; el contador de dos corresponde solo al ejecutor estructurado."
+}

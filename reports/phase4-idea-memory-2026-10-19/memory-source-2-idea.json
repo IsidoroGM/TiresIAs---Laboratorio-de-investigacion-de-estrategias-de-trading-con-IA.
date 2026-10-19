@@ -1,0 +1,147 @@
+{
+  "schema_version": 2,
+  "idea_id": "5b3da89c8ccac17ea2b9aeb0185ab2dbc578c47610db1739f594d7cbce053a45",
+  "lineage": {
+    "schema_version": 1,
+    "root_idea_id": "a59f988282c8de81e0aff2695e55147cd024a6cd7d2ab55acba31be2aa826d7e",
+    "depth": 1,
+    "parent_translation": {
+      "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\formalization\\0199d06d32b649139c0ad9b96c559d5b",
+      "sha256": {
+        "translation.json": "b5dfad1148faec6c015f8e76520efe7d02324faf6666cc1b5743e8fcd5c1fe22",
+        "events.jsonl": "30eb9b3390874001172504458d17550ba5084657070aab623da0fff37d0a3d4f"
+      }
+    },
+    "parent_idea": {
+      "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\discovery\\f99dc2258e2b4b3bb799af9a85dd8f2e",
+      "idea_id": "a59f988282c8de81e0aff2695e55147cd024a6cd7d2ab55acba31be2aa826d7e",
+      "reference": {
+        "frozen_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2",
+        "frozen_sha256": "1f64b917cc88993ca496798ef98e4aadf8a266f7b7f3fce9cf45d6b86d61483a",
+        "manifest_sha256": "c432a2795917c500e0ee5fc474ed8f5a5b096346857a67c4b7f19b7f1a8dff42",
+        "development_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+        "outer_cutoff": "2020-01-01"
+      },
+      "sha256": {
+        "idea.json": "0960596e1ae58aba59356c7c04dba542b45afe945aa053f2b00c5143b69110cd",
+        "events.jsonl": "fc97bcb160efdffef5fbe3f339d41423f846fab42360cc3c67e193e368acfa99"
+      }
+    },
+    "parent_proposal": {
+      "title": "Cruces SMA/EMA con ventana BCE fija",
+      "hypothesis": "El cambio de referencia a la serie BCE podría mejorar la señal de cruce sin alterar las ventanas.",
+      "entry_rule": "Entrar largo cuando EMA cruza por arriba a SMA en el siguiente observación disponible.",
+      "exit_rule": "Salir al cierre del día o al siguiente cruce inverso, sin apalancamiento ni corto plazo.",
+      "parameters": [
+        {
+          "name": "reference_series",
+          "value": 1
+        },
+        {
+          "name": "fast_window",
+          "value": 20
+        },
+        {
+          "name": "slow_window",
+          "value": 60
+        }
+      ],
+      "data_requirements": {
+        "reference_series": true,
+        "ohlc": false,
+        "volume": false,
+        "intraday": false,
+        "other": false
+      }
+    }
+  },
+  "status": "pending_tool_mapping",
+  "executable": false,
+  "proposal": {
+    "title": "Entrada SMA/EMA BCE confirmada",
+    "hypothesis": "Confirmar cruce EMA/SMA en la siguiente observación para entrada larga.",
+    "entry_rule": "Abrir posición larga si EMA cruza por arriba a SMA en el próximo dato.",
+    "exit_rule": "Cerrar al siguiente cruce inverso o al final del periodo de datos.",
+    "parameters": [
+      {
+        "name": "reference_series",
+        "value": 1
+      },
+      {
+        "name": "fast_window",
+        "value": 20
+      },
+      {
+        "name": "slow_window",
+        "value": 60
+      }
+    ],
+    "data_requirements": {
+      "reference_series": true,
+      "ohlc": false,
+      "volume": false,
+      "intraday": false,
+      "other": false
+    }
+  },
+  "missing_declared_inputs": [],
+  "validation_scope": "format_and_bounds_only_not_strategy_correctness",
+  "reference": {
+    "frozen_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2",
+    "frozen_sha256": "1f64b917cc88993ca496798ef98e4aadf8a266f7b7f3fce9cf45d6b86d61483a",
+    "manifest_sha256": "c432a2795917c500e0ee5fc474ed8f5a5b096346857a67c4b7f19b7f1a8dff42",
+    "development_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+    "outer_cutoff": "2020-01-01"
+  },
+  "development_context": {
+    "pair": "EUR/USD",
+    "data": {
+      "name": "BCE",
+      "sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+      "first_date": "1999-01-04",
+      "last_date": "2019-12-31",
+      "observations": 5375
+    },
+    "available_inputs": [
+      "reference_series"
+    ],
+    "execution_constraints": {
+      "direction": "long_only",
+      "execution": "next_observation",
+      "controls": {
+        "pair": "EUR/USD",
+        "baseline_strategy": "sma",
+        "fast_window": 20,
+        "slow_window": 60,
+        "cost_rate": "0.001",
+        "initial_capital": "1000",
+        "allocation_fraction": "0.1"
+      }
+    }
+  },
+  "provider": {
+    "provider": "ollama",
+    "model": "qwen3.5:4b",
+    "model_digest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04",
+    "base_url": "http://127.0.0.1:11435",
+    "api_cost_usd": "0",
+    "context_tokens": 4096,
+    "output_tokens": 384,
+    "gpu_layers": 0,
+    "timeout_seconds": 180,
+    "think": false,
+    "temperature": 0
+  },
+  "usage": [
+    {
+      "input_tokens": 760,
+      "output_tokens": 193,
+      "cached_input_tokens": 0,
+      "duration_ns": 79871094000,
+      "api_cost_usd": "0"
+    }
+  ],
+  "api_cost_usd": "0",
+  "model_requests": 1,
+  "calculated_results": null
+}

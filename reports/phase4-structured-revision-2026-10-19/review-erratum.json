@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "review": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-sessions\\bb2880ffb7c74c37abcece9c5275ffc2\\a\\r\\ca94d33c602c4e338b152a2676011f24\\review.json",
+  "review_sha256": "326f02698fa30618c65c5de623a82c81cbc727ea3592a3da45df52e722de05f3",
+  "correction": "La justificación de revisión decía 160 caracteres para la hipótesis. El recuento exacto es 159; el límite es 160.",
+  "title_characters": 60,
+  "hypothesis_characters": 159,
+  "decision_unchanged": "needs_clarification: el texto termina incompleto; no se modifica la revisión sellada ni se reabre."
+}

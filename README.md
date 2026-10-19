@@ -1075,6 +1075,60 @@ automáticos, simulaciones adicionales ni permisos para aprobar sus reglas.
 [prueba local](reports/phase4-agent-feedback-2026-10-19.md) conservó la propuesta
 anterior y una reformulación todavía pendiente, sin traducirla ni simularla.
 
+El [controlador de sesiones](docs/RESEARCH_SESSION.md) conecta idea, traducción,
+una posible reformulación, revisión técnica, simulación y lectura contrastada.
+Fija un presupuesto global por sesión de cinco consultas y dos simulaciones,
+sin reintentos automáticos. La revisión sigue separada del modelo.
+**761 pruebas aprobadas**, incluidas 30 nuevas. La
+[comprobación](reports/phase4-research-session-2026-10-19.md) conserva un ciclo
+artificial completo y una sesión real preparada sin consultas ni simulaciones.
+El [primer inicio operativo](reports/phase4-session-proposal-2026-10-19.md)
+se detuvo al repetir una idea ambigua cuya reformulación ya estaba consumida:
+dos consultas locales, 0 USD de API y ninguna simulación. Se conservó el intento
+sin ampliar límites ni reiniciarlo.
+
+Las nuevas sesiones añaden [memoria de ideas y dudas](docs/RESEARCH_SESSION.md#memoria-de-ideas-y-dudas-anteriores)
+y detectan repeticiones antes de traducir. Se conservan las reservas anteriores;
+el presupuesto y la revisión técnica siguen vigentes. **782 pruebas aprobadas**,
+incluidas 21 nuevas para esta corrección. El filtro detecta cambios cosméticos,
+sin demostrar equivalencia matemática o mejora de resultados.
+La [comprobación local](reports/phase4-idea-memory-2026-10-19.md) recibió esa
+memoria, pero siguió necesitando aclaraciones: cuatro consultas, 0 USD de API y
+cero simulaciones. Aún queda por mejorar la precisión de las propuestas.
+
+La nueva [entrada de propuestas estructuradas](docs/STRUCTURED_IDEAS.md) pide
+indicadores, ventanas, retardos y operadores explícitos desde el origen. Python
+los valida con una consulta al modelo, sin otra llamada para traducirlos.
+**819 pruebas aprobadas**, incluidas 37 nuevas. Esta entrada está separada del
+controlador v2; las propuestas siguen pendientes de revisión y no se simulan.
+La [primera comprobación local](reports/phase4-structured-ideas-2026-10-19.md)
+produjo reglas válidas con una consulta y 0 USD de API. La salida incluye un
+retardo explícito pendiente de revisión; no se presentan resultados calculados.
+
+El [flujo estructurado](docs/STRUCTURED_WORKFLOW.md) ya conecta propuesta,
+revisión, plan y sesión de ejecución. Atribuye la consulta original sin repetirla
+y admite dos simulaciones controladas con conclusión de Python. **993 pruebas
+aprobadas**, incluidas 174 nuevas desde el formato estructurado inicial. La
+[comprobación de integración](reports/phase4-structured-pipeline-2026-10-19.md)
+conserva el caso local pendiente y un ciclo artificial completo. La reformulación
+estructurada permite un intento por origen y no admite cadenas.
+La [comprobación de reformulación](reports/phase4-structured-revision-2026-10-19.md)
+conserva la corrección de `lag=1` a `lag=0` y una descripción todavía incompleta,
+sin simularla. Hay ayudas estáticas para revisar texto, retardos y calentamiento.
+La [descripción mecánica](reports/phase4-structured-brief-2026-10-19.md) expresa
+las reglas completas desde sus campos verificados, conservando intacta la prosa
+del modelo. No cambia la revisión pendiente ni consume consultas de IA.
+Un [contrato compacto experimental](docs/STRUCTURED_DRAFTS.md) permite validar
+reglas sin prosa libre y describirlas con Python. Su vista previa aún no se
+conecta al investigador ni puede adoptarse en una sesión.
+La preparación de contexto conserva objetivo, controles, ideas anteriores y
+reservas compartidas. Detecta identidades consumidas sin generar o simular;
+no encontrar una identidad tampoco concede aprobación.
+Una memoria complementaria conserva decisiones y motivos de revisión de las
+sesiones registradas, con consumo heredado separado y sin reabrir acciones.
+La petición compacta puede prepararse e inspeccionarse sin enviarla; conserva
+el historial capturado y registra tamaño en bytes, sin estimar tokens.
+
 En la FASE 3 se incorporó un agente investigador que propone hipótesis y
 solicita experimentos mediante herramientas controladas. En la FASE 4 se añadirá
 optimización y validación fuera de muestra. Los cálculos y backtests verificarán

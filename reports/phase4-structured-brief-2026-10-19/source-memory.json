@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "reference": {
+    "frozen_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2",
+    "frozen_sha256": "1f64b917cc88993ca496798ef98e4aadf8a266f7b7f3fce9cf45d6b86d61483a",
+    "manifest_sha256": "c432a2795917c500e0ee5fc474ed8f5a5b096346857a67c4b7f19b7f1a8dff42",
+    "development_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+    "outer_cutoff": "2020-01-01"
+  },
+  "entries": [
+    {
+      "fingerprint": "390f1f692c59370696414fdf4be481c0be591164689f234ed146746240030f87",
+      "idea_ids": [
+        "a59f988282c8de81e0aff2695e55147cd024a6cd7d2ab55acba31be2aa826d7e"
+      ],
+      "proposal": {
+        "title": "Cruces SMA/EMA con ventana BCE fija",
+        "hypothesis": "El cambio de referencia a la serie BCE podría mejorar la señal de cruce sin alterar las ventanas.",
+        "entry_rule": "Entrar largo cuando EMA cruza por arriba a SMA en el siguiente observación disponible.",
+        "exit_rule": "Salir al cierre del día o al siguiente cruce inverso, sin apalancamiento ni corto plazo.",
+        "parameters": [
+          {
+            "name": "reference_series",
+            "value": 1
+          },
+          {
+            "name": "fast_window",
+            "value": 20
+          },
+          {
+            "name": "slow_window",
+            "value": 60
+          }
+        ],
+        "data_requirements": {
+          "reference_series": true,
+          "ohlc": false,
+          "volume": false,
+          "intraday": false,
+          "other": false
+        }
+      },
+      "statuses": [
+        "pending_tool_mapping",
+        "needs_clarification"
+      ],
+      "unverified_reasons": [
+        "La idea original contiene ambigüedades y contradicciones respecto al esquema definido: 1) La regla de entrada menciona 'el siguiente observación disponible', pero el motor opera basándose en la observación actual para mantener posiciones; se requiere clarificar si la señal debe confirmarse en la siguiente barra o ejecutarse inmediatamente. 2) La condición de salida 'al cierre del día' contradice los requisitos de datos que excluyen intradía y volumen, ya que no existe un 'cierre del día' en una serie sin OHLC ni volumen. 3) El parámetro 'reference_series' con valor 1 es ambiguo: según el texto"
+      ]
+    },
+    {
+      "fingerprint": "136a531e76f3ab2c5f0f83b7a1939d74d0c9a534496d533225ba9f967a709d6d",
+      "idea_ids": [
+        "5b3da89c8ccac17ea2b9aeb0185ab2dbc578c47610db1739f594d7cbce053a45"
+      ],
+      "proposal": {
+        "title": "Entrada SMA/EMA BCE confirmada",
+        "hypothesis": "Confirmar cruce EMA/SMA en la siguiente observación para entrada larga.",
+        "entry_rule": "Abrir posición larga si EMA cruza por arriba a SMA en el próximo dato.",
+        "exit_rule": "Cerrar al siguiente cruce inverso o al final del periodo de datos.",
+        "parameters": [
+          {
+            "name": "reference_series",
+            "value": 1
+          },
+          {
+            "name": "fast_window",
+            "value": 20
+          },
+          {
+            "name": "slow_window",
+            "value": 60
+          }
+        ],
+        "data_requirements": {
+          "reference_series": true,
+          "ohlc": false,
+          "volume": false,
+          "intraday": false,
+          "other": false
+        }
+      },
+      "statuses": [
+        "pending_tool_mapping"
+      ],
+      "unverified_reasons": []
+    },
+    {
+      "fingerprint": "ddfe9b9e0adb86cc84f1dca3ce1cac2dade662a31c6b75e82b9f8605f9dcf1c6",
+      "idea_ids": [
+        "3dd224d15fd5cfb297224c9bca69131313c237410f9402c1afe6b9ce246e46dc"
+      ],
+      "proposal": {
+        "title": "Tendencia SMA/EMA BCE",
+        "hypothesis": "Entrar solo si EMA > SMA y cerrar al siguiente cruce inverso.",
+        "entry_rule": "Abrir largo cuando EMA supera SMA en la observación actual.",
+        "exit_rule": "Cerrar posición al siguiente cruce inverso detectado.",
+        "parameters": [
+          {
+            "name": "reference_series",
+            "value": 1
+          },
+          {
+            "name": "fast_window",
+            "value": 20
+          },
+          {
+            "name": "slow_window",
+            "value": 60
+          }
+        ],
+        "data_requirements": {
+          "reference_series": true,
+          "ohlc": false,
+          "volume": false,
+          "intraday": false,
+          "other": false
+        }
+      },
+      "statuses": [
+        "pending_tool_mapping",
+        "needs_clarification"
+      ],
+      "unverified_reasons": [
+        "La idea original contiene ambigüedades y contradicciones respecto al esquema definido: 1) La regla de entrada dice 'cuando EMA supera SMA en la observación actual', pero los cruces requieren dos observaciones; se debe especificar si el cruce se detecta en la observación actual (requiriendo datos previos no definidos como OHLC/volumen) o en la siguiente. 2) La regla de salida dice 'al siguiente cruce inverso', pero no se define qué significa 'inverso' (cruce EMA/SMA vs SMA/EMA) ni si el cruce debe ser estricto o con tolerancia. 3) Los parámetros 'fast_window' y 'slow_window' son nombres genéric"
+      ]
+    },
+    {
+      "fingerprint": "67e9b6e02174bb34761e4cf74c678e24bad8227a1a7043eadeb4dd5567b339a1",
+      "idea_ids": [
+        "b04f92ae7eb863a6754776755f35890462bfdd0104d92435ee5cea8af78d0c34"
+      ],
+      "proposal": {
+        "title": "Cruce EMA/SMA BCE",
+        "hypothesis": "Entrar largo al cruce actual; salir al siguiente cruce inverso.",
+        "entry_rule": "Abrir posición cuando la serie rápida cruza a la lenta hacia arriba.",
+        "exit_rule": "Cerrar posición al siguiente cruce de la lenta sobre la rápida.",
+        "parameters": [
+          {
+            "name": "reference_series",
+            "value": 1
+          },
+          {
+            "name": "fast_window",
+            "value": 20
+          },
+          {
+            "name": "slow_window",
+            "value": 60
+          }
+        ],
+        "data_requirements": {
+          "reference_series": true,
+          "ohlc": false,
+          "volume": false,
+          "intraday": false,
+          "other": false
+        }
+      },
+      "statuses": [
+        "pending_tool_mapping",
+        "needs_clarification"
+      ],
+      "unverified_reasons": [
+        "La idea original contiene ambigüedades y contradicciones respecto al esquema definido: 1) La regla de entrada dice 'cruce hacia arriba' pero la salida especifica 'cruce inverso', lo cual es técnicamente correcto, pero el esquema requiere operadores específicos como 'crosses_above' o 'crosses_below'; se necesita decidir qué operador exacto usar para cada caso. 2) El parámetro 'reference_series' tiene valor 1 en los datos originales, pero según las reglas del motor, la referencia debe ser una serie calculada (sma/ema/rolling), no un índice numérico; esto implica que el usuario confunde la serie母"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\discovery\\f99dc2258e2b4b3bb799af9a85dd8f2e",
+      "sha256": {
+        "idea.json": "0960596e1ae58aba59356c7c04dba542b45afe945aa053f2b00c5143b69110cd",
+        "events.jsonl": "fc97bcb160efdffef5fbe3f339d41423f846fab42360cc3c67e193e368acfa99"
+      }
+    },
+    {
+      "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\idea-revisions\\625561cd5fd64933a702ebff1c8ccfb0",
+      "sha256": {
+        "idea.json": "bedc34c0ff43fe8903ee4eeae0e775442623bf9dd78c0acf9cc736723ae0d220",
+        "events.jsonl": "94618d34a4d4797ae1f6cc1a8268cd872d633bec6dfb965d0c1959620f817354"
+      }
+    },
+    {
+      "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research-sessions\\6fad6f1f23324fdb9e69c0ae71f77e1d\\a\\i\\488941089ab74b6a95a3112cdbb18b05",
+      "sha256": {
+        "idea.json": "894675dcec5f0049889d01998df619c1bdbaaa9da03407c4d9a45a645593fe57",
+        "events.jsonl": "4bc8de1d5248b092ce070f3ef3d679b7c62cec9d6d3bd5be838d9923a1075bce"
+      }
+    },
+    {
+      "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research-sessions\\869b4d81509e490399a4e5d102a8235b\\a\\i\\4ee50172f3174fa1a9c225f4a9de1d71",
+      "sha256": {
+        "idea.json": "1adcb1826312e03fa29a0fd962a2881da2711df2136403f5899a4c245f92d9f3",
+        "events.jsonl": "3fc621a295b85bf92c1a38bf663ee9458fd1c02d0c0116882ad8883fed2850f2"
+      }
+    },
+    {
+      "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research-sessions\\869b4d81509e490399a4e5d102a8235b\\a\\v\\f9f532d057ed4bcaa1cc21a8fa44575e",
+      "sha256": {
+        "idea.json": "5dc9a07442031b44b758670cb4fba28d17e93c25c2e31cb66fccce5f451c1bf3",
+        "events.jsonl": "b3a69ff0fd748eca743fd4e84f48ff53191c9c4253f72ae2c01f1c679bcbd788"
+      }
+    },
+    {
+      "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\formalization\\0199d06d32b649139c0ad9b96c559d5b",
+      "sha256": {
+        "translation.json": "b5dfad1148faec6c015f8e76520efe7d02324faf6666cc1b5743e8fcd5c1fe22",
+        "events.jsonl": "30eb9b3390874001172504458d17550ba5084657070aab623da0fff37d0a3d4f"
+      }
+    },
+    {
+      "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research-sessions\\6fad6f1f23324fdb9e69c0ae71f77e1d\\a\\t\\02d4efd8a06043cf90aa77cea6b96bad",
+      "sha256": {
+        "translation.json": "01b5242d9a51abba1565e494d901486e5988c83606a06b7f581804b56a1a1881",
+        "events.jsonl": "9b0ba978db502c2cc2e23243b18c232110bd5411ff10731a0ee1c7ecb42f19ff"
+      }
+    },
+    {
+      "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research-sessions\\869b4d81509e490399a4e5d102a8235b\\a\\t\\cd632470ccc84611988d00ca67bd353e",
+      "sha256": {
+        "translation.json": "dc0bda72ac36e96c11f61674f5c4a9b35e5bc2a1abdaf4f6a5939a8f560cb898",
+        "events.jsonl": "aff3081c3e3461d70a3e0610dd79f756bb097b667ed0f98dcd584f5248487b3e"
+      }
+    },
+    {
+      "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research-sessions\\869b4d81509e490399a4e5d102a8235b\\a\\u\\6674fe1033e24562bfaa98fb72863969",
+      "sha256": {
+        "translation.json": "6a67c8b9b1906b19a53feb779347ce2d4a1e116eafe3a92cbecb120f86868780",
+        "events.jsonl": "45bd5edb2edb59565bfd3d6ca6044592e02abe2494947c1f7d2f263e04ce0ac6"
+      }
+    }
+  ],
+  "scope": "known_development_ideas_only_no_performance_selection"
+}

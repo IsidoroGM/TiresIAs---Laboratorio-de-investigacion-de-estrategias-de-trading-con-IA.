@@ -1,0 +1,1 @@
+{"schema_version": 1, "at": "2026-10-19T14:49:02.474568+00:00", "event": "session_prepared", "data": {"session_sha256": "7973d415e3054601f131c88c1a91b457de5f30f58bef33ea4e0f1956cfa96027", "budget": {"initial_ideas": 1, "revisions": 1, "model_requests": 5, "backtests": 2, "max_output_tokens_per_request": 384, "automatic_retries": 0}, "model_requests": 0, "api_cost_usd": "0"}}

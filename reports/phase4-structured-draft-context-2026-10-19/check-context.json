@@ -1,0 +1,17 @@
+{
+  "run": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-draft-contexts\\2d35c3461d234499a1c9300470f6f130",
+  "scope": "known_development_context_with_synthetic_draft",
+  "candidate_identity_check": "not_found_in_captured_claims",
+  "counts": {
+    "legacy_ideas": 4,
+    "registered_rules": 2,
+    "consumed_rule_claims": 2
+  },
+  "new_model_requests": 0,
+  "new_api_cost_usd": "0",
+  "backtests": 0,
+  "protected_files_unchanged": 29,
+  "consumed_revision_reused": false,
+  "pending_session_changed": false,
+  "generation_ready": false
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "proposal_sha256": "5450e2634c1f437dcbe643a55573fd7300242b660c6343881cc6291d17592496",
+  "spec_sha256": "8730076caaab37fadd9ace1574d62c58691eb38e56b0d405bf2da100cb8e4c73",
+  "reviewer": "Revisión del contrato artificial, sin selección sobre precios",
+  "decision": "accepted",
+  "rationale": "Entrada >1, salida <=1 y lag=0 coinciden con la hipótesis artificial.",
+  "checks": {
+    "entry_matches_hypothesis": true,
+    "exit_matches_hypothesis": true,
+    "windows_understood": true,
+    "lags_understood": true,
+    "data_sufficient": true,
+    "no_unresolved_ambiguity": true
+  }
+}

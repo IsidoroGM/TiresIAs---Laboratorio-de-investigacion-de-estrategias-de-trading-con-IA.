@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "files": {
+    "prepared-session.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research-sessions\\6fad6f1f23324fdb9e69c0ae71f77e1d\\session.json",
+      "sha256": "b3c9ef9d7fe4b9cada028730a1dffb6e3f461067453b9e191778e5caa3f20482"
+    },
+    "prepared-session.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research-sessions\\6fad6f1f23324fdb9e69c0ae71f77e1d\\session.sha256",
+      "sha256": "b352bdd8412b94100ce06cb2dac78711caa931d63da564deaf8e02d9690245b8"
+    },
+    "prepared-events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research-sessions\\6fad6f1f23324fdb9e69c0ae71f77e1d\\events.jsonl",
+      "sha256": "1c85a7d74d1d1148052edf9a6a99e9e4686f29050e77f37d935dff917f3f138a"
+    },
+    "prepared-io-audit.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research-sessions\\6fad6f1f23324fdb9e69c0ae71f77e1d\\io-audit.json",
+      "sha256": "34f1ac4b0add71a1385af8a16e217ae4392e9d7a7b87c5719772ccca474eb17e"
+    },
+    "fixture-session.json": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\session.json",
+      "sha256": "7973d415e3054601f131c88c1a91b457de5f30f58bef33ea4e0f1956cfa96027"
+    },
+    "fixture-session.sha256": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\session.sha256",
+      "sha256": "c37be7a6341a41a9b28815b0f27273962a9c232bd4a32aa708f67ff7b63dbce1"
+    },
+    "fixture-events.jsonl": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\events.jsonl",
+      "sha256": "33e9cb1a6d2c127b42d18f723839faacfde80358d35ade54dcc42d45ae062985"
+    },
+    "fixture-proposal.json": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\attempts\\801012663d344b9f954792e78c542b11\\proposal.json",
+      "sha256": "34a6a4f41091f8b2d55a246174a0c05b04413c99c2d8e1aaf367e9e9f440d681"
+    },
+    "fixture-propose-events.jsonl": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\attempts\\801012663d344b9f954792e78c542b11\\events.jsonl",
+      "sha256": "50a5bf695eb8536087e2120b45215aedb96a3a933ac6edbd3f50dd4efb370e06"
+    },
+    "fixture-outcome.json": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\attempts\\f5738a9c8d84433eba73276aa12859aa\\outcome.json",
+      "sha256": "1ee52774837123bc8103beadc51fe89bac8924b37e3fb59975ffd094cacbb77c"
+    },
+    "fixture-finish-events.jsonl": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\attempts\\f5738a9c8d84433eba73276aa12859aa\\events.jsonl",
+      "sha256": "8f0a8ab09584fb4be324dc7a9c660511f030a610f78b455a0dc10848793c91df"
+    },
+    "fixture-model-1.json": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\budget\\model-1.json",
+      "sha256": "7c72d7f10c992ee6eda0ed41f1ec4f7575b2a6bb69edc0a137aac761efc214b7"
+    },
+    "fixture-model-2.json": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\budget\\model-2.json",
+      "sha256": "39682a9374a36203ba498097a09eb18e17709d609730a09bd954d539bb64cf84"
+    },
+    "fixture-model-3.json": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\budget\\model-3.json",
+      "sha256": "1d76589ebd7706d6811dd947b72c8dcfeaf391c8fd553190e45bc3bfcbc37ddd"
+    },
+    "fixture-model-4.json": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\budget\\model-4.json",
+      "sha256": "32593d363c7feef8437b16f04162f83f0cae05f1d463dc302c171d0f1c0f4776"
+    },
+    "fixture-model-5.json": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\budget\\model-5.json",
+      "sha256": "78815564b80ff5d1a239f846b1d310cba0a7cf4f84c59da34980de1e2ca91c92"
+    },
+    "fixture-backtests-reservation.json": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\budget\\backtests.json",
+      "sha256": "042fcd3c95df93f66ea5c2bb1611afa692896edf5a9500af098652bcd5cf80fc"
+    },
+    "fixture-root-idea-idea.json": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\a\\i\\ef725001a6f547e0920f21706b112d4f\\idea.json",
+      "sha256": "6552b16bd79cace3c8277e58b1638756df15941aa850051b5b02ad27d0f877d8"
+    },
+    "fixture-root-idea-events.jsonl": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\a\\i\\ef725001a6f547e0920f21706b112d4f\\events.jsonl",
+      "sha256": "f5eaec56e7cf1e2d3d86019c4d5e7ad91aee5b41f0ac74538a55b26af2560618"
+    },
+    "fixture-root-translation-translation.json": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\a\\t\\a81e9de7bca0459c89ff5c4a796b8729\\translation.json",
+      "sha256": "239594d38ee25e9918a83bc2c754ae494a62856064d99bd0460f399dba39d178"
+    },
+    "fixture-root-translation-events.jsonl": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\a\\t\\a81e9de7bca0459c89ff5c4a796b8729\\events.jsonl",
+      "sha256": "4645ac2cf6239b01ac8347b54da44bb0a2f642a690b9ba3339407f45ecdf9c75"
+    },
+    "fixture-revised-idea-idea.json": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\a\\v\\e9c842ab38484c7eac621c5aa9b222d7\\idea.json",
+      "sha256": "200a317fa7e18a5a608463ed52427c6862f2287c542e6344fdeb01c99c6a21af"
+    },
+    "fixture-revised-idea-events.jsonl": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\a\\v\\e9c842ab38484c7eac621c5aa9b222d7\\events.jsonl",
+      "sha256": "f88478bdee1d5bce448f678d97f48d49eca78166ec438a9491a7e7e6b86b2d06"
+    },
+    "fixture-revised-translation-translation.json": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\a\\u\\39c7537cc86541bb820dce7f87602be7\\translation.json",
+      "sha256": "b4d0357c853689d2333e8c864e830cf4f7d02f9eb17645eef57ae04be2fdc7dc"
+    },
+    "fixture-revised-translation-events.jsonl": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\a\\u\\39c7537cc86541bb820dce7f87602be7\\events.jsonl",
+      "sha256": "547db9875ad0d07c81b47688db4cdb1c608cf90ddd9ac7a21d5a80f2c67405c1"
+    },
+    "fixture-review-review.json": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\a\\r\\b5407ea7830f4741b9bdeecfdf9246da\\review.json",
+      "sha256": "edaffb3bbeaca5e614af2e4a33bebba0cb7830f14307e62ca4a8e6de850bc9a4"
+    },
+    "fixture-review-events.jsonl": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\a\\r\\b5407ea7830f4741b9bdeecfdf9246da\\events.jsonl",
+      "sha256": "29937641e30cc35df3b964d698d8882c33f67c4908230d4f35a40e233fe7a42e"
+    },
+    "fixture-plan-plan.json": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\a\\p\\0fcfe228fc67480db44e96d4da1ebec9\\plan.json",
+      "sha256": "656b72f23dc7d38242ceebe6a5ba45d32d687eb7a0a24a4dd33e94cb0aa87da0"
+    },
+    "fixture-plan-development.xml": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\a\\p\\0fcfe228fc67480db44e96d4da1ebec9\\development.xml",
+      "sha256": "4b59d2f1877476051fd012517b657361e4bac75c2c0578361d9e257e9dd79496"
+    },
+    "fixture-plan-events.jsonl": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\a\\p\\0fcfe228fc67480db44e96d4da1ebec9\\events.jsonl",
+      "sha256": "dbe024b675404093ec0bfb347fbfae4ab2363ad6f1260e1ef6d18b2d2bd73828"
+    },
+    "fixture-execution-results.json": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\a\\x\\1c533c208d344d69aeb6346a8e642b05\\results.json",
+      "sha256": "f32580c4a3cce6efe40e1b6047ead393e40efbd5adb0f5cac6c4da4642b4135c"
+    },
+    "fixture-execution-report.md": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\a\\x\\1c533c208d344d69aeb6346a8e642b05\\report.md",
+      "sha256": "7eccd3493adb8af9e8f38564c3fe12878c5411191f3683a04768727d8cacf3bd"
+    },
+    "fixture-execution-baseline.json": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\a\\x\\1c533c208d344d69aeb6346a8e642b05\\baseline.json",
+      "sha256": "9f4f187ae83fa250c434701f584fa73d0b4d709f94936c865b184b48990eb98f"
+    },
+    "fixture-execution-candidate.json": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\a\\x\\1c533c208d344d69aeb6346a8e642b05\\candidate.json",
+      "sha256": "c3526eed421cf8ce1b853b611141667012927b1a7cf43c87a7285e39fb5a91bd"
+    },
+    "fixture-execution-development.xml": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\a\\x\\1c533c208d344d69aeb6346a8e642b05\\development.xml",
+      "sha256": "4b59d2f1877476051fd012517b657361e4bac75c2c0578361d9e257e9dd79496"
+    },
+    "fixture-execution-events.jsonl": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\a\\x\\1c533c208d344d69aeb6346a8e642b05\\events.jsonl",
+      "sha256": "4cb428e3b956143a61cc2a491f7063acbd2844b9b1b2e4bfe8d2c9e975794a4e"
+    },
+    "fixture-analysis-analysis.json": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\a\\n\\3932b94e802f4de6b0fdfdd339cf4d75\\analysis.json",
+      "sha256": "319f2759fb20d22a6f20138465b03d7ae10a868d4653f1af24cb1786b2f8616a"
+    },
+    "fixture-analysis-events.jsonl": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\a\\n\\3932b94e802f4de6b0fdfdd339cf4d75\\events.jsonl",
+      "sha256": "11f50739192066286af0932556cf0bf7797117f6615a05a60e00ab7f6cdc9e62"
+    }
+  }
+}

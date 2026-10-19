@@ -1,0 +1,71 @@
+{
+  "outer_access_blocked": true,
+  "signals_and_backtests_disabled": true,
+  "read_paths": [
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2\\events.jsonl",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2\\frozen.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2\\frozen.sha256",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research-sessions\\6fad6f1f23324fdb9e69c0ae71f77e1d\\a\\i\\488941089ab74b6a95a3112cdbb18b05\\events.jsonl",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research-sessions\\6fad6f1f23324fdb9e69c0ae71f77e1d\\a\\i\\488941089ab74b6a95a3112cdbb18b05\\idea.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research-sessions\\6fad6f1f23324fdb9e69c0ae71f77e1d\\a\\t\\02d4efd8a06043cf90aa77cea6b96bad\\events.jsonl",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research-sessions\\6fad6f1f23324fdb9e69c0ae71f77e1d\\a\\t\\02d4efd8a06043cf90aa77cea6b96bad\\translation.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research-sessions\\6fad6f1f23324fdb9e69c0ae71f77e1d\\actions\\propose.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research-sessions\\6fad6f1f23324fdb9e69c0ae71f77e1d\\active.lock",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research-sessions\\6fad6f1f23324fdb9e69c0ae71f77e1d\\attempts\\fca646b16dc24cdab7910b5499783a5e\\events.jsonl",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research-sessions\\6fad6f1f23324fdb9e69c0ae71f77e1d\\attempts\\fca646b16dc24cdab7910b5499783a5e\\proposal.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research-sessions\\6fad6f1f23324fdb9e69c0ae71f77e1d\\budget\\model-1.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research-sessions\\6fad6f1f23324fdb9e69c0ae71f77e1d\\budget\\model-2.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research-sessions\\6fad6f1f23324fdb9e69c0ae71f77e1d\\events.jsonl",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research-sessions\\6fad6f1f23324fdb9e69c0ae71f77e1d\\session.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research-sessions\\6fad6f1f23324fdb9e69c0ae71f77e1d\\session.sha256",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research\\32f2bb61010644a59639db330a2b0eaa\\analysis.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research\\32f2bb61010644a59639db330a2b0eaa\\analysis_origin.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research\\32f2bb61010644a59639db330a2b0eaa\\events.jsonl",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research\\32f2bb61010644a59639db330a2b0eaa\\results.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\validation\\fa8106cf47ab475a973a2f84cfd1ee97\\development.xml",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\validation\\fa8106cf47ab475a973a2f84cfd1ee97\\manifest.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\agent_feedback.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\ai.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\backtesting.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\data.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\discovery.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\experiments.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\formalization.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\holdout.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\indicators.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\metrics.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\research.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\research_session.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\robustness.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\rule_execution.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\rule_planning.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\rules.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\strategies.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\validation.py"
+  ],
+  "outcome": {
+    "error": "Este origen ya tiene un intento de revision reservado; no se repetirá."
+  },
+  "status": {
+    "session": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research-sessions\\6fad6f1f23324fdb9e69c0ae71f77e1d",
+    "state": "propose_incomplete_or_invalid",
+    "active_or_interrupted": false,
+    "budget": {
+      "initial_ideas": 1,
+      "revisions": 1,
+      "model_requests": 5,
+      "backtests": 2,
+      "max_output_tokens_per_request": 384,
+      "automatic_retries": 0
+    },
+    "usage": {
+      "reserved_model_requests": 2,
+      "reserved_output_tokens": 768,
+      "input_tokens": 888,
+      "output_tokens": 395,
+      "api_cost_usd": "0",
+      "reserved_backtests": 0
+    },
+    "scope": "known_development_history_only"
+  }
+}

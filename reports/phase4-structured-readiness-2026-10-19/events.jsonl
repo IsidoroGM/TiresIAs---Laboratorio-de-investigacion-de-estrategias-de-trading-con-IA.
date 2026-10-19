@@ -1,0 +1,1 @@
+{"schema_version": 1, "at": "2026-10-19T17:48:01.497972+00:00", "event": "structured_readiness_audit_completed", "data": {"sha256": "bd53d83792ce7317785882e8b986b4f634447a24efb6c7bb436bb994b439ec7a", "status": "verified_not_authorized", "executable": false}}

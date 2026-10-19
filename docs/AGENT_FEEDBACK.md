@@ -90,8 +90,9 @@ Ollama local es el predeterminado; OpenAI permanece reservado y falla antes de
 crear el intento. No se instalan dependencias, arrancan servicios ni descargan
 datos. Una consulta local no cobra por API, pero usa recursos del equipo.
 
-El ciclo completo de investigación con presupuesto global, ampliación de
-capacidades y validación prospectiva sigue pendiente. El histórico ya explorado
+El [controlador de sesiones](RESEARCH_SESSION.md) ya conecta estas tareas con
+presupuesto global por sesión y una pausa para revisión técnica antes de simular.
+La ampliación de capacidades y validación prospectiva sigue pendiente. El histórico ya explorado
 continúa etiquetado como conocido. FASE 4 permanece abierta; no se modifica
 `PROJECT_STATUS.md`, no hay commits o pushes ni operaciones reales.
 

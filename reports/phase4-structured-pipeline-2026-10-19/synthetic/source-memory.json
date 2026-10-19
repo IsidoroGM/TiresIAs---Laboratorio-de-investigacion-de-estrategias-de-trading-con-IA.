@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "reference": {
+    "frozen_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\f\\0bea6372fff74cf1b6d1284c7538e633",
+    "frozen_sha256": "e2126dacd12da5ce76d33b8af18ba100177527fe46f40a055d78975f9659f6d1",
+    "manifest_sha256": "6197ea8592cd568362e65f115516b9557fe92d396e3a524e59ef09af4ee1e55b",
+    "development_sha256": "4b59d2f1877476051fd012517b657361e4bac75c2c0578361d9e257e9dd79496",
+    "outer_cutoff": "2025-01-23"
+  },
+  "entries": [],
+  "sources": [],
+  "scope": "known_development_ideas_only_no_performance_selection"
+}

@@ -1,0 +1,62 @@
+{
+  "run": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-review-memory\\ad12b5680d6a4cb3aab5fa7d6f0fec7a",
+  "context": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-draft-contexts\\2d35c3461d234499a1c9300470f6f130",
+  "reviews": [
+    {
+      "session": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-sessions\\fd10b4fe5d4a4201a1bec4f78a1e61ca",
+      "review_status": "needs_clarification",
+      "finish_consumed": true,
+      "proposal_text_lengths": {
+        "title": 60,
+        "hypothesis": 159
+      },
+      "source_usage": {
+        "model_requests": 1,
+        "usage": [
+          {
+            "input_tokens": 1257,
+            "output_tokens": 248,
+            "cached_input_tokens": 0,
+            "duration_ns": 68693893800,
+            "api_cost_usd": "0"
+          }
+        ],
+        "api_cost_usd": "0"
+      }
+    },
+    {
+      "session": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-sessions\\bb2880ffb7c74c37abcece9c5275ffc2",
+      "review_status": "needs_clarification",
+      "finish_consumed": true,
+      "proposal_text_lengths": {
+        "title": 60,
+        "hypothesis": 159
+      },
+      "source_usage": {
+        "model_requests": 1,
+        "usage": [
+          {
+            "input_tokens": 1289,
+            "output_tokens": 239,
+            "cached_input_tokens": 0,
+            "duration_ns": 62952430600,
+            "api_cost_usd": "0"
+          }
+        ],
+        "api_cost_usd": "0"
+      }
+    }
+  ],
+  "new_usage": {
+    "model_requests": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "api_cost_usd": "0",
+    "backtests": 0
+  },
+  "protected_files_unchanged": 29,
+  "consumed_revision_reused": false,
+  "pending_session_reopened": false,
+  "generation_ready": false,
+  "known_erratum": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-revisions\\2d0040bbd7184c1d9cbde9a8eef3ce3b\\review-erratum.json"
+}

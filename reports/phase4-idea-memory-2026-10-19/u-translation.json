@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "source": {
+    "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research-sessions\\869b4d81509e490399a4e5d102a8235b\\a\\v\\f9f532d057ed4bcaa1cc21a8fa44575e",
+    "idea_id": "b04f92ae7eb863a6754776755f35890462bfdd0104d92435ee5cea8af78d0c34",
+    "reference": {
+      "frozen_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2",
+      "frozen_sha256": "1f64b917cc88993ca496798ef98e4aadf8a266f7b7f3fce9cf45d6b86d61483a",
+      "manifest_sha256": "c432a2795917c500e0ee5fc474ed8f5a5b096346857a67c4b7f19b7f1a8dff42",
+      "development_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+      "outer_cutoff": "2020-01-01"
+    },
+    "sha256": {
+      "idea.json": "5dc9a07442031b44b758670cb4fba28d17e93c25c2e31cb66fccce5f451c1bf3",
+      "events.jsonl": "b3a69ff0fd748eca743fd4e84f48ff53191c9c4253f72ae2c01f1c679bcbd788"
+    }
+  },
+  "original_proposal": {
+    "title": "Cruce EMA/SMA BCE",
+    "hypothesis": "Entrar largo al cruce actual; salir al siguiente cruce inverso.",
+    "entry_rule": "Abrir posición cuando la serie rápida cruza a la lenta hacia arriba.",
+    "exit_rule": "Cerrar posición al siguiente cruce de la lenta sobre la rápida.",
+    "parameters": [
+      {
+        "name": "reference_series",
+        "value": 1
+      },
+      {
+        "name": "fast_window",
+        "value": 20
+      },
+      {
+        "name": "slow_window",
+        "value": 60
+      }
+    ],
+    "data_requirements": {
+      "reference_series": true,
+      "ohlc": false,
+      "volume": false,
+      "intraday": false,
+      "other": false
+    }
+  },
+  "status": "needs_clarification",
+  "reason": "La idea original contiene ambigüedades y contradicciones respecto al esquema definido: 1) La regla de entrada dice 'cruce hacia arriba' pero la salida especifica 'cruce inverso', lo cual es técnicamente correcto, pero el esquema requiere operadores específicos como 'crosses_above' o 'crosses_below'; se necesita decidir qué operador exacto usar para cada caso. 2) El parámetro 'reference_series' tiene valor 1 en los datos originales, pero según las reglas del motor, la referencia debe ser una serie calculada (sma/ema/rolling), no un índice numérico; esto implica que el usuario confunde la serie母",
+  "missing_declared_inputs": [],
+  "model_translation": {
+    "status": "needs_clarification",
+    "reason": "La idea original contiene ambigüedades y contradicciones respecto al esquema definido: 1) La regla de entrada dice 'cruce hacia arriba' pero la salida especifica 'cruce inverso', lo cual es técnicamente correcto, pero el esquema requiere operadores específicos como 'crosses_above' o 'crosses_below'; se necesita decidir qué operador exacto usar para cada caso. 2) El parámetro 'reference_series' tiene valor 1 en los datos originales, pero según las reglas del motor, la referencia debe ser una serie calculada (sma/ema/rolling), no un índice numérico; esto implica que el usuario confunde la serie母",
+    "spec": null
+  },
+  "spec": null,
+  "spec_sha256": null,
+  "validation_scope": "source_link_and_rule_structure_only",
+  "semantic_equivalence_verified": false,
+  "executable": false,
+  "calculated_results": null,
+  "provider": {
+    "provider": "ollama",
+    "model": "qwen3.5:4b",
+    "model_digest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04",
+    "base_url": "http://127.0.0.1:11435",
+    "api_cost_usd": "0",
+    "context_tokens": 4096,
+    "output_tokens": 384,
+    "gpu_layers": 0,
+    "timeout_seconds": 180,
+    "think": false,
+    "temperature": 0
+  },
+  "model_requests": 1,
+  "usage": [
+    {
+      "input_tokens": 424,
+      "output_tokens": 167,
+      "cached_input_tokens": 0,
+      "duration_ns": 37724419100,
+      "api_cost_usd": "0"
+    }
+  ],
+  "api_cost_usd": "0"
+}

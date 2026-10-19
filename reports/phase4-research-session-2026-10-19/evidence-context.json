@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "starting_commit": "ed31448",
+  "real_session": {
+    "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research-sessions\\6fad6f1f23324fdb9e69c0ae71f77e1d",
+    "state": "prepared",
+    "model_requests": 0,
+    "backtests": 0,
+    "api_cost_usd": "0"
+  },
+  "fixture_session": {
+    "is_synthetic": true,
+    "data_source": "tests/test_holdout.py::setup",
+    "provider_source": "tests/test_research_session.py::ScriptedProvider; in-memory stub",
+    "token_values_are_stubs": true,
+    "reserved_model_requests": 5,
+    "reserved_output_tokens": 1920,
+    "reserved_backtests": 2,
+    "state": "completed"
+  },
+  "pytest": {
+    "passed": 761,
+    "duration_seconds": 52.17,
+    "cache_disabled": true,
+    "exclusive_basetemp": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b"
+  },
+  "windows_paths": "Child artifacts use compact paths inside the session; no system or permission settings were changed."
+}

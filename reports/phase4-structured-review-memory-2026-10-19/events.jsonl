@@ -1,0 +1,2 @@
+{"schema_version": 1, "at": "2026-10-19T17:22:18.114788+00:00", "event": "structured_review_memory_started", "data": {"context_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-draft-contexts\\2d35c3461d234499a1c9300470f6f130"}}
+{"schema_version": 1, "at": "2026-10-19T17:22:23.570381+00:00", "event": "structured_review_memory_completed", "data": {"sha256": "b5d1ea5eb0bbe0a36a06f1bec73eb151d79badb9b787b92fdd9987a3bf035eb8", "status": "review_memory_only", "executable": false}}

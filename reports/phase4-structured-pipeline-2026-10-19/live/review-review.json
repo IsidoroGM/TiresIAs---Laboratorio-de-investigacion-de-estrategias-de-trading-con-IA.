@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "structured_review_v1",
+  "source": {
+    "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-ideas\\18fdf9274baa4b96973b8c2f67dab92b",
+    "sha256": {
+      "proposal.json": "7fdb4748fb0ae4c0a3bfb2f1c68b146fe0ba64b3c746db9e5d19f20455f763c7",
+      "events.jsonl": "59559d7d8c3ab09418212f5e684cb0172605f3a69a405d190753d282ad5eb5d4",
+      "report.md": "b1874c8f5eece69745d53b4653a4cabff6ca24408ae8d308f9b69a91667025a8",
+      "memory.json": "5ce6e3c1dcff64ac4c4ea8c2cf035a411fa3f6dd7a608f4bed4ad364c1ae5730",
+      "rules-memory.json": "e2ff50ad44e4eb053f2e23583c0cb64c3478d15562d43d20d6f01736216996a1"
+    }
+  },
+  "reference": {
+    "frozen_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2",
+    "frozen_sha256": "1f64b917cc88993ca496798ef98e4aadf8a266f7b7f3fce9cf45d6b86d61483a",
+    "manifest_sha256": "c432a2795917c500e0ee5fc474ed8f5a5b096346857a67c4b7f19b7f1a8dff42",
+    "development_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+    "outer_cutoff": "2020-01-01"
+  },
+  "spec_sha256": "e4269c98cfef73b916c822ec7728b6a7c7d227bee3bea411857c807e214d43d0",
+  "status": "needs_clarification",
+  "reason": "Entrada EMA20/SMA60 explícita. La salida usa ambas series con lag=1: retrasa la señal bajista una observación, además de la ejecución posterior del motor. La hipótesis no explica ese retardo adicional. No se presume equivalencia ni se cambia lag a cero para aprobar o simular.",
+  "assessment": {
+    "schema_version": 1,
+    "proposal_sha256": "7fdb4748fb0ae4c0a3bfb2f1c68b146fe0ba64b3c746db9e5d19f20455f763c7",
+    "spec_sha256": "e4269c98cfef73b916c822ec7728b6a7c7d227bee3bea411857c807e214d43d0",
+    "reviewer": "Codex: revisión separada del investigador local",
+    "decision": "needs_clarification",
+    "checks": {
+      "entry_matches_hypothesis": true,
+      "exit_matches_hypothesis": false,
+      "windows_understood": true,
+      "lags_understood": true,
+      "data_sufficient": true,
+      "no_unresolved_ambiguity": false
+    },
+    "rationale": "Entrada EMA20/SMA60 explícita. La salida usa ambas series con lag=1: retrasa la señal bajista una observación, además de la ejecución posterior del motor. La hipótesis no explica ese retardo adicional. No se presume equivalencia ni se cambia lag a cero para aprobar o simular."
+  },
+  "scope": "technical_attestation_not_a_proof_of_semantic_equivalence",
+  "eligible_for_plan": false,
+  "executable": false,
+  "calculated_results": null,
+  "model_requests": 0,
+  "api_cost_usd": "0",
+  "code_sha256": {
+    "data.py": "286b822fbb6dd5e46f65f64bb387bb7f7d246c7c9c17dc523a52d7ce3e7dfd94",
+    "indicators.py": "13cce9a32399a309694a83f52c8bdb93b0f86075612c825d5be3d9bfc2c366a3",
+    "strategies.py": "9607a659a352e31f2192c237eaecc8191ba90f9b2e78bcaa3919cfaa3489527e",
+    "backtesting.py": "81e6a34dd715d192c730fe407c7cdd037e2340e387e4ea37c90b0549d07a3c4f",
+    "metrics.py": "3d85bab9c1ee6da88a632a08b3a600f12ce7ee9335fbce1b4c56e0cfc865ec2f",
+    "experiments.py": "57c5638f293d9e4c5102a091227970ac1d2fd3b9774fa3f839fd6ed044a26e4d",
+    "ai.py": "9c43b2f13b1b9264810cb1710c081acc0c476071870842617c9a451cb58cc1f3",
+    "research.py": "7e53374a3768800de2d75be9bc67d2299d16620c6b4fe92a3438d1f4c0c63340",
+    "validation.py": "ac2aa655af324a352107753e3b53e0aa986958aeb9e2e2374c4791c3a8afb1b6",
+    "holdout.py": "a048adf93b2a58b3177e80d1077597a0bd849932fd42f714326a43fc68fecbb2",
+    "rule_planning.py": "ec26a75932f10db35fc2ebdb4ef56a1062eba0059a621125f8d8d2166bb6708d",
+    "rules.py": "09bbc9d25ed27d4e27961dd0431c95a73e10f21aa8500e47430373a93c500361",
+    "formalization.py": "43eea12e59e441712914f5449c66a410d33928dcbd2c5de31ec9d89f8d795098",
+    "discovery.py": "b680ab835f96dc1e917760309a19aad93bb51beee70eaf9d2dfb96da0fd211a2",
+    "robustness.py": "906ea3f6c07d5f5aeac03d049c0852b9d863e29a3864ac61009fa811a0a11ae5",
+    "idea_memory.py": "dbf1d5ef1f32c9df3e945da9e1e74491aa8c3a7fbcb92f0c93187558c6193f40",
+    "structured_ideas.py": "66bebb4f2077bd77d622e256420e87090325cd03ba346d545f6b92def5f5009a",
+    "structured_planning.py": "70e7b127ea9af5a1c712cd87f08090458bc45e0f3757a24660765ceb9fea8968"
+  }
+}

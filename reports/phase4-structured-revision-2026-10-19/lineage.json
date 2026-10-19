@@ -1,0 +1,21 @@
+{
+  "parent_review": {
+    "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-sessions\\fd10b4fe5d4a4201a1bec4f78a1e61ca\\a\\r\\f6d9a0d7ec9b4b42a1072aa7edbf95ef",
+    "sha256": {
+      "review.json": "7e161dda22d56a8fd7cb51ae05e8db68cfba8d6cccfd4d880361764abfe6a2f9",
+      "events.jsonl": "faba129e7247dd3e4c6ea7de5f6108249d91d2c076024b8311bebe44877c4097"
+    }
+  },
+  "parent_source": {
+    "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-ideas\\18fdf9274baa4b96973b8c2f67dab92b",
+    "sha256": {
+      "proposal.json": "7fdb4748fb0ae4c0a3bfb2f1c68b146fe0ba64b3c746db9e5d19f20455f763c7",
+      "events.jsonl": "59559d7d8c3ab09418212f5e684cb0172605f3a69a405d190753d282ad5eb5d4",
+      "report.md": "b1874c8f5eece69745d53b4653a4cabff6ca24408ae8d308f9b69a91667025a8",
+      "memory.json": "5ce6e3c1dcff64ac4c4ea8c2cf035a411fa3f6dd7a608f4bed4ad364c1ae5730",
+      "rules-memory.json": "e2ff50ad44e4eb053f2e23583c0cb64c3478d15562d43d20d6f01736216996a1"
+    }
+  },
+  "question": "{\"task\":\"Reformular las reglas para resolver la duda; no afirmar equivalencia o mejora.\",\"previous_rules\":{\"entry\":{\"left\":{\"kind\":\"ema\",\"window\":20,\"lag\":0},\"operator\":\"crosses_above\",\"right\":{\"kind\":\"sma\",\"window\":60,\"lag\":0}},\"exit\":{\"left\":{\"kind\":\"ema\",\"window\":20,\"lag\":1},\"operator\":\"crosses_below\",\"right\":{\"kind\":\"sma\",\"window\":60,\"lag\":1}}},\"unverified_review_excerpt\":\"Entrada EMA20/SMA60 explícita. La salida usa ambas series con lag=1: retrasa la señal bajista una observación, además de la ejecución posterior del motor. La hipótesis no explica ese retardo adicional. No se presume equivalencia ni se cambia lag a ce\",\"review_excerpt_truncated\":true}",
+  "depth": 1
+}

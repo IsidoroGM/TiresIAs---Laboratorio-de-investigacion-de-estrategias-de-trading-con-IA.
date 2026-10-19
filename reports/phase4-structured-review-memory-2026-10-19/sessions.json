@@ -1,0 +1,40 @@
+[
+  {
+    "path": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-session-access\\39f6635403e4bafcf1e61a029bf509809399c1f3cc7a898dcfb4b987ba77f400.json",
+    "sha256": "797f5ec47a468f013c98a30007152141787f63b7e0614450aac49b8127d2fe90",
+    "claim": {
+      "identity": {
+        "proposal_sha256": "7fdb4748fb0ae4c0a3bfb2f1c68b146fe0ba64b3c746db9e5d19f20455f763c7",
+        "reference": {
+          "development_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+          "frozen_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2",
+          "frozen_sha256": "1f64b917cc88993ca496798ef98e4aadf8a266f7b7f3fce9cf45d6b86d61483a",
+          "manifest_sha256": "c432a2795917c500e0ee5fc474ed8f5a5b096346857a67c4b7f19b7f1a8dff42",
+          "outer_cutoff": "2020-01-01"
+        },
+        "schema_version": 1
+      },
+      "schema_version": 1,
+      "session_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-sessions\\fd10b4fe5d4a4201a1bec4f78a1e61ca"
+    }
+  },
+  {
+    "path": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-session-access\\8db2a86d3cfbd8a06997a3c19ab4bade2508e20e0775252ca4e9abca4163929e.json",
+    "sha256": "6f97787d5b36f393ebbe0d9ea906216ea454c08df5a531de285c9b9713c04505",
+    "claim": {
+      "identity": {
+        "proposal_sha256": "ddcd3a7e1f48c9ebcd4fc68547b9662816aa1dfb2d8c4c2ba63289b205ce00ee",
+        "reference": {
+          "development_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+          "frozen_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2",
+          "frozen_sha256": "1f64b917cc88993ca496798ef98e4aadf8a266f7b7f3fce9cf45d6b86d61483a",
+          "manifest_sha256": "c432a2795917c500e0ee5fc474ed8f5a5b096346857a67c4b7f19b7f1a8dff42",
+          "outer_cutoff": "2020-01-01"
+        },
+        "schema_version": 1
+      },
+      "schema_version": 1,
+      "session_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-sessions\\bb2880ffb7c74c37abcece9c5275ffc2"
+    }
+  }
+]

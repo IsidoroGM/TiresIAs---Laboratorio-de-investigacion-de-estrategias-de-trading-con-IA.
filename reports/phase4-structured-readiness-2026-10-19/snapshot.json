@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "files": {
+    "audit.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-readiness-audits\\a0e47a24646b421e9e689d7a28e46f23\\audit.json",
+      "sha256": "bd53d83792ce7317785882e8b986b4f634447a24efb6c7bb436bb994b439ec7a"
+    },
+    "audit.json.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-readiness-audits\\a0e47a24646b421e9e689d7a28e46f23\\audit.json.sha256",
+      "sha256": "d9201d643f591396fc231d8034a6f45d46285c76e4e0f5635d7ce54b949441ef"
+    },
+    "events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-readiness-audits\\a0e47a24646b421e9e689d7a28e46f23\\events.jsonl",
+      "sha256": "5e0d504efb2536c0f625f2f5fcb36bba097bcb9695aa889b016f281f8cd58b98"
+    },
+    "audit-structured-readiness.py": {
+      "source": ".local\\audit-structured-readiness.py",
+      "sha256": "b4c5687d0bcd92977889581c866bf4ac297deb5d1bcdc41bf1c06ae9353ac70a"
+    }
+  }
+}

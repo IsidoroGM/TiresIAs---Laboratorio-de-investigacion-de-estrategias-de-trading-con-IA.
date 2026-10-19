@@ -1,0 +1,2 @@
+{"schema_version": 1, "at": "2026-10-19T16:50:53.515973+00:00", "event": "structured_draft_started", "data": {"input_file": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-draft-example.json"}}
+{"schema_version": 1, "at": "2026-10-19T16:50:53.548578+00:00", "event": "structured_draft_completed", "data": {"sha256": "35ced52f9094b7d08bbbe8f75d847412209ff7fc5bcd523fb74782153c7853db", "status": "offline_preview_only", "executable": false}}

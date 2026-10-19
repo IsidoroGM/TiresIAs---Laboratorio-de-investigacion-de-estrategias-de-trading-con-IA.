@@ -1,0 +1,34 @@
+{
+  "brief_run": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-briefs\\b496a0e422944772964c2a948124156c",
+  "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-revisions\\2d0040bbd7184c1d9cbde9a8eef3ce3b\\i\\a1bacf3e52c743c2b4088cad0c82ee45",
+  "session_status": {
+    "session": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-sessions\\bb2880ffb7c74c37abcece9c5275ffc2",
+    "state": "needs_clarification",
+    "assessment": null,
+    "active_or_interrupted": false,
+    "budget": {
+      "source_model_requests": 1,
+      "new_model_requests": 0,
+      "backtests": 2,
+      "parameter_variations": 0,
+      "automatic_retries": 0
+    },
+    "usage": {
+      "source_model_requests": 1,
+      "new_model_requests": 0,
+      "source_input_tokens": 1289,
+      "source_output_tokens": 239,
+      "source_api_cost_usd": "0",
+      "new_api_cost_usd": "0",
+      "reserved_backtests": 0
+    },
+    "scope": "known_development_history_only"
+  },
+  "new_model_requests": 0,
+  "new_api_cost_usd": "0",
+  "backtests": 0,
+  "original_files_unchanged": 24,
+  "model_text_preserved": true,
+  "revision_attempt_reused": false,
+  "child_revision_started": false
+}

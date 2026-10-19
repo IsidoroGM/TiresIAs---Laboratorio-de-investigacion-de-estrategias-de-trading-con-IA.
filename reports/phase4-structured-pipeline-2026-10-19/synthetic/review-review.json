@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol": "structured_review_v1",
+  "source": {
+    "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\i\\91b4c3b0f8364bde98f0b704f4b6eb04",
+    "sha256": {
+      "proposal.json": "5450e2634c1f437dcbe643a55573fd7300242b660c6343881cc6291d17592496",
+      "events.jsonl": "de58385e8dd40726cd17bbe64d5503925b147850c41b69f84331e8edd5527716",
+      "report.md": "d83380593ce486c6ebc08671010c03fc82396fd43871d1a05aaa25a450d958cb",
+      "memory.json": "fd3c5699d07475d072219a361bdef4e9e58bfc50aa0e423ff76f2d59e0eaf29e",
+      "rules-memory.json": "002ccb16ab5f101168f1a0bfd2a8ef8792db2835e5179cb3490c9a6a2457d946"
+    }
+  },
+  "reference": {
+    "frozen_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\f\\0bea6372fff74cf1b6d1284c7538e633",
+    "frozen_sha256": "e2126dacd12da5ce76d33b8af18ba100177527fe46f40a055d78975f9659f6d1",
+    "manifest_sha256": "6197ea8592cd568362e65f115516b9557fe92d396e3a524e59ef09af4ee1e55b",
+    "development_sha256": "4b59d2f1877476051fd012517b657361e4bac75c2c0578361d9e257e9dd79496",
+    "outer_cutoff": "2025-01-23"
+  },
+  "spec_sha256": "8730076caaab37fadd9ace1574d62c58691eb38e56b0d405bf2da100cb8e4c73",
+  "status": "accepted",
+  "reason": "Entrada >1, salida <=1 y lag=0 coinciden con la hipótesis artificial.",
+  "assessment": {
+    "schema_version": 1,
+    "proposal_sha256": "5450e2634c1f437dcbe643a55573fd7300242b660c6343881cc6291d17592496",
+    "spec_sha256": "8730076caaab37fadd9ace1574d62c58691eb38e56b0d405bf2da100cb8e4c73",
+    "reviewer": "Revisión del contrato artificial, sin selección sobre precios",
+    "decision": "accepted",
+    "rationale": "Entrada >1, salida <=1 y lag=0 coinciden con la hipótesis artificial.",
+    "checks": {
+      "entry_matches_hypothesis": true,
+      "exit_matches_hypothesis": true,
+      "windows_understood": true,
+      "lags_understood": true,
+      "data_sufficient": true,
+      "no_unresolved_ambiguity": true
+    }
+  },
+  "scope": "technical_attestation_not_a_proof_of_semantic_equivalence",
+  "eligible_for_plan": true,
+  "executable": false,
+  "calculated_results": null,
+  "model_requests": 0,
+  "api_cost_usd": "0",
+  "code_sha256": {
+    "data.py": "286b822fbb6dd5e46f65f64bb387bb7f7d246c7c9c17dc523a52d7ce3e7dfd94",
+    "indicators.py": "13cce9a32399a309694a83f52c8bdb93b0f86075612c825d5be3d9bfc2c366a3",
+    "strategies.py": "9607a659a352e31f2192c237eaecc8191ba90f9b2e78bcaa3919cfaa3489527e",
+    "backtesting.py": "81e6a34dd715d192c730fe407c7cdd037e2340e387e4ea37c90b0549d07a3c4f",
+    "metrics.py": "3d85bab9c1ee6da88a632a08b3a600f12ce7ee9335fbce1b4c56e0cfc865ec2f",
+    "experiments.py": "57c5638f293d9e4c5102a091227970ac1d2fd3b9774fa3f839fd6ed044a26e4d",
+    "ai.py": "9c43b2f13b1b9264810cb1710c081acc0c476071870842617c9a451cb58cc1f3",
+    "research.py": "7e53374a3768800de2d75be9bc67d2299d16620c6b4fe92a3438d1f4c0c63340",
+    "validation.py": "ac2aa655af324a352107753e3b53e0aa986958aeb9e2e2374c4791c3a8afb1b6",
+    "holdout.py": "a048adf93b2a58b3177e80d1077597a0bd849932fd42f714326a43fc68fecbb2",
+    "rule_planning.py": "ec26a75932f10db35fc2ebdb4ef56a1062eba0059a621125f8d8d2166bb6708d",
+    "rules.py": "09bbc9d25ed27d4e27961dd0431c95a73e10f21aa8500e47430373a93c500361",
+    "formalization.py": "43eea12e59e441712914f5449c66a410d33928dcbd2c5de31ec9d89f8d795098",
+    "discovery.py": "b680ab835f96dc1e917760309a19aad93bb51beee70eaf9d2dfb96da0fd211a2",
+    "robustness.py": "906ea3f6c07d5f5aeac03d049c0852b9d863e29a3864ac61009fa811a0a11ae5",
+    "idea_memory.py": "dbf1d5ef1f32c9df3e945da9e1e74491aa8c3a7fbcb92f0c93187558c6193f40",
+    "structured_ideas.py": "66bebb4f2077bd77d622e256420e87090325cd03ba346d545f6b92def5f5009a",
+    "structured_planning.py": "70e7b127ea9af5a1c712cd87f08090458bc45e0f3757a24660765ceb9fea8968"
+  }
+}

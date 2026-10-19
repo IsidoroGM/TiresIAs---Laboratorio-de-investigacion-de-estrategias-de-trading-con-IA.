@@ -1,0 +1,26 @@
+{
+  "status": {
+    "session": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-sessions\\fd10b4fe5d4a4201a1bec4f78a1e61ca",
+    "state": "needs_clarification",
+    "assessment": null,
+    "active_or_interrupted": false,
+    "budget": {
+      "source_model_requests": 1,
+      "new_model_requests": 0,
+      "backtests": 2,
+      "parameter_variations": 0,
+      "automatic_retries": 0
+    },
+    "usage": {
+      "source_model_requests": 1,
+      "new_model_requests": 0,
+      "source_input_tokens": 1257,
+      "source_output_tokens": 248,
+      "source_api_cost_usd": "0",
+      "new_api_cost_usd": "0",
+      "reserved_backtests": 0
+    },
+    "scope": "known_development_history_only"
+  },
+  "attempt": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-sessions\\fd10b4fe5d4a4201a1bec4f78a1e61ca\\attempts\\c251b76748134eab80794dea6af0a025"
+}

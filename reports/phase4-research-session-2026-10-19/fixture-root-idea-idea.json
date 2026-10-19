@@ -1,0 +1,79 @@
+{
+  "schema_version": 2,
+  "idea_id": "1aa63558f04ea4f9c5624af1ebf5c196310b3afadb4dfa2d37c6308985411dab",
+  "status": "pending_tool_mapping",
+  "executable": false,
+  "proposal": {
+    "title": "Idea sintética",
+    "hypothesis": "Contrastar una regla distinta de los cruces.",
+    "entry_rule": "Referencia estrictamente mayor que umbral.",
+    "exit_rule": "Referencia menor o igual que umbral. O cerrar al final del periodo.",
+    "parameters": [
+      {
+        "name": "threshold",
+        "value": 1
+      }
+    ],
+    "data_requirements": {
+      "reference_series": true,
+      "ohlc": false,
+      "volume": false,
+      "intraday": false,
+      "other": false
+    }
+  },
+  "missing_declared_inputs": [],
+  "validation_scope": "format_and_bounds_only_not_strategy_correctness",
+  "reference": {
+    "frozen_dir": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\frozen\\4a9b80cc8fe444d88fdcd07a89f437f6",
+    "frozen_sha256": "50938ecd2be35fd1b1960770ee07ef53b7698264e50d7fecdf643ffa7184c93c",
+    "manifest_sha256": "4f97fd51110a84e093701252b3ffbfeee83247a15d67dc0a493dfa1398ee2b1d",
+    "development_sha256": "4b59d2f1877476051fd012517b657361e4bac75c2c0578361d9e257e9dd79496",
+    "outer_cutoff": "2025-01-23"
+  },
+  "development_context": {
+    "pair": "EUR/USD",
+    "data": {
+      "name": "BCE",
+      "sha256": "4b59d2f1877476051fd012517b657361e4bac75c2c0578361d9e257e9dd79496",
+      "first_date": "2025-01-01",
+      "last_date": "2025-01-22",
+      "observations": 22
+    },
+    "available_inputs": [
+      "reference_series"
+    ],
+    "execution_constraints": {
+      "direction": "long_only",
+      "execution": "next_observation",
+      "controls": {
+        "pair": "EUR/USD",
+        "baseline_strategy": "sma",
+        "fast_window": 2,
+        "slow_window": 4,
+        "cost_rate": "0.001",
+        "initial_capital": "1000",
+        "allocation_fraction": "0.1"
+      }
+    },
+    "implemented_tools": [
+      "sma_crossover",
+      "ema_crossover"
+    ],
+    "context_limit": "Historical educational ECB references; no OHLC, volume or executable prices."
+  },
+  "provider": {
+    "provider": "test",
+    "model": "offline"
+  },
+  "usage": [
+    {
+      "input_tokens": 25,
+      "output_tokens": 40,
+      "api_cost_usd": "0"
+    }
+  ],
+  "api_cost_usd": "0",
+  "model_requests": 1,
+  "calculated_results": null
+}

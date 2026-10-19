@@ -1,0 +1,24 @@
+{
+  "entry": {
+    "left": {
+      "kind": "reference",
+      "lag": 0
+    },
+    "operator": "gt",
+    "right": {
+      "kind": "constant",
+      "value": "1.00"
+    }
+  },
+  "exit": {
+    "left": {
+      "kind": "reference",
+      "lag": 0
+    },
+    "operator": "lte",
+    "right": {
+      "kind": "constant",
+      "value": "1e0"
+    }
+  }
+}

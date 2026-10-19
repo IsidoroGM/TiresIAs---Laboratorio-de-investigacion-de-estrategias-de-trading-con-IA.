@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "state": "needs_clarification",
+  "artifacts": {
+    "review": {
+      "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-sessions\\bb2880ffb7c74c37abcece9c5275ffc2\\a\\r\\ca94d33c602c4e338b152a2676011f24",
+      "sha256": {
+        "review.json": "326f02698fa30618c65c5de623a82c81cbc727ea3592a3da45df52e722de05f3",
+        "review.json.sha256": "8e7c7001acf79a8ca38bd2bbf13525824ab9846863197d26c7cd75ab7aa832b5",
+        "events.jsonl": "ab8c21394d629183d0ded1a14c31579de1d4fbfa4008f6c8ed6d97decbf2d3d2"
+      }
+    }
+  },
+  "usage": {
+    "source_model_requests": 1,
+    "new_model_requests": 0,
+    "source_input_tokens": 1289,
+    "source_output_tokens": 239,
+    "source_api_cost_usd": "0",
+    "new_api_cost_usd": "0",
+    "reserved_backtests": 0
+  },
+  "assessment": null,
+  "scope": "known_development_history_only",
+  "automatic_followup_experiments": 0
+}

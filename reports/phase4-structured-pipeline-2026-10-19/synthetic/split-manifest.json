@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "protocol": "chronological_holdout_v1",
+  "stage": "prepared_not_evaluated",
+  "cutoff": "2025-01-23",
+  "boundary_rules": {
+    "development": "date < cutoff",
+    "evaluation": "date >= cutoff"
+  },
+  "source": {
+    "path": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\synthetic.xml",
+    "sha256": "c15ee95057abe212ba1a63129f2d0457c55a991b9d7d287dfe25b487439d3e37",
+    "observations": 44,
+    "first_date": "2025-01-01",
+    "last_date": "2025-02-13"
+  },
+  "pairs": [
+    "EUR/USD",
+    "GBP/USD",
+    "USD/JPY",
+    "USD/CHF"
+  ],
+  "execution_policy": {
+    "accounts": "independent_per_partition_and_pair",
+    "carry_positions": false,
+    "carry_signals": false,
+    "indicator_warmup": "inside_each_partition"
+  },
+  "limitations": [
+    "No strategy has been evaluated by this preparation.",
+    "The source history was already explored in previous phases.",
+    "This split does not establish statistical sufficiency or profitability.",
+    "The future workflow must freeze proposals before evaluation.",
+    "Filesystem permissions do not isolate the evaluation file."
+  ],
+  "partitions": {
+    "development": {
+      "file": "development.xml",
+      "sha256": "4b59d2f1877476051fd012517b657361e4bac75c2c0578361d9e257e9dd79496",
+      "observations": 22,
+      "first_date": "2025-01-01",
+      "last_date": "2025-01-22"
+    },
+    "evaluation": {
+      "file": "evaluation.xml",
+      "sha256": "56b8e00dc57447a7242b58d9d23a73aac334421311e1880eb50981735d8b796e",
+      "observations": 22,
+      "first_date": "2025-01-23",
+      "last_date": "2025-02-13"
+    }
+  }
+}

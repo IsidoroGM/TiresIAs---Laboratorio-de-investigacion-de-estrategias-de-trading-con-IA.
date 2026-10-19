@@ -1,0 +1,17 @@
+{
+  "run": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-ideas\\18fdf9274baa4b96973b8c2f67dab92b",
+  "error": null,
+  "status": "pending_semantic_review",
+  "usage": [
+    {
+      "input_tokens": 1257,
+      "output_tokens": 248,
+      "cached_input_tokens": 0,
+      "duration_ns": 68693893800,
+      "api_cost_usd": "0"
+    }
+  ],
+  "api_cost_usd": "0",
+  "backtests": 0,
+  "executable": false
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "previous_artifacts_unchanged": 195,
+  "files": {
+    "preview.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-draft-requests\\1646833181eb44c386eb32872f245afa\\preview.json",
+      "sha256": "1d6ad6b49114892c196b8beee3064f5e2cb2cec18ec6b28efefc6d6687b1929d"
+    },
+    "preview.json.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-draft-requests\\1646833181eb44c386eb32872f245afa\\preview.json.sha256",
+      "sha256": "73f41b9180fd80c0a8aee9f1eef7cec941cbcb6253301fa921d8e1d57215b358"
+    },
+    "request.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-draft-requests\\1646833181eb44c386eb32872f245afa\\request.json",
+      "sha256": "d6588e2c00396a6de0177c3b58f8830dfc4f65d9b3b3473b3ba9b805886e8e68"
+    },
+    "events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-draft-requests\\1646833181eb44c386eb32872f245afa\\events.jsonl",
+      "sha256": "a1f042628d15fe927053522c30c7f9c00c485be32def91c4e60f52863c690c53"
+    },
+    "check-context.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-draft-requests\\1646833181eb44c386eb32872f245afa\\check-context.json",
+      "sha256": "ce830f85af675a06490ce8ea47df83176e991ca65411383081aaf534e1afd490"
+    },
+    "io-audit.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-draft-requests\\1646833181eb44c386eb32872f245afa\\io-audit.json",
+      "sha256": "6637bc775fa7362025bdae6948a1bfc0f29e48e7e0b3fa87ffe6abf67b0c603e"
+    }
+  }
+}

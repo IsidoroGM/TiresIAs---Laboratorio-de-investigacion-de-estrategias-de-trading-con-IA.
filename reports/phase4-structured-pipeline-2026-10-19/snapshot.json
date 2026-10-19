@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "previous_artifacts_unchanged": 67,
+  "files": {
+    "live/context.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-sessions\\fd10b4fe5d4a4201a1bec4f78a1e61ca\\check-context.json",
+      "sha256": "c73e43ef4d9087ff4fe3b7bb2f68d26dc49d519969dc99132e1f35fee25aa1a2"
+    },
+    "live/io-audit.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-sessions\\fd10b4fe5d4a4201a1bec4f78a1e61ca\\io-audit.json",
+      "sha256": "4406d48be0a17ae8947c8683522426da14d5198078012ef773c57c8d9c3c4150"
+    },
+    "live/technical-assessment.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-sessions\\fd10b4fe5d4a4201a1bec4f78a1e61ca\\technical-assessment.json",
+      "sha256": "92f3b8bfa7253ced8f80d0b269c1f296e73e677e4b4f4ca1ba75bb722673a9c0"
+    },
+    "live/session-session.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-sessions\\fd10b4fe5d4a4201a1bec4f78a1e61ca\\session.json",
+      "sha256": "6cf0d41235a671c668e86203af7ad4cca628e65ff322ef95f6c986bebf1450d8"
+    },
+    "live/session-session.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-sessions\\fd10b4fe5d4a4201a1bec4f78a1e61ca\\session.sha256",
+      "sha256": "3c5a61754da49f84dddeb554aadb5e5baf660802d7a6eb0082d4390eb3e883d9"
+    },
+    "live/session-events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-sessions\\fd10b4fe5d4a4201a1bec4f78a1e61ca\\events.jsonl",
+      "sha256": "7bb1f1644dc0036bff181c9dad9459021a13360d70e2ad9e46b43ac43152c645"
+    },
+    "live/outcome.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-sessions\\fd10b4fe5d4a4201a1bec4f78a1e61ca\\attempts\\c251b76748134eab80794dea6af0a025\\outcome.json",
+      "sha256": "12940ff674a6fc0ba4921f89a73c69c9e0769f878b88d133f27e108ba360c5d2"
+    },
+    "live/controller-events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-sessions\\fd10b4fe5d4a4201a1bec4f78a1e61ca\\attempts\\c251b76748134eab80794dea6af0a025\\events.jsonl",
+      "sha256": "ed5002cb4c848bf7d638d1fb67d7001b96b65ac25c277ea2c7fe49663b42c321"
+    },
+    "live/review-review.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-sessions\\fd10b4fe5d4a4201a1bec4f78a1e61ca\\a\\r\\f6d9a0d7ec9b4b42a1072aa7edbf95ef\\review.json",
+      "sha256": "7e161dda22d56a8fd7cb51ae05e8db68cfba8d6cccfd4d880361764abfe6a2f9"
+    },
+    "live/review-review.json.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-sessions\\fd10b4fe5d4a4201a1bec4f78a1e61ca\\a\\r\\f6d9a0d7ec9b4b42a1072aa7edbf95ef\\review.json.sha256",
+      "sha256": "1fab9077d51a65ca342280eb841c0d9efa7f05453706ec8ff763af55c54633c1"
+    },
+    "live/review-events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-sessions\\fd10b4fe5d4a4201a1bec4f78a1e61ca\\a\\r\\f6d9a0d7ec9b4b42a1072aa7edbf95ef\\events.jsonl",
+      "sha256": "faba129e7247dd3e4c6ea7de5f6108249d91d2c076024b8311bebe44877c4097"
+    },
+    "live/session-access.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-session-access\\39f6635403e4bafcf1e61a029bf509809399c1f3cc7a898dcfb4b987ba77f400.json",
+      "sha256": "797f5ec47a468f013c98a30007152141787f63b7e0614450aac49b8127d2fe90"
+    },
+    "synthetic/context.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\check-context.json",
+      "sha256": "0283230b3903179a23c3737d3dd49391b45143a1fa9f3cd62363a32e68887197"
+    },
+    "synthetic/io-audit.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\io-audit.json",
+      "sha256": "89116fbf793cc3a69cbc5451702062e727e3b1ba1ab31ebafa6d128e7772177d"
+    },
+    "synthetic/technical-assessment.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\technical-assessment.json",
+      "sha256": "0f5ef60e5cdd9f4fd6f862a34306aa8dbee39b91f1107345156b05f2d0d19f9a"
+    },
+    "synthetic/session-session.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\s\\64afbf4ec9e74453b671eb6ba428392d\\session.json",
+      "sha256": "6bdb2784d8e01131a9bcf5551ad3d8be5d369bfa28b6545709c2b020829887fb"
+    },
+    "synthetic/session-session.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\s\\64afbf4ec9e74453b671eb6ba428392d\\session.sha256",
+      "sha256": "555a7dbfaf4f7271d0134461a5197784b20b9be7b58b3eb99a667c304d395ea2"
+    },
+    "synthetic/session-events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\s\\64afbf4ec9e74453b671eb6ba428392d\\events.jsonl",
+      "sha256": "4af070f99abee68c9cedd84c334d681122cfa7699db94e4fe8a6cbf394c857d5"
+    },
+    "synthetic/outcome.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\s\\64afbf4ec9e74453b671eb6ba428392d\\attempts\\efed4f19b95e4caebfb764a90e88233f\\outcome.json",
+      "sha256": "feba00dd39de75f607c04feb76c5a1fd34181b106ef21c0235d6b526225de2f0"
+    },
+    "synthetic/controller-events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\s\\64afbf4ec9e74453b671eb6ba428392d\\attempts\\efed4f19b95e4caebfb764a90e88233f\\events.jsonl",
+      "sha256": "a4bdccbfed354e21c5c7ceab0773f407968deb68fe9ec92cc1550219e2c18e73"
+    },
+    "synthetic/review-review.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\s\\64afbf4ec9e74453b671eb6ba428392d\\a\\r\\bf8d6121ce5d4eb7848a203f8dbf6366\\review.json",
+      "sha256": "cd39a0b896f60c15c2182c5a73b7350e8b89205ac924e2d412e734af1091deed"
+    },
+    "synthetic/review-review.json.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\s\\64afbf4ec9e74453b671eb6ba428392d\\a\\r\\bf8d6121ce5d4eb7848a203f8dbf6366\\review.json.sha256",
+      "sha256": "e67cf21635a9207fb144494bc9ef1e3b82f2d180a2def047ecba2e6dabeee7d6"
+    },
+    "synthetic/review-events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\s\\64afbf4ec9e74453b671eb6ba428392d\\a\\r\\bf8d6121ce5d4eb7848a203f8dbf6366\\events.jsonl",
+      "sha256": "df6e4d51beda086bd833b67bd667622e485f990b6acce0f201d7c41be74b07f4"
+    },
+    "synthetic/plan-plan.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\s\\64afbf4ec9e74453b671eb6ba428392d\\a\\p\\774d79c65a0140cabe967d647ab6d9b7\\plan.json",
+      "sha256": "c36177434270997e3056e14bf58684ffdb8b93714626110cd96dff441ff19ac9"
+    },
+    "synthetic/plan-plan.json.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\s\\64afbf4ec9e74453b671eb6ba428392d\\a\\p\\774d79c65a0140cabe967d647ab6d9b7\\plan.json.sha256",
+      "sha256": "b660ff60695053d833e312466a0c52b9784b496c2ee23c39aea1a52a86acbd69"
+    },
+    "synthetic/plan-events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\s\\64afbf4ec9e74453b671eb6ba428392d\\a\\p\\774d79c65a0140cabe967d647ab6d9b7\\events.jsonl",
+      "sha256": "6048696730a9e15d56569e98e7b7c85f7f59c589f2e9ec06a59182b3ffcacb1d"
+    },
+    "synthetic/plan-development.xml": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\s\\64afbf4ec9e74453b671eb6ba428392d\\a\\p\\774d79c65a0140cabe967d647ab6d9b7\\development.xml",
+      "sha256": "4b59d2f1877476051fd012517b657361e4bac75c2c0578361d9e257e9dd79496"
+    },
+    "synthetic/execution-results.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\s\\64afbf4ec9e74453b671eb6ba428392d\\a\\x\\7aef6b47cae848868a508b7c0218d913\\results.json",
+      "sha256": "1ba2a9c8a455e0cc78aed9a9d84bd9668044ffb60a92118de7612b52a395bae0"
+    },
+    "synthetic/execution-report.md": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\s\\64afbf4ec9e74453b671eb6ba428392d\\a\\x\\7aef6b47cae848868a508b7c0218d913\\report.md",
+      "sha256": "9ea64c3a9a55d4751727ba69fc1975198763d404dd48ef143f1ada244a90a721"
+    },
+    "synthetic/execution-baseline.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\s\\64afbf4ec9e74453b671eb6ba428392d\\a\\x\\7aef6b47cae848868a508b7c0218d913\\baseline.json",
+      "sha256": "9f4f187ae83fa250c434701f584fa73d0b4d709f94936c865b184b48990eb98f"
+    },
+    "synthetic/execution-candidate.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\s\\64afbf4ec9e74453b671eb6ba428392d\\a\\x\\7aef6b47cae848868a508b7c0218d913\\candidate.json",
+      "sha256": "98c91443744ea41ef99cf89dc84498213af7caf697b6a103c884d1dfb48afea5"
+    },
+    "synthetic/execution-development.xml": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\s\\64afbf4ec9e74453b671eb6ba428392d\\a\\x\\7aef6b47cae848868a508b7c0218d913\\development.xml",
+      "sha256": "4b59d2f1877476051fd012517b657361e4bac75c2c0578361d9e257e9dd79496"
+    },
+    "synthetic/execution-events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\s\\64afbf4ec9e74453b671eb6ba428392d\\a\\x\\7aef6b47cae848868a508b7c0218d913\\events.jsonl",
+      "sha256": "ffb70ab4670d94a48564a041128dfec059e0e3786876c9da1df820c1d8df34ca"
+    },
+    "synthetic/session-access.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\sa\\b0fd5eb0292690a1cbec29dc4b6cfa25e99fc821d0c7f2dc813b02836c4f6d0c.json",
+      "sha256": "bc3ae34aeda3a302f33f319c719d9293466b32ee0974959be33baca8eb2f86d7"
+    },
+    "synthetic/source-proposal.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\i\\91b4c3b0f8364bde98f0b704f4b6eb04\\proposal.json",
+      "sha256": "5450e2634c1f437dcbe643a55573fd7300242b660c6343881cc6291d17592496"
+    },
+    "synthetic/source-report.md": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\i\\91b4c3b0f8364bde98f0b704f4b6eb04\\report.md",
+      "sha256": "d83380593ce486c6ebc08671010c03fc82396fd43871d1a05aaa25a450d958cb"
+    },
+    "synthetic/source-events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\i\\91b4c3b0f8364bde98f0b704f4b6eb04\\events.jsonl",
+      "sha256": "de58385e8dd40726cd17bbe64d5503925b147850c41b69f84331e8edd5527716"
+    },
+    "synthetic/source-memory.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\i\\91b4c3b0f8364bde98f0b704f4b6eb04\\memory.json",
+      "sha256": "fd3c5699d07475d072219a361bdef4e9e58bfc50aa0e423ff76f2d59e0eaf29e"
+    },
+    "synthetic/source-rules-memory.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\i\\91b4c3b0f8364bde98f0b704f4b6eb04\\rules-memory.json",
+      "sha256": "002ccb16ab5f101168f1a0bfd2a8ef8792db2835e5179cb3490c9a6a2457d946"
+    },
+    "synthetic/source-access.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\ia\\9794307e97355d1339deff267e1b8b1b8a7e47bf701a714112b6e952982e43ca.json",
+      "sha256": "68e22255c08d0e412d03bd81b9511033168f5bbcc41b71a1316db56d856729f4"
+    },
+    "synthetic/frozen.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\f\\0bea6372fff74cf1b6d1284c7538e633\\frozen.json",
+      "sha256": "e2126dacd12da5ce76d33b8af18ba100177527fe46f40a055d78975f9659f6d1"
+    },
+    "synthetic/frozen.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\f\\0bea6372fff74cf1b6d1284c7538e633\\frozen.sha256",
+      "sha256": "150394c159ad5413e51f33b1ef728b23195f5f1039f45d46461f2c5d4baca2dc"
+    },
+    "synthetic/events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\f\\0bea6372fff74cf1b6d1284c7538e633\\events.jsonl",
+      "sha256": "d9cc625a934d98910bc6d4795271fc92f495c51b13048d63d889902a4ce60b8f"
+    },
+    "synthetic/split-manifest.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\v\\8292cdb877bc4c8ab64ed5193119143b\\manifest.json",
+      "sha256": "6197ea8592cd568362e65f115516b9557fe92d396e3a524e59ef09af4ee1e55b"
+    },
+    "synthetic/split-development.xml": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\v\\8292cdb877bc4c8ab64ed5193119143b\\development.xml",
+      "sha256": "4b59d2f1877476051fd012517b657361e4bac75c2c0578361d9e257e9dd79496"
+    },
+    "synthetic/preparation-results.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\r\\41fc066e5fa14200b29df6bd0639bac0\\results.json",
+      "sha256": "12dbd2bef17008fb01e11f8fa63ca1c3eaaeb2928c09331a909ef3f2653c7a77"
+    },
+    "synthetic/preparation-analysis.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\r\\41fc066e5fa14200b29df6bd0639bac0\\analysis.json",
+      "sha256": "d496d6dbcce4543fdc5f289d4d9eb07088899d5c02429362ac6376e41fd20610"
+    },
+    "synthetic/preparation-analysis_origin.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\r\\41fc066e5fa14200b29df6bd0639bac0\\analysis_origin.json",
+      "sha256": "882919bc59ac3f199b7b08edfad0228a603cd8fba2f20404299452e647000d24"
+    },
+    "synthetic/preparation-events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\r\\41fc066e5fa14200b29df6bd0639bac0\\events.jsonl",
+      "sha256": "baf223ac53a220b0fbf5849b104f2aadf78ae8fb6511cb8e741a9fddfef34eb0"
+    },
+    "synthetic/artificial-fixture.xml": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\synthetic.xml",
+      "sha256": "c15ee95057abe212ba1a63129f2d0457c55a991b9d7d287dfe25b487439d3e37"
+    },
+    "synthetic/execution-access.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\xa\\6788da8c51cb467ad2b6712555c73c4d9a9e04a8f1b5d0dee6fedab70d05fd1a.json",
+      "sha256": "93348c741f7f7a181968a296f5670dba2cde96f3de8a05438de84a1c575b2d27"
+    },
+    "synthetic/session-backtests.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\sd\\8b966cb869ab4c46a2ceec99fd706206\\s\\64afbf4ec9e74453b671eb6ba428392d\\budget\\backtests.json",
+      "sha256": "14526edd7066751a46f1c592590410a0d9c9d99dd3033c23e7f696e554b1231e"
+    }
+  }
+}

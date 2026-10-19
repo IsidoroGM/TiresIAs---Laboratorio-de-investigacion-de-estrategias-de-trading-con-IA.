@@ -1,0 +1,120 @@
+{
+  "schema_version": 2,
+  "idea_id": "b635a0a7e9df8e02f9b0cec39babef06c9dc2e6968989fed25e14a2c2f4300f1",
+  "lineage": {
+    "schema_version": 1,
+    "root_idea_id": "1aa63558f04ea4f9c5624af1ebf5c196310b3afadb4dfa2d37c6308985411dab",
+    "depth": 1,
+    "parent_translation": {
+      "directory": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\a\\t\\a81e9de7bca0459c89ff5c4a796b8729",
+      "sha256": {
+        "translation.json": "239594d38ee25e9918a83bc2c754ae494a62856064d99bd0460f399dba39d178",
+        "events.jsonl": "4645ac2cf6239b01ac8347b54da44bb0a2f642a690b9ba3339407f45ecdf9c75"
+      }
+    },
+    "parent_idea": {
+      "directory": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\sessions\\9538abdfbf12434caaa47a03fcea63b9\\a\\i\\ef725001a6f547e0920f21706b112d4f",
+      "idea_id": "1aa63558f04ea4f9c5624af1ebf5c196310b3afadb4dfa2d37c6308985411dab",
+      "reference": {
+        "frozen_dir": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\frozen\\4a9b80cc8fe444d88fdcd07a89f437f6",
+        "frozen_sha256": "50938ecd2be35fd1b1960770ee07ef53b7698264e50d7fecdf643ffa7184c93c",
+        "manifest_sha256": "4f97fd51110a84e093701252b3ffbfeee83247a15d67dc0a493dfa1398ee2b1d",
+        "development_sha256": "4b59d2f1877476051fd012517b657361e4bac75c2c0578361d9e257e9dd79496",
+        "outer_cutoff": "2025-01-23"
+      },
+      "sha256": {
+        "idea.json": "6552b16bd79cace3c8277e58b1638756df15941aa850051b5b02ad27d0f877d8",
+        "events.jsonl": "f5eaec56e7cf1e2d3d86019c4d5e7ad91aee5b41f0ac74538a55b26af2560618"
+      }
+    },
+    "parent_proposal": {
+      "title": "Idea sintética",
+      "hypothesis": "Contrastar una regla distinta de los cruces.",
+      "entry_rule": "Referencia estrictamente mayor que umbral.",
+      "exit_rule": "Referencia menor o igual que umbral. O cerrar al final del periodo.",
+      "parameters": [
+        {
+          "name": "threshold",
+          "value": 1
+        }
+      ],
+      "data_requirements": {
+        "reference_series": true,
+        "ohlc": false,
+        "volume": false,
+        "intraday": false,
+        "other": false
+      }
+    }
+  },
+  "status": "pending_tool_mapping",
+  "executable": false,
+  "proposal": {
+    "title": "Reformulación artificial precisa",
+    "hypothesis": "Contrastar una regla distinta de los cruces.",
+    "entry_rule": "Referencia estrictamente mayor que umbral.",
+    "exit_rule": "Referencia menor o igual que umbral.",
+    "parameters": [
+      {
+        "name": "threshold",
+        "value": 1
+      }
+    ],
+    "data_requirements": {
+      "reference_series": true,
+      "ohlc": false,
+      "volume": false,
+      "intraday": false,
+      "other": false
+    }
+  },
+  "missing_declared_inputs": [],
+  "validation_scope": "format_and_bounds_only_not_strategy_correctness",
+  "reference": {
+    "frozen_dir": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-053b147250a84efc837611a4bb56c41b\\test_revision_path_uses_four_c0\\frozen\\4a9b80cc8fe444d88fdcd07a89f437f6",
+    "frozen_sha256": "50938ecd2be35fd1b1960770ee07ef53b7698264e50d7fecdf643ffa7184c93c",
+    "manifest_sha256": "4f97fd51110a84e093701252b3ffbfeee83247a15d67dc0a493dfa1398ee2b1d",
+    "development_sha256": "4b59d2f1877476051fd012517b657361e4bac75c2c0578361d9e257e9dd79496",
+    "outer_cutoff": "2025-01-23"
+  },
+  "development_context": {
+    "pair": "EUR/USD",
+    "data": {
+      "name": "BCE",
+      "sha256": "4b59d2f1877476051fd012517b657361e4bac75c2c0578361d9e257e9dd79496",
+      "first_date": "2025-01-01",
+      "last_date": "2025-01-22",
+      "observations": 22
+    },
+    "available_inputs": [
+      "reference_series"
+    ],
+    "execution_constraints": {
+      "direction": "long_only",
+      "execution": "next_observation",
+      "controls": {
+        "pair": "EUR/USD",
+        "baseline_strategy": "sma",
+        "fast_window": 2,
+        "slow_window": 4,
+        "cost_rate": "0.001",
+        "initial_capital": "1000",
+        "allocation_fraction": "0.1"
+      }
+    }
+  },
+  "provider": {
+    "provider": "test",
+    "model": "offline"
+  },
+  "usage": [
+    {
+      "input_tokens": 25,
+      "output_tokens": 40,
+      "api_cost_usd": "0"
+    }
+  ],
+  "api_cost_usd": "0",
+  "model_requests": 1,
+  "calculated_results": null
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "previous_artifacts_unchanged": 161,
+  "files": {
+    "input.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-drafts\\cf542656670d4bb4b5b00627bf5dfd55\\input.json",
+      "sha256": "deb125017e030a95c3faae65b7672f799da37931940a227b813ae8ffb46e5c4f"
+    },
+    "draft.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-drafts\\cf542656670d4bb4b5b00627bf5dfd55\\draft.json",
+      "sha256": "35ced52f9094b7d08bbbe8f75d847412209ff7fc5bcd523fb74782153c7853db"
+    },
+    "draft.json.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-drafts\\cf542656670d4bb4b5b00627bf5dfd55\\draft.json.sha256",
+      "sha256": "8bc6361ba1fbd19e0f5a1a80d75a8e351d7567b3b47a16730fa900755d6d95c0"
+    },
+    "report.md": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-drafts\\cf542656670d4bb4b5b00627bf5dfd55\\report.md",
+      "sha256": "4c0df62e5dc2c3f1d7eab631f240afc3f7e7ea71029effaf083254b8cd0c28ba"
+    },
+    "events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-drafts\\cf542656670d4bb4b5b00627bf5dfd55\\events.jsonl",
+      "sha256": "8942c1041c8c1e38cf278b9677cade1c4561681f03c2270b47e9b4dc620ba50a"
+    },
+    "check-context.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-drafts\\cf542656670d4bb4b5b00627bf5dfd55\\check-context.json",
+      "sha256": "a77a4e683211224b9479b85b2efe1c984b35a3375b9bd8ffbcd4727163dac8a7"
+    },
+    "io-audit.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-drafts\\cf542656670d4bb4b5b00627bf5dfd55\\io-audit.json",
+      "sha256": "760e7727e2971ae23df60dd593c20102056a16147bf795aa1b56ea87c32ba124"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "proposal_sha256": "ddcd3a7e1f48c9ebcd4fc68547b9662816aa1dfb2d8c4c2ba63289b205ce00ee",
+  "spec_sha256": "7371635017c0d0fe8501735d32d0724ec87b181676dd6a03840355b4da568946",
+  "reviewer": "Codex: revisión separada del investigador local",
+  "decision": "needs_clarification",
+  "checks": {
+    "entry_matches_hypothesis": true,
+    "exit_matches_hypothesis": false,
+    "windows_understood": true,
+    "lags_understood": true,
+    "data_sufficient": true,
+    "no_unresolved_ambiguity": false
+  },
+  "rationale": "La hija elimina el retardo adicional: entrada y salida usan lag=0. El título tiene 60 caracteres y termina en 'y re'; la hipótesis tiene 160 y termina en 'por debajo de la'. La descripción es incompleta. No completar el texto por inferencia ni afirmar equivalencia semántica. Se conservan las reglas explícitas, pero no se simulan ni se permite otra reformulación de esta hija."
+}

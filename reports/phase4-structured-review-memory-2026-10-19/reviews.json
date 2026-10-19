@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "protocol": "structured_review_memory_v1",
+  "status": "review_memory_only",
+  "run_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-review-memory\\ad12b5680d6a4cb3aab5fa7d6f0fec7a",
+  "reference": {
+    "frozen_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2",
+    "frozen_sha256": "1f64b917cc88993ca496798ef98e4aadf8a266f7b7f3fce9cf45d6b86d61483a",
+    "manifest_sha256": "c432a2795917c500e0ee5fc474ed8f5a5b096346857a67c4b7f19b7f1a8dff42",
+    "development_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+    "outer_cutoff": "2020-01-01"
+  },
+  "context": {
+    "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-draft-contexts\\2d35c3461d234499a1c9300470f6f130",
+    "sha256": {
+      "context.json": "04ab2a19f1e6e5ee6d6539c738d082994044b9f9fc457e38eb41195e14cf3444",
+      "context.json.sha256": "e3c81eb7993c93531ef6cac62caebe752e90299ea9edb26cdc5ab60b63786d81",
+      "memory.json": "5ce6e3c1dcff64ac4c4ea8c2cf035a411fa3f6dd7a608f4bed4ad364c1ae5730",
+      "rules-memory.json": "d8d6bb501239150fa5a79f938755c0124c19e18781c99e90ac6d379089ccb163",
+      "claims.json": "070b75c0872b52cbef33e91435d397dcc1147a30372a0680835aa836ae4ea26c",
+      "events.jsonl": "bfbd766c5e21cfec97ceb355a0e5c58b7ef227de631c90d8f7cc2c77371a3546"
+    }
+  },
+  "sessions_sha256": "b874f6995d8fc2face6962552f9d7927c045ff0e848911a29c4539154b5a9efa",
+  "entries": [
+    {
+      "session": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-sessions\\fd10b4fe5d4a4201a1bec4f78a1e61ca",
+      "proposal_source": {
+        "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-ideas\\18fdf9274baa4b96973b8c2f67dab92b",
+        "sha256": {
+          "proposal.json": "7fdb4748fb0ae4c0a3bfb2f1c68b146fe0ba64b3c746db9e5d19f20455f763c7",
+          "events.jsonl": "59559d7d8c3ab09418212f5e684cb0172605f3a69a405d190753d282ad5eb5d4",
+          "report.md": "b1874c8f5eece69745d53b4653a4cabff6ca24408ae8d308f9b69a91667025a8",
+          "memory.json": "5ce6e3c1dcff64ac4c4ea8c2cf035a411fa3f6dd7a608f4bed4ad364c1ae5730",
+          "rules-memory.json": "e2ff50ad44e4eb053f2e23583c0cb64c3478d15562d43d20d6f01736216996a1"
+        }
+      },
+      "spec_sha256": "e4269c98cfef73b916c822ec7728b6a7c7d227bee3bea411857c807e214d43d0",
+      "finish_consumed": true,
+      "review_status": "needs_clarification",
+      "review": {
+        "origin": {
+          "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-sessions\\fd10b4fe5d4a4201a1bec4f78a1e61ca\\a\\r\\f6d9a0d7ec9b4b42a1072aa7edbf95ef",
+          "sha256": {
+            "review.json": "7e161dda22d56a8fd7cb51ae05e8db68cfba8d6cccfd4d880361764abfe6a2f9",
+            "review.json.sha256": "1fab9077d51a65ca342280eb841c0d9efa7f05453706ec8ff763af55c54633c1",
+            "events.jsonl": "faba129e7247dd3e4c6ea7de5f6108249d91d2c076024b8311bebe44877c4097"
+          }
+        },
+        "reviewer": "Codex: revisión separada del investigador local",
+        "reason": "Entrada EMA20/SMA60 explícita. La salida usa ambas series con lag=1: retrasa la señal bajista una observación, además de la ejecución posterior del motor. La hipótesis no explica ese retardo adicional. No se presume equivalencia ni se cambia lag a cero para aprobar o simular.",
+        "checks": {
+          "entry_matches_hypothesis": true,
+          "exit_matches_hypothesis": false,
+          "windows_understood": true,
+          "lags_understood": true,
+          "data_sufficient": true,
+          "no_unresolved_ambiguity": false
+        },
+        "reason_is_unverified_reviewer_text": true
+      },
+      "finish_origin": {
+        "attempt": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-sessions\\fd10b4fe5d4a4201a1bec4f78a1e61ca\\attempts\\c251b76748134eab80794dea6af0a025",
+        "action_sha256": "aa8d9f47481c75a05634a64fa796dbbd01a97800eca928a730acb4abfc1ca822",
+        "events_sha256": "ed5002cb4c848bf7d638d1fb67d7001b96b65ac25c277ea2c7fe49663b42c321"
+      },
+      "proposal_text_lengths": {
+        "title": 60,
+        "hypothesis": 159
+      },
+      "source_usage": {
+        "model_requests": 1,
+        "usage": [
+          {
+            "input_tokens": 1257,
+            "output_tokens": 248,
+            "cached_input_tokens": 0,
+            "duration_ns": 68693893800,
+            "api_cost_usd": "0"
+          }
+        ],
+        "api_cost_usd": "0"
+      },
+      "session_outcome_checked": false,
+      "financial_results_read": false
+    },
+    {
+      "session": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-sessions\\bb2880ffb7c74c37abcece9c5275ffc2",
+      "proposal_source": {
+        "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-revisions\\2d0040bbd7184c1d9cbde9a8eef3ce3b\\i\\a1bacf3e52c743c2b4088cad0c82ee45",
+        "sha256": {
+          "proposal.json": "ddcd3a7e1f48c9ebcd4fc68547b9662816aa1dfb2d8c4c2ba63289b205ce00ee",
+          "events.jsonl": "3f8f0de9c0870ba4ea89440b27743b06d13dde02ffe25f8519f70c6e2ec851eb",
+          "report.md": "375652fcb9cecdf710fa98c77dcc74e24fb4635008a526d1308e9450eba2a60b",
+          "memory.json": "5ce6e3c1dcff64ac4c4ea8c2cf035a411fa3f6dd7a608f4bed4ad364c1ae5730",
+          "rules-memory.json": "6cce53afb0615ae41f65e0cc4ed798bddbef95f6d9001a979c4638af913bb747"
+        }
+      },
+      "spec_sha256": "7371635017c0d0fe8501735d32d0724ec87b181676dd6a03840355b4da568946",
+      "finish_consumed": true,
+      "review_status": "needs_clarification",
+      "review": {
+        "origin": {
+          "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-sessions\\bb2880ffb7c74c37abcece9c5275ffc2\\a\\r\\ca94d33c602c4e338b152a2676011f24",
+          "sha256": {
+            "review.json": "326f02698fa30618c65c5de623a82c81cbc727ea3592a3da45df52e722de05f3",
+            "review.json.sha256": "8e7c7001acf79a8ca38bd2bbf13525824ab9846863197d26c7cd75ab7aa832b5",
+            "events.jsonl": "ab8c21394d629183d0ded1a14c31579de1d4fbfa4008f6c8ed6d97decbf2d3d2"
+          }
+        },
+        "reviewer": "Codex: revisión separada del investigador local",
+        "reason": "La hija elimina el retardo adicional: entrada y salida usan lag=0. El título tiene 60 caracteres y termina en 'y re'; la hipótesis tiene 160 y termina en 'por debajo de la'. La descripción es incompleta. No completar el texto por inferencia ni afirmar equivalencia semántica. Se conservan las reglas explícitas, pero no se simulan ni se permite otra reformulación de esta hija.",
+        "checks": {
+          "entry_matches_hypothesis": true,
+          "exit_matches_hypothesis": false,
+          "windows_understood": true,
+          "lags_understood": true,
+          "data_sufficient": true,
+          "no_unresolved_ambiguity": false
+        },
+        "reason_is_unverified_reviewer_text": true
+      },
+      "finish_origin": {
+        "attempt": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-sessions\\bb2880ffb7c74c37abcece9c5275ffc2\\attempts\\c5a30a68c4ca4f14a221b99526e2f417",
+        "action_sha256": "f65ae4de75941bfc882d9461b94693b96e4bd095132ea407cc89c843023875d3",
+        "events_sha256": "23c5a721378d7ef9f0bf400bff800934c7de847b7c5312c6e326c45e1e001881"
+      },
+      "proposal_text_lengths": {
+        "title": 60,
+        "hypothesis": 159
+      },
+      "source_usage": {
+        "model_requests": 1,
+        "usage": [
+          {
+            "input_tokens": 1289,
+            "output_tokens": 239,
+            "cached_input_tokens": 0,
+            "duration_ns": 62952430600,
+            "api_cost_usd": "0"
+          }
+        ],
+        "api_cost_usd": "0"
+      },
+      "session_outcome_checked": false,
+      "financial_results_read": false
+    }
+  ],
+  "scope": "captured_registered_sessions_only_not_all_independent_reviews",
+  "generation_ready": false,
+  "eligible_for_session": false,
+  "executable": false,
+  "new_usage": {
+    "model_requests": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "api_cost_usd": "0",
+    "backtests": 0
+  },
+  "code_sha256": {
+    "data.py": "286b822fbb6dd5e46f65f64bb387bb7f7d246c7c9c17dc523a52d7ce3e7dfd94",
+    "indicators.py": "13cce9a32399a309694a83f52c8bdb93b0f86075612c825d5be3d9bfc2c366a3",
+    "strategies.py": "9607a659a352e31f2192c237eaecc8191ba90f9b2e78bcaa3919cfaa3489527e",
+    "backtesting.py": "81e6a34dd715d192c730fe407c7cdd037e2340e387e4ea37c90b0549d07a3c4f",
+    "metrics.py": "3d85bab9c1ee6da88a632a08b3a600f12ce7ee9335fbce1b4c56e0cfc865ec2f",
+    "experiments.py": "57c5638f293d9e4c5102a091227970ac1d2fd3b9774fa3f839fd6ed044a26e4d",
+    "ai.py": "9c43b2f13b1b9264810cb1710c081acc0c476071870842617c9a451cb58cc1f3",
+    "research.py": "7e53374a3768800de2d75be9bc67d2299d16620c6b4fe92a3438d1f4c0c63340",
+    "validation.py": "ac2aa655af324a352107753e3b53e0aa986958aeb9e2e2374c4791c3a8afb1b6",
+    "holdout.py": "a048adf93b2a58b3177e80d1077597a0bd849932fd42f714326a43fc68fecbb2",
+    "rule_planning.py": "ec26a75932f10db35fc2ebdb4ef56a1062eba0059a621125f8d8d2166bb6708d",
+    "rules.py": "09bbc9d25ed27d4e27961dd0431c95a73e10f21aa8500e47430373a93c500361",
+    "formalization.py": "43eea12e59e441712914f5449c66a410d33928dcbd2c5de31ec9d89f8d795098",
+    "discovery.py": "b680ab835f96dc1e917760309a19aad93bb51beee70eaf9d2dfb96da0fd211a2",
+    "robustness.py": "906ea3f6c07d5f5aeac03d049c0852b9d863e29a3864ac61009fa811a0a11ae5",
+    "idea_memory.py": "dbf1d5ef1f32c9df3e945da9e1e74491aa8c3a7fbcb92f0c93187558c6193f40",
+    "structured_ideas.py": "66bebb4f2077bd77d622e256420e87090325cd03ba346d545f6b92def5f5009a",
+    "structured_planning.py": "70e7b127ea9af5a1c712cd87f08090458bc45e0f3757a24660765ceb9fea8968",
+    "structured_brief.py": "960106ad0d3c4e271e8efb19fbb88050a179791b16fc8ee15666ac3afdccbd1d",
+    "structured_draft.py": "9791b386067dd019ee9e403aa3ffde34b0d35984eb5e3f5f08c122d4365cdc31",
+    "structured_draft_context.py": "1699ce3527f9a8dc55bc7d2778a534585463e8aabaefd65e85091ad9d225eaf3",
+    "rule_execution.py": "0aeeeb9fb859e9d26e2225adbe16990ddaaed5cb7661d7284a66b5f469b8f218",
+    "structured_execution.py": "cba2d3af6d8d489cb10c6fce59c8817e66b7d2fa197a2887008b5290506af247",
+    "research_session.py": "64adb3617b31d16546443488fc992b8a8a43862f6896ff25ec38fcd795961015",
+    "agent_feedback.py": "bf191f16f50e41e86eed10ea9b8c742928de346abb9a386a4c24620a1ea06560",
+    "structured_session.py": "cc24bd867badd13436273698bcfaf4b5b4d9b80cf6b23a1d7859d2bef413c66a",
+    "structured_review_memory.py": "a965a10f790b29b3e6169ea9e9116f32c6034bdd416d562e3cf02c5c29650d86"
+  }
+}
