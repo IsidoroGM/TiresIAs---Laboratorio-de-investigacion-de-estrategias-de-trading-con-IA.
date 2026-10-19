@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "files": {
+    "revised-idea.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\idea-revisions\\625561cd5fd64933a702ebff1c8ccfb0\\idea.json",
+      "sha256": "bedc34c0ff43fe8903ee4eeae0e775442623bf9dd78c0acf9cc736723ae0d220"
+    },
+    "revision-events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\idea-revisions\\625561cd5fd64933a702ebff1c8ccfb0\\events.jsonl",
+      "sha256": "94618d34a4d4797ae1f6cc1a8268cd872d633bec6dfb965d0c1959620f817354"
+    },
+    "revision-io-audit.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\idea-revisions\\625561cd5fd64933a702ebff1c8ccfb0\\io-audit.json",
+      "sha256": "ab7d77399f842b096eb2dbc2f0570b4f6df7fca6a091ee61773154987d10998b"
+    },
+    "revision-access.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\agent-feedback-access\\revision-f06a5ddf830b3efd374745b78cea2435c3c4a83e7498091f75c6ff375d922231.json",
+      "sha256": "606f5e2d252dbd8795fa5ec75fc8d4865bad7a93525ac0d895e465f3712f9b3e"
+    },
+    "parent-idea.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\discovery\\f99dc2258e2b4b3bb799af9a85dd8f2e\\idea.json",
+      "sha256": "0960596e1ae58aba59356c7c04dba542b45afe945aa053f2b00c5143b69110cd"
+    },
+    "parent-idea-events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\discovery\\f99dc2258e2b4b3bb799af9a85dd8f2e\\events.jsonl",
+      "sha256": "fc97bcb160efdffef5fbe3f339d41423f846fab42360cc3c67e193e368acfa99"
+    },
+    "parent-translation.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\formalization\\0199d06d32b649139c0ad9b96c559d5b\\translation.json",
+      "sha256": "b5dfad1148faec6c015f8e76520efe7d02324faf6666cc1b5743e8fcd5c1fe22"
+    },
+    "parent-translation-events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\formalization\\0199d06d32b649139c0ad9b96c559d5b\\events.jsonl",
+      "sha256": "30eb9b3390874001172504458d17550ba5084657070aab623da0fff37d0a3d4f"
+    },
+    "fixture-analysis.json": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-d7ff2bc5f7e24ab9a89c955e1b95e404\\test_analysis_sends_verified_s0\\analyses\\6ab03719d68144c39600d8e9c0179c8f\\analysis.json",
+      "sha256": "c4591c92310b722dc9dce6913153fbd7b9ef42b564dcd93b6787a7d0ca4eecd1"
+    },
+    "fixture-analysis-events.jsonl": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-d7ff2bc5f7e24ab9a89c955e1b95e404\\test_analysis_sends_verified_s0\\analyses\\6ab03719d68144c39600d8e9c0179c8f\\events.jsonl",
+      "sha256": "1aab71cb444af2596395c39c621dd1e9308574e80f9cfcc68be624ae41a9d50d"
+    },
+    "fixture-analysis-access.json": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-d7ff2bc5f7e24ab9a89c955e1b95e404\\test_analysis_sends_verified_s0\\feedback-access\\analysis-47d64356cb494a64c0245097ae65ed078faeba02add7eb0744a2c7a79d66cf15.json",
+      "sha256": "ad182e5b2224207a6eb55caf6ad377ac048ac17054d1577421f8a26cb66245fc"
+    },
+    "fixture-plan.json": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-d7ff2bc5f7e24ab9a89c955e1b95e404\\test_analysis_sends_verified_s0\\plans\\3c3c86708a064d85828b84071a726572\\plan.json",
+      "sha256": "4ef052266aff4b96649d43d91dc3a324510147338efccb9a9cd4fdaa1c878f65"
+    },
+    "fixture-results.json": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-d7ff2bc5f7e24ab9a89c955e1b95e404\\test_analysis_sends_verified_s0\\executions\\0567183ddd7740bd9a51d4a3ce27e5e8\\results.json",
+      "sha256": "fd92af1e6710e4f30b3a3cfe41b07a1a79fafbf38e3507172c8e676b89d5ca33"
+    },
+    "fixture-events.jsonl": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-d7ff2bc5f7e24ab9a89c955e1b95e404\\test_analysis_sends_verified_s0\\executions\\0567183ddd7740bd9a51d4a3ce27e5e8\\events.jsonl",
+      "sha256": "8afe91263379090745c770d1d9b4c0f69f21ab9fb0e3e06021ebf05ab3300809"
+    },
+    "fixture-development.xml": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-d7ff2bc5f7e24ab9a89c955e1b95e404\\test_analysis_sends_verified_s0\\executions\\0567183ddd7740bd9a51d4a3ce27e5e8\\development.xml",
+      "sha256": "4b59d2f1877476051fd012517b657361e4bac75c2c0578361d9e257e9dd79496"
+    },
+    "fixture-baseline.json": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-d7ff2bc5f7e24ab9a89c955e1b95e404\\test_analysis_sends_verified_s0\\executions\\0567183ddd7740bd9a51d4a3ce27e5e8\\baseline.json",
+      "sha256": "9f4f187ae83fa250c434701f584fa73d0b4d709f94936c865b184b48990eb98f"
+    },
+    "fixture-candidate.json": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-d7ff2bc5f7e24ab9a89c955e1b95e404\\test_analysis_sends_verified_s0\\executions\\0567183ddd7740bd9a51d4a3ce27e5e8\\candidate.json",
+      "sha256": "c3526eed421cf8ce1b853b611141667012927b1a7cf43c87a7285e39fb5a91bd"
+    },
+    "fixture-report.md": {
+      "source": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-d7ff2bc5f7e24ab9a89c955e1b95e404\\test_analysis_sends_verified_s0\\executions\\0567183ddd7740bd9a51d4a3ce27e5e8\\report.md",
+      "sha256": "c471223c226540fea6d97fbcb2a7d2ea2091fe7937c4e909410dadfe21dd247f"
+    }
+  }
+}

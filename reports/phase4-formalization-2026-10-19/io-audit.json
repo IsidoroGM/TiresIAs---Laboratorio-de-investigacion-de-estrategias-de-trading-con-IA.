@@ -1,0 +1,32 @@
+{
+  "outer_access_blocked": true,
+  "signals_disabled": true,
+  "read_paths": [
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\discovery\\f99dc2258e2b4b3bb799af9a85dd8f2e\\events.jsonl",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\discovery\\f99dc2258e2b4b3bb799af9a85dd8f2e\\idea.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\formalization\\0199d06d32b649139c0ad9b96c559d5b\\events.jsonl",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2\\events.jsonl",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2\\frozen.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2\\frozen.sha256",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research\\32f2bb61010644a59639db330a2b0eaa\\analysis.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research\\32f2bb61010644a59639db330a2b0eaa\\analysis_origin.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research\\32f2bb61010644a59639db330a2b0eaa\\events.jsonl",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research\\32f2bb61010644a59639db330a2b0eaa\\results.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\validation\\fa8106cf47ab475a973a2f84cfd1ee97\\development.xml",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\validation\\fa8106cf47ab475a973a2f84cfd1ee97\\manifest.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\ai.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\backtesting.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\data.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\discovery.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\experiments.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\formalization.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\holdout.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\indicators.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\metrics.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\research.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\robustness.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\rules.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\strategies.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\validation.py"
+  ]
+}

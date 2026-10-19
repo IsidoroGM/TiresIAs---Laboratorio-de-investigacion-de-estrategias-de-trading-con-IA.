@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "kind": "revision",
+  "identity": {
+    "schema_version": 1,
+    "root_idea_id": "a59f988282c8de81e0aff2695e55147cd024a6cd7d2ab55acba31be2aa826d7e",
+    "development_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5"
+  },
+  "run_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\idea-revisions\\625561cd5fd64933a702ebff1c8ccfb0",
+  "max_model_requests": 1,
+  "automatic_retries": 0,
+  "state": "attempt_reserved"
+}

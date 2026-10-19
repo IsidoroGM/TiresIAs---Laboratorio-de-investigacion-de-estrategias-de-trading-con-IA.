@@ -1,0 +1,6 @@
+{
+  "verdict": "not_supported_in_sample",
+  "return_comparison": "lower",
+  "drawdown_comparison": "higher",
+  "scope": "historical_sample_only"
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "fixture_is_synthetic": true,
+  "fixture_source": "tests/test_holdout.py::setup and tests/test_rule_planning.py::translated",
+  "data_provenance": "Artificial rates in ECB XML format; not actual ECB historical data.",
+  "model_provenance": "In-memory test Provider stubs; no model service was called.",
+  "test": "tests/test_rule_execution.py::test_exactly_two_backtests_use_same_rates_fixed_controls_and_independent_accounts",
+  "pytest": {
+    "passed": 699,
+    "duration_seconds": 31.18,
+    "cache_disabled": true,
+    "exclusive_basetemp": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-e11645efa12b47fd8da724cb071bba11"
+  },
+  "application_registry_used_for_fixture": false,
+  "actual_draft_outcome": "Rejected before claim because its earlier blocked preparation did not create a plan."
+}

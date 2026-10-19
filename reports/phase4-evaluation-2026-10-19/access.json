@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "marked_at": "2026-10-19T10:45:17.632653+00:00",
+  "evaluation_sha256": "d4de382e518ac7b85598ee08011fd9de91e00248611423bfc726ef306d4e7f26",
+  "frozen_sha256": "1f64b917cc88993ca496798ef98e4aadf8a266f7b7f3fce9cf45d6b86d61483a",
+  "frozen_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2",
+  "split_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\validation\\fa8106cf47ab475a973a2f84cfd1ee97",
+  "evaluation_run": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\evaluations\\e4b0dc31a25a46f0a84655d433840a67",
+  "meaning": "Claimed before evaluation; do not treat this block as unseen again."
+}

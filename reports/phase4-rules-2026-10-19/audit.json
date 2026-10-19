@@ -1,0 +1,83 @@
+{
+  "scope": "technical_compatibility_only_not_strategy_selection",
+  "source": {
+    "name": "BCE",
+    "sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+    "first_date": "1999-01-04",
+    "last_date": "2019-12-31",
+    "observations": 5375
+  },
+  "policy": {
+    "pair": "EUR/USD",
+    "baseline_strategy": "sma",
+    "fast_window": 20,
+    "slow_window": 60,
+    "cost_rate": "0.001",
+    "initial_capital": "1000",
+    "allocation_fraction": "0.1"
+  },
+  "reference": {
+    "frozen_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2",
+    "frozen_sha256": "1f64b917cc88993ca496798ef98e4aadf8a266f7b7f3fce9cf45d6b86d61483a",
+    "manifest_sha256": "c432a2795917c500e0ee5fc474ed8f5a5b096346857a67c4b7f19b7f1a8dff42",
+    "development_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+    "outer_cutoff": "2020-01-01"
+  },
+  "cases": [
+    {
+      "reference_strategy": "SMA20/SMA60",
+      "compiled_strategy": "RULE:sma_20_60_example",
+      "spec_sha256": "0b1431c69c2acfa2ae13389ff3563b1d589c657bdddddec1f3efc175e7851ea4",
+      "signals_equal": true,
+      "complete_backtests_equal": true,
+      "closed_trades": 50,
+      "has_open_position": true,
+      "signal_sequence_sha256": "6bb9dd30cfd45df4d34351440da3e8b7a9d7e38f96cd0e1b40fc620269a84332",
+      "backtest_dataclass_sha256": "ad5213224753ca88d9d82d75799698e2692864f428cc10c106f1f9af78284321"
+    },
+    {
+      "reference_strategy": "EMA20/EMA60",
+      "compiled_strategy": "RULE:ema_20_60_compatibility",
+      "spec_sha256": "e4a742df726290f00e87528b98184dd1ec22c705365df64d941bda7a35619124",
+      "signals_equal": true,
+      "complete_backtests_equal": true,
+      "closed_trades": 47,
+      "has_open_position": true,
+      "signal_sequence_sha256": "3642fed1dde12b45ca61fd2cffb49d03089456583d8abcec76636ef425586c32",
+      "backtest_dataclass_sha256": "73c671854b0499d9708efa011146b55d8b65f3720b9455dda35590471b589496"
+    }
+  ],
+  "code_sha256": {
+    "rules.py": "09bbc9d25ed27d4e27961dd0431c95a73e10f21aa8500e47430373a93c500361",
+    "data.py": "286b822fbb6dd5e46f65f64bb387bb7f7d246c7c9c17dc523a52d7ce3e7dfd94",
+    "indicators.py": "13cce9a32399a309694a83f52c8bdb93b0f86075612c825d5be3d9bfc2c366a3",
+    "strategies.py": "9607a659a352e31f2192c237eaecc8191ba90f9b2e78bcaa3919cfaa3489527e",
+    "backtesting.py": "81e6a34dd715d192c730fe407c7cdd037e2340e387e4ea37c90b0549d07a3c4f"
+  },
+  "guard": "builtins.open and io.open reject outer evaluation data, comparisons and access ledger",
+  "files_read": [
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2\\events.jsonl",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2\\frozen.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2\\frozen.sha256",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research\\32f2bb61010644a59639db330a2b0eaa\\analysis.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research\\32f2bb61010644a59639db330a2b0eaa\\analysis_origin.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research\\32f2bb61010644a59639db330a2b0eaa\\events.jsonl",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research\\32f2bb61010644a59639db330a2b0eaa\\results.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\validation\\fa8106cf47ab475a973a2f84cfd1ee97\\development.xml",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\validation\\fa8106cf47ab475a973a2f84cfd1ee97\\manifest.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\config\\rules.example.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\ai.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\backtesting.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\data.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\experiments.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\holdout.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\indicators.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\metrics.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\research.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\rules.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\strategies.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\validation.py"
+  ],
+  "model_requests": 0,
+  "api_cost_usd": "0"
+}

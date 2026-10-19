@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-19",
+  "scope": "development_only_internal_selection_and_sensitivity",
+  "files": [
+    {
+      "snapshot": "plan.json",
+      "source": ".local\\robustness\\2101bd559f1e4483a2ead79d606924b7\\plan.json",
+      "sha256": "2553c8acfb238b7c09c6c0e046ca8daedd87d44db6942e0b29976ac0ff57db4f"
+    },
+    {
+      "snapshot": "plan.sha256",
+      "source": ".local\\robustness\\2101bd559f1e4483a2ead79d606924b7\\plan.sha256",
+      "sha256": "72dabe06799d4f33a5181132ca342835720000508b095df10c2af665be369a06"
+    },
+    {
+      "snapshot": "run_claim.json",
+      "source": ".local\\robustness\\2101bd559f1e4483a2ead79d606924b7\\run_claim.json",
+      "sha256": "1c50407ba62a7931e41cf90f2c36062cf9b1fdef7bb4ac806bd8fda9a04e9ce4"
+    },
+    {
+      "snapshot": "preparation-events.jsonl",
+      "source": ".local\\robustness\\2101bd559f1e4483a2ead79d606924b7\\events.jsonl",
+      "sha256": "a28a7d8a8eb3b71b650492670124ef1aa4549e860345da7b7c72a168df2df914"
+    },
+    {
+      "snapshot": "selection.json",
+      "source": ".local\\robustness\\2101bd559f1e4483a2ead79d606924b7\\attempts\\0f5c09829eec44a48ee0d88a118f4e3d\\selection.json",
+      "sha256": "46efd153256583237737ab7a0ee5322a6f5f9061d1093c8f05b91a0e466eedb1"
+    },
+    {
+      "snapshot": "results.json",
+      "source": ".local\\robustness\\2101bd559f1e4483a2ead79d606924b7\\attempts\\0f5c09829eec44a48ee0d88a118f4e3d\\results.json",
+      "sha256": "56b45a0ee99bdaffa3f6945d406304dfdf4434ee384dc03bac72be0a49e1ac1a"
+    },
+    {
+      "snapshot": "report.md",
+      "source": ".local\\robustness\\2101bd559f1e4483a2ead79d606924b7\\attempts\\0f5c09829eec44a48ee0d88a118f4e3d\\report.md",
+      "sha256": "ebfacb1e8104626a82bde1e41bc095dcc8a2aeaeea0be9ba0d8e7e299a52d47c"
+    },
+    {
+      "snapshot": "events.jsonl",
+      "source": ".local\\robustness\\2101bd559f1e4483a2ead79d606924b7\\attempts\\0f5c09829eec44a48ee0d88a118f4e3d\\events.jsonl",
+      "sha256": "67f5eca063a5db722109af74bba00d62299f9d27d6969589f3a47acf84d0c2de"
+    },
+    {
+      "snapshot": "io-audit.json",
+      "source": ".local\\robustness\\2101bd559f1e4483a2ead79d606924b7\\attempts\\0f5c09829eec44a48ee0d88a118f4e3d\\io-audit.json",
+      "sha256": "5307915a07fc8449a2d82edebb8fa270647209771ee8dea2de008366d5eeb19a"
+    }
+  ]
+}

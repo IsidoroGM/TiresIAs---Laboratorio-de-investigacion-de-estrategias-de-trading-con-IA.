@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "stage": "evaluation_completed",
+  "frozen_sha256": "1f64b917cc88993ca496798ef98e4aadf8a266f7b7f3fce9cf45d6b86d61483a",
+  "frozen_at": "2026-10-19T10:37:30.458339+00:00",
+  "proposal": {
+    "hypothesis": "Se propone que la variante EMA con ventanas de 20 y 60 periodos generará una rentabilidad estrictamente superior al SMA base sin incrementar el drawdown máximo en muestras de EUR/USD.",
+    "criterion": "higher_return_without_more_drawdown",
+    "tool": "run_experiment",
+    "arguments": {
+      "strategy": "ema",
+      "fast_window": 20,
+      "slow_window": 60
+    }
+  },
+  "policy": {
+    "pair": "EUR/USD",
+    "baseline_strategy": "sma",
+    "fast_window": 20,
+    "slow_window": 60,
+    "cost_rate": "0.001",
+    "initial_capital": "1000",
+    "allocation_fraction": "0.1"
+  },
+  "execution_policy": {
+    "accounts": "independent_per_partition_and_pair",
+    "carry_positions": false,
+    "carry_signals": false,
+    "indicator_warmup": "inside_each_partition"
+  },
+  "code_sha256": {
+    "data.py": "286b822fbb6dd5e46f65f64bb387bb7f7d246c7c9c17dc523a52d7ce3e7dfd94",
+    "indicators.py": "13cce9a32399a309694a83f52c8bdb93b0f86075612c825d5be3d9bfc2c366a3",
+    "strategies.py": "9607a659a352e31f2192c237eaecc8191ba90f9b2e78bcaa3919cfaa3489527e",
+    "backtesting.py": "81e6a34dd715d192c730fe407c7cdd037e2340e387e4ea37c90b0549d07a3c4f",
+    "metrics.py": "3d85bab9c1ee6da88a632a08b3a600f12ce7ee9335fbce1b4c56e0cfc865ec2f",
+    "experiments.py": "57c5638f293d9e4c5102a091227970ac1d2fd3b9774fa3f839fd6ed044a26e4d",
+    "ai.py": "9c43b2f13b1b9264810cb1710c081acc0c476071870842617c9a451cb58cc1f3",
+    "research.py": "7e53374a3768800de2d75be9bc67d2299d16620c6b4fe92a3438d1f4c0c63340",
+    "validation.py": "ac2aa655af324a352107753e3b53e0aa986958aeb9e2e2374c4791c3a8afb1b6",
+    "holdout.py": "a048adf93b2a58b3177e80d1077597a0bd849932fd42f714326a43fc68fecbb2",
+    "evaluation.py": "30909afadae7e173ceed537026feaf8ebed12e7fb05cf8e46e983eca451764d2"
+  },
+  "evaluation_access": {
+    "schema_version": 1,
+    "marked_at": "2026-10-19T10:45:17.632653+00:00",
+    "evaluation_sha256": "d4de382e518ac7b85598ee08011fd9de91e00248611423bfc726ef306d4e7f26",
+    "frozen_sha256": "1f64b917cc88993ca496798ef98e4aadf8a266f7b7f3fce9cf45d6b86d61483a",
+    "frozen_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2",
+    "split_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\validation\\fa8106cf47ab475a973a2f84cfd1ee97",
+    "evaluation_run": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\evaluations\\e4b0dc31a25a46f0a84655d433840a67",
+    "meaning": "Claimed before evaluation; do not treat this block as unseen again."
+  },
+  "blocks": {
+    "development": {
+      "results": {
+        "source": {
+          "name": "BCE",
+          "sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+          "first_date": "1999-01-04",
+          "last_date": "2019-12-31",
+          "observations": 5375
+        },
+        "policy": {
+          "pair": "EUR/USD",
+          "baseline_strategy": "sma",
+          "fast_window": 20,
+          "slow_window": 60,
+          "cost_rate": "0.001",
+          "initial_capital": "1000",
+          "allocation_fraction": "0.1"
+        },
+        "proposal": {
+          "hypothesis": "Se propone que la variante EMA con ventanas de 20 y 60 periodos generará una rentabilidad estrictamente superior al SMA base sin incrementar el drawdown máximo en muestras de EUR/USD.",
+          "criterion": "higher_return_without_more_drawdown",
+          "tool": "run_experiment",
+          "arguments": {
+            "strategy": "ema",
+            "fast_window": 20,
+            "slow_window": 60
+          }
+        },
+        "baseline": {
+          "strategy": "SMA20/SMA60",
+          "quote_currency": "USD",
+          "final_equity": "1019.009048508450921425536716",
+          "return_percent": "1.900904850845092142553671600",
+          "max_drawdown_percent": "2.508037497608682586090015248",
+          "total_costs": "10.29224639765002947776534651",
+          "closed_trades": 50,
+          "has_open_position": true,
+          "rejected_entries": 0
+        },
+        "candidate": {
+          "strategy": "EMA20/EMA60",
+          "quote_currency": "USD",
+          "final_equity": "1017.261425879850981920960012",
+          "return_percent": "1.726142587985098192096001200",
+          "max_drawdown_percent": "3.283961341054220825482195397",
+          "total_costs": "9.720936367997394531938612724",
+          "closed_trades": 47,
+          "has_open_position": true,
+          "rejected_entries": 0
+        },
+        "experiment_id": "32f2bb61010644a59639db330a2b0eaa"
+      },
+      "assessment": {
+        "criterion_status": "not_met",
+        "return_comparison": "lower",
+        "drawdown_comparison": "higher",
+        "scope": "development",
+        "origin": "python"
+      }
+    },
+    "evaluation": {
+      "results": {
+        "source": {
+          "name": "BCE",
+          "sha256": "d4de382e518ac7b85598ee08011fd9de91e00248611423bfc726ef306d4e7f26",
+          "first_date": "2020-01-02",
+          "last_date": "2026-10-16",
+          "observations": 1741
+        },
+        "policy": {
+          "pair": "EUR/USD",
+          "baseline_strategy": "sma",
+          "fast_window": 20,
+          "slow_window": 60,
+          "cost_rate": "0.001",
+          "initial_capital": "1000",
+          "allocation_fraction": "0.1"
+        },
+        "proposal": {
+          "hypothesis": "Se propone que la variante EMA con ventanas de 20 y 60 periodos generará una rentabilidad estrictamente superior al SMA base sin incrementar el drawdown máximo en muestras de EUR/USD.",
+          "criterion": "higher_return_without_more_drawdown",
+          "tool": "run_experiment",
+          "arguments": {
+            "strategy": "ema",
+            "fast_window": 20,
+            "slow_window": 60
+          }
+        },
+        "baseline": {
+          "strategy": "SMA20/SMA60",
+          "quote_currency": "USD",
+          "final_equity": "998.7173060235273821706007593",
+          "return_percent": "-0.1282693976472617829399240700",
+          "max_drawdown_percent": "1.548107723393375245788411280",
+          "total_costs": "3.402084545389881287816526191",
+          "closed_trades": 17,
+          "has_open_position": false,
+          "rejected_entries": 0
+        },
+        "candidate": {
+          "strategy": "EMA20/EMA60",
+          "quote_currency": "USD",
+          "final_equity": "1004.257946052592113134897752",
+          "return_percent": "0.425794605259211313489775200",
+          "max_drawdown_percent": "1.031090395525022020890262495",
+          "total_costs": "2.417261109649628859256625261",
+          "closed_trades": 12,
+          "has_open_position": false,
+          "rejected_entries": 0
+        }
+      },
+      "assessment": {
+        "criterion_status": "met",
+        "return_comparison": "higher",
+        "drawdown_comparison": "lower",
+        "scope": "held_out_period",
+        "origin": "python"
+      }
+    }
+  },
+  "model_requests": 0,
+  "api_cost_usd": "0"
+}

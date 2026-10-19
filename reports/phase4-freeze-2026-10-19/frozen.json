@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "stage": "frozen_not_evaluated",
+  "frozen_at": "2026-10-19T10:37:30.458339+00:00",
+  "split": {
+    "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\validation\\fa8106cf47ab475a973a2f84cfd1ee97",
+    "manifest_sha256": "c432a2795917c500e0ee5fc474ed8f5a5b096346857a67c4b7f19b7f1a8dff42"
+  },
+  "research": {
+    "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research\\32f2bb61010644a59639db330a2b0eaa",
+    "sha256": {
+      "results.json": "c8c83f9c9a648f1e37acfd85c2ab226f6fa4a9a07fedf0b8287d9b51672fe4f1",
+      "analysis.json": "4b08c3773d62c503bf0d0323f90227eda71741e3668e9eb51bacaccdfea73298",
+      "analysis_origin.json": "882919bc59ac3f199b7b08edfad0228a603cd8fba2f20404299452e647000d24",
+      "events.jsonl": "38c0500596e353546686b5c037d22c1b36953f276f3cc61730b60a204de6c533"
+    }
+  },
+  "proposal": {
+    "hypothesis": "Se propone que la variante EMA con ventanas de 20 y 60 periodos generará una rentabilidad estrictamente superior al SMA base sin incrementar el drawdown máximo en muestras de EUR/USD.",
+    "criterion": "higher_return_without_more_drawdown",
+    "tool": "run_experiment",
+    "arguments": {
+      "strategy": "ema",
+      "fast_window": 20,
+      "slow_window": 60
+    }
+  },
+  "policy": {
+    "pair": "EUR/USD",
+    "baseline_strategy": "sma",
+    "fast_window": 20,
+    "slow_window": 60,
+    "cost_rate": "0.001",
+    "initial_capital": "1000",
+    "allocation_fraction": "0.1"
+  },
+  "development_result": {
+    "source": {
+      "name": "BCE",
+      "sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+      "first_date": "1999-01-04",
+      "last_date": "2019-12-31",
+      "observations": 5375
+    },
+    "policy": {
+      "pair": "EUR/USD",
+      "baseline_strategy": "sma",
+      "fast_window": 20,
+      "slow_window": 60,
+      "cost_rate": "0.001",
+      "initial_capital": "1000",
+      "allocation_fraction": "0.1"
+    },
+    "proposal": {
+      "hypothesis": "Se propone que la variante EMA con ventanas de 20 y 60 periodos generará una rentabilidad estrictamente superior al SMA base sin incrementar el drawdown máximo en muestras de EUR/USD.",
+      "criterion": "higher_return_without_more_drawdown",
+      "tool": "run_experiment",
+      "arguments": {
+        "strategy": "ema",
+        "fast_window": 20,
+        "slow_window": 60
+      }
+    },
+    "baseline": {
+      "strategy": "SMA20/SMA60",
+      "quote_currency": "USD",
+      "final_equity": "1019.009048508450921425536716",
+      "return_percent": "1.900904850845092142553671600",
+      "max_drawdown_percent": "2.508037497608682586090015248",
+      "total_costs": "10.29224639765002947776534651",
+      "closed_trades": 50,
+      "has_open_position": true,
+      "rejected_entries": 0
+    },
+    "candidate": {
+      "strategy": "EMA20/EMA60",
+      "quote_currency": "USD",
+      "final_equity": "1017.261425879850981920960012",
+      "return_percent": "1.726142587985098192096001200",
+      "max_drawdown_percent": "3.283961341054220825482195397",
+      "total_costs": "9.720936367997394531938612724",
+      "closed_trades": 47,
+      "has_open_position": true,
+      "rejected_entries": 0
+    },
+    "experiment_id": "32f2bb61010644a59639db330a2b0eaa"
+  },
+  "code_sha256": {
+    "data.py": "286b822fbb6dd5e46f65f64bb387bb7f7d246c7c9c17dc523a52d7ce3e7dfd94",
+    "indicators.py": "13cce9a32399a309694a83f52c8bdb93b0f86075612c825d5be3d9bfc2c366a3",
+    "strategies.py": "9607a659a352e31f2192c237eaecc8191ba90f9b2e78bcaa3919cfaa3489527e",
+    "backtesting.py": "81e6a34dd715d192c730fe407c7cdd037e2340e387e4ea37c90b0549d07a3c4f",
+    "metrics.py": "3d85bab9c1ee6da88a632a08b3a600f12ce7ee9335fbce1b4c56e0cfc865ec2f",
+    "experiments.py": "57c5638f293d9e4c5102a091227970ac1d2fd3b9774fa3f839fd6ed044a26e4d",
+    "ai.py": "9c43b2f13b1b9264810cb1710c081acc0c476071870842617c9a451cb58cc1f3",
+    "research.py": "7e53374a3768800de2d75be9bc67d2299d16620c6b4fe92a3438d1f4c0c63340",
+    "validation.py": "ac2aa655af324a352107753e3b53e0aa986958aeb9e2e2374c4791c3a8afb1b6",
+    "holdout.py": "a048adf93b2a58b3177e80d1077597a0bd849932fd42f714326a43fc68fecbb2"
+  },
+  "execution_policy": {
+    "accounts": "independent_per_partition_and_pair",
+    "carry_positions": false,
+    "carry_signals": false,
+    "indicator_warmup": "inside_each_partition"
+  },
+  "evaluation_state": "No evaluation metrics computed by this workflow; prior exploration exists."
+}

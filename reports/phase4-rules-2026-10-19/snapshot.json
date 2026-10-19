@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-19",
+  "scope": "technical_rule_compatibility_not_strategy_selection",
+  "files": [
+    {
+      "snapshot": "audit.json",
+      "source": ".local\\rules-checks\\7b49145cd35f4e52b1ff8ea1e8a99ec0\\audit.json",
+      "sha256": "61c2413ea62de107326face5eb6ccd34909b2e68408d320182789a3d53ec6208"
+    },
+    {
+      "snapshot": "events.jsonl",
+      "source": ".local\\rules-checks\\7b49145cd35f4e52b1ff8ea1e8a99ec0\\events.jsonl",
+      "sha256": "ee0500a0cd07eaee882d66c0e76eaef25dc318d35bbe193dd10151379b3edf6e"
+    },
+    {
+      "snapshot": "sma-spec.json",
+      "source": ".local\\rules-checks\\7b49145cd35f4e52b1ff8ea1e8a99ec0\\sma-spec.json",
+      "sha256": "4fa5ffe6219f6d02b04a093014a34a9662d7cd4cebb20c9b243d3f89bc509c38"
+    },
+    {
+      "snapshot": "ema-spec.json",
+      "source": ".local\\rules-checks\\7b49145cd35f4e52b1ff8ea1e8a99ec0\\ema-spec.json",
+      "sha256": "281991679f0c4bb92e7d35ccf104cc908a0cf29e0728368f393d4bb859f13ddd"
+    }
+  ]
+}

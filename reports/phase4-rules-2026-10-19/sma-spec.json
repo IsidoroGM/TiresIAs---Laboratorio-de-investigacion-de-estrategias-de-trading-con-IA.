@@ -1,0 +1,40 @@
+{
+  "entry": {
+    "conditions": [
+      {
+        "left": {
+          "kind": "sma",
+          "lag": 0,
+          "window": 20
+        },
+        "operator": "crosses_above",
+        "right": {
+          "kind": "sma",
+          "lag": 0,
+          "window": 60
+        }
+      }
+    ],
+    "match": "all"
+  },
+  "exit": {
+    "conditions": [
+      {
+        "left": {
+          "kind": "sma",
+          "lag": 0,
+          "window": 20
+        },
+        "operator": "crosses_below",
+        "right": {
+          "kind": "sma",
+          "lag": 0,
+          "window": 60
+        }
+      }
+    ],
+    "match": "all"
+  },
+  "name": "sma_20_60_example",
+  "schema_version": 1
+}

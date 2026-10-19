@@ -1,0 +1,32 @@
+{
+  "guard": "builtins.open and io.open; reject outer evaluation XML, results and access ledger",
+  "plan_sha256": "2553c8acfb238b7c09c6c0e046ca8daedd87d44db6942e0b29976ac0ff57db4f",
+  "files_read": [
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2\\events.jsonl",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2\\frozen.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2\\frozen.sha256",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research\\32f2bb61010644a59639db330a2b0eaa\\analysis.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research\\32f2bb61010644a59639db330a2b0eaa\\analysis_origin.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research\\32f2bb61010644a59639db330a2b0eaa\\events.jsonl",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\research\\32f2bb61010644a59639db330a2b0eaa\\results.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\robustness\\2101bd559f1e4483a2ead79d606924b7\\attempts\\0f5c09829eec44a48ee0d88a118f4e3d\\results.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\robustness\\2101bd559f1e4483a2ead79d606924b7\\check.xml",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\robustness\\2101bd559f1e4483a2ead79d606924b7\\events.jsonl",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\robustness\\2101bd559f1e4483a2ead79d606924b7\\plan.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\robustness\\2101bd559f1e4483a2ead79d606924b7\\plan.sha256",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\robustness\\2101bd559f1e4483a2ead79d606924b7\\selection.xml",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\validation\\fa8106cf47ab475a973a2f84cfd1ee97\\development.xml",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\validation\\fa8106cf47ab475a973a2f84cfd1ee97\\manifest.json",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\ai.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\backtesting.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\data.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\experiments.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\holdout.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\indicators.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\metrics.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\research.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\robustness.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\strategies.py",
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\validation.py"
+  ]
+}

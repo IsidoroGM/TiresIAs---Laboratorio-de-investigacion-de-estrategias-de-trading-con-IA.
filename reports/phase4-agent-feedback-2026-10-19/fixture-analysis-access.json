@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "kind": "analysis",
+  "identity": {
+    "schema_version": 1,
+    "calculation_id": "6788da8c51cb467ad2b6712555c73c4d9a9e04a8f1b5d0dee6fedab70d05fd1a"
+  },
+  "run_dir": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-d7ff2bc5f7e24ab9a89c955e1b95e404\\test_analysis_sends_verified_s0\\analyses\\6ab03719d68144c39600d8e9c0179c8f",
+  "max_model_requests": 1,
+  "automatic_retries": 0,
+  "state": "attempt_reserved"
+}

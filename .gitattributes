@@ -1,3 +1,12 @@
 # Las evidencias incluyen SHA-256 de archivos: conservar sus bytes al clonar.
 reports/local-agent-* -text whitespace=trailing-space,space-before-tab,cr-at-eol
 reports/local-agent-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+reports/phase4-freeze-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+reports/phase4-evaluation-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+reports/phase4-robustness-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+reports/phase4-discovery-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+reports/phase4-rules-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+reports/phase4-formalization-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+reports/phase4-rule-planning-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+reports/phase4-rule-execution-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+reports/phase4-agent-feedback-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol

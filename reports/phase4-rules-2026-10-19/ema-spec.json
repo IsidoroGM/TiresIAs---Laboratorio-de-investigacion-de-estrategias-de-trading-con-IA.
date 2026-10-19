@@ -1,0 +1,40 @@
+{
+  "entry": {
+    "conditions": [
+      {
+        "left": {
+          "kind": "ema",
+          "lag": 0,
+          "window": 20
+        },
+        "operator": "crosses_above",
+        "right": {
+          "kind": "ema",
+          "lag": 0,
+          "window": 60
+        }
+      }
+    ],
+    "match": "all"
+  },
+  "exit": {
+    "conditions": [
+      {
+        "left": {
+          "kind": "ema",
+          "lag": 0,
+          "window": 20
+        },
+        "operator": "crosses_below",
+        "right": {
+          "kind": "ema",
+          "lag": 0,
+          "window": 60
+        }
+      }
+    ],
+    "match": "all"
+  },
+  "name": "ema_20_60_compatibility",
+  "schema_version": 1
+}

@@ -911,6 +911,12 @@ trading_ai/
     ai.py
     experiments.py
     research.py
+    validation.py
+    holdout.py
+    evaluation.py
+    robustness.py
+    discovery.py
+    rules.py
 ```
 
 El paquete está directamente en la raíz del repositorio. `__init__.py` contiene
@@ -943,11 +949,131 @@ La ejecución local no tiene cargos por consultas a una API. El contrato de
 proveedores permite añadir OpenAI posteriormente; esa opción está desactivada
 y requiere acordar credenciales y presupuesto antes de implementarla.
 
-Comprobación actual: **399 pruebas aprobadas**, incluidas las pruebas del
+Comprobación al cerrar FASE 3: **399 pruebas aprobadas**, incluidas las pruebas del
 investigador con respuestas simuladas y sin red. Una ejecución real con
 `qwen3.5:4b` en CPU completó propuesta, cálculo y análisis contrastado sobre EUR/USD.
 
 ## Evolución y controles
+
+La FASE 4 ha comenzado con la preparación de bloques cronológicos de desarrollo
+y evaluación. El corte acordado es el 1 de enero de 2020:
+
+```powershell
+.\.venv\Scripts\python.exe -m trading_ai.validation --cutoff 2020-01-01
+```
+
+Se generan dos XML locales y un manifiesto con hashes, sin consultar IA ni
+evaluar estrategias. El [protocolo de FASE 4](docs/VALIDATION_PLAN.md) explica
+la separación, el arranque independiente de cada bloque y los pasos pendientes
+para evaluar una propuesta registrada. Esta copia ya se exploró durante
+las fases anteriores; la división comprueba el procedimiento, sin convertirla
+en evidencia inédita.
+
+Comprobación del primer paso: **423 pruebas aprobadas**. El
+[registro de preparación](reports/phase4-split-2026-10-19.md) recoge las fechas,
+los recuentos y los hashes comprobados sobre los cuatro pares.
+
+El segundo paso añade `python -m trading_ai.holdout freeze` y `verify` para
+registrar una investigación completada sobre desarrollo antes de evaluar.
+Vincula la propuesta, sus controles y los resultados de desarrollo a los hashes
+de datos, manifiesto y código. Rechaza cambios posteriores; no calcula métricas
+del bloque reservado ni requiere nuevas consultas de IA. Los comandos completos
+y sus límites están en el protocolo de FASE 4.
+
+Comprobación del segundo paso: **449 pruebas aprobadas**, incluidas 26 nuevas.
+Una investigación local propuso EMA20/60 para EUR/USD; su criterio no se cumplió
+en desarrollo y la propuesta quedó registrada igualmente. La
+[evidencia del registro](reports/phase4-freeze-2026-10-19.md) conserva propuesta,
+resultados de desarrollo y consumo. En ese paso aún no se había ejecutado evaluación.
+
+El tercer paso añade `python -m trading_ai.evaluation --frozen-run <ruta>`:
+evalúa exclusivamente los parámetros registrados, con capital y calentamiento
+independientes, sin consultas de IA. Registra el acceso al archivo reservado y
+bloquea repeticiones automáticas de sus mismos bytes. **467 pruebas aprobadas**,
+incluidas 18 nuevas. La [primera evaluación](reports/phase4-evaluation-2026-10-19.md)
+conserva resultados separados: EMA20/60 no cumple el criterio en desarrollo y
+sí lo cumple en evaluación. Esto no demuestra robustez ni cierra la fase.
+
+El cuarto paso añade `python -m trading_ai.robustness prepare` y `run`:
+fija cinco configuraciones de ventanas y tres costes por ejecución sobre
+desarrollo, selecciona solo con 1999–2009 y comprueba todos los escenarios en
+2010–2019. Guarda la selección antes de esa comprobación, sin volver a elegir
+después ni acceder al bloque exterior 2020–2026. El protocolo detalla las reglas,
+los desempates y las limitaciones de este análisis interno.
+
+Resultado de este cuarto paso: **485 pruebas aprobadas**. Se calcularon las
+30 comparaciones previstas; ninguna variante cumplió el criterio en selección
+y no se forzó una elección. Las cinco variantes perdieron capital en 2010–2019
+con los tres costes probados. El [informe de robustez interna](reports/phase4-robustness-2026-10-19.md)
+conserva todos los escenarios y la comprobación de que no se abrió evaluación
+exterior. Son resultados descriptivos de un histórico conocido, sin nuevas
+consultas de IA.
+
+Por decisión del usuario, las nuevas ideas de estrategia corresponderán al
+agente; el desarrollo se centra en herramientas y controles. La bandeja
+`python -m trading_ai.discovery --frozen-run <ruta>` permite proponer reglas
+distintas de SMA/EMA y registrar sus datos necesarios. Toda idea queda pendiente,
+sin permisos de ejecución ni resultados calculados. El
+[plan del investigador](docs/AGENT_RESEARCH_PLAN.md) describe este paso y las
+herramientas pendientes para convertir ideas en experimentos verificables.
+
+Comprobación de la bandeja: **520 pruebas aprobadas**, incluidas 35 nuevas.
+Dos verificaciones locales durante el desarrollo conservaron un rechazo del
+formato inicial y un borrador del formato corregido, todavía ambiguo y basado
+en medias. El [registro de pruebas de ideas](reports/phase4-discovery-2026-10-19.md)
+distingue formato aceptado de estrategia validada; no se calcularon resultados
+ni se ejecutaron reglas nuevas.
+
+El [formato declarativo de reglas](docs/RULE_SPEC.md) añade condiciones precisas,
+comparaciones, cruces y ventanas de referencias, medias y extremos pasados.
+Python lo valida y calcula señales sin ejecutar código generado. El archivo
+`config/rules.example.json` reproduce la base existente para comprobar el formato:
+
+```powershell
+.\.venv\Scripts\python.exe -m trading_ai.rules --spec config/rules.example.json
+```
+
+La CLI solo valida. La bandeja conserva sus borradores pendientes y el
+simulador conserva capital, costes, tamaño y ejecución posterior. **587 pruebas
+aprobadas**, incluidas 67 nuevas. La [comprobación técnica](reports/phase4-rules-2026-10-19.md)
+reprodujo SMA/EMA con contabilidad idéntica sobre desarrollo, sin consultar IA
+ni evaluación exterior. FASE 4 continúa abierta.
+
+La [traducción de ideas a reglas](docs/FORMALIZATION.md) registra una propuesta
+formal vinculada al borrador o una duda sin resolver, con una consulta local
+como máximo. Los datos declarados que faltan bloquean la consulta. Una regla
+compilable queda pendiente de revisión de significado y no se simula:
+
+```powershell
+.\.venv\Scripts\python.exe -m trading_ai.formalization --idea-run <carpeta-idea> --frozen-run <carpeta-registro-previo>
+```
+
+**623 pruebas aprobadas**, incluidas 36 nuevas. La
+[prueba local](reports/phase4-formalization-2026-10-19.md) conservó una solicitud
+de aclaración del modelo, sin reglas nuevas ni resultados simulados.
+
+La [revisión técnica y el plan previo](docs/RULE_PLANNING.md) añaden una
+comprobación explícita del significado y registran reglas, datos, controles y
+presupuesto: una candidata y una base, sin consultas de IA ni variaciones.
+El borrador ambiguo permanece bloqueado. La preparación del plan no lo ejecuta.
+**669 pruebas aprobadas**, incluidas 46 nuevas. La
+[comprobación del bloqueo](reports/phase4-rule-planning-2026-10-19.md) se realizó
+sin consultas de IA ni simulaciones y conserva las evidencias.
+
+El [ejecutor separado de planes](docs/RULE_EXECUTION.md) verifica datos, revisión
+y límites antes de simular. Una reserva compartida bloquea repeticiones incluso
+al copiar o renombrar planes. Guarda la contabilidad completa y conclusiones de
+Python, con lectura verificable sin recalcular. **699 pruebas aprobadas**,
+incluidas 30 nuevas. La [comprobación de desarrollo](reports/phase4-rule-execution-2026-10-19.md)
+usa datos artificiales en pytest; el borrador real sigue sin plan válido.
+
+Las [reformulaciones y lecturas contrastadas](docs/AGENT_FEEDBACK.md) permiten
+al agente proponer una revisión vinculada a una idea con dudas y leer resultados
+verificados. Una consulta como máximo por origen o cálculo, sin reintentos
+automáticos, simulaciones adicionales ni permisos para aprobar sus reglas.
+**731 pruebas aprobadas**, incluidas 32 nuevas. Una
+[prueba local](reports/phase4-agent-feedback-2026-10-19.md) conservó la propuesta
+anterior y una reformulación todavía pendiente, sin traducirla ni simularla.
 
 En la FASE 3 se incorporó un agente investigador que propone hipótesis y
 solicita experimentos mediante herramientas controladas. En la FASE 4 se añadirá

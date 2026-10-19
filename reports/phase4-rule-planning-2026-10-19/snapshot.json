@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "files": {
+    "review.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\rule-reviews\\76bede728e3748d7a77072b86f2d7d4c\\review.json",
+      "sha256": "d1a86728dcc2d791e3dc07d0b5375f5ef02a3470de628d89d0b038ab2e5b5018"
+    },
+    "review.json.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\rule-reviews\\76bede728e3748d7a77072b86f2d7d4c\\review.json.sha256",
+      "sha256": "7dd310d2419b8970e33c50a8ba3df671ff5a797acb95e739ea25a52a7a0731af"
+    },
+    "review-events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\rule-reviews\\76bede728e3748d7a77072b86f2d7d4c\\events.jsonl",
+      "sha256": "d41328af83cd534169469a8eecbbe1008decad762d7cecc4e353ef9be4f8bec1"
+    },
+    "io-audit.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\rule-reviews\\76bede728e3748d7a77072b86f2d7d4c\\io-audit.json",
+      "sha256": "08b7d8389cabeef888ac57f65175d49f9cf4d0e13d19fc44b33459e06d6679a1"
+    },
+    "blocked-plan-events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\rule-plans\\168b298f29544173b7d8b1f266e8b39b\\events.jsonl",
+      "sha256": "e10b3c7d40ee2f29dfe98faa796676c3242da570a9f6d9d5d8cbcce293a6a0a4"
+    },
+    "source-translation.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\formalization\\0199d06d32b649139c0ad9b96c559d5b\\translation.json",
+      "sha256": "b5dfad1148faec6c015f8e76520efe7d02324faf6666cc1b5743e8fcd5c1fe22"
+    },
+    "source-translation-events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\formalization\\0199d06d32b649139c0ad9b96c559d5b\\events.jsonl",
+      "sha256": "30eb9b3390874001172504458d17550ba5084657070aab623da0fff37d0a3d4f"
+    }
+  }
+}

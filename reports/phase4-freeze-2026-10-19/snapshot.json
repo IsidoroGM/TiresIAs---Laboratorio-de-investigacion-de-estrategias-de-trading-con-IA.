@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-19",
+  "scope": "development_only_no_evaluation_metrics",
+  "files": [
+    {
+      "snapshot": "frozen.json",
+      "source": ".local\\holdout\\f74895dfc72d41b1867f11401cd384f2\\frozen.json",
+      "sha256": "1f64b917cc88993ca496798ef98e4aadf8a266f7b7f3fce9cf45d6b86d61483a"
+    },
+    {
+      "snapshot": "frozen.sha256",
+      "source": ".local\\holdout\\f74895dfc72d41b1867f11401cd384f2\\frozen.sha256",
+      "sha256": "0d680c08e5f69a14121675c8eb09eedf2fea07daed622e40d538150ed9092fab"
+    },
+    {
+      "snapshot": "events.jsonl",
+      "source": ".local\\holdout\\f74895dfc72d41b1867f11401cd384f2\\events.jsonl",
+      "sha256": "ebcee560512b9115f51653ebb2aeef4c34a1f70b41ebd8098fd9db6963df135b"
+    },
+    {
+      "snapshot": "research-results.json",
+      "source": ".local\\research\\32f2bb61010644a59639db330a2b0eaa\\results.json",
+      "sha256": "c8c83f9c9a648f1e37acfd85c2ab226f6fa4a9a07fedf0b8287d9b51672fe4f1"
+    },
+    {
+      "snapshot": "research-analysis.json",
+      "source": ".local\\research\\32f2bb61010644a59639db330a2b0eaa\\analysis.json",
+      "sha256": "4b08c3773d62c503bf0d0323f90227eda71741e3668e9eb51bacaccdfea73298"
+    },
+    {
+      "snapshot": "research-analysis_origin.json",
+      "source": ".local\\research\\32f2bb61010644a59639db330a2b0eaa\\analysis_origin.json",
+      "sha256": "882919bc59ac3f199b7b08edfad0228a603cd8fba2f20404299452e647000d24"
+    },
+    {
+      "snapshot": "research-events.jsonl",
+      "source": ".local\\research\\32f2bb61010644a59639db330a2b0eaa\\events.jsonl",
+      "sha256": "38c0500596e353546686b5c037d22c1b36953f276f3cc61730b60a204de6c533"
+    },
+    {
+      "snapshot": "research-report.md",
+      "source": ".local\\research\\32f2bb61010644a59639db330a2b0eaa\\report.md",
+      "sha256": "00dabe681cc78553e8f8d8d9cdd99a98050f20eb7d65d8616a6798f1f4ea9ae0"
+    }
+  ]
+}

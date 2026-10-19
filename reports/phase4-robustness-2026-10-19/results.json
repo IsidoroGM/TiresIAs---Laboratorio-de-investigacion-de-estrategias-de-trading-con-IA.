@@ -1,0 +1,2923 @@
+{
+  "schema_version": 1,
+  "stage": "completed",
+  "plan_sha256": "2553c8acfb238b7c09c6c0e046ca8daedd87d44db6942e0b29976ac0ff57db4f",
+  "plan": {
+    "schema_version": 1,
+    "protocol": "development_robustness_v1",
+    "stage": "prepared_not_run",
+    "reference": {
+      "frozen_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2",
+      "frozen_sha256": "1f64b917cc88993ca496798ef98e4aadf8a266f7b7f3fce9cf45d6b86d61483a",
+      "manifest_sha256": "c432a2795917c500e0ee5fc474ed8f5a5b096346857a67c4b7f19b7f1a8dff42",
+      "development_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+      "outer_cutoff": "2020-01-01"
+    },
+    "seed_proposal": {
+      "hypothesis": "Se propone que la variante EMA con ventanas de 20 y 60 periodos generará una rentabilidad estrictamente superior al SMA base sin incrementar el drawdown máximo en muestras de EUR/USD.",
+      "criterion": "higher_return_without_more_drawdown",
+      "tool": "run_experiment",
+      "arguments": {
+        "strategy": "ema",
+        "fast_window": 20,
+        "slow_window": 60
+      }
+    },
+    "reference_policy": {
+      "pair": "EUR/USD",
+      "baseline_strategy": "sma",
+      "fast_window": 20,
+      "slow_window": 60,
+      "cost_rate": "0.001",
+      "initial_capital": "1000",
+      "allocation_fraction": "0.1"
+    },
+    "inner_cutoff": "2010-01-01",
+    "execution_policy": {
+      "accounts": "independent_per_partition_and_pair",
+      "carry_positions": false,
+      "carry_signals": false,
+      "indicator_warmup": "inside_each_partition"
+    },
+    "scenarios": [
+      {
+        "id": "reference__reference",
+        "window_id": "reference",
+        "cost_id": "reference",
+        "proposal": {
+          "hypothesis": "Sensibilidad mecánica reference de la propuesta registrada; sin resultados anticipados.",
+          "criterion": "higher_return_without_more_drawdown",
+          "tool": "run_experiment",
+          "arguments": {
+            "strategy": "ema",
+            "fast_window": 20,
+            "slow_window": 60
+          }
+        },
+        "policy": {
+          "pair": "EUR/USD",
+          "baseline_strategy": "sma",
+          "fast_window": 20,
+          "slow_window": 60,
+          "cost_rate": "0.001",
+          "initial_capital": "1000",
+          "allocation_fraction": "0.1"
+        }
+      },
+      {
+        "id": "reference__cost_minus",
+        "window_id": "reference",
+        "cost_id": "cost_minus",
+        "proposal": {
+          "hypothesis": "Sensibilidad mecánica reference de la propuesta registrada; sin resultados anticipados.",
+          "criterion": "higher_return_without_more_drawdown",
+          "tool": "run_experiment",
+          "arguments": {
+            "strategy": "ema",
+            "fast_window": 20,
+            "slow_window": 60
+          }
+        },
+        "policy": {
+          "pair": "EUR/USD",
+          "baseline_strategy": "sma",
+          "fast_window": 20,
+          "slow_window": 60,
+          "cost_rate": "0.0005",
+          "initial_capital": "1000",
+          "allocation_fraction": "0.1"
+        }
+      },
+      {
+        "id": "reference__cost_plus",
+        "window_id": "reference",
+        "cost_id": "cost_plus",
+        "proposal": {
+          "hypothesis": "Sensibilidad mecánica reference de la propuesta registrada; sin resultados anticipados.",
+          "criterion": "higher_return_without_more_drawdown",
+          "tool": "run_experiment",
+          "arguments": {
+            "strategy": "ema",
+            "fast_window": 20,
+            "slow_window": 60
+          }
+        },
+        "policy": {
+          "pair": "EUR/USD",
+          "baseline_strategy": "sma",
+          "fast_window": 20,
+          "slow_window": 60,
+          "cost_rate": "0.0015",
+          "initial_capital": "1000",
+          "allocation_fraction": "0.1"
+        }
+      },
+      {
+        "id": "fast_minus__reference",
+        "window_id": "fast_minus",
+        "cost_id": "reference",
+        "proposal": {
+          "hypothesis": "Sensibilidad mecánica fast_minus de la propuesta registrada; sin resultados anticipados.",
+          "criterion": "higher_return_without_more_drawdown",
+          "tool": "run_experiment",
+          "arguments": {
+            "strategy": "ema",
+            "fast_window": 19,
+            "slow_window": 60
+          }
+        },
+        "policy": {
+          "pair": "EUR/USD",
+          "baseline_strategy": "sma",
+          "fast_window": 20,
+          "slow_window": 60,
+          "cost_rate": "0.001",
+          "initial_capital": "1000",
+          "allocation_fraction": "0.1"
+        }
+      },
+      {
+        "id": "fast_minus__cost_minus",
+        "window_id": "fast_minus",
+        "cost_id": "cost_minus",
+        "proposal": {
+          "hypothesis": "Sensibilidad mecánica fast_minus de la propuesta registrada; sin resultados anticipados.",
+          "criterion": "higher_return_without_more_drawdown",
+          "tool": "run_experiment",
+          "arguments": {
+            "strategy": "ema",
+            "fast_window": 19,
+            "slow_window": 60
+          }
+        },
+        "policy": {
+          "pair": "EUR/USD",
+          "baseline_strategy": "sma",
+          "fast_window": 20,
+          "slow_window": 60,
+          "cost_rate": "0.0005",
+          "initial_capital": "1000",
+          "allocation_fraction": "0.1"
+        }
+      },
+      {
+        "id": "fast_minus__cost_plus",
+        "window_id": "fast_minus",
+        "cost_id": "cost_plus",
+        "proposal": {
+          "hypothesis": "Sensibilidad mecánica fast_minus de la propuesta registrada; sin resultados anticipados.",
+          "criterion": "higher_return_without_more_drawdown",
+          "tool": "run_experiment",
+          "arguments": {
+            "strategy": "ema",
+            "fast_window": 19,
+            "slow_window": 60
+          }
+        },
+        "policy": {
+          "pair": "EUR/USD",
+          "baseline_strategy": "sma",
+          "fast_window": 20,
+          "slow_window": 60,
+          "cost_rate": "0.0015",
+          "initial_capital": "1000",
+          "allocation_fraction": "0.1"
+        }
+      },
+      {
+        "id": "fast_plus__reference",
+        "window_id": "fast_plus",
+        "cost_id": "reference",
+        "proposal": {
+          "hypothesis": "Sensibilidad mecánica fast_plus de la propuesta registrada; sin resultados anticipados.",
+          "criterion": "higher_return_without_more_drawdown",
+          "tool": "run_experiment",
+          "arguments": {
+            "strategy": "ema",
+            "fast_window": 21,
+            "slow_window": 60
+          }
+        },
+        "policy": {
+          "pair": "EUR/USD",
+          "baseline_strategy": "sma",
+          "fast_window": 20,
+          "slow_window": 60,
+          "cost_rate": "0.001",
+          "initial_capital": "1000",
+          "allocation_fraction": "0.1"
+        }
+      },
+      {
+        "id": "fast_plus__cost_minus",
+        "window_id": "fast_plus",
+        "cost_id": "cost_minus",
+        "proposal": {
+          "hypothesis": "Sensibilidad mecánica fast_plus de la propuesta registrada; sin resultados anticipados.",
+          "criterion": "higher_return_without_more_drawdown",
+          "tool": "run_experiment",
+          "arguments": {
+            "strategy": "ema",
+            "fast_window": 21,
+            "slow_window": 60
+          }
+        },
+        "policy": {
+          "pair": "EUR/USD",
+          "baseline_strategy": "sma",
+          "fast_window": 20,
+          "slow_window": 60,
+          "cost_rate": "0.0005",
+          "initial_capital": "1000",
+          "allocation_fraction": "0.1"
+        }
+      },
+      {
+        "id": "fast_plus__cost_plus",
+        "window_id": "fast_plus",
+        "cost_id": "cost_plus",
+        "proposal": {
+          "hypothesis": "Sensibilidad mecánica fast_plus de la propuesta registrada; sin resultados anticipados.",
+          "criterion": "higher_return_without_more_drawdown",
+          "tool": "run_experiment",
+          "arguments": {
+            "strategy": "ema",
+            "fast_window": 21,
+            "slow_window": 60
+          }
+        },
+        "policy": {
+          "pair": "EUR/USD",
+          "baseline_strategy": "sma",
+          "fast_window": 20,
+          "slow_window": 60,
+          "cost_rate": "0.0015",
+          "initial_capital": "1000",
+          "allocation_fraction": "0.1"
+        }
+      },
+      {
+        "id": "slow_minus__reference",
+        "window_id": "slow_minus",
+        "cost_id": "reference",
+        "proposal": {
+          "hypothesis": "Sensibilidad mecánica slow_minus de la propuesta registrada; sin resultados anticipados.",
+          "criterion": "higher_return_without_more_drawdown",
+          "tool": "run_experiment",
+          "arguments": {
+            "strategy": "ema",
+            "fast_window": 20,
+            "slow_window": 59
+          }
+        },
+        "policy": {
+          "pair": "EUR/USD",
+          "baseline_strategy": "sma",
+          "fast_window": 20,
+          "slow_window": 60,
+          "cost_rate": "0.001",
+          "initial_capital": "1000",
+          "allocation_fraction": "0.1"
+        }
+      },
+      {
+        "id": "slow_minus__cost_minus",
+        "window_id": "slow_minus",
+        "cost_id": "cost_minus",
+        "proposal": {
+          "hypothesis": "Sensibilidad mecánica slow_minus de la propuesta registrada; sin resultados anticipados.",
+          "criterion": "higher_return_without_more_drawdown",
+          "tool": "run_experiment",
+          "arguments": {
+            "strategy": "ema",
+            "fast_window": 20,
+            "slow_window": 59
+          }
+        },
+        "policy": {
+          "pair": "EUR/USD",
+          "baseline_strategy": "sma",
+          "fast_window": 20,
+          "slow_window": 60,
+          "cost_rate": "0.0005",
+          "initial_capital": "1000",
+          "allocation_fraction": "0.1"
+        }
+      },
+      {
+        "id": "slow_minus__cost_plus",
+        "window_id": "slow_minus",
+        "cost_id": "cost_plus",
+        "proposal": {
+          "hypothesis": "Sensibilidad mecánica slow_minus de la propuesta registrada; sin resultados anticipados.",
+          "criterion": "higher_return_without_more_drawdown",
+          "tool": "run_experiment",
+          "arguments": {
+            "strategy": "ema",
+            "fast_window": 20,
+            "slow_window": 59
+          }
+        },
+        "policy": {
+          "pair": "EUR/USD",
+          "baseline_strategy": "sma",
+          "fast_window": 20,
+          "slow_window": 60,
+          "cost_rate": "0.0015",
+          "initial_capital": "1000",
+          "allocation_fraction": "0.1"
+        }
+      },
+      {
+        "id": "slow_plus__reference",
+        "window_id": "slow_plus",
+        "cost_id": "reference",
+        "proposal": {
+          "hypothesis": "Sensibilidad mecánica slow_plus de la propuesta registrada; sin resultados anticipados.",
+          "criterion": "higher_return_without_more_drawdown",
+          "tool": "run_experiment",
+          "arguments": {
+            "strategy": "ema",
+            "fast_window": 20,
+            "slow_window": 61
+          }
+        },
+        "policy": {
+          "pair": "EUR/USD",
+          "baseline_strategy": "sma",
+          "fast_window": 20,
+          "slow_window": 60,
+          "cost_rate": "0.001",
+          "initial_capital": "1000",
+          "allocation_fraction": "0.1"
+        }
+      },
+      {
+        "id": "slow_plus__cost_minus",
+        "window_id": "slow_plus",
+        "cost_id": "cost_minus",
+        "proposal": {
+          "hypothesis": "Sensibilidad mecánica slow_plus de la propuesta registrada; sin resultados anticipados.",
+          "criterion": "higher_return_without_more_drawdown",
+          "tool": "run_experiment",
+          "arguments": {
+            "strategy": "ema",
+            "fast_window": 20,
+            "slow_window": 61
+          }
+        },
+        "policy": {
+          "pair": "EUR/USD",
+          "baseline_strategy": "sma",
+          "fast_window": 20,
+          "slow_window": 60,
+          "cost_rate": "0.0005",
+          "initial_capital": "1000",
+          "allocation_fraction": "0.1"
+        }
+      },
+      {
+        "id": "slow_plus__cost_plus",
+        "window_id": "slow_plus",
+        "cost_id": "cost_plus",
+        "proposal": {
+          "hypothesis": "Sensibilidad mecánica slow_plus de la propuesta registrada; sin resultados anticipados.",
+          "criterion": "higher_return_without_more_drawdown",
+          "tool": "run_experiment",
+          "arguments": {
+            "strategy": "ema",
+            "fast_window": 20,
+            "slow_window": 61
+          }
+        },
+        "policy": {
+          "pair": "EUR/USD",
+          "baseline_strategy": "sma",
+          "fast_window": 20,
+          "slow_window": 60,
+          "cost_rate": "0.0015",
+          "initial_capital": "1000",
+          "allocation_fraction": "0.1"
+        }
+      }
+    ],
+    "skipped": [],
+    "periods": {
+      "selection": {
+        "file": "selection.xml",
+        "sha256": "f23db9d9617ee55a4121aac82881e1ecdbec2c754386ea80082d169c4df96179",
+        "first_date": "1999-01-04",
+        "last_date": "2009-12-31",
+        "observations": 2816
+      },
+      "check": {
+        "file": "check.xml",
+        "sha256": "fea1c5d43bc9e60e8ae5832080800bc1ba80707ab8bde3a6e2a9a7d8de5681de",
+        "first_date": "2010-01-04",
+        "last_date": "2019-12-31",
+        "observations": 2559
+      }
+    },
+    "code_sha256": {
+      "data.py": "286b822fbb6dd5e46f65f64bb387bb7f7d246c7c9c17dc523a52d7ce3e7dfd94",
+      "indicators.py": "13cce9a32399a309694a83f52c8bdb93b0f86075612c825d5be3d9bfc2c366a3",
+      "strategies.py": "9607a659a352e31f2192c237eaecc8191ba90f9b2e78bcaa3919cfaa3489527e",
+      "backtesting.py": "81e6a34dd715d192c730fe407c7cdd037e2340e387e4ea37c90b0549d07a3c4f",
+      "metrics.py": "3d85bab9c1ee6da88a632a08b3a600f12ce7ee9335fbce1b4c56e0cfc865ec2f",
+      "experiments.py": "57c5638f293d9e4c5102a091227970ac1d2fd3b9774fa3f839fd6ed044a26e4d",
+      "ai.py": "9c43b2f13b1b9264810cb1710c081acc0c476071870842617c9a451cb58cc1f3",
+      "research.py": "7e53374a3768800de2d75be9bc67d2299d16620c6b4fe92a3438d1f4c0c63340",
+      "validation.py": "ac2aa655af324a352107753e3b53e0aa986958aeb9e2e2374c4791c3a8afb1b6",
+      "holdout.py": "a048adf93b2a58b3177e80d1077597a0bd849932fd42f714326a43fc68fecbb2",
+      "robustness.py": "906ea3f6c07d5f5aeac03d049c0852b9d863e29a3864ac61009fa811a0a11ae5"
+    },
+    "selection_rule": {
+      "cost_id": "reference",
+      "eligibility": "criterion_met_with_closed_trades",
+      "criterion": "higher_return_without_more_drawdown",
+      "ranking": "return_desc_then_drawdown_asc",
+      "ties": "fast_asc_slow_asc_window_id_asc",
+      "before_check": true
+    },
+    "limitations": [
+      "All source history was already explored; this is internal descriptive validation.",
+      "Designed after the earlier outer evaluation; not independent confirmation.",
+      "No outer evaluation data or results are read by this workflow.",
+      "Checking all scenarios is descriptive and cannot trigger reselection."
+    ]
+  },
+  "selection": {
+    "selected_scenario_id": null,
+    "eligible_scenario_ids": [],
+    "origin": "selection_period_reference_cost_only",
+    "reselection_allowed": false
+  },
+  "rows": {
+    "selection": [
+      {
+        "scenario": {
+          "id": "reference__reference",
+          "window_id": "reference",
+          "cost_id": "reference",
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica reference de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 60
+            }
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.001",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          }
+        },
+        "result": {
+          "source": {
+            "name": "BCE",
+            "sha256": "f23db9d9617ee55a4121aac82881e1ecdbec2c754386ea80082d169c4df96179",
+            "first_date": "1999-01-04",
+            "last_date": "2009-12-31",
+            "observations": 2816
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.001",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          },
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica reference de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 60
+            }
+          },
+          "baseline": {
+            "strategy": "SMA20/SMA60",
+            "quote_currency": "USD",
+            "final_equity": "1026.957637761821858215875547",
+            "return_percent": "2.695763776182185821587554700",
+            "max_drawdown_percent": "1.746292639526900087422992412",
+            "total_costs": "5.294279895031388444855762748",
+            "closed_trades": 26,
+            "has_open_position": false,
+            "rejected_entries": 0
+          },
+          "candidate": {
+            "strategy": "EMA20/EMA60",
+            "quote_currency": "USD",
+            "final_equity": "1037.439147442110420098150338",
+            "return_percent": "3.743914744211042009815033800",
+            "max_drawdown_percent": "1.933161422776311666916085535",
+            "total_costs": "4.503081018124834984089497703",
+            "closed_trades": 22,
+            "has_open_position": false,
+            "rejected_entries": 0
+          }
+        },
+        "assessment": {
+          "verdict": "not_supported_in_sample",
+          "return_comparison": "higher",
+          "drawdown_comparison": "higher",
+          "scope": "internal_selection"
+        }
+      },
+      {
+        "scenario": {
+          "id": "reference__cost_minus",
+          "window_id": "reference",
+          "cost_id": "cost_minus",
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica reference de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 60
+            }
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0005",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          }
+        },
+        "result": {
+          "source": {
+            "name": "BCE",
+            "sha256": "f23db9d9617ee55a4121aac82881e1ecdbec2c754386ea80082d169c4df96179",
+            "first_date": "1999-01-04",
+            "last_date": "2009-12-31",
+            "observations": 2816
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0005",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          },
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica reference de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 60
+            }
+          },
+          "baseline": {
+            "strategy": "SMA20/SMA60",
+            "quote_currency": "USD",
+            "final_equity": "1029.656754860155879994593557",
+            "return_percent": "2.965675486015587999459355700",
+            "max_drawdown_percent": "1.728027404319993102584098980",
+            "total_costs": "2.651829709566193892874046480",
+            "closed_trades": 26,
+            "has_open_position": false,
+            "rejected_entries": 0
+          },
+          "candidate": {
+            "strategy": "EMA20/EMA60",
+            "quote_currency": "USD",
+            "final_equity": "1039.758892020145575443454579",
+            "return_percent": "3.975889202014557544345457900",
+            "max_drawdown_percent": "1.914103678695877247143596332",
+            "total_costs": "2.255082667024096924226751536",
+            "closed_trades": 22,
+            "has_open_position": false,
+            "rejected_entries": 0
+          }
+        },
+        "assessment": {
+          "verdict": "not_supported_in_sample",
+          "return_comparison": "higher",
+          "drawdown_comparison": "higher",
+          "scope": "internal_selection"
+        }
+      },
+      {
+        "scenario": {
+          "id": "reference__cost_plus",
+          "window_id": "reference",
+          "cost_id": "cost_plus",
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica reference de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 60
+            }
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0015",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          }
+        },
+        "result": {
+          "source": {
+            "name": "BCE",
+            "sha256": "f23db9d9617ee55a4121aac82881e1ecdbec2c754386ea80082d169c4df96179",
+            "first_date": "1999-01-04",
+            "last_date": "2009-12-31",
+            "observations": 2816
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0015",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          },
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica reference de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 60
+            }
+          },
+          "baseline": {
+            "strategy": "SMA20/SMA60",
+            "quote_currency": "USD",
+            "final_equity": "1024.268008973974754150903223",
+            "return_percent": "2.426800897397475415090322300",
+            "max_drawdown_percent": "1.764537956693873771880091957",
+            "total_costs": "7.927390995416586502572213006",
+            "closed_trades": 26,
+            "has_open_position": false,
+            "rejected_entries": 0
+          },
+          "candidate": {
+            "strategy": "EMA20/EMA60",
+            "quote_currency": "USD",
+            "final_equity": "1035.126651476248041819142258",
+            "return_percent": "3.512665147624804181914225800",
+            "max_drawdown_percent": "1.952198414002985848222385124",
+            "total_costs": "6.744022703175610279527711447",
+            "closed_trades": 22,
+            "has_open_position": false,
+            "rejected_entries": 0
+          }
+        },
+        "assessment": {
+          "verdict": "not_supported_in_sample",
+          "return_comparison": "higher",
+          "drawdown_comparison": "higher",
+          "scope": "internal_selection"
+        }
+      },
+      {
+        "scenario": {
+          "id": "fast_minus__reference",
+          "window_id": "fast_minus",
+          "cost_id": "reference",
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica fast_minus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 19,
+              "slow_window": 60
+            }
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.001",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          }
+        },
+        "result": {
+          "source": {
+            "name": "BCE",
+            "sha256": "f23db9d9617ee55a4121aac82881e1ecdbec2c754386ea80082d169c4df96179",
+            "first_date": "1999-01-04",
+            "last_date": "2009-12-31",
+            "observations": 2816
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.001",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          },
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica fast_minus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 19,
+              "slow_window": 60
+            }
+          },
+          "baseline": {
+            "strategy": "SMA20/SMA60",
+            "quote_currency": "USD",
+            "final_equity": "1026.957637761821858215875547",
+            "return_percent": "2.695763776182185821587554700",
+            "max_drawdown_percent": "1.746292639526900087422992412",
+            "total_costs": "5.294279895031388444855762748",
+            "closed_trades": 26,
+            "has_open_position": false,
+            "rejected_entries": 0
+          },
+          "candidate": {
+            "strategy": "EMA19/EMA60",
+            "quote_currency": "USD",
+            "final_equity": "1036.883483039828597440151184",
+            "return_percent": "3.688348303982859744015118400",
+            "max_drawdown_percent": "1.914927608264805940293410157",
+            "total_costs": "4.711663022762560874497534756",
+            "closed_trades": 23,
+            "has_open_position": false,
+            "rejected_entries": 0
+          }
+        },
+        "assessment": {
+          "verdict": "not_supported_in_sample",
+          "return_comparison": "higher",
+          "drawdown_comparison": "higher",
+          "scope": "internal_selection"
+        }
+      },
+      {
+        "scenario": {
+          "id": "fast_minus__cost_minus",
+          "window_id": "fast_minus",
+          "cost_id": "cost_minus",
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica fast_minus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 19,
+              "slow_window": 60
+            }
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0005",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          }
+        },
+        "result": {
+          "source": {
+            "name": "BCE",
+            "sha256": "f23db9d9617ee55a4121aac82881e1ecdbec2c754386ea80082d169c4df96179",
+            "first_date": "1999-01-04",
+            "last_date": "2009-12-31",
+            "observations": 2816
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0005",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          },
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica fast_minus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 19,
+              "slow_window": 60
+            }
+          },
+          "baseline": {
+            "strategy": "SMA20/SMA60",
+            "quote_currency": "USD",
+            "final_equity": "1029.656754860155879994593557",
+            "return_percent": "2.965675486015587999459355700",
+            "max_drawdown_percent": "1.728027404319993102584098980",
+            "total_costs": "2.651829709566193892874046480",
+            "closed_trades": 26,
+            "has_open_position": false,
+            "rejected_entries": 0
+          },
+          "candidate": {
+            "strategy": "EMA19/EMA60",
+            "quote_currency": "USD",
+            "final_equity": "1039.305517655364641365655912",
+            "return_percent": "3.930551765536464136565591200",
+            "max_drawdown_percent": "1.895998227451276675031580542",
+            "total_costs": "2.359657238353472782448393854",
+            "closed_trades": 23,
+            "has_open_position": false,
+            "rejected_entries": 0
+          }
+        },
+        "assessment": {
+          "verdict": "not_supported_in_sample",
+          "return_comparison": "higher",
+          "drawdown_comparison": "higher",
+          "scope": "internal_selection"
+        }
+      },
+      {
+        "scenario": {
+          "id": "fast_minus__cost_plus",
+          "window_id": "fast_minus",
+          "cost_id": "cost_plus",
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica fast_minus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 19,
+              "slow_window": 60
+            }
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0015",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          }
+        },
+        "result": {
+          "source": {
+            "name": "BCE",
+            "sha256": "f23db9d9617ee55a4121aac82881e1ecdbec2c754386ea80082d169c4df96179",
+            "first_date": "1999-01-04",
+            "last_date": "2009-12-31",
+            "observations": 2816
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0015",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          },
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica fast_minus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 19,
+              "slow_window": 60
+            }
+          },
+          "baseline": {
+            "strategy": "SMA20/SMA60",
+            "quote_currency": "USD",
+            "final_equity": "1024.268008973974754150903223",
+            "return_percent": "2.426800897397475415090322300",
+            "max_drawdown_percent": "1.764537956693873771880091957",
+            "total_costs": "7.927390995416586502572213006",
+            "closed_trades": 26,
+            "has_open_position": false,
+            "rejected_entries": 0
+          },
+          "candidate": {
+            "strategy": "EMA19/EMA60",
+            "quote_currency": "USD",
+            "final_equity": "1034.469257428190937158035671",
+            "return_percent": "3.446925742819093715803567100",
+            "max_drawdown_percent": "1.933836370416899925159944603",
+            "total_costs": "7.056048013007136016981363519",
+            "closed_trades": 23,
+            "has_open_position": false,
+            "rejected_entries": 0
+          }
+        },
+        "assessment": {
+          "verdict": "not_supported_in_sample",
+          "return_comparison": "higher",
+          "drawdown_comparison": "higher",
+          "scope": "internal_selection"
+        }
+      },
+      {
+        "scenario": {
+          "id": "fast_plus__reference",
+          "window_id": "fast_plus",
+          "cost_id": "reference",
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica fast_plus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 21,
+              "slow_window": 60
+            }
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.001",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          }
+        },
+        "result": {
+          "source": {
+            "name": "BCE",
+            "sha256": "f23db9d9617ee55a4121aac82881e1ecdbec2c754386ea80082d169c4df96179",
+            "first_date": "1999-01-04",
+            "last_date": "2009-12-31",
+            "observations": 2816
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.001",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          },
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica fast_plus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 21,
+              "slow_window": 60
+            }
+          },
+          "baseline": {
+            "strategy": "SMA20/SMA60",
+            "quote_currency": "USD",
+            "final_equity": "1026.957637761821858215875547",
+            "return_percent": "2.695763776182185821587554700",
+            "max_drawdown_percent": "1.746292639526900087422992412",
+            "total_costs": "5.294279895031388444855762748",
+            "closed_trades": 26,
+            "has_open_position": false,
+            "rejected_entries": 0
+          },
+          "candidate": {
+            "strategy": "EMA21/EMA60",
+            "quote_currency": "USD",
+            "final_equity": "1035.827897633113752632609275",
+            "return_percent": "3.582789763311375263260927500",
+            "max_drawdown_percent": "1.956062210111816637147070510",
+            "total_costs": "4.086479570116020458857648454",
+            "closed_trades": 20,
+            "has_open_position": false,
+            "rejected_entries": 0
+          }
+        },
+        "assessment": {
+          "verdict": "not_supported_in_sample",
+          "return_comparison": "higher",
+          "drawdown_comparison": "higher",
+          "scope": "internal_selection"
+        }
+      },
+      {
+        "scenario": {
+          "id": "fast_plus__cost_minus",
+          "window_id": "fast_plus",
+          "cost_id": "cost_minus",
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica fast_plus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 21,
+              "slow_window": 60
+            }
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0005",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          }
+        },
+        "result": {
+          "source": {
+            "name": "BCE",
+            "sha256": "f23db9d9617ee55a4121aac82881e1ecdbec2c754386ea80082d169c4df96179",
+            "first_date": "1999-01-04",
+            "last_date": "2009-12-31",
+            "observations": 2816
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0005",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          },
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica fast_plus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 21,
+              "slow_window": 60
+            }
+          },
+          "baseline": {
+            "strategy": "SMA20/SMA60",
+            "quote_currency": "USD",
+            "final_equity": "1029.656754860155879994593557",
+            "return_percent": "2.965675486015587999459355700",
+            "max_drawdown_percent": "1.728027404319993102584098980",
+            "total_costs": "2.651829709566193892874046480",
+            "closed_trades": 26,
+            "has_open_position": false,
+            "rejected_entries": 0
+          },
+          "candidate": {
+            "strategy": "EMA21/EMA60",
+            "quote_currency": "USD",
+            "final_equity": "1037.934875266905643459937072",
+            "return_percent": "3.793487526690564345993707200",
+            "max_drawdown_percent": "1.936916667562863677950969503",
+            "total_costs": "2.046245253342856214284417395",
+            "closed_trades": 20,
+            "has_open_position": false,
+            "rejected_entries": 0
+          }
+        },
+        "assessment": {
+          "verdict": "not_supported_in_sample",
+          "return_comparison": "higher",
+          "drawdown_comparison": "higher",
+          "scope": "internal_selection"
+        }
+      },
+      {
+        "scenario": {
+          "id": "fast_plus__cost_plus",
+          "window_id": "fast_plus",
+          "cost_id": "cost_plus",
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica fast_plus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 21,
+              "slow_window": 60
+            }
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0015",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          }
+        },
+        "result": {
+          "source": {
+            "name": "BCE",
+            "sha256": "f23db9d9617ee55a4121aac82881e1ecdbec2c754386ea80082d169c4df96179",
+            "first_date": "1999-01-04",
+            "last_date": "2009-12-31",
+            "observations": 2816
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0015",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          },
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica fast_plus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 21,
+              "slow_window": 60
+            }
+          },
+          "baseline": {
+            "strategy": "SMA20/SMA60",
+            "quote_currency": "USD",
+            "final_equity": "1024.268008973974754150903223",
+            "return_percent": "2.426800897397475415090322300",
+            "max_drawdown_percent": "1.764537956693873771880091957",
+            "total_costs": "7.927390995416586502572213006",
+            "closed_trades": 26,
+            "has_open_position": false,
+            "rejected_entries": 0
+          },
+          "candidate": {
+            "strategy": "EMA21/EMA60",
+            "quote_currency": "USD",
+            "final_equity": "1033.727080421029091519431135",
+            "return_percent": "3.372708042102909151943113500",
+            "max_drawdown_percent": "1.975186910136712879562164865",
+            "total_costs": "6.120725143375748339022592264",
+            "closed_trades": 20,
+            "has_open_position": false,
+            "rejected_entries": 0
+          }
+        },
+        "assessment": {
+          "verdict": "not_supported_in_sample",
+          "return_comparison": "higher",
+          "drawdown_comparison": "higher",
+          "scope": "internal_selection"
+        }
+      },
+      {
+        "scenario": {
+          "id": "slow_minus__reference",
+          "window_id": "slow_minus",
+          "cost_id": "reference",
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica slow_minus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 59
+            }
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.001",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          }
+        },
+        "result": {
+          "source": {
+            "name": "BCE",
+            "sha256": "f23db9d9617ee55a4121aac82881e1ecdbec2c754386ea80082d169c4df96179",
+            "first_date": "1999-01-04",
+            "last_date": "2009-12-31",
+            "observations": 2816
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.001",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          },
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica slow_minus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 59
+            }
+          },
+          "baseline": {
+            "strategy": "SMA20/SMA60",
+            "quote_currency": "USD",
+            "final_equity": "1026.957637761821858215875547",
+            "return_percent": "2.695763776182185821587554700",
+            "max_drawdown_percent": "1.746292639526900087422992412",
+            "total_costs": "5.294279895031388444855762748",
+            "closed_trades": 26,
+            "has_open_position": false,
+            "rejected_entries": 0
+          },
+          "candidate": {
+            "strategy": "EMA20/EMA59",
+            "quote_currency": "USD",
+            "final_equity": "1035.251229425518988233835347",
+            "return_percent": "3.525122942551898823383534700",
+            "max_drawdown_percent": "1.929042207660215150489613440",
+            "total_costs": "4.906751408304842031984781488",
+            "closed_trades": 24,
+            "has_open_position": false,
+            "rejected_entries": 0
+          }
+        },
+        "assessment": {
+          "verdict": "not_supported_in_sample",
+          "return_comparison": "higher",
+          "drawdown_comparison": "higher",
+          "scope": "internal_selection"
+        }
+      },
+      {
+        "scenario": {
+          "id": "slow_minus__cost_minus",
+          "window_id": "slow_minus",
+          "cost_id": "cost_minus",
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica slow_minus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 59
+            }
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0005",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          }
+        },
+        "result": {
+          "source": {
+            "name": "BCE",
+            "sha256": "f23db9d9617ee55a4121aac82881e1ecdbec2c754386ea80082d169c4df96179",
+            "first_date": "1999-01-04",
+            "last_date": "2009-12-31",
+            "observations": 2816
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0005",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          },
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica slow_minus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 59
+            }
+          },
+          "baseline": {
+            "strategy": "SMA20/SMA60",
+            "quote_currency": "USD",
+            "final_equity": "1029.656754860155879994593557",
+            "return_percent": "2.965675486015587999459355700",
+            "max_drawdown_percent": "1.728027404319993102584098980",
+            "total_costs": "2.651829709566193892874046480",
+            "closed_trades": 26,
+            "has_open_position": false,
+            "rejected_entries": 0
+          },
+          "candidate": {
+            "strategy": "EMA20/EMA59",
+            "quote_currency": "USD",
+            "final_equity": "1037.771791849212424315721203",
+            "return_percent": "3.777179184921242431572120300",
+            "max_drawdown_percent": "1.910128359989359667617980989",
+            "total_costs": "2.457480914509390290724280003",
+            "closed_trades": 24,
+            "has_open_position": false,
+            "rejected_entries": 0
+          }
+        },
+        "assessment": {
+          "verdict": "not_supported_in_sample",
+          "return_comparison": "higher",
+          "drawdown_comparison": "higher",
+          "scope": "internal_selection"
+        }
+      },
+      {
+        "scenario": {
+          "id": "slow_minus__cost_plus",
+          "window_id": "slow_minus",
+          "cost_id": "cost_plus",
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica slow_minus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 59
+            }
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0015",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          }
+        },
+        "result": {
+          "source": {
+            "name": "BCE",
+            "sha256": "f23db9d9617ee55a4121aac82881e1ecdbec2c754386ea80082d169c4df96179",
+            "first_date": "1999-01-04",
+            "last_date": "2009-12-31",
+            "observations": 2816
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0015",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          },
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica slow_minus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 59
+            }
+          },
+          "baseline": {
+            "strategy": "SMA20/SMA60",
+            "quote_currency": "USD",
+            "final_equity": "1024.268008973974754150903223",
+            "return_percent": "2.426800897397475415090322300",
+            "max_drawdown_percent": "1.764537956693873771880091957",
+            "total_costs": "7.927390995416586502572213006",
+            "closed_trades": 26,
+            "has_open_position": false,
+            "rejected_entries": 0
+          },
+          "candidate": {
+            "strategy": "EMA20/EMA59",
+            "quote_currency": "USD",
+            "final_equity": "1032.739041642601891186085949",
+            "return_percent": "3.273904164260189118608594900",
+            "max_drawdown_percent": "1.947935454981911901206236051",
+            "total_costs": "7.347845218795327092656508006",
+            "closed_trades": 24,
+            "has_open_position": false,
+            "rejected_entries": 0
+          }
+        },
+        "assessment": {
+          "verdict": "not_supported_in_sample",
+          "return_comparison": "higher",
+          "drawdown_comparison": "higher",
+          "scope": "internal_selection"
+        }
+      },
+      {
+        "scenario": {
+          "id": "slow_plus__reference",
+          "window_id": "slow_plus",
+          "cost_id": "reference",
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica slow_plus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 61
+            }
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.001",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          }
+        },
+        "result": {
+          "source": {
+            "name": "BCE",
+            "sha256": "f23db9d9617ee55a4121aac82881e1ecdbec2c754386ea80082d169c4df96179",
+            "first_date": "1999-01-04",
+            "last_date": "2009-12-31",
+            "observations": 2816
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.001",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          },
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica slow_plus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 61
+            }
+          },
+          "baseline": {
+            "strategy": "SMA20/SMA60",
+            "quote_currency": "USD",
+            "final_equity": "1026.957637761821858215875547",
+            "return_percent": "2.695763776182185821587554700",
+            "max_drawdown_percent": "1.746292639526900087422992412",
+            "total_costs": "5.294279895031388444855762748",
+            "closed_trades": 26,
+            "has_open_position": false,
+            "rejected_entries": 0
+          },
+          "candidate": {
+            "strategy": "EMA20/EMA61",
+            "quote_currency": "USD",
+            "final_equity": "1037.238130408357699619989122",
+            "return_percent": "3.723813040835769961998912200",
+            "max_drawdown_percent": "1.938474331258971225493887769",
+            "total_costs": "4.090950463187516750751487127",
+            "closed_trades": 20,
+            "has_open_position": false,
+            "rejected_entries": 0
+          }
+        },
+        "assessment": {
+          "verdict": "not_supported_in_sample",
+          "return_comparison": "higher",
+          "drawdown_comparison": "higher",
+          "scope": "internal_selection"
+        }
+      },
+      {
+        "scenario": {
+          "id": "slow_plus__cost_minus",
+          "window_id": "slow_plus",
+          "cost_id": "cost_minus",
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica slow_plus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 61
+            }
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0005",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          }
+        },
+        "result": {
+          "source": {
+            "name": "BCE",
+            "sha256": "f23db9d9617ee55a4121aac82881e1ecdbec2c754386ea80082d169c4df96179",
+            "first_date": "1999-01-04",
+            "last_date": "2009-12-31",
+            "observations": 2816
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0005",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          },
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica slow_plus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 61
+            }
+          },
+          "baseline": {
+            "strategy": "SMA20/SMA60",
+            "quote_currency": "USD",
+            "final_equity": "1029.656754860155879994593557",
+            "return_percent": "2.965675486015587999459355700",
+            "max_drawdown_percent": "1.728027404319993102584098980",
+            "total_costs": "2.651829709566193892874046480",
+            "closed_trades": 26,
+            "has_open_position": false,
+            "rejected_entries": 0
+          },
+          "candidate": {
+            "strategy": "EMA20/EMA61",
+            "quote_currency": "USD",
+            "final_equity": "1039.349226104142619877570114",
+            "return_percent": "3.934922610414261987757011400",
+            "max_drawdown_percent": "1.919309390113727729572811151",
+            "total_costs": "2.048485671762203835813379546",
+            "closed_trades": 20,
+            "has_open_position": false,
+            "rejected_entries": 0
+          }
+        },
+        "assessment": {
+          "verdict": "not_supported_in_sample",
+          "return_comparison": "higher",
+          "drawdown_comparison": "higher",
+          "scope": "internal_selection"
+        }
+      },
+      {
+        "scenario": {
+          "id": "slow_plus__cost_plus",
+          "window_id": "slow_plus",
+          "cost_id": "cost_plus",
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica slow_plus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 61
+            }
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0015",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          }
+        },
+        "result": {
+          "source": {
+            "name": "BCE",
+            "sha256": "f23db9d9617ee55a4121aac82881e1ecdbec2c754386ea80082d169c4df96179",
+            "first_date": "1999-01-04",
+            "last_date": "2009-12-31",
+            "observations": 2816
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0015",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          },
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica slow_plus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 61
+            }
+          },
+          "baseline": {
+            "strategy": "SMA20/SMA60",
+            "quote_currency": "USD",
+            "final_equity": "1024.268008973974754150903223",
+            "return_percent": "2.426800897397475415090322300",
+            "max_drawdown_percent": "1.764537956693873771880091957",
+            "total_costs": "7.927390995416586502572213006",
+            "closed_trades": 26,
+            "has_open_position": false,
+            "rejected_entries": 0
+          },
+          "candidate": {
+            "strategy": "EMA20/EMA61",
+            "quote_currency": "USD",
+            "final_equity": "1035.133209541302080553663482",
+            "return_percent": "3.513320954130208055366348200",
+            "max_drawdown_percent": "1.957618406938421711319891337",
+            "total_costs": "6.127416612690982798397142265",
+            "closed_trades": 20,
+            "has_open_position": false,
+            "rejected_entries": 0
+          }
+        },
+        "assessment": {
+          "verdict": "not_supported_in_sample",
+          "return_comparison": "higher",
+          "drawdown_comparison": "higher",
+          "scope": "internal_selection"
+        }
+      }
+    ],
+    "check": [
+      {
+        "scenario": {
+          "id": "reference__reference",
+          "window_id": "reference",
+          "cost_id": "reference",
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica reference de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 60
+            }
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.001",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          }
+        },
+        "result": {
+          "source": {
+            "name": "BCE",
+            "sha256": "fea1c5d43bc9e60e8ae5832080800bc1ba80707ab8bde3a6e2a9a7d8de5681de",
+            "first_date": "2010-01-04",
+            "last_date": "2019-12-31",
+            "observations": 2559
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.001",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          },
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica reference de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 60
+            }
+          },
+          "baseline": {
+            "strategy": "SMA20/SMA60",
+            "quote_currency": "USD",
+            "final_equity": "992.2600612127543073707506901",
+            "return_percent": "-0.7739938787245692629249309900",
+            "max_drawdown_percent": "2.380588285274894397568406131",
+            "total_costs": "4.866769883041465085381974257",
+            "closed_trades": 24,
+            "has_open_position": true,
+            "rejected_entries": 0
+          },
+          "candidate": {
+            "strategy": "EMA20/EMA60",
+            "quote_currency": "USD",
+            "final_equity": "980.2120042787806287929420597",
+            "return_percent": "-1.978799572121937120705794030",
+            "max_drawdown_percent": "3.079101083325368994897050901",
+            "total_costs": "5.227298713075596439032419045",
+            "closed_trades": 26,
+            "has_open_position": true,
+            "rejected_entries": 0
+          }
+        },
+        "assessment": {
+          "verdict": "not_supported_in_sample",
+          "return_comparison": "lower",
+          "drawdown_comparison": "higher",
+          "scope": "internal_check"
+        }
+      },
+      {
+        "scenario": {
+          "id": "reference__cost_minus",
+          "window_id": "reference",
+          "cost_id": "cost_minus",
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica reference de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 60
+            }
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0005",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          }
+        },
+        "result": {
+          "source": {
+            "name": "BCE",
+            "sha256": "fea1c5d43bc9e60e8ae5832080800bc1ba80707ab8bde3a6e2a9a7d8de5681de",
+            "first_date": "2010-01-04",
+            "last_date": "2019-12-31",
+            "observations": 2559
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0005",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          },
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica reference de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 60
+            }
+          },
+          "baseline": {
+            "strategy": "SMA20/SMA60",
+            "quote_currency": "USD",
+            "final_equity": "994.6874591033165685949294950",
+            "return_percent": "-0.531254089668343140507050500",
+            "max_drawdown_percent": "2.216157280413421663436339079",
+            "total_costs": "2.437450428427761272743875099",
+            "closed_trades": 24,
+            "has_open_position": true,
+            "rejected_entries": 0
+          },
+          "candidate": {
+            "strategy": "EMA20/EMA60",
+            "quote_currency": "USD",
+            "final_equity": "982.7961708578864964375443510",
+            "return_percent": "-1.720382914211350356245564900",
+            "max_drawdown_percent": "2.920920266015641932450426180",
+            "total_costs": "2.618258029153309957864530385",
+            "closed_trades": 26,
+            "has_open_position": true,
+            "rejected_entries": 0
+          }
+        },
+        "assessment": {
+          "verdict": "not_supported_in_sample",
+          "return_comparison": "lower",
+          "drawdown_comparison": "higher",
+          "scope": "internal_check"
+        }
+      },
+      {
+        "scenario": {
+          "id": "reference__cost_plus",
+          "window_id": "reference",
+          "cost_id": "cost_plus",
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica reference de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 60
+            }
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0015",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          }
+        },
+        "result": {
+          "source": {
+            "name": "BCE",
+            "sha256": "fea1c5d43bc9e60e8ae5832080800bc1ba80707ab8bde3a6e2a9a7d8de5681de",
+            "first_date": "2010-01-04",
+            "last_date": "2019-12-31",
+            "observations": 2559
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0015",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          },
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica reference de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 60
+            }
+          },
+          "baseline": {
+            "strategy": "SMA20/SMA60",
+            "quote_currency": "USD",
+            "final_equity": "989.8407634209755063402067061",
+            "return_percent": "-1.015923657902449365979329390",
+            "max_drawdown_percent": "2.544595277437435692578330484",
+            "total_costs": "7.287991810678079231199939236",
+            "closed_trades": 24,
+            "has_open_position": true,
+            "rejected_entries": 0
+          },
+          "candidate": {
+            "strategy": "EMA20/EMA60",
+            "quote_currency": "USD",
+            "final_equity": "977.6369495793529262630392716",
+            "return_percent": "-2.236305042064707373696072840",
+            "max_drawdown_percent": "3.241405893110210939712800210",
+            "total_costs": "7.827161738568800301965381430",
+            "closed_trades": 26,
+            "has_open_position": true,
+            "rejected_entries": 0
+          }
+        },
+        "assessment": {
+          "verdict": "not_supported_in_sample",
+          "return_comparison": "lower",
+          "drawdown_comparison": "higher",
+          "scope": "internal_check"
+        }
+      },
+      {
+        "scenario": {
+          "id": "fast_minus__reference",
+          "window_id": "fast_minus",
+          "cost_id": "reference",
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica fast_minus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 19,
+              "slow_window": 60
+            }
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.001",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          }
+        },
+        "result": {
+          "source": {
+            "name": "BCE",
+            "sha256": "fea1c5d43bc9e60e8ae5832080800bc1ba80707ab8bde3a6e2a9a7d8de5681de",
+            "first_date": "2010-01-04",
+            "last_date": "2019-12-31",
+            "observations": 2559
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.001",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          },
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica fast_minus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 19,
+              "slow_window": 60
+            }
+          },
+          "baseline": {
+            "strategy": "SMA20/SMA60",
+            "quote_currency": "USD",
+            "final_equity": "992.2600612127543073707506901",
+            "return_percent": "-0.7739938787245692629249309900",
+            "max_drawdown_percent": "2.380588285274894397568406131",
+            "total_costs": "4.866769883041465085381974257",
+            "closed_trades": 24,
+            "has_open_position": true,
+            "rejected_entries": 0
+          },
+          "candidate": {
+            "strategy": "EMA19/EMA60",
+            "quote_currency": "USD",
+            "final_equity": "980.2645823075310478855851030",
+            "return_percent": "-1.973541769246895211441489700",
+            "max_drawdown_percent": "2.964433976876567169627504915",
+            "total_costs": "5.425986635329536721656870877",
+            "closed_trades": 27,
+            "has_open_position": true,
+            "rejected_entries": 0
+          }
+        },
+        "assessment": {
+          "verdict": "not_supported_in_sample",
+          "return_comparison": "lower",
+          "drawdown_comparison": "higher",
+          "scope": "internal_check"
+        }
+      },
+      {
+        "scenario": {
+          "id": "fast_minus__cost_minus",
+          "window_id": "fast_minus",
+          "cost_id": "cost_minus",
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica fast_minus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 19,
+              "slow_window": 60
+            }
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0005",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          }
+        },
+        "result": {
+          "source": {
+            "name": "BCE",
+            "sha256": "fea1c5d43bc9e60e8ae5832080800bc1ba80707ab8bde3a6e2a9a7d8de5681de",
+            "first_date": "2010-01-04",
+            "last_date": "2019-12-31",
+            "observations": 2559
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0005",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          },
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica fast_minus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 19,
+              "slow_window": 60
+            }
+          },
+          "baseline": {
+            "strategy": "SMA20/SMA60",
+            "quote_currency": "USD",
+            "final_equity": "994.6874591033165685949294950",
+            "return_percent": "-0.531254089668343140507050500",
+            "max_drawdown_percent": "2.216157280413421663436339079",
+            "total_costs": "2.437450428427761272743875099",
+            "closed_trades": 24,
+            "has_open_position": true,
+            "rejected_entries": 0
+          },
+          "candidate": {
+            "strategy": "EMA19/EMA60",
+            "quote_currency": "USD",
+            "final_equity": "982.9472758066319134838696930",
+            "return_percent": "-1.705272419336808651613030700",
+            "max_drawdown_percent": "2.796237910032241475109766655",
+            "total_costs": "2.717912954156843107199354886",
+            "closed_trades": 27,
+            "has_open_position": true,
+            "rejected_entries": 0
+          }
+        },
+        "assessment": {
+          "verdict": "not_supported_in_sample",
+          "return_comparison": "lower",
+          "drawdown_comparison": "higher",
+          "scope": "internal_check"
+        }
+      },
+      {
+        "scenario": {
+          "id": "fast_minus__cost_plus",
+          "window_id": "fast_minus",
+          "cost_id": "cost_plus",
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica fast_minus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 19,
+              "slow_window": 60
+            }
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0015",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          }
+        },
+        "result": {
+          "source": {
+            "name": "BCE",
+            "sha256": "fea1c5d43bc9e60e8ae5832080800bc1ba80707ab8bde3a6e2a9a7d8de5681de",
+            "first_date": "2010-01-04",
+            "last_date": "2019-12-31",
+            "observations": 2559
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0015",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          },
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica fast_minus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 19,
+              "slow_window": 60
+            }
+          },
+          "baseline": {
+            "strategy": "SMA20/SMA60",
+            "quote_currency": "USD",
+            "final_equity": "989.8407634209755063402067061",
+            "return_percent": "-1.015923657902449365979329390",
+            "max_drawdown_percent": "2.544595277437435692578330484",
+            "total_costs": "7.287991810678079231199939236",
+            "closed_trades": 24,
+            "has_open_position": true,
+            "rejected_entries": 0
+          },
+          "candidate": {
+            "strategy": "EMA19/EMA60",
+            "quote_currency": "USD",
+            "final_equity": "977.5916154067910543494390066",
+            "return_percent": "-2.240838459320894565056099340",
+            "max_drawdown_percent": "3.136716688168473045302275156",
+            "total_costs": "8.124264419219172373453282954",
+            "closed_trades": 27,
+            "has_open_position": true,
+            "rejected_entries": 0
+          }
+        },
+        "assessment": {
+          "verdict": "not_supported_in_sample",
+          "return_comparison": "lower",
+          "drawdown_comparison": "higher",
+          "scope": "internal_check"
+        }
+      },
+      {
+        "scenario": {
+          "id": "fast_plus__reference",
+          "window_id": "fast_plus",
+          "cost_id": "reference",
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica fast_plus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 21,
+              "slow_window": 60
+            }
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.001",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          }
+        },
+        "result": {
+          "source": {
+            "name": "BCE",
+            "sha256": "fea1c5d43bc9e60e8ae5832080800bc1ba80707ab8bde3a6e2a9a7d8de5681de",
+            "first_date": "2010-01-04",
+            "last_date": "2019-12-31",
+            "observations": 2559
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.001",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          },
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica fast_plus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 21,
+              "slow_window": 60
+            }
+          },
+          "baseline": {
+            "strategy": "SMA20/SMA60",
+            "quote_currency": "USD",
+            "final_equity": "992.2600612127543073707506901",
+            "return_percent": "-0.7739938787245692629249309900",
+            "max_drawdown_percent": "2.380588285274894397568406131",
+            "total_costs": "4.866769883041465085381974257",
+            "closed_trades": 24,
+            "has_open_position": true,
+            "rejected_entries": 0
+          },
+          "candidate": {
+            "strategy": "EMA21/EMA60",
+            "quote_currency": "USD",
+            "final_equity": "981.6235416240065078399924230",
+            "return_percent": "-1.837645837599349216000757700",
+            "max_drawdown_percent": "3.088811688066775221055671354",
+            "total_costs": "4.639969012938671199215973286",
+            "closed_trades": 23,
+            "has_open_position": true,
+            "rejected_entries": 0
+          }
+        },
+        "assessment": {
+          "verdict": "not_supported_in_sample",
+          "return_comparison": "lower",
+          "drawdown_comparison": "higher",
+          "scope": "internal_check"
+        }
+      },
+      {
+        "scenario": {
+          "id": "fast_plus__cost_minus",
+          "window_id": "fast_plus",
+          "cost_id": "cost_minus",
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica fast_plus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 21,
+              "slow_window": 60
+            }
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0005",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          }
+        },
+        "result": {
+          "source": {
+            "name": "BCE",
+            "sha256": "fea1c5d43bc9e60e8ae5832080800bc1ba80707ab8bde3a6e2a9a7d8de5681de",
+            "first_date": "2010-01-04",
+            "last_date": "2019-12-31",
+            "observations": 2559
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0005",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          },
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica fast_plus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 21,
+              "slow_window": 60
+            }
+          },
+          "baseline": {
+            "strategy": "SMA20/SMA60",
+            "quote_currency": "USD",
+            "final_equity": "994.6874591033165685949294950",
+            "return_percent": "-0.531254089668343140507050500",
+            "max_drawdown_percent": "2.216157280413421663436339079",
+            "total_costs": "2.437450428427761272743875099",
+            "closed_trades": 24,
+            "has_open_position": true,
+            "rejected_entries": 0
+          },
+          "candidate": {
+            "strategy": "EMA21/EMA60",
+            "quote_currency": "USD",
+            "final_equity": "983.9173583197116337029267581",
+            "return_percent": "-1.608264168028836629707324190",
+            "max_drawdown_percent": "2.933603646838536250061795548",
+            "total_costs": "2.323730394123234374491401326",
+            "closed_trades": 23,
+            "has_open_position": true,
+            "rejected_entries": 0
+          }
+        },
+        "assessment": {
+          "verdict": "not_supported_in_sample",
+          "return_comparison": "lower",
+          "drawdown_comparison": "higher",
+          "scope": "internal_check"
+        }
+      },
+      {
+        "scenario": {
+          "id": "fast_plus__cost_plus",
+          "window_id": "fast_plus",
+          "cost_id": "cost_plus",
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica fast_plus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 21,
+              "slow_window": 60
+            }
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0015",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          }
+        },
+        "result": {
+          "source": {
+            "name": "BCE",
+            "sha256": "fea1c5d43bc9e60e8ae5832080800bc1ba80707ab8bde3a6e2a9a7d8de5681de",
+            "first_date": "2010-01-04",
+            "last_date": "2019-12-31",
+            "observations": 2559
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0015",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          },
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica fast_plus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 21,
+              "slow_window": 60
+            }
+          },
+          "baseline": {
+            "strategy": "SMA20/SMA60",
+            "quote_currency": "USD",
+            "final_equity": "989.8407634209755063402067061",
+            "return_percent": "-1.015923657902449365979329390",
+            "max_drawdown_percent": "2.544595277437435692578330484",
+            "total_costs": "7.287991810678079231199939236",
+            "closed_trades": 24,
+            "has_open_position": true,
+            "rejected_entries": 0
+          },
+          "candidate": {
+            "strategy": "EMA21/EMA60",
+            "quote_currency": "USD",
+            "final_equity": "979.3371305245563390337580671",
+            "return_percent": "-2.066286947544366096624193290",
+            "max_drawdown_percent": "3.251091494023884996446249387",
+            "total_costs": "6.948745812879330109865933201",
+            "closed_trades": 23,
+            "has_open_position": true,
+            "rejected_entries": 0
+          }
+        },
+        "assessment": {
+          "verdict": "not_supported_in_sample",
+          "return_comparison": "lower",
+          "drawdown_comparison": "higher",
+          "scope": "internal_check"
+        }
+      },
+      {
+        "scenario": {
+          "id": "slow_minus__reference",
+          "window_id": "slow_minus",
+          "cost_id": "reference",
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica slow_minus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 59
+            }
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.001",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          }
+        },
+        "result": {
+          "source": {
+            "name": "BCE",
+            "sha256": "fea1c5d43bc9e60e8ae5832080800bc1ba80707ab8bde3a6e2a9a7d8de5681de",
+            "first_date": "2010-01-04",
+            "last_date": "2019-12-31",
+            "observations": 2559
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.001",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          },
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica slow_minus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 59
+            }
+          },
+          "baseline": {
+            "strategy": "SMA20/SMA60",
+            "quote_currency": "USD",
+            "final_equity": "992.2600612127543073707506901",
+            "return_percent": "-0.7739938787245692629249309900",
+            "max_drawdown_percent": "2.380588285274894397568406131",
+            "total_costs": "4.866769883041465085381974257",
+            "closed_trades": 24,
+            "has_open_position": true,
+            "rejected_entries": 0
+          },
+          "candidate": {
+            "strategy": "EMA20/EMA59",
+            "quote_currency": "USD",
+            "final_equity": "980.4811762755971925991424260",
+            "return_percent": "-1.951882372440280740085757400",
+            "max_drawdown_percent": "3.073729383110161866419102473",
+            "total_costs": "5.029696097867195478913813686",
+            "closed_trades": 25,
+            "has_open_position": true,
+            "rejected_entries": 0
+          }
+        },
+        "assessment": {
+          "verdict": "not_supported_in_sample",
+          "return_comparison": "lower",
+          "drawdown_comparison": "higher",
+          "scope": "internal_check"
+        }
+      },
+      {
+        "scenario": {
+          "id": "slow_minus__cost_minus",
+          "window_id": "slow_minus",
+          "cost_id": "cost_minus",
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica slow_minus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 59
+            }
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0005",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          }
+        },
+        "result": {
+          "source": {
+            "name": "BCE",
+            "sha256": "fea1c5d43bc9e60e8ae5832080800bc1ba80707ab8bde3a6e2a9a7d8de5681de",
+            "first_date": "2010-01-04",
+            "last_date": "2019-12-31",
+            "observations": 2559
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0005",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          },
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica slow_minus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 59
+            }
+          },
+          "baseline": {
+            "strategy": "SMA20/SMA60",
+            "quote_currency": "USD",
+            "final_equity": "994.6874591033165685949294950",
+            "return_percent": "-0.531254089668343140507050500",
+            "max_drawdown_percent": "2.216157280413421663436339079",
+            "total_costs": "2.437450428427761272743875099",
+            "closed_trades": 24,
+            "has_open_position": true,
+            "rejected_entries": 0
+          },
+          "candidate": {
+            "strategy": "EMA20/EMA59",
+            "quote_currency": "USD",
+            "final_equity": "982.9679532453565069175433881",
+            "return_percent": "-1.703204675464349308245661190",
+            "max_drawdown_percent": "2.915534784068032141390606231",
+            "total_costs": "2.519157453284652250330187029",
+            "closed_trades": 25,
+            "has_open_position": true,
+            "rejected_entries": 0
+          }
+        },
+        "assessment": {
+          "verdict": "not_supported_in_sample",
+          "return_comparison": "lower",
+          "drawdown_comparison": "higher",
+          "scope": "internal_check"
+        }
+      },
+      {
+        "scenario": {
+          "id": "slow_minus__cost_plus",
+          "window_id": "slow_minus",
+          "cost_id": "cost_plus",
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica slow_minus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 59
+            }
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0015",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          }
+        },
+        "result": {
+          "source": {
+            "name": "BCE",
+            "sha256": "fea1c5d43bc9e60e8ae5832080800bc1ba80707ab8bde3a6e2a9a7d8de5681de",
+            "first_date": "2010-01-04",
+            "last_date": "2019-12-31",
+            "observations": 2559
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0015",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          },
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica slow_minus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 59
+            }
+          },
+          "baseline": {
+            "strategy": "SMA20/SMA60",
+            "quote_currency": "USD",
+            "final_equity": "989.8407634209755063402067061",
+            "return_percent": "-1.015923657902449365979329390",
+            "max_drawdown_percent": "2.544595277437435692578330484",
+            "total_costs": "7.287991810678079231199939236",
+            "closed_trades": 24,
+            "has_open_position": true,
+            "rejected_entries": 0
+          },
+          "candidate": {
+            "strategy": "EMA20/EMA59",
+            "quote_currency": "USD",
+            "final_equity": "978.0029207314116630304139932",
+            "return_percent": "-2.199707926858833696958600680",
+            "max_drawdown_percent": "3.236048182339727163458419072",
+            "total_costs": "7.531652162277513479397705211",
+            "closed_trades": 25,
+            "has_open_position": true,
+            "rejected_entries": 0
+          }
+        },
+        "assessment": {
+          "verdict": "not_supported_in_sample",
+          "return_comparison": "lower",
+          "drawdown_comparison": "higher",
+          "scope": "internal_check"
+        }
+      },
+      {
+        "scenario": {
+          "id": "slow_plus__reference",
+          "window_id": "slow_plus",
+          "cost_id": "reference",
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica slow_plus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 61
+            }
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.001",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          }
+        },
+        "result": {
+          "source": {
+            "name": "BCE",
+            "sha256": "fea1c5d43bc9e60e8ae5832080800bc1ba80707ab8bde3a6e2a9a7d8de5681de",
+            "first_date": "2010-01-04",
+            "last_date": "2019-12-31",
+            "observations": 2559
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.001",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          },
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica slow_plus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 61
+            }
+          },
+          "baseline": {
+            "strategy": "SMA20/SMA60",
+            "quote_currency": "USD",
+            "final_equity": "992.2600612127543073707506901",
+            "return_percent": "-0.7739938787245692629249309900",
+            "max_drawdown_percent": "2.380588285274894397568406131",
+            "total_costs": "4.866769883041465085381974257",
+            "closed_trades": 24,
+            "has_open_position": true,
+            "rejected_entries": 0
+          },
+          "candidate": {
+            "strategy": "EMA20/EMA61",
+            "quote_currency": "USD",
+            "final_equity": "980.4118968482351758768669070",
+            "return_percent": "-1.958810315176482412313309300",
+            "max_drawdown_percent": "3.083928458584981281607003418",
+            "total_costs": "5.030619093458223856813324431",
+            "closed_trades": 25,
+            "has_open_position": true,
+            "rejected_entries": 0
+          }
+        },
+        "assessment": {
+          "verdict": "not_supported_in_sample",
+          "return_comparison": "lower",
+          "drawdown_comparison": "higher",
+          "scope": "internal_check"
+        }
+      },
+      {
+        "scenario": {
+          "id": "slow_plus__cost_minus",
+          "window_id": "slow_plus",
+          "cost_id": "cost_minus",
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica slow_plus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 61
+            }
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0005",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          }
+        },
+        "result": {
+          "source": {
+            "name": "BCE",
+            "sha256": "fea1c5d43bc9e60e8ae5832080800bc1ba80707ab8bde3a6e2a9a7d8de5681de",
+            "first_date": "2010-01-04",
+            "last_date": "2019-12-31",
+            "observations": 2559
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0005",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          },
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica slow_plus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 61
+            }
+          },
+          "baseline": {
+            "strategy": "SMA20/SMA60",
+            "quote_currency": "USD",
+            "final_equity": "994.6874591033165685949294950",
+            "return_percent": "-0.531254089668343140507050500",
+            "max_drawdown_percent": "2.216157280413421663436339079",
+            "total_costs": "2.437450428427761272743875099",
+            "closed_trades": 24,
+            "has_open_position": true,
+            "rejected_entries": 0
+          },
+          "candidate": {
+            "strategy": "EMA20/EMA61",
+            "quote_currency": "USD",
+            "final_equity": "982.8984343435665397039197072",
+            "return_percent": "-1.710156565643346029608029280",
+            "max_drawdown_percent": "2.925759781182551492541028013",
+            "total_costs": "2.519619552800215097489349029",
+            "closed_trades": 25,
+            "has_open_position": true,
+            "rejected_entries": 0
+          }
+        },
+        "assessment": {
+          "verdict": "not_supported_in_sample",
+          "return_comparison": "lower",
+          "drawdown_comparison": "higher",
+          "scope": "internal_check"
+        }
+      },
+      {
+        "scenario": {
+          "id": "slow_plus__cost_plus",
+          "window_id": "slow_plus",
+          "cost_id": "cost_plus",
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica slow_plus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 61
+            }
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0015",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          }
+        },
+        "result": {
+          "source": {
+            "name": "BCE",
+            "sha256": "fea1c5d43bc9e60e8ae5832080800bc1ba80707ab8bde3a6e2a9a7d8de5681de",
+            "first_date": "2010-01-04",
+            "last_date": "2019-12-31",
+            "observations": 2559
+          },
+          "policy": {
+            "pair": "EUR/USD",
+            "baseline_strategy": "sma",
+            "fast_window": 20,
+            "slow_window": 60,
+            "cost_rate": "0.0015",
+            "initial_capital": "1000",
+            "allocation_fraction": "0.1"
+          },
+          "proposal": {
+            "hypothesis": "Sensibilidad mecánica slow_plus de la propuesta registrada; sin resultados anticipados.",
+            "criterion": "higher_return_without_more_drawdown",
+            "tool": "run_experiment",
+            "arguments": {
+              "strategy": "ema",
+              "fast_window": 20,
+              "slow_window": 61
+            }
+          },
+          "baseline": {
+            "strategy": "SMA20/SMA60",
+            "quote_currency": "USD",
+            "final_equity": "989.8407634209755063402067061",
+            "return_percent": "-1.015923657902449365979329390",
+            "max_drawdown_percent": "2.544595277437435692578330484",
+            "total_costs": "7.287991810678079231199939236",
+            "closed_trades": 24,
+            "has_open_position": true,
+            "rejected_entries": 0
+          },
+          "candidate": {
+            "strategy": "EMA20/EMA61",
+            "quote_currency": "USD",
+            "final_equity": "977.9338798014289814364708627",
+            "return_percent": "-2.206612019857101856352913730",
+            "max_drawdown_percent": "3.246220940352737429074363299",
+            "total_costs": "7.533034851411935511971274473",
+            "closed_trades": 25,
+            "has_open_position": true,
+            "rejected_entries": 0
+          }
+        },
+        "assessment": {
+          "verdict": "not_supported_in_sample",
+          "return_comparison": "lower",
+          "drawdown_comparison": "higher",
+          "scope": "internal_check"
+        }
+      }
+    ]
+  },
+  "model_requests": 0,
+  "api_cost_usd": "0"
+}

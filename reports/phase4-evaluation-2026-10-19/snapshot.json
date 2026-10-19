@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-19",
+  "scope": "first_evaluation_of_fixed_proposal",
+  "files": [
+    {
+      "snapshot": "comparison.json",
+      "source": ".local\\evaluations\\e4b0dc31a25a46f0a84655d433840a67\\comparison.json",
+      "sha256": "ea565c5934e6a160a9a56fb2470a019c718446e62359178e9b411f45997b9b3f"
+    },
+    {
+      "snapshot": "evaluation_raw.json",
+      "source": ".local\\evaluations\\e4b0dc31a25a46f0a84655d433840a67\\evaluation_raw.json",
+      "sha256": "79b4dfb769a2c7968bf6d66833ab034388671f4630d3bb8c0e5a43b2a0c1979e"
+    },
+    {
+      "snapshot": "report.md",
+      "source": ".local\\evaluations\\e4b0dc31a25a46f0a84655d433840a67\\report.md",
+      "sha256": "3964c9e123a41138e80459aac9cbf795cdbe013a820737681a93c8b29fe20713"
+    },
+    {
+      "snapshot": "events.jsonl",
+      "source": ".local\\evaluations\\e4b0dc31a25a46f0a84655d433840a67\\events.jsonl",
+      "sha256": "98e11cd3bad276345aebe4d846eed59b6b78f4e1642438a18e06c2b20142f8a1"
+    },
+    {
+      "snapshot": "access.json",
+      "source": ".local\\evaluation-access\\d4de382e518ac7b85598ee08011fd9de91e00248611423bfc726ef306d4e7f26.json",
+      "sha256": "6a158b57526eb63085ff05a4631a1977bc380baccb598631e88309127935c6b5"
+    }
+  ]
+}

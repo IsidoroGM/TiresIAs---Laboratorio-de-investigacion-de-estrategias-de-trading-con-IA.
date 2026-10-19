@@ -1,0 +1,2 @@
+{"schema_version": 1, "at": "2026-10-19T10:57:01.945644+00:00", "event": "preparation_started", "data": {"frozen_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2"}}
+{"schema_version": 1, "at": "2026-10-19T10:57:03.358159+00:00", "event": "plan_prepared", "data": {"plan_sha256": "2553c8acfb238b7c09c6c0e046ca8daedd87d44db6942e0b29976ac0ff57db4f", "scenario_count": 15, "model_requests": 0, "api_cost_usd": "0"}}

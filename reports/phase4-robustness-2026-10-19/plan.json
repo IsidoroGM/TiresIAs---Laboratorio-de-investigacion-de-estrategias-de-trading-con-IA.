@@ -1,0 +1,444 @@
+{
+  "schema_version": 1,
+  "protocol": "development_robustness_v1",
+  "stage": "prepared_not_run",
+  "reference": {
+    "frozen_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2",
+    "frozen_sha256": "1f64b917cc88993ca496798ef98e4aadf8a266f7b7f3fce9cf45d6b86d61483a",
+    "manifest_sha256": "c432a2795917c500e0ee5fc474ed8f5a5b096346857a67c4b7f19b7f1a8dff42",
+    "development_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+    "outer_cutoff": "2020-01-01"
+  },
+  "seed_proposal": {
+    "hypothesis": "Se propone que la variante EMA con ventanas de 20 y 60 periodos generará una rentabilidad estrictamente superior al SMA base sin incrementar el drawdown máximo en muestras de EUR/USD.",
+    "criterion": "higher_return_without_more_drawdown",
+    "tool": "run_experiment",
+    "arguments": {
+      "strategy": "ema",
+      "fast_window": 20,
+      "slow_window": 60
+    }
+  },
+  "reference_policy": {
+    "pair": "EUR/USD",
+    "baseline_strategy": "sma",
+    "fast_window": 20,
+    "slow_window": 60,
+    "cost_rate": "0.001",
+    "initial_capital": "1000",
+    "allocation_fraction": "0.1"
+  },
+  "inner_cutoff": "2010-01-01",
+  "execution_policy": {
+    "accounts": "independent_per_partition_and_pair",
+    "carry_positions": false,
+    "carry_signals": false,
+    "indicator_warmup": "inside_each_partition"
+  },
+  "scenarios": [
+    {
+      "id": "reference__reference",
+      "window_id": "reference",
+      "cost_id": "reference",
+      "proposal": {
+        "hypothesis": "Sensibilidad mecánica reference de la propuesta registrada; sin resultados anticipados.",
+        "criterion": "higher_return_without_more_drawdown",
+        "tool": "run_experiment",
+        "arguments": {
+          "strategy": "ema",
+          "fast_window": 20,
+          "slow_window": 60
+        }
+      },
+      "policy": {
+        "pair": "EUR/USD",
+        "baseline_strategy": "sma",
+        "fast_window": 20,
+        "slow_window": 60,
+        "cost_rate": "0.001",
+        "initial_capital": "1000",
+        "allocation_fraction": "0.1"
+      }
+    },
+    {
+      "id": "reference__cost_minus",
+      "window_id": "reference",
+      "cost_id": "cost_minus",
+      "proposal": {
+        "hypothesis": "Sensibilidad mecánica reference de la propuesta registrada; sin resultados anticipados.",
+        "criterion": "higher_return_without_more_drawdown",
+        "tool": "run_experiment",
+        "arguments": {
+          "strategy": "ema",
+          "fast_window": 20,
+          "slow_window": 60
+        }
+      },
+      "policy": {
+        "pair": "EUR/USD",
+        "baseline_strategy": "sma",
+        "fast_window": 20,
+        "slow_window": 60,
+        "cost_rate": "0.0005",
+        "initial_capital": "1000",
+        "allocation_fraction": "0.1"
+      }
+    },
+    {
+      "id": "reference__cost_plus",
+      "window_id": "reference",
+      "cost_id": "cost_plus",
+      "proposal": {
+        "hypothesis": "Sensibilidad mecánica reference de la propuesta registrada; sin resultados anticipados.",
+        "criterion": "higher_return_without_more_drawdown",
+        "tool": "run_experiment",
+        "arguments": {
+          "strategy": "ema",
+          "fast_window": 20,
+          "slow_window": 60
+        }
+      },
+      "policy": {
+        "pair": "EUR/USD",
+        "baseline_strategy": "sma",
+        "fast_window": 20,
+        "slow_window": 60,
+        "cost_rate": "0.0015",
+        "initial_capital": "1000",
+        "allocation_fraction": "0.1"
+      }
+    },
+    {
+      "id": "fast_minus__reference",
+      "window_id": "fast_minus",
+      "cost_id": "reference",
+      "proposal": {
+        "hypothesis": "Sensibilidad mecánica fast_minus de la propuesta registrada; sin resultados anticipados.",
+        "criterion": "higher_return_without_more_drawdown",
+        "tool": "run_experiment",
+        "arguments": {
+          "strategy": "ema",
+          "fast_window": 19,
+          "slow_window": 60
+        }
+      },
+      "policy": {
+        "pair": "EUR/USD",
+        "baseline_strategy": "sma",
+        "fast_window": 20,
+        "slow_window": 60,
+        "cost_rate": "0.001",
+        "initial_capital": "1000",
+        "allocation_fraction": "0.1"
+      }
+    },
+    {
+      "id": "fast_minus__cost_minus",
+      "window_id": "fast_minus",
+      "cost_id": "cost_minus",
+      "proposal": {
+        "hypothesis": "Sensibilidad mecánica fast_minus de la propuesta registrada; sin resultados anticipados.",
+        "criterion": "higher_return_without_more_drawdown",
+        "tool": "run_experiment",
+        "arguments": {
+          "strategy": "ema",
+          "fast_window": 19,
+          "slow_window": 60
+        }
+      },
+      "policy": {
+        "pair": "EUR/USD",
+        "baseline_strategy": "sma",
+        "fast_window": 20,
+        "slow_window": 60,
+        "cost_rate": "0.0005",
+        "initial_capital": "1000",
+        "allocation_fraction": "0.1"
+      }
+    },
+    {
+      "id": "fast_minus__cost_plus",
+      "window_id": "fast_minus",
+      "cost_id": "cost_plus",
+      "proposal": {
+        "hypothesis": "Sensibilidad mecánica fast_minus de la propuesta registrada; sin resultados anticipados.",
+        "criterion": "higher_return_without_more_drawdown",
+        "tool": "run_experiment",
+        "arguments": {
+          "strategy": "ema",
+          "fast_window": 19,
+          "slow_window": 60
+        }
+      },
+      "policy": {
+        "pair": "EUR/USD",
+        "baseline_strategy": "sma",
+        "fast_window": 20,
+        "slow_window": 60,
+        "cost_rate": "0.0015",
+        "initial_capital": "1000",
+        "allocation_fraction": "0.1"
+      }
+    },
+    {
+      "id": "fast_plus__reference",
+      "window_id": "fast_plus",
+      "cost_id": "reference",
+      "proposal": {
+        "hypothesis": "Sensibilidad mecánica fast_plus de la propuesta registrada; sin resultados anticipados.",
+        "criterion": "higher_return_without_more_drawdown",
+        "tool": "run_experiment",
+        "arguments": {
+          "strategy": "ema",
+          "fast_window": 21,
+          "slow_window": 60
+        }
+      },
+      "policy": {
+        "pair": "EUR/USD",
+        "baseline_strategy": "sma",
+        "fast_window": 20,
+        "slow_window": 60,
+        "cost_rate": "0.001",
+        "initial_capital": "1000",
+        "allocation_fraction": "0.1"
+      }
+    },
+    {
+      "id": "fast_plus__cost_minus",
+      "window_id": "fast_plus",
+      "cost_id": "cost_minus",
+      "proposal": {
+        "hypothesis": "Sensibilidad mecánica fast_plus de la propuesta registrada; sin resultados anticipados.",
+        "criterion": "higher_return_without_more_drawdown",
+        "tool": "run_experiment",
+        "arguments": {
+          "strategy": "ema",
+          "fast_window": 21,
+          "slow_window": 60
+        }
+      },
+      "policy": {
+        "pair": "EUR/USD",
+        "baseline_strategy": "sma",
+        "fast_window": 20,
+        "slow_window": 60,
+        "cost_rate": "0.0005",
+        "initial_capital": "1000",
+        "allocation_fraction": "0.1"
+      }
+    },
+    {
+      "id": "fast_plus__cost_plus",
+      "window_id": "fast_plus",
+      "cost_id": "cost_plus",
+      "proposal": {
+        "hypothesis": "Sensibilidad mecánica fast_plus de la propuesta registrada; sin resultados anticipados.",
+        "criterion": "higher_return_without_more_drawdown",
+        "tool": "run_experiment",
+        "arguments": {
+          "strategy": "ema",
+          "fast_window": 21,
+          "slow_window": 60
+        }
+      },
+      "policy": {
+        "pair": "EUR/USD",
+        "baseline_strategy": "sma",
+        "fast_window": 20,
+        "slow_window": 60,
+        "cost_rate": "0.0015",
+        "initial_capital": "1000",
+        "allocation_fraction": "0.1"
+      }
+    },
+    {
+      "id": "slow_minus__reference",
+      "window_id": "slow_minus",
+      "cost_id": "reference",
+      "proposal": {
+        "hypothesis": "Sensibilidad mecánica slow_minus de la propuesta registrada; sin resultados anticipados.",
+        "criterion": "higher_return_without_more_drawdown",
+        "tool": "run_experiment",
+        "arguments": {
+          "strategy": "ema",
+          "fast_window": 20,
+          "slow_window": 59
+        }
+      },
+      "policy": {
+        "pair": "EUR/USD",
+        "baseline_strategy": "sma",
+        "fast_window": 20,
+        "slow_window": 60,
+        "cost_rate": "0.001",
+        "initial_capital": "1000",
+        "allocation_fraction": "0.1"
+      }
+    },
+    {
+      "id": "slow_minus__cost_minus",
+      "window_id": "slow_minus",
+      "cost_id": "cost_minus",
+      "proposal": {
+        "hypothesis": "Sensibilidad mecánica slow_minus de la propuesta registrada; sin resultados anticipados.",
+        "criterion": "higher_return_without_more_drawdown",
+        "tool": "run_experiment",
+        "arguments": {
+          "strategy": "ema",
+          "fast_window": 20,
+          "slow_window": 59
+        }
+      },
+      "policy": {
+        "pair": "EUR/USD",
+        "baseline_strategy": "sma",
+        "fast_window": 20,
+        "slow_window": 60,
+        "cost_rate": "0.0005",
+        "initial_capital": "1000",
+        "allocation_fraction": "0.1"
+      }
+    },
+    {
+      "id": "slow_minus__cost_plus",
+      "window_id": "slow_minus",
+      "cost_id": "cost_plus",
+      "proposal": {
+        "hypothesis": "Sensibilidad mecánica slow_minus de la propuesta registrada; sin resultados anticipados.",
+        "criterion": "higher_return_without_more_drawdown",
+        "tool": "run_experiment",
+        "arguments": {
+          "strategy": "ema",
+          "fast_window": 20,
+          "slow_window": 59
+        }
+      },
+      "policy": {
+        "pair": "EUR/USD",
+        "baseline_strategy": "sma",
+        "fast_window": 20,
+        "slow_window": 60,
+        "cost_rate": "0.0015",
+        "initial_capital": "1000",
+        "allocation_fraction": "0.1"
+      }
+    },
+    {
+      "id": "slow_plus__reference",
+      "window_id": "slow_plus",
+      "cost_id": "reference",
+      "proposal": {
+        "hypothesis": "Sensibilidad mecánica slow_plus de la propuesta registrada; sin resultados anticipados.",
+        "criterion": "higher_return_without_more_drawdown",
+        "tool": "run_experiment",
+        "arguments": {
+          "strategy": "ema",
+          "fast_window": 20,
+          "slow_window": 61
+        }
+      },
+      "policy": {
+        "pair": "EUR/USD",
+        "baseline_strategy": "sma",
+        "fast_window": 20,
+        "slow_window": 60,
+        "cost_rate": "0.001",
+        "initial_capital": "1000",
+        "allocation_fraction": "0.1"
+      }
+    },
+    {
+      "id": "slow_plus__cost_minus",
+      "window_id": "slow_plus",
+      "cost_id": "cost_minus",
+      "proposal": {
+        "hypothesis": "Sensibilidad mecánica slow_plus de la propuesta registrada; sin resultados anticipados.",
+        "criterion": "higher_return_without_more_drawdown",
+        "tool": "run_experiment",
+        "arguments": {
+          "strategy": "ema",
+          "fast_window": 20,
+          "slow_window": 61
+        }
+      },
+      "policy": {
+        "pair": "EUR/USD",
+        "baseline_strategy": "sma",
+        "fast_window": 20,
+        "slow_window": 60,
+        "cost_rate": "0.0005",
+        "initial_capital": "1000",
+        "allocation_fraction": "0.1"
+      }
+    },
+    {
+      "id": "slow_plus__cost_plus",
+      "window_id": "slow_plus",
+      "cost_id": "cost_plus",
+      "proposal": {
+        "hypothesis": "Sensibilidad mecánica slow_plus de la propuesta registrada; sin resultados anticipados.",
+        "criterion": "higher_return_without_more_drawdown",
+        "tool": "run_experiment",
+        "arguments": {
+          "strategy": "ema",
+          "fast_window": 20,
+          "slow_window": 61
+        }
+      },
+      "policy": {
+        "pair": "EUR/USD",
+        "baseline_strategy": "sma",
+        "fast_window": 20,
+        "slow_window": 60,
+        "cost_rate": "0.0015",
+        "initial_capital": "1000",
+        "allocation_fraction": "0.1"
+      }
+    }
+  ],
+  "skipped": [],
+  "periods": {
+    "selection": {
+      "file": "selection.xml",
+      "sha256": "f23db9d9617ee55a4121aac82881e1ecdbec2c754386ea80082d169c4df96179",
+      "first_date": "1999-01-04",
+      "last_date": "2009-12-31",
+      "observations": 2816
+    },
+    "check": {
+      "file": "check.xml",
+      "sha256": "fea1c5d43bc9e60e8ae5832080800bc1ba80707ab8bde3a6e2a9a7d8de5681de",
+      "first_date": "2010-01-04",
+      "last_date": "2019-12-31",
+      "observations": 2559
+    }
+  },
+  "code_sha256": {
+    "data.py": "286b822fbb6dd5e46f65f64bb387bb7f7d246c7c9c17dc523a52d7ce3e7dfd94",
+    "indicators.py": "13cce9a32399a309694a83f52c8bdb93b0f86075612c825d5be3d9bfc2c366a3",
+    "strategies.py": "9607a659a352e31f2192c237eaecc8191ba90f9b2e78bcaa3919cfaa3489527e",
+    "backtesting.py": "81e6a34dd715d192c730fe407c7cdd037e2340e387e4ea37c90b0549d07a3c4f",
+    "metrics.py": "3d85bab9c1ee6da88a632a08b3a600f12ce7ee9335fbce1b4c56e0cfc865ec2f",
+    "experiments.py": "57c5638f293d9e4c5102a091227970ac1d2fd3b9774fa3f839fd6ed044a26e4d",
+    "ai.py": "9c43b2f13b1b9264810cb1710c081acc0c476071870842617c9a451cb58cc1f3",
+    "research.py": "7e53374a3768800de2d75be9bc67d2299d16620c6b4fe92a3438d1f4c0c63340",
+    "validation.py": "ac2aa655af324a352107753e3b53e0aa986958aeb9e2e2374c4791c3a8afb1b6",
+    "holdout.py": "a048adf93b2a58b3177e80d1077597a0bd849932fd42f714326a43fc68fecbb2",
+    "robustness.py": "906ea3f6c07d5f5aeac03d049c0852b9d863e29a3864ac61009fa811a0a11ae5"
+  },
+  "selection_rule": {
+    "cost_id": "reference",
+    "eligibility": "criterion_met_with_closed_trades",
+    "criterion": "higher_return_without_more_drawdown",
+    "ranking": "return_desc_then_drawdown_asc",
+    "ties": "fast_asc_slow_asc_window_id_asc",
+    "before_check": true
+  },
+  "limitations": [
+    "All source history was already explored; this is internal descriptive validation.",
+    "Designed after the earlier outer evaluation; not independent confirmation.",
+    "No outer evaluation data or results are read by this workflow.",
+    "Checking all scenarios is descriptive and cannot trigger reselection."
+  ]
+}

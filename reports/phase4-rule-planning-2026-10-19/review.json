@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "translation": {
+    "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\formalization\\0199d06d32b649139c0ad9b96c559d5b",
+    "sha256": {
+      "translation.json": "b5dfad1148faec6c015f8e76520efe7d02324faf6666cc1b5743e8fcd5c1fe22",
+      "events.jsonl": "30eb9b3390874001172504458d17550ba5084657070aab623da0fff37d0a3d4f"
+    }
+  },
+  "idea_id": "a59f988282c8de81e0aff2695e55147cd024a6cd7d2ab55acba31be2aa826d7e",
+  "reference": {
+    "frozen_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2",
+    "frozen_sha256": "1f64b917cc88993ca496798ef98e4aadf8a266f7b7f3fce9cf45d6b86d61483a",
+    "manifest_sha256": "c432a2795917c500e0ee5fc474ed8f5a5b096346857a67c4b7f19b7f1a8dff42",
+    "development_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+    "outer_cutoff": "2020-01-01"
+  },
+  "spec_sha256": null,
+  "status": "blocked_by_translation",
+  "reason": "No hay reglas propuestas revisables: needs_clarification",
+  "assessment": null,
+  "scope": "technical_attestation_not_a_proof_of_semantic_equivalence",
+  "eligible_for_plan": false,
+  "executable": false,
+  "calculated_results": null,
+  "model_requests": 0,
+  "api_cost_usd": "0",
+  "code_sha256": {
+    "data.py": "286b822fbb6dd5e46f65f64bb387bb7f7d246c7c9c17dc523a52d7ce3e7dfd94",
+    "indicators.py": "13cce9a32399a309694a83f52c8bdb93b0f86075612c825d5be3d9bfc2c366a3",
+    "strategies.py": "9607a659a352e31f2192c237eaecc8191ba90f9b2e78bcaa3919cfaa3489527e",
+    "backtesting.py": "81e6a34dd715d192c730fe407c7cdd037e2340e387e4ea37c90b0549d07a3c4f",
+    "metrics.py": "3d85bab9c1ee6da88a632a08b3a600f12ce7ee9335fbce1b4c56e0cfc865ec2f",
+    "experiments.py": "57c5638f293d9e4c5102a091227970ac1d2fd3b9774fa3f839fd6ed044a26e4d",
+    "ai.py": "9c43b2f13b1b9264810cb1710c081acc0c476071870842617c9a451cb58cc1f3",
+    "research.py": "7e53374a3768800de2d75be9bc67d2299d16620c6b4fe92a3438d1f4c0c63340",
+    "validation.py": "ac2aa655af324a352107753e3b53e0aa986958aeb9e2e2374c4791c3a8afb1b6",
+    "holdout.py": "a048adf93b2a58b3177e80d1077597a0bd849932fd42f714326a43fc68fecbb2",
+    "rule_planning.py": "ec26a75932f10db35fc2ebdb4ef56a1062eba0059a621125f8d8d2166bb6708d",
+    "rules.py": "09bbc9d25ed27d4e27961dd0431c95a73e10f21aa8500e47430373a93c500361",
+    "formalization.py": "43eea12e59e441712914f5449c66a410d33928dcbd2c5de31ec9d89f8d795098",
+    "discovery.py": "b680ab835f96dc1e917760309a19aad93bb51beee70eaf9d2dfb96da0fd211a2",
+    "robustness.py": "906ea3f6c07d5f5aeac03d049c0852b9d863e29a3864ac61009fa811a0a11ae5"
+  }
+}

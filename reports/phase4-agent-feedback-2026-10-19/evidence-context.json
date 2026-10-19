@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "real_revision": {
+    "model": {
+      "provider": "ollama",
+      "model": "qwen3.5:4b",
+      "model_digest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04",
+      "base_url": "http://127.0.0.1:11435",
+      "api_cost_usd": "0",
+      "context_tokens": 4096,
+      "output_tokens": 384,
+      "gpu_layers": 0,
+      "timeout_seconds": 180,
+      "think": false,
+      "temperature": 0
+    },
+    "model_requests": 1,
+    "usage": [
+      {
+        "input_tokens": 760,
+        "output_tokens": 193,
+        "cached_input_tokens": 0,
+        "duration_ns": 79871094000,
+        "api_cost_usd": "0"
+      }
+    ],
+    "api_cost_usd": "0",
+    "status": "pending_tool_mapping",
+    "semantic_validation": "Not established; repeated ambiguity and unsupported end-of-period exit remain pending."
+  },
+  "fixture_analysis": {
+    "is_synthetic": true,
+    "data_source": "tests/test_holdout.py::setup",
+    "model_source": "In-memory Provider stub, not an actual model service.",
+    "token_values_are_test_stubs": true,
+    "no_new_backtests_during_analysis": true
+  },
+  "pytest": {
+    "passed": 731,
+    "duration_seconds": 78.88,
+    "exclusive_basetemp": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-d7ff2bc5f7e24ab9a89c955e1b95e404",
+    "cache_disabled": true
+  }
+}

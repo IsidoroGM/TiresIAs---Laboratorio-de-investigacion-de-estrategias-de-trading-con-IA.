@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-19",
+  "scope": "idea_specification_only_no_execution_or_calculated_results",
+  "files": [
+    {
+      "snapshot": "contract-v1-failed-events.jsonl",
+      "source": ".local\\discovery\\34481bd5c2884da3b902cdbf9a148f62\\events.jsonl",
+      "sha256": "00924c628bacb8a3dafdab484e969ff3b58e639ea458d4c9d962d6e1f630c801"
+    },
+    {
+      "snapshot": "contract-v2-events.jsonl",
+      "source": ".local\\discovery\\f99dc2258e2b4b3bb799af9a85dd8f2e\\events.jsonl",
+      "sha256": "fc97bcb160efdffef5fbe3f339d41423f846fab42360cc3c67e193e368acfa99"
+    },
+    {
+      "snapshot": "idea.json",
+      "source": ".local\\discovery\\f99dc2258e2b4b3bb799af9a85dd8f2e\\idea.json",
+      "sha256": "0960596e1ae58aba59356c7c04dba542b45afe945aa053f2b00c5143b69110cd"
+    }
+  ]
+}
