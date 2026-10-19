@@ -1,4 +1,4 @@
-"""Informe Markdown reproducible del laboratorio SMA20/SMA60, sin acceso a red."""
+"""Informe Markdown reproducible de cruces SMA o EMA, sin acceso a red."""
 
 from decimal import Context, Decimal, localcontext
 from hashlib import sha256
@@ -6,19 +6,30 @@ from pathlib import Path
 
 from trading_ai.backtesting import run_backtest, validate_cost_rate, validate_initial_capital, validate_allocation_fraction
 from trading_ai.data import SUPPORTED_PAIRS, load_ecb_rates
-from trading_ai.indicators import simple_moving_average
 from trading_ai.metrics import calculate_metrics
-from trading_ai.strategies import sma_crossover_signals
+from trading_ai.strategies import create_strategy
 
 
 def _number(value: Decimal | None, places: int = 6) -> str:
-    return "N/D" if value is None else f"{value:.{places}f}"
+    # El formato Decimal también usa el redondeo del contexto del llamante.
+    with localcontext(Context(prec=28)):
+        return "N/D" if value is None else f"{value:.{places}f}"
 
 
 def build_report(path: str | Path, *, cost_rate: Decimal = Decimal("0"),
                  initial_capital: Decimal = Decimal("1000"),
-                 allocation_fraction: Decimal | None = None) -> str:
+                 allocation_fraction: Decimal | None = None,
+                 fast_window: int = 20, slow_window: int = 60,
+                 strategy_name: str = "sma") -> str:
     """Calcula los cuatro pares y devuelve Markdown; no escribe ni cambia datos."""
+    strategy = create_strategy(strategy_name, fast_window, slow_window)
+    average_rule = (
+        "- SMA: promedio simple de las últimas n observaciones, incluida la actual."
+        if strategy_name == "sma" else
+        "- EMA: semilla = SMA de las primeras n observaciones; alfa = 2/(n+1); "
+        "EMA actual = EMA anterior + alfa × (precio actual - EMA anterior). "
+        "El periodo n controla el suavizado; la memoria se extiende más allá de n observaciones."
+    )
     validate_cost_rate(cost_rate)
     validate_initial_capital(initial_capital)
     validate_allocation_fraction(allocation_fraction)
@@ -31,15 +42,17 @@ def build_report(path: str | Path, *, cost_rate: Decimal = Decimal("0"),
     path = Path(path)
     checksum = sha256(path.read_bytes()).hexdigest()
     lines = [
-        "# Trading AI — Informe educativo SMA20/SMA60", "",
-        "Formato de informe: 4. Fuente: Banco Central Europeo (BCE).",
+        f"# Trading AI — Informe educativo {strategy.name}", "",
+        "Formato de informe: 6. Fuente: Banco Central Europeo (BCE).",
         "[Histórico oficial](https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.xml).",
         f"SHA-256 de la copia analizada: `{checksum}`.", "",
         "## Reglas y supuestos", "",
         "- Referencias diarias informativas, no velas OHLC ni precios ejecutables.",
         "- EUR/USD directo; GBP/USD = USD/GBP, USD/JPY = JPY/USD y USD/CHF = CHF/USD",
         "  a partir de las referencias BCE de la misma fecha, todas expresadas por euro.",
-        "- Medias de 20 y 60 observaciones publicadas, no días naturales.",
+        f"- Medias de {fast_window} y {slow_window} observaciones publicadas, no días naturales.",
+        average_rule,
+        f"- Primera señal posible desde la observación {slow_window + 1}; requiere medias actuales y anteriores.",
         "- Entrada: rápida pasa de <= lenta a > lenta. Salida: pasa de >= a <.",
         "- Sin señal si faltan medias actuales o anteriores; igualdad actual sin señal.",
         "- Ejecución simulada en la referencia de la observación siguiente.",
@@ -67,9 +80,7 @@ def build_report(path: str | Path, *, cost_rate: Decimal = Decimal("0"),
     for pair in SUPPORTED_PAIRS:
         rates = load_ecb_rates(path, pair)
         values = [value for _, value in rates]
-        signals = sma_crossover_signals(
-            simple_moving_average(values, 20), simple_moving_average(values, 60)
-        )
+        signals = strategy.generate_signals(values)
         result = run_backtest(rates, signals, pair, cost_rate=cost_rate, initial_capital=initial_capital,
                               allocation_fraction=allocation_fraction)
         metrics = calculate_metrics(result)
@@ -174,7 +185,7 @@ def build_report(path: str | Path, *, cost_rate: Decimal = Decimal("0"),
         "Sin optimización ni validación fuera de muestra; estas métricas no demuestran viabilidad real.",
         "No hay órdenes reales ni conexión con un bróker. Informe educativo, sin recomendación de inversión.",
         "", "## Reproducción", "",
-        f"Desde la raíz: `python -m trading_ai --report --cost-percent {cost_percent} --initial-capital {format(initial_capital, 'f')}{allocation_option} --data RUTA_XML --output RUTA_MD`.",
+        f"Desde la raíz: `python -m trading_ai --report --strategy {strategy_name} --fast-window {fast_window} --slow-window {slow_window} --cost-percent {cost_percent} --initial-capital {format(initial_capital, 'f')}{allocation_option} --data RUTA_XML --output RUTA_MD`.",
         "Usar la misma copia (SHA-256), código y reglas. El informe no incluye hora de ejecución",
         "ni rutas locales, para obtener el mismo contenido al repetir el cálculo.", "",
     ]
@@ -183,15 +194,122 @@ def build_report(path: str | Path, *, cost_rate: Decimal = Decimal("0"),
     return "\n".join(lines)
 
 
+def build_comparison_report(path: str | Path, *, cost_rate: Decimal = Decimal("0"),
+                            initial_capital: Decimal = Decimal("1000"),
+                            allocation_fraction: Decimal | None = None,
+                            fast_window: int = 20, slow_window: int = 60) -> str:
+    """Compara SMA y EMA por par, con referencias y supuestos comunes; no clasifica."""
+    strategies = [create_strategy(name, fast_window, slow_window) for name in ("sma", "ema")]
+    validate_cost_rate(cost_rate)
+    validate_initial_capital(initial_capital)
+    validate_allocation_fraction(allocation_fraction)
+    path = Path(path)
+    checksum = sha256(path.read_bytes()).hexdigest()
+    with localcontext(Context(prec=28)):
+        cost_percent = format(cost_rate * 100, "f")
+        allocation_percent = (format(allocation_fraction * 100, "f")
+                              if allocation_fraction is not None else None)
+    allocation_option = f" --allocation-percent {allocation_percent}" if allocation_percent is not None else ""
+    sizing = ("Una unidad base fija por entrada." if allocation_percent is None else
+              f"{allocation_percent} % del efectivo disponible en cada entrada, costes incluidos.")
+    lines = [
+        "# Trading AI — Comparación SMA y EMA", "",
+        "Formato de comparación: 1. Fuente: Banco Central Europeo (BCE).",
+        "[Histórico oficial](https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.xml).",
+        f"SHA-256 de la copia analizada: `{checksum}`.", "",
+        "## Condiciones comunes", "",
+        f"- Ventanas rápida/lenta: {fast_window}/{slow_window} observaciones publicadas, no días naturales.",
+        "- SMA: promedio de las últimas n observaciones. EMA: semilla SMA de las primeras n;",
+        "  alfa = 2/(n+1); EMA actual = anterior + alfa × (precio - anterior).",
+        "  EMA conserva influencia de observaciones anteriores a n; la fecha inicial afecta a su semilla.",
+        f"- Primera señal posible desde la observación {slow_window + 1}; sin señales con medias incompletas.",
+        "- Entrada cuando rápida cruza de <= a > lenta; salida de >= a <; igualdad actual sin señal.",
+        "- Ejecución en la referencia siguiente. Inicio sin posición; una compra por par, sin cortos ni margen.",
+        "- Última señal sin ejecución; no se fuerza cierre al final. Capital y costes independientes por estrategia y par.",
+        f"- Capital inicial: {format(initial_capital, 'f')} en la moneda cotizada de cada cuenta.",
+        f"- Tamaño: {sizing}",
+        f"- Coste hipotético por compra o venta: {cost_percent} % del importe ejecutado.",
+        "- Solo compra con saldo suficiente; una entrada rechazada no se aplaza ni genera coste.",
+        "- Mismos precios y fechas para ambas estrategias en cada par. Decimal con 28 dígitos significativos.",
+        "- EUR/USD directo; GBP/USD = USD/GBP, USD/JPY = JPY/USD, USD/CHF = CHF/USD desde las referencias por euro.",
+        "", "## Cobertura por par", "",
+        "| Par | Inicio | Fin | Observaciones |", "|---|---|---|---:|",
+    ]
+    rows = []
+    for pair in SUPPORTED_PAIRS:
+        rates = load_ecb_rates(path, pair)
+        prices = [price for _, price in rates]
+        lines.append(f"| {pair} | {rates[0][0]} | {rates[-1][0]} | {len(rates)} |")
+        for strategy in strategies:
+            result = run_backtest(rates, strategy.generate_signals(prices), pair,
+                                  cost_rate=cost_rate, initial_capital=initial_capital,
+                                  allocation_fraction=allocation_fraction)
+            with localcontext(Context(prec=28)):
+                total_pnl = result.final_equity - initial_capital
+                return_percent = total_pnl / initial_capital * 100
+            rows.append(
+                f"| {pair} | {strategy.name} | {result.quote_currency} | {len(result.closed_trades)} | "
+                f"{'Sí' if result.open_position is not None else 'No'} | {_number(result.final_equity)} | "
+                f"{_number(total_pnl)} | {_number(return_percent)} | {_number(result.max_drawdown_percent)} | "
+                f"{_number(result.total_costs)} | {result.rejected_entries} |"
+            )
+    lines += [
+        "", "## Resultados por cuenta", "",
+        "| Par | Estrategia | Moneda | Cierres | Abierta | Capital final | Resultado total | Rentabilidad % | Drawdown máximo % | Costes incurridos | Entradas rechazadas |",
+        "|---|---|---|---:|---|---:|---:|---:|---:|---:|---:|",
+        *rows, "",
+        "Resultado total = capital final - capital inicial: incluye la variación latente de posiciones abiertas",
+        "y todos los costes incurridos; no equivale solo al beneficio realizado de cierres.",
+        "Rentabilidad = resultado total / capital inicial × 100, acumulada durante todo el periodo, no anualizada.",
+        "La posición abierta se valora a la última referencia; no se anticipa coste de salida.",
+        "Drawdown máximo: mayor caída porcentual desde un máximo previo del capital diario, incluido el inicial.",
+        "Costes ya descontados del capital; no restarlos otra vez. Cero cierres no implica ausencia de exposición.",
+        "", "## Límites de la comparación", "",
+        "Referencias informativas, no precios ejecutables ni velas OHLC. No se valida el calendario ni se rellenan fechas.",
+        "Faltan spreads, slippage, swaps y restricciones reales de bróker. No hay órdenes reales ni conexión con un bróker.",
+        "Comparar dentro de cada par; no sumar monedas distintas. Igual asignación no implica igual riesgo.",
+        "Sin búsqueda de parámetros, ranking ni validación fuera de muestra. El resultado histórico no garantiza rentabilidad futura.",
+        "", "## Reproducción", "",
+        f"`python -m trading_ai --compare --fast-window {fast_window} --slow-window {slow_window} --cost-percent {cost_percent} --initial-capital {format(initial_capital, 'f')}{allocation_option} --data RUTA_XML --output RUTA_MD`",
+        "Usar la misma copia (SHA-256), código y reglas. Sin hora de ejecución ni rutas locales en el contenido.", "",
+    ]
+    if sha256(path.read_bytes()).hexdigest() != checksum:
+        raise ValueError("El archivo de datos cambió durante el cálculo; repite con una copia estable.")
+    return "\n".join(lines)
+
+
+def write_comparison_report(source: str | Path, output: str | Path, *, cost_rate: Decimal = Decimal("0"),
+                            initial_capital: Decimal = Decimal("1000"),
+                            allocation_fraction: Decimal | None = None,
+                            fast_window: int = 20, slow_window: int = 60) -> Path:
+    """Guarda una comparación nueva, sin sobrescribir contenido diferente."""
+    source, output = Path(source), Path(output)
+    if source.resolve() == output.resolve():
+        raise ValueError("La salida no puede ser el archivo de datos.")
+    report = build_comparison_report(source, cost_rate=cost_rate, initial_capital=initial_capital,
+                                     allocation_fraction=allocation_fraction,
+                                     fast_window=fast_window, slow_window=slow_window)
+    return _save_report(output, report)
+
+
 def write_report(source: str | Path, output: str | Path, *, cost_rate: Decimal = Decimal("0"),
                  initial_capital: Decimal = Decimal("1000"),
-                 allocation_fraction: Decimal | None = None) -> Path:
+                 allocation_fraction: Decimal | None = None,
+                 fast_window: int = 20, slow_window: int = 60,
+                 strategy_name: str = "sma") -> Path:
     """Guarda un informe nuevo; admite repetir contenido idéntico, no sobrescribe otro."""
     source, output = Path(source), Path(output)
     if source.resolve() == output.resolve():
         raise ValueError("La salida no puede ser el archivo de datos.")
     report = build_report(source, cost_rate=cost_rate, initial_capital=initial_capital,
-                          allocation_fraction=allocation_fraction)
+                          allocation_fraction=allocation_fraction,
+                          fast_window=fast_window, slow_window=slow_window,
+                          strategy_name=strategy_name)
+    return _save_report(output, report)
+
+
+def _save_report(output: Path, report: str) -> Path:
+    """Escritura compartida para informes individuales y comparaciones."""
     if output.exists():
         if output.read_text(encoding="utf-8") == report:
             return output

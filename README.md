@@ -23,15 +23,12 @@ comprobada se describen en [data/README.md](data/README.md).
 
 ## Estado actual
 
-<<<<<<< HEAD
-Las **FASES 0 y 1 están completadas**; la FASE 2 incorpora costes, capital,
-drawdown y tamaño por porcentaje de capital.
+Las **FASES 0, 1 y 2 están completadas**. El motor incorpora costes, capital,
+drawdown, tamaño por porcentaje de capital, estrategias SMA/EMA configurables,
+comparación y sensibilidad local. La FASE 3 comenzará con la elección del
+proveedor, modelo y presupuesto para el agente investigador.
 El laboratorio produce un informe
 reproducible para los cuatro pares. Están comprobados
-=======
-La **FASE 0: preparación y fundamentos está completada**. Hemos comenzado la
-FASE 1 con la descarga e inspección del histórico educativo del BCE. Están comprobados
->>>>>>> 638028febb9f67c519664efb59553f8a56fc3b09
 Python 3.14.8 de 64 bits, el entorno virtual `.venv`, su uso desde la terminal de
 VS Code y el repositorio Git local.
 
@@ -41,18 +38,14 @@ presentación del laboratorio. Su arranque y su importación están comprobados.
 La copia original, su procedencia y una muestra están en [data/README.md](data/README.md).
 La descarga se realizó como preparación del ejercicio. El módulo `trading_ai.data`
 lee la copia local para cualquiera de los cuatro pares y cuenta con pruebas.
-El módulo `trading_ai.indicators` calcula medias móviles simples; se han
-comprobado SMA20 y SMA60 sobre los cuatro históricos.
+El módulo `trading_ai.indicators` calcula medias móviles simples y exponenciales;
+se han comprobado SMA20/60 y EMA20/60 sobre los cuatro históricos.
 Todavía no hay un descargador integrado en la aplicación.
 
 La estrategia inicial detecta cruces SMA20/SMA60 y genera señales de entrada
 y salida. El backtest educativo gestiona una compra por par y registra cierres
-<<<<<<< HEAD
 y posiciones abiertas con ejecución en la referencia siguiente y costes
 proporcionales configurables (cero por defecto).
-=======
-y posiciones abiertas con ejecución en la referencia siguiente y costes cero.
->>>>>>> 638028febb9f67c519664efb59553f8a56fc3b09
 El módulo `trading_ai.metrics` resume los cierres e indica si queda una posición abierta.
 Todavía no hay API, dashboard, agentes ni conexión con un bróker. Los resultados
 actuales son ejercicios con referencias informativas, no validación de viabilidad.
@@ -175,16 +168,14 @@ De vuelta en PowerShell, ejecuta:
 python -m pytest -q
 ```
 
-<<<<<<< HEAD
-Resultado comprobado de la suite completa: **250 passed** (26 del lector, 34 de
-indicadores, 35 de estrategia, 37 del backtest, 24 de métricas, 19 de costes
-y 22 de capital/drawdown, 25 de tamaño y 28 del informe/CLI).
+Resultado comprobado de la suite completa: **343 passed** (26 del lector, 34 de
+indicadores, 56 de estrategia, 37 del backtest, 24 de métricas, 19 de costes
+y 22 de capital/drawdown, 25 de tamaño, 21 de EMA, 47 del informe/CLI,
+15 de comparación y 17 de sensibilidad).
 Las pruebas del lector usan XML pequeños en carpetas
-=======
-Resultado comprobado de la suite completa: **156 passed** (26 del lector, 34 de
-indicadores, 35 de estrategia, 37 del backtest y 24 de métricas). Las pruebas del lector usan XML pequeños en carpetas
->>>>>>> 638028febb9f67c519664efb59553f8a56fc3b09
-temporales, sin red ni dependencia del histórico descargado. Comprueban las
+temporales, sin red ni dependencia del histórico descargado. Las pruebas de los
+tres informes comprueban también que su redondeo no dependa del contexto Decimal
+del código que los invoque. Comprueban las
 cuatro conversiones con resultados conocidos, orden y correspondencia por fecha,
 datos ausentes o duplicados, números inválidos, fechas erróneas, XML vacío o
 mal formado, par no admitido y archivo inexistente. También comprueban que la
@@ -356,7 +347,6 @@ una referencia posterior.
 
 Reglas de esta versión:
 
-<<<<<<< HEAD
 - Una sola compra abierta por par, sin posiciones
   cortas ni acumulación de entradas. Cuenta en moneda cotizada con capital
   inicial configurable (1000 por defecto), sin margen ni financiación.
@@ -386,30 +376,6 @@ el constructor y la comparación de campos, parecida a un `record` de Java;
 - `BacktestResult`: par, moneda cotizada, tupla de operaciones cerradas, posición
   abierta opcional, `realized_pnl`, capital inicial, curva diaria y entradas rechazadas.
 - `EquityPoint`: fecha, efectivo, valor de posición, capital, drawdown absoluto y porcentual.
-=======
-- Una sola compra abierta por par, de una unidad de moneda base, sin posiciones
-  cortas ni acumulación de entradas. No se modela una cuenta ni capital disponible,
-  margen o financiación; se supone disponible la cantidad necesaria para esa unidad.
-- Entradas estando dentro y salidas estando fuera se ignoran.
-- Costes cero: no se aplican spread, comisiones, slippage ni swaps.
-- Precio simulado: referencia del BCE de la siguiente observación. Retrasar la
-  ejecución evita usar la señal antes de conocerla, pero no convierte esa
-  referencia en un precio ejecutable.
-- Una posición abierta al final permanece abierta, sin cierre forzado ni
-  valoración de su ganancia/pérdida latente.
-- Resultado de cada cierre: precio de salida menos precio de entrada, por una
-  unidad base. Se expresa en moneda cotizada; no es un porcentaje de rentabilidad.
-
-Tres `@dataclass(frozen=True)` representan los resultados. Una dataclass genera
-el constructor y la comparación de campos, parecida a un `record` de Java;
-`frozen=True` impide reasignar sus campos normalmente:
-
-- `Position`: fecha de señal de entrada, fecha de ejecución y precio de compra.
-- `Trade`: posición cerrada, fecha de señal de salida, fecha de ejecución, precio
-  de venta y `pnl` (ganancia o pérdida).
-- `BacktestResult`: par, moneda cotizada, tupla de operaciones cerradas, posición
-  abierta opcional y `realized_pnl`, suma de resultados de los cierres.
->>>>>>> 638028febb9f67c519664efb59553f8a56fc3b09
 
 La variable local `position` vale `None` estando fuera y contiene una `Position`
 estando dentro. El bucle lee `signals[index - 1]` y ejecuta con `rates[index]`.
@@ -451,12 +417,8 @@ una unidad base por operación y costes cero (redondeados aquí a seis decimales
 | USD/CHF | 70 | Sí | -0.616511 CHF |
 
 No sumar directamente monedas diferentes ni interpretar esta tabla como una
-<<<<<<< HEAD
 comparación de rentabilidad: son importes en monedas distintas y exposiciones diferentes;
 todavía faltan costes reales y validación adicional.
-=======
-comparación de rentabilidad: todavía faltan capital, costes, exposición y riesgo.
->>>>>>> 638028febb9f67c519664efb59553f8a56fc3b09
 El resultado USD/CHF excluye la posición abierta. No se ha optimizado la estrategia.
 
 Las 37 pruebas nuevas comprueban ganancias, pérdidas y resultado cero conocidos,
@@ -533,13 +495,8 @@ una unidad base y costes cero (redondeados solo para presentación):
 | USD/CHF | 20 / 50 / 0 | 28.57 | -0.008807 CHF | 0.4223 | Sí |
 
 Estos valores describen únicamente los cierres del modelo educativo sin costes.
-<<<<<<< HEAD
 La valoración de la cuenta y el drawdown están en una sección separada del informe;
 estas métricas de cierres no incluyen la posición abierta. Falta validación fuera de muestra. El porcentaje de
-=======
-Todavía no hay rentabilidad sobre capital, curva de capital, drawdown ni valoración
-de la posición abierta. Tampoco validación fuera de muestra. El porcentaje de
->>>>>>> 638028febb9f67c519664efb59553f8a56fc3b09
 aciertos y el profit factor no bastan para decidir si una estrategia es viable.
 
 Las 24 pruebas nuevas cubren resultados conocidos, cierres a cero, series sin
@@ -554,7 +511,6 @@ python -m pytest tests/test_metrics.py -q
 Ejercicio: con cierres `[3, -1, -1, 0]`, calcula el porcentaje ganador y el profit
 factor. Observa que ganar pocas veces no determina por sí solo el resultado total.
 
-<<<<<<< HEAD
 ## Generar el informe completo
 
 Desde la raíz del proyecto, con `.venv` activo:
@@ -759,8 +715,143 @@ compatibilidad del modo fijo, asignación del 100 %, redondeos, capital pequeño
 parámetros inválidos y causalidad. Se comprobó además el presupuesto de todas
 las entradas de los cuatro históricos, sin efectivo negativo.
 
-=======
->>>>>>> 638028febb9f67c519664efb59553f8a56fc3b09
+## Ventanas SMA configurables
+
+`--fast-window` y `--slow-window` permiten cambiar las ventanas de la estrategia.
+Por defecto siguen siendo 20 y 60. Ambas deben ser enteros positivos y la rápida
+debe ser menor que la lenta; los valores inválidos se rechazan antes de leer datos.
+
+Ejemplo con 10/40, conservando capital, costes y asignación del ejemplo anterior:
+
+```powershell
+python -m trading_ai --report --fast-window 10 --slow-window 40 --cost-percent 0.1 --initial-capital 1000 --allocation-percent 10 --output reports/sma10-40-allocation10.md
+```
+
+El informe registra las ventanas en el título, las reglas y el comando de
+reproducción. Cuentan observaciones publicadas: con una ventana lenta de 40,
+la primera señal posible es la observación 41 y se ejecutaría en la 42.
+Si el histórico no alcanza para un cruce, no se inventan señales ni operaciones.
+
+Las ventanas modifican las medias y, por tanto, las entradas y salidas simuladas.
+Este ejemplo no selecciona una configuración ganadora ni realiza optimización.
+Los informes anteriores se conservan: utiliza otro `--output` al cambiar parámetros.
+
+## Interfaz común de estrategias
+
+`Strategy` define un contrato con un nombre (`name`) y un método
+`generate_signals(prices)`: recibe precios en orden cronológico y devuelve una
+señal por observación. En Python, `Protocol` describe ese contrato; una clase
+compatible no necesita heredarlo explícitamente. Es parecido a una interfaz de Java.
+
+`SmaCrossoverStrategy` es la primera implementación. Valida sus ventanas al
+crearse y su configuración es inmutable. No conserva posiciones entre llamadas:
+el backtest sigue gestionando ejecuciones, capital y costes.
+
+```python
+from decimal import Decimal
+from trading_ai.strategies import SmaCrossoverStrategy
+
+strategy = SmaCrossoverStrategy(fast_window=1, slow_window=2)
+signals = strategy.generate_signals([Decimal(n) for n in (3, 2, 1, 2, 3, 2, 1)])
+print(strategy.name, [signal.value for signal in signals])
+```
+
+El informe utiliza esta clase y conserva los resultados y comandos anteriores.
+El contrato no garantiza por sí solo que una estrategia ignore el futuro:
+cada implementación debe demostrarlo con pruebas. Las de SMA comprueban que
+añadir o cambiar precios posteriores no altera las señales anteriores.
+
+## Segunda estrategia: cruce EMA
+
+La EMA da más peso a las observaciones recientes. Nuestra implementación empieza
+con la SMA de las primeras `n` observaciones y después aplica:
+`alfa = 2 / (n + 1)` y `EMA = anterior + alfa × (precio - anterior)`.
+Antes de completar la semilla devuelve `None`. El periodo controla el suavizado;
+la EMA conserva influencia de precios anteriores a las últimas `n` observaciones.
+Con `n = 1` coincide con cada precio. Se usa precisión Decimal de 28 dígitos.
+
+`EmaCrossoverStrategy` cumple el mismo contrato que SMA. Comparte las reglas de
+cruce y ejecuta la señal en la observación siguiente. No cambia capital, costes
+ni tamaño. `--strategy ema` la selecciona; sin esa opción se mantiene SMA.
+
+Comparación reproducible con ventanas 20/60, capital 1000, coste 0.1 % por
+operación y asignación del 10 % del efectivo, costes incluidos:
+
+```powershell
+python -m trading_ai --report --strategy sma --fast-window 20 --slow-window 60 --cost-percent 0.1 --initial-capital 1000 --allocation-percent 10 --output reports/sma20-60-allocation10.md
+python -m trading_ai --report --strategy ema --fast-window 20 --slow-window 60 --cost-percent 0.1 --initial-capital 1000 --allocation-percent 10 --output reports/ema20-60-allocation10.md
+```
+
+Resultados sobre la misma copia BCE, del 1999-01-04 al 2026-10-16:
+
+| Par | Capital final SMA | Capital final EMA | Drawdown máximo SMA % | Drawdown máximo EMA % |
+|---|---:|---:|---:|---:|
+| EUR/USD | 1015.009331 USD | 1013.740017 USD | 2.508037 | 3.627450 |
+| GBP/USD | 977.844806 USD | 998.897874 USD | 4.729938 | 2.899616 |
+| USD/JPY | 1029.441001 JPY | 1026.320534 JPY | 3.674652 | 5.073104 |
+| USD/CHF | 930.922718 CHF | 950.072500 CHF | 7.825079 | 6.237574 |
+
+El capital final incluye la valoración de posiciones abiertas. Las cuentas son
+independientes: no se suman monedas diferentes. EMA mejora algunos resultados y
+empeora otros; esta comparación histórica no selecciona una estrategia ni aporta
+validación fuera de muestra. Ambas parten sin posición ni historial previo a la
+copia; la semilla y la fecha de inicio pueden influir en los resultados de EMA.
+
+El formato 6 registra el tipo de media, su cálculo y `--strategy` para reproducirlo.
+Los informes antiguos no se sobrescriben: si cambia el contenido, elige otra ruta
+en `--output`. Las pruebas incluyen cálculos manuales, cruces conocidos,
+causalidad, reutilización sin estado y selección desde la terminal.
+
+## Comparación en un solo informe
+
+`--compare` ejecuta SMA y EMA con las mismas ventanas, referencias, fechas,
+capital inicial, costes y regla de tamaño. Cada combinación de par y estrategia
+mantiene su propia cuenta. No selecciona ganadores ni busca parámetros.
+
+```powershell
+python -m trading_ai --compare --fast-window 20 --slow-window 60 --cost-percent 0.1 --initial-capital 1000 --allocation-percent 10 --output reports/comparison20-60-allocation10.md
+```
+
+La tabla reúne cierres, posición abierta, capital final, resultado total,
+rentabilidad acumulada, drawdown máximo, costes incurridos y entradas rechazadas.
+Resultado total = capital final menos capital inicial: incluye posiciones abiertas
+y costes ya descontados. La rentabilidad porcentual corresponde a todo el periodo;
+no es anualizada. Se comparan estrategias dentro de cada par, sin sumar monedas.
+
+Sin `--output`, la comparación usa `reports/comparison.md`; `--report` conserva
+`reports/report.md`. `--compare` no admite `--report` ni `--strategy` a la vez,
+porque incluye ambas estrategias. Se conserva la protección contra sobrescrituras
+y se registran el SHA-256 de los datos y el comando para reproducir los resultados.
+
+## Sensibilidad local de ventanas y costes
+
+`--sensitivity` compara el caso base con seis variaciones, cambiando un único
+factor cada vez: rápida ±1, lenta ±1 y coste ±0.05 puntos porcentuales.
+Con ventanas 20/60 y coste 0.1 %, prueba 19/60, 21/60, 20/59, 20/61 y costes
+0.05 % y 0.15 %. Son siete escenarios por estrategia y par: 56 simulaciones.
+Si una variación resulta inválida, se omite y explica, sin corregirla silenciosamente.
+
+```powershell
+python -m trading_ai --sensitivity --fast-window 20 --slow-window 60 --cost-percent 0.1 --initial-capital 1000 --allocation-percent 10 --output reports/sensitivity20-60-allocation10.md
+```
+
+El informe muestra el rango de rentabilidades, la máxima diferencia frente a
+la base en puntos porcentuales, cuántos escenarios tienen resultado positivo y
+cuántos llegaron a invertir. Incluye el detalle de capital, costes, cierres,
+posiciones abiertas y drawdown de cada escenario. No confunde una cuenta sin
+operaciones con evidencia de estabilidad. Todos los rendimientos son acumulados,
+no anualizados, e incluyen posiciones abiertas y costes incurridos.
+
+En este histórico, GBP/USD con EMA cambia de signo: sus resultados van de
+-0.667648 % a +0.450857 %. Esta sensibilidad a los supuestos merece atención;
+el informe no elige parámetros ganadores ni certifica robustez. No estudia cambios
+simultáneos ni datos fuera de muestra. Cambiar la ventana lenta también cambia
+su calentamiento; todos los escenarios empiezan desde la misma fecha.
+
+Sin `--output` se guarda en `reports/sensitivity.md`. El modo incluye SMA y EMA
+y es incompatible con `--strategy`, `--report` y `--compare`. Se conserva la
+protección de datos y salidas existentes y la comprobación del SHA-256.
+
 ## Organización
 
 ```text
@@ -778,18 +869,23 @@ tests/
     test_strategies.py
     test_backtesting.py
     test_metrics.py
-<<<<<<< HEAD
     test_reporting.py
     test_costs.py
     test_equity.py
     test_sizing.py
+    test_ema.py
+    test_comparison.py
+    test_sensitivity.py
 reports/
     phase1.md
     costs-0_1pct.md
     capital-1000-costs-0_1pct.md
     allocation-10pct.md
-=======
->>>>>>> 638028febb9f67c519664efb59553f8a56fc3b09
+    sma10-40-allocation10.md
+    sma20-60-allocation10.md
+    ema20-60-allocation10.md
+    comparison20-60-allocation10.md
+    sensitivity20-60-allocation10.md
 trading_ai/
     __init__.py
     __main__.py
@@ -798,10 +894,8 @@ trading_ai/
     strategies.py
     backtesting.py
     metrics.py
-<<<<<<< HEAD
     reporting.py
-=======
->>>>>>> 638028febb9f67c519664efb59553f8a56fc3b09
+    sensitivity.py
 ```
 
 El paquete está directamente en la raíz del repositorio. `__init__.py` contiene
@@ -810,7 +904,7 @@ define `main(argv=None)`, con argumentos opcionales para pruebas y retorno `None
 
 La arquitectura prevista es un monolito modular, con responsabilidades separadas
 para datos, indicadores, señales, simulación e informes. Por ahora existe el
-lector de datos, el indicador SMA, las señales de cruce, el backtest educativo
+lector de datos, los indicadores SMA/EMA, las señales de cruce, el backtest educativo
 y las métricas de cierres con sus pruebas; los demás módulos quedan
 para tareas posteriores.
 

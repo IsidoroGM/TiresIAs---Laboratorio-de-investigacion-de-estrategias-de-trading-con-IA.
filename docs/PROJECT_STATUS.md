@@ -1,20 +1,17 @@
 # Estado de Trading AI
 
-Última actualización: **18 de octubre de 2026** (Europe/Madrid).
+Última actualización: **19 de octubre de 2026** (Europe/Madrid), cierre de FASE 2.
 
 ## Fase activa
 
-<<<<<<< HEAD
-**FASES 0 y 1 completadas.** La FASE 1 termina con datos, validación básica,
-SMA20/SMA60, señales, backtest educativo, métricas e informe reproducible.
-La FASE 2 está pendiente de proponer y aprobar su primera tarea. Las fases 3 a 8
-siguen pendientes; la fase 8 de ejecución real supervisada es opcional.
-=======
-**FASE 0 — Preparación y fundamentos: completada.** El entorno, el arranque del
-paquete y el primer commit local están comprobados. La FASE 1 está pendiente de
-aprobar su primera tarea. Las fases 2 a 8 siguen pendientes; la fase 8, dedicada
-a evaluar una posible ejecución real supervisada, es opcional.
->>>>>>> 638028febb9f67c519664efb59553f8a56fc3b09
+**FASES 0, 1 y 2 completadas.** La FASE 2 cierra el motor educativo ampliado:
+estrategias SMA/EMA configurables, costes, capital, tamaño de posición,
+drawdown, comparaciones y sensibilidad local. La FASE 3 (primer agente de IA)
+está pendiente de seleccionar proveedor/modelo y acordar la primera integración.
+Las fases 4 a 8 siguen pendientes; la fase 8 de ejecución real supervisada es opcional.
+
+Completar esta fase significa cumplir su alcance de desarrollo, no demostrar
+que las estrategias sean rentables o aptas para operar con dinero real.
 
 El objetivo y el alcance inicial se describen en el [README](../README.md).
 
@@ -46,15 +43,21 @@ El proyecto contiene la configuración de Git, documentación, un entorno virtua
 local y el paquete `trading_ai` en la raíz del repositorio.
 
 - `trading_ai/__init__.py`: descripción del paquete convencional.
-- `trading_ai/__main__.py`: CLI con `--report`, `--data` y `--output`.
+- `trading_ai/__main__.py`: CLI con modos excluyentes `--report`, `--compare` y
+  `--sensitivity`; ventanas, costes, capital, asignación y archivos configurables.
 - `data.py`: lector local del XML BCE para EUR/USD, GBP/USD, USD/JPY y USD/CHF.
-- `indicators.py`: SMA con valores iniciales `None`, sin información futura.
-- `strategies.py`: señales de cruce alcista para comprar y bajista para cerrar.
-- `backtesting.py`: una unidad base por operación, ejecución en la referencia
-  siguiente, costes cero y posición abierta conservada al finalizar.
+- `indicators.py`: SMA y EMA (semilla SMA, alfa 2/(n+1)), sin información futura.
+- `strategies.py`: contrato `Strategy`, implementaciones inmutables SMA/EMA y
+  selección explícita; cruces alcistas para comprar y bajistas para cerrar.
+- `backtesting.py`: ejecución en la referencia siguiente, costes proporcionales,
+  cuenta independiente por par, saldo limitado, tamaño fijo o porcentaje del
+  efectivo, curva diaria, drawdown y valoración de posiciones abiertas sin cierre forzado.
 - `metrics.py`: métricas de cierres, moneda cotizada y valores no disponibles.
-- `reporting.py`: informe Markdown determinista, con hash de datos y supuestos.
-- `tests/`: 165 pruebas aprobadas. Temporales de Codex separados según `AGENTS.md`.
+- `reporting.py`: informes individuales y comparación SMA/EMA deterministas,
+  con hash de datos, supuestos y protección contra sobrescrituras.
+- `sensitivity.py`: variaciones fijas de un factor cada vez, omisiones explícitas
+  de escenarios inválidos y cambios frente a la base; sin búsqueda de parámetros.
+- `tests/`: **343 pruebas aprobadas**. Temporales de Codex separados según `AGENTS.md`.
 
 Comprobaciones de cierre de FASE 1:
 
@@ -64,8 +67,9 @@ Comprobaciones de cierre de FASE 1:
   de publicación todavía no contrastado.
 - Pruebas de conversiones, medias, señales, ejecución posterior, métricas,
   errores y estabilidad de resultados pasados frente a datos futuros.
-- `python -m trading_ai --report` genera `reports/phase1.md`; revisado contra
-  los resultados calculados. Contenido idéntico permite repetir el comando;
+- Se conserva `reports/phase1.md` como informe histórico de cierre de FASE 1.
+  El código actual usa por defecto `reports/report.md`; elegir otra salida al
+  cambiar formato o supuestos. Contenido idéntico permite repetir el comando;
   un archivo distinto ya existente no se sobrescribe.
 - Cierres: EUR/USD 69, GBP/USD 70, USD/JPY 67, USD/CHF 70; queda una posición
   USD/CHF abierta. Resultados educativos sin costes, no operaciones reales.
@@ -77,6 +81,55 @@ Comprobaciones de cierre de FASE 1:
 La arquitectura propuesta es un monolito modular. La separación entre datos,
 indicadores, señales, gestión de posiciones, simulación y análisis se incorporará
 progresivamente, tras aprobar cada tarea.
+
+## Cierre de FASE 2 — Motor de estrategias ampliado
+
+| Objetivo del plan | Implementación y comprobación |
+|---|---|
+| Interfaz común para estrategias | `Strategy`: nombre y generación de señales; SMA/EMA sin estado entre llamadas |
+| Nuevos indicadores | EMA con semilla explícita, recurrencia conocida y pruebas de causalidad |
+| Configuraciones | Selección SMA/EMA; ventanas positivas rápida < lenta; costes, capital y tamaño validados |
+| Comparar estrategias | `--compare` ejecuta ambas con los mismos datos y supuestos por par |
+| Mejorar costes y simulación | Costes por compra/venta, cuentas, cantidades fraccionarias, presupuesto, curva y drawdown |
+| Introducir pruebas de robustez | `--sensitivity`: ±1 observación y ±0.05 pp de coste, un factor cada vez |
+
+Validación de cierre: **343 passed**, sin caché pytest y con una carpeta temporal
+nueva y exclusiva. Los cuatro informes siguientes se recalcularon y coincidieron
+íntegramente con su contenido guardado:
+
+- [SMA20/60](../reports/sma20-60-allocation10.md).
+- [EMA20/60](../reports/ema20-60-allocation10.md).
+- [Comparación](../reports/comparison20-60-allocation10.md).
+- [Sensibilidad](../reports/sensitivity20-60-allocation10.md).
+
+Supuestos comunes: copia BCE de 7.116 observaciones, ventanas base 20/60,
+capital inicial 1000 en cada moneda cotizada, coste 0.1 % por ejecución y
+asignación del 10 % del efectivo, incluyendo costes. La sensibilidad ejecuta
+56 escenarios (7 por estrategia y par) y conserva el mismo histórico.
+
+Resultados base de la comparación, con costes y posiciones abiertas incluidos:
+
+| Par | Capital final SMA | Capital final EMA |
+|---|---:|---:|
+| EUR/USD | 1015.009331 USD | 1013.740017 USD |
+| GBP/USD | 977.844806 USD | 998.897874 USD |
+| USD/JPY | 1029.441001 JPY | 1026.320534 JPY |
+| USD/CHF | 930.922718 CHF | 950.072500 CHF |
+
+GBP/USD con EMA cambia de signo entre escenarios: rentabilidad acumulada
+de -0.667648 % a +0.450857 %. No hay un ganador uniforme. Sensibilidad local
+no equivale a validación fuera de muestra ni a robustez demostrada.
+
+Se resolvieron los restos de conflictos de Git en código y README durante
+el desarrollo y los de este documento al cerrar la fase. No se añadieron
+dependencias de ejecución, APIs, credenciales ni conexiones a un bróker.
+
+Repaso general solicitado por el usuario: revisados lectura y validación de datos,
+causalidad de indicadores/señales, ejecución posterior, contabilidad, límites de
+saldo, costes, tamaño, métricas, CLI, informes y continuidad de la documentación.
+Se encontró y corrigió una dependencia del redondeo mostrado respecto al contexto
+Decimal externo. Tres regresiones fallaban antes del arreglo y pasan después;
+los resultados y los cuatro informes guardados conservan su contenido habitual.
 
 ## Herramientas y dependencias
 
@@ -102,7 +155,7 @@ Python 3.14.8. Pandas y NumPy siguen pendientes de aprobación si llegan a neces
 - Usar inicialmente el paquete `trading_ai` en la raíz (estructura plana) para
   ejecutarlo desde el proyecto sin configurar su instalación como paquete.
 - Mantener el arranque en `__main__.py` sin efectos al importar; pruebas con pytest.
-- EUR/USD, GBP/USD, USD/JPY y USD/CHF diarios; SMA20/SMA60 educativa.
+- EUR/USD, GBP/USD, USD/JPY y USD/CHF diarios; SMA/EMA educativas, 20/60 por defecto.
 - El agente investigador está previsto en FASE 3; optimización y validación
   fuera de muestra en FASE 4. Las propuestas se verificarán con herramientas.
 - Comunicación concisa, menos actualizaciones informativas y lecturas repetidas,
@@ -137,19 +190,26 @@ El primer commit local aprobado, `12c2da4`, reúne estos cinco archivos:
 chore: preparar base inicial de Trading AI
 ```
 
-El identificador y el contenido del commit se consultan mediante `git log` y
-`git show`. No hay remotos configurados. El entorno virtual permanece en disco
-y está excluido del seguimiento. Los futuros commits requieren nueva aprobación.
-Al cierre también consta el commit `638028f` (`feat: implement backtesting
-framework with educational focus`). Los cambios del informe y la documentación
-de cierre siguen sin commit. Esta tarea no ha realizado commits ni pushes.
+El identificador y el contenido de los commits se consultan mediante `git log` y
+`git show`. Antes del commit de cierre, HEAD era `03ca414`, una integración previa
+de `main`; también constan `75de89f` y `d85eebb`. La revisión de `origin/main`
+confirmó que no había commits pendientes de integrar al preparar el cierre.
+El entorno virtual permanece en disco y está excluido del seguimiento.
+El usuario autorizó explícitamente el commit y push de este cierre a GitHub.
+El commit de cierre usa el mensaje `feat: close phase 2 strategy research engine`;
+su identificador y la confirmación del push se comunican al finalizar la tarea.
+Esta autorización corresponde al cierre actual; futuros commits requieren nueva autorización.
 
 ## Asuntos pendientes y observaciones
 
 - El BCE es la fuente educativa aprobada; faltan datos ejecutables y validación
   del calendario. Los cruces respecto al euro son referencias derivadas.
-- Faltan costes, cuenta de capital, curva de capital, drawdown, valoración de
-  posiciones abiertas y validación fuera de muestra. No hay agentes ni bróker.
+- Hay costes proporcionales hipotéticos; faltan spreads, slippage, swaps,
+  financiación y restricciones de negociación verificadas para un bróker real.
+- La sensibilidad reutiliza el histórico completo; faltan separación de datos,
+  validación fuera de muestra, walk-forward y análisis de cambios simultáneos.
+- No hay agentes, acceso a modelos, paper trading en tiempo real, interfaz
+  gráfica ni conexión con un bróker. No se han elegido parámetros ganadores.
 - En una captura se observó un comando de creación de `.venv` ejecutado desde el
   directorio personal. Puede existir un entorno adicional allí; no se ha
   inspeccionado ni eliminado. El entorno del proyecto sí está comprobado.
@@ -157,16 +217,14 @@ de cierre siguen sin commit. Esta tarea no ha realizado commits ni pushes.
 
 ## Próximo paso propuesto
 
-<<<<<<< HEAD
-Proponer la primera tarea de FASE 2: configuración explícita de ventanas y
-supuestos para comparar estrategias, seguida de costes y mayor realismo de
-simulación. Acordar el alcance de esa tarea antes de implementarla.
-=======
-Primera tarea de la FASE 1: seleccionar una fuente de datos educativos EUR/USD
-D1, explicando su significado
-y limitaciones. La selección del proveedor y cualquier implementación posterior
-requieren aprobación antes de comenzar.
->>>>>>> 638028febb9f67c519664efb59553f8a56fc3b09
+Primera tarea de FASE 3: acordar proveedor, modelo y presupuesto de uso del
+agente investigador. Revisar documentación oficial vigente antes de recomendar
+una integración. Después, configurar acceso seguro y herramientas Python
+limitadas a los experimentos reproducibles existentes, registrando propuestas,
+errores y costes. La decisión del modelo no sustituirá a los cálculos.
+
+Las dependencias, credenciales y llamadas externas se acordarán en esa tarea;
+el cierre actual solo prepara la continuidad y no activa un servicio de IA.
 
 Por indicación del usuario, actualizar este documento únicamente al terminar
 una fase, no después de cada tarea. Registrar resultados comprobados y las

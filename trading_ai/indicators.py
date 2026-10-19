@@ -4,6 +4,18 @@ from collections.abc import Sequence
 from decimal import Context, Decimal, localcontext
 
 
+def _validate_inputs(values: Sequence[Decimal], window: int) -> None:
+    if isinstance(window, bool) or not isinstance(window, int):
+        raise TypeError("La ventana debe ser un entero positivo, no un booleano.")
+    if window <= 0:
+        raise ValueError("La ventana debe ser mayor que cero.")
+    for index, value in enumerate(values):
+        if not isinstance(value, Decimal):
+            raise TypeError(f"El valor en la posición {index} debe ser Decimal.")
+        if not value.is_finite():
+            raise ValueError(f"El valor en la posición {index} debe ser finito.")
+
+
 def simple_moving_average(
     values: Sequence[Decimal], window: int
 ) -> list[Decimal | None]:
@@ -16,15 +28,7 @@ def simple_moving_average(
     Usa 28 dígitos significativos, sin modificar la entrada ni el contexto externo.
     El llamante debe proporcionar los valores del más antiguo al más reciente.
     """
-    if isinstance(window, bool) or not isinstance(window, int):
-        raise TypeError("La ventana debe ser un entero positivo, no un booleano.")
-    if window <= 0:
-        raise ValueError("La ventana debe ser mayor que cero.")
-    for index, value in enumerate(values):
-        if not isinstance(value, Decimal):
-            raise TypeError(f"El valor en la posición {index} debe ser Decimal.")
-        if not value.is_finite():
-            raise ValueError(f"El valor en la posición {index} debe ser finito.")
+    _validate_inputs(values, window)
 
     averages: list[Decimal | None] = [None] * len(values)
     with localcontext(Context(prec=28)):
@@ -32,4 +36,30 @@ def simple_moving_average(
             # El límite derecho del slice es exclusivo: incluye el valor actual.
             current_window = values[index - window + 1 : index + 1]
             averages[index] = sum(current_window, Decimal("0")) / window
+    return averages
+
+
+def exponential_moving_average(
+    values: Sequence[Decimal], window: int
+) -> list[Decimal | None]:
+    """EMA con semilla SMA de las primeras window observaciones y alfa=2/(window+1).
+
+    Antes de la semilla devuelve None. Después: anterior + alfa*(valor-anterior).
+    window es el periodo de suavizado, no un recorte de la memoria histórica.
+    Conserva alineación, no modifica valores ni usa observaciones futuras.
+    Admite Decimal finitos (también cero/negativos), con precisión local de 28.
+    """
+    _validate_inputs(values, window)
+    averages: list[Decimal | None] = [None] * len(values)
+    if len(values) < window:
+        return averages
+    if window == 1:
+        return list(values)
+    with localcontext(Context(prec=28)):
+        alpha = Decimal(2) / (window + 1)
+        previous = sum(values[:window], Decimal("0")) / window
+        averages[window - 1] = previous
+        for index in range(window, len(values)):
+            previous = previous + alpha * (values[index] - previous)
+            averages[index] = previous
     return averages
