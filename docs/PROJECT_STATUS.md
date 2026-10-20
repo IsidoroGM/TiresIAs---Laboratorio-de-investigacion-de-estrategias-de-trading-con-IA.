@@ -1,17 +1,19 @@
 # Estado de TiresIAs
 
-Última actualización: **20 de octubre de 2026** (Europe/Madrid), cierre de FASE 4.
+Última actualización: **20 de octubre de 2026** (Europe/Madrid), cierre de FASE 5.
 
 ## Fase activa
 
-**FASES 0, 1, 2, 3 y 4 completadas.** La FASE 2 cerró el motor educativo ampliado:
+**FASES 0, 1, 2, 3, 4 y 5 completadas.** La FASE 2 cerró el motor educativo ampliado:
 estrategias SMA/EMA configurables, costes, capital, tamaño de posición,
 drawdown, comparaciones y sensibilidad local. La FASE 3 incorpora un investigador
 local con Ollama y Qwen3.5:4b, propuestas acotadas, herramientas Python,
 conclusiones verificadas y registros de resultados, errores y consumo.
 La FASE 4 incorpora separación cronológica, registro previo, evaluación histórica,
 sensibilidad, selección interna, walk-forward descriptivo y un ciclo local acotado
-con memoria y controles. Las fases 5 a 8 siguen pendientes; la fase 8 de ejecución
+con memoria y controles. La FASE 5 incorpora la interfaz local de consulta de
+experimentos, resultados, memoria, consumo y capital virtual. Las fases 6 a 8
+siguen pendientes; la fase 8 de ejecución
 real supervisada es opcional. El nombre actual es **TiresIAs - Laboratorio de
 investigación de estrategias de trading con IA**; el paquete `trading_ai` y la
 carpeta original se conservan por compatibilidad.
@@ -66,8 +68,15 @@ local y el paquete `trading_ai` en la raíz del repositorio.
 - `ai.py`: contrato de proveedores y adaptador Ollama local; OpenAI reservado y desactivado.
 - `experiments.py`: validación de propuestas, comparación base/variante y criterios verificables.
 - `research.py`: CLI independiente, máximo dos consultas, registro duradero y conclusiones contrastadas.
+- `lab_catalog.py` y `lab_query.py`: catálogo acotado y contratos de lectura, procedencia,
+  copias históricas, integridad de archivos y cuentas guardadas sin recalcular.
+- `lab.py` y `lab_static/`: interfaz local en español con cinco apartados, filtros,
+  fichas, gráficos, operaciones, comparación compatible y fuentes originales;
+  servidor explícito en `127.0.0.1`, sin controles de ejecución.
 - `scripts/`: instalación portátil, arranque y parada explícitos de la instancia local.
-- `tests/`: **1547 pruebas aprobadas** en la colección completa, ejecutada en tres
+- `scripts/check_lab_readonly.py`: auditoría explícita con proveedores, red,
+  simulaciones, diarios y reservas bloqueados durante la consulta.
+- `tests/`: **1598 pruebas aprobadas** en la colección completa, ejecutada en tres
   procesos aislados sin solapamientos. Temporales de Codex según `AGENTS.md`.
 
 Comprobaciones de cierre de FASE 1:
@@ -277,6 +286,74 @@ Se reutilizó el servidor local existente. OpenAI, TradingView y el bróker sigu
 sin habilitarse. No hubo operaciones reales, commits o pushes. HEAD se conserva
 en `3d0fa83` con todos los cambios previos y nuevos pendientes en el directorio.
 
+## Cierre de FASE 5 — Interfaz local de consulta
+
+Interfaz completada y comprobada visualmente en Windows: Inicio, Experimentos,
+Resultados, Memoria del agente y Consumo. Permite encontrar un experimento,
+entender sus controles, revisar cuentas virtuales y llegar a los archivos,
+informes e inventarios originales. Conserva por separado respuestas del modelo,
+descripciones y conclusiones de Python, errores, descartes y pendientes.
+
+Arranque desde la raíz:
+
+```powershell
+.\.venv\Scripts\python.exe -m trading_ai.lab
+```
+
+Abrir `http://127.0.0.1:8765` y cerrar con Ctrl+C en la terminal. No necesita
+Ollama, dependencias nuevas o servicios permanentes. Los servidores utilizados
+para comprobar la interfaz quedaron cerrados y sus puertos libres.
+
+Los gráficos y operaciones usan exclusivamente la contabilidad guardada. Los
+formatos antiguos sin detalle permanecen como resúmenes, sin reconstruir curvas.
+Se mantienen separadas cuentas, tramos y monedas; no se suman capitales ni se
+componen rentabilidades. El comparador explica las diferencias que bloquean una
+comparación. La fecha del filtro coincide con el día local mostrado en pantalla.
+
+La procedencia distingue registros locales, copias archivadas y consulta vigente
+del registro contable SQLite, abierto en modo de solo lectura. Comprobar una huella
+acredita integridad de archivos, no rentabilidad, autoría externa o revisión
+semántica completa. Los registros incompletos y sin verificación conservan ese
+estado; no se presentan como resultados certificados o procesos activos.
+
+Auditoría de consulta: 92 registros y 190 cuentas contando originales y copias
+(40 con detalle guardado y 150 con resumen), 47 fuentes de consumo; 837 archivos
+controlados conservan sus huellas. Cero llamadas prohibidas, inferencias,
+simulaciones o reservas nuevas. El ciclo conserva `duplicate_rules`, 2898/180 tokens
+nuevos y 2262/176 heredados, por separado. No se reabre la reformulación consumida
+ni se cambian presupuestos. Los resultados temporales negativos permanecen intactos.
+
+Colección completa: **1598 aprobadas**, sin fallos, errores o saltos, en tres
+procesos aislados de 510, 575 y 513 casos. Tiempos JUnit: 1235,329 s, 1399,702 s
+y 1285,328 s; ejecución paralela, sin sumar esos tiempos como duración transcurrida.
+El cotejo confirma coincidencia exacta de la colección y 139 archivos de código,
+pruebas y recursos web estables durante la revisión. Caché pytest desactivada y
+temporal GUID nuevo y exclusivo por proceso, según AGENTS.md.
+
+La primera colección se detuvo antes de corregir el filtro UTC/local; sus logs
+parciales no se cuentan como aprobados. Después se repitió toda la colección
+sobre la versión final. Las 51 pruebas nuevas cubren comportamiento e integración,
+alteraciones, formatos guardados, cuentas, consumo desconocido, rutas y HTTP.
+La revisión visual añade filtros combinados, gráficos, comparaciones, trazabilidad,
+errores y contenido artificial con etiquetas mostrado como texto inerte.
+
+Los 131 archivos anteriores de código y pruebas conservan sus bytes. No cambia
+ningún informe o evidencia anterior seguido por Git. Inicio limpio en `main`,
+HEAD `f5e654435f42efcb76c53a82f812a541bf78d521`. Tras las comprobaciones, el usuario
+autoriza expresamente publicar este cierre con commit y push. La consulta remota
+de publicación mediante `git ls-remote` confirma ese mismo punto de partida en
+`origin/main`; el nuevo identificador y el resultado del push se comunican al terminar.
+
+- [Informe, pruebas y capturas](../reports/phase5-completion-2026-10-20.md).
+- [Guía de arranque, cierre y pantallas](LAB_INTERFACE.md).
+- [Plan y contratos de lectura](PHASE5_PLAN.md).
+- [Objetivos y criterios de cierre de FASES 6, 7 y 8](NEXT_PHASES.md).
+
+Este cierre cumple el alcance de software de consulta; no convierte los datos
+conocidos en una validación inédita ni demuestra rentabilidad. No se instalan
+dependencias, leen credenciales o activan APIs de pago. TradingView y brókeres
+siguen pendientes. **FASE 6 no se inicia**.
+
 ## Herramientas y dependencias
 
 | Elemento | Estado |
@@ -290,7 +367,8 @@ en `3d0fa83` con todos los cambios previos y nuevos pendientes en el directorio.
 | pytest 9.1.1 | Instalado con dependencias auxiliares; declarado en `requirements-dev.txt` |
 | Ollama portátil v0.40.6 y Qwen3.5:4b | Instalados y comprobados en CPU; archivos locales excluidos de Git |
 | API OpenAI | Reserva desactivada; sin credenciales ni llamadas facturables |
-| Otros frameworks, bases de datos y APIs externas | Pendientes de evaluación cuando sean necesarios |
+| SQLite local y servidor HTTP | Biblioteca estándar; registro de campañas existente e interfaz de consulta comprobados |
+| Otros frameworks y APIs externas | Pendientes de evaluación cuando sean necesarios |
 
 El código de aplicación solo usa la biblioteca estándar. pytest funciona con
 Python 3.14.8. Pandas y NumPy siguen pendientes de aprobación si llegan a necesitarse.
@@ -361,6 +439,13 @@ realizar commit y push. El commit usa el mensaje
 `feat: close phase 3 local research agent`; su identificador y el resultado
 del push se comunican al finalizar. Futuros commits y pushes requieren nueva autorización.
 
+El cierre de FASE 4 quedó publicado en `main` como `f5e6544`. El usuario autoriza
+ahora publicar el cierre comprobado de FASE 5; el mensaje previsto es
+`feat: close phase 5 local research interface`. Se comprueba que el servidor remoto
+conserva el punto de partida antes de publicar, sin sobrescribir historia. La hoja
+de ruta de las fases siguientes forma parte de esta entrega; no inicia FASE 6.
+El identificador final y la confirmación del push se comunican al terminar.
+
 ## Asuntos pendientes y observaciones
 
 - El BCE es la fuente educativa aprobada; faltan datos ejecutables y validación
@@ -371,8 +456,8 @@ del push se comunican al finalizar. Futuros commits y pushes requieren nueva aut
   faltan datos futuros no consultados para validación prospectiva independiente
   y análisis ampliado de cambios simultáneos.
 - El investigador local está disponible; su fiabilidad general sigue sin
-  demostrarse. No hay paper trading en tiempo real, interfaz gráfica ni conexión
-  con un bróker. No se han elegido parámetros ganadores.
+  demostrarse. La interfaz local de consulta está disponible; no hay paper trading
+  en tiempo real ni conexión con un bróker. No se han elegido parámetros ganadores.
 - TradingView: Pine, gráficos, consultas, alertas e importaciones al simulador
   continúan pendientes de implementación; no se activa esa conexión en este cierre.
 - En una captura se observó un comando de creación de `.venv` ejecutado desde el
@@ -382,14 +467,11 @@ del push se comunican al finalizar. Futuros commits y pushes requieren nueva aut
 
 ## Próximo paso propuesto
 
-**FASE 5 — Interfaz del laboratorio**: facilitar la consulta de experimentos,
-resultados, procedencia, consumo, descartes y capital virtual, mostrando los
-límites de cada comprobación. No iniciar investigaciones o cálculos por abrir
-una pantalla ni confundir un resultado histórico con una cotización actual.
-TradingView y sus eventos corresponden a FASE 6 según su plan; la cuenta demo y
-la posible ejecución real supervisada permanecen en fases posteriores.
+**FASE 6 — Integración con TradingView**, pendiente según el plan acordado.
+La interfaz de FASE 5 queda completada como consulta local. La cuenta demo y la
+posible ejecución real supervisada permanecen en fases posteriores.
 
-No se inicia FASE 5 automáticamente con este cierre. No se añaden dependencias,
+No se inicia FASE 6 automáticamente con este cierre. No se añaden dependencias,
 credenciales o conexiones externas sin la autorización correspondiente. Futuros
 commits o pushes requieren una petición nueva.
 

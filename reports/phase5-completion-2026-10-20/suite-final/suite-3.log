@@ -1,0 +1,15 @@
+........................................................................ [ 14%]
+........................................................................ [ 28%]
+........................................................................ [ 42%]
+........................................................................ [ 56%]
+........................................................................ [ 70%]
+........................................................................ [ 84%]
+........................................................................ [ 98%]
+.........                                                                [100%]
+============================== warnings summary ===============================
+tests/test_campaign_memory_integration.py::test_complete_chain_reuses_guided_verification_but_rechecks_live_reservations_and_results
+  tests\test_campaign_memory_integration.py:35: PytestWarning: record_property is incompatible with junit_family 'xunit2' (use 'legacy' or 'xunit1')
+    def test_complete_chain_reuses_guided_verification_but_rechecks_live_reservations_and_results(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+513 passed, 1 warning in 1285.39s (0:21:25)

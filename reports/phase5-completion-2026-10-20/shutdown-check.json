@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "ports": {
+    "8765": "closed",
+    "8766": "closed"
+  },
+  "permanent_services_created": 0
+}

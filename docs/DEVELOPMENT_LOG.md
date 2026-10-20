@@ -1334,3 +1334,136 @@ sellada incluidos en el commit. Git detecta un espacio final dentro del diagnós
 original de pytest en focused-tests.xml; se conserva esa evidencia histórica y se
 documenta una excepción de whitespace exclusivamente para ese archivo en
 .gitattributes. No se altera su contenido ni se excluyen comprobaciones del código.
+
+
+### 20/10/2026 — FASE 5, interfaz local por incrementos
+
+Petición: completar la interfaz de consulta del laboratorio, sin iniciar FASE 6,
+consultar modelos, repetir simulaciones históricas, reservar intentos o publicar
+cambios. Leídos AGENTS, README, estado, avances recientes, cierre de FASE 4 y plan
+TradingView antes de modificar archivos. Inicio limpio en main,
+f5e654435f42efcb76c53a82f812a541bf78d521, coincidente con la referencia origin/main.
+No se modifican fuentes antiguas vinculadas a las evidencias.
+
+Primer incremento: PHASE5_PLAN, catálogo acotado y contratos de lectura. Se
+reutiliza evidence.verify_evidence para los inventarios versión 1 y se admiten
+sin conversión los cinco inventarios históricos de lista. Los originales locales,
+copias archivadas y estado contable vigente se distinguen expresamente. Ausencias,
+alteraciones y falta de verificación no se convierten en resultados certificados.
+
+Segundo incremento: servidor explícito de biblioteca estándar en 127.0.0.1 y
+cinco pantallas en español: Inicio, Experimentos, Resultados, Memoria del agente
+y Consumo. Filtros, ficha, archivos originales e inventarios. Contenido del modelo
+como texto, separado de la descripción y las conclusiones de Python. Host/Origin
+locales, CSP, GET/HEAD, rutas mediante identificadores de catálogo y sin controles
+de ejecución. Sin dependencias, instalaciones o servicios permanentes.
+
+Tercer incremento: resúmenes históricos, contabilidad completa guardada del
+walk-forward, operaciones, curva, drawdown y posición abierta. Cuentas separadas
+por estrategia, tramo y moneda. Comparación bloqueada ante diferencias o valores
+necesarios desconocidos; se conservan los costes particulares de cada escenario
+de sensibilidad. No se reconstruyen curvas ni operaciones para formatos antiguos.
+Memoria, errores, consumo nuevo/heredado y desconocido separados, sin total global
+que duplique memorias. El registro SQLite se consulta con su lector mode=ro.
+
+Pruebas focalizadas: primer pase 42 aprobadas y una omitida por la disponibilidad
+de enlaces simbólicos de Windows. La prueba de la guarda se hizo independiente
+de privilegios, sin cambiar permisos: 43 aprobadas. Ampliación de casos de formatos,
+comparabilidad, capturas y trazabilidad: 51 aprobadas en 11,89 s. Caché desactivada
+y un temporal GUID nuevo y exclusivo por ejecución, conforme a AGENTS.md.
+
+Revisión visual en el navegador de Windows: Inicio, explorador con filtros
+combinados, ficha y cuenta histórica de comprobación con curva y operaciones.
+La revisión detectó que el filtro de fecha comparaba UTC mientras la pantalla
+mostraba hora local. Se detuvo la primera colección completa antes de modificar
+fuentes y se corrigió el filtro para usar el mismo día local visible. Los procesos
+fueron detenidos y se comprobó que solo quedaba el servidor de consulta antes de
+editar. Sus manifiesto y logs parciales se conservan como ejecución interrumpida;
+no se cuentan como pruebas aprobadas.
+
+Auditoría explícita check_lab_readonly.py: 92 registros, 190 cuentas (40 con
+contabilidad detallada y 150 solo con resumen, contando originales y copias),
+47 fuentes de consumo. Estados de integridad: 52 copias comprobadas, 23 originales
+cotejados, ocho registros sin verificación completa y nueve incompletos. Las 837
+fuentes controladas conservan sus huellas; cero llamadas prohibidas, inferencias,
+backtests, reservas o escrituras desde la consulta. Incluye consulta vigente del
+registro contable y controles de acceso históricos. No se reinterpretan estos
+recuentos como cuentas únicas o consumo total. Evidencia en
+reports/phase5-completion-2026-10-20/read-only-check.json.
+
+Punto de continuación: colección completa de 1598 pruebas en curso en tres
+procesos aislados (510, 575, 513), tras congelar fuentes de código, pruebas y
+recursos web. Resultados en reports/phase5-completion-2026-10-20/suite-final.
+Falta terminar la revisión visual, cotejar la colección exacta y cerrar documentos.
+PROJECT_STATUS permanece en el cierre de FASE 4 hasta completar esas verificaciones.
+No hay commits, pushes o inferencias nuevas; la reformulación consumida y el
+resultado negativo del walk-forward se conservan sin reabrirlos.
+
+
+#### Cierre comprobado de FASE 5
+
+La colección final completa termina con 1598 pruebas aprobadas, cero fallos,
+errores o saltos. Tres procesos aislados: 510 casos en 1235,329 s; 575 en
+1399,702 s; 513 en 1285,328 s (tiempos JUnit). Se ejecutaron en paralelo: no se
+suman como duración transcurrida. La unión coincide exactamente con los nodos
+recogidos, sin omisiones, duplicados o colisiones tras normalizar las barras de
+Windows. Los 139 archivos de código, pruebas, recursos web y auditoría conservan
+sus huellas durante toda la ejecución. Python 3.14.8 confirmado.
+
+Revisión visual final: cinco apartados, filtros combinados y fecha local próxima
+al cambio de día, ficha de walk-forward y cuenta EMA19/60 de comprobación,
+curva, drawdown, operaciones y posición abierta; comparación admitida dentro del
+mismo tramo y bloqueada al mezclar entrenamiento/comprobación. El enlace desde
+la ficha abre el inventario original como texto. El duplicado permanece descartado
+y el consumo nuevo 2898/180 y heredado 2262/176 quedan separados. Una fuente
+artificial aparte muestra literalmente script e imagen con manejador, sin crear
+elementos ejecutables; un identificador inexistente presenta un error comprensible.
+Capturas y registro visual conservados en el informe de cierre.
+
+Los dos servidores temporales de comprobación se cerraron y sus puertos 8765 y
+8766 quedaron libres. No se crearon servicios permanentes. Las 837 fuentes de la
+auditoría de lectura mantienen sus huellas, con cero inferencias, backtests,
+reservas o escrituras desde la consulta. Los 131 archivos anteriores de código y
+pruebas y los informes/evidencias anteriores seguidos por Git permanecen intactos.
+
+README, guía y plan describen arranque con python -m trading_ai.lab, cierre con
+Ctrl+C, límites de lectura, registros históricos y cuentas independientes.
+PROJECT_STATUS se actualiza únicamente ahora, al completar la fase, con el alcance,
+las 1598 pruebas y las limitaciones. FASE 6 queda pendiente, sin iniciarse.
+Los formatos antiguos sin detalle no reciben curvas reconstruidas; la integridad
+no se presenta como validación independiente, fiabilidad del modelo o rentabilidad.
+No se reabren reformulaciones, evaluaciones o presupuestos.
+
+Git sigue en main, HEAD f5e654435f42efcb76c53a82f812a541bf78d521, con los cambios
+de FASE 5 pendientes de revisión. La referencia local origin/main coincide; el
+intento de comprobar el servidor remoto con git ls-remote devuelve 128 y no se
+presenta como sincronización remota confirmada. Sin commits o pushes, dependencias
+nuevas, llamadas de pago, credenciales leídas u operaciones reales.
+
+Punto de reanudación: FASE 5 cerrada. El siguiente desarrollo, solo si el usuario
+lo encarga, corresponde a FASE 6 según TRADINGVIEW_PLAN.md. Informe y evidencias:
+[phase5-completion-2026-10-20](../reports/phase5-completion-2026-10-20.md).
+
+#### Publicación autorizada del cierre y fases siguientes
+
+El usuario aclara expresamente que desea publicar el cierre de FASE 5, con commit
+y push a main. La FASE 6 permanece pendiente. Se incorpora
+[NEXT_PHASES](NEXT_PHASES.md), con objetivos, incrementos y criterios de cierre:
+FASE 6, TradingView y simulador virtual conectado; FASE 7, cuenta demo externa;
+FASE 8, ejecución real supervisada opcional, sujeta a una autorización específica.
+La secuencia conserva TRADINGVIEW_PLAN y no habilita conexiones u operaciones.
+
+Antes de preparar el commit se cotejan de nuevo las 139 fuentes con el manifiesto
+de las 1598 pruebas: sin cambios. Las reglas de Git conservan también los bytes de
+las nuevas pruebas, recursos web, auditoría y evidencias para mantener esas huellas
+al clonar. La hoja de ruta y su enlace desde README son cambios documentales.
+La consulta remota, con acceso a red tras el bloqueo de la sesión aislada, confirma
+que main del servidor conserva f5e654435f42efcb76c53a82f812a541bf78d521; no hay
+historia remota nueva que integrar antes de preparar la publicación.
+
+El cotejo de bytes del índice confirma las ocho fuentes nuevas y las evidencias.
+Detecta además tres diferencias previas de finales de línea: en disco CRLF y en
+los blobs antiguos LF, con contenido normalizado idéntico. Los 131 originales
+anteriores y sus blobs se mantienen intactos. Para conservar exactamente lo que
+se probó, se añaden copias de esos tres archivos en tested-source-bytes, junto a
+git-publication-check.json. No se reescriben los manifiestos o pruebas anteriores.

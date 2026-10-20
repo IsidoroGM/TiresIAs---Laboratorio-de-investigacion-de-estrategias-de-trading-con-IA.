@@ -29,7 +29,7 @@ comprobada se describen en [data/README.md](data/README.md).
 
 ## Estado actual
 
-Las **FASES 0, 1, 2, 3 y 4 están completadas**. El motor incorpora costes, capital,
+Las **FASES 0, 1, 2, 3, 4 y 5 están completadas**. El motor incorpora costes, capital,
 drawdown, tamaño por porcentaje de capital, estrategias SMA/EMA configurables,
 comparación y sensibilidad local. La FASE 3 incorpora un primer
 investigador local mediante Ollama; OpenAI queda previsto como proveedor futuro
@@ -37,7 +37,10 @@ desactivado. Consulta [la preparación y los controles](docs/LOCAL_AI.md).
 La FASE 4 añade validación cronológica, memoria, ciclo local acotado y walk-forward
 descriptivo sobre desarrollo conocido. El [cierre de fase](reports/phase4-completion-2026-10-20.md)
 conserva resultados negativos y **1547 pruebas aprobadas**, sin afirmar rentabilidad
-o validación independiente. La FASE 5 de interfaz es el siguiente paso y aún no se inicia.
+o validación independiente. La FASE 5 añade la interfaz local de consulta,
+comprobada visualmente en Windows y con **1598 pruebas aprobadas** en la colección
+completa. Consulta [el cierre y sus evidencias](reports/phase5-completion-2026-10-20.md).
+TradingView y FASE 6 siguen pendientes, sin iniciarse con este cierre.
 El laboratorio produce un informe
 reproducible para los cuatro pares. Están comprobados
 Python 3.14.8 de 64 bits, el entorno virtual `.venv`, su uso desde la terminal de
@@ -58,9 +61,42 @@ y salida. El backtest educativo gestiona una compra por par y registra cierres
 y posiciones abiertas con ejecución en la referencia siguiente y costes
 proporcionales configurables (cero por defecto).
 El módulo `trading_ai.metrics` resume los cierres e indica si queda una posición abierta.
-El investigador se ejecuta por separado del motor. Todavía no hay dashboard
-ni conexión con un bróker. Los resultados
+El investigador se ejecuta por separado del motor y de la interfaz de consulta.
+Todavía no hay conexión con un bróker. Los resultados
 actuales son ejercicios con referencias informativas, no validación de viabilidad.
+
+## Consultar TiresIAs en el navegador
+
+Desde la raíz del proyecto:
+
+```powershell
+.\.venv\Scripts\python.exe -m trading_ai.lab
+```
+
+Abre [http://127.0.0.1:8765](http://127.0.0.1:8765). Para cerrar el servidor,
+pulsa **Ctrl+C en la terminal que lo inició**. El navegador no inicia el servidor;
+volver a usarlo requiere ejecutar el comando. Si el puerto está ocupado, puedes
+elegir otro con `--port 8766`. Siempre escucha exclusivamente en `127.0.0.1`.
+No instala servicios ni abre el navegador automáticamente.
+
+Los cinco apartados son **Inicio, Experimentos, Resultados, Memoria del agente y
+Consumo**. En Experimentos puedes filtrar por par, estrategia, fecha del registro,
+estado y procedencia, abrir una ficha y llegar a sus archivos originales. Los
+gráficos y operaciones usan exclusivamente contabilidad ya guardada. Cuando un
+formato antiguo solo conserva resúmenes, la ficha lo indica sin recalcularlo.
+
+Las copias archivadas, los registros locales y el estado vigente de la contabilidad
+se identifican por separado. Comprobar una huella acredita integridad de archivos,
+no rentabilidad ni validación independiente. Cada tramo, estrategia y moneda
+mantiene su propia cuenta; no se suman capitales. Consumo desconocido no significa
+cero, y el consumo heredado permanece separado del nuevo.
+
+Abrir, filtrar, refrescar o seguir un enlace **no consulta modelos, reserva intentos
+ni ejecuta backtests**. No es necesario arrancar Ollama. No hay controles de
+ejecución en estas pantallas. No se necesitan dependencias nuevas.
+
+Consulta [la guía de la interfaz](docs/LAB_INTERFACE.md) y
+[los contratos de FASE 5](docs/PHASE5_PLAN.md).
 
 ## Trabajar con el entorno preparado
 
@@ -1218,3 +1254,6 @@ Consulta [el estado del proyecto](docs/PROJECT_STATUS.md) para conocer el últim
 cierre de fase. Ese documento solo se actualiza al completar una fase; este
 README describe el uso del código actual. Para la decisión posterior al cierre
 sobre TradingView, consulta [su plan de integración](docs/TRADINGVIEW_PLAN.md).
+La [hoja de ruta de las siguientes fases](docs/NEXT_PHASES.md) define los entregables
+y condiciones de cierre de TradingView, cuenta demo y ejecución real supervisada
+opcional. Ninguna de esas fases se inicia con la publicación de FASE 5.

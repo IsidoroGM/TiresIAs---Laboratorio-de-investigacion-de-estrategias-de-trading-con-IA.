@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "phase5_sources_match_tested_bytes_in_index": 8,
+  "working_tree_sources_match_test_manifest": 139,
+  "previous_phase_sources_unchanged_on_disk_and_in_git": 131,
+  "preexisting_newline_differences": [
+    {
+      "source": "tests/test_structured_freshness.py",
+      "tested_sha256": "ee1fc268e5c69150b83ae938cbd20d18814b8d9b37b6d364b9efddee7de70b79",
+      "git_blob_sha256": "a8982e13b93680b08a92a3c68ead8648e2fefa9d3feada2f30ff69042956e9d4",
+      "difference": "preexisting_crlf_worktree_lf_git_blob",
+      "exact_tested_bytes": "tested-source-bytes/tests/test_structured_freshness.py"
+    },
+    {
+      "source": "trading_ai/backtesting.py",
+      "tested_sha256": "81e6a34dd715d192c730fe407c7cdd037e2340e387e4ea37c90b0549d07a3c4f",
+      "git_blob_sha256": "1b24e434c6d251d82622ab2610c1e7a2c33db15c4338af5ced2c3426d55be163",
+      "difference": "preexisting_crlf_worktree_lf_git_blob",
+      "exact_tested_bytes": "tested-source-bytes/trading_ai/backtesting.py"
+    },
+    {
+      "source": "trading_ai/metrics.py",
+      "tested_sha256": "3d85bab9c1ee6da88a632a08b3a600f12ce7ee9335fbce1b4c56e0cfc865ec2f",
+      "git_blob_sha256": "b34432d759f92f9d320f700a46885866ade507d920d7059792070f02715b48cf",
+      "difference": "preexisting_crlf_worktree_lf_git_blob",
+      "exact_tested_bytes": "tested-source-bytes/trading_ai/metrics.py"
+    }
+  ],
+  "previous_evidence_modified": false,
+  "remote_main_verified_before_commit": "f5e654435f42efcb76c53a82f812a541bf78d521"
+}

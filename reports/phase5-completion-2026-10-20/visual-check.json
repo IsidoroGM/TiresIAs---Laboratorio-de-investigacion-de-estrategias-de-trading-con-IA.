@@ -1,0 +1,34 @@
+{
+  "platform": "Windows; navegador integrado de Codex; comprobacion visual con registros guardados y un servidor artificial separado",
+  "checks": [
+    "Inicio: nombre TiresIAs, catalogo, limites historicos y enlaces a informes",
+    "Experimentos: filtros combinados por par, estrategia, fecha, estado y procedencia",
+    "Fecha local: 2026-10-20 incluye tres registros compactos de las 00:32 y 00:50 locales aunque su instante UTC sea del dia anterior",
+    "Resultados: cuenta de comprobacion EMA19/60, 2004-04-02 a 2009-07-02, USD; curva y drawdown guardados; operaciones y posicion abierta",
+    "Comparacion compatible: base y candidata del mismo tramo conservan sus cifras; no se agregan capitales",
+    "Comparacion bloqueada: entrenamiento frente a comprobacion difieren en fechas y huella de datos",
+    "Memoria: duplicate_rules sigue descartado; respuesta del modelo y revision de Python separadas; estado SQLite vigente separado del historico",
+    "Consumo del ciclo: 2898/180 tokens nuevos y 2262/176 heredados, separados; sin total global",
+    "Trazabilidad: el enlace de la ficha abre el snapshot original como texto y conserva fuentes y huellas",
+    "Registros artificiales: script e imagen con manejador se muestran literalmente; cero elementos script e img en main",
+    "Registro inexistente: error comprensible y boton de reintento, sin ejecucion nueva"
+  ],
+  "screenshots": [
+    "artificial-missing-record.png",
+    "artificial-model-text.png",
+    "artificial-text-safety.png",
+    "comparison.png",
+    "consumption.png",
+    "equity.png",
+    "experiments.png",
+    "home.png",
+    "incompatible-accounts.png",
+    "inherited-usage.png",
+    "memory.png"
+  ],
+  "new_inferences": 0,
+  "new_historical_simulations": 0,
+  "new_reservations": 0,
+  "note": "Los errores de localizadores durante la comprobacion se resolvieron leyendo de nuevo la interfaz y usando sus controles; no cambiaron los archivos de investigacion.",
+  "servers_closed": true
+}

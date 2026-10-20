@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "collected": 1598,
+  "sources_unchanged": true,
+  "source_files": 139,
+  "exact_collection_match": true,
+  "partitions": [
+    {
+      "partition": 1,
+      "returncode": 0,
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "510",
+      "time": "1235.329",
+      "timestamp": "2026-10-20T16:55:11.219301+02:00",
+      "hostname": "DESKTOP-2F5TIH0"
+    },
+    {
+      "partition": 2,
+      "returncode": 0,
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "575",
+      "time": "1399.702",
+      "timestamp": "2026-10-20T16:55:11.237581+02:00",
+      "hostname": "DESKTOP-2F5TIH0"
+    },
+    {
+      "partition": 3,
+      "returncode": 0,
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "513",
+      "time": "1285.328",
+      "timestamp": "2026-10-20T16:55:11.237716+02:00",
+      "hostname": "DESKTOP-2F5TIH0"
+    }
+  ]
+}

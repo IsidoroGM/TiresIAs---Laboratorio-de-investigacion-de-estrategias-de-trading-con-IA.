@@ -37,5 +37,10 @@ reports/phase4-campaign-review-*/** -text whitespace=trailing-space,space-before
 reports/phase4-campaign-execution-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
 reports/phase4-campaign-memory-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
 reports/phase4-completion-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+# Conservar las fuentes comprobadas y las evidencias del cierre de FASE 5.
+trading_ai/lab_static/** -text
+tests/test_lab.py -text
+scripts/check_lab_readonly.py -text
+reports/phase5-completion-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
 # Esta salida histórica de pytest conserva también los espacios del diagnóstico.
 reports/phase4-campaign-memory-2026-10-20/focused-tests.xml -text whitespace=-blank-at-eol,space-before-tab,cr-at-eol
