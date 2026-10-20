@@ -8,7 +8,7 @@ de implementación. Este plan complementa el cierre histórico de FASE 2.
 
 1. Ejecutar estrategias Pine Script sobre gráficos de TradingView, simular sus
    operaciones y consultar información actualizada de señales, operaciones y resultados.
-2. Usar esa información para que Trading AI registre compras, ventas, posiciones,
+2. Usar esa información para que TiresIAs registre compras, ventas, posiciones,
    costes y capital virtual en su propio simulador.
 
 Los dos objetivos forman una integración conjunta. El emulador de estrategias
@@ -18,11 +18,11 @@ identificables y conciliables; no se presupone que compartan una cuenta.
 ## Flujo previsto
 
 ```text
-Estrategia y parámetros versionados en Trading AI
+Estrategia y parámetros versionados en TiresIAs
     → Pine Script instalado en un gráfico de TradingView
     → operaciones del emulador y resultados de la estrategia
     → alertas por webhook para novedades / exportaciones para históricos
-    → recepción y validación de eventos en Trading AI
+    → recepción y validación de eventos en TiresIAs
     → registro de compras, ventas y capital virtual
     → consultas del estado actualizado y conciliación entre ambos sistemas
 ```
@@ -50,7 +50,7 @@ Estrategia y parámetros versionados en Trading AI
 - Al cambiar código, entradas o gráfico, verificar y recrear las alertas necesarias;
   registrar la versión de configuración que origina cada evento.
 
-### Registrar la simulación en Trading AI
+### Registrar la simulación en TiresIAs
 
 - Añadir un modo específico de simulación alimentado por TradingView y separado
   del backtest BCE. Mantener cuentas virtuales independientes por experimento y moneda.

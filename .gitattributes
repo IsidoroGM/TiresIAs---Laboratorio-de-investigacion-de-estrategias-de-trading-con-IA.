@@ -1,4 +1,6 @@
 # Las evidencias incluyen SHA-256 de archivos: conservar sus bytes al clonar.
+# Los registros vinculan también el código exacto; no convertir sus saltos de línea.
+trading_ai/*.py -text
 reports/local-agent-* -text whitespace=trailing-space,space-before-tab,cr-at-eol
 reports/local-agent-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
 reports/phase4-freeze-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
@@ -21,3 +23,12 @@ reports/phase4-structured-draft-context-*/** -text whitespace=trailing-space,spa
 reports/phase4-structured-review-memory-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
 reports/phase4-structured-draft-request-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
 reports/phase4-structured-readiness-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+reports/phase4-compact-candidate-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+reports/phase4-compact-memory-request-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+reports/phase4-rule-coverage-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+reports/phase4-guided-request-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+reports/phase4-verification-profile-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+reports/phase4-cached-read-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+reports/phase4-campaign-plan-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+reports/phase4-campaign-ledger-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+reports/phase4-campaign-attempts-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol

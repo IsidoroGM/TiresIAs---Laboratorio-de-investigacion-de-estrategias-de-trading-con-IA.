@@ -1,0 +1,2 @@
+{"schema_version": 1, "at": "2026-10-19T22:50:18.194152+00:00", "event": "compact_memory_request_audit_started", "data": {"old_copies": 225}}
+{"schema_version": 1, "at": "2026-10-19T22:53:23.671353+00:00", "event": "compact_memory_request_audit_completed", "data": {"sha256": "00460306cddb619e0cbb559cea5c3666771af6e1fc6db29230fde8581acff3ed", "status": "prepared_without_permission", "executable": false}}

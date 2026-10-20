@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "files": {
+    "status.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-attempt-audits\\bca9a60c2ed845678760442b730aed63\\status.json",
+      "sha256": "4975eaa8032959999f22899385e9916e066879b417d35e719f2a1320d3936eca"
+    },
+    "status.json.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-attempt-audits\\bca9a60c2ed845678760442b730aed63\\status.json.sha256",
+      "sha256": "961837089e9386e9fdd26ddc75e3adc4d127d02df0813b16cae7813f85d7643b"
+    },
+    "audit.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-attempt-audits\\bca9a60c2ed845678760442b730aed63\\audit.json",
+      "sha256": "59a9ed9ec2bbe5cd9489cddaa63abb119d4137aa9ecc31e424d8165fa38902d8"
+    },
+    "audit.json.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-attempt-audits\\bca9a60c2ed845678760442b730aed63\\audit.json.sha256",
+      "sha256": "cb5cc34ed1ff6dc6d4d502bf57b22d6105750f0e8fd8328571d227977fdbfdc3"
+    },
+    "events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-attempt-audits\\bca9a60c2ed845678760442b730aed63\\events.jsonl",
+      "sha256": "944e26a76d8162ac20cad2a6dd392ea6a3d485de64f5d0c82bfbb6a758690d01"
+    },
+    "audit-campaign-attempts.py": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\audit-campaign-attempts.py",
+      "sha256": "3a56650a0f7c7df7d672ec01a38b5e383e356e8c1d20ab98c3f4637a7a587114"
+    },
+    "source/campaign_attempts.py": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\campaign_attempts.py",
+      "sha256": "45a875e05af49d83b9a09e55fd3bc27e7caeeb4f62c01d4f88caa8099e46d0d1"
+    },
+    "source/campaign_attempt_tests.py": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\tests\\test_campaign_attempts.py",
+      "sha256": "408c5da61d7a59f065c036127f2e7e0786240fd4c886f088b21f8a4b62edbbd8"
+    }
+  }
+}

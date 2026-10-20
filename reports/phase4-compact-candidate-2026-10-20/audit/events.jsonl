@@ -1,0 +1,2 @@
+{"schema_version": 1, "at": "2026-10-19T22:31:35.884961+00:00", "event": "compact_candidate_audit_started", "data": {"request_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-draft-requests\\1646833181eb44c386eb32872f245afa", "old_artifacts": 205}}
+{"schema_version": 1, "at": "2026-10-19T22:34:34.199955+00:00", "event": "compact_candidate_audit_completed", "data": {"sha256": "a8d393648e5f7ec4da0acd509b1224e4b705b030553a4a253c9cae5aacf8e42b", "status": "duplicate_rules", "executable": false}}

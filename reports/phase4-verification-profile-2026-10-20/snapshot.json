@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "files": {
+    "events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\verification-profiles\\3ee2ee3604144fc3aaeaa2db68ceb16d\\events.jsonl",
+      "sha256": "9f66d5d81805678dd4b49638782c6947bc137596f8b518ef3c3525dddc2ca4d6"
+    },
+    "profile.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\verification-profiles\\3ee2ee3604144fc3aaeaa2db68ceb16d\\profile.json",
+      "sha256": "8e9e9309e9dfde2451d0bdb5e7cf97bff50a65d46e1900e2bf9594bfd7da0f82"
+    },
+    "profile.json.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\verification-profiles\\3ee2ee3604144fc3aaeaa2db68ceb16d\\profile.json.sha256",
+      "sha256": "69a30a336574e5a3fcee5350d60ea81cd653d06fe3f3b758de650dd315663a9a"
+    },
+    "verification.pstats": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\verification-profiles\\3ee2ee3604144fc3aaeaa2db68ceb16d\\verification.pstats",
+      "sha256": "993ef68f63a0b13a8c65fa26e13299fc0a408a38ce116a6d133ea2ea5eeb5dce"
+    },
+    "profile-guided-verification.py": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\profile-guided-verification.py",
+      "sha256": "4dcc42c5e258c5bf2b3a64a5f9da0482f5e8420ac9d3ca9dd4e6e18c4e9828d0"
+    }
+  }
+}

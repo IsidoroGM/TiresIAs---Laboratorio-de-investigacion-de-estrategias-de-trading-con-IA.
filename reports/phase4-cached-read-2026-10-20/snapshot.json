@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "files": {
+    "read.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\cached-read-checks\\dbfac940f4ff4ea49692d3200b1d3d7a\\read.json",
+      "sha256": "ee657eb95198f042bdffa193a1a9cc3b30ffb63d7e51e690817d72df7c81ae8c"
+    },
+    "read.json.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\cached-read-checks\\dbfac940f4ff4ea49692d3200b1d3d7a\\read.json.sha256",
+      "sha256": "13ddd6cb0d2cdf62d819cbea2aef6115629f7438e72e2c32f6b5279bba7ceef4"
+    },
+    "events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\cached-read-checks\\dbfac940f4ff4ea49692d3200b1d3d7a\\events.jsonl",
+      "sha256": "d73ee5c35372648fa00ea996accb1dec8bd9a76f55cfd22ea4b9baca668dc720"
+    },
+    "source/validated_read_cache.py": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\validated_read_cache.py",
+      "sha256": "b58f29923c1e577f68a68e20bcc3d38a3fe8d62e0303e1e483fc920d8b70b00e"
+    },
+    "source/validated_read_cache_tests.py": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\tests\\test_validated_read_cache.py",
+      "sha256": "0c5716442e0063290bd6d2e29d17254a6edc617bc56f018553033102694f4f16"
+    }
+  }
+}

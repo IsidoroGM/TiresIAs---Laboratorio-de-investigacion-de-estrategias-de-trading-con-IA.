@@ -1,8 +1,14 @@
-# Trading AI
+# TiresIAs - Laboratorio de investigación de estrategias de trading con IA
 
 Proyecto educativo de investigación y trading algorítmico asistido por agentes de
 IA. Se construye paso a paso para aprender Python, arquitectura modular, pruebas
 automatizadas y evaluación de estrategias.
+
+El proyecto, anteriormente llamado Trading AI, adopta el nombre **TiresIAs**.
+El paquete `trading_ai`, los comandos y las rutas existentes se conservan para
+mantener la compatibilidad. Los informes, registros y módulos vinculados a
+evidencias anteriores mantienen sus referencias originales para preservar la
+trazabilidad.
 
 ## Objetivo y alcance inicial
 
@@ -102,7 +108,7 @@ python -m trading_ai
 La salida esperada es:
 
 ```text
-Trading AI - laboratorio educativo
+TiresIAs - Laboratorio de investigación de estrategias de trading con IA
 FASE 2 completada - simulación educativa. Usa --report, --compare o --sensitivity.
 ```
 
@@ -1119,8 +1125,8 @@ La [descripción mecánica](reports/phase4-structured-brief-2026-10-19.md) expre
 las reglas completas desde sus campos verificados, conservando intacta la prosa
 del modelo. No cambia la revisión pendiente ni consume consultas de IA.
 Un [contrato compacto experimental](docs/STRUCTURED_DRAFTS.md) permite validar
-reglas sin prosa libre y describirlas con Python. Su vista previa aún no se
-conecta al investigador ni puede adoptarse en una sesión.
+reglas sin prosa libre y describirlas con Python. La vista previa no consulta
+modelos ni puede adoptarse en una sesión.
 La preparación de contexto conserva objetivo, controles, ideas anteriores y
 reservas compartidas. Detecta identidades consumidas sin generar o simular;
 no encontrar una identidad tampoco concede aprobación.
@@ -1128,6 +1134,26 @@ Una memoria complementaria conserva decisiones y motivos de revisión de las
 sesiones registradas, con consumo heredado separado y sin reabrir acciones.
 La petición compacta puede prepararse e inspeccionarse sin enviarla; conserva
 el historial capturado y registra tamaño en bytes, sin estimar tokens.
+El [flujo de candidatas compactas](docs/COMPACT_CANDIDATES.md) añade vigencia,
+reserva exclusiva y una consulta local acotada, con respuesta original y consumo
+conservados. Exige revisión independiente antes de preparar un plan con controles
+congelados. Su ejecutor explícito usa el mismo motor y la reserva compartida de
+cálculos; generar o revisar no simula ni demuestra mejora. No reabre la
+reformulación consumida ni incorpora credenciales de pago. Una memoria compacta
+conserva intentos y revisiones sin volver a consultarlos o aprobarlos.
+Los [diagnósticos por periodos](docs/PERIOD_DIAGNOSTICS.md) separan bloques
+conocidos para un plan aceptado, con cuentas independientes y límites previos;
+no entrenan o seleccionan una estrategia. El [verificador de evidencias](docs/EVIDENCE_CHECKS.md)
+comprueba las copias archivadas sin depender siempre de los originales locales.
+La [petición guiada](docs/GUIDED_REQUESTS.md) conserva el historial y añade
+cobertura de reglas sin habilitar envío. La [lectura con caché opcional](docs/VALIDATED_READ_CACHE.md)
+evita interpretar repetidamente el histórico, contrastando sus fuentes en cada acceso.
+El [plan de campaña local](docs/LOCAL_CAMPAIGNS.md) registra límites de propuestas
+y backtests con toda la memoria anterior. Prepararlo no activa consultas o cálculos.
+Su [registro contable compartido](docs/CAMPAIGN_LEDGER.md) evita superar los
+límites entre procesos y conserva los huecos consumidos, sin activar la campaña.
+Las [capturas de intentos](docs/CAMPAIGN_ATTEMPTS.md) guardan respuestas, errores
+y consumo sin completar textos del modelo o convertirlos en resultados aprobados.
 
 En la FASE 3 se incorporó un agente investigador que propone hipótesis y
 solicita experimentos mediante herramientas controladas. En la FASE 4 se añadirá
@@ -1150,7 +1176,7 @@ Se han acordado dos objetivos para la integración futura con TradingView:
 El [plan de TradingView](docs/TRADINGVIEW_PLAN.md) detalla el flujo, las etapas y
 las condiciones de aceptación. Las consultas mostrarán la fuente y la fecha de
 actualización; se verificarán las capacidades oficiales antes de automatizarlas.
-Se usará el emulador de estrategias Pine y la cuenta virtual de Trading AI:
+Se usará el emulador de estrategias Pine y la cuenta virtual de TiresIAs:
 las estrategias Pine no ejecutan órdenes en la cuenta Paper Trading integrada.
 Esta integración está planificada y todavía no está implementada.
 

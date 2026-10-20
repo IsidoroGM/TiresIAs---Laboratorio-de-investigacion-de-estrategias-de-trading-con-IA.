@@ -1,7 +1,7 @@
 # Desarrollo del investigador de estrategias
 
 Decisión del usuario: 19 de octubre de 2026. El agente se encargará de proponer
-nuevas estrategias; el desarrollo de Trading AI se centra en darle herramientas
+nuevas estrategias; el desarrollo de TiresIAs se centra en darle herramientas
 de cálculo, registros y controles para contrastarlas. No se elegirá una
 estrategia por preferencia del desarrollador ni se asumirá mejor por proponerla.
 
@@ -156,9 +156,29 @@ Quedan pendientes:
    compartidas del desarrollo, incluidas las interrumpidas; permanece sin
    permisos de generación. Una memoria complementaria ya conserva decisiones
    y motivos de las revisiones de sesiones registradas, sin leer su resultado
-   financiero o reabrirlas. Ya se prepara una petición compacta inspeccionable,
-   sin enviarla, truncar motivos o habilitar generación. Faltan comprobación de
-   vigencia, límites reales del proveedor y reserva de la generación futura.
+   financiero o reabrirlas. Ya se prepara una petición compacta inspeccionable
+   sin truncar motivos. El [controlador compacto](COMPACT_CANDIDATES.md) añade
+   comprobación optimista de vigencia, reserva única por datos/par y proveedor
+   local limitado a Ollama 0.40.6, solicitando rechazo del desbordamiento sin
+   recortar contexto. Guarda reglas originales y consumo; una revisión declarada
+   independiente permite preparar un plan con controles congelados. El ejecutor
+   compacto explícito reutiliza el motor y el contador compartido de cálculos;
+   la memoria compacta conserva intentos y revisiones sin resultados financieros.
+   La petición extendida ya proyecta esa memoria como datos, sin recortar motivos
+   o reiniciar presupuestos. Permanece sin envío. El [plan de campaña](LOCAL_CAMPAIGNS.md)
+   registra límites explícitos y conserva el historial completo; continúa inactivo.
+   El [registro contable compartido](CAMPAIGN_LEDGER.md) fija términos por ámbito
+   y reserva huecos de forma exclusiva, sin permiso de ejecución. Faltan el
+   permiso de campaña y el controlador antes de ampliar las consultas locales.
+   Las [capturas por reserva](CAMPAIGN_ATTEMPTS.md) ya guardan respuesta original,
+   errores y consumo, conservando los desconocidos y bloqueando repeticiones.
+   La [cobertura estructural](RULE_COVERAGE.md) permite distinguir registros
+   repetidos y variantes numéricas de una misma forma de reglas, sin afirmar
+   equivalencia, novedad o mejora ni elegir una estrategia por el agente.
+   La [petición guiada](GUIDED_REQUESTS.md) incorpora esa cobertura sin envío o
+   permisos nuevos. Su [lectura con caché opcional](VALIDATED_READ_CACHE.md)
+   conserva las verificaciones de fuentes sin releer e interpretar el XML en
+   cada paso; no modifica productores o amplía presupuestos.
 2. Ampliar las capacidades solo con comprobaciones de causalidad, calentamiento
    y ejecución posterior. Nunca ejecutar código libre generado.
 3. Extender la investigación de desarrollo conservando descartes y errores.

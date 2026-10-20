@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "files": {
+    "campaign/campaign.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-plans\\37316f24fb92479aa7b9af4ab8134ed0\\campaign.json",
+      "sha256": "c9aeef16e3f94f6cdf07c9d35f63c20aed402d7ac915aeb275e6e07cb628ba48"
+    },
+    "campaign/campaign.json.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-plans\\37316f24fb92479aa7b9af4ab8134ed0\\campaign.json.sha256",
+      "sha256": "826b5474e66f93f3031031493419291436a8a33789b0fbfe157aaf2efdbae290"
+    },
+    "campaign/limits.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-plans\\37316f24fb92479aa7b9af4ab8134ed0\\limits.json",
+      "sha256": "fbd63f22e4aba76b97f9945b5ccd0bbda921f1aad3e98c044a4bebf6b30b545b"
+    },
+    "campaign/request.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-plans\\37316f24fb92479aa7b9af4ab8134ed0\\request.json",
+      "sha256": "012b1a7ff0231c3bac2a26c043676b9dcdd75cc828d4d0124038522ee72f53ce"
+    },
+    "campaign/events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-plans\\37316f24fb92479aa7b9af4ab8134ed0\\events.jsonl",
+      "sha256": "d41580a1c2ac229c58b9195e5b3a85b84420dc0785f1cd3f0a7e1696ccd8aca4"
+    },
+    "audit/audit.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-plan-audits\\540c9d9be7f846d1b609751d9f6f2d87\\audit.json",
+      "sha256": "b857ce2ffce9eef11ce0c17e910eff5a413cff59ed53a5c862b381b0b27b2473"
+    },
+    "audit/audit.json.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-plan-audits\\540c9d9be7f846d1b609751d9f6f2d87\\audit.json.sha256",
+      "sha256": "4829b9dac0d8a9cf57552b91cb2c63d62f33c19c761bb15f8d8b2e1f6728a3ee"
+    },
+    "audit/events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-plan-audits\\540c9d9be7f846d1b609751d9f6f2d87\\events.jsonl",
+      "sha256": "745ab5fd284ff44e8d1805345b1812059991cb29408b624aec13b9d084e1caca"
+    },
+    "audit-campaign-plan.py": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\audit-campaign-plan.py",
+      "sha256": "654898aefd87efbad4bd06000eedffc706ad63999b0fbb817442034c487b426d"
+    },
+    "source/campaign_plan.py": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\campaign_plan.py",
+      "sha256": "4cb3b58318479cd9d329a11341ccafd14f01fce4b82b0bf90cce3767e5388100"
+    },
+    "source/campaign_plan_tests.py": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\tests\\test_campaign_plan.py",
+      "sha256": "5d4db5f369fd37b32184d03abc9635df912d7db73be1fcfaed02836e15319e67"
+    }
+  }
+}

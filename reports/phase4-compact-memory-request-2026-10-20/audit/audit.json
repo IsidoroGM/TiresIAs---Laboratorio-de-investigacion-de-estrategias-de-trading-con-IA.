@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "status": "prepared_without_permission",
+  "history_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\compact-history\\a6bb9a6824904602aa0014905adfb31b",
+  "request_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\compact-requests\\c787e8461793402788239222e3b11552",
+  "error": null,
+  "entry_statuses": [
+    "duplicate_rules"
+  ],
+  "request_bytes": 11818,
+  "token_count": null,
+  "fits_provider_context_verified": false,
+  "budget_before": {
+    "identity": {
+      "schema_version": 1,
+      "scope": "compact_new_idea",
+      "development_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+      "pair": "EUR/USD"
+    },
+    "consumed": true,
+    "reservation_run": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\compact-generations\\261e5b75a6f140f99eb0eb9ae02960eb",
+    "scope": "compact_generation_only_not_legacy_revision_budget",
+    "transport_enabled": false,
+    "generation_ready": false,
+    "executable": false
+  },
+  "budget_after": {
+    "identity": {
+      "schema_version": 1,
+      "scope": "compact_new_idea",
+      "development_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+      "pair": "EUR/USD"
+    },
+    "consumed": true,
+    "reservation_run": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\compact-generations\\261e5b75a6f140f99eb0eb9ae02960eb",
+    "scope": "compact_generation_only_not_legacy_revision_budget",
+    "transport_enabled": false,
+    "generation_ready": false,
+    "executable": false
+  },
+  "new_generation_permission": false,
+  "inherited_attempt_usage": [
+    {
+      "model_requests": 1,
+      "usage": [
+        {
+          "input_tokens": 2262,
+          "output_tokens": 176,
+          "cached_input_tokens": 0,
+          "duration_ns": 71453363800,
+          "api_cost_usd": "0",
+          "metadata_request_attempts": 4
+        }
+      ],
+      "api_cost_usd": "0",
+      "metadata_request_attempts": 6
+    }
+  ],
+  "new_usage": {
+    "model_requests": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "api_cost_usd": "0",
+    "backtests": 0
+  },
+  "io_guard": {
+    "provider_calls": 0,
+    "backtests": 0,
+    "signals": 0,
+    "outer_reads": 0,
+    "compact_result_reads": 0
+  },
+  "old_copies_and_originals_checked": 225,
+  "project_status_sha256": "53bcda9b54a6cc70a016da47e99d5023f646aed90c3d6277e4d0abf7cc72417e",
+  "phase_closed": false,
+  "executable": false
+}

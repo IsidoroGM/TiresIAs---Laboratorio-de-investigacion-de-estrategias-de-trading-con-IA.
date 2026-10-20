@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "protocol": "compact_request_preview_v2",
+  "status": "prepared_not_submitted",
+  "run_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\compact-requests\\c787e8461793402788239222e3b11552",
+  "source_history": {
+    "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\compact-history\\a6bb9a6824904602aa0014905adfb31b",
+    "sha256": {
+      "history.json": "adf978e6c2f7fab2f65ed8c918cf30245d0f020c7020e096e1611817c2e6968c",
+      "history.json.sha256": "1cb2b539b2f3bd94245cd8ff82f45dba1e6c41875aa26610947e5fe4ab21368f",
+      "events.jsonl": "a3c5e1de7388dbdb6cf0e3033d62de03822c8dd3c05f595b771591184c7d867b"
+    }
+  },
+  "source_request": {
+    "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-draft-requests\\1646833181eb44c386eb32872f245afa",
+    "sha256": {
+      "preview.json": "1d6ad6b49114892c196b8beee3064f5e2cb2cec18ec6b28efefc6d6687b1929d",
+      "preview.json.sha256": "73f41b9180fd80c0a8aee9f1eef7cec941cbcb6253301fa921d8e1d57215b358",
+      "request.json": "d6588e2c00396a6de0177c3b58f8830dfc4f65d9b3b3473b3ba9b805886e8e68",
+      "events.jsonl": "a1f042628d15fe927053522c30c7f9c00c485be32def91c4e60f52863c690c53"
+    }
+  },
+  "reference": {
+    "frozen_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2",
+    "frozen_sha256": "1f64b917cc88993ca496798ef98e4aadf8a266f7b7f3fce9cf45d6b86d61483a",
+    "manifest_sha256": "c432a2795917c500e0ee5fc474ed8f5a5b096346857a67c4b7f19b7f1a8dff42",
+    "development_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+    "outer_cutoff": "2020-01-01"
+  },
+  "base_freshness_fingerprint": "3fca36f1a069d3f19ca6564e864d0aa972943ccd220b65450562ffd652e0c29f",
+  "generation_budget": {
+    "identity": {
+      "schema_version": 1,
+      "scope": "compact_new_idea",
+      "development_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+      "pair": "EUR/USD"
+    },
+    "consumed": true,
+    "reservation_run": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\compact-generations\\261e5b75a6f140f99eb0eb9ae02960eb",
+    "scope": "compact_generation_only_not_legacy_revision_budget",
+    "transport_enabled": false,
+    "generation_ready": false,
+    "executable": false
+  },
+  "request_sha256": "94452a12cd960968d2b9b5e05e541e13167767aebd0d5e7e5caa3c6cf9709877",
+  "request_bytes": 11818,
+  "max_request_bytes": 12288,
+  "compact_attempts_projected": 1,
+  "history_entries_omitted": 0,
+  "history_text_truncated": false,
+  "token_count": null,
+  "fits_provider_context_verified": false,
+  "provider_configured": false,
+  "submitted": false,
+  "generation_ready": false,
+  "new_generation_permission": false,
+  "executable": false,
+  "outer_evaluation_allowed": false,
+  "inherited_attempt_usage": [
+    {
+      "model_requests": 1,
+      "usage": [
+        {
+          "input_tokens": 2262,
+          "output_tokens": 176,
+          "cached_input_tokens": 0,
+          "duration_ns": 71453363800,
+          "api_cost_usd": "0",
+          "metadata_request_attempts": 4
+        }
+      ],
+      "api_cost_usd": "0",
+      "metadata_request_attempts": 6
+    }
+  ],
+  "new_usage": {
+    "model_requests": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "api_cost_usd": "0",
+    "backtests": 0
+  },
+  "code_sha256": {
+    "data.py": "286b822fbb6dd5e46f65f64bb387bb7f7d246c7c9c17dc523a52d7ce3e7dfd94",
+    "indicators.py": "13cce9a32399a309694a83f52c8bdb93b0f86075612c825d5be3d9bfc2c366a3",
+    "strategies.py": "9607a659a352e31f2192c237eaecc8191ba90f9b2e78bcaa3919cfaa3489527e",
+    "backtesting.py": "81e6a34dd715d192c730fe407c7cdd037e2340e387e4ea37c90b0549d07a3c4f",
+    "metrics.py": "3d85bab9c1ee6da88a632a08b3a600f12ce7ee9335fbce1b4c56e0cfc865ec2f",
+    "experiments.py": "57c5638f293d9e4c5102a091227970ac1d2fd3b9774fa3f839fd6ed044a26e4d",
+    "ai.py": "9c43b2f13b1b9264810cb1710c081acc0c476071870842617c9a451cb58cc1f3",
+    "research.py": "7e53374a3768800de2d75be9bc67d2299d16620c6b4fe92a3438d1f4c0c63340",
+    "validation.py": "ac2aa655af324a352107753e3b53e0aa986958aeb9e2e2374c4791c3a8afb1b6",
+    "holdout.py": "a048adf93b2a58b3177e80d1077597a0bd849932fd42f714326a43fc68fecbb2",
+    "rule_planning.py": "ec26a75932f10db35fc2ebdb4ef56a1062eba0059a621125f8d8d2166bb6708d",
+    "rules.py": "09bbc9d25ed27d4e27961dd0431c95a73e10f21aa8500e47430373a93c500361",
+    "formalization.py": "43eea12e59e441712914f5449c66a410d33928dcbd2c5de31ec9d89f8d795098",
+    "discovery.py": "b680ab835f96dc1e917760309a19aad93bb51beee70eaf9d2dfb96da0fd211a2",
+    "robustness.py": "906ea3f6c07d5f5aeac03d049c0852b9d863e29a3864ac61009fa811a0a11ae5",
+    "idea_memory.py": "dbf1d5ef1f32c9df3e945da9e1e74491aa8c3a7fbcb92f0c93187558c6193f40",
+    "structured_ideas.py": "66bebb4f2077bd77d622e256420e87090325cd03ba346d545f6b92def5f5009a",
+    "structured_planning.py": "70e7b127ea9af5a1c712cd87f08090458bc45e0f3757a24660765ceb9fea8968",
+    "structured_brief.py": "960106ad0d3c4e271e8efb19fbb88050a179791b16fc8ee15666ac3afdccbd1d",
+    "structured_draft.py": "9791b386067dd019ee9e403aa3ffde34b0d35984eb5e3f5f08c122d4365cdc31",
+    "structured_draft_context.py": "1699ce3527f9a8dc55bc7d2778a534585463e8aabaefd65e85091ad9d225eaf3",
+    "rule_execution.py": "0aeeeb9fb859e9d26e2225adbe16990ddaaed5cb7661d7284a66b5f469b8f218",
+    "structured_execution.py": "cba2d3af6d8d489cb10c6fce59c8817e66b7d2fa197a2887008b5290506af247",
+    "research_session.py": "64adb3617b31d16546443488fc992b8a8a43862f6896ff25ec38fcd795961015",
+    "agent_feedback.py": "bf191f16f50e41e86eed10ea9b8c742928de346abb9a386a4c24620a1ea06560",
+    "structured_session.py": "cc24bd867badd13436273698bcfaf4b5b4d9b80cf6b23a1d7859d2bef413c66a",
+    "structured_review_memory.py": "a965a10f790b29b3e6169ea9e9116f32c6034bdd416d562e3cf02c5c29650d86",
+    "structured_draft_request.py": "f3980ed85fbe3399e4f4108c466139ee5813db2c5da1617567d9d26ad9e2a2da",
+    "structured_freshness.py": "f618cbf374b5a090e3a04ce189e6eeda4edf95c227e4aafdf5feed2d79702784",
+    "structured_generation.py": "e51f83a70d3abfaae8f66f0c4ac5291511bad70fd1a8170eae02219f6dcefd09",
+    "compact_ollama.py": "49b3d3cc05b7915f367c5feeecdbaa0f19a30758b434becdd232f92a77caa2ae",
+    "compact_candidate.py": "42b3f28f2e75441ec32e2ebb612bc72520a2d26c0b0fbc536f2c3b61c6ac01c4",
+    "compact_review.py": "d3197d211be1e1f970e2cae46ba7e9260c61716fac7b23fef67b2c3f64a96d20",
+    "compact_history.py": "91a7734097662f9cf2848ef2074151d481cdeac643ab32dd0e5b0b268a587020",
+    "compact_request.py": "3f666590e490eed7420c0683467a9f88aebfff66c9773e9377ed48addeaa8299"
+  }
+}

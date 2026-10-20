@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "status": "diagnostic_only",
+  "coverage_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\rule-coverage\\048d7ee5c7da4292b09f2e952882626a",
+  "counts": {
+    "record_occurrences": 3,
+    "distinct_rule_identities_without_name": 2,
+    "distinct_templates_without_numeric_parameters": 1,
+    "repeated_rule_occurrences": 1
+  },
+  "observed_direct_operand_kinds": [
+    "ema",
+    "sma"
+  ],
+  "direct_operand_kinds_not_observed": [
+    "constant",
+    "reference",
+    "rolling_max",
+    "rolling_min"
+  ],
+  "io_guard": {
+    "provider_calls": 0,
+    "signals": 0,
+    "backtests": 0,
+    "outer_reads": 0
+  },
+  "budget_before": {
+    "identity": {
+      "schema_version": 1,
+      "scope": "compact_new_idea",
+      "development_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+      "pair": "EUR/USD"
+    },
+    "consumed": true,
+    "reservation_run": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\compact-generations\\261e5b75a6f140f99eb0eb9ae02960eb",
+    "scope": "compact_generation_only_not_legacy_revision_budget",
+    "transport_enabled": false,
+    "generation_ready": false,
+    "executable": false
+  },
+  "budget_after": {
+    "identity": {
+      "schema_version": 1,
+      "scope": "compact_new_idea",
+      "development_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+      "pair": "EUR/USD"
+    },
+    "consumed": true,
+    "reservation_run": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\compact-generations\\261e5b75a6f140f99eb0eb9ae02960eb",
+    "scope": "compact_generation_only_not_legacy_revision_budget",
+    "transport_enabled": false,
+    "generation_ready": false,
+    "executable": false
+  },
+  "old_copies_and_original_references_checked": 236,
+  "new_usage": {
+    "model_requests": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "api_cost_usd": "0",
+    "backtests": 0
+  },
+  "semantic_equivalence_proven": false,
+  "strategy_novelty_proven": false,
+  "strategy_selected": false,
+  "executable": false,
+  "project_status_sha256": "53bcda9b54a6cc70a016da47e99d5023f646aed90c3d6277e4d0abf7cc72417e",
+  "phase_closed": false
+}

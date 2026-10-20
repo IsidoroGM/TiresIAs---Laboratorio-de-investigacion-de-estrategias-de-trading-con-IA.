@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "status": "prepared_without_permission",
+  "guided_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\guided-compact-requests\\1a1d0783778243ac989ca1ab3fc49911",
+  "source_prepared": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\compact-requests\\c787e8461793402788239222e3b11552",
+  "source_coverage": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\rule-coverage\\048d7ee5c7da4292b09f2e952882626a",
+  "request_bytes": 12142,
+  "error": null,
+  "token_count": null,
+  "fits_provider_context_verified": false,
+  "budget_before": {
+    "identity": {
+      "schema_version": 1,
+      "scope": "compact_new_idea",
+      "development_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+      "pair": "EUR/USD"
+    },
+    "consumed": true,
+    "reservation_run": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\compact-generations\\261e5b75a6f140f99eb0eb9ae02960eb",
+    "scope": "compact_generation_only_not_legacy_revision_budget",
+    "transport_enabled": false,
+    "generation_ready": false,
+    "executable": false
+  },
+  "budget_after": {
+    "identity": {
+      "schema_version": 1,
+      "scope": "compact_new_idea",
+      "development_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+      "pair": "EUR/USD"
+    },
+    "consumed": true,
+    "reservation_run": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\compact-generations\\261e5b75a6f140f99eb0eb9ae02960eb",
+    "scope": "compact_generation_only_not_legacy_revision_budget",
+    "transport_enabled": false,
+    "generation_ready": false,
+    "executable": false
+  },
+  "new_generation_permission": false,
+  "io_guard": {
+    "provider_calls": 0,
+    "signals": 0,
+    "backtests": 0,
+    "outer_reads": 0
+  },
+  "old_copies_and_original_references_checked": 244,
+  "new_usage": {
+    "model_requests": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "api_cost_usd": "0",
+    "backtests": 0
+  },
+  "project_status_sha256": "53bcda9b54a6cc70a016da47e99d5023f646aed90c3d6277e4d0abf7cc72417e",
+  "phase_closed": false,
+  "executable": false
+}

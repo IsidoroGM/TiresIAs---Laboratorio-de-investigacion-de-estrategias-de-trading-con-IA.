@@ -1,0 +1,2 @@
+{"schema_version": 1, "at": "2026-10-19T23:19:57.985131+00:00", "event": "rule_coverage_audit_started", "data": {"copies_checked": 236}}
+{"schema_version": 1, "at": "2026-10-19T23:20:37.233323+00:00", "event": "rule_coverage_audit_completed", "data": {"sha256": "a810bee780f6a4639c68807df141a08a52f0d4e4e8efca93a2c1061017a25c68", "status": "diagnostic_only", "executable": false}}

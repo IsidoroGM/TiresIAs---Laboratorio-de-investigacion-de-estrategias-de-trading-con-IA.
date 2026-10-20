@@ -1,0 +1,2 @@
+{"schema_version": 1, "at": "2026-10-19T23:45:00.301884+00:00", "event": "verification_profile_started", "data": {"guided_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\guided-compact-requests\\1a1d0783778243ac989ca1ab3fc49911"}}
+{"schema_version": 1, "at": "2026-10-19T23:46:28.436309+00:00", "event": "verification_profile_completed", "data": {"sha256": "8e9e9309e9dfde2451d0bdb5e7cf97bff50a65d46e1900e2bf9594bfd7da0f82", "status": "profiled_read_only", "executable": false}}

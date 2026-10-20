@@ -1,0 +1,3 @@
+{"schema_version": 1, "at": "2026-10-20T09:16:16.207725+00:00", "event": "campaign_attempt_audit_started", "data": {"scope_id": "f0e9b3af64f68a6d66642d794bb1df57ee0a5d677f841e1334997e752ae29e38"}}
+{"schema_version": 1, "at": "2026-10-20T09:16:17.136280+00:00", "event": "campaign_attempt_status_captured", "data": {"sha256": "4975eaa8032959999f22899385e9916e066879b417d35e719f2a1320d3936eca", "status": null, "executable": false}}
+{"schema_version": 1, "at": "2026-10-20T09:16:17.146748+00:00", "event": "campaign_attempt_audit_completed", "data": {"sha256": "59a9ed9ec2bbe5cd9489cddaa63abb119d4137aa9ecc31e424d8165fa38902d8", "status": "verified_read_only_no_attempts", "executable": false}}

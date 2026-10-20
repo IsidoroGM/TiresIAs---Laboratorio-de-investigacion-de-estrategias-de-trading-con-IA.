@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "files": {
+    "history/events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\compact-history\\a6bb9a6824904602aa0014905adfb31b\\events.jsonl",
+      "sha256": "a3c5e1de7388dbdb6cf0e3033d62de03822c8dd3c05f595b771591184c7d867b"
+    },
+    "history/history.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\compact-history\\a6bb9a6824904602aa0014905adfb31b\\history.json",
+      "sha256": "adf978e6c2f7fab2f65ed8c918cf30245d0f020c7020e096e1611817c2e6968c"
+    },
+    "history/history.json.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\compact-history\\a6bb9a6824904602aa0014905adfb31b\\history.json.sha256",
+      "sha256": "1cb2b539b2f3bd94245cd8ff82f45dba1e6c41875aa26610947e5fe4ab21368f"
+    },
+    "request/events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\compact-requests\\c787e8461793402788239222e3b11552\\events.jsonl",
+      "sha256": "acb677ad8ffe2e686a87a35c389ba81758f473971880c77dc247580dc2f86523"
+    },
+    "request/prepared.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\compact-requests\\c787e8461793402788239222e3b11552\\prepared.json",
+      "sha256": "f8df42f5380edde2d9e6855de701bf4fb3e3a1e71a798742049c558b757379a1"
+    },
+    "request/prepared.json.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\compact-requests\\c787e8461793402788239222e3b11552\\prepared.json.sha256",
+      "sha256": "6a49f4a4e37dad8e3ac5a2ed0b14c8f611bead21494ec3e6e9b6e48a9da3fe21"
+    },
+    "request/request.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\compact-requests\\c787e8461793402788239222e3b11552\\request.json",
+      "sha256": "94452a12cd960968d2b9b5e05e541e13167767aebd0d5e7e5caa3c6cf9709877"
+    },
+    "audit/audit.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\compact-memory-request-audits\\68f270d321dd4702a1d5bb1e28113ab4\\audit.json",
+      "sha256": "00460306cddb619e0cbb559cea5c3666771af6e1fc6db29230fde8581acff3ed"
+    },
+    "audit/audit.json.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\compact-memory-request-audits\\68f270d321dd4702a1d5bb1e28113ab4\\audit.json.sha256",
+      "sha256": "5a1898b8f698130f3461ba9c9b31c5c3dbd66c9ee02525b048b10f608751b75b"
+    },
+    "audit/events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\compact-memory-request-audits\\68f270d321dd4702a1d5bb1e28113ab4\\events.jsonl",
+      "sha256": "50511301b20e3cfc2d04368269ff88ca0dc9b1607e302eb2be25ab1ddb86a63c"
+    },
+    "audit-compact-memory-request.py": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\audit-compact-memory-request.py",
+      "sha256": "a55ccac37866225f153aa090e8597d152a61b2ad25034f1de104a721d882bbb6"
+    }
+  }
+}

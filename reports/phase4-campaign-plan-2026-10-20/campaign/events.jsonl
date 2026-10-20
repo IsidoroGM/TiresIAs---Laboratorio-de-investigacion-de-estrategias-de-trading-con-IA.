@@ -1,0 +1,2 @@
+{"schema_version": 1, "at": "2026-10-20T08:31:52.649021+00:00", "event": "campaign_plan_started", "data": {"guided_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\guided-compact-requests\\1a1d0783778243ac989ca1ab3fc49911", "requested_limits": {"max_proposals": 3, "max_backtests": 6}}}
+{"schema_version": 1, "at": "2026-10-20T08:33:55.830023+00:00", "event": "campaign_plan_prepared", "data": {"sha256": "c9aeef16e3f94f6cdf07c9d35f63c20aed402d7ac915aeb275e6e07cb628ba48", "status": "planned_not_activated", "executable": false}}

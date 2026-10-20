@@ -1,0 +1,493 @@
+{
+  "schema_version": 1,
+  "status": "profiled_read_only",
+  "guided_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\guided-compact-requests\\1a1d0783778243ac989ca1ab3fc49911",
+  "guided_request_sha256": "012b1a7ff0231c3bac2a26c043676b9dcdd75cc828d4d0124038522ee72f53ce",
+  "elapsed_wall_seconds": 85.696711,
+  "profile_total_calls": 88451788,
+  "profile_primitive_calls": 88431079,
+  "top_cumulative_functions": [
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\guided_compact_request.py",
+      "line": 86,
+      "function": "verify_guided_request",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "own_seconds": 5.3e-05,
+      "cumulative_seconds": 85.692537
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\guided_compact_request.py",
+      "line": 28,
+      "function": "_build",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "own_seconds": 6.4e-05,
+      "cumulative_seconds": 85.599536
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\robustness.py",
+      "line": 36,
+      "function": "_development",
+      "primitive_calls": 196,
+      "total_calls": 196,
+      "own_seconds": 3.296831,
+      "cumulative_seconds": 79.830795
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\data.py",
+      "line": 30,
+      "function": "load_ecb_rates",
+      "primitive_calls": 196,
+      "total_calls": 196,
+      "own_seconds": 2.466847,
+      "cumulative_seconds": 72.21465
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\compact_request.py",
+      "line": 109,
+      "function": "verify_compact_request",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "own_seconds": 5.4e-05,
+      "cumulative_seconds": 69.732061
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\compact_request.py",
+      "line": 42,
+      "function": "_build",
+      "primitive_calls": 2,
+      "total_calls": 2,
+      "own_seconds": 0.000264,
+      "cumulative_seconds": 69.650571
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\structured_draft_request.py",
+      "line": 105,
+      "function": "verify_draft_request",
+      "primitive_calls": 21,
+      "total_calls": 21,
+      "own_seconds": 0.001112,
+      "cumulative_seconds": 64.445478
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\structured_draft_request.py",
+      "line": 63,
+      "function": "_record",
+      "primitive_calls": 21,
+      "total_calls": 21,
+      "own_seconds": 0.0042,
+      "cumulative_seconds": 64.411274
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\structured_review_memory.py",
+      "line": 170,
+      "function": "verify_review_memory",
+      "primitive_calls": 21,
+      "total_calls": 21,
+      "own_seconds": 0.001855,
+      "cumulative_seconds": 64.152479
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\structured_review_memory.py",
+      "line": 109,
+      "function": "_record",
+      "primitive_calls": 21,
+      "total_calls": 21,
+      "own_seconds": 0.007998,
+      "cumulative_seconds": 64.109097
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\structured_review_memory.py",
+      "line": 50,
+      "function": "_entry",
+      "primitive_calls": 42,
+      "total_calls": 42,
+      "own_seconds": 0.023522,
+      "cumulative_seconds": 54.604992
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\compact_history.py",
+      "line": 174,
+      "function": "verify_compact_history",
+      "primitive_calls": 3,
+      "total_calls": 3,
+      "own_seconds": 0.00011,
+      "cumulative_seconds": 46.944469
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\structured_generation.py",
+      "line": 26,
+      "function": "_scope",
+      "primitive_calls": 14,
+      "total_calls": 14,
+      "own_seconds": 0.00037,
+      "cumulative_seconds": 42.904284
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\structured_ideas.py",
+      "line": 235,
+      "function": "verify_structured_idea",
+      "primitive_calls": 92,
+      "total_calls": 92,
+      "own_seconds": 0.038079,
+      "cumulative_seconds": 39.392854
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\compact_history.py",
+      "line": 145,
+      "function": "_record",
+      "primitive_calls": 3,
+      "total_calls": 3,
+      "own_seconds": 0.000247,
+      "cumulative_seconds": 37.712821
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\structured_planning.py",
+      "line": 31,
+      "function": "_source",
+      "primitive_calls": 84,
+      "total_calls": 84,
+      "own_seconds": 0.060287,
+      "cumulative_seconds": 36.221638
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\compact_request.py",
+      "line": 70,
+      "function": "_record",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "own_seconds": 4.7e-05,
+      "cumulative_seconds": 35.590134
+    },
+    {
+      "filename": "C:\\Python314\\Lib\\xml\\etree\\ElementTree.py",
+      "line": 1213,
+      "function": "parse",
+      "primitive_calls": 196,
+      "total_calls": 196,
+      "own_seconds": 0.002793,
+      "cumulative_seconds": 35.488084
+    },
+    {
+      "filename": "C:\\Python314\\Lib\\xml\\etree\\ElementTree.py",
+      "line": 553,
+      "function": "parse",
+      "primitive_calls": 196,
+      "total_calls": 196,
+      "own_seconds": 5.620024,
+      "cumulative_seconds": 35.485222
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\structured_session.py",
+      "line": 82,
+      "function": "_load",
+      "primitive_calls": 42,
+      "total_calls": 42,
+      "own_seconds": 0.012695,
+      "cumulative_seconds": 35.335736
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\structured_freshness.py",
+      "line": 59,
+      "function": "require_current_request",
+      "primitive_calls": 2,
+      "total_calls": 2,
+      "own_seconds": 0.000329,
+      "cumulative_seconds": 32.055711
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\structured_freshness.py",
+      "line": 28,
+      "function": "inspect_request_freshness",
+      "primitive_calls": 2,
+      "total_calls": 2,
+      "own_seconds": 0.00072,
+      "cumulative_seconds": 32.055382
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\data.py",
+      "line": 13,
+      "function": "_read_rate",
+      "primitive_calls": 2107000,
+      "total_calls": 2107000,
+      "own_seconds": 2.479559,
+      "cumulative_seconds": 31.765345
+    },
+    {
+      "filename": "~",
+      "line": 0,
+      "function": "<method '_parse_whole' of 'xml.etree.ElementTree.XMLParser' objects>",
+      "primitive_calls": 196,
+      "total_calls": 196,
+      "own_seconds": 29.836429,
+      "cumulative_seconds": 29.836429
+    },
+    {
+      "filename": "~",
+      "line": 0,
+      "function": "<method 'findall' of 'xml.etree.ElementTree.Element' objects>",
+      "primitive_calls": 1053696,
+      "total_calls": 1053696,
+      "own_seconds": 0.636563,
+      "cumulative_seconds": 29.361934
+    }
+  ],
+  "selected_module_functions": [
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\compact_history.py",
+      "line": 31,
+      "function": "_claims",
+      "primitive_calls": 3,
+      "total_calls": 3,
+      "own_seconds": 0.000109,
+      "cumulative_seconds": 0.002638
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\data.py",
+      "line": 13,
+      "function": "_read_rate",
+      "primitive_calls": 2107000,
+      "total_calls": 2107000,
+      "own_seconds": 2.479559,
+      "cumulative_seconds": 31.765345
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\structured_draft_request.py",
+      "line": 34,
+      "function": "_request",
+      "primitive_calls": 21,
+      "total_calls": 21,
+      "own_seconds": 0.000413,
+      "cumulative_seconds": 0.011259
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\robustness.py",
+      "line": 36,
+      "function": "_development",
+      "primitive_calls": 196,
+      "total_calls": 196,
+      "own_seconds": 3.296831,
+      "cumulative_seconds": 79.830795
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\compact_history.py",
+      "line": 75,
+      "function": "_entry",
+      "primitive_calls": 3,
+      "total_calls": 3,
+      "own_seconds": 0.000478,
+      "cumulative_seconds": 28.455675
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\structured_draft_request.py",
+      "line": 63,
+      "function": "_record",
+      "primitive_calls": 21,
+      "total_calls": 21,
+      "own_seconds": 0.0042,
+      "cumulative_seconds": 64.411274
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\structured_draft_request.py",
+      "line": 105,
+      "function": "verify_draft_request",
+      "primitive_calls": 21,
+      "total_calls": 21,
+      "own_seconds": 0.001112,
+      "cumulative_seconds": 64.445478
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\compact_history.py",
+      "line": 56,
+      "function": "_snapshot",
+      "primitive_calls": 6,
+      "total_calls": 6,
+      "own_seconds": 9.9e-05,
+      "cumulative_seconds": 0.196991
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\data.py",
+      "line": 30,
+      "function": "load_ecb_rates",
+      "primitive_calls": 196,
+      "total_calls": 196,
+      "own_seconds": 2.466847,
+      "cumulative_seconds": 72.21465
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\structured_freshness.py",
+      "line": 28,
+      "function": "inspect_request_freshness",
+      "primitive_calls": 2,
+      "total_calls": 2,
+      "own_seconds": 0.00072,
+      "cumulative_seconds": 32.055382
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\data.py",
+      "line": 70,
+      "function": "<lambda>",
+      "primitive_calls": 1053500,
+      "total_calls": 1053500,
+      "own_seconds": 0.09525,
+      "cumulative_seconds": 0.09525
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\compact_history.py",
+      "line": 145,
+      "function": "_record",
+      "primitive_calls": 3,
+      "total_calls": 3,
+      "own_seconds": 0.000247,
+      "cumulative_seconds": 37.712821
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\compact_history.py",
+      "line": 174,
+      "function": "verify_compact_history",
+      "primitive_calls": 3,
+      "total_calls": 3,
+      "own_seconds": 0.00011,
+      "cumulative_seconds": 46.944469
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\compact_history.py",
+      "line": 48,
+      "function": "<genexpr>",
+      "primitive_calls": 9,
+      "total_calls": 9,
+      "own_seconds": 1e-05,
+      "cumulative_seconds": 2.9e-05
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\structured_draft_request.py",
+      "line": 59,
+      "function": "_code_hashes",
+      "primitive_calls": 60,
+      "total_calls": 60,
+      "own_seconds": 0.00053,
+      "cumulative_seconds": 0.431256
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\structured_freshness.py",
+      "line": 24,
+      "function": "_code_hashes",
+      "primitive_calls": 39,
+      "total_calls": 39,
+      "own_seconds": 0.000291,
+      "cumulative_seconds": 0.283788
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\structured_freshness.py",
+      "line": 59,
+      "function": "require_current_request",
+      "primitive_calls": 2,
+      "total_calls": 2,
+      "own_seconds": 0.000329,
+      "cumulative_seconds": 32.055711
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\compact_history.py",
+      "line": 57,
+      "function": "<genexpr>",
+      "primitive_calls": 39,
+      "total_calls": 39,
+      "own_seconds": 0.000105,
+      "cumulative_seconds": 0.005168
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\compact_history.py",
+      "line": 58,
+      "function": "<genexpr>",
+      "primitive_calls": 39,
+      "total_calls": 39,
+      "own_seconds": 4.7e-05,
+      "cumulative_seconds": 0.001651
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\structured_draft_request.py",
+      "line": 67,
+      "function": "<genexpr>",
+      "primitive_calls": 84,
+      "total_calls": 84,
+      "own_seconds": 0.001786,
+      "cumulative_seconds": 0.037323
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\compact_history.py",
+      "line": 27,
+      "function": "_code_hashes",
+      "primitive_calls": 7,
+      "total_calls": 7,
+      "own_seconds": 8.6e-05,
+      "cumulative_seconds": 0.108984
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\structured_freshness.py",
+      "line": 18,
+      "function": "_current",
+      "primitive_calls": 4,
+      "total_calls": 4,
+      "own_seconds": 0.000212,
+      "cumulative_seconds": 19.713048
+    },
+    {
+      "filename": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\structured_freshness.py",
+      "line": 46,
+      "function": "<genexpr>",
+      "primitive_calls": 10,
+      "total_calls": 10,
+      "own_seconds": 3e-06,
+      "cumulative_seconds": 3e-06
+    }
+  ],
+  "concurrent_pytest": true,
+  "benchmark_or_speedup_claimed": false,
+  "code_optimized": false,
+  "io_guard": {
+    "provider_calls": 0,
+    "signals": 0,
+    "backtests": 0,
+    "outer_reads": 0
+  },
+  "old_copies_and_original_references_checked": 252,
+  "new_usage": {
+    "model_requests": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "api_cost_usd": "0",
+    "backtests": 0
+  },
+  "budget_before": {
+    "identity": {
+      "schema_version": 1,
+      "scope": "compact_new_idea",
+      "development_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+      "pair": "EUR/USD"
+    },
+    "consumed": true,
+    "reservation_run": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\compact-generations\\261e5b75a6f140f99eb0eb9ae02960eb",
+    "scope": "compact_generation_only_not_legacy_revision_budget",
+    "transport_enabled": false,
+    "generation_ready": false,
+    "executable": false
+  },
+  "budget_after": {
+    "identity": {
+      "schema_version": 1,
+      "scope": "compact_new_idea",
+      "development_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+      "pair": "EUR/USD"
+    },
+    "consumed": true,
+    "reservation_run": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\compact-generations\\261e5b75a6f140f99eb0eb9ae02960eb",
+    "scope": "compact_generation_only_not_legacy_revision_budget",
+    "transport_enabled": false,
+    "generation_ready": false,
+    "executable": false
+  },
+  "executable": false,
+  "project_status_sha256": "53bcda9b54a6cc70a016da47e99d5023f646aed90c3d6277e4d0abf7cc72417e",
+  "phase_closed": false
+}

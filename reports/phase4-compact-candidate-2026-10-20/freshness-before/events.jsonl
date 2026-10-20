@@ -1,0 +1,2 @@
+{"schema_version": 1, "at": "2026-10-19T22:31:40.281390+00:00", "event": "structured_freshness_started", "data": {"request_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\structured-draft-requests\\1646833181eb44c386eb32872f245afa"}}
+{"schema_version": 1, "at": "2026-10-19T22:31:51.595314+00:00", "event": "structured_freshness_completed", "data": {"sha256": "4a39297d7e587cd2207e23252c1c91aad0783f34b6eb5bf267e47380c7ba2266", "status": "current", "executable": false}}

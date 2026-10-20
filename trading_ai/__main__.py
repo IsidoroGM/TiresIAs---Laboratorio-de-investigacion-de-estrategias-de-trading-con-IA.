@@ -1,9 +1,10 @@
-"""Punto de entrada de Trading AI."""
+"""Punto de entrada de TiresIAs."""
 
 import argparse
 from decimal import Context, Decimal, InvalidOperation, localcontext
 from pathlib import Path
 
+from trading_ai import PROJECT_TITLE
 from trading_ai.reporting import write_comparison_report, write_report
 from trading_ai.sensitivity import write_sensitivity_report
 from trading_ai.backtesting import validate_initial_capital
@@ -43,7 +44,7 @@ def _cost_percent(text: str) -> Decimal:
 
 def main(argv: list[str] | None = None) -> None:
     """Muestra la presentación o genera el informe educativo solicitado."""
-    parser = argparse.ArgumentParser(description="Trading AI - laboratorio educativo")
+    parser = argparse.ArgumentParser(description=PROJECT_TITLE)
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--report", action="store_true", help="Generar el informe de cruces de medias de los cuatro pares")
     mode.add_argument("--compare", action="store_true", help="Comparar SMA y EMA bajo los mismos supuestos")
@@ -69,7 +70,7 @@ def main(argv: list[str] | None = None) -> None:
     except (ValueError, TypeError) as error:
         parser.error(str(error))
     if not args.report and not args.compare and not args.sensitivity:
-        print("Trading AI - laboratorio educativo")
+        print(PROJECT_TITLE)
         print("FASE 2 completada - simulación educativa. Usa --report, --compare o --sensitivity.")
         return
     try:

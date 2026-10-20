@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "files": {
+    "guided/events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\guided-compact-requests\\1a1d0783778243ac989ca1ab3fc49911\\events.jsonl",
+      "sha256": "724734d2c8d598513dd57476db7a3cfe60e445bf9a58001d65c3d93e47f046e8"
+    },
+    "guided/guided.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\guided-compact-requests\\1a1d0783778243ac989ca1ab3fc49911\\guided.json",
+      "sha256": "e636c22a88135c581ee2c69e0015b1f7403a00f50d838d34bc9543850a3987d0"
+    },
+    "guided/guided.json.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\guided-compact-requests\\1a1d0783778243ac989ca1ab3fc49911\\guided.json.sha256",
+      "sha256": "72abc86a86f24d9e15b6250ba0341d10012fe75d6fe07d8baf2a1e3446e455cd"
+    },
+    "guided/request.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\guided-compact-requests\\1a1d0783778243ac989ca1ab3fc49911\\request.json",
+      "sha256": "012b1a7ff0231c3bac2a26c043676b9dcdd75cc828d4d0124038522ee72f53ce"
+    },
+    "audit/audit.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\guided-request-audits\\277e89e01e34425481f218e4b42ff6c6\\audit.json",
+      "sha256": "4e7ba6592d408d2f3610942198bc8ea2b8713bde712e3ef3eebb306974293c95"
+    },
+    "audit/audit.json.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\guided-request-audits\\277e89e01e34425481f218e4b42ff6c6\\audit.json.sha256",
+      "sha256": "e1287b8f91090c41debff4a25cf1294ba75844934e6661c31cf5e5c93bbeb75a"
+    },
+    "audit/events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\guided-request-audits\\277e89e01e34425481f218e4b42ff6c6\\events.jsonl",
+      "sha256": "f79d6893e9f4654e4eb257d57d1cda9be67245881342326dc1f1f758fa9edf7e"
+    },
+    "audit-guided-request.py": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\audit-guided-request.py",
+      "sha256": "519cc0509b0cfad4e849a8d65a44a1d61d29a899a42a49f17a257e4e9f433460"
+    }
+  }
+}

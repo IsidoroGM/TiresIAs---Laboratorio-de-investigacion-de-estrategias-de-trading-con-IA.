@@ -148,3 +148,9 @@ no se envía la petición ni se crea una reserva de generación.
 futura deberá comprobar vigencia del contexto, límites reales del proveedor y
 reserva explícita antes de consultar un modelo. Esta preparación no reformula
 propuestas pendientes, no continúa linajes y no habilita simulaciones.
+
+La preparación anterior permanece sin envío. El [flujo compacto separado](COMPACT_CANDIDATES.md)
+ya añade vigencia, reserva exclusiva, una consulta local, revisión y plan. Su
+ejecutor exige una acción explícita posterior y no acepta propuestas duplicadas
+o pendientes. No cambia los permisos de esta vista previa ni de una petición
+preparada.

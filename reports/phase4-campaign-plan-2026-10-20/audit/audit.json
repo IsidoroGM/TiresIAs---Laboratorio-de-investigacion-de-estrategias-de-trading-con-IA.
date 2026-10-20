@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "status": "verified_not_activated",
+  "campaign_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-plans\\37316f24fb92479aa7b9af4ab8134ed0",
+  "source_guided": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\guided-compact-requests\\1a1d0783778243ac989ca1ab3fc49911",
+  "scope_id": "f0e9b3af64f68a6d66642d794bb1df57ee0a5d677f841e1334997e752ae29e38",
+  "planned_limits": {
+    "max_proposals": 3,
+    "max_backtests": 6
+  },
+  "inherited_budget_consumed": true,
+  "history_omitted": 0,
+  "request_bytes": 12142,
+  "blocked_calls": {
+    "network": 0,
+    "provider": 0,
+    "calculation": 0,
+    "legacy_reservation": 0,
+    "outer_evaluation": 0
+  },
+  "prior_inventories": 17,
+  "prior_copies_verified": 262,
+  "prior_original_references_verified": 262,
+  "access_files_unchanged": 9,
+  "project_status_sha256": "53bcda9b54a6cc70a016da47e99d5023f646aed90c3d6277e4d0abf7cc72417e",
+  "new_usage": {
+    "model_requests": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "api_cost_usd": "0",
+    "backtests": 0
+  },
+  "executable": false
+}

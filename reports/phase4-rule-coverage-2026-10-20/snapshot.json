@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "files": {
+    "coverage/coverage.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\rule-coverage\\048d7ee5c7da4292b09f2e952882626a\\coverage.json",
+      "sha256": "15afc70f0e39a998f7e8e363008a5244232777b9f03a0ad37ff83ec83c4c2c38"
+    },
+    "coverage/coverage.json.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\rule-coverage\\048d7ee5c7da4292b09f2e952882626a\\coverage.json.sha256",
+      "sha256": "5bbf85ce27a78e56883afe5440b50b84e791dab07fc66112938c36b621ed6ab8"
+    },
+    "coverage/events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\rule-coverage\\048d7ee5c7da4292b09f2e952882626a\\events.jsonl",
+      "sha256": "daff68c3c8d666bdecae234468f6b4cc4afccaa41bc7af7723d792a0f5cc08a8"
+    },
+    "coverage/report.md": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\rule-coverage\\048d7ee5c7da4292b09f2e952882626a\\report.md",
+      "sha256": "fde473b2dc3a291483a18d24b2119349031a89516c29270fcb9972cb9c92dd66"
+    },
+    "audit/audit.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\rule-coverage-audits\\96bbeeae8f2a427faca1f1e187f2a71b\\audit.json",
+      "sha256": "a810bee780f6a4639c68807df141a08a52f0d4e4e8efca93a2c1061017a25c68"
+    },
+    "audit/audit.json.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\rule-coverage-audits\\96bbeeae8f2a427faca1f1e187f2a71b\\audit.json.sha256",
+      "sha256": "409d181b70c1990b060dbe502ebd66eca28675f1ec85bbbf65c6c886ed6307e7"
+    },
+    "audit/events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\rule-coverage-audits\\96bbeeae8f2a427faca1f1e187f2a71b\\events.jsonl",
+      "sha256": "102f4293b2a99110d3ce1a502191978bd824f2148d8d1a67696123122e1b650f"
+    },
+    "audit-rule-coverage.py": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\audit-rule-coverage.py",
+      "sha256": "c63d0449c7ef5c381c860cb46d332bb730a1f325e05c8ee6b41e135af84b536b"
+    }
+  }
+}

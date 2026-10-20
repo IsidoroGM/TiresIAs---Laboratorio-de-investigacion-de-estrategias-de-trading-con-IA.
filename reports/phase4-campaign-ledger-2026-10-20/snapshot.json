@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "files": {
+    "audit.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-ledger-audits\\261a7f9f850e425f906a78148e04add9\\audit.json",
+      "sha256": "cc6f2f33235fcdcd28db29af01775c9649e981146f1f4faecae04ad8b9f03a75"
+    },
+    "audit.json.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-ledger-audits\\261a7f9f850e425f906a78148e04add9\\audit.json.sha256",
+      "sha256": "4fc1a00d97269191694c091be5eef2a4b69e443555241b2d404c68bfa55ba70a"
+    },
+    "events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-ledger-audits\\261a7f9f850e425f906a78148e04add9\\events.jsonl",
+      "sha256": "184aa23a82b0dcf2f81f8863ccbc56448a1eae8c94fbb759169fa8de1cee796c"
+    },
+    "ledger-state.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-ledger-audits\\261a7f9f850e425f906a78148e04add9\\ledger-state.json",
+      "sha256": "e1ada8f5f761f173b9eca747c4c53c18cfcb1ac9f140e6de8f44662675eb1e8d"
+    },
+    "registry-snapshot.sqlite3": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-ledger-audits\\261a7f9f850e425f906a78148e04add9\\registry-snapshot.sqlite3",
+      "sha256": "d96dd03413d8d53676b670faebbcafdbe6111bbf6e8273601c82f100452bcb56"
+    },
+    "audit-campaign-ledger.py": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\audit-campaign-ledger.py",
+      "sha256": "de9df8cd35f4dd6d3c2e733ccf0004ff4443e10ee3a218fa58d309115820e378"
+    },
+    "source/campaign_ledger.py": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\campaign_ledger.py",
+      "sha256": "a5ea7baab7a17966ae46a26ac5edc8f8141840f3027560f90957a063d3606845"
+    },
+    "source/campaign_ledger_tests.py": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\tests\\test_campaign_ledger.py",
+      "sha256": "0ace9d4e41ef993e0bb9930eee0c1ac44512df712ff69a229bd8c20a6ef14b77"
+    }
+  }
+}

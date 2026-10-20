@@ -1,0 +1,2 @@
+{"schema_version": 1, "at": "2026-10-20T08:31:52.246636+00:00", "event": "campaign_plan_audit_started", "data": {"guided_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\guided-compact-requests\\1a1d0783778243ac989ca1ab3fc49911"}}
+{"schema_version": 1, "at": "2026-10-20T08:34:57.810934+00:00", "event": "campaign_plan_audit_completed", "data": {"sha256": "b857ce2ffce9eef11ce0c17e910eff5a413cff59ed53a5c862b381b0b27b2473", "status": "verified_not_activated", "executable": false}}
