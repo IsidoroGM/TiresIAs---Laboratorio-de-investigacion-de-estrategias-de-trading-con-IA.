@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "status": "controlled_checks_completed",
+  "scope_id": "f0e9b3af64f68a6d66642d794bb1df57ee0a5d677f841e1334997e752ae29e38",
+  "cycle_permit": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-cycle-permits\\9c716f1ae063496fa9f048ca904ac7f7",
+  "cycle_run": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-cycles\\eaba7b8479034eb69e52838fa1919715",
+  "cycle_outcome": "duplicate_rules",
+  "walk_forward_plan": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\walk-forward-plans\\3381646bffa84da0be71625b6fa42982",
+  "walk_forward_run": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\walk-forward-runs\\c4efcbf170af4d23a1d961c05546ef12",
+  "counters": {
+    "local_metadata_requests": 6,
+    "local_model_request_attempts": 1,
+    "cycle_backtests": 0,
+    "walk_forward_backtests": 20,
+    "forbidden_network": 0,
+    "outer_evaluation": 0
+  },
+  "registered_terms_unchanged": true,
+  "historical_access_files_unchanged": 9,
+  "prior_copies_verified": 332,
+  "prior_inventories": 24,
+  "walk_forward_fold_outcomes": [
+    {
+      "index": 1,
+      "selected_id": "7e03401502b4ed285f5461a60962174a4dfc72a674eacec54341aee52f656b72",
+      "check_status": "calculated",
+      "assessment": {
+        "criterion_status": "not_met",
+        "return_comparison": "higher",
+        "drawdown_comparison": "higher",
+        "scope": "known_development_history_only",
+        "origin": "python"
+      }
+    },
+    {
+      "index": 2,
+      "selected_id": null,
+      "check_status": "not_run_no_selection",
+      "assessment": null
+    },
+    {
+      "index": 3,
+      "selected_id": null,
+      "check_status": "not_run_no_selection",
+      "assessment": null
+    }
+  ],
+  "api_cost_usd": "0",
+  "scope": "known_development_history_only",
+  "independent_validation": false,
+  "automatic_adoption": false,
+  "broker_operations_allowed": false,
+  "full_suite_pending": true
+}

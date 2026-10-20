@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "status": "verified_empty_memory_no_research_actions",
+  "scope_id": "f0e9b3af64f68a6d66642d794bb1df57ee0a5d677f841e1334997e752ae29e38",
+  "blocked_calls": {
+    "network": 0,
+    "provider": 0,
+    "calculation": 0,
+    "legacy_reservation": 0,
+    "outer_evaluation": 0,
+    "campaign_reservation": 0,
+    "capture_write": 0,
+    "review_or_plan_write": 0,
+    "permission_or_execution_write": 0
+  },
+  "prior_inventories": 23,
+  "prior_copies_verified": 317,
+  "prior_original_references_verified": 317,
+  "access_files_unchanged": 9,
+  "roots_unchanged": {
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-calculation-permissions": null,
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-permissions": null,
+    "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-executions": null
+  },
+  "database_sha256": "a28bffdcfec2377a7685068b8f8ac3c19aef77bd6d6edf67f0492fa1bb222b57",
+  "project_status_sha256": "53bcda9b54a6cc70a016da47e99d5023f646aed90c3d6277e4d0abf7cc72417e",
+  "memory_run": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-memory\\00b3e4e65fde4f59aae5f18c3ec81880",
+  "new_usage": {
+    "model_requests": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "api_cost_usd": "0",
+    "backtests": 0
+  },
+  "timings": {
+    "uncached_query_seconds": 149.39027319999877,
+    "first_cached_query_seconds": 80.49958950000291,
+    "warmed_cached_query_seconds": 4.814101399999345,
+    "cache_stats": {
+      "full_guided_validations": 1,
+      "guarded_guided_hits": 7
+    },
+    "scope": "same_empty_registered_campaign_read_queries_not_backtest_or_model_timing"
+  },
+  "inherited_compact_usage": [
+    {
+      "api_cost_usd": "0",
+      "metadata_request_attempts": 6,
+      "model_requests": 1,
+      "usage": [
+        {
+          "api_cost_usd": "0",
+          "cached_input_tokens": 0,
+          "duration_ns": 71453363800,
+          "input_tokens": 2262,
+          "metadata_request_attempts": 4,
+          "output_tokens": 176
+        }
+      ]
+    }
+  ],
+  "automatic_local_cycle_enabled": false,
+  "future_model_context_integrated": false
+}

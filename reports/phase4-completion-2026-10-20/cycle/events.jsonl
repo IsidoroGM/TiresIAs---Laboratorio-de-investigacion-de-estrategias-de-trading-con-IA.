@@ -1,0 +1,2 @@
+{"schema_version": 1, "at": "2026-10-20T13:00:32.304459+00:00", "event": "cycle_started", "data": {"permit_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-cycle-permits\\9c716f1ae063496fa9f048ca904ac7f7"}}
+{"schema_version": 1, "at": "2026-10-20T13:02:15.181213+00:00", "event": "cycle_completed", "data": {"sha256": "0424f2985233c57407e03034428238c4d751f540841c7ab5af54b7b0b92984f2", "status": null, "executable": false}}

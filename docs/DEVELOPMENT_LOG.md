@@ -955,3 +955,382 @@ Consumo nuevo del modelo del proyecto: 0 llamadas, 0 tokens y 0 USD API;
 sin simulaciones de investigación nuevas. Los datos artificiales de las pruebas
 no son resultados de estrategias reales. Cambios pendientes previos conservados;
 sin instalaciones, servicios, commits o pushes.
+
+### Primer control de campañas de TiresIAs - 20/10/2026
+
+Git inicial limpio en main, HEAD 3d0fa83; los cambios anteriores ya estaban
+incorporados en ese commit al iniciar esta petición. Se añade
+trading_ai/campaign_controller.py sin modificar módulos históricos sellados.
+La CLI solo consulta un ámbito registrado: verifica plan y memoria guiada
+vigentes, controles, límites, reservas y consumo de todas sus capturas.
+
+Cada petición debe conservar exactamente los bytes del plan registrado y el
+contrato compacto. Las reglas se validan con el compilador existente y sus
+descripciones las deriva Python; no se atribuye prosa o hipótesis al modelo.
+Se separan error del proveedor, reglas inválidas, duplicado histórico y candidata
+pendiente de revisión. Errores e intentos consumidos se conservan, sin completar
+JSON o textos. El origen de las observaciones sigue siendo declaración del
+llamador; no se acredita transporte o identidad del proveedor.
+
+El consumo desconocido, una captura interrumpida, una petición ajena o una reserva
+de comparación sin revisión controlada exigen parar. Se releen fuentes, huellas,
+registro y capturas para detectar cambios durante la consulta. Es un control
+optimista, sin bloqueo global. Se declara que todavía no hay una petición futura
+con toda la memoria de campaña, permiso de ejecución, envío controlado o enlace
+de revisión aceptada, plan y reserva del motor. Capacidad ejecutable siempre cero.
+
+Pruebas: primer pase de 31 aprobadas en 94,31 s; tras ampliar contratos, pase
+conjunto de 144 aprobadas en 230,06 s: 39 plan, 29 ledger, 41 capturas y 35 nuevas.
+Incluye fuentes guiadas completas, cambios durante la consulta y transporte falso.
+Temporales exclusivos y caché desactivada según AGENTS.md. Recolección global:
+1397 pruebas en 0,76 s; no equivale a una suite global ejecutada. La última global
+comprobada sigue siendo 1253. Sin errores de pruebas o de la auditoría.
+
+Auditoría real 389adb9a10f1408ea0fb17609bbd4f6b: campaña inactiva, sin reservas,
+capturas o propuestas nuevas. Siete contadores de red/proveedor/cálculo/reserva
+heredada/evaluación exterior/reserva de campaña/escritura de capturas todos cero.
+SQLite conserva sus bytes, los 9 archivos históricos de reservas están intactos
+y las raíces de capturas siguen sin crear. 289 copias y referencias previas
+intactas, 8 nuevas: 297 entre 21 inventarios concretos, no archivos físicos únicos.
+Evidencia: reports/phase4-campaign-controller-2026-10-20.md. Se añade documentación
+de uso y enlaces desde README, el plan del investigador y el plan de campañas.
+
+Consumo nuevo real del investigador: 0 llamadas, 0 tokens, 0 USD API, 0 backtests.
+El consumo heredado compacto 2262/176 y 0 USD API permanece separado; no es el
+total de la aplicación. Las observaciones de pruebas son artificiales. No se
+repite la reformulación 2d0040bbd7184c1d9cbde9a8eef3ce3b, no se simulan propuestas
+pendientes y no se reutiliza evaluación conocida como inédita. Sin instalaciones,
+servicios nuevos, dinero real, commits o pushes. PROJECT_STATUS.md conserva su
+SHA-256 y FASE 4 continúa abierta. Siguiente incremento: registrar la revisión
+técnica de las capturas válidas y vincular su plan antes del ejecutor con permiso
+de campaña, memoria completa y reserva compartida del motor.
+
+Comprobaciones finales: HEAD 3d0fa83, 10 entradas pendientes, git diff --check
+correcto y 85 enlaces locales comprobados. Las 297 copias y referencias de los
+21 inventarios conservan sus bytes. No se ha realizado commit o push.
+
+### Revisión técnica y plan de experimento de campaña - 20/10/2026
+
+Inicio: main, HEAD 3d0fa83, 10 entradas pendientes conservadas. Se añaden
+campaign_review.py y campaign_experiment.py sin modificar los módulos sellados.
+La revisión usa una captura válida y su reserva exacta, con memoria guiada vigente,
+consumo verificable y controles fijados. La declaración identifica campaña,
+petición, recibo, observación y reglas; no permite introducir cambios de riesgo
+o resultados. Aceptar exige las seis comprobaciones booleanas. Motivo y revisor
+permanecen como declaraciones no verificadas, sin prueba de rentabilidad o autoría.
+
+Una reserva global exclusiva por captura impide sustituir o repetir la decisión
+cambiando la carpeta. Un fallo después de reservar conserva el intento; una
+declaración inválida anterior queda registrada sin consumir la revisión. Se
+conservan decisiones accepted/rejected/needs_clarification sin reintentos o
+reformulaciones automáticas. No se aprueban duplicados o revisiones retroactivas
+después de reservar comparaciones. La consulta de estado solo lee el registro.
+
+Una revisión aceptada permite preparar un plan con las reglas exactas, datos de
+desarrollo, controles y objetivo congelados. Prevé dos backtests, base y candidata,
+con cuentas independientes y ejecución posterior, sin variaciones o consultas
+al modelo. Comprueba dos huecos contables y ausencia de comparación o cálculo
+consumido. Conserva la identidad de cálculo compartida con los ejecutores previos.
+Preparar o verificar no reserva cálculos, ejecuta herramientas o devuelve huecos;
+una reserva posterior no borra los artefactos históricos. Se guardan errores y
+archivos parciales. Los contratos nuevos no activan los ejecutores anteriores.
+
+Pruebas nuevas: 30 de revisión aprobadas en 88,16 s; 17 de planificación e
+integración en 270,89 s; una adicional de rechazo por ejecutores anteriores en
+7,59 s. Son 48 distintas verificadas en tres pases, no un pase conjunto o global.
+Temporales exclusivos y caché de pytest desactivada según AGENTS.md. Recolección
+global: 1445 en 0,72 s; no equivale a ejecución. Última global comprobada: 1253.
+Sin errores de pruebas o auditoría. La integración usa fuentes completas,
+transporte falso, reglas artificiales y caché de lectura validada explícita;
+no activa esa caché por defecto. El recorrido de verificaciones sigue siendo
+costoso; estos tiempos no miden rendimiento real de producción.
+
+Auditoría real fee3b2c854f94fe0901844061da9424c: consulta vacía del registro de
+revisiones, campaña inactiva, sin crear capturas, revisiones o planes ficticios.
+Ocho contadores de red/proveedor/cálculo/reserva heredada/evaluación exterior/
+reserva de campaña/escritura de capturas/escritura de revisión o plan todos cero.
+SQLite conserva sus bytes, 9 archivos históricos de reservas intactos y cinco
+raíces locales sin cambios. Se comprueban 297 copias y referencias previas, se
+añaden 10: 307 entre 22 inventarios concretos, no archivos físicos únicos.
+Evidencia: reports/phase4-campaign-review-2026-10-20.md. Se documentan comandos,
+declaración y límites en CAMPAIGN_REVIEW.md y se enlazan desde los planes y README.
+
+Consumo nuevo real del investigador: 0 llamadas, 0 tokens, 0 USD API, 0 backtests.
+El consumo heredado compacto 2262/176 y 0 USD API sigue separado; no es el total
+de la aplicación. Las cifras de las pruebas son artificiales. No se repiten los
+intentos consumidos, incluida la reformulación 2d0040bbd7184c1d9cbde9a8eef3ce3b.
+No se simulan propuestas pendientes ni se reutiliza evaluación conocida como
+inédita. Sin instalaciones, servicios nuevos, dinero real, commits o pushes.
+PROJECT_STATUS.md conserva su SHA-256 y FASE 4 permanece abierta. Próximo bloque:
+permiso de campaña y ejecutor que vincule memoria completa, origen verificado,
+revisión, plan y reservas contables con la reserva compartida del motor.
+
+Comprobaciones finales: HEAD 3d0fa83, 17 entradas pendientes conservando las 10
+iniciales, git diff --check correcto y 91 enlaces locales comprobados. Las 307
+copias y referencias de 22 inventarios conservan sus bytes. Sin commit o push.
+
+### Permiso y ejecutor de comparación virtual - 20/10/2026
+
+Inicio: main, HEAD 3d0fa83, 17 entradas pendientes conservadas. Se añaden
+campaign_permission.py y campaign_execution.py sin modificar módulos sellados.
+El permiso explícito fija un plan y una comparación de dos backtests, cero
+consultas al modelo y cero USD de API. No permite cambios de parámetros,
+operaciones de bróker o evaluación exterior. Se comprueban las huellas de todas
+las capturas, consumo y revisiones del ámbito antes y durante el cálculo.
+
+La ruta nueva se identifica como offline_virtual_evaluation_of_declared_source.
+Se comprueba la cadena local de la captura sin dar por acreditados transporte
+o autoría del modelo. El llamador debe reconocer expresamente ese origen
+declarado; se conserva transport_verified: false. Es un permiso de cálculo
+offline distinto del futuro ciclo de generación con proveedor verificado.
+No se declara cumplido el transporte pendiente ni se habilitan consultas nuevas.
+
+El ejecutor ocupa primero la reserva compartida del motor y luego los dos huecos
+contables juntos. Calcula base y candidata con el motor y controles congelados,
+guarda contabilidad y análisis de Python y no adopta la propuesta automáticamente.
+Errores del registro o del motor conservan las reservas y los cálculos parciales;
+cambiar la carpeta no libera un intento. La memoria debe permanecer idéntica y
+este primer contrato no admite otras comparaciones con resultados sin incorporar.
+
+Pruebas: 25 de permisos aprobadas en 130,17 s y 17 del ejecutor, concurrencia,
+fallos e integración aprobadas en 741,11 s. Son 42 distintas en dos pases, no
+un pase conjunto o global. Se usa el motor real con referencias artificiales;
+la integración conserva los validadores completos y bloquea red, modelos,
+presupuestos heredados y evaluación exterior. Los 12 min 21 s corresponden al
+pase de 17 pruebas completo, no solo al backtest o a una medida de producción.
+El recorrido repetido de verificaciones es costoso; queda pendiente optimizarlo
+sin perder comprobaciones. La integración usa caché de lectura validada explícita,
+sin activarla por defecto en producción. Sin errores de pruebas o auditoría.
+Recolección global: 1487 en 0,88 s, sin ejecución global. Última global comprobada:
+1253. Temporales exclusivos y caché de pytest desactivada según AGENTS.md.
+
+Se añaden CAMPAIGN_EXECUTION.md y enlaces desde README y los planes. No se ha
+concedido permiso a la campaña de la aplicación, creado propuestas, consultado
+modelos o simulado sus candidatas pendientes. Consumo nuevo de investigación
+en la aplicación: cero llamadas, tokens, USD API y backtests. Los cálculos del
+motor sobre datos artificiales pertenecen a las pruebas y se mantienen separados.
+Auditoría real 0dd9454d25784c9d936cc397cc84c4c1: consulta vacía de permisos, campaña
+inactiva, sin permisos o ejecuciones nuevos. Nueve contadores de acciones bloqueadas
+en cero. SQLite conserva sus bytes, 9 archivos históricos de reservas intactos y
+tres raíces de permiso/ejecución sin crear. Se verifican 307 copias y referencias
+previas; se añaden 10: 317 entre 23 inventarios concretos, no archivos físicos únicos.
+Evidencia: reports/phase4-campaign-execution-2026-10-20.md. Consumo heredado compacto
+2262/176 y 0 USD API conservado aparte, sin presentarlo como total de la aplicación.
+No se repite la reformulación 2d0040bbd7184c1d9cbde9a8eef3ce3b ni se reutiliza
+evaluación conocida como inédita. PROJECT_STATUS.md conserva su SHA-256 y FASE 4
+sigue abierta. Sin instalaciones, servicios nuevos, dinero real, commits o pushes.
+Siguiente bloque: incorporar resultados a la memoria para nuevos ensayos y
+preparar el envío local controlado con procedencia verificada. La reducción de
+validaciones repetidas queda como limitación de rendimiento pendiente.
+
+Comprobaciones finales: HEAD 3d0fa83, 24 entradas pendientes conservando las 17
+iniciales; git diff --check correcto, 91 enlaces locales comprobados y 317 copias
+y referencias intactas entre 23 inventarios. Raíces reales de permisos y ejecución
+sin crear. Sin commit o push.
+
+### Memoria de resultados y verificación reutilizable - 20/10/2026
+
+Inicio: main, HEAD 3d0fa83, 24 entradas pendientes conservadas. Se añaden
+campaign_memory.py y verification_session.py y sus pruebas sin modificar módulos
+o pruebas históricos sellados. La memoria reúne reservas, propuestas, capturas y
+consumo, revisiones, permisos y resultados completos verificados por el motor.
+Conserva conclusiones negativas e inconclusas, sin adopción automática. Los
+intentos fallidos conservan error, contabilidad parcial y contadores observados;
+no se convierten en un resultado completo ni liberan reservas.
+
+Se detectan también la reserva compartida anterior a un fallo de SQLite, un
+recibo sin ejecución y el protocolo desconocido de una reserva vinculada a un
+permiso, aunque todavía no haya recibo contable. Una reserva que no sea objeto
+JSON se rechaza expresamente. Las consultas comparan dos lecturas y las memorias
+guardadas se sellan y vuelven a contrastarse con el estado actual. No se recortan
+datos: el límite de documento es 120.000 bytes. Los desconocidos y el consumo
+compacto heredado permanecen separados del consumo nuevo de la consulta.
+
+La sesión opcional de verificación reutiliza solo la lectura guiada dentro de
+una operación explícita. Cada acierto comprueba bytes, rutas, presencia, listados
+y código/configuración. No se guardan SQLite, permisos, cálculos o resultados en
+caché. Se devuelven copias independientes, se restauran lectores incluso por
+error y otros hilos sin sesión mantienen la ruta original. No hay caché persistente
+ni reintento automático al cambiar una fuente.
+
+Pruebas: 29 distintas verificadas en pases focalizados; no es una nueva suite
+global verde. Primer pase: 24 aprobadas en 206,23 s. La primera integración
+detectó el uso de argumentos de glob desde rglob en Python 3.14; corregido en
+el módulo nuevo, pasó en 177,17 s. La captura inicial de tiempos emitió un aviso
+JUnit no fatal; los XML posteriores usan junit_family=legacy. Las 12 pruebas de
+sesión pasaron después en 7,22 s. Tras ampliar controles, un pase conjunto tuvo
+27 aprobadas y una fallida en 481,69 s: se editó el nuevo módulo durante la prueba
+de guardar/verificar memoria y cambió code_sha256. No se presenta ese pase como
+verde. Se repitió esa prueba con fuentes estables junto con la de JSON no objeto:
+dos aprobadas en 58,39 s. Esta última también pasó separadamente en 18,04 s.
+La unión de casos aprobados en los tres XML finales verifica 29 distintas, con
+solapamiento. No quedan fallos de prueba sin comprobar tras su corrección.
+
+La integración conserva validadores y cálculos reales de Python sobre referencias
+artificiales, con red/modelos, presupuesto heredado y evaluación exterior bloqueados.
+Una validación guiada inicial con seguimiento tardó 6,43 s; reutilizar esa misma
+entrada con guardas, 1,22 s. Una validación completa y 84 reutilizaciones en la
+integración; no se compara ese tiempo con el de un backtest. La recolección global
+actual es 1516 en 1,07 s, sin ejecución global. La última global ejecutada sigue
+en 1253. Pytest sin caché y con temporales exclusivos conforme a AGENTS.md.
+
+Auditoría final d4c89640027443bf8debb71d948f0afd: memoria real vacía guardada en
+.local/campaign-memory/00b3e4e65fde4f59aae5f18c3ec81880. Las consultas sin caché,
+inicial con caché y repetida devuelven el mismo documento. Tiempos observados
+149,39 s, 80,50 s y 4,81 s, respectivamente; una verificación guiada completa y
+siete reutilizaciones durante consultas y guardado/verificación. Son lecturas de
+una campaña vacía, sin inferencia o simulaciones. Nueve contadores de acciones
+bloqueadas en cero, SQLite intacto, nueve archivos históricos de reservas intactos
+y raíces reales de permisos/ejecuciones sin crear. Se conservan 317 copias y
+referencias previas y se añaden 15: 332 entre 24 inventarios, no archivos físicos
+únicos. La auditoría preliminar 36b4c2155e434dd5a64dc0aa4c8541f2 queda como borrador
+local tras ampliar el control de reservas; su memoria anterior está obsoleta por
+el cambio de código y no se reutiliza como contexto. La consulta auxiliar de
+Win32_Process no estuvo disponible por permisos; no afectó a estas comprobaciones.
+
+Consumo nuevo de investigación de la aplicación: cero consultas, tokens, USD API
+y backtests. Los cálculos de prueba sobre datos artificiales van aparte. El ámbito
+compacto heredado conserva 2262/176 tokens y 0 USD, sin presentarse como consumo
+total de la aplicación. No se activa la campaña, conceden permisos nuevos o
+simulan candidatas reales pendientes. La procedencia continúa declarada, con
+transporte y autoría no acreditados. No se repite la reformulación
+2d0040bbd7184c1d9cbde9a8eef3ce3b ni se considera inédita evaluación conocida.
+
+La petición inicial permanece congelada y la memoria no se envía al modelo.
+El ciclo automático local y la incorporación de esta memoria a nuevas peticiones
+continúan pendientes. El primer permiso conserva su límite de una comparación.
+Siguiente paso: contexto renovado con resultados y control de tamaño; después
+transporte local verificado y controlador separado de revisión, cálculos y permisos.
+FASE 4 sigue abierta y PROJECT_STATUS.md conserva su SHA-256. Sin instalaciones,
+servicios nuevos, operaciones reales, commits o pushes.
+
+Detalle y evidencias: [memoria de resultados](../reports/phase4-campaign-memory-2026-10-20.md).
+
+Comprobaciones finales: HEAD 3d0fa83, 32 entradas pendientes conservando las 24
+iniciales; git diff --check correcto, 106 enlaces locales comprobados y 332 copias
+y referencias originales verificadas entre 24 inventarios. PROJECT_STATUS.md
+sin cambios. Sin commit o push.
+
+### Integración para cierre de FASE 4 - 20/10/2026
+
+Autorización nueva: continuar hasta terminar FASE 4, sin commits o pushes.
+Inicio: main, HEAD 3d0fa83, 32 entradas pendientes conservadas. Se añaden
+campaign_context.py, campaign_cycle.py y walk_forward.py sin modificar módulos
+o pruebas históricos sellados. PROJECT_STATUS.md aún no se actualiza: el cierre
+queda pendiente de la suite completa y la auditoría final.
+
+El contexto incorpora el historial íntegro y resultados nuevos mediante un
+diccionario reversible de claves y cadenas repetidas. La captura fija el esquema
+por SHA-256 y el transporte lo envía íntegro. Contrato nuevo: 12 KiB para captura,
+24 KiB para mensajes más esquema, contexto 4096 y salida 384 tokens, CPU y rechazo
+de desbordamiento sin recortes. No se amplían contadores históricos o capacidades
+del modelo. Los primeros dos pases detectaron el exceso de bytes al duplicar el
+esquema en la captura; se corrigió separando su huella y la envoltura del transporte,
+sin recortar el historial. El adaptador compacto histórico permanece intacto.
+
+El ciclo separa generación, revisión mecánica de reglas tipadas cerradas, plan,
+cálculos del motor y memoria. La revisión no inventa aceptación semántica humana:
+semantic_acceptance y automatic_adoption permanecen en false. Es un contrato de
+experimentos virtuales distinto de las revisiones/permisos manuales v1; no procesa
+sus pendientes. Las habilitaciones de generación local y cálculo virtual son
+explícitas. Máximo registrado: tres propuestas y seis backtests. El intento de
+ciclo es exclusivo por ámbito; fallos y duplicados consumen intentos sin reintento.
+No se considera una propuesta automáticamente mejor ni se reabre la reformulación
+2d0040bbd7184c1d9cbde9a8eef3ce3b. Los controles y datos permanecen congelados.
+
+El walk-forward fija tres ventanas expansivas y cinco variantes mecánicas de la
+SMA/EMA congelada: original y ventanas ±1. Selecciona exclusivamente en entrenamiento,
+sin cambiar costes, y sincroniza la selección antes de cargar el tramo en el
+cálculo de comprobación. La verificación de procedencia puede leer previamente
+el desarrollo completo, sin aportar métricas de comprobación al selector.
+Si no hay elegibles, no fuerza ganador o comprobación. Cuentas y calentamiento
+independientes, máximo 24 backtests en su protocolo separado, cero peticiones IA
+y sin agregación ficticia de capitales. Todos los datos son desarrollo conocido;
+no se acredita validación independiente o prospectiva.
+
+Pruebas focalizadas finales: 31 aprobadas en 134,42 s, con transporte y datos
+artificiales, motor real y validadores completos en la integración. Cubren memoria
+para la siguiente petición, límites, duplicados, identidad del modelo, concurrencia,
+carreras de reserva, errores parciales, consumo desconocido, alteraciones,
+selección vacía y selección duradera antes de cargar la comprobación. Temporales
+exclusivos y caché pytest desactivada según AGENTS.md. Recolección completa:
+1547 pruebas, distribuidas sin solapamiento en tres procesos de 459, 575 y 513;
+su ejecución está en curso, sin presentarla todavía como aprobada.
+
+Comprobación real bdd6a55c937f4f2abc272a9ad2d64625 sobre el servidor ya instalado
+y en ejecución, Ollama 0.40.6; no se arranca o instala ningún servicio. Ciclo
+.local/campaign-cycles/eaba7b8479034eb69e52838fa1919715: una consulta local,
+2898 tokens de entrada, 180 de salida, seis consultas de metadatos y 0 USD API.
+El modelo repite una identidad consumida: duplicate_rules. Se rechaza antes de
+simular, sin reintento. Quedan dos huecos de propuestas y seis de backtests en el
+registro; no se liberan intentos ni se reabre el ciclo. El ámbito compacto heredado
+2262/176 tokens y 0 USD permanece separado; no es el total de la aplicación.
+
+Walk-forward real .local/walk-forward-runs/c4efcbf170af4d23a1d961c05546ef12:
+20 backtests de los 24 máximos. La primera ventana tiene selección, pero no cumple
+el criterio en comprobación: rentabilidad y drawdown mayores frente a la base.
+Las otras dos no tienen elegibles y no ejecutan comprobación. No se sustituye
+la selección ni se fuerza ganador. Ningún acceso a evaluación exterior o red
+fuera del servidor local. Controles y límites registrados sin cambios, nueve
+archivos históricos de intentos intactos y 332 copias/referencias anteriores
+intactas. La evaluación exterior anterior no se repite ni se considera inédita.
+
+Guía del contrato: [integración de FASE 4](PHASE4_COMPLETION.md). Sin llamadas
+de pago, operaciones reales, instalaciones, servicios nuevos, commits o pushes.
+
+#### Cierre comprobado de FASE 4
+
+Colección completa aprobada: 1547 pruebas, en tres procesos aislados y sin
+solapamientos: 459 en 998,22 s; 575 en 1194,79 s; 513 en 1075,35 s. Se ejecutaron
+en paralelo; no se suman como tiempo transcurrido. Ningún error, fallo o salto.
+La comparación con los nodos recogidos y la huella de los 131 archivos de código
+y pruebas confirma cobertura completa y fuentes estables. El primer cotejo de
+JUnit señaló barras de Windows en identificadores parametrizados; se igualó la
+normalización a la de la colección, sin colisiones, cambios de aplicación o
+nuevas ejecuciones de investigación.
+
+Auditoría final 3f5f81a4fbf04bbcb7b0894c14a899aa: los verificadores comprueban ciclo
+y walk-forward con red, nuevas reservas y recálculos bloqueados. Cero acciones
+nuevas. Las 332 copias y referencias anteriores permanecen intactas; se añaden
+98, con 430 entre 25 inventarios concretos, no archivos físicos únicos. La evidencia
+nueva ocupa 46.792.487 bytes e incluye contabilidad, datos, fuentes y resultados
+de pruebas. Los informes previos conservan sus fechas y estados históricos.
+
+PROJECT_STATUS.md se actualiza ahora al cerrar la fase por autorización del usuario,
+incluyendo el nombre TiresIAs, la arquitectura incorporada, resultados adversos,
+consumo nuevo y heredado por separado, pruebas y limitaciones. Se actualizan README
+y documentos de uso. El cierre acredita el alcance de software educativo; no
+rentabilidad, fiabilidad general del modelo o validación independiente. La consulta
+local nueva fue un duplicado rechazado, no una estrategia aceptada. El walk-forward
+usó exclusivamente datos de desarrollo ya conocidos; no se reabre evaluación exterior.
+
+Detalle: [cierre de FASE 4](../reports/phase4-completion-2026-10-20.md). El siguiente
+paso propuesto es FASE 5, interfaz de consulta, sin empezarla automáticamente.
+No hubo servicios nuevos, instalaciones, llamadas de pago, dinero real, commits
+o pushes. Se mantienen todos los cambios previos del usuario.
+
+Comprobaciones finales: HEAD 3d0fa83, 43 entradas pendientes conservando las 32
+iniciales; raíz Git correcta y git diff --check aprobado. Las 430 copias y sus
+referencias originales están verificadas entre 25 inventarios. Los 131 archivos
+de código/pruebas conservan su huella; la recolección posterior al archivo de
+evidencias sigue en 1547 casos, sin pruebas duplicadas. Se comprobaron 142 enlaces
+locales, sin destinos ausentes. PROJECT_STATUS.md recoge el cierre de FASE 4.
+
+#### Publicación autorizada del cierre
+
+El usuario autoriza ahora el commit y push de FASE 4. Antes de preparar la
+publicación se consulta GitHub: main y origin/main coinciden en 3d0fa83. Se
+conservan las 43 entradas pendientes del cierre, incluidos los informes y sus
+evidencias. Los 131 archivos de código/pruebas mantienen las huellas de la
+colección aprobada de 1547 casos. Una nueva verificación de los 25 inventarios
+confirma 430 copias y 430 referencias originales, sin consultas al modelo,
+backtests o coste de API nuevos. No se repiten investigaciones ni se modifica
+PROJECT_STATUS.md después del cierre. Los apartados anteriores que indican
+ausencia de commits o pushes describen aquellas ejecuciones previas a esta
+autorización.
+
+La revisión del índice conserva byte a byte los 156 archivos de código y evidencia
+sellada incluidos en el commit. Git detecta un espacio final dentro del diagnóstico
+original de pytest en focused-tests.xml; se conserva esa evidencia histórica y se
+documenta una excepción de whitespace exclusivamente para ese archivo en
+.gitattributes. No se altera su contenido ni se excluyen comprobaciones del código.

@@ -68,9 +68,21 @@ plan no configura o consulta un proveedor ni habilita OpenAI. No hay conexión
 con TradingView o bróker. El histórico sigue siendo desarrollo conocido, con
 evaluación exterior desactivada y sin afirmar validación inédita.
 
-Este paso pertenece a la FASE 4, que permanece abierta. La
+Este paso pertenece a la FASE 4; su [cierre posterior](PHASE4_COMPLETION.md)
+conserva los límites y contratos de este plan. La
 [comprobación local](../reports/phase4-campaign-plan-2026-10-20.md) conserva un
 plan inactivo y las evidencias de que los presupuestos anteriores no cambiaron.
 
 Las [capturas de intentos](CAMPAIGN_ATTEMPTS.md) conservan ahora respuestas,
 errores y consumo por reserva, manteniendo separados registro y ejecución.
+El [primer control del flujo](CAMPAIGN_CONTROLLER.md) verifica plan, memoria,
+capturas y reglas antes de su revisión; no activa consultas o simulaciones.
+La [revisión y planificación](CAMPAIGN_REVIEW.md) conserva una decisión única por
+captura y permite preparar el experimento de una revisión aceptada, sin ejecutarlo.
+La [ejecución virtual con permiso](CAMPAIGN_EXECUTION.md) conecta una comparación
+offline con las reservas contables y el motor. El ciclo de investigación con
+generación local se añade en la [integración de FASE 4](PHASE4_COMPLETION.md), con
+un contrato explícito de revisión mecánica solo para experimentos virtuales.
+El plan y lectores v1 conservan su alcance inicial. La [memoria de resultados](CAMPAIGN_MEMORY.md)
+ya reúne cálculos verificados, errores y consumos sin activar consultas nuevas;
+el ciclo nuevo incorpora su propia memoria completa al contexto de cada petición.

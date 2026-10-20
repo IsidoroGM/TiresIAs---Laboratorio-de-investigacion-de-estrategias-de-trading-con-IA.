@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "files": {
+    "review-status.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-review-audits\\fee3b2c854f94fe0901844061da9424c\\review-status.json",
+      "sha256": "e09d5f18d8a1ff9a1416c6dbceb742088f298389ec3c2befa1d9dd7fe54dc5d6"
+    },
+    "review-status.json.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-review-audits\\fee3b2c854f94fe0901844061da9424c\\review-status.json.sha256",
+      "sha256": "9d9f89be1aa076d4379cf939da74a105fe7c81f4ee2ecee244079bd43dd58c90"
+    },
+    "audit.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-review-audits\\fee3b2c854f94fe0901844061da9424c\\audit.json",
+      "sha256": "47c26f0dcd592e05c6e9bdc7d099e2c5f27dc3a428af27f3f3f1e89217cecef9"
+    },
+    "audit.json.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-review-audits\\fee3b2c854f94fe0901844061da9424c\\audit.json.sha256",
+      "sha256": "a814f8f6acb1121a6f84a8b4c7a9501d1ba6ae14a7354a657b69f6d313fa3b17"
+    },
+    "events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-review-audits\\fee3b2c854f94fe0901844061da9424c\\events.jsonl",
+      "sha256": "128ffdd39666edf6da6ca2812988464f41bbe5d84632e7b600422f0dbc7907b1"
+    },
+    "audit-campaign-review.py": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\audit-campaign-review.py",
+      "sha256": "b69bc4df0286777c5dfd340e935ddbf61036200f0ce76b58f19a6afadd43a9c7"
+    },
+    "source/campaign_review.py": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\campaign_review.py",
+      "sha256": "fc2ee175de6b26b3fac775fa03973ccbe58c2d2e853d0b6cd0adfb8009d4be03"
+    },
+    "source/campaign_review_tests.py": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\tests\\test_campaign_review.py",
+      "sha256": "f4d45bd82a1eae6dd28a548f06c5bcf3930bfdee985776c129333dc71ffd4624"
+    },
+    "source/campaign_experiment.py": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\campaign_experiment.py",
+      "sha256": "720e598cfda4f425dffecc6c5f16cb888aa818769477ab8b1152b4ab3eac9049"
+    },
+    "source/campaign_experiment_tests.py": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\tests\\test_campaign_experiment.py",
+      "sha256": "1bcf94665118e36f7c803b2b7afca8c998a7ae7a3b4115a150b00c1202a55267"
+    }
+  }
+}

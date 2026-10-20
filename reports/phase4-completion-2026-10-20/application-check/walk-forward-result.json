@@ -1,0 +1,325 @@
+{
+  "schema_version": 1,
+  "protocol": "known_walk_forward_result_v1",
+  "run_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\walk-forward-runs\\c4efcbf170af4d23a1d961c05546ef12",
+  "plan": {
+    "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\walk-forward-plans\\3381646bffa84da0be71625b6fa42982",
+    "sha256": {
+      "plan.json": "66b8010d5c72984761d22df2a67a0b1214046beed58576cc801f35ea093c1e6f",
+      "plan.json.sha256": "04e3e55bd8f03f57d3d01df1cbd7255a5398afd259638996cd0ec89a5662045e",
+      "events.jsonl": "3b562badce1ee3becc6f34f724550e79dcee8dfda848901aad6abf5e5c1aa6de",
+      "development.xml": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+      "train-01.xml": "92049e38aebb3d0aec900134ab2495a3e7b90cf1ca2e53a14433729617f90244",
+      "check-01.xml": "b1822922fe03ee6f3dffeaf638921af67dbb5d5056cf7dd2356d0c5784715e5a",
+      "train-02.xml": "92323a17c3b64aed9e320199f7ef3fbe0e56e244526df9aded5fef82cd0794b6",
+      "check-02.xml": "6d932534bb5df05541b557a697fcb01a3e48b9f49dd64ba1e60a32575c23b948",
+      "train-03.xml": "685a8ed0c9fd9aa692ab063bbbc4c8d95a99c440453f0bd670f44f9d41623b22",
+      "check-03.xml": "2ae638066d3d8a58e0c7dec35d000ae7f4ad526611c03ce3c1f2a604243d22fa"
+    }
+  },
+  "folds": [
+    {
+      "index": 1,
+      "selected_id": "7e03401502b4ed285f5461a60962174a4dfc72a674eacec54341aee52f656b72",
+      "train_baseline": {
+        "strategy": "SMA20/SMA60",
+        "quote_currency": "USD",
+        "final_equity": "1020.630625463805959227090780",
+        "return_percent": "2.06306254638059592270907800",
+        "max_drawdown_percent": "1.557370025790512249675980520",
+        "total_costs": "2.017993719501046269259108854",
+        "closed_trades": 10,
+        "has_open_position": false,
+        "rejected_entries": 0
+      },
+      "train_candidates": {
+        "ece6c485cf62c61f418a2d50c7898dc7cc75eab8e87cf5e5b9d3458058d9edff": {
+          "strategy": "EMA20/EMA60",
+          "quote_currency": "USD",
+          "final_equity": "1024.115373078581708358870473",
+          "return_percent": "2.411537307858170835887047300",
+          "max_drawdown_percent": "1.132711958207646311428438555",
+          "total_costs": "1.623551198408009170688830994",
+          "closed_trades": 8,
+          "has_open_position": false,
+          "rejected_entries": 0
+        },
+        "7e03401502b4ed285f5461a60962174a4dfc72a674eacec54341aee52f656b72": {
+          "strategy": "EMA19/EMA60",
+          "quote_currency": "USD",
+          "final_equity": "1024.925233596563772745720387",
+          "return_percent": "2.492523359656377274572038700",
+          "max_drawdown_percent": "1.166274730663216663909668225",
+          "total_costs": "1.626119191150164099138441209",
+          "closed_trades": 8,
+          "has_open_position": false,
+          "rejected_entries": 0
+        },
+        "5d16369adc0445d37e44774948fdcacb48efb20fe2475dd097f3a347822612df": {
+          "strategy": "EMA21/EMA60",
+          "quote_currency": "USD",
+          "final_equity": "1022.308947258464868210791770",
+          "return_percent": "2.23089472584648682107917700",
+          "max_drawdown_percent": "1.198285975590460786774320280",
+          "total_costs": "1.620543554817459263420848881",
+          "closed_trades": 8,
+          "has_open_position": false,
+          "rejected_entries": 0
+        },
+        "01d364c8e5ad010124dca0bd2cf4164197f5ac9d7339abec405d9c4ec81811dd": {
+          "strategy": "EMA20/EMA59",
+          "quote_currency": "USD",
+          "final_equity": "1022.916081666420599020710174",
+          "return_percent": "2.291608166642059902071017400",
+          "max_drawdown_percent": "1.162373851353567063559664190",
+          "total_costs": "1.621635886702442995333467628",
+          "closed_trades": 8,
+          "has_open_position": false,
+          "rejected_entries": 0
+        },
+        "ba6c5200b28f02334d49e0246f51df1761356392615271d38c75463e590d6201": {
+          "strategy": "EMA20/EMA61",
+          "quote_currency": "USD",
+          "final_equity": "1023.449337121084345399912046",
+          "return_percent": "2.344933712108434539991204600",
+          "max_drawdown_percent": "1.206991198001558622797931534",
+          "total_costs": "1.622286313987006314234244856",
+          "closed_trades": 8,
+          "has_open_position": false,
+          "rejected_entries": 0
+        }
+      },
+      "check": {
+        "baseline": {
+          "strategy": "SMA20/SMA60",
+          "quote_currency": "USD",
+          "final_equity": "1004.258088628584391123403821",
+          "return_percent": "0.425808862858439112340382100",
+          "max_drawdown_percent": "1.746292639526900087422992426",
+          "total_costs": "2.900925344363642951369178360",
+          "closed_trades": 14,
+          "has_open_position": true,
+          "rejected_entries": 0
+        },
+        "candidate": {
+          "strategy": "EMA19/EMA60",
+          "quote_currency": "USD",
+          "final_equity": "1011.897310335848968777899066",
+          "return_percent": "1.189731033584896877789906600",
+          "max_drawdown_percent": "1.914927608264805940293410163",
+          "total_costs": "2.313027944502774487201171128",
+          "closed_trades": 11,
+          "has_open_position": true,
+          "rejected_entries": 0
+        },
+        "proposal": {
+          "criterion": "higher_return_without_more_drawdown"
+        },
+        "assessment": {
+          "criterion_status": "not_met",
+          "return_comparison": "higher",
+          "drawdown_comparison": "higher",
+          "scope": "known_development_history_only",
+          "origin": "python"
+        }
+      },
+      "check_status": "calculated"
+    },
+    {
+      "index": 2,
+      "selected_id": null,
+      "train_baseline": {
+        "strategy": "SMA20/SMA60",
+        "quote_currency": "USD",
+        "final_equity": "1025.293458326865151763767435",
+        "return_percent": "2.529345832686515176376743500",
+        "max_drawdown_percent": "1.746292639526900087422992412",
+        "total_costs": "5.184124564063393620848588081",
+        "closed_trades": 25,
+        "has_open_position": true,
+        "rejected_entries": 0
+      },
+      "train_candidates": {
+        "ece6c485cf62c61f418a2d50c7898dc7cc75eab8e87cf5e5b9d3458058d9edff": {
+          "strategy": "EMA20/EMA60",
+          "quote_currency": "USD",
+          "final_equity": "1035.115997224161813962238731",
+          "return_percent": "3.511599722416181396223873100",
+          "max_drawdown_percent": "1.933161422776311666916085535",
+          "total_costs": "4.393509396195800696947050510",
+          "closed_trades": 21,
+          "has_open_position": true,
+          "rejected_entries": 0
+        },
+        "7e03401502b4ed285f5461a60962174a4dfc72a674eacec54341aee52f656b72": {
+          "strategy": "EMA19/EMA60",
+          "quote_currency": "USD",
+          "final_equity": "1034.797147975402471923399125",
+          "return_percent": "3.479714797540247192339912500",
+          "max_drawdown_percent": "1.914927608264805940293410157",
+          "total_costs": "4.602361488325397788754579838",
+          "closed_trades": 22,
+          "has_open_position": true,
+          "rejected_entries": 0
+        },
+        "5d16369adc0445d37e44774948fdcacb48efb20fe2475dd097f3a347822612df": {
+          "strategy": "EMA21/EMA60",
+          "quote_currency": "USD",
+          "final_equity": "1033.506356862875227091397948",
+          "return_percent": "3.350635686287522709139794800",
+          "max_drawdown_percent": "1.956062210111816637147070510",
+          "total_costs": "3.976983857955816885444072893",
+          "closed_trades": 19,
+          "has_open_position": true,
+          "rejected_entries": 0
+        },
+        "01d364c8e5ad010124dca0bd2cf4164197f5ac9d7339abec405d9c4ec81811dd": {
+          "strategy": "EMA20/EMA59",
+          "quote_currency": "USD",
+          "final_equity": "1032.932978639242717070257723",
+          "return_percent": "3.293297863924271707025772300",
+          "max_drawdown_percent": "1.929042207660215150489613440",
+          "total_costs": "4.797410868580789850735656958",
+          "closed_trades": 23,
+          "has_open_position": true,
+          "rejected_entries": 0
+        },
+        "ba6c5200b28f02334d49e0246f51df1761356392615271d38c75463e590d6201": {
+          "strategy": "EMA20/EMA61",
+          "quote_currency": "USD",
+          "final_equity": "1034.913428965491282516155995",
+          "return_percent": "3.491342896549128251615599500",
+          "max_drawdown_percent": "1.938474331258971225493887769",
+          "total_costs": "3.981305677573711631959389232",
+          "closed_trades": 19,
+          "has_open_position": true,
+          "rejected_entries": 0
+        }
+      },
+      "check": null,
+      "check_status": "not_run_no_selection"
+    },
+    {
+      "index": 3,
+      "selected_id": null,
+      "train_baseline": {
+        "strategy": "SMA20/SMA60",
+        "quote_currency": "USD",
+        "final_equity": "1021.278623031312337201083421",
+        "return_percent": "2.127862303131233720108342100",
+        "max_drawdown_percent": "1.746292639526900087422992412",
+        "total_costs": "7.954863002830896246619207736",
+        "closed_trades": 39,
+        "has_open_position": false,
+        "rejected_entries": 0
+      },
+      "train_candidates": {
+        "ece6c485cf62c61f418a2d50c7898dc7cc75eab8e87cf5e5b9d3458058d9edff": {
+          "strategy": "EMA20/EMA60",
+          "quote_currency": "USD",
+          "final_equity": "1031.254176499807401888967472",
+          "return_percent": "3.125417649980740188896747200",
+          "max_drawdown_percent": "1.933161422776311666916085535",
+          "total_costs": "6.979017141099133093788695331",
+          "closed_trades": 34,
+          "has_open_position": false,
+          "rejected_entries": 0
+        },
+        "7e03401502b4ed285f5461a60962174a4dfc72a674eacec54341aee52f656b72": {
+          "strategy": "EMA19/EMA60",
+          "quote_currency": "USD",
+          "final_equity": "1031.476509672048240807083878",
+          "return_percent": "3.147650967204824080708387800",
+          "max_drawdown_percent": "1.914927608264805940293410157",
+          "total_costs": "7.394744760851001053421036123",
+          "closed_trades": 36,
+          "has_open_position": false,
+          "rejected_entries": 0
+        },
+        "5d16369adc0445d37e44774948fdcacb48efb20fe2475dd097f3a347822612df": {
+          "strategy": "EMA21/EMA60",
+          "quote_currency": "USD",
+          "final_equity": "1029.541272712998613891333129",
+          "return_percent": "2.954127271299861389133312900",
+          "max_drawdown_percent": "1.956062210111816637147070510",
+          "total_costs": "6.559360397434561224289174602",
+          "closed_trades": 32,
+          "has_open_position": false,
+          "rejected_entries": 0
+        },
+        "01d364c8e5ad010124dca0bd2cf4164197f5ac9d7339abec405d9c4ec81811dd": {
+          "strategy": "EMA20/EMA59",
+          "quote_currency": "USD",
+          "final_equity": "1028.871683084134852298563110",
+          "return_percent": "2.88716830841348522985631100",
+          "max_drawdown_percent": "1.929042207660215150489613440",
+          "total_costs": "7.377067991097165345322617126",
+          "closed_trades": 36,
+          "has_open_position": false,
+          "rejected_entries": 0
+        },
+        "ba6c5200b28f02334d49e0246f51df1761356392615271d38c75463e590d6201": {
+          "strategy": "EMA20/EMA61",
+          "quote_currency": "USD",
+          "final_equity": "1030.832162423020822814420862",
+          "return_percent": "3.083216242302082281442086200",
+          "max_drawdown_percent": "1.938474331258971225493887769",
+          "total_costs": "6.772518254439907061723968471",
+          "closed_trades": 33,
+          "has_open_position": false,
+          "rejected_entries": 0
+        }
+      },
+      "check": null,
+      "check_status": "not_run_no_selection"
+    }
+  ],
+  "attempted_backtests": 20,
+  "completed_backtests": 20,
+  "artifacts_sha256": {
+    "train-01-baseline.json": "2595aa40df6d165a4f49cc4c89ed283e55ac2415bf035146754ea1827092a593",
+    "train-01-ece6c485cf62c61f418a2d50c7898dc7cc75eab8e87cf5e5b9d3458058d9edff.json": "413950eb23c791c5744763e19bccc6306edb46c61559b0d46bfc99eed80f92ff",
+    "train-01-7e03401502b4ed285f5461a60962174a4dfc72a674eacec54341aee52f656b72.json": "584e0716ee056ab266725ca5da56441c586a9ca3210ba8cca439602ff2bbef94",
+    "train-01-5d16369adc0445d37e44774948fdcacb48efb20fe2475dd097f3a347822612df.json": "ec54b758787cc8963b07c76dc307417369021c69919740e72f99fbc309dbd2e9",
+    "train-01-01d364c8e5ad010124dca0bd2cf4164197f5ac9d7339abec405d9c4ec81811dd.json": "920b1e0661418f8bf1780918b0c3b13943ef57306ab06c75b865a8f06a594d17",
+    "train-01-ba6c5200b28f02334d49e0246f51df1761356392615271d38c75463e590d6201.json": "ef9c34f02b45d8cd9e507ba4605fa0f4eee9114aac4c854d83aca49e93d936fe",
+    "selection-01.json": "12fe370923c0bc9b28f484eec06ddc24276f19551f68848254906458d0284056",
+    "check-01-baseline.json": "c5dcdf743ce291a46ea37cde4b85817a21c43693e55b331130cc325cae6d94b9",
+    "check-01-7e03401502b4ed285f5461a60962174a4dfc72a674eacec54341aee52f656b72.json": "59650b779a9cee864cfb3e9ed8a87a56b3ed2a534142d346710b10af7669faca",
+    "train-02-baseline.json": "471ba197bacaf7f2bcdf77c02e6f9d083270f9fa4954f0381298b3d77a33228c",
+    "train-02-ece6c485cf62c61f418a2d50c7898dc7cc75eab8e87cf5e5b9d3458058d9edff.json": "93f3c4d97e5985797b5dc79d51eb717f5851d1655a8af81611949c5437b0e408",
+    "train-02-7e03401502b4ed285f5461a60962174a4dfc72a674eacec54341aee52f656b72.json": "a2c96635ed485603bb94595069ce29d21fae52e1f33a4499366dc1b728ca3b94",
+    "train-02-5d16369adc0445d37e44774948fdcacb48efb20fe2475dd097f3a347822612df.json": "fe8a3d820a3cd9b85230b3c9cef4a09492baa0715ee581ea66edc2d0a3108642",
+    "train-02-01d364c8e5ad010124dca0bd2cf4164197f5ac9d7339abec405d9c4ec81811dd.json": "4b02ec083d2b7301ee26ff019df18a644746f0ac7789a9bd2cc6600f8ca3f63c",
+    "train-02-ba6c5200b28f02334d49e0246f51df1761356392615271d38c75463e590d6201.json": "90246bfecce44f115e69c47b3bdba3977cfcaf7350bcbcba8812c435fadc7409",
+    "selection-02.json": "b4955468171c5e480b99f5312c7a277826ab89b6d8679b5c953ab6a0adcb7873",
+    "train-03-baseline.json": "1b5503fd993fdbc53b144b8787504bc0ff55230ceb894981bd68cd2451e944bb",
+    "train-03-ece6c485cf62c61f418a2d50c7898dc7cc75eab8e87cf5e5b9d3458058d9edff.json": "d0d6258a5c3446023843527c6ac1c02fab52a0f8ad891c4a7f6a8f0bf21bc926",
+    "train-03-7e03401502b4ed285f5461a60962174a4dfc72a674eacec54341aee52f656b72.json": "58861814b7404d06a126e784a5f6a43e1f69602f1ec24d099140bd173c51772a",
+    "train-03-5d16369adc0445d37e44774948fdcacb48efb20fe2475dd097f3a347822612df.json": "eb278c1943da6ca263bbd8db92f7ea0d332086bfe50e7f395453ea222c1ddc5d",
+    "train-03-01d364c8e5ad010124dca0bd2cf4164197f5ac9d7339abec405d9c4ec81811dd.json": "ae632273ec72838e01ffc327d3ffcba4821dcc23dd68ff22db5f6433a5d46293",
+    "train-03-ba6c5200b28f02334d49e0246f51df1761356392615271d38c75463e590d6201.json": "66c8c94677aaace705776e22de84f243cf715f0db881fb953f2534c6ddcdbc5f",
+    "selection-03.json": "f5c838cbc42a5f59f705e1bad77f67d25589b3dd3aeec4143c72fcc416743757"
+  },
+  "scope": "known_development_history_only",
+  "independent_validation": false,
+  "automatic_adoption": false,
+  "aggregation": "no_compounded_accounts_no_new_global_winner",
+  "model_requests": 0,
+  "api_cost_usd": "0",
+  "code_sha256": {
+    "data.py": "286b822fbb6dd5e46f65f64bb387bb7f7d246c7c9c17dc523a52d7ce3e7dfd94",
+    "indicators.py": "13cce9a32399a309694a83f52c8bdb93b0f86075612c825d5be3d9bfc2c366a3",
+    "strategies.py": "9607a659a352e31f2192c237eaecc8191ba90f9b2e78bcaa3919cfaa3489527e",
+    "backtesting.py": "81e6a34dd715d192c730fe407c7cdd037e2340e387e4ea37c90b0549d07a3c4f",
+    "metrics.py": "3d85bab9c1ee6da88a632a08b3a600f12ce7ee9335fbce1b4c56e0cfc865ec2f",
+    "experiments.py": "57c5638f293d9e4c5102a091227970ac1d2fd3b9774fa3f839fd6ed044a26e4d",
+    "ai.py": "9c43b2f13b1b9264810cb1710c081acc0c476071870842617c9a451cb58cc1f3",
+    "research.py": "7e53374a3768800de2d75be9bc67d2299d16620c6b4fe92a3438d1f4c0c63340",
+    "validation.py": "ac2aa655af324a352107753e3b53e0aa986958aeb9e2e2374c4791c3a8afb1b6",
+    "holdout.py": "a048adf93b2a58b3177e80d1077597a0bd849932fd42f714326a43fc68fecbb2",
+    "robustness.py": "906ea3f6c07d5f5aeac03d049c0852b9d863e29a3864ac61009fa811a0a11ae5",
+    "walk_forward.py": "4b8cda36a69a59e604679925643dbc80c92b6410fbe661fd7aa9c3e8e864deb3",
+    "rule_execution.py": "0aeeeb9fb859e9d26e2225adbe16990ddaaed5cb7661d7284a66b5f469b8f218"
+  }
+}

@@ -1,0 +1,2 @@
+{"schema_version": 1, "at": "2026-10-20T10:34:38.588012+00:00", "event": "campaign_review_audit_started", "data": {}}
+{"schema_version": 1, "at": "2026-10-20T10:34:39.546135+00:00", "event": "campaign_review_audit_completed", "data": {"sha256": "47c26f0dcd592e05c6e9bdc7d099e2c5f27dc3a428af27f3f3f1e89217cecef9", "status": "verified_no_reviews_or_plans_created", "executable": false}}

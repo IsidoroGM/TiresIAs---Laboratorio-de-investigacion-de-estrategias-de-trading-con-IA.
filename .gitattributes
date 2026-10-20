@@ -32,3 +32,10 @@ reports/phase4-cached-read-*/** -text whitespace=trailing-space,space-before-tab
 reports/phase4-campaign-plan-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
 reports/phase4-campaign-ledger-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
 reports/phase4-campaign-attempts-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+reports/phase4-campaign-controller-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+reports/phase4-campaign-review-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+reports/phase4-campaign-execution-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+reports/phase4-campaign-memory-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+reports/phase4-completion-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+# Esta salida histórica de pytest conserva también los espacios del diagnóstico.
+reports/phase4-campaign-memory-2026-10-20/focused-tests.xml -text whitespace=-blank-at-eol,space-before-tab,cr-at-eol

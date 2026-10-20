@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "files": {
+    "controller.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-controller-audits\\389adb9a10f1408ea0fb17609bbd4f6b\\controller.json",
+      "sha256": "cd73683a3f2bcb61da4597ab8486d7dd5c506a584686972a45dba2bd23902f0c"
+    },
+    "controller.json.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-controller-audits\\389adb9a10f1408ea0fb17609bbd4f6b\\controller.json.sha256",
+      "sha256": "a314de3d60a6488392ddf057b6dba8c41539c5cfdeeb942a4be95bca62d062d2"
+    },
+    "audit.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-controller-audits\\389adb9a10f1408ea0fb17609bbd4f6b\\audit.json",
+      "sha256": "0513ff88848defbdff019fc6c788b8c4deecd95afd4b0bf64b4dd483e90d9e4b"
+    },
+    "audit.json.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-controller-audits\\389adb9a10f1408ea0fb17609bbd4f6b\\audit.json.sha256",
+      "sha256": "822b59b3d47d6e4896989048f892d7aa856e10b57caec53be2f35f08c956a4cc"
+    },
+    "events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-controller-audits\\389adb9a10f1408ea0fb17609bbd4f6b\\events.jsonl",
+      "sha256": "ed98e53a0bde52fbdd8fd0a3be4f72209ec4c74e4c38b18794ba3e9380717d47"
+    },
+    "audit-campaign-controller.py": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\audit-campaign-controller.py",
+      "sha256": "7d9e8fbc0b103714c2ee3dc2fab233dfc4a8f1c7d43ff5101034013ad3d2bdab"
+    },
+    "source/campaign_controller.py": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\campaign_controller.py",
+      "sha256": "e3dbdb411ad199749b9d3311e748eeb3a6064431f74302b97021b874f783fb04"
+    },
+    "source/campaign_controller_tests.py": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\tests\\test_campaign_controller.py",
+      "sha256": "f2e690ffd4dfb8d1136be8ef9f13202f7ad07b26ff2f2045a69739bb9903255f"
+    }
+  }
+}

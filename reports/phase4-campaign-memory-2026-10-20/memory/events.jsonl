@@ -1,0 +1,2 @@
+{"schema_version": 1, "at": "2026-10-20T12:28:56.991958+00:00", "event": "campaign_memory_started", "data": {"scope_id": "f0e9b3af64f68a6d66642d794bb1df57ee0a5d677f841e1334997e752ae29e38"}}
+{"schema_version": 1, "at": "2026-10-20T12:29:02.181265+00:00", "event": "campaign_memory_saved", "data": {"sha256": "dcf82ebed35e3de7a94e18afb8660c2648d810e19b65d9bb2d2017e07c07383f", "status": null, "executable": false}}

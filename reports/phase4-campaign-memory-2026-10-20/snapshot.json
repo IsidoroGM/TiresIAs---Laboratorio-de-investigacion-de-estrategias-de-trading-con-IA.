@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "files": {
+    "audit.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-memory-audits\\d4c89640027443bf8debb71d948f0afd\\audit.json",
+      "sha256": "b800074f2f14babc219700a907337234bdba653430612b61bf68700624100c2f"
+    },
+    "audit.json.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-memory-audits\\d4c89640027443bf8debb71d948f0afd\\audit.json.sha256",
+      "sha256": "2854685580b2716341dbdbc4dd9f256014a05bdf752b3b76cbf1f182990b00f5"
+    },
+    "events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-memory-audits\\d4c89640027443bf8debb71d948f0afd\\events.jsonl",
+      "sha256": "842d6bbed1988af0b4851e25a113f5a7195d49996cc87ee725c6e3a046f314f6"
+    },
+    "audit-campaign-memory.py": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\audit-campaign-memory.py",
+      "sha256": "b342cf4902649a08dfae2edc3ff4bf12156b2cbc60c04a742f83fe4cc212b4bd"
+    },
+    "memory/memory.json": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-memory\\00b3e4e65fde4f59aae5f18c3ec81880\\memory.json",
+      "sha256": "dcf82ebed35e3de7a94e18afb8660c2648d810e19b65d9bb2d2017e07c07383f"
+    },
+    "memory/memory.json.sha256": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-memory\\00b3e4e65fde4f59aae5f18c3ec81880\\memory.json.sha256",
+      "sha256": "029ea5c239d260cdfecb68531fc50a69487b17c4fbd1d1c97d475974dad1831b"
+    },
+    "memory/events.jsonl": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-memory\\00b3e4e65fde4f59aae5f18c3ec81880\\events.jsonl",
+      "sha256": "bf3c322e74ee5b94944cf2ca25afaa9f8be9f5f5de4ab671a6be5fbd97edfe6a"
+    },
+    "source/campaign_memory.py": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\campaign_memory.py",
+      "sha256": "bd5220f11648563b5b15997deea3ae4b3a08edd7bddb25ef84ca22aab3fae314"
+    },
+    "source/campaign_memory_tests.py": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\tests\\test_campaign_memory.py",
+      "sha256": "eb8e1fdb423c3f4dd902c75ded7e0139b4ac805eef3bd331f5ee9d12721d14ee"
+    },
+    "source/verification_session.py": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\trading_ai\\verification_session.py",
+      "sha256": "c15b232b22da882c4af3537e3536431e203813c752d686b76dd7991d03b13c5f"
+    },
+    "source/verification_session_tests.py": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\tests\\test_verification_session.py",
+      "sha256": "1c6d3544f73ea1e029afb8f3b9f178bd6a5c9237c104de7a9158153f5a3de458"
+    },
+    "source/campaign_memory_integration_tests.py": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\tests\\test_campaign_memory_integration.py",
+      "sha256": "63eb784d30bcee27fa40c7744010f5248e4c0612e1b5ba681e54fed1d7682ba4"
+    },
+    "focused-tests.xml": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-memory-final-tests.xml",
+      "sha256": "42216f2012d4090c1683f6dc7c82798e00b03e7c4f580835f6fbe5c815f660b1"
+    },
+    "claim-tests.xml": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-memory-claim-tests.xml",
+      "sha256": "bf49c76c509be0454ded5a29f6f3763ada06c762b62e78932006340caf63731b"
+    },
+    "recheck-tests.xml": {
+      "source": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-memory-final-recheck.xml",
+      "sha256": "c4c9d351684a9ab1eef03f029743e826ddd5f8f7cc17718f38d337000d629807"
+    }
+  }
+}

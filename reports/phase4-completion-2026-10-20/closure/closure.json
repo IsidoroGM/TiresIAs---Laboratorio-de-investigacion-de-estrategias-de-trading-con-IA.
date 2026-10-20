@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "status": "phase4_development_scope_completed",
+  "passed": 1547,
+  "suite_partitions": [
+    {
+      "index": 1,
+      "passed": 459,
+      "time_seconds": "998.153"
+    },
+    {
+      "index": 2,
+      "passed": 575,
+      "time_seconds": "1194.726"
+    },
+    {
+      "index": 3,
+      "passed": 513,
+      "time_seconds": "1075.289"
+    }
+  ],
+  "source_files_unchanged": 131,
+  "prior_copies_verified": 332,
+  "prior_inventories": 24,
+  "application_check": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\phase4-completion-checks\\bdd6a55c937f4f2abc272a9ad2d64625",
+  "new_research_usage": {
+    "model_requests": 1,
+    "input_tokens": 2898,
+    "output_tokens": 180,
+    "api_cost_usd": "0"
+  },
+  "inherited_compact_usage": [
+    {
+      "api_cost_usd": "0",
+      "metadata_request_attempts": 6,
+      "model_requests": 1,
+      "usage": [
+        {
+          "api_cost_usd": "0",
+          "cached_input_tokens": 0,
+          "duration_ns": 71453363800,
+          "input_tokens": 2262,
+          "metadata_request_attempts": 4,
+          "output_tokens": 176
+        }
+      ]
+    }
+  ],
+  "cycle_outcome": "duplicate_rules",
+  "walk_forward_backtests": 20,
+  "forbidden_calls_during_seal": 0,
+  "remaining_accounting_slots": {
+    "proposals": 2,
+    "backtests": 6
+  },
+  "api_cost_usd": "0",
+  "scope": "known_development_history_only",
+  "independent_validation": false,
+  "automatic_adoption": false,
+  "real_money_operations": false,
+  "commits": 0,
+  "pushes": 0,
+  "node_id_comparison": "same_windows_separator_normalization_in_collection_and_junit_no_collisions"
+}

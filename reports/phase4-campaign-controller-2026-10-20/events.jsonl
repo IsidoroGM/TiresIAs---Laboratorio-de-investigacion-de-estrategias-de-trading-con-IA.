@@ -1,0 +1,2 @@
+{"schema_version": 1, "at": "2026-10-20T10:13:56.415357+00:00", "event": "campaign_controller_audit_started", "data": {}}
+{"schema_version": 1, "at": "2026-10-20T10:16:12.492857+00:00", "event": "campaign_controller_audit_completed", "data": {"sha256": "0513ff88848defbdff019fc6c788b8c4deecd95afd4b0bf64b4dd483e90d9e4b", "status": "verified_inactive_no_captures", "executable": false}}

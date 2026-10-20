@@ -29,11 +29,15 @@ comprobada se describen en [data/README.md](data/README.md).
 
 ## Estado actual
 
-Las **FASES 0, 1, 2 y 3 están completadas**. El motor incorpora costes, capital,
+Las **FASES 0, 1, 2, 3 y 4 están completadas**. El motor incorpora costes, capital,
 drawdown, tamaño por porcentaje de capital, estrategias SMA/EMA configurables,
 comparación y sensibilidad local. La FASE 3 incorpora un primer
 investigador local mediante Ollama; OpenAI queda previsto como proveedor futuro
 desactivado. Consulta [la preparación y los controles](docs/LOCAL_AI.md).
+La FASE 4 añade validación cronológica, memoria, ciclo local acotado y walk-forward
+descriptivo sobre desarrollo conocido. El [cierre de fase](reports/phase4-completion-2026-10-20.md)
+conserva resultados negativos y **1547 pruebas aprobadas**, sin afirmar rentabilidad
+o validación independiente. La FASE 5 de interfaz es el siguiente paso y aún no se inicia.
 El laboratorio produce un informe
 reproducible para los cuatro pares. Están comprobados
 Python 3.14.8 de 64 bits, el entorno virtual `.venv`, su uso desde la terminal de
@@ -1043,7 +1047,8 @@ La CLI solo valida. La bandeja conserva sus borradores pendientes y el
 simulador conserva capital, costes, tamaño y ejecución posterior. **587 pruebas
 aprobadas**, incluidas 67 nuevas. La [comprobación técnica](reports/phase4-rules-2026-10-19.md)
 reprodujo SMA/EMA con contabilidad idéntica sobre desarrollo, sin consultar IA
-ni evaluación exterior. FASE 4 continúa abierta.
+ni evaluación exterior. Aquel paso no cerraba FASE 4; el cierre posterior se recoge
+en el informe enlazado en el estado actual.
 
 La [traducción de ideas a reglas](docs/FORMALIZATION.md) registra una propuesta
 formal vinculada al borrador o una duda sin resolver, con una consulta local
@@ -1154,10 +1159,29 @@ Su [registro contable compartido](docs/CAMPAIGN_LEDGER.md) evita superar los
 límites entre procesos y conserva los huecos consumidos, sin activar la campaña.
 Las [capturas de intentos](docs/CAMPAIGN_ATTEMPTS.md) guardan respuestas, errores
 y consumo sin completar textos del modelo o convertirlos en resultados aprobados.
+El [primer control de campañas](docs/CAMPAIGN_CONTROLLER.md) contrasta esas
+capturas con el plan y la memoria vigentes, valida reglas y separa duplicados
+de candidatas pendientes de revisión, con la ejecución todavía desactivada.
+La [revisión de capturas y su plan](docs/CAMPAIGN_REVIEW.md) registra una decisión
+técnica única y permite preparar la comparación de una candidata aceptada,
+con controles congelados y sin reservar o ejecutar backtests.
+Un [permiso de cálculo virtual](docs/CAMPAIGN_EXECUTION.md) permite al ejecutor
+reservar una comparación y usar el motor, conservando intentos y fallos sin
+reintentos. No concede llamadas al modelo, adopción automática u operaciones reales.
+La [memoria de resultados](docs/CAMPAIGN_MEMORY.md) reúne propuestas, revisiones,
+errores y comparaciones verificadas por el motor. Su verificación opcional reutiliza
+el recorrido guiado con guardas de fuentes y conserva las comprobaciones actuales
+de permisos y resultados. El [ciclo local acotado](docs/PHASE4_COMPLETION.md) ya
+incorpora historial y resultados a nuevas peticiones, separa revisión mecánica,
+motor y controles, y se detiene ante duplicados o errores. Requiere habilitación
+explícita y no adopta estrategias. La comprobación real rechazó un duplicado sin
+simularlo. El walk-forward añade tres ventanas expansivas sobre desarrollo conocido,
+sin forzar una selección ni declarar validación independiente.
 
 En la FASE 3 se incorporó un agente investigador que propone hipótesis y
-solicita experimentos mediante herramientas controladas. En la FASE 4 se añadirá
-optimización y validación fuera de muestra. Los cálculos y backtests verificarán
+solicita experimentos mediante herramientas controladas. La FASE 4 incorpora
+selección interna, evaluación cronológica y walk-forward sobre histórico conocido.
+Los cálculos y backtests verifican
 las propuestas con resultados reproducibles; el juicio del LLM no sustituye
 esa evidencia. SMA20/SMA60 es el primer ejemplo educativo, no la estrategia
 definitiva, y una propuesta de mejora puede ser rechazada por los resultados.

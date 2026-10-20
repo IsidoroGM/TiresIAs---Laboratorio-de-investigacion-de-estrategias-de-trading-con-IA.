@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "protocol": "known_walk_forward_plan_v1",
+  "run_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\walk-forward-plans\\3381646bffa84da0be71625b6fa42982",
+  "frozen_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2",
+  "reference": {
+    "frozen_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2",
+    "frozen_sha256": "1f64b917cc88993ca496798ef98e4aadf8a266f7b7f3fce9cf45d6b86d61483a",
+    "manifest_sha256": "c432a2795917c500e0ee5fc474ed8f5a5b096346857a67c4b7f19b7f1a8dff42",
+    "development_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+    "outer_cutoff": "2020-01-01"
+  },
+  "policy": {
+    "pair": "EUR/USD",
+    "baseline_strategy": "sma",
+    "fast_window": 20,
+    "slow_window": 60,
+    "cost_rate": "0.001",
+    "initial_capital": "1000",
+    "allocation_fraction": "0.1"
+  },
+  "criterion": "higher_return_without_more_drawdown",
+  "candidates": [
+    {
+      "id": "ece6c485cf62c61f418a2d50c7898dc7cc75eab8e87cf5e5b9d3458058d9edff",
+      "strategy": "ema",
+      "fast_window": 20,
+      "slow_window": 60
+    },
+    {
+      "id": "7e03401502b4ed285f5461a60962174a4dfc72a674eacec54341aee52f656b72",
+      "strategy": "ema",
+      "fast_window": 19,
+      "slow_window": 60
+    },
+    {
+      "id": "5d16369adc0445d37e44774948fdcacb48efb20fe2475dd097f3a347822612df",
+      "strategy": "ema",
+      "fast_window": 21,
+      "slow_window": 60
+    },
+    {
+      "id": "01d364c8e5ad010124dca0bd2cf4164197f5ac9d7339abec405d9c4ec81811dd",
+      "strategy": "ema",
+      "fast_window": 20,
+      "slow_window": 59
+    },
+    {
+      "id": "ba6c5200b28f02334d49e0246f51df1761356392615271d38c75463e590d6201",
+      "strategy": "ema",
+      "fast_window": 20,
+      "slow_window": 61
+    }
+  ],
+  "omitted": [],
+  "folds": [
+    {
+      "index": 1,
+      "train": {
+        "file": "train-01.xml",
+        "sha256": "92049e38aebb3d0aec900134ab2495a3e7b90cf1ca2e53a14433729617f90244",
+        "observations": 1343,
+        "first_date": "1999-01-04",
+        "last_date": "2004-04-01"
+      },
+      "check": {
+        "file": "check-01.xml",
+        "sha256": "b1822922fe03ee6f3dffeaf638921af67dbb5d5056cf7dd2356d0c5784715e5a",
+        "observations": 1344,
+        "first_date": "2004-04-02",
+        "last_date": "2009-07-02"
+      }
+    },
+    {
+      "index": 2,
+      "train": {
+        "file": "train-02.xml",
+        "sha256": "92323a17c3b64aed9e320199f7ef3fbe0e56e244526df9aded5fef82cd0794b6",
+        "observations": 2687,
+        "first_date": "1999-01-04",
+        "last_date": "2009-07-02"
+      },
+      "check": {
+        "file": "check-02.xml",
+        "sha256": "6d932534bb5df05541b557a697fcb01a3e48b9f49dd64ba1e60a32575c23b948",
+        "observations": 1344,
+        "first_date": "2009-07-03",
+        "last_date": "2014-09-26"
+      }
+    },
+    {
+      "index": 3,
+      "train": {
+        "file": "train-03.xml",
+        "sha256": "685a8ed0c9fd9aa692ab063bbbc4c8d95a99c440453f0bd670f44f9d41623b22",
+        "observations": 4031,
+        "first_date": "1999-01-04",
+        "last_date": "2014-09-26"
+      },
+      "check": {
+        "file": "check-03.xml",
+        "sha256": "2ae638066d3d8a58e0c7dec35d000ae7f4ad526611c03ce3c1f2a604243d22fa",
+        "observations": 1344,
+        "first_date": "2014-09-29",
+        "last_date": "2019-12-31"
+      }
+    }
+  ],
+  "identity": {
+    "protocol": "known_expanding_walk_forward_v1",
+    "data_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+    "policy": {
+      "pair": "EUR/USD",
+      "baseline_strategy": "sma",
+      "fast_window": 20,
+      "slow_window": 60,
+      "cost_rate": "0.001",
+      "initial_capital": "1000",
+      "allocation_fraction": "0.1"
+    },
+    "candidates": [
+      {
+        "id": "ece6c485cf62c61f418a2d50c7898dc7cc75eab8e87cf5e5b9d3458058d9edff",
+        "strategy": "ema",
+        "fast_window": 20,
+        "slow_window": 60
+      },
+      {
+        "id": "7e03401502b4ed285f5461a60962174a4dfc72a674eacec54341aee52f656b72",
+        "strategy": "ema",
+        "fast_window": 19,
+        "slow_window": 60
+      },
+      {
+        "id": "5d16369adc0445d37e44774948fdcacb48efb20fe2475dd097f3a347822612df",
+        "strategy": "ema",
+        "fast_window": 21,
+        "slow_window": 60
+      },
+      {
+        "id": "01d364c8e5ad010124dca0bd2cf4164197f5ac9d7339abec405d9c4ec81811dd",
+        "strategy": "ema",
+        "fast_window": 20,
+        "slow_window": 59
+      },
+      {
+        "id": "ba6c5200b28f02334d49e0246f51df1761356392615271d38c75463e590d6201",
+        "strategy": "ema",
+        "fast_window": 20,
+        "slow_window": 61
+      }
+    ],
+    "folds": [
+      {
+        "index": 1,
+        "train": {
+          "file": "train-01.xml",
+          "sha256": "92049e38aebb3d0aec900134ab2495a3e7b90cf1ca2e53a14433729617f90244",
+          "observations": 1343,
+          "first_date": "1999-01-04",
+          "last_date": "2004-04-01"
+        },
+        "check": {
+          "file": "check-01.xml",
+          "sha256": "b1822922fe03ee6f3dffeaf638921af67dbb5d5056cf7dd2356d0c5784715e5a",
+          "observations": 1344,
+          "first_date": "2004-04-02",
+          "last_date": "2009-07-02"
+        }
+      },
+      {
+        "index": 2,
+        "train": {
+          "file": "train-02.xml",
+          "sha256": "92323a17c3b64aed9e320199f7ef3fbe0e56e244526df9aded5fef82cd0794b6",
+          "observations": 2687,
+          "first_date": "1999-01-04",
+          "last_date": "2009-07-02"
+        },
+        "check": {
+          "file": "check-02.xml",
+          "sha256": "6d932534bb5df05541b557a697fcb01a3e48b9f49dd64ba1e60a32575c23b948",
+          "observations": 1344,
+          "first_date": "2009-07-03",
+          "last_date": "2014-09-26"
+        }
+      },
+      {
+        "index": 3,
+        "train": {
+          "file": "train-03.xml",
+          "sha256": "685a8ed0c9fd9aa692ab063bbbc4c8d95a99c440453f0bd670f44f9d41623b22",
+          "observations": 4031,
+          "first_date": "1999-01-04",
+          "last_date": "2014-09-26"
+        },
+        "check": {
+          "file": "check-03.xml",
+          "sha256": "2ae638066d3d8a58e0c7dec35d000ae7f4ad526611c03ce3c1f2a604243d22fa",
+          "observations": 1344,
+          "first_date": "2014-09-29",
+          "last_date": "2019-12-31"
+        }
+      }
+    ]
+  },
+  "campaign_id": "068f0a03e90e872ac10412a99ee231d97f750fd873769b7f6a5eeda80260e319",
+  "budget": {
+    "maximum_backtests": 24,
+    "model_requests": 0,
+    "automatic_retries": 0
+  },
+  "selection": "criterion_met_then_return_desc_drawdown_asc_windows_asc_id",
+  "no_selection": "retain_empty_no_forced_winner_no_check_calculations",
+  "accounts": "independent_per_fold_role_strategy",
+  "carry_positions": false,
+  "carry_signals": false,
+  "indicator_warmup": "inside_each_partition",
+  "forced_final_close": false,
+  "scope": "known_development_history_only",
+  "independent_validation": false,
+  "outer_evaluation_allowed": false,
+  "automatic_adoption": false,
+  "api_cost_usd": "0",
+  "code_sha256": {
+    "data.py": "286b822fbb6dd5e46f65f64bb387bb7f7d246c7c9c17dc523a52d7ce3e7dfd94",
+    "indicators.py": "13cce9a32399a309694a83f52c8bdb93b0f86075612c825d5be3d9bfc2c366a3",
+    "strategies.py": "9607a659a352e31f2192c237eaecc8191ba90f9b2e78bcaa3919cfaa3489527e",
+    "backtesting.py": "81e6a34dd715d192c730fe407c7cdd037e2340e387e4ea37c90b0549d07a3c4f",
+    "metrics.py": "3d85bab9c1ee6da88a632a08b3a600f12ce7ee9335fbce1b4c56e0cfc865ec2f",
+    "experiments.py": "57c5638f293d9e4c5102a091227970ac1d2fd3b9774fa3f839fd6ed044a26e4d",
+    "ai.py": "9c43b2f13b1b9264810cb1710c081acc0c476071870842617c9a451cb58cc1f3",
+    "research.py": "7e53374a3768800de2d75be9bc67d2299d16620c6b4fe92a3438d1f4c0c63340",
+    "validation.py": "ac2aa655af324a352107753e3b53e0aa986958aeb9e2e2374c4791c3a8afb1b6",
+    "holdout.py": "a048adf93b2a58b3177e80d1077597a0bd849932fd42f714326a43fc68fecbb2",
+    "robustness.py": "906ea3f6c07d5f5aeac03d049c0852b9d863e29a3864ac61009fa811a0a11ae5",
+    "walk_forward.py": "4b8cda36a69a59e604679925643dbc80c92b6410fbe661fd7aa9c3e8e864deb3",
+    "rule_execution.py": "0aeeeb9fb859e9d26e2225adbe16990ddaaed5cb7661d7284a66b5f469b8f218"
+  }
+}

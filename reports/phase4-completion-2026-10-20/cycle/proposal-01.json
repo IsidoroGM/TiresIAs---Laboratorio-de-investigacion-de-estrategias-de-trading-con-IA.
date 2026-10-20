@@ -1,0 +1,79 @@
+{
+  "number": 1,
+  "request": {
+    "sha256": "d285371c02a4ce53521c41688f5605d0d9fbc35cb4702c83083f8d13fffebc54",
+    "bytes": 8787,
+    "entries": 0,
+    "history_entries_omitted": 0,
+    "history_text_truncated": false,
+    "fits_provider_context_verified": false,
+    "token_count": null
+  },
+  "receipt": {
+    "schema_version": 1,
+    "protocol": "inactive_campaign_reservation_v1",
+    "scope_id": "f0e9b3af64f68a6d66642d794bb1df57ee0a5d677f841e1334997e752ae29e38",
+    "kind": "proposal",
+    "operation_id": "d285371c02a4ce53521c41688f5605d0d9fbc35cb4702c83083f8d13fffebc54",
+    "receipt_id": "a5a32d1fb42c960a418b5ed332db16319b1882640278b345418361d1d4820b89",
+    "proposal_id": "d285371c02a4ce53521c41688f5605d0d9fbc35cb4702c83083f8d13fffebc54",
+    "created_at": "2026-10-20T13:00:36.872571+00:00",
+    "state": "reserved_accounting_only_no_result",
+    "reserved_model_requests": 1,
+    "reserved_backtests": 0,
+    "execution_authorized": false,
+    "calculated_results": null,
+    "registration_sha256": "40dbf8a59b707c67cfbbb8661e6988b4ac2942961664ede573b622e06e22d9a4",
+    "new_usage_of_reservation": {
+      "model_requests": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "api_cost_usd": "0",
+      "backtests": 0
+    }
+  },
+  "capture": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-attempts\\e5064642757a497d94d8ecbab4501e5f",
+  "capture_source": {
+    "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-attempts\\e5064642757a497d94d8ecbab4501e5f",
+    "sha256": {
+      "attempt.json": "5dc56dad8ca147450449b3d2cf6e9c2f05edb0335586e8d3728b7951760aa566",
+      "attempt.json.sha256": "079455b860c3ac41b7f2c39ba0009ac854017b63ce5cb8f6d8664e27e3951aa9",
+      "submission.json": "6497bf360855137e6cfbe8bb86b384448b70a362d896248869930bf9c20ac503",
+      "submission.json.sha256": "a13411d387435ecf5083980b0ad0b2958014e5eabc16cf71c966050350ea889f",
+      "completion.json": "0950d6e3c9baa9cf12dc825f949e742636df0bbe69690ccf87ec9732e6ba3126",
+      "completion.json.sha256": "a5ae6cfbd73ddb9f9ca50a639413ca7980e941f4b4bab0be440874f91acdb283",
+      "request.json": "d285371c02a4ce53521c41688f5605d0d9fbc35cb4702c83083f8d13fffebc54",
+      "observation.raw": "b4c67e9ce15801a9eefb60054070805a7722b8d69ab261cdcc5b3ef8ecd9d51d",
+      "events.jsonl": "64c469133ba49a9db1e182810aff06ea9bd68aa31e344cf086bf659032ea8d2a"
+    }
+  },
+  "content": "{\n  \"entry\": {\n    \"left\": {\n      \"kind\": \"ema\",\n      \"window\": 20,\n      \"lag\": 0\n    },\n    \"operator\": \"crosses_above\",\n    \"right\": {\n      \"kind\": \"sma\",\n      \"window\": 60,\n      \"lag\": 0\n    }\n  },\n  \"exit\": {\n    \"left\": {\n      \"kind\": \"ema\",\n      \"window\": 20,\n      \"lag\": 1\n    },\n    \"operator\": \"crosses_below\",\n    \"right\": {\n      \"kind\": \"sma\",\n      \"window\": 60,\n      \"lag\": 1\n    }\n  }\n}",
+  "usage": {
+    "model_requests": 1,
+    "input_tokens": 2898,
+    "output_tokens": 180,
+    "api_cost_usd": "0"
+  },
+  "error": null,
+  "review": null,
+  "results": null,
+  "transport_origin": "application_controlled_loopback_parsed_json",
+  "provider_identity": {
+    "provider": "ollama",
+    "model": "qwen3.5:4b",
+    "model_digest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04",
+    "base_url": "http://127.0.0.1:11435",
+    "api_cost_usd": "0",
+    "context_tokens": 4096,
+    "output_tokens": 384,
+    "gpu_layers": 0,
+    "timeout_seconds": 180,
+    "think": false,
+    "temperature": 0,
+    "server_version": "0.40.6",
+    "context_policy": "reject_overflow_no_truncate_no_shift",
+    "truncate": false,
+    "shift": false,
+    "prompt_tokens_before_request": null
+  }
+}

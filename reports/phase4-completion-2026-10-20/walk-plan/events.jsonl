@@ -1,0 +1,2 @@
+{"schema_version": 1, "at": "2026-10-20T13:02:17.827921+00:00", "event": "walk_forward_plan_started", "data": {"frozen_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\holdout\\f74895dfc72d41b1867f11401cd384f2"}}
+{"schema_version": 1, "at": "2026-10-20T13:02:22.206862+00:00", "event": "walk_forward_plan_prepared", "data": {"sha256": "66b8010d5c72984761d22df2a67a0b1214046beed58576cc801f35ea093c1e6f", "status": null, "executable": false}}

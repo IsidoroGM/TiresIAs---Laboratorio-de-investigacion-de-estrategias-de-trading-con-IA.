@@ -1,13 +1,15 @@
 # FASE 4 — Desarrollo y evaluación cronológicos
 
-Inicio: 19 de octubre de 2026. Fase en desarrollo; separación, registro previo
-y primera evaluación de una propuesta implementados. Se añade una comprobación
-acotada de sensibilidad y selección interna sobre desarrollo; no cierra la fase.
+Inicio: 19 de octubre de 2026. **Cierre del alcance de desarrollo: 20 de octubre
+de 2026**. Separación, registro previo, evaluación histórica, sensibilidad,
+selección interna, walk-forward y ciclo local acotado implementados y comprobados.
+[Integración y límites del cierre](PHASE4_COMPLETION.md).
 
 El objetivo es proponer cambios con una parte del histórico y comprobar después
 una propuesta fijada con fechas posteriores. No se eligen parámetros mirando el
-resultado reservado. La optimización y el recorrido de ventanas se incorporarán
-en tareas posteriores, una vez comprobado este procedimiento básico.
+resultado reservado. La selección de ventanas se incorpora mediante protocolos
+acotados registrados; la comprobación sobre datos conocidos no acredita validación
+independiente.
 
 ## Primera separación
 
@@ -286,11 +288,13 @@ se hayan observado al fijar la propuesta.
 
 Una frontera y resultados favorables no demuestran robustez. Este flujo añade
 una selección interna y sensibilidad acotadas, no una búsqueda general.
-Siguen pendientes más periodos y walk-forward con un protocolo previo, así como
-evaluaciones prospectivas cuando haya datos no consultados. Continúan las limitaciones del BCE y
+El cierre incorpora tres ventanas expansivas de walk-forward con protocolo previo
+y selección fijada antes de calcular comprobación. Siguen pendientes evaluaciones
+prospectivas cuando haya datos no consultados. Continúan las limitaciones del BCE y
 del simulador educativo. TradingView sigue sin conectar según
 [su plan](TRADINGVIEW_PLAN.md), OpenAI sigue desactivado y no hay operaciones
 con dinero real.
 
-`PROJECT_STATUS.md` conserva el cierre de FASE 3 y solo se actualizará al cerrar
-esta fase con autorización del usuario. Este inicio no autoriza commits ni pushes.
+`PROJECT_STATUS.md` registra el cierre de FASE 4 autorizado por el usuario.
+[Informe de cierre](../reports/phase4-completion-2026-10-20.md). La autorización
+de desarrollo y cierre no autoriza commits o pushes nuevos.

@@ -1,0 +1,18 @@
+{
+  "provider": "ollama",
+  "model": "qwen3.5:4b",
+  "model_digest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04",
+  "base_url": "http://127.0.0.1:11435",
+  "api_cost_usd": "0",
+  "context_tokens": 4096,
+  "output_tokens": 384,
+  "gpu_layers": 0,
+  "timeout_seconds": 180,
+  "think": false,
+  "temperature": 0,
+  "server_version": "0.40.6",
+  "context_policy": "reject_overflow_no_truncate_no_shift",
+  "truncate": false,
+  "shift": false,
+  "prompt_tokens_before_request": null
+}

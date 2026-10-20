@@ -1,0 +1,60 @@
+{
+  "status": "duplicate_rules",
+  "eligible_for_experiment": false,
+  "spec": {
+    "entry": {
+      "conditions": [
+        {
+          "left": {
+            "kind": "ema",
+            "lag": 0,
+            "window": 20
+          },
+          "operator": "crosses_above",
+          "right": {
+            "kind": "sma",
+            "lag": 0,
+            "window": 60
+          }
+        }
+      ],
+      "match": "all"
+    },
+    "exit": {
+      "conditions": [
+        {
+          "left": {
+            "kind": "ema",
+            "lag": 1,
+            "window": 20
+          },
+          "operator": "crosses_below",
+          "right": {
+            "kind": "sma",
+            "lag": 1,
+            "window": 60
+          }
+        }
+      ],
+      "match": "all"
+    },
+    "name": "structured_candidate",
+    "schema_version": 1
+  },
+  "spec_sha256": "e4269c98cfef73b916c822ec7728b6a7c7d227bee3bea411857c807e214d43d0",
+  "rule_description": {
+    "origin": "python_from_validated_rules",
+    "spec_sha256": "e4269c98cfef73b916c822ec7728b6a7c7d227bee3bea411857c807e214d43d0",
+    "entry": "Entrar largo cuando la EMA actual de 20 observaciones cruza por encima de la SMA actual de 60 observaciones.",
+    "exit": "Salir de la posición larga cuando la EMA de 20 observaciones de hace 1 observación cruza por debajo de la SMA de 60 observaciones de hace 1 observación.",
+    "execution": "El motor ejecuta la señal en la observación siguiente, si existe; el retardo de una serie no cambia esta regla.",
+    "interpretation": "Descripción mecánica de condiciones; no demuestra que ocurran señales, operaciones o mejoras."
+  },
+  "model_description": null,
+  "hypothesis_supplied": false,
+  "semantic_review_required": true,
+  "duplicate_history_checked": false,
+  "eligible_for_session": false,
+  "executable": false,
+  "calculated_results": null
+}

@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "protocol": "campaign_submission_intent_v1",
+  "attempt_sha256": "5dc56dad8ca147450449b3d2cf6e9c2f05edb0335586e8d3728b7951760aa566",
+  "receipt_id": "a5a32d1fb42c960a418b5ed332db16319b1882640278b345418361d1d4820b89",
+  "at": "2026-10-20T13:00:37.359754+00:00",
+  "execution_authorized": false
+}

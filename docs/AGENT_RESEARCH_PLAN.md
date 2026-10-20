@@ -5,6 +5,22 @@ nuevas estrategias; el desarrollo de TiresIAs se centra en darle herramientas
 de cálculo, registros y controles para contrastarlas. No se elegirá una
 estrategia por preferencia del desarrollador ni se asumirá mejor por proponerla.
 
+El [primer control de campañas](CAMPAIGN_CONTROLLER.md) enlaza la inspección del
+plan, la memoria vigente y las capturas con la validación de reglas y duplicados.
+Separa esa comprobación de la revisión aceptada y de los cálculos, aún pendientes
+de conexión con el permiso de campaña y las reservas del motor.
+La [revisión de capturas](CAMPAIGN_REVIEW.md) ya registra la declaración técnica
+y permite preparar el plan de una revisión aceptada, manteniendo su ejecución
+desactivada hasta conectar el permiso y las reservas compartidas.
+La [ruta de cálculo virtual](CAMPAIGN_EXECUTION.md) ya vincula un permiso
+explícito con esas reservas y el motor para una comparación offline, sin habilitar
+consultas nuevas al modelo o dar por acreditada su autoría.
+La [integración de FASE 4](PHASE4_COMPLETION.md) añade una ruta distinta de ciclo
+local acotado con memoria completa, transporte identificado y revisión mecánica
+de reglas cerradas para experimentos virtuales. Conserva los contratos manuales
+anteriores, sus pendientes y sus intentos consumidos; no acredita aceptación
+semántica humana o fiabilidad de las propuestas del modelo.
+
 ## Primer paso: bandeja de ideas
 
 El nuevo módulo `trading_ai.discovery` solicita una sola idea al proveedor
@@ -179,6 +195,10 @@ Quedan pendientes:
    permisos nuevos. Su [lectura con caché opcional](VALIDATED_READ_CACHE.md)
    conserva las verificaciones de fuentes sin releer e interpretar el XML en
    cada paso; no modifica productores o amplía presupuestos.
+   La [memoria de resultados de campaña](CAMPAIGN_MEMORY.md) conserva resultados
+   calculados, fallos e intentos pendientes. Su sesión opcional de verificación
+   evita repetir el recorrido guiado manteniendo guardas de archivos y listados;
+   no guarda permisos o cálculos en caché ni habilita el ciclo local automático.
 2. Ampliar las capacidades solo con comprobaciones de causalidad, calentamiento
    y ejecución posterior. Nunca ejecutar código libre generado.
 3. Extender la investigación de desarrollo conservando descartes y errores.
@@ -192,5 +212,7 @@ La evaluación exterior 2020–2026 ya se consultó y la comprobación interna
 Una comprobación prospectiva necesitará un protocolo y datos no consultados al
 fijar la propuesta. No se ejecutan operaciones reales ni se conecta TradingView.
 
-Esta tarea no cierra FASE 4 ni modifica `PROJECT_STATUS.md`. Commits, pushes,
-dependencias y servicios adicionales requieren su autorización correspondiente.
+La [integración posterior](PHASE4_COMPLETION.md) cierra el alcance de desarrollo
+de FASE 4 y actualiza `PROJECT_STATUS.md`. La validación prospectiva y la fiabilidad
+general del investigador siguen sin demostrarse. Commits, pushes, dependencias
+y servicios fuera del alcance autorizado requieren la autorización correspondiente.

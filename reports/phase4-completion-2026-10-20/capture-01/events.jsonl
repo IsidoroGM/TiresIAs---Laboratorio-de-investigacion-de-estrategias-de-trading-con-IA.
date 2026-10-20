@@ -1,0 +1,4 @@
+{"schema_version": 1, "at": "2026-10-20T13:00:36.996323+00:00", "event": "campaign_attempt_started", "data": {"scope_id": "f0e9b3af64f68a6d66642d794bb1df57ee0a5d677f841e1334997e752ae29e38", "receipt_id": "a5a32d1fb42c960a418b5ed332db16319b1882640278b345418361d1d4820b89"}}
+{"schema_version": 1, "at": "2026-10-20T13:00:37.091616+00:00", "event": "campaign_attempt_prepared", "data": {"sha256": "5dc56dad8ca147450449b3d2cf6e9c2f05edb0335586e8d3728b7951760aa566", "status": "prepared_not_submitted", "executable": false}}
+{"schema_version": 1, "at": "2026-10-20T13:00:37.368911+00:00", "event": "campaign_submission_intent", "data": {"sha256": "6497bf360855137e6cfbe8bb86b384448b70a362d896248869930bf9c20ac503", "executable": false}}
+{"schema_version": 1, "at": "2026-10-20T13:02:12.405185+00:00", "event": "campaign_observation_recorded", "data": {"sha256": "0950d6e3c9baa9cf12dc825f949e742636df0bbe69690ccf87ec9732e6ba3126", "executable": false}}

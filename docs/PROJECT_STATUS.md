@@ -1,15 +1,20 @@
-# Estado de Trading AI
+# Estado de TiresIAs
 
-Última actualización: **19 de octubre de 2026** (Europe/Madrid), cierre de FASE 3.
+Última actualización: **20 de octubre de 2026** (Europe/Madrid), cierre de FASE 4.
 
 ## Fase activa
 
-**FASES 0, 1, 2 y 3 completadas.** La FASE 2 cerró el motor educativo ampliado:
+**FASES 0, 1, 2, 3 y 4 completadas.** La FASE 2 cerró el motor educativo ampliado:
 estrategias SMA/EMA configurables, costes, capital, tamaño de posición,
 drawdown, comparaciones y sensibilidad local. La FASE 3 incorpora un investigador
 local con Ollama y Qwen3.5:4b, propuestas acotadas, herramientas Python,
 conclusiones verificadas y registros de resultados, errores y consumo.
-Las fases 4 a 8 siguen pendientes; la fase 8 de ejecución real supervisada es opcional.
+La FASE 4 incorpora separación cronológica, registro previo, evaluación histórica,
+sensibilidad, selección interna, walk-forward descriptivo y un ciclo local acotado
+con memoria y controles. Las fases 5 a 8 siguen pendientes; la fase 8 de ejecución
+real supervisada es opcional. El nombre actual es **TiresIAs - Laboratorio de
+investigación de estrategias de trading con IA**; el paquete `trading_ai` y la
+carpeta original se conservan por compatibilidad.
 
 Completar esta fase significa cumplir su alcance de desarrollo, no demostrar
 que las estrategias sean rentables o aptas para operar con dinero real.
@@ -62,7 +67,8 @@ local y el paquete `trading_ai` en la raíz del repositorio.
 - `experiments.py`: validación de propuestas, comparación base/variante y criterios verificables.
 - `research.py`: CLI independiente, máximo dos consultas, registro duradero y conclusiones contrastadas.
 - `scripts/`: instalación portátil, arranque y parada explícitos de la instancia local.
-- `tests/`: **399 pruebas aprobadas**. Temporales de Codex separados según `AGENTS.md`.
+- `tests/`: **1547 pruebas aprobadas** en la colección completa, ejecutada en tres
+  procesos aislados sin solapamientos. Temporales de Codex según `AGENTS.md`.
 
 Comprobaciones de cierre de FASE 1:
 
@@ -201,6 +207,76 @@ de FASE 4. TradingView sigue planificado y sin conexión implementada según
 Uso, configuración, instalación y referencias oficiales en
 [LOCAL_AI.md](LOCAL_AI.md).
 
+## Cierre de FASE 4 — Validación y ciclo de investigación acotado
+
+Se cierra el alcance de desarrollo educativo, sin afirmar rentabilidad, suficiencia
+estadística o validación independiente. La división de datos ya explorados permite
+comprobar el procedimiento; no los convierte en inéditos.
+
+| Objetivo | Implementación y comprobación |
+|---|---|
+| Separar desarrollo y evaluación | Frontera 2020-01-01 elegida por el usuario, datos y manifiestos con huellas |
+| Registrar antes de evaluar | Propuesta, criterio y controles congelados; acceso exclusivo y sin reintento |
+| Comparar con controles constantes | Motor existente, cuentas y calentamiento independientes, ejecución posterior |
+| Sensibilidad y selección interna | Ventanas/costes predefinidos, selección anterior a comprobación y descartes conservados |
+| Ampliar reglas | Vocabulario tipado causal con retardos y revisión separada; nunca código libre del modelo |
+| Incorporar memoria | Historial completo, errores, consumo y resultados; diccionario reversible sin recortes |
+| Ciclo local acotado | Transporte local identificado, presupuesto compartido, revisión mecánica, cálculos y memoria separados |
+| Walk-forward | Tres ventanas expansivas, selección solo en entrenamiento y sin ganador forzado |
+| Verificar y preservar | Colección completa aprobada, fuentes estables y evidencias anteriores intactas |
+
+La ruta nueva `campaign_cycle` es un contrato de **experimentos virtuales sobre
+reglas tipadas cerradas**. Su revisión mecánica no acredita comprensión semántica
+humana y no adopta estrategias. Los permisos y revisiones manuales v1 conservan
+su alcance; no se simulan sus propuestas pendientes. El modelo no decide datos,
+capital, coste, tamaño, permisos o código ejecutable. Duplicados, errores, contexto
+insuficiente o consumo desconocido detienen el ciclo, sin reintentos automáticos.
+
+El registro admite tres propuestas y seis backtests. La habilitación nueva exige
+un permiso y opciones explícitas; el registro contable por sí solo permanece
+inactivo y no concede ejecución. La reserva de ciclo es exclusiva por ámbito y
+no se libera cambiando carpeta. Se usa Ollama 0.40.6, Qwen3.5:4b en CPU, contexto
+4096 y salida 384, sin recortes, proxies o destinos remotos. El esquema fijo se
+guarda por huella y se transmite íntegro. Los presupuestos heredados no se reinician.
+
+Comprobación local real: una consulta nueva, 2898 tokens de entrada y 180 de salida,
+seis consultas de metadatos y **0 USD API**. La respuesta repitió una identidad
+conocida: `duplicate_rules`, rechazada antes de simular. No hubo reintento ni
+estrategia nueva aceptada. Quedan dos huecos de propuestas y seis de backtests en
+el registro, sin reabrir automáticamente el ciclo. El ámbito compacto heredado
+2262/176 tokens y 0 USD se conserva aparte; no se presenta como consumo total.
+
+El walk-forward parte de la EMA20/60 previamente congelada y sus variaciones
+mecánicas ±1, con un máximo independiente de 24 backtests y cero consultas IA.
+Se ejecutaron **20 backtests**: EMA19/60 fue elegida en el primer entrenamiento,
+pero incumplió el criterio en comprobación al aumentar también el drawdown.
+Las otras dos ventanas quedaron sin elegible y no forzaron una comparación.
+La selección se sincroniza antes del cálculo de comprobación; no se reelige al
+ver sus resultados. Las cuentas son independientes y no se compone una curva
+ficticia. El protocolo usa desarrollo conocido, sin afirmar prueba inédita.
+
+Verificación de cierre: **1547 aprobadas**, distribuidas en 459, 575 y 513 casos
+sin omisiones o duplicados frente a la colección prevista. Tiempos por proceso:
+998,22 s, 1194,79 s y 1075,35 s; se ejecutaron en paralelo, no se suman como duración
+transcurrida. Caché pytest desactivada, temporales nuevos exclusivos y 131 archivos
+de código/pruebas sin cambios durante la revisión. Las 31 pruebas nuevas incluyen
+integración completa sobre fuentes artificiales, motor real y transporte simulado.
+
+La auditoría final `3f5f81a4fbf04bbcb7b0894c14a899aa` verifica las 332 copias y
+referencias anteriores y añade 98: **430 entre 25 inventarios concretos**, no
+archivos físicos únicos. El sellado no consulta modelos o recalcula backtests.
+La comprobación real no accede a evaluación exterior, no realiza conexiones fuera
+del servidor local y conserva límites, controles e intentos históricos.
+
+- [Informe de cierre y evidencias](../reports/phase4-completion-2026-10-20.md).
+- [Guía del ciclo y walk-forward](PHASE4_COMPLETION.md).
+- [Protocolo cronológico y sus límites](VALIDATION_PLAN.md).
+
+No se instalaron dependencias, descargaron modelos o iniciaron servicios nuevos.
+Se reutilizó el servidor local existente. OpenAI, TradingView y el bróker siguen
+sin habilitarse. No hubo operaciones reales, commits o pushes. HEAD se conserva
+en `3d0fa83` con todos los cambios previos y nuevos pendientes en el directorio.
+
 ## Herramientas y dependencias
 
 | Elemento | Estado |
@@ -221,9 +297,11 @@ Python 3.14.8. Pandas y NumPy siguen pendientes de aprobación si llegan a neces
 
 ## Decisiones acordadas
 
-- Aprendizaje práctico y tareas pequeñas: explicación, propuesta, aprobación,
-  implementación, pruebas y revisión. Detenerse al terminar cada tarea.
-- Consultar cambios de arquitectura, dependencias, proveedores y alcance.
+- Aprendizaje práctico y tareas pequeñas comprobables, con avance autónomo dentro
+  del alcance autorizado. No pedir validaciones rutinarias; detenerse al completar
+  la fase o tarea encargada.
+- Consultar cambios de alcance, dependencias, proveedores o gastos fuera de la
+  autorización existente. Mantener los controles del simulador separados de la IA.
 - Usar inicialmente el paquete `trading_ai` en la raíz (estructura plana) para
   ejecutarlo desde el proyecto sin configurar su instalación como paquete.
 - Mantener el arranque en `__main__.py` sin efectos al importar; pruebas con pytest.
@@ -289,8 +367,9 @@ del push se comunican al finalizar. Futuros commits y pushes requieren nueva aut
   del calendario. Los cruces respecto al euro son referencias derivadas.
 - Hay costes proporcionales hipotéticos; faltan spreads, slippage, swaps,
   financiación y restricciones de negociación verificadas para un bróker real.
-- La sensibilidad reutiliza el histórico completo; faltan separación de datos,
-  validación fuera de muestra, walk-forward y análisis de cambios simultáneos.
+- La separación y el walk-forward están implementados sobre datos ya conocidos;
+  faltan datos futuros no consultados para validación prospectiva independiente
+  y análisis ampliado de cambios simultáneos.
 - El investigador local está disponible; su fiabilidad general sigue sin
   demostrarse. No hay paper trading en tiempo real, interfaz gráfica ni conexión
   con un bróker. No se han elegido parámetros ganadores.
@@ -303,17 +382,16 @@ del push se comunican al finalizar. Futuros commits y pushes requieren nueva aut
 
 ## Próximo paso propuesto
 
-Primera tarea de FASE 4: definir y comprobar una separación cronológica entre
-datos de desarrollo y de evaluación, con una frontera explícita y sin que el
-agente consulte el bloque reservado para proponer cambios. Después, comparar una
-propuesta fijada contra la base con los mismos supuestos, registrando resultados
-dentro y fuera de muestra. La selección de ventanas no debe reutilizar el bloque
-reservado. El histórico completo ya se exploró en fases anteriores: una partición
-posterior de esta copia sirve para verificar el procedimiento, no constituye
-evidencia totalmente inédita. El primer paso será acordar ese protocolo.
+**FASE 5 — Interfaz del laboratorio**: facilitar la consulta de experimentos,
+resultados, procedencia, consumo, descartes y capital virtual, mostrando los
+límites de cada comprobación. No iniciar investigaciones o cálculos por abrir
+una pantalla ni confundir un resultado histórico con una cotización actual.
+TradingView y sus eventos corresponden a FASE 6 según su plan; la cuenta demo y
+la posible ejecución real supervisada permanecen en fases posteriores.
 
-La FASE 4 no se inicia con este cierre. No se añaden dependencias, credenciales
-ni conexiones externas; las decisiones adicionales se acordarán cuando proceda.
+No se inicia FASE 5 automáticamente con este cierre. No se añaden dependencias,
+credenciales o conexiones externas sin la autorización correspondiente. Futuros
+commits o pushes requieren una petición nueva.
 
 Por indicación del usuario, actualizar este documento únicamente al terminar
 una fase, no después de cada tarea. Registrar resultados comprobados y las

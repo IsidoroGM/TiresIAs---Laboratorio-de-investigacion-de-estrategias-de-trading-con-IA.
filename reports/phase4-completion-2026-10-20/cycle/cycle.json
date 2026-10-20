@@ -1,0 +1,470 @@
+{
+  "schema_version": 1,
+  "protocol": "controlled_local_campaign_v1",
+  "run_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-cycles\\eaba7b8479034eb69e52838fa1919715",
+  "permit": {
+    "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-cycle-permits\\9c716f1ae063496fa9f048ca904ac7f7",
+    "sha256": {
+      "permit.json": "98780dbb4da85b2d26573d83d7ad8439d2520fe8c80580086603dabe05feb33c",
+      "permit.json.sha256": "e1c265b85fd9b89797b3ce46462b6743951681383ac2248ebd95528b54489251",
+      "development.xml": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+      "events.jsonl": "b91b88ff413301425c1a871f17a3e7c9477fbff54ebb6e888789fe4999c99602"
+    }
+  },
+  "scope_id": "f0e9b3af64f68a6d66642d794bb1df57ee0a5d677f841e1334997e752ae29e38",
+  "stop_reason": "duplicate_rules",
+  "entries": [
+    {
+      "number": 1,
+      "request": {
+        "sha256": "d285371c02a4ce53521c41688f5605d0d9fbc35cb4702c83083f8d13fffebc54",
+        "bytes": 8787,
+        "entries": 0,
+        "history_entries_omitted": 0,
+        "history_text_truncated": false,
+        "fits_provider_context_verified": false,
+        "token_count": null
+      },
+      "receipt": {
+        "schema_version": 1,
+        "protocol": "inactive_campaign_reservation_v1",
+        "scope_id": "f0e9b3af64f68a6d66642d794bb1df57ee0a5d677f841e1334997e752ae29e38",
+        "kind": "proposal",
+        "operation_id": "d285371c02a4ce53521c41688f5605d0d9fbc35cb4702c83083f8d13fffebc54",
+        "receipt_id": "a5a32d1fb42c960a418b5ed332db16319b1882640278b345418361d1d4820b89",
+        "proposal_id": "d285371c02a4ce53521c41688f5605d0d9fbc35cb4702c83083f8d13fffebc54",
+        "created_at": "2026-10-20T13:00:36.872571+00:00",
+        "state": "reserved_accounting_only_no_result",
+        "reserved_model_requests": 1,
+        "reserved_backtests": 0,
+        "execution_authorized": false,
+        "calculated_results": null,
+        "registration_sha256": "40dbf8a59b707c67cfbbb8661e6988b4ac2942961664ede573b622e06e22d9a4",
+        "new_usage_of_reservation": {
+          "model_requests": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "api_cost_usd": "0",
+          "backtests": 0
+        }
+      },
+      "capture": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-attempts\\e5064642757a497d94d8ecbab4501e5f",
+      "capture_source": {
+        "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-attempts\\e5064642757a497d94d8ecbab4501e5f",
+        "sha256": {
+          "attempt.json": "5dc56dad8ca147450449b3d2cf6e9c2f05edb0335586e8d3728b7951760aa566",
+          "attempt.json.sha256": "079455b860c3ac41b7f2c39ba0009ac854017b63ce5cb8f6d8664e27e3951aa9",
+          "submission.json": "6497bf360855137e6cfbe8bb86b384448b70a362d896248869930bf9c20ac503",
+          "submission.json.sha256": "a13411d387435ecf5083980b0ad0b2958014e5eabc16cf71c966050350ea889f",
+          "completion.json": "0950d6e3c9baa9cf12dc825f949e742636df0bbe69690ccf87ec9732e6ba3126",
+          "completion.json.sha256": "a5ae6cfbd73ddb9f9ca50a639413ca7980e941f4b4bab0be440874f91acdb283",
+          "request.json": "d285371c02a4ce53521c41688f5605d0d9fbc35cb4702c83083f8d13fffebc54",
+          "observation.raw": "b4c67e9ce15801a9eefb60054070805a7722b8d69ab261cdcc5b3ef8ecd9d51d",
+          "events.jsonl": "64c469133ba49a9db1e182810aff06ea9bd68aa31e344cf086bf659032ea8d2a"
+        }
+      },
+      "content": "{\n  \"entry\": {\n    \"left\": {\n      \"kind\": \"ema\",\n      \"window\": 20,\n      \"lag\": 0\n    },\n    \"operator\": \"crosses_above\",\n    \"right\": {\n      \"kind\": \"sma\",\n      \"window\": 60,\n      \"lag\": 0\n    }\n  },\n  \"exit\": {\n    \"left\": {\n      \"kind\": \"ema\",\n      \"window\": 20,\n      \"lag\": 1\n    },\n    \"operator\": \"crosses_below\",\n    \"right\": {\n      \"kind\": \"sma\",\n      \"window\": 60,\n      \"lag\": 1\n    }\n  }\n}",
+      "usage": {
+        "model_requests": 1,
+        "input_tokens": 2898,
+        "output_tokens": 180,
+        "api_cost_usd": "0"
+      },
+      "error": null,
+      "review": {
+        "status": "duplicate_rules",
+        "eligible_for_experiment": false,
+        "spec": {
+          "entry": {
+            "conditions": [
+              {
+                "left": {
+                  "kind": "ema",
+                  "lag": 0,
+                  "window": 20
+                },
+                "operator": "crosses_above",
+                "right": {
+                  "kind": "sma",
+                  "lag": 0,
+                  "window": 60
+                }
+              }
+            ],
+            "match": "all"
+          },
+          "exit": {
+            "conditions": [
+              {
+                "left": {
+                  "kind": "ema",
+                  "lag": 1,
+                  "window": 20
+                },
+                "operator": "crosses_below",
+                "right": {
+                  "kind": "sma",
+                  "lag": 1,
+                  "window": 60
+                }
+              }
+            ],
+            "match": "all"
+          },
+          "name": "structured_candidate",
+          "schema_version": 1
+        },
+        "spec_sha256": "e4269c98cfef73b916c822ec7728b6a7c7d227bee3bea411857c807e214d43d0",
+        "rule_description": {
+          "origin": "python_from_validated_rules",
+          "spec_sha256": "e4269c98cfef73b916c822ec7728b6a7c7d227bee3bea411857c807e214d43d0",
+          "entry": "Entrar largo cuando la EMA actual de 20 observaciones cruza por encima de la SMA actual de 60 observaciones.",
+          "exit": "Salir de la posición larga cuando la EMA de 20 observaciones de hace 1 observación cruza por debajo de la SMA de 60 observaciones de hace 1 observación.",
+          "execution": "El motor ejecuta la señal en la observación siguiente, si existe; el retardo de una serie no cambia esta regla.",
+          "interpretation": "Descripción mecánica de condiciones; no demuestra que ocurran señales, operaciones o mejoras."
+        },
+        "model_description": null,
+        "hypothesis_supplied": false,
+        "semantic_review_required": true,
+        "duplicate_history_checked": false,
+        "eligible_for_session": false,
+        "executable": false,
+        "calculated_results": null
+      },
+      "results": null,
+      "transport_origin": "application_controlled_loopback_parsed_json",
+      "provider_identity": {
+        "provider": "ollama",
+        "model": "qwen3.5:4b",
+        "model_digest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04",
+        "base_url": "http://127.0.0.1:11435",
+        "api_cost_usd": "0",
+        "context_tokens": 4096,
+        "output_tokens": 384,
+        "gpu_layers": 0,
+        "timeout_seconds": 180,
+        "think": false,
+        "temperature": 0,
+        "server_version": "0.40.6",
+        "context_policy": "reject_overflow_no_truncate_no_shift",
+        "truncate": false,
+        "shift": false,
+        "prompt_tokens_before_request": null
+      }
+    }
+  ],
+  "state": {
+    "schema_version": 1,
+    "protocol": "inactive_campaign_ledger_v1",
+    "status": "registered_inactive",
+    "scope_id": "f0e9b3af64f68a6d66642d794bb1df57ee0a5d677f841e1334997e752ae29e38",
+    "registration": {
+      "activation_status": "inactive",
+      "code_sha256": {
+        "agent_feedback.py": "bf191f16f50e41e86eed10ea9b8c742928de346abb9a386a4c24620a1ea06560",
+        "ai.py": "9c43b2f13b1b9264810cb1710c081acc0c476071870842617c9a451cb58cc1f3",
+        "backtesting.py": "81e6a34dd715d192c730fe407c7cdd037e2340e387e4ea37c90b0549d07a3c4f",
+        "campaign_ledger.py": "a5ea7baab7a17966ae46a26ac5edc8f8141840f3027560f90957a063d3606845",
+        "campaign_plan.py": "4cb3b58318479cd9d329a11341ccafd14f01fce4b82b0bf90cce3767e5388100",
+        "compact_candidate.py": "42b3f28f2e75441ec32e2ebb612bc72520a2d26c0b0fbc536f2c3b61c6ac01c4",
+        "compact_history.py": "91a7734097662f9cf2848ef2074151d481cdeac643ab32dd0e5b0b268a587020",
+        "compact_ollama.py": "49b3d3cc05b7915f367c5feeecdbaa0f19a30758b434becdd232f92a77caa2ae",
+        "compact_request.py": "3f666590e490eed7420c0683467a9f88aebfff66c9773e9377ed48addeaa8299",
+        "compact_review.py": "d3197d211be1e1f970e2cae46ba7e9260c61716fac7b23fef67b2c3f64a96d20",
+        "data.py": "286b822fbb6dd5e46f65f64bb387bb7f7d246c7c9c17dc523a52d7ce3e7dfd94",
+        "discovery.py": "b680ab835f96dc1e917760309a19aad93bb51beee70eaf9d2dfb96da0fd211a2",
+        "experiments.py": "57c5638f293d9e4c5102a091227970ac1d2fd3b9774fa3f839fd6ed044a26e4d",
+        "formalization.py": "43eea12e59e441712914f5449c66a410d33928dcbd2c5de31ec9d89f8d795098",
+        "guided_compact_request.py": "c2b420bbc7a82d38831982922267385fbd49662b51f522e9f93170bd259f96a2",
+        "holdout.py": "a048adf93b2a58b3177e80d1077597a0bd849932fd42f714326a43fc68fecbb2",
+        "idea_memory.py": "dbf1d5ef1f32c9df3e945da9e1e74491aa8c3a7fbcb92f0c93187558c6193f40",
+        "indicators.py": "13cce9a32399a309694a83f52c8bdb93b0f86075612c825d5be3d9bfc2c366a3",
+        "metrics.py": "3d85bab9c1ee6da88a632a08b3a600f12ce7ee9335fbce1b4c56e0cfc865ec2f",
+        "research.py": "7e53374a3768800de2d75be9bc67d2299d16620c6b4fe92a3438d1f4c0c63340",
+        "research_session.py": "64adb3617b31d16546443488fc992b8a8a43862f6896ff25ec38fcd795961015",
+        "robustness.py": "906ea3f6c07d5f5aeac03d049c0852b9d863e29a3864ac61009fa811a0a11ae5",
+        "rule_coverage.py": "4483e597deea4b4f9c8a427883ba00ce153dea543681d28f47a3ca2719c428c9",
+        "rule_execution.py": "0aeeeb9fb859e9d26e2225adbe16990ddaaed5cb7661d7284a66b5f469b8f218",
+        "rule_planning.py": "ec26a75932f10db35fc2ebdb4ef56a1062eba0059a621125f8d8d2166bb6708d",
+        "rules.py": "09bbc9d25ed27d4e27961dd0431c95a73e10f21aa8500e47430373a93c500361",
+        "strategies.py": "9607a659a352e31f2192c237eaecc8191ba90f9b2e78bcaa3919cfaa3489527e",
+        "structured_brief.py": "960106ad0d3c4e271e8efb19fbb88050a179791b16fc8ee15666ac3afdccbd1d",
+        "structured_draft.py": "9791b386067dd019ee9e403aa3ffde34b0d35984eb5e3f5f08c122d4365cdc31",
+        "structured_draft_context.py": "1699ce3527f9a8dc55bc7d2778a534585463e8aabaefd65e85091ad9d225eaf3",
+        "structured_draft_request.py": "f3980ed85fbe3399e4f4108c466139ee5813db2c5da1617567d9d26ad9e2a2da",
+        "structured_execution.py": "cba2d3af6d8d489cb10c6fce59c8817e66b7d2fa197a2887008b5290506af247",
+        "structured_freshness.py": "f618cbf374b5a090e3a04ce189e6eeda4edf95c227e4aafdf5feed2d79702784",
+        "structured_generation.py": "e51f83a70d3abfaae8f66f0c4ac5291511bad70fd1a8170eae02219f6dcefd09",
+        "structured_ideas.py": "66bebb4f2077bd77d622e256420e87090325cd03ba346d545f6b92def5f5009a",
+        "structured_planning.py": "70e7b127ea9af5a1c712cd87f08090458bc45e0f3757a24660765ceb9fea8968",
+        "structured_review_memory.py": "a965a10f790b29b3e6169ea9e9116f32c6034bdd416d562e3cf02c5c29650d86",
+        "structured_session.py": "cc24bd867badd13436273698bcfaf4b5b4d9b80cf6b23a1d7859d2bef413c66a",
+        "validation.py": "ac2aa655af324a352107753e3b53e0aa986958aeb9e2e2374c4791c3a8afb1b6"
+      },
+      "execution_authorized": false,
+      "identity": {
+        "development_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+        "pair": "EUR/USD",
+        "protocol": "local_campaign_scope_v1",
+        "schema_version": 1
+      },
+      "inherited_generation_budget": {
+        "consumed": true,
+        "executable": false,
+        "generation_ready": false,
+        "identity": {
+          "development_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+          "pair": "EUR/USD",
+          "schema_version": 1,
+          "scope": "compact_new_idea"
+        },
+        "reservation_run": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\compact-generations\\261e5b75a6f140f99eb0eb9ae02960eb",
+        "scope": "compact_generation_only_not_legacy_revision_budget",
+        "transport_enabled": false
+      },
+      "inherited_usage": [
+        {
+          "api_cost_usd": "0",
+          "metadata_request_attempts": 6,
+          "model_requests": 1,
+          "usage": [
+            {
+              "api_cost_usd": "0",
+              "cached_input_tokens": 0,
+              "duration_ns": 71453363800,
+              "input_tokens": 2262,
+              "metadata_request_attempts": 4,
+              "output_tokens": 176
+            }
+          ]
+        }
+      ],
+      "initial_history_sha256": "b7310b3dc873ed12d2d82474d4d7ed88652a127c6b122bc8257bf58facd29360",
+      "plan": {
+        "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-plans\\37316f24fb92479aa7b9af4ab8134ed0",
+        "sha256": {
+          "campaign.json": "c9aeef16e3f94f6cdf07c9d35f63c20aed402d7ac915aeb275e6e07cb628ba48",
+          "campaign.json.sha256": "826b5474e66f93f3031031493419291436a8a33789b0fbfe157aaf2efdbae290",
+          "events.jsonl": "d41580a1c2ac229c58b9195e5b3a85b84420dc0785f1cd3f0a7e1696ccd8aca4",
+          "limits.json": "fbd63f22e4aba76b97f9945b5ccd0bbda921f1aad3e98c044a4bebf6b30b545b",
+          "request.json": "012b1a7ff0231c3bac2a26c043676b9dcdd75cc828d4d0124038522ee72f53ce"
+        }
+      },
+      "protocol": "inactive_campaign_registration_v1",
+      "registered_at": "2026-10-20T08:53:13.779502+00:00",
+      "schema_version": 1,
+      "scope_id": "f0e9b3af64f68a6d66642d794bb1df57ee0a5d677f841e1334997e752ae29e38",
+      "source_freshness_scope": "checked_at_registration_not_before_future_tool_use",
+      "terms": {
+        "controls": {
+          "allocation_fraction": "0.1",
+          "baseline_strategy": "sma",
+          "cost_rate": "0.001",
+          "fast_window": 20,
+          "initial_capital": "1000",
+          "pair": "EUR/USD",
+          "slow_window": 60
+        },
+        "data": {
+          "first_date": "1999-01-04",
+          "last_date": "2019-12-31",
+          "name": "BCE",
+          "observations": 5375,
+          "sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5"
+        },
+        "limits": {
+          "max_backtests": 6,
+          "max_proposals": 3
+        },
+        "objective": {
+          "criterion": "higher_return_without_more_drawdown",
+          "origin": "frozen_development_registration"
+        },
+        "provider_policy": {
+          "context_overflow": "reject_without_truncation",
+          "gpu_layers": 0,
+          "max_context_tokens": 4096,
+          "max_output_tokens": 384,
+          "max_timeout_seconds": 180,
+          "model_identity_bound": false,
+          "network": "loopback_only",
+          "provider": "ollama",
+          "server_version_required": "0.40.6"
+        }
+      }
+    },
+    "reserved_model_requests": 1,
+    "reserved_backtests": 0,
+    "remaining_accounting_slots": {
+      "proposals": 2,
+      "backtests": 6
+    },
+    "reservations": [
+      {
+        "calculated_results": null,
+        "created_at": "2026-10-20T13:00:36.872571+00:00",
+        "execution_authorized": false,
+        "kind": "proposal",
+        "new_usage_of_reservation": {
+          "api_cost_usd": "0",
+          "backtests": 0,
+          "input_tokens": 0,
+          "model_requests": 0,
+          "output_tokens": 0
+        },
+        "operation_id": "d285371c02a4ce53521c41688f5605d0d9fbc35cb4702c83083f8d13fffebc54",
+        "proposal_id": "d285371c02a4ce53521c41688f5605d0d9fbc35cb4702c83083f8d13fffebc54",
+        "protocol": "inactive_campaign_reservation_v1",
+        "receipt_id": "a5a32d1fb42c960a418b5ed332db16319b1882640278b345418361d1d4820b89",
+        "registration_sha256": "40dbf8a59b707c67cfbbb8661e6988b4ac2942961664ede573b622e06e22d9a4",
+        "reserved_backtests": 0,
+        "reserved_model_requests": 1,
+        "schema_version": 1,
+        "scope_id": "f0e9b3af64f68a6d66642d794bb1df57ee0a5d677f841e1334997e752ae29e38",
+        "state": "reserved_accounting_only_no_result"
+      }
+    ],
+    "executable_model_requests": 0,
+    "executable_backtests": 0,
+    "execution_authorized": false,
+    "current_source_freshness_verified": false,
+    "new_usage_of_this_operation": {
+      "model_requests": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "api_cost_usd": "0",
+      "backtests": 0
+    }
+  },
+  "consumed_rule_identities": [
+    "7371635017c0d0fe8501735d32d0724ec87b181676dd6a03840355b4da568946",
+    "e4269c98cfef73b916c822ec7728b6a7c7d227bee3bea411857c807e214d43d0"
+  ],
+  "source_sha256": "9b703b20333ef2d962d372fdfb9bf6c700f44ad2dace3d63e4d7ecf4edae58a5",
+  "usage": {
+    "schema_version": 1,
+    "protocol": "campaign_attempt_summary_v1",
+    "scope_id": "f0e9b3af64f68a6d66642d794bb1df57ee0a5d677f841e1334997e752ae29e38",
+    "attempts": [
+      {
+        "receipt_id": "a5a32d1fb42c960a418b5ed332db16319b1882640278b345418361d1d4820b89",
+        "request_sha256": "d285371c02a4ce53521c41688f5605d0d9fbc35cb4702c83083f8d13fffebc54",
+        "run_dir": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\campaign-attempts\\e5064642757a497d94d8ecbab4501e5f",
+        "status": "observation_recorded",
+        "analysis": {
+          "usage": {
+            "model_requests": 1,
+            "input_tokens": 2898,
+            "output_tokens": 180,
+            "api_cost_usd": "0"
+          },
+          "accounting_complete": true,
+          "requires_stop": false,
+          "issues": [],
+          "observation_origin": "caller_supplied_not_transport_proof"
+        },
+        "usage": {
+          "model_requests": 1,
+          "input_tokens": 2898,
+          "output_tokens": 180,
+          "api_cost_usd": "0"
+        }
+      }
+    ],
+    "usage": {
+      "model_requests": 1,
+      "input_tokens": 2898,
+      "output_tokens": 180,
+      "api_cost_usd": "0"
+    },
+    "known_subtotals": {
+      "model_requests": 1,
+      "input_tokens": 2898,
+      "output_tokens": 180,
+      "api_cost_usd": "0"
+    },
+    "requires_stop": false,
+    "scope": "recorded_campaign_proposal_observations_only",
+    "inherited_usage": [
+      {
+        "api_cost_usd": "0",
+        "metadata_request_attempts": 6,
+        "model_requests": 1,
+        "usage": [
+          {
+            "api_cost_usd": "0",
+            "cached_input_tokens": 0,
+            "duration_ns": 71453363800,
+            "input_tokens": 2262,
+            "metadata_request_attempts": 4,
+            "output_tokens": 176
+          }
+        ]
+      }
+    ],
+    "execution_authorized": false,
+    "calculated_results": null,
+    "new_usage_of_query": {
+      "model_requests": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "api_cost_usd": "0"
+    }
+  },
+  "api_cost_usd": "0",
+  "automatic_adoption": false,
+  "semantic_acceptance": false,
+  "outer_evaluation_allowed": false,
+  "broker_operations_allowed": false,
+  "scope": "known_development_history_only",
+  "code_sha256": {
+    "data.py": "286b822fbb6dd5e46f65f64bb387bb7f7d246c7c9c17dc523a52d7ce3e7dfd94",
+    "indicators.py": "13cce9a32399a309694a83f52c8bdb93b0f86075612c825d5be3d9bfc2c366a3",
+    "strategies.py": "9607a659a352e31f2192c237eaecc8191ba90f9b2e78bcaa3919cfaa3489527e",
+    "backtesting.py": "81e6a34dd715d192c730fe407c7cdd037e2340e387e4ea37c90b0549d07a3c4f",
+    "metrics.py": "3d85bab9c1ee6da88a632a08b3a600f12ce7ee9335fbce1b4c56e0cfc865ec2f",
+    "experiments.py": "57c5638f293d9e4c5102a091227970ac1d2fd3b9774fa3f839fd6ed044a26e4d",
+    "ai.py": "9c43b2f13b1b9264810cb1710c081acc0c476071870842617c9a451cb58cc1f3",
+    "research.py": "7e53374a3768800de2d75be9bc67d2299d16620c6b4fe92a3438d1f4c0c63340",
+    "validation.py": "ac2aa655af324a352107753e3b53e0aa986958aeb9e2e2374c4791c3a8afb1b6",
+    "holdout.py": "a048adf93b2a58b3177e80d1077597a0bd849932fd42f714326a43fc68fecbb2",
+    "rule_planning.py": "ec26a75932f10db35fc2ebdb4ef56a1062eba0059a621125f8d8d2166bb6708d",
+    "rules.py": "09bbc9d25ed27d4e27961dd0431c95a73e10f21aa8500e47430373a93c500361",
+    "formalization.py": "43eea12e59e441712914f5449c66a410d33928dcbd2c5de31ec9d89f8d795098",
+    "discovery.py": "b680ab835f96dc1e917760309a19aad93bb51beee70eaf9d2dfb96da0fd211a2",
+    "robustness.py": "906ea3f6c07d5f5aeac03d049c0852b9d863e29a3864ac61009fa811a0a11ae5",
+    "idea_memory.py": "dbf1d5ef1f32c9df3e945da9e1e74491aa8c3a7fbcb92f0c93187558c6193f40",
+    "structured_ideas.py": "66bebb4f2077bd77d622e256420e87090325cd03ba346d545f6b92def5f5009a",
+    "structured_planning.py": "70e7b127ea9af5a1c712cd87f08090458bc45e0f3757a24660765ceb9fea8968",
+    "structured_brief.py": "960106ad0d3c4e271e8efb19fbb88050a179791b16fc8ee15666ac3afdccbd1d",
+    "structured_draft.py": "9791b386067dd019ee9e403aa3ffde34b0d35984eb5e3f5f08c122d4365cdc31",
+    "structured_draft_context.py": "1699ce3527f9a8dc55bc7d2778a534585463e8aabaefd65e85091ad9d225eaf3",
+    "rule_execution.py": "0aeeeb9fb859e9d26e2225adbe16990ddaaed5cb7661d7284a66b5f469b8f218",
+    "structured_execution.py": "cba2d3af6d8d489cb10c6fce59c8817e66b7d2fa197a2887008b5290506af247",
+    "research_session.py": "64adb3617b31d16546443488fc992b8a8a43862f6896ff25ec38fcd795961015",
+    "agent_feedback.py": "bf191f16f50e41e86eed10ea9b8c742928de346abb9a386a4c24620a1ea06560",
+    "structured_session.py": "cc24bd867badd13436273698bcfaf4b5b4d9b80cf6b23a1d7859d2bef413c66a",
+    "structured_review_memory.py": "a965a10f790b29b3e6169ea9e9116f32c6034bdd416d562e3cf02c5c29650d86",
+    "structured_draft_request.py": "f3980ed85fbe3399e4f4108c466139ee5813db2c5da1617567d9d26ad9e2a2da",
+    "structured_freshness.py": "f618cbf374b5a090e3a04ce189e6eeda4edf95c227e4aafdf5feed2d79702784",
+    "structured_generation.py": "e51f83a70d3abfaae8f66f0c4ac5291511bad70fd1a8170eae02219f6dcefd09",
+    "compact_ollama.py": "49b3d3cc05b7915f367c5feeecdbaa0f19a30758b434becdd232f92a77caa2ae",
+    "compact_candidate.py": "42b3f28f2e75441ec32e2ebb612bc72520a2d26c0b0fbc536f2c3b61c6ac01c4",
+    "compact_review.py": "d3197d211be1e1f970e2cae46ba7e9260c61716fac7b23fef67b2c3f64a96d20",
+    "compact_history.py": "91a7734097662f9cf2848ef2074151d481cdeac643ab32dd0e5b0b268a587020",
+    "compact_request.py": "3f666590e490eed7420c0683467a9f88aebfff66c9773e9377ed48addeaa8299",
+    "rule_coverage.py": "4483e597deea4b4f9c8a427883ba00ce153dea543681d28f47a3ca2719c428c9",
+    "guided_compact_request.py": "c2b420bbc7a82d38831982922267385fbd49662b51f522e9f93170bd259f96a2",
+    "campaign_plan.py": "4cb3b58318479cd9d329a11341ccafd14f01fce4b82b0bf90cce3767e5388100",
+    "campaign_ledger.py": "a5ea7baab7a17966ae46a26ac5edc8f8141840f3027560f90957a063d3606845",
+    "campaign_attempts.py": "45a875e05af49d83b9a09e55fd3bc27e7caeeb4f62c01d4f88caa8099e46d0d1",
+    "campaign_context.py": "353b75540de81a76185637bb703c54b70ff625119551b937f819f1c36b35a84d",
+    "campaign_cycle.py": "19404bcc7c7b06f10ef943390216c1da2f321da14c1232d4a9ef3e218f6f7d9f",
+    "verification_session.py": "c15b232b22da882c4af3537e3536431e203813c752d686b76dd7991d03b13c5f"
+  },
+  "artifacts_sha256": {
+    "provider.json": "bab9d1005f8d8d315e0f5271326843199d6b842f0838c937059bb07bb0b842ea",
+    "proposal-01.json": "b43d099f05eaa6278c7ec20ae71928aa162013c0183c27af634d06cbbeb2ded6",
+    "review-01.json": "fa2ff9ed6d2f991ef554c5e64bf26ff3da023b6128729c893e9212a4d1434c87"
+  }
+}
