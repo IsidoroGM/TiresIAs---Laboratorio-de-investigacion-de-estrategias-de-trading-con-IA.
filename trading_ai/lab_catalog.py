@@ -1,8 +1,10 @@
 """Catálogo acotado de archivos existentes. No importa ejecutores ni crea registros."""
 
 from datetime import datetime, timezone
+from copy import deepcopy
 from hashlib import sha256
 import json
+import os
 from pathlib import Path, PureWindowsPath
 import re
 
@@ -15,7 +17,7 @@ MAX_FILE = 32 * 1024 * 1024
 MAX_ENTRIES = 4096
 MAX_TOTAL = 256 * 1024 * 1024
 BUCKETS = frozenset((
-    "research", "holdout", "evaluations", "robustness", "discovery", "idea-revisions",
+    "research", "chat-experiments", "holdout", "evaluations", "robustness", "discovery", "idea-revisions",
     "formalization", "research-sessions", "structured-ideas", "structured-revisions",
     "structured-sessions", "structured-drafts", "structured-review-memory",
     "compact-generations", "compact-candidates", "compact-executions", "compact-history",
@@ -34,6 +36,16 @@ SUPPORT_ONLY = frozenset(("walk-forward-plans", "campaign-cycle-permits", "campa
                           "rule-plans", "compact-plans", "validation", "campaign-ledger"))
 EXTENSIONS = frozenset((".json", ".jsonl", ".sha256", ".md", ".raw", ".xml", ".txt"))
 ERRORS = (OSError, ValueError, TypeError, KeyError, IndexError, RecursionError, UnicodeError)
+
+
+def stamp(path):
+    """Metadatos de invalidación; nunca son una comprobación criptográfica."""
+    try:
+        value = path.lstat()
+        return (value.st_dev, value.st_ino, value.st_size, value.st_mtime_ns,
+                value.st_ctime_ns, value.st_mode, getattr(value, "st_file_attributes", 0))
+    except FileNotFoundError:
+        return None
 
 
 def identifier(value):
@@ -61,15 +73,39 @@ def origin_key(value):
 class Catalog:
     """Una instantánea por consulta; no hay caché persistente ni escrituras."""
 
-    def __init__(self, root=ROOT):
+    def __init__(self, root=ROOT, *, metadata_cache=None):
         self.root = Path(root).resolve()
         self.files, self.records, self.archives = {}, {}, {}
         self.warnings, self.bytes_read = [], 0
         self.by_origin = {}
+        self.dependencies = {}
+        self._metadata_cache = metadata_cache
+        self._scan_safe = set()
+        self.begin_read()
         self.queried_at = datetime.now(timezone.utc).isoformat()
-        self._scan()
+        try: self._scan()
+        finally: self._scan_safe = None
 
-    def safe(self, path):
+    def begin_read(self):
+        self.bytes_read, self._reads = 0, {}
+        self.queried_at = datetime.now(timezone.utc).isoformat()
+
+    def snapshot(self):
+        return deepcopy({name: getattr(self, name) for name in
+                         ("root", "files", "records", "archives", "warnings", "by_origin", "dependencies")})
+
+    @classmethod
+    def from_snapshot(cls, snapshot):
+        result = cls.__new__(cls)
+        result.__dict__.update(deepcopy(snapshot))
+        result._metadata_cache, result._scan_safe = None, None
+        result.begin_read()
+        return result
+
+    def watch(self, path):
+        if path not in self.dependencies: self.dependencies[path] = stamp(path)
+
+    def safe(self, path, *, fresh=False):
         path = Path(path).absolute()
         relative = path.relative_to(self.root)
         if not relative.parts or ".." in relative.parts:
@@ -82,21 +118,45 @@ class Catalog:
         current = self.root
         for part in relative.parts:
             current = current / part
+            if not fresh and self._scan_safe is not None and current in self._scan_safe:
+                continue
             if current.is_symlink() or current.is_junction():
                 raise ValueError("No se siguen enlaces simbólicos o junctions.")
-        if not path.resolve().is_relative_to(self.root):
+            if not fresh and self._scan_safe is not None: self._scan_safe.add(current)
+        if (fresh or self._scan_safe is None) and not path.resolve().is_relative_to(self.root):
             raise ValueError("La ruta resuelta sale del proyecto.")
         return path
 
     def read(self, path, limit=MAX_FILE):
-        path = self.safe(path)
+        if self.bytes_read > MAX_TOTAL: raise ValueError("Se supera el límite de lectura de la consulta.")
+        path = self.safe(path, fresh=True)
+        before = stamp(path)
         if not path.is_file() or path.stat().st_size > limit:
             raise ValueError("Archivo ausente, no regular o demasiado grande.")
-        with path.open("rb") as stream:
-            raw = stream.read(limit + 1)
+        cached = self._reads.get(path)
+        if cached is not None:
+            if cached[0] != before: raise ValueError("El archivo cambió durante la consulta.")
+            if len(cached[1]) > limit: raise ValueError("Archivo demasiado grande.")
+            return cached[1]
+        raw = self._metadata_cache.get(path, before) if self._metadata_cache is not None else None
+        if raw is None:
+            with path.open("rb") as stream:
+                opened = os.fstat(stream.fileno())
+                # En Windows lstat y fstat pueden dar distinta semántica a ctime.
+                # La identidad y mtime se cotejan entre APIs; ctime entre fstat.
+                if (opened.st_dev, opened.st_ino, opened.st_size, opened.st_mtime_ns) != before[:4]:
+                    raise ValueError("El archivo cambió antes de abrirse.")
+                raw = stream.read(limit + 1)
+                closed = os.fstat(stream.fileno())
+            if (opened.st_ino, opened.st_size, opened.st_mtime_ns, opened.st_ctime_ns) != (closed.st_ino, closed.st_size, closed.st_mtime_ns, closed.st_ctime_ns):
+                raise ValueError("El archivo cambió durante la lectura.")
+        if stamp(path) != before: raise ValueError("El archivo cambió durante la lectura.")
         self.bytes_read += len(raw)
         if len(raw) > limit or self.bytes_read > MAX_TOTAL:
             raise ValueError("Se supera el límite de lectura de la consulta.")
+        self.dependencies.setdefault(path, before)
+        self._reads[path] = (before, raw)
+        if self._metadata_cache is not None: self._metadata_cache.put(path, before, raw)
         return raw
 
     def json(self, path, limit=MAX_FILE):
@@ -108,6 +168,7 @@ class Catalog:
     def children(self, path):
         try:
             path = self.safe(path)
+            self.watch(path)
             if not path.exists(): return []
             result = []
             for item in path.iterdir():
@@ -129,6 +190,7 @@ class Catalog:
             raise ValueError("Demasiados archivos; catálogo incompleto.")
         self.files[key] = {"id": key, "path": relative, "source": source or relative,
                            "expected_sha256": digest, "archive": archive}
+        self.watch(path)
         return key
 
     def _local_files(self, directory):
@@ -155,6 +217,7 @@ class Catalog:
 
     def _scan(self):
         local = self.root / ".local"
+        self.watch(local)
         # El directorio .local solo se lista; no se abre ninguna carpeta excluida.
         if local.is_symlink() or local.is_junction():
             self.warnings.append(".local es un enlace; no se consulta.")
@@ -180,7 +243,9 @@ class Catalog:
                     self.add_file(directory)
                     continue
                 if not self.safe(directory).is_dir(): continue
+                self.watch(directory)
                 manifest = directory / "snapshot.json"
+                self.watch(manifest)
                 if not manifest.exists(): continue
                 value = self.json(manifest, 512 * 1024)
                 legacy = isinstance(value.get("files"), list) and isinstance(value.get("date"), str)

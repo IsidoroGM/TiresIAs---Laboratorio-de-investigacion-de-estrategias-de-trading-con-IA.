@@ -1,0 +1,23 @@
+{
+  "protocol": "tiresias_chat_prices_integration_check_v1",
+  "purpose": "Verify a model suggestion, human review, explicit approval and linked BID/ASK historical comparison; no strategy search",
+  "requested_candidate": {"strategy": "sma", "fast_window": 15, "slow_window": 45},
+  "reviewed_baseline": {"strategy": "sma", "fast_window": 20, "slow_window": 60},
+  "dataset": "ev-eurusd-2025-to-dec24-2026-10-22",
+  "period": ["2025-01-01", "2025-12-25"],
+  "end_date_exclusive": true,
+  "initial_capital_usd": "1000",
+  "fixed_quantity_eur": "1",
+  "assumed_commission_rate": "0.001",
+  "criterion": "higher_return_without_more_drawdown",
+  "execution": "Existing SMA BID/ASK engine unchanged; next observed session first-hour open, buy ASK, sell/mark BID, no forced final close",
+  "permission": "Model suggestions have no execution authority. Preserve exact strategy and windows; user-facing review selects source and money assumptions; saving does not execute; a separate approval reserves the comparison.",
+  "model_failure": "Preserve any failure and its reservation; no automatic retry, no silent EMA/SMA substitution. Manual review is available and must be reported as manual if used.",
+  "budget": "Use existing persisted 24 model requests and four comparisons shared with BCE; do not increase or reset limits",
+  "price_integrity": "Verify originals at review, approval and execution; preserve input copies and approval; reject stale source or engine",
+  "queries": "No model calls, strategy execution or account processing on GET",
+  "scope": "Retrospective known-history integration check, not prospective validation or strategy selection",
+  "accounting_processed_or_external_orders": false,
+  "phase_closed": false,
+  "commit_or_push": false
+}

@@ -1,0 +1,46 @@
+{
+  "method": "independent_json_decimal_csv_comparison",
+  "provider": "EV Trading Labs",
+  "claimed_upstream": "Dukascopy",
+  "catalog_url": "https://evtradelabs.com/data",
+  "catalog_path": "EURUSD/H1/2025.json.gz",
+  "raw_sha256": "75424fa8293615a3e98d7463c90c8e1ef446bff0f29388c894298249791c995c",
+  "bytes": 199128,
+  "hourly_rows": 6223,
+  "daily_sessions": 313,
+  "internal_gaps": [
+    {
+      "date": "2025-12-25",
+      "from": "2025-12-25T03:00:00+00:00",
+      "to": "2025-12-25T06:00:00+00:00"
+    },
+    {
+      "date": "2025-12-25",
+      "from": "2025-12-25T08:00:00+00:00",
+      "to": "2025-12-25T22:00:00+00:00"
+    }
+  ],
+  "gaps_over_96_hours": [],
+  "comparisons": [
+    {
+      "side": "BID",
+      "original_sha256": "7efe20d392e9bf9506e7db31ad0c31673bb0e63e953eaeefdeaf9a1bc7396910",
+      "csv_rows": 528,
+      "annual_january_rows": 528,
+      "missing": [],
+      "extra": [],
+      "ohlc_differences": []
+    },
+    {
+      "side": "ASK",
+      "original_sha256": "b7e7904e871ebe7d042be5ecac2187d28cdb0317ca3a29e1233f7457478a2905",
+      "csv_rows": 528,
+      "annual_january_rows": 528,
+      "missing": [],
+      "extra": [],
+      "ohlc_differences": []
+    }
+  ],
+  "volume_units_verified": false,
+  "license_as_displayed": "free use with attribution to EV Trading Labs"
+}

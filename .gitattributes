@@ -42,5 +42,24 @@ trading_ai/lab_static/** -text
 tests/test_lab.py -text
 scripts/check_lab_readonly.py -text
 reports/phase5-completion-*/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+tests/test_lab_performance.py -text
+scripts/benchmark_lab.py -text
+pytest.ini -text
+# Las salidas conservan diagnósticos originales, incluidos espacios de pytest.
+reports/phase5-1-*/** -text whitespace=-blank-at-eol,space-before-tab,cr-at-eol
+tests/test_conversation.py -text
+scripts/check_conversation_suite.py -text
+reports/phase5-2-*/** -text whitespace=-blank-at-eol,space-before-tab,cr-at-eol
+tests/test_tv*.py -text
+tests/test_tradingview_cli.py -text
+scripts/check_tradingview_suite.py -text
+reports/phase6-progress-*/** -text whitespace=-blank-at-eol,space-before-tab,cr-at-eol
+reports/phase6-chart-guard-*/** -text whitespace=-blank-at-eol,space-before-tab,cr-at-eol
+# Los nuevos incrementos conservan huellas de fuentes, entradas y diagnósticos.
+reports/phase6-*/** -text whitespace=-blank-at-eol,space-before-tab,cr-at-eol
+reports/publication-*/** -text whitespace=-blank-at-eol,space-before-tab,cr-at-eol
+tests/test_conversation*.py -text
+tests/test_dukascopy*.py -text
+tests/test_market*.py -text
 # Esta salida histórica de pytest conserva también los espacios del diagnóstico.
 reports/phase4-campaign-memory-2026-10-20/focused-tests.xml -text whitespace=-blank-at-eol,space-before-tab,cr-at-eol

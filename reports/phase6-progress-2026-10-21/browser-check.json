@@ -1,0 +1,45 @@
+{
+  "artificial_data": true,
+  "browser_tested": [
+    "prepare_bundle",
+    "register_virtual_account",
+    "receive_json_without_processing",
+    "review_then_process",
+    "csv_file_picker",
+    "csv_preview",
+    "csv_review_then_import",
+    "account_read_after_duplicates"
+  ],
+  "final_state": {
+    "basis": "0",
+    "cash": "101.8",
+    "equity": "101.8",
+    "estimated_fee_events": 2,
+    "fees": "0.2",
+    "filled_orders": 2,
+    "last_at": "2020-01-08T23:00:00.000Z",
+    "last_reason": null,
+    "last_sequence": 2,
+    "max_drawdown_percent": "0.09",
+    "peak": "101.8",
+    "price": "2",
+    "price_at": "2020-01-08T23:00:00.000Z",
+    "quantity": "0",
+    "realized_pnl": "1.8",
+    "rejections": 0,
+    "risk_paused": false
+  },
+  "chain_unchanged_by_csv_import": true,
+  "csv_original_sha256": "a0abc626e36b6b9acf37d1b2f64eff0a4d5a09b5d561fdcaad3d4c41f1c2f9be",
+  "csv_original_bytes_preserved": true,
+  "imported_rows": 2,
+  "import_receipt_states": [
+    "duplicate",
+    "duplicate"
+  ],
+  "total_receipts": 5,
+  "console_errors": [],
+  "console_warnings": [],
+  "model_requests": 0,
+  "external_connection": false
+}

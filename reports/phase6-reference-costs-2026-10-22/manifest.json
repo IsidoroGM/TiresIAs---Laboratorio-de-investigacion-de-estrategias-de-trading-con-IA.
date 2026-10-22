@@ -1,0 +1,171 @@
+{
+  "date": "2026-10-22",
+  "phase_closed": false,
+  "phase7_started": false,
+  "protocol_sha256": "d2be36ada028bbbbba80f05c8486554d2e7c1c522be17317376d15f5eaf8bcf2",
+  "tests_passed": 391,
+  "new_reference_cost_tests": 28,
+  "test_counts": {
+    "tests.test_market_benchmark": 28,
+    "tests.test_market_comparison": 24,
+    "tests.test_market_history": 40,
+    "tests.test_dukascopy_backtest": 34,
+    "tests.test_dukascopy_history": 33,
+    "tests.test_dukascopy": 21,
+    "tests.test_tv_contracts": 45,
+    "tests.test_tv_io": 23,
+    "tests.test_tv_simulation": 25,
+    "tests.test_tv_service": 20,
+    "tests.test_tv_receiver": 15,
+    "tests.test_tradingview_cli": 3,
+    "tests.test_lab": 51,
+    "tests.test_lab_performance": 29
+  },
+  "full_suite_run": false,
+  "javascript_syntax_checked": true,
+  "git_diff_whitespace_checked": true,
+  "source_sha256": {
+    "trading_ai/market_benchmark.py": "5cc4b652ac3763bad617176669e2773b39a56c31946f168b321999a875e228ed",
+    "trading_ai/dukascopy_service.py": "9915f7b81777003f73ecb3cd23dfe5e228e433c69556490230a65bf30f5087b3",
+    "trading_ai/tv_service.py": "7b9472b9a9c11cf0bea1afd766dcdec8cfdb41d178edb3198d32f690bfa41d77",
+    "trading_ai/lab_static/simulation.js": "ce31698e21ce94df3189cde01eac96a7cd6963e555990d594ba2c2663109b6a1",
+    "tests/test_market_benchmark.py": "d8c26470b661ecb3a7f21a2ffde01f31332cc54b103a4cb3c69ffbe1bb4a5cbb"
+  },
+  "unchanged_prior_source_sha256": {
+    "trading_ai/dukascopy_history.py": "a833b160382e10077b204b9633552d6e6087aad819143a37e00d9e20eda43bf4",
+    "tests/test_dukascopy_history.py": "8b5c63297dfba666bea884eab3e8e3c1f02d2cc9396c0f9561c2faf44b23aff6",
+    "trading_ai/dukascopy.py": "d75d748f9aba8fff0dc1638d04f9129f80c541a772716b3b18d80ecd18b856db",
+    "tests/test_dukascopy.py": "e42f588aa19bd65e88f224a5e580ba20f9856d44a88afc91e08d86b27fd5321b",
+    "trading_ai/tv_contracts.py": "91dda291979f3e9b6db10848396b607100f0a21e3209de25e3ec8a22fd9307e2",
+    "trading_ai/tv_reference.py": "473c679f892fd7ca74aaac74567b2ca1cbab5bb165a145714e8d971eec920411",
+    "trading_ai/tv_pine.py": "ba06de509cd7e0e6547c3c896fa4be62d96b19fcfc9afb24e2216dc1223fc5b4",
+    "trading_ai/tv_simulation.py": "5461e6485f5a2617691b7d1c252896037817a7392e637b79ec6cb7e9670e9f49",
+    "trading_ai/market_history.py": "af7794fc6ade37032401fbf03244a386dc96d30928082ceac5dcdec38ed1daaa",
+    "trading_ai/dukascopy_backtest.py": "2071e2d53aed483e6586888d0aaf04a5b2294dc43d492c3e2e82845b66c274bd",
+    "tests/test_market_history.py": "a5511b8867da723e80b6aca2300dfc1c398a890b588976da0334cfbe51533c69",
+    "trading_ai/market_comparison.py": "b00a2fd29d6f10ec38d07070d031124745e403ca557f24fbd2b028a1d0729904",
+    "tests/test_market_comparison.py": "32cdcf2c92b034c7704c636ab420a271cc0cfcc5d802dca886848698b0827cde",
+    "trading_ai/lab_static/simulation.css": "693331d13b1f887f010f5ef573b3fd8a006fa164038bd26997a938834fc8f068"
+  },
+  "prior_evidence_verified": {
+    "phase6-dukascopy-2026-10-22": {
+      "manifest_sha256": "13c2db6ced404bfda2c027941c7f26a337b1c1414fc0198a85d1f475a117dce0",
+      "verified_evidence_files": 4
+    },
+    "phase6-dukascopy-paired-2026-10-22": {
+      "manifest_sha256": "97e4bd116ca6b6fd1e5af9dc17ac514f6a6c92ca65b05925cf995ec25c759b99",
+      "verified_evidence_files": 4
+    },
+    "phase6-dukascopy-history-2026-10-22": {
+      "manifest_sha256": "ed24975b6240ce126573fd2d6889543977b47f5d1a4eb3226a9bd4701642f473",
+      "verified_evidence_files": 15
+    },
+    "phase6-dukascopy-spread-2026-10-22": {
+      "manifest_sha256": "12ff01f0a6597ecb0098794338ce6f75084df518a13652f625935e9998ae8f0b",
+      "verified_evidence_files": 17
+    },
+    "phase6-market-history-import-2026-10-22": {
+      "manifest_sha256": "a82877711ee4b970a1c071be78ca5b79cbff4da4e9e29e1aee2c8f7e56a379c1",
+      "verified_evidence_files": 24
+    },
+    "phase6-period-validation-2026-10-22": {
+      "manifest_sha256": "ef3df186b7a85839597cd047eb387968505895f38d303f07d4056868c8d48c79",
+      "verified_evidence_files": 30
+    }
+  },
+  "commission_rates": [
+    "0",
+    "0.0005",
+    "0.001",
+    "0.002"
+  ],
+  "reference_entry_session_index": 61,
+  "capital_usd_each_scenario": "1000",
+  "fixed_quantity_eur": "1",
+  "rate_or_strategy_selected": false,
+  "independent_scenarios_verified": 8,
+  "independent_equity_points_checked": 4920,
+  "independent_fills_checked": 44,
+  "base_rate_matches_previous_sma_runs": true,
+  "sma_below_cash_all_eight_scenarios": true,
+  "sma_vs_buy_hold": {
+    "2024": "higher_equity_all_rates",
+    "2025": "lower_equity_all_rates"
+  },
+  "copied_results": [
+    {
+      "label": "2024",
+      "id": "39bbf6e8174d4e4cb9ce1553279eceaf",
+      "status": "calculated",
+      "result_sha256": "793a73ac07519a1eacfa1be4c2fc724ad1902943c1444d9d2ea799cd6671fc79",
+      "result_file_sha256": "45568f004d6e6e8be2037ddfbdd57fa0c096181b6fccf28ee7d514cace6cb1c8"
+    },
+    {
+      "label": "2025",
+      "id": "9473356c47414d66ba7d631573469e88",
+      "status": "calculated",
+      "result_sha256": "69b818c5afca6f1ef42bf1d7ecad25d562fa5d5632b51ed2d774a6c1a25be89b",
+      "result_file_sha256": "ab731865e56c0b054e6d5d8cbf78faf4e0664e19b6a98d91c698ae3afb9cf3ee"
+    },
+    {
+      "label": "2024-full-blocked",
+      "id": "b5216567e7df4688bc59f29b8a1b241e",
+      "status": "blocked_internal_gaps",
+      "result_sha256": "6c7e8676ae33f255ddc0a26b2803166cdfb4e9f286eb27fbbef65e3a903e000b",
+      "result_file_sha256": "6f7bf463fee21c3cb0826ad5ca816a29b4251a957e9a5b1dc415d7634f536e93"
+    },
+    {
+      "label": "2025-full-blocked",
+      "id": "65c98fcd3e0b46c6932aaff2a899cc4f",
+      "status": "blocked_internal_gaps",
+      "result_sha256": "76c0803a87c1a3a513bb6854cc9fdc8ddd51016c859e2d80df237e27c246bc97",
+      "result_file_sha256": "fb87b3809e8457c96acf3cd91fb1733394fcd2aa003ca439958118a067bb9366"
+    }
+  ],
+  "browser_result_id": "9473356c47414d66ba7d631573469e88",
+  "browser_action_and_commission_selector_verified": true,
+  "original_price_files_unchanged": true,
+  "full_year_quality_blocks_preserved": true,
+  "accounting_processed": false,
+  "external_orders_sent": false,
+  "prospective_validation": false,
+  "project_status_edited_this_increment": false,
+  "committed": false,
+  "pushed": false,
+  "evidence_sha256": {
+    "independent-audit.json": "0dc1a7f0ded976e8d63f3a63f106d6ae7e573e7be28f30fcc0f49678808e6eba",
+    "protocol.json": "d2be36ada028bbbbba80f05c8486554d2e7c1c522be17317376d15f5eaf8bcf2",
+    "README.md": "ca5cc15a066202b8233efa7ec2ef24145e98cf894ff9d326fe858f1ccc0fbdb6",
+    "real-runs.json": "8fda3d9fbbef77b930481497949a022d3cbfa1a2d9728b8b0b0a4689546635cc",
+    "runs/2024/benchmark.json": "45568f004d6e6e8be2037ddfbdd57fa0c096181b6fccf28ee7d514cace6cb1c8",
+    "runs/2024/input-daily.json": "87b335f0aa4e49f7a2ff4ef657b5dbefeac70281e66b555896c80cfffd98034a",
+    "runs/2024/input-manifest.json": "f09563107222391a1e3d89957b64691ae6548049ec3d7b1757a8d9fcddf7997f",
+    "runs/2024/summary.json": "7aea1073b1b3fb669e8def3ab90fdc5b1f17256cc78fec9374a72ac996f3cd8f",
+    "runs/2024-full-blocked/benchmark.json": "6f7bf463fee21c3cb0826ad5ca816a29b4251a957e9a5b1dc415d7634f536e93",
+    "runs/2024-full-blocked/input-daily.json": "694bed58df9e07fbc096da039d620ca4b0230cf21332d86968f70392ac0e5232",
+    "runs/2024-full-blocked/input-manifest.json": "884fac1ca097f5c98f3f4c4a6fa104d331565c3acc4c82eb6509e92fde159946",
+    "runs/2024-full-blocked/summary.json": "cd571a6817523f9a6991498dba0186c9d34957fde8dbb547c7941bffed1344b6",
+    "runs/2025/benchmark.json": "ab731865e56c0b054e6d5d8cbf78faf4e0664e19b6a98d91c698ae3afb9cf3ee",
+    "runs/2025/input-daily.json": "c8bedfee89a0db929b8d5cde954c4aee80b6ff08020349d44b38e95e0876b121",
+    "runs/2025/input-manifest.json": "1c2ebdd4137eefdfd661c53306d40a778b8f59fc97c77d50e4acad5b663acb59",
+    "runs/2025/summary.json": "d3abe9d39298c26e9c12d7b2235d335e3043468e05653a3e0ef3fe0f0e2c718f",
+    "runs/2025-full-blocked/benchmark.json": "fb87b3809e8457c96acf3cd91fb1733394fcd2aa003ca439958118a067bb9366",
+    "runs/2025-full-blocked/input-daily.json": "bd6110b17ade611ac5182116262e7e9a74a098a60a5e48485d46563efdcc2ef4",
+    "runs/2025-full-blocked/input-manifest.json": "42710ae00673ee8e48eb8a29da89ace5f2a0e65f65b89a6d7d079c6f4e2addf4",
+    "runs/2025-full-blocked/summary.json": "d1df3608c025643e83bc79b6d6d0156b690e789eb960dfa98e1dceacd711d752",
+    "tested-source/collect-evidence.py": "ed0d4c6f72c63a11eac683bdf91401208293b8d42a22763d0f937dc735a4a115",
+    "tested-source/independent-reference-cost-audit.py": "4b9c3f0d24b1fd358d8ed7d46a4d2b892a35ac85d66727f239f61f099e756b03",
+    "tested-source/run-reference-costs.py": "be30818d5787d5f232eec55e6f6a781e701b573f20c59540bb0f2f0ce61d89de",
+    "tested-source/tests/test_market_benchmark.py": "d8c26470b661ecb3a7f21a2ffde01f31332cc54b103a4cb3c69ffbe1bb4a5cbb",
+    "tested-source/trading_ai/dukascopy_service.py": "9915f7b81777003f73ecb3cd23dfe5e228e433c69556490230a65bf30f5087b3",
+    "tested-source/trading_ai/lab_static/simulation.js": "ce31698e21ce94df3189cde01eac96a7cd6963e555990d594ba2c2663109b6a1",
+    "tested-source/trading_ai/market_benchmark.py": "5cc4b652ac3763bad617176669e2773b39a56c31946f168b321999a875e228ed",
+    "tested-source/trading_ai/tv_service.py": "7b9472b9a9c11cf0bea1afd766dcdec8cfdb41d178edb3198d32f690bfa41d77",
+    "tests.log": "853594326fc38dd57f28e2b4ff0a6a33c82961c07d4ed251e7cb70f492fdba4d",
+    "tests.xml": "01056c316be1c5f624cf6b1ae0c8263812756374cafc8b04af655b185e6f8957",
+    "ui-2024-cost-grid.jpg": "71a6490aff8d3aa957313cf99b049fb3b062e3a8b5202eac3a67f8fe7af5249e",
+    "ui-2025-base-scenario.jpg": "d75e16b5e165b81ded07946488ccc710231786f7707dfd5d36ab58e1a64807f4",
+    "ui-2025-cost-grid.jpg": "8ebebf4c5556720bcf29ff3e4cb9c60d0d60c4d1e98a2891c32fce978c35923e",
+    "ui-and-http-audit.json": "8a4d0dec7d59483846076bd9ec463b968f261f221c12e0a4f642d636fffa8c91"
+  }
+}

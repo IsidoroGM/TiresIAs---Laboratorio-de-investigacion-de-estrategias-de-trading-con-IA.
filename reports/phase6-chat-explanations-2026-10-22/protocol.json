@@ -1,0 +1,29 @@
+{
+  "protocol": "tiresias_grounded_chat_explanation_check_v1",
+  "purpose": "Verify a constrained explanation of an existing reviewed result, without another strategy calculation or search",
+  "session": "0190241d62b543c6b69b4a5db31051d6",
+  "existing_experiment_job": "3efdcca61aa34110950cfaa6374d43b5",
+  "existing_result_file_sha256": "221279810c1472bccfc3849440462fa93e933c8246dc81b9abd1b6d0debf6516",
+  "criterion": "higher_return_without_more_drawdown",
+  "expected_assessment": {
+    "drawdown_comparison": "higher",
+    "return_comparison": "higher",
+    "scope": "historical_sample_only",
+    "verdict": "not_supported_in_sample"
+  },
+  "request": "Explica si la variante cumple el criterio registrado y qué significan su rentabilidad, caída y comisiones. No propongas operaciones.",
+  "context_previous_messages": 0,
+  "model_requests": 1,
+  "automatic_retries": false,
+  "on_model_failure": "Preserve raw reply, error, usage and reservation; do not retry to obtain a favorable answer",
+  "response_contract": "conversation_evidence_explanation_v1",
+  "model_controls": "Only up to three explanation topics; criterion and assessment must exactly match recomputed historical facts",
+  "visible_text_origin": "python_templates; no free model-authored claims or proposals are published as the explanation",
+  "legacy_reply_policy": "Preserve the prior semantically incorrect comment, label it as unverified legacy text, do not rewrite it",
+  "budget_before": {"model_requests": 2, "experiments": 1},
+  "budget_limits": {"model_requests": 24, "experiments": 4},
+  "accounting_or_external_orders": false,
+  "new_backtests": 0,
+  "phase_closed": false,
+  "commit_or_push": false
+}

@@ -29,7 +29,7 @@ comprobada se describen en [data/README.md](data/README.md).
 
 ## Estado actual
 
-Las **FASES 0, 1, 2, 3, 4 y 5 están completadas**. El motor incorpora costes, capital,
+Las **FASES 0, 1, 2, 3, 4, 5, 5.1 y 5.2 están completadas**. El motor incorpora costes, capital,
 drawdown, tamaño por porcentaje de capital, estrategias SMA/EMA configurables,
 comparación y sensibilidad local. La FASE 3 incorpora un primer
 investigador local mediante Ollama; OpenAI queda previsto como proveedor futuro
@@ -41,6 +41,17 @@ o validación independiente. La FASE 5 añade la interfaz local de consulta,
 comprobada visualmente en Windows y con **1598 pruebas aprobadas** en la colección
 completa. Consulta [el cierre y sus evidencias](reports/phase5-completion-2026-10-20.md).
 TradingView y FASE 6 siguen pendientes, sin iniciarse con este cierre.
+La mejora **FASE 5.1** incorpora índice en memoria con detección de cambios,
+lecturas compartidas, cancelación de consultas y atención concurrente limitada.
+La interfaz conserva las comprobaciones actuales de las fichas y originales.
+Se han aprobado **128 pruebas específicas de interfaz, evidencias y registro**;
+las 1598 anteriores corresponden a la colección completa del cierre de FASE 5.
+La **FASE 5.2** incorpora conversación persistente con el modelo local, revisión
+de propuestas y pruebas históricas explícitas. Consulta la
+[guía de conversación](docs/CONVERSATION.md). La revisión humana sigue siendo
+necesaria; el texto del modelo puede contener errores.
+FASE 5.2 comprueba **267 pruebas de los componentes afectados**, con 46 casos nuevos;
+la colección completa recoge 1673 casos, sin presentarlos como ejecutados todos.
 El laboratorio produce un informe
 reproducible para los cuatro pares. Están comprobados
 Python 3.14.8 de 64 bits, el entorno virtual `.venv`, su uso desde la terminal de
@@ -95,8 +106,19 @@ Abrir, filtrar, refrescar o seguir un enlace **no consulta modelos, reserva inte
 ni ejecuta backtests**. No es necesario arrancar Ollama. No hay controles de
 ejecución en estas pantallas. No se necesitan dependencias nuevas.
 
+La sexta pantalla, **Conversar con el agente**, permite guardar conversaciones,
+preparar y revisar propuestas SMA/EMA y aprobar comparaciones históricas. Enviar
+mensajes requiere arrancar Ollama con `scripts/Start-LocalAI.ps1`; guardar una
+propuesta no ejecuta cálculos. El chat usa un presupuesto inicial compartido de
+24 respuestas y cuatro comparaciones, conservando intentos fallidos y cancelados.
+La [guía de conversación](docs/CONVERSATION.md) detalla contexto, controles y recuperación.
+
 Consulta [la guía de la interfaz](docs/LAB_INTERFACE.md) y
 [los contratos de FASE 5](docs/PHASE5_PLAN.md).
+La [FASE 5.1](docs/PHASE5_1_PLAN.md) describe las mejoras de rendimiento y sus
+medidas. Tras actualizar, cierra el servidor anterior con Ctrl+C, vuelve a
+iniciarlo y recarga la página. Los resúmenes se actualizan periódicamente y
+**Actualizar fuentes** permite forzar una lectura nueva sin perder los filtros.
 
 ## Trabajar con el entorno preparado
 
@@ -1238,7 +1260,41 @@ las condiciones de aceptación. Las consultas mostrarán la fuente y la fecha de
 actualización; se verificarán las capacidades oficiales antes de automatizarlas.
 Se usará el emulador de estrategias Pine y la cuenta virtual de TiresIAs:
 las estrategias Pine no ejecutan órdenes en la cuenta Paper Trading integrada.
-Esta integración está planificada y todavía no está implementada.
+La [implementación local de FASE 6](docs/TRADINGVIEW_LOCAL.md) ya añade contratos,
+paquetes Pine, referencia OHLC, importaciones con mapa explícito, receptor local
+autenticado y contabilidad virtual. La pantalla **Simulación y TradingView** permite
+revisar sus acciones. La compilación y los datos reales de TradingView, su conexión
+externa y el puente de operaciones desde el chat siguen pendientes; FASE 6 está abierta.
+
+La [primera integración de precios Dukascopy](docs/DUKASCOPY.md) permite conservar,
+inspeccionar y contrastar CSV BID/ASK mediante una herramienta local independiente.
+El descargador por meses y la agrupación diaria UTC están disponibles por CLI,
+con caché y reproducción offline; enero se ha contrastado contra los CSV originales.
+El acceso del proveedor limita la ampliación del histórico. Ya hay una prueba
+local con spread BID/ASK y comisión supuesta, disponible por CLI y desde
+**Simulación y TradingView** para los históricos preparados. Enero no basta para
+evaluar SMA 20/60: se guarda el diagnóstico sin métricas de rentabilidad.
+La pantalla permite importar CSV BID/ASK o el archivo anual H1 de EV Trading Labs,
+con período UTC explícito y originales preservados. La [guía de históricos](docs/MARKET_DATA.md)
+describe ambos formatos. El archivo de 2025 ya está disponible localmente: sus
+528 velas de enero coinciden con ambos CSV originales. El tramo hasta el 24/12
+forma 307 sesiones y permite una primera prueba real; el año completo queda
+bloqueado por dos huecos internos del 25/12. También se ha obtenido el archivo
+anual de 2024: el mismo tramo aporta 308 sesiones y permite una
+[comparación fija entre períodos](docs/PERIOD_VALIDATION.md) desde la interfaz.
+Ambos originales anuales se conservan; los años completos no superan los controles
+de huecos. Los archivos de precios no son ejecuciones de TradingView.
+La interfaz añade también [referencias y sensibilidad a comisiones](docs/REFERENCE_COSTS.md):
+SMA 20/60 frente a comprar/mantener y efectivo, con cuatro tasas supuestas fijas,
+sin elegir parámetros o comisiones por su resultado.
+El [modo manual de operaciones virtuales](docs/MANUAL_OPERATIONS.md) permite revisar
+y aprobar peticiones EUR/USD con precios BID/ASK aportados y controles del simulador.
+Las [explicaciones contrastadas](docs/CHAT_EXPLANATIONS.md) utilizan el criterio
+registrado y texto compuesto por Python; el modelo selecciona aspectos de la evidencia.
+El [chat con históricos BID/ASK](docs/CHAT_PRICES.md) conecta propuestas SMA con
+revisión humana, elección de datos y aprobación de una comparación. Mantiene el
+presupuesto compartido con BCE y muestra resultados calculados separados de la
+interpretación del modelo. No ejecuta operaciones actuales ni modifica cuentas.
 
 Los agentes accederán a herramientas controladas. Las órdenes deberán pasar por
 validaciones y un motor de riesgo cuyos límites no podrá modificar el LLM.
@@ -1255,5 +1311,8 @@ cierre de fase. Ese documento solo se actualiza al completar una fase; este
 README describe el uso del código actual. Para la decisión posterior al cierre
 sobre TradingView, consulta [su plan de integración](docs/TRADINGVIEW_PLAN.md).
 La [hoja de ruta de las siguientes fases](docs/NEXT_PHASES.md) define los entregables
-y condiciones de cierre de TradingView, cuenta demo y ejecución real supervisada
-opcional. Ninguna de esas fases se inicia con la publicación de FASE 5.
+y condiciones de cierre de la conversación con el agente, TradingView, cuenta demo
+y ejecución real supervisada opcional. La
+[FASE 5.2 — Conversación con el agente](docs/PHASE5_2_PLAN.md) incorpora el recorrido
+de conversación, revisión y prueba histórica. FASE 6 está en desarrollo: TradingView
+y el simulador virtual conectado, incluido su futuro puente con el chat.

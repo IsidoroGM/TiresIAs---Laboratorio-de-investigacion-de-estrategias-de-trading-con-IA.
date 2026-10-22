@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "phase5_1_complete": true,
+  "phase6_started": false,
+  "verified_source_files": 143,
+  "previous_engine_and_tests_unchanged": 131,
+  "phase5_sources_changed": [
+    "trading_ai/lab.py",
+    "trading_ai/lab_catalog.py",
+    "trading_ai/lab_query.py",
+    "trading_ai/lab_static/app.js"
+  ],
+  "previous_evidence_modified": false,
+  "functional_tests": [
+    {
+      "artifact": "lab-tests-verified.xml",
+      "tests": 80,
+      "time_s": 18.133
+    },
+    {
+      "artifact": "evidence-ledger-tests.xml",
+      "tests": 48,
+      "time_s": 22.606
+    }
+  ],
+  "functional_tests_passed": 128,
+  "collected_tests": 1627,
+  "full_1627_suite_executed": false,
+  "final_benchmarks_sources_stable": true,
+  "warm_latency_targets_met": true,
+  "freshness_target_met": true,
+  "read_only_audit_passed": true,
+  "local_links_checked": 97,
+  "broken_links": [],
+  "temporary_servers_closed": true,
+  "user_server_8765_preserved": true,
+  "git_commit_push_performed": false
+}

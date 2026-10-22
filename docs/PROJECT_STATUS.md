@@ -1,10 +1,10 @@
 # Estado de TiresIAs
 
-Última actualización: **20 de octubre de 2026** (Europe/Madrid), cierre de FASE 5.
+Última actualización: **21 de octubre de 2026** (Europe/Madrid), cierre de FASE 5.2.
 
 ## Fase activa
 
-**FASES 0, 1, 2, 3, 4 y 5 completadas.** La FASE 2 cerró el motor educativo ampliado:
+**FASES 0, 1, 2, 3, 4, 5, 5.1 y 5.2 completadas.** La FASE 2 cerró el motor educativo ampliado:
 estrategias SMA/EMA configurables, costes, capital, tamaño de posición,
 drawdown, comparaciones y sensibilidad local. La FASE 3 incorpora un investigador
 local con Ollama y Qwen3.5:4b, propuestas acotadas, herramientas Python,
@@ -12,7 +12,11 @@ conclusiones verificadas y registros de resultados, errores y consumo.
 La FASE 4 incorpora separación cronológica, registro previo, evaluación histórica,
 sensibilidad, selección interna, walk-forward descriptivo y un ciclo local acotado
 con memoria y controles. La FASE 5 incorpora la interfaz local de consulta de
-experimentos, resultados, memoria, consumo y capital virtual. Las fases 6 a 8
+experimentos, resultados, memoria, consumo y capital virtual. La FASE 5.1 mejora
+su rendimiento mediante un índice en memoria con actualización y lectores por
+petición, conservando los controles de integridad. La FASE 5.2 añade conversación
+local persistente, propuestas revisables y pruebas históricas explícitas, con
+presupuesto compartido y evidencias enlazadas. Las fases 6 a 8
 siguen pendientes; la fase 8 de ejecución
 real supervisada es opcional. El nombre actual es **TiresIAs - Laboratorio de
 investigación de estrategias de trading con IA**; el paquete `trading_ai` y la
@@ -70,14 +74,27 @@ local y el paquete `trading_ai` en la raíz del repositorio.
 - `research.py`: CLI independiente, máximo dos consultas, registro duradero y conclusiones contrastadas.
 - `lab_catalog.py` y `lab_query.py`: catálogo acotado y contratos de lectura, procedencia,
   copias históricas, integridad de archivos y cuentas guardadas sin recalcular.
-- `lab.py` y `lab_static/`: interfaz local en español con cinco apartados, filtros,
+- `lab.py` y `lab_static/`: interfaz local en español con seis apartados, filtros,
   fichas, gráficos, operaciones, comparación compatible y fuentes originales;
-  servidor explícito en `127.0.0.1`, sin controles de ejecución.
+  servidor explícito en `127.0.0.1`; cinco pantallas de consulta y acciones
+  autenticadas de conversación, revisión y prueba histórica en la sexta.
+- `conversation.py`: sesiones, mensajes, revisiones y trabajos persistentes,
+  reserva compartida, cola acotada, recuperación e integración con el backtest.
+- `conversation_provider.py`: contrato conversacional local independiente del
+  ciclo de campañas, sin recortes de contexto, descargas o reintentos automáticos.
+- `lab_service.py`: índice de consulta en memoria, actualizaciones por generación,
+  frescura visible, caché de metadatos acotada y contextos de lectura independientes.
 - `scripts/`: instalación portátil, arranque y parada explícitos de la instancia local.
 - `scripts/check_lab_readonly.py`: auditoría explícita con proveedores, red,
   simulaciones, diarios y reservas bloqueados durante la consulta.
-- `tests/`: **1598 pruebas aprobadas** en la colección completa, ejecutada en tres
-  procesos aislados sin solapamientos. Temporales de Codex según `AGENTS.md`.
+- `scripts/benchmark_lab.py`: medidas HTTP reproducibles y referencia de FASE 5
+  desde Git local, sin modificar el checkout.
+- `tests/`: **1598 aprobadas** en la colección completa del cierre de FASE 5;
+  **128 específicas aprobadas** en FASE 5.1 (80 de interfaz y 48 de evidencias/registro).
+  FASE 5.2 comprueba **267 pruebas de los componentes afectados**, con 46 nuevas.
+  Colección actual: **1673 nodos**, incluidos los 1598 anteriores, 29 de FASE 5.1
+  y 46 de FASE 5.2. No se ejecutó completa en estas mejoras. `pytest.ini` delimita
+  `tests` para excluir copias archivadas en informes. Temporales según `AGENTS.md`.
 
 Comprobaciones de cierre de FASE 1:
 
@@ -354,6 +371,104 @@ conocidos en una validación inédita ni demuestra rentabilidad. No se instalan
 dependencias, leen credenciales o activan APIs de pago. TradingView y brókeres
 siguen pendientes. **FASE 6 no se inicia**.
 
+## Cierre de FASE 5.1 — Rendimiento y fluidez
+
+Índice de resúmenes en memoria, actualizado por cambios cada dos segundos mientras
+hay consultas; una actualización en curso y publicación atómica. Los listados
+conservan filtros, fecha de lectura y avisos de error. Actualizar fuentes fuerza
+una lectura nueva. Las fichas, cuentas y originales siguen leyendo sus bytes
+actuales; la consulta vigente de SQLite mantiene una conexión propia de solo lectura.
+
+Cada petición conserva su presupuesto y avisos, reutilizando bytes y detalle
+dentro de la consulta. Escaneo con menos validaciones repetidas y controles actuales
+antes de abrir archivos. Servidor con cuatro hilos y cola acotada, cancelación en
+el navegador, carga independiente de cuentas y ETag en HTML/CSS/JavaScript. Datos
+y originales conservan no-store. Sin dependencias o servicios externos nuevos.
+
+Con 92 registros y 805 archivos catalogados, 30 muestras HTTP por pantalla y el
+índice preparado: medianas de 1,98 ms en Inicio, 2,33 ms en Experimentos y 2,18 ms
+en Consumo; p95 de 19,38, 22,66 y 15,29 ms. Referencia previa: 3155,18, 3196,91
+y 2426,35 ms de mediana. Primera consulta nueva: 2,402 s, sin controlar la caché
+del sistema operativo. El navegador registra observaciones de 8,9–37,6 ms en
+listados; esos tiempos incluyen petición y construcción del DOM, no pintado físico.
+Las comprobaciones completas de copias archivadas conservan su coste explícito.
+
+128 pruebas aprobadas y colección exacta de 1627 nodos sin errores. Auditoría de
+838 fuentes sin cambios, 92 registros, 40 cuentas detalladas y 150 con resumen;
+cero inferencias, simulaciones, reservas o escrituras desde la consulta. Estados
+históricos conservados. Adición artificial visible por HTTP en 2,170 s con el
+intervalo predeterminado. Los 131 archivos previos del motor y sus pruebas siguen
+intactos, al igual que las evidencias anteriores seguidas por Git.
+
+Se conservan los pases fallidos como diagnósticos. Se corrigieron las diferencias
+de ctime de Windows y el cierre TCP ante saturación. El descubrimiento de pytest
+se limita a tests para no importar copias históricas de pruebas; no se eliminan
+esas evidencias. La revisión visual cubre cinco pantallas, gráficos, cambios de
+cuenta, comparación, navegación rápida y filtros tras actualización.
+
+Los servidores y pestañas de comprobación quedaron cerrados. El servidor del
+usuario en 8765 conserva su proceso anterior: cerrar con Ctrl+C, arrancar otra
+vez y recargar el navegador para aplicar la nueva versión.
+
+- [Informe y evidencias](../reports/phase5-1-completion-2026-10-21.md).
+- [Plan y criterios](PHASE5_1_PLAN.md).
+- [Guía de uso y actualización](LAB_INTERFACE.md).
+
+La implementación permanece local sobre `47d2fc5`, sin commits o pushes nuevos.
+La FASE 6 sigue pendiente; no se reabren investigaciones o presupuestos.
+
+## Cierre de FASE 5.2 — Conversación con el agente
+
+Se entregan los seis incrementos: contratos y persistencia; conversación local;
+propuestas estructuradas; revisión y aprobación de una prueba histórica concreta;
+explicación y memoria; verificación. La pantalla Conversar con el agente permite
+retomar una sesión, elegir mensajes de contexto y un resultado como evidencia,
+consultar consumo y solicitar cancelación. Las cinco pantallas anteriores mantienen
+su función de consulta, sin inferencias o cálculos al abrirlas.
+
+El registro del chat es independiente de campañas y no modifica sus presupuestos,
+permisos o evaluaciones. Límites persistidos por proyecto: 24 intentos de respuesta,
+cuatro comparaciones de dos backtests, ocho trabajos activos/en cola y uno activo
+por conversación. Los fallos y cancelaciones conservan la reserva; un reinicio no
+reenvía trabajos. No se admiten rutas libres, texto ejecutable u órdenes a un bróker.
+
+Las propuestas SMA/EMA largas, D1, requieren revisión de hipótesis, ventanas,
+controles y período BCE; hasta diez años con historia suficiente. Fuente, código
+y revisión se verifican antes del cálculo. Cambiar redacción, criterio o ceros
+decimales no permite repetir la misma comparación. Las revisiones y la aprobación
+quedan vinculadas por huellas a sus trabajos y resultados.
+
+**267 pruebas aprobadas**, cero fallos, errores o saltos; 46 casos nuevos. Colección
+completa de 1673 nodos sin errores, con los 1598 de FASE 5 conservados exactamente.
+No se presenta como ejecución de toda la colección: la ejecución amplia inicial
+se interrumpió y se completó la selección de componentes afectados. Caché de pytest
+desactivada y temporal GUID nuevo por proceso. Las fuentes finales permanecieron
+idénticas durante la comprobación.
+
+Ensayo real aislado: cuatro peticiones Ollama, una comparación y dos backtests,
+1800 tokens de entrada, 680 de salida y coste API cero. Se conservan una confusión
+SMA/EMA y el rechazo de una explicación por un control numérico demasiado estricto,
+junto con sus correcciones y consumo. La propuesta final sigue requiriendo revisión
+humana. La comparación de Python y la interpretación libre del modelo aparecen
+separadas; no se da por demostrada fiabilidad semántica general ni rentabilidad.
+
+Revisión visual de propuesta, aprobación, resultado, evidencias, historial tras
+reiniciar y Consumo, sin errores de consola. Durante una inferencia real, 30 muestras
+por ruta mantuvieron p95 de 23,70/3,40/20,26 ms en Inicio/Experimentos/Consumo.
+Es tiempo HTTP en el equipo de referencia, no latencia del modelo o pintado físico.
+
+La auditoría conserva 92 registros, 40 cuentas detalladas y 150 con resumen, con
+cero acciones prohibidas. Las 838 fuentes del inventario anterior siguen idénticas;
+los módulos anteriores del motor y las pruebas se conservan. El ensayo se hizo
+fuera de la base de conversaciones de uso habitual. Servidores y pestaña temporales
+cerrados; no se intervino en el servidor del usuario. Al final, 8765 no estaba
+escuchando: arrancar el laboratorio para usar la versión nueva. Sin dependencias
+nuevas, commit o push. FASE 6 pendiente.
+
+- [Informe y evidencias](../reports/phase5-2-completion-2026-10-21.md).
+- [Guía de conversación](CONVERSATION.md).
+- [Plan y alcance entregado](PHASE5_2_PLAN.md).
+
 ## Herramientas y dependencias
 
 | Elemento | Estado |
@@ -467,8 +582,9 @@ El identificador final y la confirmación del push se comunican al terminar.
 
 ## Próximo paso propuesto
 
-**FASE 6 — Integración con TradingView**, pendiente según el plan acordado.
-La interfaz de FASE 5 queda completada como consulta local. La cuenta demo y la
+**FASE 6.1 — Contratos y primeras estrategias Pine**, pendiente según el plan acordado.
+La FASE 5.2 queda completada como conversación y pruebas históricas controladas.
+El puente del chat a operaciones del simulador está previsto en FASE 6.6. La cuenta demo y la
 posible ejecución real supervisada permanecen en fases posteriores.
 
 No se inicia FASE 6 automáticamente con este cierre. No se añaden dependencias,

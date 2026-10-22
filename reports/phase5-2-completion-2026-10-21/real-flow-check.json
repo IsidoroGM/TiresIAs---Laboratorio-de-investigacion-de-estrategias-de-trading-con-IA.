@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "session": "614d0283bb084a5699a46271d09315f2",
+  "recovered_after_server_restart": true,
+  "usage": {
+    "new": {
+      "model_requests": 4,
+      "input_tokens": 1800,
+      "output_tokens": 680,
+      "api_cost_usd": "0"
+    },
+    "reserved_model_requests": 4,
+    "updated": "c89ff1d19002886acd992c402a0fb95041970d4ca1c3f850ea4fd67a18bd859a",
+    "scope": "Conversaciones locales. Intentos reservados, incluidos fallos y cancelaciones; tokens desconocidos no equivalen a cero."
+  },
+  "model_requests": 4,
+  "experiments": 1,
+  "backtests": 2,
+  "automatic_retries": 0,
+  "real_source_sha256": "3cb610894f5098c82e39c476e1593033565565eb66570051c9304fbf708978e9",
+  "result_sha256": "5c5ed2e8eaabffaaee0ab2425d6299dca65dca2ab6d1ea32d453580baac68563",
+  "original_failed_attempt_preserved": true,
+  "final_model_proposal_requires_human_review": true,
+  "production_chat_database_created": false,
+  "browser_checks": [
+    "review and explicit historical approval",
+    "result metrics and evidence link",
+    "history after restart",
+    "consumption: 4 / 1800 / 680 / 0"
+  ],
+  "browser_console_errors": []
+}

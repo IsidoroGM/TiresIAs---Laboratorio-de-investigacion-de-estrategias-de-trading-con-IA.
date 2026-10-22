@@ -1,0 +1,30 @@
+{
+  "protocol": "tiresias_chart_guard_diagnostic_v1",
+  "selected_tests_passed": 131,
+  "full_suite_executed": false,
+  "legacy_bundle_verified": "c794ed1cb42239eb27f506f3ef28e0558c2ca175ab91543dab18a04b2cfb1782",
+  "new_bundle_verified": "363051d5e88b80df824d31540998e5584934526d90677b663e2a6c30bcbd6754",
+  "pine_v2_compiled": false,
+  "observed_interval_from_user": "1",
+  "required_interval": "1D",
+  "other_chart_properties_verified": false,
+  "source_sha256": {
+    "trading_ai/tv_contracts.py": "91dda291979f3e9b6db10848396b607100f0a21e3209de25e3ec8a22fd9307e2",
+    "trading_ai/tv_pine.py": "ba06de509cd7e0e6547c3c896fa4be62d96b19fcfc9afb24e2216dc1223fc5b4",
+    "tests/test_tv_contracts.py": "2e6dcbe82152158d59ad36fb0ee55fba7f64d24bf7edfea80c80014ee8517509"
+  },
+  "files_sha256": {
+    "legacy-strategy.pine": "7318ed319ecde83635d0e9c0a960aa3410392b663aa73a39f3b41cff2f132dbb",
+    "README.md": "5a855a6f152e4f3cb33c20f9845caabb30fea0bccb4cc6e5c9acd702576728d9",
+    "reported-error.png": "75585e1e552aaed995f769fbe42ff751fd20d0f08c9cab03d7cfe976d57ab8ec",
+    "tests.log": "16fb378fdb490a0935893fcfc995de2dfbb8e9fadcb5b450adba61bd88b38ff1",
+    "tests.xml": "58fcd977eac0e71156dc37a7ecb95f17edc60c6a81093369eda3caf061d0a621",
+    "new-package/alert-message.json.txt": "a44f5be6efca15b55c6adb2dd40ba9ce153ed65910ca9976f63b783f3c2aff9d",
+    "new-package/contract.json": "363051d5e88b80df824d31540998e5584934526d90677b663e2a6c30bcbd6754",
+    "new-package/manifest.json": "7405548f860f892db62740081453c732e8b236c54da80857ccf5d9c9bbda182c",
+    "new-package/strategy.pine": "76a582b34ee99f11a3e8f7b825ffecb1118408866d67bd73fbf3eef172dc802f",
+    "tested-source/test_tv_contracts.py": "2e6dcbe82152158d59ad36fb0ee55fba7f64d24bf7edfea80c80014ee8517509",
+    "tested-source/tv_contracts.py": "91dda291979f3e9b6db10848396b607100f0a21e3209de25e3ec8a22fd9307e2",
+    "tested-source/tv_pine.py": "ba06de509cd7e0e6547c3c896fa4be62d96b19fcfc9afb24e2216dc1223fc5b4"
+  }
+}

@@ -1,18 +1,71 @@
 # Próximas fases de TiresIAs
 
-20/10/2026. Punto de partida: FASES 0 a 5 completadas. La interfaz local está
-comprobada con 1598 pruebas aprobadas. Este documento define el trabajo pendiente;
-no declara iniciada o completada ninguna fase posterior.
+21/10/2026. Punto de partida: FASES 0 a 5, 5.1 y 5.2 completadas. La interfaz
+cerró FASE 5 con 1598 pruebas aprobadas; FASE 5.1 añade 29 casos y comprueba 128
+pruebas específicas de interfaz, evidencias y registro. Este documento define el
+trabajo pendiente; FASE 6 está en desarrollo y las fases 7 y 8 no se han iniciado. FASE 5.2 comprueba 267
+pruebas de los componentes afectados, con 46 nuevas; no se ejecutó toda la colección de 1673.
+
+La **FASE 5.1 — Rendimiento y fluidez de la interfaz** queda completada antes de
+FASE 6: índice en memoria con frescura visible, lecturas por petición, cancelación,
+concurrencia limitada y caché condicional de estáticos. El
+[informe de cierre](../reports/phase5-1-completion-2026-10-21.md) conserva medidas y
+límites; la primera carga sigue preparando el índice y las fichas verifican bytes.
 
 La secuencia mantiene el [plan acordado de TradingView](TRADINGVIEW_PLAN.md).
 Completar software de integración no equivale a validar la rentabilidad de una
 estrategia. Los datos ya explorados siguen siendo históricos conocidos.
+
+## FASE 5.2 — Conversación con el agente
+
+**Objetivo:** conversar dentro de TiresIAs para concretar una estrategia, revisar
+una propuesta estructurada, solicitar una prueba histórica controlada y discutir
+sus resultados con referencias a las evidencias. Se incorpora antes de FASE 6.
+
+El [plan de FASE 5.2](PHASE5_2_PLAN.md) define seis incrementos: contratos y
+persistencia; conversación local; propuestas de estrategia; ejecución histórica
+explícita; explicación y memoria; verificación y cierre. Se añade la pantalla de
+conversación, conservando las cinco pantallas de consulta y su fluidez.
+
+El proveedor es el local ya configurado. Mensajes y trabajos tienen límites y
+consumo visibles. La conversación no puede reabrir presupuestos o permisos del
+motor, ni convertir una respuesta del modelo en una ejecución automática.
+
+**Cierre de FASE 5.2:** recorrido comprobado desde una conversación hasta una
+propuesta revisada, una prueba histórica permitida y su explicación verificable;
+historial y estados recuperables, sin duplicados. Las compras y ventas concretas
+en el simulador se incorporarán mediante el puente previsto en FASE 6.
+El [informe de cierre](../reports/phase5-2-completion-2026-10-21.md) conserva el
+ensayo real y sus fallos; la fiabilidad semántica general del modelo no se da por demostrada.
 
 ## FASE 6 — TradingView y simulador virtual conectado
 
 **Objetivo:** probar estrategias versionadas en TradingView, consultar sus
 resultados e incorporar operaciones simuladas a una cuenta virtual trazable de
 TiresIAs. No incluye órdenes a un bróker o dinero real.
+
+**Avance local 21/10/2026:** contratos, generador Pine, referencia OHLC, lector CSV
+con mapa explícito, inbox duradero, receptor autenticado loopback y contabilidad
+virtual con consulta y acciones revisadas en la interfaz. La [guía local](TRADINGVIEW_LOCAL.md)
+describe comandos y límites. No se ha compilado Pine, comprobado equivalencia con
+un gráfico ni validado una exportación real; tampoco se ha conectado TradingView
+o implementado el puente de operaciones desde el chat. Estos incrementos no
+constituyen el cierre de FASE 6.
+
+**Avance de datos y validación 22/10/2026:** importación de precios H1 BID/ASK,
+archivos anuales de 2024 y 2025 preservados y cálculo retrospectivo con spread
+sobre períodos explícitos hasta el 24/12. Se repite SMA 20/60 con parámetros fijos
+y se añade comparación de períodos independientes en la interfaz. Los años
+completos quedan bloqueados por huecos internos del 25/12. La
+[guía de validación](PERIOD_VALIDATION.md) documenta los resultados negativos y
+sus límites; no sustituye el contraste externo de Pine ni completa FASE 6.
+Se añade una [comparación con referencias y comisiones](REFERENCE_COSTS.md):
+efectivo sin intereses y comprar/mantener con cantidad fija tras el calentamiento,
+bajo cuatro tasas supuestas predeterminadas. SMA queda por debajo del efectivo
+en ambos períodos incluso sin comisión. El [chat con precios](CHAT_PRICES.md) ya
+conecta propuestas SMA con los nuevos históricos mediante revisión y aprobación
+explícitas, manteniendo el presupuesto compartido con BCE. El contraste externo
+de FASE 6 sigue pendiente. El modo manual posterior se describe abajo.
 
 | Incremento | Entrega | Comprobación de aceptación |
 | --- | --- | --- |
@@ -21,6 +74,7 @@ TiresIAs. No incluye órdenes a un bróker o dinero real.
 | 6.3. Importación de históricos | Lector de exportaciones reales de operaciones y métricas, con archivo original, huella, validación y errores visibles | Importar dos veces el mismo archivo/evento no duplica operaciones ni costes |
 | 6.4. Recepción de novedades | Alertas y receptor de webhooks autenticado, con validación, registro duradero y procesamiento separado | Duplicados, retrasos, orden incorrecto, reinicios y mensajes incompatibles se detectan sin inventar ejecuciones |
 | 6.5. Contabilidad y conciliación | Compras, ventas, cantidades, posiciones, costes y capital virtual desde eventos simulados; consulta en la interfaz | La cuenta interna y el informe externo pueden conciliarse, con diferencias y antigüedad de datos explícitas |
+| 6.6. Operaciones simuladas desde conversación | Convertir una petición del chat de FASE 5.2 en una intención estructurada para el simulador, con modo, cuenta, instrumento, acción, cantidad y condiciones | Revisión y autorización explícitas, controles de saldo y riesgo independientes del modelo y registro único; pedir o proponer una operación no equivale a ejecutarla |
 
 Las cuentas del emulador y las de TiresIAs se identifican por separado. Un evento
 de ejecución ya producido no vuelve a recibir el retraso de una observación del
@@ -38,6 +92,8 @@ alertas que correspondan. No se presupone una API para automatizar toda la cuent
 sus históricos y novedades pueden registrarse una sola vez en TiresIAs; compras,
 ventas, posición y capital son conciliables; la interfaz muestra origen, fechas,
 datos ausentes y errores. Se prueba recuperación tras fallos sin duplicar asientos.
+La petición de una operación por conversación pasa por revisión y los controles
+del simulador, con su resultado confirmado enlazado a la conversación.
 Abrir o refrescar una pantalla sigue siendo una consulta sin ejecuciones nuevas.
 
 ## FASE 7 — Cuenta demo externa
@@ -103,5 +159,20 @@ cantidad a invertir, un objetivo de beneficio ni una fecha para operar.
   completar una fase. Las dependencias, gastos y conexiones nuevas requieren el
   alcance autorizado correspondiente.
 
-El siguiente trabajo de desarrollo, cuando se encargue, será **6.1: contratos de
-intercambio y primeras estrategias Pine versionadas**. La FASE 6 sigue pendiente.
+Las explicaciones nuevas con resultados adjuntos ya usan un contrato estructurado:
+el modelo selecciona aspectos y Python compone el texto con criterio y evaluación
+comprobados. Se conserva el comentario incorrecto anterior y no se recalculan sus
+estrategias. La elección de aspectos por el modelo sigue pudiendo ser incompleta;
+este incremento no acredita razonamiento libre fiable.
+
+El primer recorrido de 6.6 ya admite peticiones manuales limitadas a comprar/vender
+EUR/USD, cuentas independientes y precios BID/ASK aportados, con revisión, aprobación
+concreta, controles del simulador y asiento atómico. No interpreta operaciones libres
+mediante el LLM ni obtiene precios automáticamente. Se conserva separado de los fills
+de estrategia y del inbox externo; no completa el contraste externo pendiente.
+
+El siguiente desarrollo de FASE 6 debe completar el contraste externo de Pine y
+datos equivalentes, adaptar una exportación real conservando sus originales y
+ampliar el modo manual del chat si se acuerdan otras reglas o una fuente de cotizaciones.
+La conexión HTTPS de alertas se habilitará únicamente tras revisar capacidades,
+cuenta y configuración. FASE 5.2 está completada localmente; FASE 6 permanece abierta.

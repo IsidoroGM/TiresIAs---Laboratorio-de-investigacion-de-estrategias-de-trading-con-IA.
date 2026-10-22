@@ -1,0 +1,19 @@
+{
+  "previous_messages_jobs_and_revisions_byte_equivalent": true,
+  "original_result_and_input_copies_byte_identical": true,
+  "request_and_context_hash_verified": true,
+  "schema_and_evidence_fingerprints_verified": true,
+  "criterion_checked_from_saved_decimals": true,
+  "browser_evidence_selection_context_and_send_verified": true,
+  "visible_explanation_matches_stored_text": true,
+  "model_free_text_published": false,
+  "model_selected_topics": [
+    "return",
+    "drawdown",
+    "scope"
+  ],
+  "requested_cost_topic_omitted": true,
+  "model_retries": 0,
+  "new_backtests": 0,
+  "accounts_and_inbox_unchanged": true
+}

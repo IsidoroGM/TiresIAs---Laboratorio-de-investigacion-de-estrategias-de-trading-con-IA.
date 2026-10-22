@@ -1,8 +1,10 @@
 # Integración futura con TradingView
 
 Decisión del usuario: **19 de octubre de 2026**. Estado: requisitos acordados;
-la conexión, las consultas y el registro de operaciones externas están pendientes
-de implementación. Este plan complementa el cierre histórico de FASE 2.
+la conexión y la validación de operaciones externas están pendientes. Desde el
+21/10/2026 hay una [implementación local parcial de FASE 6](TRADINGVIEW_LOCAL.md),
+probada con datos artificiales y sin conexión externa. Este plan complementa el
+cierre histórico de FASE 2 y mantiene sus condiciones de aceptación.
 
 ## Objetivos acordados
 

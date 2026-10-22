@@ -1,0 +1,114 @@
+{
+  "method": "independent_stdlib_decimal_raw_prices_to_sma_and_buy_hold_all_fixed_commissions",
+  "protocol_sha256": "d2be36ada028bbbbba80f05c8486554d2e7c1c522be17317376d15f5eaf8bcf2",
+  "periods": [
+    {
+      "year": 2024,
+      "raw_sha256": "66fa719d8e7d75c11e1c691b232471fe3c9323e91ed998e8b82fe943f85d38b2",
+      "daily_sessions": 308,
+      "scenarios": [
+        {
+          "commission_rate": "0",
+          "sma_fills_checked": 6,
+          "hold_fills_checked": 1,
+          "equity_points_checked": 616,
+          "all_indicators_signals_fills_and_equity_match": true,
+          "sma_equity_usd": "999.97485",
+          "hold_equity_usd": "999.94603",
+          "sma_under_cash": true,
+          "sma_minus_hold_usd": "0.02882"
+        },
+        {
+          "commission_rate": "0.0005",
+          "sma_fills_checked": 6,
+          "hold_fills_checked": 1,
+          "equity_points_checked": 616,
+          "all_indicators_signals_fills_and_equity_match": true,
+          "sma_equity_usd": "999.971589755",
+          "hold_equity_usd": "999.945483455",
+          "sma_under_cash": true,
+          "sma_minus_hold_usd": "0.026106300"
+        },
+        {
+          "commission_rate": "0.001",
+          "sma_fills_checked": 6,
+          "hold_fills_checked": 1,
+          "equity_points_checked": 616,
+          "all_indicators_signals_fills_and_equity_match": true,
+          "sma_equity_usd": "999.96832951",
+          "hold_equity_usd": "999.94493691",
+          "sma_under_cash": true,
+          "sma_minus_hold_usd": "0.02339260"
+        },
+        {
+          "commission_rate": "0.002",
+          "sma_fills_checked": 6,
+          "hold_fills_checked": 1,
+          "equity_points_checked": 616,
+          "all_indicators_signals_fills_and_equity_match": true,
+          "sma_equity_usd": "999.96180902",
+          "hold_equity_usd": "999.94384382",
+          "sma_under_cash": true,
+          "sma_minus_hold_usd": "0.01796520"
+        }
+      ]
+    },
+    {
+      "year": 2025,
+      "raw_sha256": "75424fa8293615a3e98d7463c90c8e1ef446bff0f29388c894298249791c995c",
+      "daily_sessions": 307,
+      "scenarios": [
+        {
+          "commission_rate": "0",
+          "sma_fills_checked": 3,
+          "hold_fills_checked": 1,
+          "equity_points_checked": 614,
+          "all_indicators_signals_fills_and_equity_match": true,
+          "sma_equity_usd": "999.99221",
+          "hold_equity_usd": "1000.08854",
+          "sma_under_cash": true,
+          "sma_minus_hold_usd": "-0.09633"
+        },
+        {
+          "commission_rate": "0.0005",
+          "sma_fills_checked": 3,
+          "hold_fills_checked": 1,
+          "equity_points_checked": 614,
+          "all_indicators_signals_fills_and_equity_match": true,
+          "sma_equity_usd": "999.990457235",
+          "hold_equity_usd": "1000.08799570",
+          "sma_under_cash": true,
+          "sma_minus_hold_usd": "-0.097538465"
+        },
+        {
+          "commission_rate": "0.001",
+          "sma_fills_checked": 3,
+          "hold_fills_checked": 1,
+          "equity_points_checked": 614,
+          "all_indicators_signals_fills_and_equity_match": true,
+          "sma_equity_usd": "999.98870447",
+          "hold_equity_usd": "1000.0874514",
+          "sma_under_cash": true,
+          "sma_minus_hold_usd": "-0.09874693"
+        },
+        {
+          "commission_rate": "0.002",
+          "sma_fills_checked": 3,
+          "hold_fills_checked": 1,
+          "equity_points_checked": 614,
+          "all_indicators_signals_fills_and_equity_match": true,
+          "sma_equity_usd": "999.98519894",
+          "hold_equity_usd": "1000.0863628",
+          "sma_under_cash": true,
+          "sma_minus_hold_usd": "-0.10116386"
+        }
+      ]
+    }
+  ],
+  "scenarios_checked": 8,
+  "equity_points_checked": 4920,
+  "fills_checked": 44,
+  "base_rate_matches_previous_runs": true,
+  "project_modules_imported": false,
+  "accounting_processed": false
+}

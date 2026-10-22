@@ -1,0 +1,10 @@
+{
+  "method": "stdlib_csv_datetime_decimal_without_project_reader",
+  "matching_intervals": 528,
+  "duplicates": 0,
+  "ohlc_errors": 0,
+  "negative_open_close_quote_differences": 0,
+  "raw_sources_match_saved_hashes": true,
+  "accounting_processed": false,
+  "daily_strategy_executed": false
+}

@@ -1,0 +1,14 @@
+{
+  "method": "independent_stdlib_decimal_raw_hourly_to_sma_execution_and_accounting",
+  "raw_sha256": "75424fa8293615a3e98d7463c90c8e1ef446bff0f29388c894298249791c995c",
+  "daily_sessions_checked": 307,
+  "fills_checked": 3,
+  "all_indicators_and_signals_match": true,
+  "all_cash_positions_equity_and_drawdown_points_match": true,
+  "browser_matches_programmatic_result": true,
+  "final_equity_usd": "999.98870447",
+  "open_quantity_eur": "1",
+  "assumed_commission_rate": "0.001",
+  "project_modules_imported": false,
+  "accounting_processed": false
+}

@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-22",
+  "phase_closed": false,
+  "tests_passed": 299,
+  "test_counts": {
+    "tests.test_dukascopy_backtest": 34,
+    "tests.test_dukascopy_history": 33,
+    "tests.test_dukascopy": 21,
+    "tests.test_tv_contracts": 45,
+    "tests.test_tv_io": 23,
+    "tests.test_tv_simulation": 25,
+    "tests.test_tv_service": 20,
+    "tests.test_tv_receiver": 15,
+    "tests.test_tradingview_cli": 3,
+    "tests.test_lab": 51,
+    "tests.test_lab_performance": 29
+  },
+  "full_suite_run": false,
+  "javascript_syntax_checked": true,
+  "source_sha256": {
+    "trading_ai/dukascopy_backtest.py": "b71fa7493efb5dc030a90fd31ca0e441eb6aaf2f277f663238fbde7fd1b74937",
+    "trading_ai/dukascopy_service.py": "52262ea1d77af0f2384c18ca672f918f2c2f1d2e486aedbb50dba24047745ff9",
+    "trading_ai/tv_service.py": "ae022ae3757ac2d41858b693c86e54596837616660ac182d1dc8338f91056dad",
+    "trading_ai/lab_static/simulation.js": "e823b08558ffaf5cd6b9241b489d9f0dcf5a0513b90105e37f1571b83d3a1ab7",
+    "trading_ai/lab_static/index.html": "aa29e2fe3a3f91e9a47d93477811e04d450cd87fdcb77157b2b45d0652c59af9",
+    "tests/test_dukascopy_backtest.py": "4d526359e9c596503db158875e6ef1f22fcb96e8d57b855a11b60cb7cd6c2474"
+  },
+  "unchanged_prior_source_sha256": {
+    "trading_ai/dukascopy_history.py": "a833b160382e10077b204b9633552d6e6087aad819143a37e00d9e20eda43bf4",
+    "tests/test_dukascopy_history.py": "8b5c63297dfba666bea884eab3e8e3c1f02d2cc9396c0f9561c2faf44b23aff6",
+    "trading_ai/dukascopy.py": "d75d748f9aba8fff0dc1638d04f9129f80c541a772716b3b18d80ecd18b856db",
+    "tests/test_dukascopy.py": "e42f588aa19bd65e88f224a5e580ba20f9856d44a88afc91e08d86b27fd5321b",
+    "trading_ai/tv_contracts.py": "91dda291979f3e9b6db10848396b607100f0a21e3209de25e3ec8a22fd9307e2",
+    "trading_ai/tv_reference.py": "473c679f892fd7ca74aaac74567b2ca1cbab5bb165a145714e8d971eec920411",
+    "trading_ai/tv_pine.py": "ba06de509cd7e0e6547c3c896fa4be62d96b19fcfc9afb24e2216dc1223fc5b4",
+    "trading_ai/tv_simulation.py": "5461e6485f5a2617691b7d1c252896037817a7392e637b79ec6cb7e9670e9f49"
+  },
+  "prior_evidence_unchanged": true,
+  "original_csv_sha256": {
+    "BID": "7efe20d392e9bf9506e7db31ad0c31673bb0e63e953eaeefdeaf9a1bc7396910",
+    "ASK": "b7e7904e871ebe7d042be5ecac2187d28cdb0317ca3a29e1233f7457478a2905"
+  },
+  "evidence_sha256": {
+    "artificial-ui-audit.json": "52fe14c09dd64ddf6ff46ef744e5d7371b3ca90797eec19f5b80e0e8d91d4df0",
+    "download-resume-failure.json": "4d632daa4230bdbe808cf41b12f2420efdae7bed1b704c9c4597b151468a9b13",
+    "january-input-manifest.json": "17a547a445006fb7e56baea3edd9a64d844b450f7fe6414fb11024c3b7a1b032",
+    "january-result.json": "bac087f581458160dbd01ca641751a39e911c034ac9cd9a311b53e9017451622",
+    "README.md": "e04934e664086c3edec51219457b8c1feb13c73c3772a2106ff0abe29ab88cb7",
+    "tested-source/artificial-ui-fixture.py": "540820e8b69adf47bc0b999230685dad390bae9b6aa12f2636fb55dd7ff9507e",
+    "tested-source/tests/test_dukascopy_backtest.py": "4d526359e9c596503db158875e6ef1f22fcb96e8d57b855a11b60cb7cd6c2474",
+    "tested-source/trading_ai/dukascopy_backtest.py": "b71fa7493efb5dc030a90fd31ca0e441eb6aaf2f277f663238fbde7fd1b74937",
+    "tested-source/trading_ai/dukascopy_service.py": "52262ea1d77af0f2384c18ca672f918f2c2f1d2e486aedbb50dba24047745ff9",
+    "tested-source/trading_ai/lab_static/index.html": "aa29e2fe3a3f91e9a47d93477811e04d450cd87fdcb77157b2b45d0652c59af9",
+    "tested-source/trading_ai/lab_static/simulation.js": "e823b08558ffaf5cd6b9241b489d9f0dcf5a0513b90105e37f1571b83d3a1ab7",
+    "tested-source/trading_ai/tv_service.py": "ae022ae3757ac2d41858b693c86e54596837616660ac182d1dc8338f91056dad",
+    "tests.log": "194d845fd28cc1dc50c080750b60d65b97b667cb9fceb1371600e86f9518ee5b",
+    "tests.xml": "1ee36c14940bc55b159dbd144a81249bec7ab6056bccab2f4decdafc4ba78dd8",
+    "ui-artificial-curve.jpg": "306b5eaf720f2f2d78f197ac5bc57c0c3035a1a90bb128d012ff85b1a5c707e0",
+    "ui-january-insufficient.jpg": "ac17ca7019e316d402fe25cd47417aaf988b63a236c49cc9ecf6ab38f82435c9",
+    "ui-main.jpg": "b2897534ff751c61657be2a251e65dcb38e1fe2689038059ba7c7a86d3bd70e9"
+  },
+  "real_data_result": {
+    "status": "insufficient_history",
+    "daily_sessions": 27,
+    "required_sessions": 61,
+    "missing_sessions": 34,
+    "profit_metrics_present": false,
+    "accounting_processed": false,
+    "result_sha256": "2faae7db14cb091f10434b85a5f834caca43ce0d3474fe8bc5f4cb16b9cf6073"
+  },
+  "artificial_ui_case": {
+    "role": "synthetic_ui_test_not_market_evidence",
+    "root": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\dukascopy-spread-ui-artificial-2026-10-22",
+    "result_id": "d5057b3fe63b421a92487a707a53bb18",
+    "daily_sessions": 181,
+    "hypothetical_fills": 2,
+    "closed_trades": 1,
+    "result_sha256": "17e6242c48d18f90bfed6dc2fc08093d2085d9c3c32fcf730546165ec88da258"
+  },
+  "bulk_history_complete": false,
+  "latest_download_http_status": 429,
+  "ui_post_result_matches_programmatic_result": true,
+  "committed": false,
+  "pushed": false
+}

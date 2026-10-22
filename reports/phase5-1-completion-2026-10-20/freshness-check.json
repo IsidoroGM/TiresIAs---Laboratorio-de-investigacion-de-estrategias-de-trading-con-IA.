@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "default_interval_seconds": 2.0,
+  "change_visible_seconds": 2.1703152999980375,
+  "old_generation": 1,
+  "new_generation": 2,
+  "records_after_addition": 2,
+  "fixture_root": "C:\\Users\\34656\\AppData\\Local\\Temp\\trading-ai-codex-dba2168e6018474fb9d457dd627273e2",
+  "temporary_server_closed": true
+}

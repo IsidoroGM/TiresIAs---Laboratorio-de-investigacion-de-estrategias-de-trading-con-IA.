@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-22",
+  "authorization": "explicit_user_commit_and_push_then_continue",
+  "base_commit": "47d2fc5",
+  "phase6_closed": false,
+  "project_status_edited_this_publication": false,
+  "selected_tests_passed": 562,
+  "selected_sources_match_last_tested_manifest": true,
+  "full_suite_completed": false,
+  "full_suite_partial_preserved": true,
+  "credential_pattern_matches": 0,
+  "ignored_runtime_and_private_configuration_verified": true,
+  "prior_evidence_manifests_verified": 10,
+  "prior_evidence_files_verified": 190,
+  "evidence_sha256": {
+    "full-suite-partial.log": "424b28835ce239103224a0dd4a793046cb6d0abd094ff81f10084c3d5d49eabb",
+    "index-audit.json": "e43c670f6903dccaaa682adb9e0ee621fa10afe0cc0ec580d6a2140aa324f35a",
+    "prior-evidence.json": "4e9b62a8e27f5ce9d2ea1b41b8d871fe0db4c4d4bd4bff33153eea0da2aa331d",
+    "README.md": "91e77f586c95e8c371a4b450ec71a2ceab14917c249e336f5c1131dfac17a57a",
+    "tests.log": "6f10a66c0038765565b44d29e727d2f09d8e41e2b2f6ab82d3e3c0d91ea48a2c",
+    "tests.xml": "b527cf9d62075337ef27fbbfcbda296b483c51ea2f00d3ae9fbcbe2f30c4012e"
+  }
+}

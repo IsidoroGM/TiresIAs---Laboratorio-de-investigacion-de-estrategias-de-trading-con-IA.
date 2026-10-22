@@ -1,0 +1,63 @@
+........................................................................ [ 13%]
+........................................................................ [ 27%]
+........................................................................ [ 41%]
+........................................................................ [ 54%]
+........................................................................ [ 68%]
+..................................................F..................... [ 82%]
+........................................................................ [ 96%]
+.....................                                                    [100%]
+================================== FAILURES ===================================
+________ test_rejected_transport_does_not_create_storage[headers3-400] ________
+
+tmp_path = WindowsPath('C:/Users/34656/AppData/Local/Temp/trading-ai-codex-65a8c570c2d04f149b5fd81bfb5e6411/test_rejected_transport_does_n3')
+headers = {'Transfer-Encoding': 'chunked'}, status = 400
+
+    @pytest.mark.parametrize('headers,status',[
+        ({'Authorization':'Bearer wrong'},401),({'Content-Type':'text/plain'},415),
+        ({'Content-Length':'65537'},413),({'Transfer-Encoding':'chunked'},400),
+        ({'Content-Length':'-1'},400),({'Origin':'https://example.test'},403),({'Host':'evil.test'},403),
+    ])
+    def test_rejected_transport_does_not_create_storage(tmp_path,headers,status):
+        ledger=SimulationLedger(tmp_path)
+>       with server(ledger) as receiver:assert request(receiver,headers=headers)[0]==status
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_tv_receiver.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_tv_receiver.py:28: in request
+    response=conn.getresponse();raw=response.read();conn.close()
+             ^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\http\client.py:1478: in getresponse
+    response.begin()
+C:\Python314\Lib\http\client.py:343: in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\http\client.py:304: in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <socket.SocketIO object at 0x000001EBDBF33250>
+b = <memory at 0x000001EBDBFCA200>
+
+    def readinto(self, b):
+        """Read up to len(b) bytes into the writable buffer *b* and return
+        the number of bytes read.  If the socket is non-blocking and no bytes
+        are available, None is returned.
+    
+        If *b* is non-empty, a 0 return value indicates that the connection
+        was shutdown at the other end.
+        """
+        self._checkClosed()
+        self._checkReadable()
+        if self._timeout_occurred:
+            raise OSError("cannot read from timed out object")
+        try:
+>           return self._sock.recv_into(b)
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+E           ConnectionAbortedError: [WinError 10053] Se ha anulado una conexi�n establecida por el software en su equipo host
+
+C:\Python314\Lib\socket.py:729: ConnectionAbortedError
+=========================== short test summary info ===========================
+FAILED tests/test_tv_receiver.py::test_rejected_transport_does_not_create_storage[headers3-400]
+1 failed, 524 passed in 45.42s

@@ -1,0 +1,112 @@
+{
+  "kind": "phase5_1_diagnosis_only",
+  "measured_at": "2026-10-20T21:43:39.288370+00:00",
+  "dataset": {
+    "records": 92,
+    "catalogued_files": 805
+  },
+  "method": {
+    "http": "three sequential loopback GET samples per route, fresh HTTP connection, same temporary server",
+    "profiling": "separate instrumented home query; cumulative times overlap and must not be added",
+    "cold_cache": "not controlled; these are not cold-boot measurements",
+    "percentiles": "three samples are insufficient for a meaningful p95; none reported",
+    "mutations": "no application-source changes; HTTP consultation only"
+  },
+  "http": {
+    "/api/home": {
+      "samples_s": [
+        3.333438,
+        3.38788,
+        3.214692
+      ],
+      "median_s": 3.333438,
+      "min_s": 3.214692,
+      "max_s": 3.38788
+    },
+    "/api/experiments": {
+      "samples_s": [
+        3.364624,
+        3.294402,
+        3.152394
+      ],
+      "median_s": 3.294402,
+      "min_s": 3.152394,
+      "max_s": 3.364624
+    },
+    "/api/consumption": {
+      "samples_s": [
+        2.513906,
+        2.447263,
+        2.428093
+      ],
+      "median_s": 2.447263,
+      "min_s": 2.428093,
+      "max_s": 2.513906
+    }
+  },
+  "profile": {
+    "home_s": 4.192404,
+    "catalog_s": 2.269939,
+    "query_layer_bytes_read": 1504360,
+    "functions": [
+      {
+        "file": "lab_catalog.py",
+        "line": 156,
+        "function": "_scan",
+        "calls": 1,
+        "cumulative_s": 2.26949,
+        "self_s": 0.014237
+      },
+      {
+        "file": "lab_catalog.py",
+        "line": 91,
+        "function": "read",
+        "calls": 232,
+        "cumulative_s": 1.837566,
+        "self_s": 0.003796
+      },
+      {
+        "file": "lab_catalog.py",
+        "line": 224,
+        "function": "events",
+        "calls": 92,
+        "cumulative_s": 0.851528,
+        "self_s": 0.001811
+      },
+      {
+        "file": "lab_catalog.py",
+        "line": 72,
+        "function": "safe",
+        "calls": 2096,
+        "cumulative_s": 2.226031,
+        "self_s": 0.044654
+      },
+      {
+        "file": "lab_query.py",
+        "line": 93,
+        "function": "experiments",
+        "calls": 1,
+        "cumulative_s": 1.921692,
+        "self_s": 0.060419
+      },
+      {
+        "file": "lab_catalog.py",
+        "line": 217,
+        "function": "file",
+        "calls": 198,
+        "cumulative_s": 1.807881,
+        "self_s": 0.003092
+      },
+      {
+        "file": "lab_catalog.py",
+        "line": 233,
+        "function": "payload",
+        "calls": 92,
+        "cumulative_s": 0.845824,
+        "self_s": 0.00059
+      }
+    ]
+  },
+  "temporary_server_closed": true,
+  "phase5_1_implemented": false
+}

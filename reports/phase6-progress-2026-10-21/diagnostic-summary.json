@@ -1,0 +1,14 @@
+{
+  "full_suite": "Attempt interrupted; partial output retained, no complete result.",
+  "initial_artificial_check": "Wrong expected constant in harness; original script and diagnosis retained under artificial-check.",
+  "intermediate_new_suite": {
+    "tests_passed": 123,
+    "tests_failed": 2,
+    "original_terminal_output_archived": false,
+    "diagnostics": [
+      "Depth test relied on Python recursion behaviour; explicit 64-level limit added.",
+      "Windows aborted an early rejected HTTP request with unread body; bounded body discard added."
+    ]
+  },
+  "final_affected_suite": "396 passed with stable source bytes; see verified-suite.xml."
+}

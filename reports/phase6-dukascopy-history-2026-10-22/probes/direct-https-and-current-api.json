@@ -1,0 +1,18 @@
+[
+  {
+    "name": "legacy-hourly",
+    "url": "https://datafeed.dukascopy.com/datafeed/EURUSD/2025/00/BID_candles_hour_1.bi5",
+    "checked_at": "2026-10-22T11:32:45.245524+00:00",
+    "error": "<urlopen error timed out>"
+  },
+  {
+    "name": "current-hourly",
+    "url": "https://jetta.dukascopy.com/v1/candles/hour/EURUSD/BID/2025/1",
+    "checked_at": "2026-10-22T11:32:55.278818+00:00",
+    "status": 202,
+    "final_url": "https://jetta.dukascopy.com/v1/candles/hour/EURUSD/BID/2025/1",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

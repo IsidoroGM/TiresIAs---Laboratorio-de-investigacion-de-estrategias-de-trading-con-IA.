@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "collected": 1627,
+  "previous_phase_nodes": 1598,
+  "new_nodes": 29,
+  "previous_nodes_preserved_exactly": true,
+  "collection_errors": 0,
+  "pytest_testpaths": "tests",
+  "note": "collection only; functional runs are the 80 lab plus 48 evidence/ledger cases"
+}

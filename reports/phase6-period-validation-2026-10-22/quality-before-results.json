@@ -1,0 +1,39 @@
+{
+  "protocol_sha256": "142738b5536d470a629f3facda0816b0e7a0f69ef670dc2260a9a21097ce6711",
+  "raw_sha256": "66fa719d8e7d75c11e1c691b232471fe3c9323e91ed998e8b82fe943f85d38b2",
+  "bytes": 195309,
+  "hourly_rows": 6247,
+  "observed_utc_dates": 314,
+  "internal_gaps": [
+    {
+      "date": "2024-12-25",
+      "from": "2024-12-25T04:00:00+00:00",
+      "to": "2024-12-25T05:00:00+00:00"
+    },
+    {
+      "date": "2024-12-25",
+      "from": "2024-12-25T08:00:00+00:00",
+      "to": "2024-12-25T22:00:00+00:00"
+    }
+  ],
+  "gaps_over_96_hours": [],
+  "quality_checked_before_strategy_results": true,
+  "periods": {
+    "fixed_period": {
+      "dataset": "ev-eurusd-2024-to-dec24-2026-10-22",
+      "daily_sessions": 308,
+      "selected_hours": 6144,
+      "internal_gap_count": 0,
+      "coverage_gap_count": 0,
+      "excluded_hours": 103
+    },
+    "full_year_diagnostic": {
+      "dataset": "ev-eurusd-2024-full-2026-10-22",
+      "daily_sessions": 314,
+      "selected_hours": 6247,
+      "internal_gap_count": 2,
+      "coverage_gap_count": 0,
+      "excluded_hours": 0
+    }
+  }
+}

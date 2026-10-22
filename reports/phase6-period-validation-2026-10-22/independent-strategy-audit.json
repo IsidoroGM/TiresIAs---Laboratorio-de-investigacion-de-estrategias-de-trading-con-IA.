@@ -1,0 +1,32 @@
+{
+  "method": "stdlib_decimal_independent_reconstruction_from_annual_raw",
+  "protocol_sha256": "142738b5536d470a629f3facda0816b0e7a0f69ef670dc2260a9a21097ce6711",
+  "periods": [
+    {
+      "year": 2024,
+      "run_id": "caaf5ef7dac047fcb70c6eba7f5e57c6",
+      "raw_sha256": "66fa719d8e7d75c11e1c691b232471fe3c9323e91ed998e8b82fe943f85d38b2",
+      "sessions_checked": 308,
+      "fills_checked": 6,
+      "closed_trades": 3,
+      "final_equity_usd": "999.96832951",
+      "open_quantity_eur": "0",
+      "all_indicators_signals_fills_and_equity_points_match": true
+    },
+    {
+      "year": 2025,
+      "run_id": "72061a4aa7a0455cb400edcc580cb964",
+      "raw_sha256": "75424fa8293615a3e98d7463c90c8e1ef446bff0f29388c894298249791c995c",
+      "sessions_checked": 307,
+      "fills_checked": 3,
+      "closed_trades": 1,
+      "final_equity_usd": "999.98870447",
+      "open_quantity_eur": "1",
+      "all_indicators_signals_fills_and_equity_points_match": true
+    }
+  ],
+  "states_reset_each_period": true,
+  "project_modules_imported": false,
+  "parameter_search": false,
+  "accounting_processed": false
+}

@@ -1467,3 +1467,546 @@ los blobs antiguos LF, con contenido normalizado idéntico. Los 131 originales
 anteriores y sus blobs se mantienen intactos. Para conservar exactamente lo que
 se probó, se añaden copias de esos tres archivos en tested-source-bytes, junto a
 git-publication-check.json. No se reescriben los manifiestos o pruebas anteriores.
+
+#### FASE 5.1 — Diagnóstico y propuesta de rendimiento
+
+20/10/2026. El usuario denomina FASE 5.1 a la mejora de rendimiento y solicita
+investigar soluciones y proponer medidas. Se revisan las lecturas del catálogo,
+consultas, HTTP y navegador, y documentación oficial de Python 3.14 y MDN.
+
+Medición HTTP local con servidor temporal propio, tres muestras por ruta:
+medianas 3,333 s en Inicio, 3,294 s en Experimentos y 2,447 s en Consumo. Conjunto
+de 92 registros y 805 archivos catalogados. El perfil separado identifica el
+escaneo repetido y las comprobaciones de rutas; no se suman tiempos acumulados
+solapados. La caché del sistema operativo no se controló y no se calcula p95
+con estas tres muestras. El servidor temporal se cierra al terminar.
+
+Se entrega [PHASE5_1_PLAN](PHASE5_1_PLAN.md) y evidencia en
+[baseline.json](../reports/phase5-1-diagnosis-2026-10-20/baseline.json). Se prioriza
+índice y resúmenes en memoria con invalidación, lectores por petición, reducción
+de trabajo duplicado, cancelación en el navegador, concurrencia limitada y caché
+condicional de estáticos. Los objetivos de latencia son propuestas por verificar.
+NEXT_PHASES incorpora esta fase antes de TradingView. No se modifica aplicación,
+pruebas, evidencias previas o PROJECT_STATUS; no se declara completada FASE 5.1.
+La petición de esta fase es de investigación y propuesta, sin publicación Git.
+
+#### FASE 5.1 — Implementación y comprobaciones
+
+21/10/2026. El usuario solicita implementar la propuesta. LabService mantiene
+instantáneas independientes del catálogo y resúmenes, con publicación atómica,
+comprobación de dependencias cada dos segundos y una única actualización en curso.
+Se mantienen separados el índice compartido, el presupuesto de lectura y los
+avisos de cada petición. Caché de metadatos acotada a 32 MiB de peso estimado e
+índice a 16 MiB. Los originales y las verificaciones de detalle no usan esa caché.
+
+El escaneo reutiliza comprobaciones de los componentes de rutas durante su propia
+enumeración; antes de abrir un archivo se vuelven a validar enlaces y junctions.
+Se detectan cambios durante la lectura y se reutilizan bytes y detalle dentro de
+una consulta, sin permitir continuar desde la caché después de agotar su presupuesto.
+Las respuestas HTTP se atienden con cuatro hilos como máximo, cola TCP acotada,
+tiempo de espera de conexión y error 503 reintentable si todos están ocupados.
+Las rutas desconocidas se rechazan antes de construir el catálogo.
+
+El navegador cancela consultas abandonadas, conserva filtros al actualizar y
+presenta la ficha sin esperar a la primera cuenta. Los listados muestran la fecha
+de los resúmenes y los fallos de actualización; el refresco forzado relee fuentes.
+HTML/CSS/JS incorporan ETag; datos y originales conservan no-store. La medición
+de navegación queda en atributos del DOM, sin añadir detalles técnicos al flujo.
+
+Las pruebas detectaron un cierre TCP con RST al devolver 503 en Windows: se consumen
+cabeceras acotadas antes de responder. También se observó que lstat/fstat difieren
+en la semántica de ctime en este entorno; se cotejan identidad, tamaño y mtime
+entre ambas APIs, y ctime entre las lecturas fstat. Se conserva el XML del pase
+fallido como diagnóstico, sin sumarlo a pruebas aprobadas.
+
+Resultado focalizado final: 80 pruebas de interfaz aprobadas (51 anteriores y 29
+nuevas) en 18,18 s. Evidencias/registro contable: otras 48 aprobadas en 22,65 s.
+Son 128 casos distintos; no se presentan como una nueva ejecución de toda la
+colección histórica de 1598 casos. Caché pytest desactivada y temporal exclusivo
+por ejecución. La navegación, gráficos, comparación y filtros se revisan en IAB
+sin modificar la pestaña o servidor 8765 que el usuario mantiene abiertos.
+
+Se añade scripts/benchmark_lab.py para medidas HTTP repetibles. En la versión
+final, 30 muestras por ruta y configuración de dos/cuatro hilos, incluyendo
+comprobaciones periódicas del índice. Con cuatro hilos: medianas de 1,98, 2,33
+y 2,18 ms en Inicio, Experimentos y Consumo; p95 de 19,38, 22,66 y 15,29 ms.
+Primera consulta en servidor nuevo: 2,402 s, sin controlar la caché del sistema.
+La referencia histórica se carga desde Git sin alterar el checkout. Los ensayos
+preliminares se distinguen de las series finales y conservan sus resultados.
+
+Una fuente artificial añadida aparece por HTTP en 2,170 s con el intervalo de
+actualización por defecto. Auditoría real: mismos 92 registros, 40 cuentas con
+detalle y 150 con resumen, sin inferencias, backtests o reservas. Los 131 archivos
+anteriores del motor y pruebas conservan sus huellas. Se registra el cierre tras
+terminar el cotejo final de medidas, fuentes, documentos y servidores temporales.
+
+La colección general detecta una copia de test_structured_freshness.py archivada
+en la evidencia de publicación de FASE 5; pytest intentaba importarla como prueba.
+Se conserva la copia y se añade pytest.ini con testpaths=tests para delimitar el
+directorio de pruebas del proyecto. La colección errónea se conserva como
+diagnóstico; el cotejo posterior debe recoger exactamente los 1598 nodos anteriores
+y los 29 nuevos, sin ejecutar las copias históricas de informes.
+
+#### Cierre comprobado de FASE 5.1
+
+La colección final recoge exactamente 1627 nodos, sin errores: 1598 anteriores y
+29 nuevos. Las series definitivas de 30 muestras mantienen sus fuentes estables.
+Referencia FASE 5: medianas 3155,18/3196,91/2426,35 ms; versión final de cuatro
+hilos: 1,98/2,33/2,18 ms y p95 19,38/22,66/15,29 ms. Auditoría final: 838 archivos
+sin cambios, mismos registros y cuentas, cero acciones prohibidas. Se conservan
+separados los ensayos preliminares y diagnósticos fallidos, sin contarlos como éxito.
+
+Revisión visual terminada: cinco pantallas, filtros conservados al sondear y al
+forzar refresco, navegación rápida, cambio de cuenta, dos gráficos y comparaciones
+admitidas/bloqueadas; sin errores de consola. Las observaciones de navegación
+incluyen petición y construcción del DOM, no pintado físico. Servidor y pestaña
+temporales cerrados; el servidor 8765 y Chrome del usuario permanecen abiertos.
+
+README, guía, plan, siguiente fase e informe quedan actualizados. PROJECT_STATUS
+se actualiza únicamente al cerrar esta fase. El desarrollo permanece local sobre
+47d2fc5, sin commit o push nuevos. FASE 6 pendiente. Informe:
+[phase5-1-completion-2026-10-21](../reports/phase5-1-completion-2026-10-21.md).
+
+### 21/10/2026 — Definición de FASE 5.2: conversación con el agente
+
+Por petición del usuario se crea el [plan de FASE 5.2](PHASE5_2_PLAN.md), después
+de FASE 5.1 y antes de TradingView. Define conversación local persistente,
+propuestas estructuradas y versionadas, revisión explícita, pruebas históricas
+mediante los controles existentes y explicación de resultados con sus evidencias.
+Se divide en seis incrementos; el primero será contratos y persistencia.
+
+Se actualizan la hoja de ruta y los enlaces del README. El puente del chat hacia
+operaciones concretas del simulador queda descrito como incremento 6.6; las cuentas
+demo y la posible ejecución real mantienen sus fases y autorizaciones propias.
+Se conservan límites, presupuestos y evidencias anteriores y la fluidez de FASE 5.1
+como requisitos de implementación.
+
+La FASE 5.2 queda definida, sin implementación ni cierre. Este cambio es documental:
+no se ejecutan inferencias ni experimentos, no se modifica PROJECT_STATUS y no se
+realizan commit o push.
+
+### 21/10/2026 — Implementación y cierre de FASE 5.2
+
+Se entregan los seis incrementos del plan: almacenamiento SQLite de conversaciones,
+mensajes, revisiones y trabajos; pantalla Conversar con el agente; contrato Ollama
+independiente; propuestas con revisión humana; comparación histórica explícita;
+discusión de resultados y recuperación. Las consultas permanecen separadas de las
+acciones POST con origen y token locales, JSON acotado e identidades idempotentes.
+
+Un trabajador y una cola acotados mantienen disponibles las consultas. El bloqueo
+del sistema operativo evita dos escritores; los reinicios no reenvían trabajos.
+Los presupuestos iniciales compartidos del chat son 24 intentos de respuesta y
+cuatro comparaciones de dos backtests. Fallos, cancelaciones y duplicados no
+reabren capacidad. No se modifican campañas, permisos o presupuestos anteriores.
+
+Se verifican revisiones, fuente y código antes de calcular; se rechazan historia
+insuficiente y contradicciones EMA/SMA. Comparaciones equivalentes tampoco se
+repiten cambiando hipótesis, criterio o representación decimal. Las propuestas
+solo admiten los cruces largos D1 existentes. Se conservan aprobación, copia BCE,
+resultados de Python, conclusión y enlaces a la ficha y evidencias.
+
+La selección final aprueba 267 casos, incluidos 46 nuevos. Colección completa:
+1673 nodos, los 1598 anteriores más 29 de FASE 5.1 y 46 de FASE 5.2. No se ejecutó
+toda la colección: se interrumpió una ejecución amplia y se completó la selección
+documentada. Un lanzamiento inicial apuntaba a un archivo de pruebas inexistente;
+no ejecutó casos y se conserva como diagnóstico. La repetición final comprueba
+también la procedencia duradera del proveedor. Fuentes finales estables, caché
+desactivada y temporales GUID exclusivos según AGENTS.md.
+
+Ensayo real en raíz aislada: cuatro peticiones, 1800/680 tokens, API 0 USD, una
+comparación y dos backtests. Se conservan confusión inicial SMA/EMA, explicación
+rechazada por el control de cifras y sus correcciones. Sin reintentos automáticos;
+la revisión humana sigue siendo necesaria. La interpretación del modelo se
+distingue de las comparaciones comprobadas por Python.
+
+Revisión en navegador: propuesta, aprobación, métricas, enlace a experimento y
+fuentes, historial tras reinicio y consumo, sin errores de consola. Durante una
+inferencia real, p95 HTTP de 23,70/3,40/20,26 ms, 30 muestras por ruta. Auditoría
+de consulta sin acciones prohibidas y 838 evidencias anteriores idénticas. Se
+cierran servidores y pestaña temporales, conservando el servidor 8765 del usuario.
+
+Se actualizan guía, plan, hoja de ruta, README y PROJECT_STATUS únicamente al
+cierre de la fase. Desarrollo local sin commit ni push; FASE 6 pendiente.
+[Informe de cierre](../reports/phase5-2-completion-2026-10-21.md).
+
+### 21/10/2026 — Avance local de FASE 6, sin cierre
+
+Por autorización del usuario para continuar el desarrollo se implementan contratos
+SMA/EMA de intercambio, generación Pine v6 con huellas, referencia OHLC con
+aperturas siguientes y lector CSV genérico de mapa explícito. Se conservan
+originales, vistas previas, aprobaciones y progreso de importación; el bloqueo de
+escritor impide cargas simultáneas. No se presume un esquema real de Strategy Report.
+
+Se añade inbox SQLite duradero, receptor autenticado exclusivamente loopback y
+contabilidad virtual independiente del modelo. Recibir no contabiliza; secuencias,
+saldo, cantidad, costes y riesgo se comprueban al procesar. Duplicados, conflictos,
+huecos, retrasos y cambios de motor quedan visibles. Nuevas entradas se pausan ante
+rechazos o drawdown. No se inventan fills ni se reemplaza capital por cifras externas.
+
+La pantalla Simulación y TradingView ofrece paquetes, cuentas, historial, CSV,
+inbox, revisión de pendientes, valoración manual y conciliación. Los POST requieren
+origen y token locales. La aprobación identifica la cuenta y el inbox revisados;
+un evento o conflicto nuevo la invalida. Las consultas no crean cuentas, ejecutan
+operaciones ni llaman a proveedores.
+
+396 pruebas seleccionadas aprobadas, 129 nuevas; colección completa 1802,
+conservando los 1673 nodos anteriores. No se ejecutó toda la colección: se conserva
+el intento amplio interrumpido. Caché desactivada y temporales GUID exclusivos.
+Se verifican concurrencia, recuperación, alteraciones y límites, sintaxis JS y
+consulta sin efectos: 92 registros, 190 cuentas, 47 fuentes y 840 archivos idénticos.
+Los 839 archivos de la auditoría anterior permanecen iguales.
+
+Ensayo artificial: compra a apertura 9, venta a apertura 11, capital 100, coste
+1 % por lado, efectivo 101,8 y costes 0,2; recepción fuera de orden, reinicio,
+deduplicación entre mensaje Pine y evento canónico y conciliación alineada.
+Navegador: preparación, cuenta revisada, JSON sin procesamiento automático,
+aprobación, CSV con original exacto y duplicados sin nuevo efecto; consola limpia.
+p95 HTTP aislado de simulación 29,90 ms, treinta muestras. Se conservan también
+la constante equivocada del primer comprobador y los diagnósticos de profundidad
+JSON y cierre HTTP de Windows, con sus correcciones verificadas.
+
+Contraste adicional entre referencia OHLC y libro: 48 casos artificiales de
+SMA/EMA, dos pares de ventanas, doce semillas y cuatro pares, con 3360 estados
+al cierre coincidentes en efectivo, cantidad y patrimonio y coincidencia final
+de costes/PnL realizado. Usa límite de drawdown 100 % solo para aislar aritmética;
+las pausas por riesgo se prueban aparte, sin cambiar el predeterminado del 20 %.
+Se conservan resultados, semillas y huellas; no ejecuta Pine ni usa datos externos.
+
+La compilación Pine, equivalencia externa, CSV real, relay HTTPS y puente de
+intenciones desde chat siguen pendientes. Se documenta que ese puente exige un
+modo manual separado de las identidades de ejecución de estrategia. Sin nuevas
+inferencias reales, conexión de cuenta, commit o push. Se conservan los cambios de
+FASES 5.1/5.2. PROJECT_STATUS no se actualiza porque FASE 6 permanece abierta.
+[Informe de avance](../reports/phase6-progress-2026-10-21.md) y
+[guía local](TRADINGVIEW_LOCAL.md).
+
+### 21/10/2026 — Diagnóstico del primer gráfico TradingView
+
+El usuario aporta RE10142: el control del Pine detiene la ejecución en la primera
+vela por configuración incompatible. La cabecera comunicada por el usuario es
+«Euro/Dólar estadounidense - 1 - OANDA»: el intervalo seleccionado es un minuto,
+mientras que el contrato exige 1D. Se indica cambiar a 1 día y comprobar de nuevo;
+el resto de propiedades del gráfico no queda validado por esa cabecera.
+
+El mensaje v1 era genérico. Se incorpora el generador Pine v2, con valores
+recibidos y requeridos en cada discrepancia. Conserva los cinco controles, sin
+normalizar silenciosamente proveedores/modificadores ni relajar unidades. Los
+contratos v1 siguen admitidos y su script original se reproduce byte a byte; v2
+tiene una identidad propia. Se prepara un paquete diagnóstico sin registrar cuenta.
+Las cuentas previas mantienen la protección existente ante cambios de motor.
+
+131 pruebas afectadas aprobadas, incluidas dos de compatibilidad de versiones y
+diagnóstico. La nueva versión del Pine aún requiere compilación en TradingView;
+no se declara resuelta la validación completa del gráfico. Evidencia en
+`reports/phase6-chart-guard-2026-10-21/`. Sin cierre de fase, cambio de PROJECT_STATUS,
+commit, push o conexión de cuenta.
+
+### 22/10/2026 — Primera inspección de precios Dukascopy
+
+Se reciben dos CSV originales. El BID contiene 528 velas H1 de enero de 2025; el
+ASK contiene 660 velas M1 del 22/10/2026. No comparten ninguna apertura/cierre.
+Se incorpora `python -m trading_ai.dukascopy`: conserva originales y huellas,
+valida formato UTC, precios, volumen, duplicados y alineación, y bloquea el
+emparejado con fechas o intervalos distintos. La identidad de proveedor/par/lado
+es declarada por el usuario porque el cuerpo del CSV no contiene esos campos.
+
+Se informan huecos y días parciales sin rellenarlos ni clasificarlos como sesiones
+verificadas. El BID contiene 27 fechas UTC, 17 completas de 24 horas y cuatro
+intervalos sin observaciones. No se agregan días, generan señales/fills ni procesan
+cuentas. Los contratos, el generador Pine y el motor contable mantienen sus bytes.
+Los originales aportados permanecen en `.local/dukascopy/`, fuera de Git.
+
+La primera comprobación sigue pendiente del ASK horario del mismo enero. Se añade
+la [guía de Dukascopy](DUKASCOPY.md), indicando el reinicio del formulario observado
+al abrir Export, el alcance del lector y las tareas pendientes. FASE 6 permanece
+abierta; no se cambia PROJECT_STATUS ni se realiza commit o push.
+
+152 pruebas seleccionadas aprobadas, incluidas 21 del nuevo lector. Se guardan
+diagnóstico, resultados y huellas en `reports/phase6-dukascopy-2026-10-22/`.
+El navegador no entrega el archivo tras el intento automático de descargar el
+ASK corregido; se deja el formulario configurado para su descarga manual.
+
+### 22/10/2026 — Muestra BID/ASK de Dukascopy emparejada
+
+El usuario aporta el ASK H1 de enero de 2025. Se inspecciona junto al BID anterior
+en un directorio nuevo, conservando ambas inspecciones y originales. Coinciden las
+528 aperturas/cierres, sin intervalos exclusivos de un lado, duplicados, errores
+OHLC ni diferencias negativas ASK-BID de apertura/cierre. La comprobación
+independiente usa CSV, datetime y Decimal, sin importar el lector del proyecto.
+
+Se conservan la inspección inicial incompatible y sus evidencias. La muestra
+correcta tiene su propio informe en `reports/phase6-dukascopy-paired-2026-10-22/`.
+No cambian fuentes ejecutables ni se repiten pruebas unitarias sin cambios:
+se comprueban sus huellas frente a la ejecución anterior de 152 pruebas aprobadas.
+No se ejecuta una estrategia diaria con un mes de datos, ni se procesan cuentas.
+La agregación con sesión explícita, simulación con spread y descarga automática
+continúan pendientes. No hay cierre de fase, modificación de PROJECT_STATUS,
+commit o push.
+
+### 22/10/2026 — Descargador Dukascopy y agrupación diaria UTC
+
+Se implementa `python -m trading_ai.dukascopy_history`, independiente de contratos
+Pine y cuentas. Descarga archivos públicos H1 por mes cerrado para EUR/USD, con
+peticiones en serie, límites, originales preservados, huellas y caché verificable.
+Los errores se conservan como ejecuciones incompletas. No se considera una
+respuesta vacía, HTML o HTTP 202/429 como datos ni se reintenta indefinidamente.
+
+La API más reciente devuelve un reto de acceso; no se utiliza para descargar.
+La ruta pública de archivos redirige entre hosts de Dukascopy y algunos destinos
+son HTTP. Se registra esa limitación de transporte sin atribuir autenticación.
+El primer intento amplio detectó una segunda redirección legítima no prevista por
+la comprobación inicial; se corrige admitiendo los dos hosts y la misma ruta.
+
+Ensayo real de enero de 2025: dos archivos descargados; los 528 registros con
+actividad de cada lado coinciden exactamente en fechas y OHLC con los CSV del
+usuario mediante un comprobador independiente. Los registros planos de volumen
+cero se excluyen de forma identificada. Los originales binarios se conservan.
+
+Se forman 27 sesiones UTC observadas, manteniendo domingos y días parciales,
+primera/última observación e intervalos ausentes. No se rellenan precios ni se
+declara equivalencia con otro proveedor. La preparación de señales SMA 20/60
+requiere 61 sesiones y se bloquea con huecos internos. No genera operaciones.
+La reproducción offline conserva el mismo contenido diario con cero peticiones.
+
+La ampliación 2024–2025 permanece incompleta por HTTP 429, también tras comprobar
+de nuevo el acceso más de tres minutos después. No se inventa histórico ni se
+presenta la descarga o la estrategia como completadas. Se conserva evidencia de
+los intentos, contraste, caché, reproducción y 185 pruebas seleccionadas aprobadas
+(33 del descargador, 21 del lector CSV y 131 relacionadas) en
+`reports/phase6-dukascopy-history-2026-10-22/`. FASE 6 sigue abierta, sin cambio de
+PROJECT_STATUS, commit, push ni conexión de cuenta.
+
+### 22/10/2026 — Prueba Dukascopy con spread y consulta desde la interfaz
+
+Se añade `dukascopy_backtest`: reconstruye el histórico desde BI5, contrasta huellas
+y sesiones, calcula SMA sobre cierres BID y ejecuta en la primera apertura realmente
+observada de la siguiente sesión. Compra a ASK, vende y valora a BID; el spread no
+se carga dos veces. Capital y cantidad son hipotéticos y la comisión es una tasa
+supuesta explícita. No se modelan swaps, deslizamiento, liquidez o intravela; no se
+fuerza el cierre final ni se inventa una ejecución tras el último dato.
+
+El cálculo es independiente de Pine y del libro contable. Conserva entradas, reglas,
+resultados y huellas de sus fuentes. La interfaz añade selección de históricos
+preparados, acción de verificar/calcular y consulta de resultados. GET no descarga
+ni calcula; los POST mantienen el origen y token locales. No se crean cuentas.
+
+La muestra real de enero conserva 27 sesiones; se guarda `insufficient_history`
+con 34 sesiones pendientes para SMA 20/60, sin operaciones ni rentabilidad. Se
+comprueba el recorrido en el navegador. Los ensayos con longitud suficiente son
+artificiales y se identifican como tales. La nueva reanudación 2024–2025 recibe
+HTTP 429 en la primera petición y se detiene; el histórico amplio sigue pendiente.
+
+299 pruebas seleccionadas aprobadas, incluida la integración y las comprobaciones
+de laboratorio/rendimiento; no se ejecuta la colección completa. Se revisa la
+sintaxis JavaScript y la interfaz con datos reales insuficientes y un caso
+artificial aislado. Pruebas y evidencia en
+`reports/phase6-dukascopy-spread-2026-10-22/`. No se cierra
+FASE 6, modifica PROJECT_STATUS ni realiza commit o push.
+
+### 22/10/2026 — Importación de históricos y primera prueba con precios reales
+
+Se incorpora `market_history` para CSV Dukascopy BID/ASK y archivos anuales H1
+JSON gzip de EV Trading Labs. Preserva originales, atribución, fechas UTC explícitas
+con fin exclusivo, huellas, horas seleccionadas/excluidas y controles de calidad.
+La lectura reconstruye desde los originales y contrasta todo el inventario y diario.
+Se mantienen los históricos BI5 anteriores y las fronteras de origen/token locales.
+La interfaz permite importar, consultar la calidad y calcular mediante acciones
+separadas. Las consultas no descargan ni ejecutan estrategias.
+
+El exportador Dukascopy observado limita H1 a aproximadamente un mes. Dos rutas
+públicas FXCM responden 403, error 1010. Se descarga sin cuenta el archivo anual
+EUR/USD H1 de 2025 desde el catálogo de EV Trading Labs: 199.128 bytes, 6.223 velas,
+313 fechas UTC. El catálogo declara agregación de Dukascopy y uso gratuito con
+atribución. No se certifica descarga directa del bróker ni transporte final que
+el navegador no expuso. Un contraste independiente reproduce exactamente fechas
+y OHLC de las 528 velas de enero frente a ambos CSV originales.
+
+El 25/12 presenta dos huecos internos: la simulación del año completo queda
+bloqueada sin métricas. Antes de calcular resultados se fija el tramo hasta el
+24/12, con fin exclusivo 25/12: 6.122 velas y 307 sesiones; las 101 velas restantes
+se conservan en el original y se identifican como fuera del período. El corte
+responde a calidad, no a rentabilidad. Se bloquean también tramos sin observaciones
+superiores a 96 horas, incluidos extremos, sin declarar un calendario verificado.
+
+SMA 20/60, 1.000 USD hipotéticos, cantidad 1 EUR y comisión supuesta 0,001 producen
+tres ejecuciones, una operación cerrada y una posición de 1 EUR abierta. Patrimonio
+final 999,98870447 USD. Una reconstrucción independiente con Decimal reproduce
+las 307 sesiones, medias, señales, ejecuciones, caja, posiciones, capital y drawdown.
+La importación real anual y CSV se comprueba mediante la API HTTP local; el botón
+de cálculo y el resultado se comprueban en navegador. La automatización del selector
+nativo no se completó: no se declara validada la selección manual de archivos.
+Las cuentas virtuales y el inbox no cambian.
+
+339 pruebas seleccionadas aprobadas (40 nuevas y las 299 seleccionadas anteriores),
+sin ejecutar la colección completa. Se comprueba sintaxis JavaScript y se conserva
+evidencia, fuentes probadas y capturas en
+`reports/phase6-market-history-import-2026-10-22/`. El histórico 2024–2025 completo
+sigue pendiente; FASE 6 permanece abierta, sin cambio de PROJECT_STATUS, commit o push.
+
+### 22/10/2026 — Repetición fija en 2024 y comparación de períodos
+
+Antes de descargar el año adicional se fija un protocolo: mismos SMA 20/60, largos,
+1.000 USD hipotéticos, cantidad 1 EUR, comisión supuesta 0,001 y límites del
+calendario que en la prueba de 2025, hasta el 24/12. Cada período empieza sin
+posición ni medias previas. No se buscan parámetros o cortes por rentabilidad.
+
+Se obtiene públicamente de EV Trading Labs el archivo anual EUR/USD H1 de 2024,
+195.309 bytes, 6.247 velas y 314 fechas UTC. El período fijo conserva 6.144 velas,
+308 sesiones y 103 velas fuera del período en el original. El año completo presenta
+dos huecos el 25/12 y queda bloqueado sin métricas. Los originales anuales de ambos
+años están disponibles; no se declara cobertura completa ni se relaja la política.
+
+2024 produce seis ejecuciones, tres operaciones cerradas y patrimonio final
+999,96832951 USD, sin posición abierta. 2025 conserva tres ejecuciones, un cierre,
+1 EUR abierto y 999,98870447 USD. Ambos resultados son negativos con la comisión
+supuesta. Un programa independiente con Decimal reproduce medias, señales,
+ejecuciones, comisiones, spread y cada punto de capital y drawdown de ambos períodos.
+Son datos retrospectivos; no se declara validación prospectiva ni robustez estadística.
+
+Se añade `market_comparison`, acción HTTP explícita y ficha en la interfaz.
+Requiere misma configuración, procedencia, política de sesión y motor, con períodos
+sin solaparse. Guarda copias verificables; las consultas no calculan estrategias
+ni procesan cuentas. El listado usa metadatos acotados y la ficha contrasta sus
+entradas. Las cuentas virtuales y el inbox permanecen sin cambios.
+
+363 pruebas seleccionadas aprobadas, 24 nuevas de comparación y las 339 anteriores;
+no se ejecuta la colección completa. Se comprueban sintaxis JavaScript y formulario
+de comparación en navegador con los resultados reales. Evidencia en
+`reports/phase6-period-validation-2026-10-22/`. FASE 6 sigue abierta; no se modifica
+PROJECT_STATUS ni se realiza commit o push.
+
+### 22/10/2026 — Referencias y sensibilidad a comisiones
+
+Antes de calcular se fija el protocolo de SMA 20/60 frente a efectivo USD sin
+intereses y comprar/mantener 1 EUR tras 61 sesiones completas. Se mantienen los
+períodos hasta el 24/12 de 2024 y 2025 y capital hipotético de 1.000 USD. Tasas
+supuestas por ejecución 0; 0,0005; 0,001; 0,002, sin seleccionar una ganadora.
+La referencia compra ASK y termina valorada a BID; no hay cierre forzado ni una
+comisión de salida inexistente. Se conservan diferencias de tiempo en mercado.
+
+Se añade `market_benchmark`, persistencia con entradas exactas, resumen acotado,
+acción HTTP explícita y ficha de escenarios. El cálculo verifica originales; las
+consultas no ejecutan estrategias ni procesan cuentas. No se modifica el motor
+SMA, los contratos, Pine ni el libro contable. Los años completos siguen bloqueados.
+
+SMA queda por debajo del efectivo en los ocho escenarios incluso con comisión
+cero. Supera a comprar/mantener en 2024 y queda por debajo en 2025. Bajo la tasa
+base 0,001, SMA conserva 999,96832951 y 999,98870447 USD; la referencia conserva
+999,94493691 y 1000,08745140 USD. No se concluye robustez o rentabilidad general.
+
+391 pruebas seleccionadas aprobadas, 28 nuevas y las 363 seleccionadas anteriores,
+sin ejecutar toda la colección. Un cálculo independiente stdlib/Decimal desde los
+gzip reproduce los ocho escenarios, 44 ejecuciones y 4.920 puntos de patrimonio.
+La tasa base coincide con las pruebas anteriores. Se comprueban sintaxis JavaScript,
+formulario real y selector de comisión en navegador. Evidencia en
+`reports/phase6-reference-costs-2026-10-22/`. FASE 6 sigue abierta; PROJECT_STATUS
+no cambia y no se realiza commit o push.
+
+### 22/10/2026 — Conversación y comparación con históricos BID/ASK
+
+Se incorpora `conversation_prices`: revisión humana de cruces SMA base/variante,
+histórico aportado con período explícito, cantidad EUR y costes supuestos. Reutiliza
+trabajador, revisiones, aprobación concreta y presupuesto global de cuatro
+comparaciones de BCE; no lo amplía ni reinicia. Guardar no ejecuta. Los originales
+se verifican al revisar, aprobar y ejecutar; cambios de datos o motor bloquean.
+Los resultados conservan entradas y aprobación, y se consultan sin recalcular.
+
+La interfaz permite elegir la fuente, ver métricas, curvas y ejecuciones dentro
+de la conversación y adjuntar la evidencia a una pregunta. EMA sigue disponible
+en BCE; no se traduce silenciosamente a SMA. No se modifica el motor de precios,
+Pine, contratos ni cuentas virtuales. Las peticiones de operaciones actuales siguen
+fuera de este recorrido de investigación histórica.
+
+Ensayo real con Qwen3.5:4b local: conserva SMA 15/45, aunque añade preguntas y avisos
+no pedidos, que quedan en el borrador incompleto. Se revisa explícitamente frente
+a SMA 20/60 sobre 307 sesiones de 2025, capital hipotético 1.000 USD, 1 EUR y
+comisión 0,001. La base conserva 999,98870447 USD y la variante 999,99492622 USD.
+La variante pierde menos pero tiene mayor caída; el criterio no queda respaldado.
+Una reconstrucción independiente reproduce ocho ejecuciones y 614 puntos de capital.
+
+La explicación real del modelo afirma cumplimiento cualitativo de otro criterio.
+Se conserva el error y el original, y se antepone el veredicto de Python en la
+interfaz junto a la interpretación sin verificación semántica. No se repite la
+inferencia para conseguir una respuesta favorable. Consumo: dos respuestas y una
+comparación del presupuesto existente; cuentas e inbox sin cambios.
+
+463 pruebas seleccionadas aprobadas, 26 nuevas, 46 de conversación previa y las
+391 seleccionadas anteriores; no se ejecuta la colección completa. Se comprueban
+sintaxis JavaScript y recorrido real en navegador. El servicio del modelo se
+arranca con la identidad habitual de Windows para leer sus archivos existentes,
+sin cambiar permisos generales ni volver a descargarlo. Evidencia en
+`reports/phase6-chat-prices-2026-10-22/`. FASE 6 sigue abierta, sin cambio de
+PROJECT_STATUS, commit o push.
+
+### 22/10/2026 — FASE 6: explicaciones contrastadas del chat
+
+Se añade `conversation_evidence_explanation_v1` para mensajes con un resultado
+BCE o BID/ASK adjunto. La petición incorpora explícitamente el criterio registrado,
+la evaluación recalculada desde las métricas y una huella del resultado. El modelo
+solo selecciona hasta tres aspectos; el texto visible se compone en Python.
+Se rechazan campos libres, propuestas y evaluaciones incompatibles, conservando
+original, error, tokens y reserva sin reintento. Las huellas se comprueban antes
+y después de inferir. El esquema efectivo cuenta en la cota de contexto.
+
+Se mantiene el modo de propuestas sin evidencia, los límites 24/4, las cuentas y
+los motores anteriores. La interfaz identifica texto compuesto por Python y
+conserva las interpretaciones anteriores con aviso. Los fallos muestran un resumen
+de Python solo cuando la evidencia sigue íntegra. No se modifica PROJECT_STATUS.
+
+41 pruebas nuevas y 113 pruebas de conversación aprobadas. La selección ampliada
+de 525 obtiene inicialmente 524 aprobadas y un fallo WinError 10053 al probar el
+rechazo de transporte chunked del receptor HTTP. Esa prueba pasa al repetirla
+aisladamente (1/1), sin cambiar el receptor ni ocultar el fallo original.
+No se ejecuta la colección completa. Temporales exclusivos y caché desactivada.
+
+Una única respuesta real de Qwen3.5:4b sobre el resultado ya guardado conserva el
+criterio y veredicto correctos. Elige rentabilidad, caída y alcance; omite comisiones
+solicitadas. Se registra esa limitación de cobertura, sin repetir para mejorar la
+respuesta. El texto explica que perder menos con mayor caída no respalda el criterio.
+291 tokens de entrada, 96 de salida, unos 25,7 segundos; quedan 21 respuestas y tres
+comparaciones. No se ejecutan backtests nuevos ni se reescribe el comentario erróneo
+anterior. Evidencia en `reports/phase6-chat-explanations-2026-10-22/`. FASE 6 abierta,
+sin commit o push.
+
+
+### 22/10/2026 — FASE 6.6: operaciones virtuales manuales desde conversación
+
+Nuevo registro manual independiente de backtests y fills de estrategia. Una
+petición limitada «simula comprar/vender cantidad EUR/USD» se conserva con cuenta,
+cotización BID/ASK aportada, estado y versión revisados. Guardar no mueve saldo;
+una segunda aprobación aplica los controles de la transición contable existente
+y confirma aprobación y asiento en una única transacción. Duplicados, concurrencia,
+reinicio y fallo de persistencia no duplican ejecución. Se conservan rechazos,
+cancelaciones y huellas; cambios de cuenta/motor o precio caducado exigen revisión.
+
+El modelo no interpreta ni ejecuta este modo; no se consumen respuestas o comparaciones.
+No se obtiene cotización de mercado. Compra ASK, venta/valoración BID, sin apalancamiento
+ni acumulación. La interfaz muestra previsión y confirmación, saldo, posición, patrimonio,
+resultado realizado y comisiones. Cuentas y almacenamiento anteriores permanecen iguales.
+
+562 pruebas seleccionadas aprobadas, 37 nuevas; no toda la colección. Caché desactivada
+y temporal GUID exclusivo. Demostración en navegador con cuenta manual de ejemplo,
+1.000 USD, 1 EUR y comisión 0,001: compra ASK 1,1002 y venta BID 1,101 artificiales.
+Cierra sin posición con 999,9985988 USD y resultado realizado −0,0014012 USD. La
+subida de precio no compensa costes del ejemplo. Se verifica de forma independiente
+con Decimal; no se presenta como rendimiento de una estrategia o cotización real.
+
+Reservas del chat sin cambios (3 respuestas, 1 comparación). Evidencia en
+`reports/phase6-chat-operations-2026-10-22/`. FASE 6 sigue abierta, sin modificación
+de PROJECT_STATUS, commit o push.
+
+
+### 22/10/2026 — Publicación autorizada del trabajo acumulado
+
+El usuario solicita commit y push a GitHub y continuar después. Se preparan los
+avances locales de FASE 5.1, FASE 5.2 y los incrementos de FASE 6; esta sigue abierta.
+Fetch confirma HEAD/origin/main en 47d2fc5. Los modelos, ejecutables, bases locales
+y configuración privada siguen ignorados; no se encuentran patrones de credenciales
+en los archivos candidatos. Diez manifiestos previos conservan sus 190 evidencias.
+Se comprueban los bytes del índice y se amplían las reglas de preservación de Git.
+
+Se conserva la selección de 562 pruebas aprobadas con fuentes idénticas. Una
+comprobación completa adicional se interrumpe por el coste de las campañas antiguas,
+con salida parcial conservada y sin declararla completa o aprobada. No se modifica
+PROJECT_STATUS en esta publicación. Detalle en `reports/publication-2026-10-22/`.
+El identificador del commit y la confirmación del push se comunicarán tras publicarlo.

@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="17" skipped="0" tests="79" time="15.399" timestamp="2026-10-21T00:00:06.409634+02:00" hostname="DESKTOP-2F5TIH0"><testcase classname="tests.test_lab" name="test_catalog_filters_and_independent_provenance" time="0.139" /><testcase classname="tests.test_lab" name="test_saved_results_and_original_model_text_are_preserved" time="0.058"><failure message="IndexError: list index out of range">lab = (WindowsPath('C:/Users/34656/AppData/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_saved_results_a...Data/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_saved_results_and_origina0/reports/phase-test'))
+
+    def test_saved_results_and_original_model_text_are_preserved(lab):
+        root, _, _ = lab
+        q = LabQuery(root)
+        d = q.detail(local(q)["id"])
+        assert d["hypothesis"] == "&lt;script&gt;window.executed=true&lt;/script&gt;"
+&gt;       assert d["model"][0]["content"] == "&lt;img src=x onerror=alert(1)&gt;"
+               ^^^^^^^^^^^^^
+E       IndexError: list index out of range
+
+tests\test_lab.py:89: IndexError</failure></testcase><testcase classname="tests.test_lab" name="test_archive_survives_missing_originals" time="0.073" /><testcase classname="tests.test_lab" name="test_alterations_are_visible_and_do_not_substitute_files[changed_copy]" time="0.057"><failure message="AssertionError: assert None == 'Alterado'">lab = (WindowsPath('C:/Users/34656/AppData/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_alterations_are...Data/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_alterations_are_visible_a0/reports/phase-test'))
+mode = 'changed_copy'
+
+    @pytest.mark.parametrize("mode", ["changed_copy", "missing_copy", "changed_original"])
+    def test_alterations_are_visible_and_do_not_substitute_files(lab, mode):
+        root, run, archive = lab
+        target = (run if mode == "changed_original" else archive / "run") / "results.json"
+        if mode == "missing_copy": target.unlink()
+        else:
+            value = json.loads(target.read_text(encoding="utf-8"))
+            value["proposal"]["hypothesis"] = "Alterado"
+            save(target, value)
+        q = LabQuery(root)
+        row = next(item for item in q.experiments()["items"] if item["origin"] == ("local" if mode == "changed_original" else "archive"))
+        d = q.detail(row["id"])
+        assert d["integrity"]["state"] in ("changed", "unverifiable")
+        assert d["results_certified"] is False
+&gt;       if mode != "missing_copy": assert d["hypothesis"] == "Alterado"
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: assert None == 'Alterado'
+
+tests\test_lab.py:125: AssertionError</failure></testcase><testcase classname="tests.test_lab" name="test_alterations_are_visible_and_do_not_substitute_files[missing_copy]" time="0.066" /><testcase classname="tests.test_lab" name="test_alterations_are_visible_and_do_not_substitute_files[changed_original]" time="0.045"><failure message="AssertionError: assert None == 'Alterado'">lab = (WindowsPath('C:/Users/34656/AppData/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_alterations_are...Data/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_alterations_are_visible_a2/reports/phase-test'))
+mode = 'changed_original'
+
+    @pytest.mark.parametrize("mode", ["changed_copy", "missing_copy", "changed_original"])
+    def test_alterations_are_visible_and_do_not_substitute_files(lab, mode):
+        root, run, archive = lab
+        target = (run if mode == "changed_original" else archive / "run") / "results.json"
+        if mode == "missing_copy": target.unlink()
+        else:
+            value = json.loads(target.read_text(encoding="utf-8"))
+            value["proposal"]["hypothesis"] = "Alterado"
+            save(target, value)
+        q = LabQuery(root)
+        row = next(item for item in q.experiments()["items"] if item["origin"] == ("local" if mode == "changed_original" else "archive"))
+        d = q.detail(row["id"])
+        assert d["integrity"]["state"] in ("changed", "unverifiable")
+        assert d["results_certified"] is False
+&gt;       if mode != "missing_copy": assert d["hypothesis"] == "Alterado"
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: assert None == 'Alterado'
+
+tests\test_lab.py:125: AssertionError</failure></testcase><testcase classname="tests.test_lab" name="test_altered_account_not_hidden_by_unchanged_summary" time="0.090" /><testcase classname="tests.test_lab" name="test_summary_only_does_not_recalculate_details" time="0.100" /><testcase classname="tests.test_lab" name="test_comparison_rejects_different_sources_or_controls[policy-pair-USD/JPY]" time="0.121" /><testcase classname="tests.test_lab" name="test_comparison_rejects_different_sources_or_controls[policy-initial_capital-2000]" time="0.137" /><testcase classname="tests.test_lab" name="test_comparison_rejects_different_sources_or_controls[policy-cost_rate-0.1]" time="0.163" /><testcase classname="tests.test_lab" name="test_comparison_rejects_different_sources_or_controls[policy-allocation_fraction-None]" time="0.123" /><testcase classname="tests.test_lab" name="test_comparison_rejects_different_sources_or_controls[source-sha256-2222222222222222222222222222222222222222222222222222222222222222]" time="0.138" /><testcase classname="tests.test_lab" name="test_comparison_rejects_different_sources_or_controls[source-first_date-2019-01-01]" time="0.106"><failure message="IndexError: list index out of range">lab = (WindowsPath('C:/Users/34656/AppData/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_comparison_reje...Data/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_comparison_rejects_differ5/reports/phase-test'))
+area = 'source', field = 'first_date', value = '2019-01-01'
+
+    @pytest.mark.parametrize("area,field,value", [("policy", "pair", "USD/JPY"), ("policy", "initial_capital", "2000"),
+                                                   ("policy", "cost_rate", "0.1"), ("policy", "allocation_fraction", None),
+                                                   ("source", "sha256", "2" * 64), ("source", "first_date", "2019-01-01")])
+    def test_comparison_rejects_different_sources_or_controls(lab, area, field, value):
+        root, run, _ = lab
+        value2 = json.loads((run / "results.json").read_text(encoding="utf-8"))
+        value2[area][field] = value
+        second = run.parent / "second"
+        save(second / "results.json", value2)
+        (second / "events.jsonl").write_bytes((run / "events.jsonl").read_bytes())
+        q = LabQuery(root)
+        rows = [x for x in q.experiments()["items"] if x["origin"] == "local"]
+        left, right = (q.detail(row["id"]) for row in rows)
+&gt;       compared = q.compare(left["id"], left["accounts"][0]["id"], right["id"], right["accounts"][0]["id"])
+                                                                                 ^^^^^^^^^^^^^^^^^^^^
+E       IndexError: list index out of range
+
+tests\test_lab.py:163: IndexError</failure></testcase><testcase classname="tests.test_lab" name="test_comparison_accepts_same_controls_but_keeps_accounts_separate" time="0.145" /><testcase classname="tests.test_lab" name="test_invalid_json_remains_visible[{&quot;source&quot;:]" time="0.045" /><testcase classname="tests.test_lab" name="test_invalid_json_remains_visible[{&quot;policy&quot;:{},&quot;policy&quot;:{}}]" time="0.055" /><testcase classname="tests.test_lab" name="test_invalid_json_remains_visible[{&quot;baseline&quot;:NaN}]" time="0.069" /><testcase classname="tests.test_lab" name="test_invalid_json_remains_visible[[]]" time="0.034" /><testcase classname="tests.test_lab" name="test_event_only_attempt_is_incomplete_without_invented_progress" time="0.051" /><testcase classname="tests.test_lab" name="test_consumption_deduplicates_copies_and_separates_inherited" time="0.023"><failure message="IndexError: list index out of range">lab = (WindowsPath('C:/Users/34656/AppData/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_consumption_ded...Data/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_consumption_deduplicates_0/reports/phase-test'))
+
+    def test_consumption_deduplicates_copies_and_separates_inherited(lab):
+        root, run, _ = lab
+        value = json.loads((run / "results.json").read_text(encoding="utf-8"))
+        value["usage"] = {"usage": {"model_requests": 1, "input_tokens": None, "output_tokens": 180, "api_cost_usd": "0"},
+                          "inherited_usage": [{"input_tokens": 2262, "output_tokens": 176}], "known_subtotals": {"input_tokens": 2898}}
+        save(run / "results.json", value)
+        result = LabQuery(root).consumption()
+        assert len(result["items"]) == 1
+        row = result["items"][0]
+        assert row["new"]["input_tokens"] is None
+&gt;       assert row["inherited"][0]["input_tokens"] == 2262
+               ^^^^^^^^^^^^^^^^^^^
+E       IndexError: list index out of range
+
+tests\test_lab.py:213: IndexError</failure></testcase><testcase classname="tests.test_lab" name="test_arbitrary_references_and_private_folders_are_never_read" time="0.039" /><testcase classname="tests.test_lab" name="test_manifest_cannot_escape_its_directory[../outside.json]" time="0.033" /><testcase classname="tests.test_lab" name="test_manifest_cannot_escape_its_directory[C:\\outside.json]" time="0.025" /><testcase classname="tests.test_lab" name="test_manifest_cannot_escape_its_directory[run/../../outside.json]" time="0.041" /><testcase classname="tests.test_lab" name="test_symlink_source_is_rejected" time="0.024" /><testcase classname="tests.test_lab" name="test_legacy_archive_is_checked_without_rewriting_it" time="0.026"><failure message="StopIteration">lab = (WindowsPath('C:/Users/34656/AppData/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_legacy_archive_...Data/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_legacy_archive_is_checked0/reports/phase-test'))
+
+    def test_legacy_archive_is_checked_without_rewriting_it(lab):
+        root, _, archive = lab
+        value = json.loads((archive / "snapshot.json").read_text(encoding="utf-8"))
+        save(archive / "snapshot.json", {"date": "2026-10-19", "files": [{"snapshot": name, **item} for name, item in value["files"].items()]})
+        before = fingerprint(root)
+        q = LabQuery(root)
+&gt;       row = next(item for item in q.experiments()["items"] if item["origin"] == "archive")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       StopIteration
+
+tests\test_lab.py:263: StopIteration</failure></testcase><testcase classname="tests.test_lab" name="test_queries_never_infer_reserve_or_backtest" time="0.067" /><testcase classname="tests.test_lab" name="test_http_navigation_sources_and_security_headers" time="0.634" /><testcase classname="tests.test_lab" name="test_http_has_no_execution_or_mutation_endpoints[POST]" time="0.527" /><testcase classname="tests.test_lab" name="test_http_has_no_execution_or_mutation_endpoints[PUT]" time="0.528" /><testcase classname="tests.test_lab" name="test_http_has_no_execution_or_mutation_endpoints[PATCH]" time="0.527" /><testcase classname="tests.test_lab" name="test_http_has_no_execution_or_mutation_endpoints[DELETE]" time="0.529" /><testcase classname="tests.test_lab" name="test_http_has_no_execution_or_mutation_endpoints[OPTIONS]" time="0.513" /><testcase classname="tests.test_lab" name="test_http_rejects_remote_hosts_and_origins[headers0]" time="0.516" /><testcase classname="tests.test_lab" name="test_http_rejects_remote_hosts_and_origins[headers1]" time="0.525" /><testcase classname="tests.test_lab" name="test_http_rejects_remote_hosts_and_origins[headers2]" time="0.517" /><testcase classname="tests.test_lab" name="test_http_only_serves_catalogued_files[/sources/../../README.md]" time="0.527" /><testcase classname="tests.test_lab" name="test_http_only_serves_catalogued_files[/sources/not-an-id]" time="0.517" /><testcase classname="tests.test_lab" name="test_http_only_serves_catalogued_files[/api/run]" time="0.514" /><testcase classname="tests.test_lab" name="test_http_only_serves_catalogued_files[/api/experiments/not-an-id]" time="0.515" /><testcase classname="tests.test_lab" name="test_http_only_serves_catalogued_files[/.env]" time="0.513" /><testcase classname="tests.test_lab" name="test_empty_project_is_a_valid_empty_view" time="0.003" /><testcase classname="tests.test_lab" name="test_walk_forward_keeps_windows_separate_and_does_not_force_a_winner" time="0.066" /><testcase classname="tests.test_lab" name="test_evaluation_uses_saved_block_sources" time="0.033"><failure message="assert 0 == 4&#10; +  where 0 = len([])">lab = (WindowsPath('C:/Users/34656/AppData/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_evaluation_uses...Data/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_evaluation_uses_saved_blo0/reports/phase-test'))
+
+    def test_evaluation_uses_saved_block_sources(lab):
+        root, run, _ = lab
+        saved = json.loads((run / "results.json").read_text(encoding="utf-8"))
+        value = {"policy": saved["policy"], "proposal": saved["proposal"],
+                 "blocks": {"development": {"results": saved}, "evaluation": {"results": {**saved, "source": {**saved["source"], "sha256": "3" * 64}}}}}
+        save(run / "results.json", value)
+        q = LabQuery(root)
+        detail = q.detail(local(q)["id"])
+&gt;       assert len(detail["accounts"]) == 4
+E       assert 0 == 4
+E        +  where 0 = len([])
+
+tests\test_lab.py:376: AssertionError</failure></testcase><testcase classname="tests.test_lab" name="test_sensitivity_preserves_each_scenarios_costs" time="0.046"><failure message="assert 0 == 2&#10; +  where 0 = len([])">lab = (WindowsPath('C:/Users/34656/AppData/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_sensitivity_pre...Data/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_sensitivity_preserves_eac0/reports/phase-test'))
+
+    def test_sensitivity_preserves_each_scenarios_costs(lab):
+        root, run, _ = lab
+        saved = json.loads((run / "results.json").read_text(encoding="utf-8"))
+        row = {"scenario": {"id": "cost-variant"}, "result": {**saved, "policy": {**saved["policy"], "cost_rate": "0.002"}}}
+        save(run / "results.json", {"plan": {"reference_policy": saved["policy"]}, "rows": {"check": [row]}})
+        q = LabQuery(root)
+        detail = q.detail(local(q)["id"])
+&gt;       assert len(detail["accounts"]) == 2
+E       assert 0 == 2
+E        +  where 0 = len([])
+
+tests\test_lab.py:389: AssertionError</failure></testcase><testcase classname="tests.test_lab" name="test_capture_usage_and_content_are_read_from_the_recorded_observation" time="0.054"><failure message="IndexError: list index out of range">lab = (WindowsPath('C:/Users/34656/AppData/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_capture_usage_a...Data/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_capture_usage_and_content0/reports/phase-test'))
+
+    def test_capture_usage_and_content_are_read_from_the_recorded_observation(lab):
+        root, _, _ = lab
+        directory = root / ".local/campaign-attempts/capture"
+        save(directory / "completion.json", {"status": "observation_recorded", "analysis": {
+            "usage": {"model_requests": 1, "input_tokens": 2898, "output_tokens": 180, "api_cost_usd": "0"}}})
+        (directory / "observation.raw").write_text(json.dumps({"content": "&lt;script&gt;throw Error()&lt;/script&gt;"}), encoding="utf-8")
+        q = LabQuery(root)
+        row = next(item for item in q.experiments()["items"] if item["kind"] == "campaign-attempts")
+        detail = q.detail(row["id"])
+&gt;       assert detail["model"][0]["content"] == "&lt;script&gt;throw Error()&lt;/script&gt;"
+               ^^^^^^^^^^^^^^^^^^
+E       IndexError: list index out of range
+
+tests\test_lab.py:402: IndexError</failure></testcase><testcase classname="tests.test_lab" name="test_evidence_links_reach_the_inventory_and_original_report" time="0.040" /><testcase classname="tests.test_lab" name="test_identical_invalid_controls_do_not_make_results_comparable[initial_capital-NaN]" time="0.026"><failure message="IndexError: list index out of range">lab = (WindowsPath('C:/Users/34656/AppData/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_identical_inval...Data/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_identical_invalid_control0/reports/phase-test'))
+field = 'initial_capital', value = 'NaN'
+
+    @pytest.mark.parametrize("field,value", [("initial_capital", "NaN"), ("cost_rate", "-0.1"), ("allocation_fraction", "2")])
+    def test_identical_invalid_controls_do_not_make_results_comparable(lab, field, value):
+        root, run, _ = lab
+        saved = json.loads((run / "results.json").read_text(encoding="utf-8"))
+        saved["policy"][field] = value
+        save(run / "results.json", saved)
+        q = LabQuery(root)
+        detail = q.detail(local(q)["id"])
+&gt;       result = q.compare(detail["id"], detail["accounts"][0]["id"], detail["id"], detail["accounts"][1]["id"])
+                                         ^^^^^^^^^^^^^^^^^^^^^
+E       IndexError: list index out of range
+
+tests\test_lab.py:421: IndexError</failure></testcase><testcase classname="tests.test_lab" name="test_identical_invalid_controls_do_not_make_results_comparable[cost_rate--0.1]" time="0.042"><failure message="IndexError: list index out of range">lab = (WindowsPath('C:/Users/34656/AppData/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_identical_inval...Data/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_identical_invalid_control1/reports/phase-test'))
+field = 'cost_rate', value = '-0.1'
+
+    @pytest.mark.parametrize("field,value", [("initial_capital", "NaN"), ("cost_rate", "-0.1"), ("allocation_fraction", "2")])
+    def test_identical_invalid_controls_do_not_make_results_comparable(lab, field, value):
+        root, run, _ = lab
+        saved = json.loads((run / "results.json").read_text(encoding="utf-8"))
+        saved["policy"][field] = value
+        save(run / "results.json", saved)
+        q = LabQuery(root)
+        detail = q.detail(local(q)["id"])
+&gt;       result = q.compare(detail["id"], detail["accounts"][0]["id"], detail["id"], detail["accounts"][1]["id"])
+                                         ^^^^^^^^^^^^^^^^^^^^^
+E       IndexError: list index out of range
+
+tests\test_lab.py:421: IndexError</failure></testcase><testcase classname="tests.test_lab" name="test_identical_invalid_controls_do_not_make_results_comparable[allocation_fraction-2]" time="0.042"><failure message="IndexError: list index out of range">lab = (WindowsPath('C:/Users/34656/AppData/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_identical_inval...Data/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_identical_invalid_control2/reports/phase-test'))
+field = 'allocation_fraction', value = '2'
+
+    @pytest.mark.parametrize("field,value", [("initial_capital", "NaN"), ("cost_rate", "-0.1"), ("allocation_fraction", "2")])
+    def test_identical_invalid_controls_do_not_make_results_comparable(lab, field, value):
+        root, run, _ = lab
+        saved = json.loads((run / "results.json").read_text(encoding="utf-8"))
+        saved["policy"][field] = value
+        save(run / "results.json", saved)
+        q = LabQuery(root)
+        detail = q.detail(local(q)["id"])
+&gt;       result = q.compare(detail["id"], detail["accounts"][0]["id"], detail["id"], detail["accounts"][1]["id"])
+                                         ^^^^^^^^^^^^^^^^^^^^^
+E       IndexError: list index out of range
+
+tests\test_lab.py:421: IndexError</failure></testcase><testcase classname="tests.test_lab_performance" name="test_warm_views_do_not_reopen_files" time="0.055"><failure message="assert []">service = &lt;trading_ai.lab_service.LabService object at 0x000002174179E680&gt;
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x000002174149B9B0&gt;
+
+    def test_warm_views_do_not_reopen_files(service, monkeypatch):
+        original = service.overview("experiments")
+        def denied(*args, **kwargs): raise AssertionError("Lectura innecesaria")
+        monkeypatch.setattr(Path, "open", denied)
+        for name in ("home", "experiments", "consumption"):
+            assert service.overview(name)["index"]["generation"] == original["index"]["generation"]
+&gt;       assert service.overview("experiments", filters={"origin": "local", "pair": "EUR/USD"})["items"]
+E       assert []
+
+tests\test_lab_performance.py:38: AssertionError</failure></testcase><testcase classname="tests.test_lab_performance" name="test_published_views_and_query_contexts_are_isolated" time="0.044" /><testcase classname="tests.test_lab_performance" name="test_detail_rechecks_same_size_bytes_with_restored_mtime" time="0.066"><failure message="AssertionError: assert 'unverifiable' == 'changed'&#10;  &#10;  - changed&#10;  + unverifiable">service = &lt;trading_ai.lab_service.LabService object at 0x000002174160E8D0&gt;
+lab = (WindowsPath('C:/Users/34656/AppData/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_detail_rechecks...Data/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_detail_rechecks_same_size0/reports/phase-test'))
+
+    def test_detail_rechecks_same_size_bytes_with_restored_mtime(service, lab):
+        _, run, _ = lab
+        row = next(x for x in service.overview("experiments")["items"] if x["origin"] == "local")
+        path = run / "results.json"
+        before, raw = path.stat(), path.read_bytes()
+        replacement = raw.replace(b"executed", b"ExecutEd")
+        assert len(replacement) == len(raw) and replacement != raw
+        path.write_bytes(replacement)
+        os.utime(path, ns=(before.st_atime_ns, before.st_mtime_ns))
+        query, _ = service.query()
+        detail = query.detail(row["id"])
+&gt;       assert detail["integrity"]["state"] == "changed"
+E       AssertionError: assert 'unverifiable' == 'changed'
+E         
+E         - changed
+E         + unverifiable
+
+tests\test_lab_performance.py:61: AssertionError</failure></testcase><testcase classname="tests.test_lab_performance" name="test_accounts_are_never_served_from_metadata_cache" time="0.046"><failure message="IndexError: list index out of range">service = &lt;trading_ai.lab_service.LabService object at 0x000002174160FA10&gt;
+lab = (WindowsPath('C:/Users/34656/AppData/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_accounts_are_ne...Data/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_accounts_are_never_served0/reports/phase-test'))
+
+    def test_accounts_are_never_served_from_metadata_cache(service, lab):
+        _, run, _ = lab
+        row = next(x for x in service.overview("experiments")["items"] if x["origin"] == "local")
+        query, _ = service.query()
+        detail = query.detail(row["id"])
+&gt;       key = detail["accounts"][0]["id"]
+              ^^^^^^^^^^^^^^^^^^^^^
+E       IndexError: list index out of range
+
+tests\test_lab_performance.py:70: IndexError</failure></testcase><testcase classname="tests.test_lab_performance" name="test_background_refresh_observes_file_changes[add]" time="0.069" /><testcase classname="tests.test_lab_performance" name="test_background_refresh_observes_file_changes[delete]" time="0.056" /><testcase classname="tests.test_lab_performance" name="test_background_refresh_observes_file_changes[modify]" time="0.079"><failure message="assert False&#10; +  where False = any(&lt;generator object test_background_refresh_observes_file_changes.&lt;locals&gt;.&lt;genexpr&gt; at 0x0000021741813370&gt;)">service = &lt;trading_ai.lab_service.LabService object at 0x00000217416F7590&gt;
+lab = (WindowsPath('C:/Users/34656/AppData/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_background_refr...Data/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_background_refresh_observ2/reports/phase-test'))
+change = 'modify'
+
+    @pytest.mark.parametrize("change", ["add", "delete", "modify"])
+    def test_background_refresh_observes_file_changes(service, lab, change):
+        root, run, _ = lab
+        initial = service.overview("experiments")
+        row = next(x for x in initial["items"] if x["origin"] == "local")
+        if change == "add":
+            save(root / ".local/research/new/results.json", {"status": "new_record"})
+        elif change == "delete": (run / "results.json").unlink()
+        else:
+            value = json.loads((run / "results.json").read_text())
+            value["status"] = "changed_record"
+            save(run / "results.json", value)
+        service.interval = 0
+        service.overview("home")
+        wait_refresh(service)
+        service.interval = 60
+        refreshed = service.overview("experiments")
+        assert refreshed["index"]["generation"] &gt; initial["index"]["generation"]
+        if change == "add": assert len(refreshed["items"]) == 3
+        elif change == "delete": assert row["id"] not in {x["id"] for x in refreshed["items"]}
+&gt;       else: assert any(x["state"] == "changed_record" for x in refreshed["items"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       assert False
+E        +  where False = any(&lt;generator object test_background_refresh_observes_file_changes.&lt;locals&gt;.&lt;genexpr&gt; at 0x0000021741813370&gt;)
+
+tests\test_lab_performance.py:101: AssertionError</failure></testcase><testcase classname="tests.test_lab_performance" name="test_existing_empty_report_directory_becomes_an_archive" time="0.060" /><testcase classname="tests.test_lab_performance" name="test_forced_refresh_bypasses_metadata_cache" time="0.060" /><testcase classname="tests.test_lab_performance" name="test_refresh_failure_is_visible_and_force_does_not_claim_success" time="0.035" /><testcase classname="tests.test_lab_performance" name="test_one_initial_build_for_simultaneous_requests" time="0.036" /><testcase classname="tests.test_lab_performance" name="test_background_update_does_not_block_or_duplicate_builds" time="0.067" /><testcase classname="tests.test_lab_performance" name="test_unchanged_sources_do_not_rebuild" time="0.035" /><testcase classname="tests.test_lab_performance" name="test_comparison_reads_each_source_once_per_operation" time="0.108" /><testcase classname="tests.test_lab_performance" name="test_cached_bytes_cannot_bypass_reading_budget" time="0.042" /><testcase classname="tests.test_lab_performance" name="test_replacing_parent_with_link_is_rejected_after_indexing[is_symlink]" time="0.037" /><testcase classname="tests.test_lab_performance" name="test_replacing_parent_with_link_is_rejected_after_indexing[is_junction]" time="0.026" /><testcase classname="tests.test_lab_performance" name="test_file_changed_while_open_is_rejected" time="0.028" /><testcase classname="tests.test_lab_performance" name="test_metadata_cache_is_bounded_and_replaces_old_versions" time="0.001" /><testcase classname="tests.test_lab_performance" name="test_oversized_index_is_not_published" time="0.071" /><testcase classname="tests.test_lab_performance" name="test_static_etag_revalidation_and_head[/]" time="0.535" /><testcase classname="tests.test_lab_performance" name="test_static_etag_revalidation_and_head[/app.js]" time="0.530" /><testcase classname="tests.test_lab_performance" name="test_static_etag_revalidation_and_head[/style.css]" time="0.529" /><testcase classname="tests.test_lab_performance" name="test_http_dynamic_sources_remain_fresh_and_no_store" time="0.559"><failure message="assert (422 == 200)">server = &lt;trading_ai.lab.BoundedServer object at 0x000002174169E830&gt;
+lab = (WindowsPath('C:/Users/34656/AppData/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_http_dynamic_so...Data/Local/Temp/trading-ai-codex-fb9deaf818ff451fa622c249d5ad81b4/test_http_dynamic_sources_rema0/reports/phase-test'))
+
+    def test_http_dynamic_sources_remain_fresh_and_no_store(server, lab):
+        result = json.loads(request(server, "/api/experiments")[2])
+        row = next(x for x in result["items"] if x["origin"] == "local")
+        query, _ = server.service.query()
+        detail = query.detail(row["id"])
+        file = next(x for x in detail["files"] if x["path"].endswith("results.json"))
+        path = lab[0] / file["path"]
+        value = json.loads(path.read_text()); value["marker"] = "fresh_bytes"; save(path, value)
+        status, headers, raw = request(server, "/sources/" + file["id"])
+&gt;       assert status == 200 and b"fresh_bytes" in raw
+E       assert (422 == 200)
+
+tests\test_lab_performance.py:306: AssertionError</failure></testcase><testcase classname="tests.test_lab_performance" name="test_unknown_routes_and_host_rejection_do_not_build_index" time="0.526" /><testcase classname="tests.test_lab_performance" name="test_slow_detail_does_not_block_overview" time="0.572" /><testcase classname="tests.test_lab_performance" name="test_overload_returns_retryable_response_and_releases_workers" time="0.577" /><testcase classname="tests.test_lab_performance" name="test_closed_service_cannot_be_reused" time="0.037" /></testsuite></testsuites>

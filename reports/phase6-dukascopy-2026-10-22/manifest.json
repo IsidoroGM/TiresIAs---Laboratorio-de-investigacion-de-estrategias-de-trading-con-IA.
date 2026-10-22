@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-22",
+  "tests_passed": 152,
+  "new_reader_tests": 21,
+  "full_suite_run": false,
+  "source_sha256": {
+    "trading_ai/dukascopy.py": "d75d748f9aba8fff0dc1638d04f9129f80c541a772716b3b18d80ecd18b856db",
+    "tests/test_dukascopy.py": "e42f588aa19bd65e88f224a5e580ba20f9856d44a88afc91e08d86b27fd5321b",
+    "trading_ai/tv_contracts.py": "91dda291979f3e9b6db10848396b607100f0a21e3209de25e3ec8a22fd9307e2",
+    "trading_ai/tv_reference.py": "473c679f892fd7ca74aaac74567b2ca1cbab5bb165a145714e8d971eec920411",
+    "trading_ai/tv_pine.py": "ba06de509cd7e0e6547c3c896fa4be62d96b19fcfc9afb24e2216dc1223fc5b4",
+    "trading_ai/tv_simulation.py": "5461e6485f5a2617691b7d1c252896037817a7392e637b79ec6cb7e9670e9f49"
+  },
+  "evidence_sha256": {
+    "README.md": "408f3db9c85be0213ad6fcab6a968f5ddd3f9233b5aeaf8b8eb4385157d564f5",
+    "input-diagnosis.json": "3fc7a3419eda1bd4f14361c5968c559c58cf9488ca991f33c29f624eb0115e60",
+    "tests.log": "3ea45da2132084169854b74bf20b5a16d3ffd9abc8d89107cd153def9d3bd335",
+    "tests.xml": "2009eed96f6bab28e63efb3a3bd00d45e58923d6115c5bc20d687b0444710e2d"
+  },
+  "original_bid_sha256": "7efe20d392e9bf9506e7db31ad0c31673bb0e63e953eaeefdeaf9a1bc7396910",
+  "original_ask_sha256": "c010c90a7dcb6b231cb113ea8d0ca5c4ab2cb7f43170e41fdb0448473c67e745",
+  "paired_quotes_ready": false,
+  "accounting_processed": false,
+  "browser_download_retrieved": false
+}

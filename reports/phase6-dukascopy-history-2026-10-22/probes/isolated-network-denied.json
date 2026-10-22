@@ -1,0 +1,14 @@
+[
+  {
+    "name": "legacy-hourly",
+    "url": "https://datafeed.dukascopy.com/datafeed/EURUSD/2025/00/BID_candles_hour_1.bi5",
+    "checked_at": "2026-10-22T11:32:31.650634+00:00",
+    "error": "<urlopen error [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso>"
+  },
+  {
+    "name": "current-hourly",
+    "url": "https://jetta.dukascopy.com/v1/candles/hour/EURUSD/BID/2025/1",
+    "checked_at": "2026-10-22T11:32:31.778383+00:00",
+    "error": "<urlopen error [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso>"
+  }
+]

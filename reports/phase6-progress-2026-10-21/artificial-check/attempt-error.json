@@ -1,0 +1,7 @@
+{
+  "status": "failed_assertion_in_harness",
+  "expected_cash_in_harness": "101.78",
+  "correct_cash_for_gap_9_to_11": "101.8",
+  "reason": "La primera comprobación mezcló el resultado del caso 10 a 12 con el caso de aperturas 9 a 11. La conciliación calculada coincidía; falla la constante de comprobación.",
+  "no_external_connection": true
+}

@@ -1,0 +1,76 @@
+//@version=6
+// TiresIAs: borrador generado; compilación externa pendiente.
+// Contrato SHA-256: 363051d5e88b80df824d31540998e5584934526d90677b663e2a6c30bcbd6754
+strategy("TiresIAs SMA 363051d5e88b", overlay=true, initial_capital=1000, currency=currency.USD, default_qty_type=strategy.fixed, default_qty_value=1, pyramiding=0, commission_type=strategy.commission.percent, commission_value=0.1, slippage=0, margin_long=100, margin_short=100, calc_on_every_tick=false, calc_on_order_fills=false, process_orders_on_close=false, use_bar_magnifier=false)
+
+const string CONTRACT = "363051d5e88b80df824d31540998e5584934526d90677b663e2a6c30bcbd6754"
+const int START = 1704067200000
+const int END = 1798761600000
+const int FAST = 20
+const int SLOW = 60
+const float QUANTITY = 1
+
+string chartMismatch = ""
+if syminfo.tickerid != "OANDA:EURUSD"
+    chartMismatch += "Simbolo/proveedor recibido: " + syminfo.tickerid + "; requerido: OANDA:EURUSD.\n"
+if timeframe.period != "1D"
+    chartMismatch += "Temporalidad recibida: " + timeframe.period + "; requerida: 1D (un dia, no un minuto).\n"
+if not chart.is_standard
+    chartMismatch += "Tipo de grafico: no estandar; se requieren velas o barras estandar.\n"
+if syminfo.currency != "USD"
+    chartMismatch += "Moneda recibida: " + syminfo.currency + "; requerida: USD.\n"
+if syminfo.pointvalue != 1
+    chartMismatch += "Valor por punto recibido: " + str.tostring(syminfo.pointvalue) + "; requerido: 1. Revisar unidades del simbolo.\n"
+if str.length(chartMismatch) > 0
+    runtime.error("TiresIAs: configuracion del grafico incompatible.\n" + chartMismatch)
+
+// Semilla SMA, reiniciada al inicio del contrato; no se utiliza ta.ema.
+var int observations = 0
+var float sumFast = 0.0
+var float sumSlow = 0.0
+var float fast = na
+var float slow = na
+var int sequence = 0
+var string activeEntry = ""
+var string pendingMetadata = ""
+
+if time >= START
+    observations += 1
+    if observations <= FAST
+        sumFast += close
+    if observations <= SLOW
+        sumSlow += close
+    if observations == FAST
+        fast := sumFast / FAST
+    else if observations > FAST
+        fast := (fast * FAST + close - close[FAST]) / FAST
+    if observations == SLOW
+        slow := sumSlow / SLOW
+    else if observations > SLOW
+        slow := (slow * SLOW + close - close[SLOW]) / SLOW
+
+bool up = not na(fast[1]) and not na(slow[1]) and fast[1] <= slow[1] and fast > slow
+bool down = not na(fast[1]) and not na(slow[1]) and fast[1] >= slow[1] and fast < slow
+bool eligible = barstate.isconfirmed and time >= START and time_close < END
+
+// Los mensajes incluyen metadatos; precio/cantidad de ejecución deben proceder
+// de placeholders de order-fill en el diálogo de alerta, nunca de la señal.
+metadata(int seq, string key, int signalTime) =>
+    '{"sequence":' + str.tostring(seq) + ',"execution_id":"' + key + '","signal_time_ms":' + str.tostring(signalTime) + '}'
+
+if eligible and up and strategy.position_size == 0
+    sequence += 1
+    string key = "TI-B-" + str.tostring(time_close)
+    activeEntry := key
+    pendingMetadata := metadata(sequence, key, time_close)
+    strategy.entry(activeEntry, strategy.long, qty=QUANTITY, comment=key, alert_message=pendingMetadata)
+if eligible and down and strategy.position_size > 0
+    sequence += 1
+    string key = "TI-S-" + str.tostring(time_close)
+    pendingMetadata := metadata(sequence, key, time_close)
+    strategy.close(activeEntry, comment=key, alert_message=pendingMetadata)
+
+plot(fast, "TiresIAs fast", color=color.teal)
+plot(slow, "TiresIAs slow", color=color.orange)
+plot(up ? 1 : down ? -1 : 0, "TiresIAs signal", display=display.data_window)
+plot(observations, "TiresIAs observations", display=display.data_window)

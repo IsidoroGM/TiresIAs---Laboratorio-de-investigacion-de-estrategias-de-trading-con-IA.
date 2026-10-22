@@ -1,0 +1,12 @@
+{
+  "previous_source_files": 143,
+  "changed_sources": [
+    "trading_ai/lab.py",
+    "trading_ai/lab_catalog.py",
+    "trading_ai/lab_query.py",
+    "trading_ai/lab_static/app.js",
+    "trading_ai/lab_static/index.html"
+  ],
+  "previous_evidence_files": 838,
+  "changed_evidence": []
+}

@@ -5,6 +5,7 @@ from decimal import Decimal, InvalidOperation
 from hashlib import sha256
 import json
 import re
+from functools import wraps
 
 from trading_ai.lab_catalog import Catalog, ERRORS, identifier, origin_key
 
@@ -21,6 +22,7 @@ TITLES = {"known_walk_forward_result_v1": "Walk-forward sobre desarrollo conocid
           "structured-revisions": "Reformulación registrada", "evaluations": "Evaluación histórica",
           "holdout": "Propuesta congelada", "discovery": "Idea de estrategia"}
 TITLES.update({"robustness": "Sensibilidad y selección interna", "compact-history": "Memoria compacta",
+               "chat-experiments": "Prueba histórica desde conversación",
                "compact-generations": "Intento compacto", "compact-candidates": "Candidata de reglas",
                "structured-sessions": "Sesión de revisión", "research-sessions": "Sesión de investigación",
                "structured-review-memory": "Memoria de revisiones", "structured-drafts": "Borrador de reglas",
@@ -58,9 +60,22 @@ def usage_totals(items):
     return result
 
 
+def operation(method):
+    @wraps(method)
+    def call(self, *args, **kwargs):
+        if not self._depth:
+            self.catalog.begin_read()
+            self._details, self._experiment_items = {}, None
+        self._depth += 1
+        try: return method(self, *args, **kwargs)
+        finally: self._depth -= 1
+    return call
+
+
 class LabQuery:
-    def __init__(self, root=None):
-        self.catalog = Catalog() if root is None else Catalog(root)
+    def __init__(self, root=None, *, catalog=None):
+        self.catalog = catalog if catalog is not None else Catalog() if root is None else Catalog(root)
+        self._depth = 0
 
     def _metadata(self, record, value, events):
         policy = object_value(value.get("policy") or value.get("reference_policy"))
@@ -90,16 +105,21 @@ class LabQuery:
                 "path": self.catalog.files[record["file"]]["path"],
                 "integrity": "not_checked", "has_results": bool(value.get("baseline") or value.get("folds") or value.get("blocks") or value.get("development_result") or value.get("rows"))}
 
+    @operation
     def experiments(self, filters=None):
         filters = filters or {}
         result, warnings = [], list(self.catalog.warnings)
-        for record in self.catalog.records.values():
+        for record in self.catalog.records.values() if self._experiment_items is None else ():
             try:
                 value, events = self.catalog.payload(record), self.catalog.events(record)
                 item = self._metadata(record, value, events)
             except ERRORS as error:
                 item = self._metadata(record, {}, [])
                 item.update(state="unreadable", integrity="unverifiable", issue=str(error))
+            result.append(item)
+        if self._experiment_items is None: self._experiment_items = result
+        result = []
+        for item in self._experiment_items:
             if any(filters.get(key) and str(item.get(key) or "").casefold() != filters[key].casefold()
                    for key in ("pair", "origin", "state")): continue
             if filters.get("strategy") and filters["strategy"].casefold() not in str(item.get("strategy") or "").casefold(): continue
@@ -121,7 +141,9 @@ class LabQuery:
             context = self.catalog.linked(record, {"directory": value["reference"]["frozen_dir"]}, "frozen.json") or value
         return context
 
+    @operation
     def detail(self, key):
+        if key in self._details: return self._details[key]
         if key not in self.catalog.records: raise KeyError("Experimento no catalogado.")
         record = self.catalog.records[key]
         warnings = []
@@ -197,7 +219,7 @@ class LabQuery:
             conclusion_origin = object_value(final.get("analysis_origin")).get("source")
         errors = [{"at": event.get("at"), "event": event["event"], "data": event.get("data")}
                   for event in events if any(word in event["event"] for word in ("failed", "error", "reject", "duplicate"))]
-        return {**metadata, "queried_at": self.catalog.queried_at, "integrity": integrity,
+        result = {**metadata, "queried_at": self.catalog.queried_at, "integrity": integrity,
                 "recorded_state_notice": "Estado del registro guardado; no indica un proceso activo ni concede permiso de ejecución.",
                 "policy": policy, "data": data, "proposal": proposal,
                 "hypothesis": proposal.get("hypothesis"), "criterion": proposal.get("criterion") or context.get("criterion"),
@@ -213,6 +235,8 @@ class LabQuery:
                 "evidence": list(related.values()),
                 "manifest": public_file(self.catalog.files[record["archive"]]) if record["archive"] else None,
                 "limits": LIMIT}
+        self._details[key] = result
+        return result
 
     def _accounts(self, record, value, context, policy, data):
         accounts = []
@@ -267,6 +291,7 @@ class LabQuery:
                 add(role, value.get(role), data, role + ".json", parameters)
         return accounts
 
+    @operation
     def account(self, experiment, key):
         detail = self.detail(experiment)
         account = next((item for item in detail["accounts"] if item["id"] == key), None)
@@ -322,6 +347,7 @@ class LabQuery:
                 result["integrity"] = {"state": "unverifiable", "label": "Contabilidad no verificable"}
         return result
 
+    @operation
     def compare(self, left_experiment, left_account, right_experiment, right_account):
         left, right = self.account(left_experiment, left_account), self.account(right_experiment, right_account)
         differences = []
@@ -380,6 +406,7 @@ class LabQuery:
                 "inherited": inherited, "known_subtotals": subtotals,
                 "scope": "Consumo registrado en esta fuente; puede solaparse con otras memorias o copias. No es el total de la aplicación."}
 
+    @operation
     def consumption(self):
         items, seen = [], set()
         # Preferir registros locales; las copias de una misma fuente no se vuelven a contar.
@@ -400,6 +427,7 @@ class LabQuery:
         return {"items": items, "queried_at": self.catalog.queried_at,
                 "notice": "Sin total global: hay memorias solapadas. Desconocido no equivale a cero; una reserva no acredita una consulta enviada."}
 
+    @operation
     def home(self):
         experiments = self.experiments()
         return {"name": "TiresIAs", "queried_at": self.catalog.queried_at,
@@ -408,3 +436,7 @@ class LabQuery:
                 "recent": experiments["items"][:5], "warnings": experiments["warnings"], "limits": LIMIT,
                 "reports": [public_file(file) for file in self.catalog.files.values()
                             if file["path"].count("/") == 1 and file["path"].endswith(".md")]}
+
+    @operation
+    def overviews(self):
+        return {"experiments": self.experiments(), "home": self.home(), "consumption": self.consumption()}

@@ -1,0 +1,15 @@
+{
+  "approval_sha256": "aca6d28c5c5ad567d0f1c2668cba8550064f749b6a8831c2139bb79c9da36a00",
+  "assessment": {
+    "drawdown_comparison": "higher",
+    "return_comparison": "higher",
+    "scope": "historical_sample_only",
+    "verdict": "not_supported_in_sample"
+  },
+  "backend": "prices_bidask",
+  "directory": "aa2cf169cd9f4194b22db816490514af",
+  "input_daily_sha256": "c8bedfee89a0db929b8d5cde954c4aee80b6ff08020349d44b38e95e0876b121",
+  "input_manifest_sha256": "1c2ebdd4137eefdfd661c53306d40a778b8f59fc97c77d50e4acad5b663acb59",
+  "revision_sha256": "5ba511d4106917ce3ddd07dd7a6e7c03de33ffea99a2bcc0d61e3bc1237c0a4f",
+  "sha256": "221279810c1472bccfc3849440462fa93e933c8246dc81b9abd1b6d0debf6516"
+}

@@ -1,0 +1,26 @@
+{
+  "protocol": "tiresias_manual_virtual_chat_check_v1",
+  "session": "0190241d62b543c6b69b4a5db31051d6",
+  "account_name": "manual-verificacion-20261022",
+  "initial_capital_usd": "1000",
+  "maximum_quantity_eur": "1",
+  "assumed_commission_rate": "0.001",
+  "price_source": "synthetic_user_supplied_example; not a market observation or live quote",
+  "steps": [
+    {"request": "simula comprar 1 EUR/USD", "bid": "1.1", "ask": "1.1002"},
+    {"request": "simula vender 1 EUR/USD", "bid": "1.101", "ask": "1.1012"}
+  ],
+  "timestamp_policy": "Use the time this artificial quote is entered, not the date of a claimed market observation",
+  "expected_after_buy": {"cash": "998.8986998", "quantity": "1", "equity": "999.9986998"},
+  "expected_after_sell": {"cash": "999.9985988", "quantity": "0", "equity": "999.9985988", "realized_pnl": "-0.0014012", "fees": "0.0022012"},
+  "review_and_execution": "Create an explicitly reviewed independent manual account; save each intent without a posting, then separately approve its exact hash and snapshot",
+  "calculation": "Reuse existing simulator pure accounting/risk controls; buy ASK and immediately value BID; sell BID; one atomic SQLite transaction for approval and posting",
+  "scope": "Local manual simulation demonstration, not strategy performance evidence",
+  "model_requests": 0,
+  "new_backtests": 0,
+  "existing_strategy_accounts_and_inbox_changed": false,
+  "chat_budget_before_and_after": {"model_requests": 3, "experiments": 1},
+  "external_orders_sent": false,
+  "phase_closed": false,
+  "commit_or_push": false
+}

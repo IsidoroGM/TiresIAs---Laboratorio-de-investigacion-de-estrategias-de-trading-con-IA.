@@ -1,0 +1,82 @@
+{
+  "date": "2026-10-22",
+  "phase_closed": false,
+  "tests_passed": 185,
+  "new_history_tests": 33,
+  "csv_reader_tests": 21,
+  "related_tests": 131,
+  "full_suite_run": false,
+  "source_sha256": {
+    "trading_ai/dukascopy_history.py": "a833b160382e10077b204b9633552d6e6087aad819143a37e00d9e20eda43bf4",
+    "tests/test_dukascopy_history.py": "8b5c63297dfba666bea884eab3e8e3c1f02d2cc9396c0f9561c2faf44b23aff6",
+    "trading_ai/dukascopy.py": "d75d748f9aba8fff0dc1638d04f9129f80c541a772716b3b18d80ecd18b856db",
+    "tests/test_dukascopy.py": "e42f588aa19bd65e88f224a5e580ba20f9856d44a88afc91e08d86b27fd5321b",
+    "trading_ai/tv_contracts.py": "91dda291979f3e9b6db10848396b607100f0a21e3209de25e3ec8a22fd9307e2",
+    "trading_ai/tv_reference.py": "473c679f892fd7ca74aaac74567b2ca1cbab5bb165a145714e8d971eec920411",
+    "trading_ai/tv_pine.py": "ba06de509cd7e0e6547c3c896fa4be62d96b19fcfc9afb24e2216dc1223fc5b4",
+    "trading_ai/tv_simulation.py": "5461e6485f5a2617691b7d1c252896037817a7392e637b79ec6cb7e9670e9f49"
+  },
+  "previous_sources_unchanged": {
+    "trading_ai/dukascopy.py": true,
+    "tests/test_dukascopy.py": true,
+    "trading_ai/tv_contracts.py": true,
+    "trading_ai/tv_reference.py": true,
+    "trading_ai/tv_pine.py": true,
+    "trading_ai/tv_simulation.py": true
+  },
+  "evidence_sha256": {
+    "csv-comparison.json": "5770fc2690521ba4871404f35984c91f30ec17f01216ac3b911421f044724f1f",
+    "failures/attempt1.json": "2e63b29a2ab7b398adb904c12fdb5701503cafcb246e1bfdb818df07300e5ca2",
+    "failures/attempt2.json": "6bab127791313e5fd52066b4cdf0f56a838f4ce1dd11296241e919a1bf2aef22",
+    "failures/attempt3.json": "4d632daa4230bdbe808cf41b12f2420efdae7bed1b704c9c4597b151468a9b13",
+    "offline-summary.json": "e64b0d917a485ae5ffd4aed42e75d736beec0ec6a959cf7af67efc1e0dadf95b",
+    "pilot-summary.json": "17a547a445006fb7e56baea3edd9a64d844b450f7fe6414fb11024c3b7a1b032",
+    "probes/direct-https-and-current-api.json": "a4041a48fcc628c9b86f95a3a4f42706f7c53589b2bdd82d94b27362e64e3a6e",
+    "probes/isolated-network-denied.json": "800ee1be2e25fe65e5c8f0e0dd7f5d85bc1a85f70375d2352eb2658758427f90",
+    "probes/website-binary-and-current-api.json": "4962f8fe4fafceaa962b08ca5a7ed932b17dba4368e25ed01a14154b835a9638",
+    "README.md": "6ad59f77e7980dff67885d8c040479b0793414a745c2c2e67e381ebaacdd090c",
+    "tested-source/independent-csv-comparison.py": "40af571a2a8ecc9106a259a15e33909abe2d5ad21527db5c51843883cf0db450",
+    "tested-source/tests/test_dukascopy_history.py": "8b5c63297dfba666bea884eab3e8e3c1f02d2cc9396c0f9561c2faf44b23aff6",
+    "tested-source/trading_ai/dukascopy_history.py": "a833b160382e10077b204b9633552d6e6087aad819143a37e00d9e20eda43bf4",
+    "tests.log": "71ff4599ca47da6162208e3d2ba29a24952fba2af49aac5c417dc1ddb20c8231",
+    "tests.xml": "6283c39780f9c95d17a3b69e6241d0967070a473d16f697d2aaa05ceb91e6782"
+  },
+  "pilot_month": "2025-01",
+  "csv_binary_comparison": [
+    {
+      "side": "BID",
+      "csv_rows": 528,
+      "binary_observed_rows": 528,
+      "all_timestamps_match": true,
+      "all_ohlc_prices_match": true,
+      "csv_sha256": "7efe20d392e9bf9506e7db31ad0c31673bb0e63e953eaeefdeaf9a1bc7396910",
+      "bi5_sha256": "f78ca8d08d5b54e950f22dbacfe02ab8929ff94851c6578ae51ae0df6873b135"
+    },
+    {
+      "side": "ASK",
+      "csv_rows": 528,
+      "binary_observed_rows": 528,
+      "all_timestamps_match": true,
+      "all_ohlc_prices_match": true,
+      "csv_sha256": "b7e7904e871ebe7d042be5ecac2187d28cdb0317ca3a29e1233f7457478a2905",
+      "bi5_sha256": "41089e5f64271628c3d60799fa8af10aa786389d4d4d4a65aeca1d38e6be6f08"
+    }
+  ],
+  "daily_sessions": 27,
+  "daily_file_sha256": "c02abce06e710475ed0e9ecdc2313b13de78910f48e2ef64dd58e080e9479259",
+  "sessions_sha256": "7988e81617b02ffffdf3aa28f1e54805595abc16b5806c5f95d3b4e33f7af826",
+  "offline_identical": true,
+  "offline_network_requests": 0,
+  "signal_preview_available": false,
+  "requested_bulk_range": [
+    "2024-01",
+    "2025-12"
+  ],
+  "bulk_complete": false,
+  "last_http_status": 429,
+  "all_final_transports_https": false,
+  "provider_authenticated": false,
+  "accounting_processed": false,
+  "committed": false,
+  "pushed": false
+}

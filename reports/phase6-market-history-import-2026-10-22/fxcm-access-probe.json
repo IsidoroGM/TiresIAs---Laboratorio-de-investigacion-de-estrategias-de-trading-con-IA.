@@ -1,0 +1,22 @@
+[
+  {
+    "name": "daily-2020",
+    "url": "https://candledata.fxcorporate.com/D1/EURUSD/2020.csv.gz",
+    "checked_at": "2026-10-22T12:41:21.210873+00:00",
+    "status": 403,
+    "final_url": "https://candledata.fxcorporate.com/D1/EURUSD/2020.csv.gz",
+    "content_type": "text/plain; charset=UTF-8",
+    "bytes": 17,
+    "sha256": "2938e9f1284180959e33ab1718d0793a72ff6e4cdb8108c34dcd14e69446de5c"
+  },
+  {
+    "name": "hourly-2025-week1",
+    "url": "https://candledata.fxcorporate.com/H1/EURUSD/2025/1.csv.gz",
+    "checked_at": "2026-10-22T12:41:21.471461+00:00",
+    "status": 403,
+    "final_url": "https://candledata.fxcorporate.com/H1/EURUSD/2025/1.csv.gz",
+    "content_type": "text/plain; charset=UTF-8",
+    "bytes": 17,
+    "sha256": "2938e9f1284180959e33ab1718d0793a72ff6e4cdb8108c34dcd14e69446de5c"
+  }
+]

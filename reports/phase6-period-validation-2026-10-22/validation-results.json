@@ -1,0 +1,36 @@
+{
+  "protocol_sha256": "142738b5536d470a629f3facda0816b0e7a0f69ef670dc2260a9a21097ce6711",
+  "results": {
+    "fixed_period": {
+      "id": "caaf5ef7dac047fcb70c6eba7f5e57c6",
+      "status": "simulated",
+      "missing_sessions": 0,
+      "summary": {
+        "initial_capital": "1000",
+        "currency": "USD",
+        "final_equity": "999.96832951",
+        "cash": "999.96832951",
+        "open_quantity": "0",
+        "return_percent": "-0.003167049",
+        "max_observed_drawdown_percent": "0.004433681361493234249795290124",
+        "realized_pnl": "-0.03167049",
+        "closed_trades": 3,
+        "assumed_commissions": "0.00652049",
+        "spread_vs_midpoint_diagnostic": "0.00008",
+        "last_valuation_at": "2024-12-24T22:00:00.000Z"
+      },
+      "hypothetical_fills": 6,
+      "result_sha256": "e67a196e85395b8a7e2d4a902e23a8f3516e4052b5f65cc2d56aea1cab3f2044"
+    },
+    "full_year_diagnostic": {
+      "id": "fb740451faa64a96b1060c4985ff4af4",
+      "status": "blocked_internal_gaps",
+      "missing_sessions": 0,
+      "summary": null,
+      "hypothetical_fills": 0,
+      "result_sha256": "5798cef939bf048462045c4e514b2b674454e9c8d422a2a0a064c390a0234231"
+    }
+  },
+  "accounts_and_inbox_unchanged": true,
+  "reference_2025_run": "72061a4aa7a0455cb400edcc580cb964"
+}

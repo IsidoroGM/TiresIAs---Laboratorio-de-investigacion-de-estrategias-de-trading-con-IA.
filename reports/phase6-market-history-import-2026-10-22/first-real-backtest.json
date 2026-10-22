@@ -1,0 +1,90 @@
+{
+  "strategy": "SMA20/60_fixed_before_test",
+  "selected_period": [
+    "2025-01-01",
+    "2025-12-25"
+  ],
+  "end_date_exclusive": true,
+  "period_reason": "before_first_date_with_internal_hourly_gaps_not_selected_by_profit",
+  "hypothetical_capital_usd": "1000",
+  "fixed_quantity_eur": "1",
+  "assumed_commission_rate": "0.001",
+  "accounts_unchanged": true,
+  "results": {
+    "quality_prefix": {
+      "id": "4a05aab5ccbf49649328cd1282d5a546",
+      "status": "simulated",
+      "missing_sessions": 0,
+      "summary": {
+        "initial_capital": "1000",
+        "currency": "USD",
+        "final_equity": "999.98870447",
+        "cash": "998.81156447",
+        "open_quantity": "1",
+        "return_percent": "-0.001129553",
+        "max_observed_drawdown_percent": "0.003205379045267818213953294716",
+        "realized_pnl": "-0.01330157",
+        "closed_trades": 1,
+        "assumed_commissions": "0.00350553",
+        "spread_vs_midpoint_diagnostic": "0.00024",
+        "last_valuation_at": "2025-12-25T00:00:00.000Z"
+      },
+      "hypothetical_fills": 3,
+      "result_sha256": "dda4d30be9ea565a645ef6d3421c9b75ccbf1a55c359aeafa16fab6df3464b09",
+      "source": {
+        "all_final_transports_https": null,
+        "attribution": "Datos agregados por EV Trading Labs · https://evtradelabs.com/data · uso gratuito con atribución según el catálogo.",
+        "catalog_url": "https://evtradelabs.com/data",
+        "claimed_upstream": "Dukascopy (declarado por EV Trading Labs)",
+        "daily_file_sha256": "c8bedfee89a0db929b8d5cde954c4aee80b6ff08020349d44b38e95e0876b121",
+        "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\dukascopy\\ev-eurusd-2025-to-dec24-2026-10-22",
+        "end_date_exclusive": "2025-12-25",
+        "identity_basis": "catalog_declared_symbol_interval_and_year",
+        "manifest_sha256": "1c2ebdd4137eefdfd661c53306d40a778b8f59fc97c77d50e4acad5b663acb59",
+        "originals_verified": true,
+        "provider": "EV Trading Labs",
+        "provider_authenticated": false,
+        "sessions_sha256": "b4be02050a80778f306a2dd4734d9b27ffaf59a92f7a956832870168f7b03be9",
+        "source_files": [
+          {
+            "file": "raw/00.json.gz",
+            "sha256": "75424fa8293615a3e98d7463c90c8e1ef446bff0f29388c894298249791c995c"
+          }
+        ],
+        "source_format": "evtradelabs_h1_json_gzip",
+        "start_date": "2025-01-01"
+      }
+    },
+    "complete_year_quality_diagnostic": {
+      "id": "ad476afc753b4da9af2d408fd5e73222",
+      "status": "blocked_internal_gaps",
+      "missing_sessions": 0,
+      "summary": null,
+      "hypothetical_fills": 0,
+      "result_sha256": "43cd36a74e255cb0947efd092c4b493f459e5b389de506fcf2cc8fa6b1d6213d",
+      "source": {
+        "all_final_transports_https": null,
+        "attribution": "Datos agregados por EV Trading Labs · https://evtradelabs.com/data · uso gratuito con atribución según el catálogo.",
+        "catalog_url": "https://evtradelabs.com/data",
+        "claimed_upstream": "Dukascopy (declarado por EV Trading Labs)",
+        "daily_file_sha256": "bd6110b17ade611ac5182116262e7e9a74a098a60a5e48485d46563efdcc2ef4",
+        "directory": "C:\\Users\\34656\\Desktop\\Proyectos de Programación\\Agentes de trading\\.local\\dukascopy\\ev-eurusd-2025-full-2026-10-22",
+        "end_date_exclusive": "2026-01-01",
+        "identity_basis": "catalog_declared_symbol_interval_and_year",
+        "manifest_sha256": "42710ae00673ee8e48eb8a29da89ace5f2a0e65f65b89a6d7d079c6f4e2addf4",
+        "originals_verified": true,
+        "provider": "EV Trading Labs",
+        "provider_authenticated": false,
+        "sessions_sha256": "b812e5ed45f379c5cf79cb1103ace469509461a4d0e6cfdd2d285f33ba44fefe",
+        "source_files": [
+          {
+            "file": "raw/00.json.gz",
+            "sha256": "75424fa8293615a3e98d7463c90c8e1ef446bff0f29388c894298249791c995c"
+          }
+        ],
+        "source_format": "evtradelabs_h1_json_gzip",
+        "start_date": "2025-01-01"
+      }
+    }
+  }
+}

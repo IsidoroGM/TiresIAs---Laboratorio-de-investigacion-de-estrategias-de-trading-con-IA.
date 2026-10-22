@@ -1,0 +1,23 @@
+{
+  "method": "independent_stdlib_binary_decoder_against_user_csv",
+  "results": [
+    {
+      "side": "BID",
+      "csv_rows": 528,
+      "binary_observed_rows": 528,
+      "all_timestamps_match": true,
+      "all_ohlc_prices_match": true,
+      "csv_sha256": "7efe20d392e9bf9506e7db31ad0c31673bb0e63e953eaeefdeaf9a1bc7396910",
+      "bi5_sha256": "f78ca8d08d5b54e950f22dbacfe02ab8929ff94851c6578ae51ae0df6873b135"
+    },
+    {
+      "side": "ASK",
+      "csv_rows": 528,
+      "binary_observed_rows": 528,
+      "all_timestamps_match": true,
+      "all_ohlc_prices_match": true,
+      "csv_sha256": "b7e7904e871ebe7d042be5ecac2187d28cdb0317ca3a29e1233f7457478a2905",
+      "bi5_sha256": "41089e5f64271628c3d60799fa8af10aa786389d4d4d4a65aeca1d38e6be6f08"
+    }
+  ]
+}

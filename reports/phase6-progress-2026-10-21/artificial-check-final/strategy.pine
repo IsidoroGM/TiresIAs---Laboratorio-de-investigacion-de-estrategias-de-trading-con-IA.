@@ -1,0 +1,65 @@
+//@version=6
+// TiresIAs: borrador generado; compilación externa pendiente.
+// Contrato SHA-256: 78d1b07be48778050092d6a480c2ffc54632006de585a6030ae01aceb9b7a249
+strategy("TiresIAs SMA 78d1b07be487", overlay=true, initial_capital=100, currency=currency.USD, default_qty_type=strategy.fixed, default_qty_value=1, pyramiding=0, commission_type=strategy.commission.percent, commission_value=1, slippage=0, margin_long=100, margin_short=100, calc_on_every_tick=false, calc_on_order_fills=false, process_orders_on_close=false, use_bar_magnifier=false)
+
+const string CONTRACT = "78d1b07be48778050092d6a480c2ffc54632006de585a6030ae01aceb9b7a249"
+const int START = 1577836800000
+const int END = 1609459200000
+const int FAST = 2
+const int SLOW = 3
+const float QUANTITY = 1
+
+if syminfo.tickerid != "SYNTH:EURUSD" or timeframe.period != "1D" or not chart.is_standard or syminfo.currency != "USD" or syminfo.pointvalue != 1
+    runtime.error("Gráfico incompatible: revisar proveedor, símbolo, D1, moneda y valor por punto.")
+
+// Semilla SMA, reiniciada al inicio del contrato; no se utiliza ta.ema.
+var int observations = 0
+var float sumFast = 0.0
+var float sumSlow = 0.0
+var float fast = na
+var float slow = na
+var int sequence = 0
+var string activeEntry = ""
+var string pendingMetadata = ""
+
+if time >= START
+    observations += 1
+    if observations <= FAST
+        sumFast += close
+    if observations <= SLOW
+        sumSlow += close
+    if observations == FAST
+        fast := sumFast / FAST
+    else if observations > FAST
+        fast := (fast * FAST + close - close[FAST]) / FAST
+    if observations == SLOW
+        slow := sumSlow / SLOW
+    else if observations > SLOW
+        slow := (slow * SLOW + close - close[SLOW]) / SLOW
+
+bool up = not na(fast[1]) and not na(slow[1]) and fast[1] <= slow[1] and fast > slow
+bool down = not na(fast[1]) and not na(slow[1]) and fast[1] >= slow[1] and fast < slow
+bool eligible = barstate.isconfirmed and time >= START and time_close < END
+
+// Los mensajes incluyen metadatos; precio/cantidad de ejecución deben proceder
+// de placeholders de order-fill en el diálogo de alerta, nunca de la señal.
+metadata(int seq, string key, int signalTime) =>
+    '{"sequence":' + str.tostring(seq) + ',"execution_id":"' + key + '","signal_time_ms":' + str.tostring(signalTime) + '}'
+
+if eligible and up and strategy.position_size == 0
+    sequence += 1
+    string key = "TI-B-" + str.tostring(time_close)
+    activeEntry := key
+    pendingMetadata := metadata(sequence, key, time_close)
+    strategy.entry(activeEntry, strategy.long, qty=QUANTITY, comment=key, alert_message=pendingMetadata)
+if eligible and down and strategy.position_size > 0
+    sequence += 1
+    string key = "TI-S-" + str.tostring(time_close)
+    pendingMetadata := metadata(sequence, key, time_close)
+    strategy.close(activeEntry, comment=key, alert_message=pendingMetadata)
+
+plot(fast, "TiresIAs fast", color=color.teal)
+plot(slow, "TiresIAs slow", color=color.orange)
+plot(up ? 1 : down ? -1 : 0, "TiresIAs signal", display=display.data_window)
+plot(observations, "TiresIAs observations", display=display.data_window)

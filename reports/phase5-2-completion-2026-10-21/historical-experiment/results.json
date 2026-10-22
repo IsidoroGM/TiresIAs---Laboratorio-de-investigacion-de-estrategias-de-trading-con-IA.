@@ -1,0 +1,74 @@
+{
+  "source": {
+    "name": "BCE",
+    "sha256": "4e1d13dbdaa33c32146c89254a0928c6ba31b34a15d61fae4844fceee0334754",
+    "first_date": "2024-10-16",
+    "last_date": "2026-10-16",
+    "observations": 511
+  },
+  "policy": {
+    "pair": "EUR/USD",
+    "baseline_strategy": "sma",
+    "fast_window": 20,
+    "slow_window": 60,
+    "cost_rate": "0.001",
+    "initial_capital": "1000",
+    "allocation_fraction": "0.1"
+  },
+  "proposal": {
+    "arguments": {
+      "fast_window": 15,
+      "slow_window": 45,
+      "strategy": "ema"
+    },
+    "criterion": "higher_return_without_more_drawdown",
+    "hypothesis": "Cruce alcista EMA15/EMA45 en D1 para entrada larga; cruce bajista para salida.",
+    "tool": "run_experiment"
+  },
+  "baseline": {
+    "strategy": "SMA20/SMA60",
+    "quote_currency": "USD",
+    "final_equity": "1005.326666222510758996824359",
+    "return_percent": "0.532666622251075899682435900",
+    "max_drawdown_percent": "0.7892556044935738675783813023",
+    "total_costs": "1.013401919812329997272395844",
+    "closed_trades": 5,
+    "has_open_position": false,
+    "rejected_entries": 0
+  },
+  "candidate": {
+    "strategy": "EMA15/EMA45",
+    "quote_currency": "USD",
+    "final_equity": "1006.936137705601263852817074",
+    "return_percent": "0.693613770560126385281707400",
+    "max_drawdown_percent": "0.5750800868142263076622742221",
+    "total_costs": "0.8124400881093619449209343247",
+    "closed_trades": 4,
+    "has_open_position": false,
+    "rejected_entries": 0
+  },
+  "protocol": "conversation_historical_result_v1",
+  "experiment_id": "adbb7f2f594440a292cf8c6b6e9d5b28",
+  "conversation": "614d0283bb084a5699a46271d09315f2",
+  "job": "41019f3a363b4da391b9d95f5748ac05",
+  "revision_sha256": "bc0a1f3cbb810b26476bff22c83c7167b8790b54038f30cdceb7267940ec1343",
+  "original_source": {
+    "id": "ecb-known-history",
+    "sha256": "3cb610894f5098c82e39c476e1593033565565eb66570051c9304fbf708978e9",
+    "first_date": "1999-01-04",
+    "last_date": "2026-10-16",
+    "name": "BCE · histórico conocido · D1",
+    "pairs": [
+      "EUR/USD",
+      "GBP/USD",
+      "USD/JPY",
+      "USD/CHF"
+    ]
+  },
+  "assessment": {
+    "verdict": "supported_in_sample",
+    "return_comparison": "higher",
+    "drawdown_comparison": "lower",
+    "scope": "historical_sample_only"
+  }
+}

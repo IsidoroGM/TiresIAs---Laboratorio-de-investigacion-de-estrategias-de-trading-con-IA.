@@ -1,0 +1,19 @@
+{
+  "annual": {
+    "id": "prices-2d270636ded54ffea90922ef1e75714f",
+    "provider": "EV Trading Labs",
+    "daily_sessions": 307,
+    "internal_gap_count": 0,
+    "coverage_gap_count": 0
+  },
+  "january_csv": {
+    "id": "prices-f9f7780b95ab4df48b561932bbba9d22",
+    "provider": "Dukascopy",
+    "daily_sessions": 27,
+    "internal_gap_count": 0,
+    "coverage_gap_count": 0
+  },
+  "accounts_and_inbox_unchanged": true,
+  "browser_file_picker_completed": false,
+  "import_transport": "explicit_local_http_api"
+}

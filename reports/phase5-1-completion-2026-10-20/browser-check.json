@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "method": "instrumentation in #content data-navigation-ms measures fetch and DOM construction, not physical paint; individual observations",
+  "screens": [
+    {
+      "screen": "Inicio",
+      "ms": 8.9,
+      "heading": "Un espacio para investigar."
+    },
+    {
+      "screen": "Resultados",
+      "ms": 11.4,
+      "heading": "Resultados"
+    },
+    {
+      "screen": "Memoria del agente",
+      "ms": 23.9,
+      "heading": "Memoria del agente"
+    },
+    {
+      "screen": "Consumo",
+      "ms": 24.8,
+      "heading": "Consumo"
+    }
+  ],
+  "experimentsMs": [
+    37.6,
+    20.6
+  ],
+  "detailMs": 80.9,
+  "firstAccountMs": 123.3,
+  "changedAccountMs": 154.5,
+  "charts": 2,
+  "compatibleAndIncompatibleComparisonsChecked": true,
+  "rapidNavigationChecked": true,
+  "filtersRetainedDuringPollingAndForcedRefresh": true,
+  "screenshots": [
+    "explorer.png",
+    "account.png"
+  ]
+}
