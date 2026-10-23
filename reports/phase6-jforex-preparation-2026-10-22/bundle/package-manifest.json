@@ -1,0 +1,12 @@
+{
+  "protocol": "tiresias_jforex_preparation_v1",
+  "origin": "python_reference_not_external_report",
+  "evidence_sha256": {
+    "configuration.json": "b813737ed5fc94b8b4a55b8ac8de3bb50146a67d0f4e2babc258705865206346",
+    "JFOREX_SETUP.md": "4af789260d93da4eee997fdaada80e0b25a6c0fc005db934fac831402de36ab8",
+    "python-reference/fills.csv": "f637739f677e9d2e5a81f6345dc4703f5501aa99cf06580a8f15acee2e308c39",
+    "python-reference/input-daily.json": "c8bedfee89a0db929b8d5cde954c4aee80b6ff08020349d44b38e95e0876b121",
+    "python-reference/input-manifest.json": "1c2ebdd4137eefdfd661c53306d40a778b8f59fc97c77d50e4acad5b663acb59",
+    "python-reference/simulation.json": "86c71acb9088beb65f478d6cc1999fd42e6e2f39fc67c7b1ae38b0e4bbf3ec0c"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "files_sha256": {
+    "csv-mapping.json": "a5b4c29109448b9ff21c98c9b53c847a71e8c6394acc7d2dbb622c5303b4fa6a",
+    "python-reference.json": "db1f26d776e298b353ef288094ffcf6d2e3a03c3cca71cffc56ff9034c59884b",
+    "README.md": "50df56878b37cccbbf9f91fd7f7946e28688393571f7c5dfca7dabdacd340294",
+    "test-settings.json": "90ccba77faeaa9f4c5e2bad51c7bae487e76a66189955bca03f56f0d44b527ed",
+    "TiresiasSmaUtcTester.java": "ddb612acb7db24fc82b5a507911110116cd23e2bd8edc370578ddb564334b365"
+  }
+}

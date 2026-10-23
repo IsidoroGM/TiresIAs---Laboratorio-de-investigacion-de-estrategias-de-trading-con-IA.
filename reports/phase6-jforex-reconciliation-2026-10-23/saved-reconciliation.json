@@ -1,0 +1,1764 @@
+{
+  "account_snapshots": [],
+  "accounting_processed": false,
+  "commission_events": [
+    {
+      "at": "2025-01-01T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-01-02T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-01-03T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-01-06T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-01-07T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-01-08T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-01-09T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-01-10T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-01-13T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-01-14T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-01-15T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-01-16T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-01-17T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-01-20T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-01-21T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-01-22T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-01-23T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-01-24T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-01-27T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-01-28T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-01-29T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-01-30T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-01-31T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-02-03T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-02-04T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-02-05T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-02-06T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-02-07T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-02-10T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-02-11T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-02-12T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-02-13T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-02-14T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-02-17T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-02-18T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-02-19T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-02-20T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-02-21T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-02-24T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-02-25T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-02-26T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-02-27T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-02-28T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-03-03T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-03-04T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-03-05T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-03-06T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-03-07T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-03-10T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-03-11T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-03-12T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-03-13T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-03-14T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-03-17T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-03-18T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-03-19T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-03-20T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-03-21T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-03-24T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-03-25T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-03-26T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-03-27T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-03-28T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-03-31T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-04-01T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-04-02T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-04-03T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-04-04T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-04-07T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-04-08T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-04-09T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-04-10T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-04-11T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-04-14T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-04-15T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-04-16T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-04-17T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-04-18T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-04-21T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-04-22T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-04-23T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-04-24T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-04-25T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-04-28T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-04-29T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-04-30T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-05-01T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-05-02T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-05-05T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-05-06T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-05-07T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-05-08T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-05-09T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-05-12T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-05-13T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-05-14T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-05-15T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-05-16T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-05-19T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-05-20T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-05-21T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-05-22T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-05-23T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-05-26T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-05-27T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-05-28T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-05-29T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-05-30T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-06-02T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-06-03T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-06-04T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-06-05T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-06-06T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-06-09T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-06-10T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-06-11T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-06-12T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-06-13T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-06-16T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-06-17T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-06-18T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-06-19T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-06-20T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-06-23T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-06-24T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-06-25T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-06-26T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-06-27T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-06-30T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-07-01T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-07-02T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-07-03T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-07-04T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-07-07T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-07-08T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-07-09T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-07-10T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-07-11T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-07-14T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-07-15T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-07-16T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-07-17T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-07-18T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-07-21T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-07-22T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-07-23T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-07-24T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-07-25T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-07-28T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-07-29T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-07-30T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-07-31T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-08-01T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-08-04T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-08-05T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-08-06T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-08-07T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-08-08T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-08-11T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-08-12T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-08-13T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-08-14T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-08-15T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-08-18T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-08-19T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-08-20T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-08-21T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-08-22T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-08-25T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-08-26T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-08-27T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-08-28T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-08-29T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-09-01T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-09-02T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-09-03T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-09-04T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-09-05T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-09-08T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.02"
+    },
+    {
+      "at": "2025-09-09T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-09-10T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-09-11T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-09-12T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-09-15T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-09-16T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-09-17T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-09-18T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-09-19T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-09-22T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-09-23T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-09-24T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-09-25T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-09-26T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-09-29T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-09-30T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-10-01T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-10-02T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-10-03T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-10-06T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-10-07T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-10-08T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-10-09T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-10-10T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-10-13T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-10-14T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-10-15T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.02"
+    },
+    {
+      "at": "2025-10-16T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-10-17T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-10-20T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-10-21T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-10-22T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-10-23T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-10-24T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-10-27T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-10-28T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-10-29T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-10-30T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-10-31T21:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-11-03T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-11-04T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-11-05T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-11-06T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-11-07T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-11-10T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-11-11T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-11-12T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-11-13T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-11-14T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-11-17T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-11-18T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-11-19T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-11-20T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-11-21T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-11-24T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-11-25T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-11-26T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-11-27T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-11-28T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-12-01T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-12-02T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-12-03T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-12-04T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-12-05T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-12-08T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-12-09T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-12-10T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-12-11T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-12-12T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-12-15T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.02"
+    },
+    {
+      "at": "2025-12-16T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-12-17T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-12-18T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-12-19T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-12-22T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-12-23T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-12-24T22:00:00.000Z",
+      "before_cutoff": true,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-12-25T22:00:00.000Z",
+      "before_cutoff": false,
+      "reported_usd": "0.0"
+    },
+    {
+      "at": "2025-12-26T22:00:00.000Z",
+      "before_cutoff": false,
+      "reported_usd": "0.0"
+    }
+  ],
+  "commissions": {
+    "allocated_to_fills": false,
+    "events_reported_sum_usd": "0.06",
+    "html_reported_usd": "0.06",
+    "orders_reported_sum_usd": "0.05",
+    "per_fill_available": false
+  },
+  "common_cutoff": {
+    "bid": "1.17714",
+    "derived_swaps_after_cutoff_usd": "-0.12354",
+    "derived_swaps_before_cutoff_usd": "-3.01376",
+    "diagnostic_scenarios": [
+      {
+        "commission_source": "html_reported",
+        "commission_usd": "0.06",
+        "native_observation": false,
+        "reconstructed_equity_usd": "999989.13624",
+        "reconstructed_pnl_usd": "-10.86376"
+      },
+      {
+        "commission_source": "orders_reported",
+        "commission_usd": "0.05",
+        "native_observation": false,
+        "reconstructed_equity_usd": "999989.14624",
+        "reconstructed_pnl_usd": "-10.85376"
+      }
+    ],
+    "gross_equity_from_fills_usd": "999992.21",
+    "gross_pnl_from_fills_usd": "-7.79",
+    "native_equity_observed": null,
+    "open_quantity_eur": "1000",
+    "python_assumed_commissions_usd": "3.50553",
+    "python_equity_usd": "999988.70447",
+    "quote_at": "2025-12-25T00:00:00.000Z",
+    "scenarios_are_not_certified_bounds": true,
+    "swap_points_to_price_multiplier": "0.0001"
+  },
+  "comparison": {
+    "ambiguous": [],
+    "errors": [],
+    "external_rows": 3,
+    "extra": [],
+    "metadata_differences": [],
+    "metadata_unknown": [],
+    "missing": [],
+    "pairs": [
+      {
+        "differences": [
+          {
+            "external": "2025-09-08T00:07:30.000Z",
+            "external_minus_python_seconds": 450.0,
+            "field": "executed_at",
+            "python": "2025-09-08T00:00:00.000Z"
+          }
+        ],
+        "external": {
+          "executed_at": "2025-09-08T00:07:30.000Z",
+          "external_id": null,
+          "fee": null,
+          "line": 2,
+          "price": "1.17127",
+          "quantity": "1000",
+          "side": "buy",
+          "signal_at": "2025-09-08T00:00:00.000Z"
+        },
+        "reference": {
+          "executed_at": "2025-09-08T00:00:00.000Z",
+          "fee": "1.17127",
+          "index": 1,
+          "price": "1.17127",
+          "quantity": "1000",
+          "side": "buy",
+          "signal_at": "2025-09-08T00:00:00.000Z"
+        },
+        "unknown_fields": [
+          "fee"
+        ]
+      },
+      {
+        "differences": [
+          {
+            "external": "2025-10-15T00:07:30.000Z",
+            "external_minus_python_seconds": 450.0,
+            "field": "executed_at",
+            "python": "2025-10-15T00:00:00.000Z"
+          }
+        ],
+        "external": {
+          "executed_at": "2025-10-15T00:07:30.000Z",
+          "external_id": null,
+          "fee": null,
+          "line": 3,
+          "price": "1.1603",
+          "quantity": "1000",
+          "side": "sell",
+          "signal_at": "2025-10-15T00:00:00.000Z"
+        },
+        "reference": {
+          "executed_at": "2025-10-15T00:00:00.000Z",
+          "fee": "1.1603",
+          "index": 2,
+          "price": "1.1603",
+          "quantity": "1000",
+          "side": "sell",
+          "signal_at": "2025-10-15T00:00:00.000Z"
+        },
+        "unknown_fields": [
+          "fee"
+        ]
+      },
+      {
+        "differences": [
+          {
+            "external": "2025-12-14T22:07:30.000Z",
+            "external_minus_python_seconds": 450.0,
+            "field": "executed_at",
+            "python": "2025-12-14T22:00:00.000Z"
+          }
+        ],
+        "external": {
+          "executed_at": "2025-12-14T22:07:30.000Z",
+          "external_id": null,
+          "fee": null,
+          "line": 4,
+          "price": "1.17396",
+          "quantity": "1000",
+          "side": "buy",
+          "signal_at": "2025-12-13T00:00:00.000Z"
+        },
+        "reference": {
+          "executed_at": "2025-12-14T22:00:00.000Z",
+          "fee": "1.17396",
+          "index": 3,
+          "price": "1.17396",
+          "quantity": "1000",
+          "side": "buy",
+          "signal_at": "2025-12-13T00:00:00.000Z"
+        },
+        "unknown_fields": [
+          "fee"
+        ]
+      }
+    ],
+    "reference_metadata": {
+      "currency": "USD",
+      "end_date_exclusive": "2025-12-25",
+      "fast": 20,
+      "pair": "EUR/USD",
+      "sessions_sha256": "b4be02050a80778f306a2dd4734d9b27ffaf59a92f7a956832870168f7b03be9",
+      "slow": 60,
+      "start_date": "2025-01-01",
+      "strategy": "sma"
+    },
+    "reference_rows": 3,
+    "status": "differences",
+    "unknown_fields": [
+      "fee"
+    ]
+  },
+  "coverage": {
+    "daily_sessions": 307,
+    "daily_signal_differences": [],
+    "eligible_h1": 6122,
+    "excluded_h1": 2470,
+    "matches_reference_sessions": true,
+    "raw_h1": 8592,
+    "sessions_sha256": "b4be02050a80778f306a2dd4734d9b27ffaf59a92f7a956832870168f7b03be9"
+  },
+  "currency": "USD",
+  "cutoff": "2025-12-25T00:00:00.000Z",
+  "external_equivalence_verified": false,
+  "external_orders_sent": false,
+  "external_origin_authenticated": false,
+  "file_name": "jforex-native-v2.zip",
+  "html_timezone_declared": "UTC",
+  "issues": [
+    "native_cutoff_equity_not_observed",
+    "per_fill_commission_unknown",
+    "reported_amounts_have_limited_precision",
+    "commission_totals_differ",
+    "swaps_after_strategy_cutoff",
+    "execution_differences_or_unknown_fields"
+  ],
+  "native_final_report_reconciled": false,
+  "native_protocol": "tiresias_jforex_test_export_v2",
+  "native_report": {
+    "final_equity_usd": "999988.68",
+    "initial_equity_usd": "1000000",
+    "last_tick_reported": "2025-12-26 23:52:30",
+    "net_change_usd": "-11.32"
+  },
+  "order_snapshots": [],
+  "original_files_sha256": {
+    "calendar.csv": "91fa827a83051c286e7c412984a8fb074213014372c08790557b4cf60c3758f8",
+    "daily.csv": "36a941f6c484a7316571e55f0f3e8d09003af9cc7534f370f62b401085454fb3",
+    "events.csv": "148345ff624c88d1a4e1b967945115019f3b828b1ae70ae49f017029cc449b2b",
+    "executions.csv": "7da9dfd7867ae8b7f4efc6c5a562e916a6b6513ffd748acb6395056616291f30",
+    "hourly.csv": "f157d0282eb09656220bf232d157d60f42ed7e832d2de6b7a1a00de514d3809c",
+    "metadata.json": "ffd1e37d14c5c8a12c567c300c41effb81c058fd2da7303b054e3457fe65f7bf",
+    "orders.csv": "25b2df386922f4d75be2b88fab4de285c764037de17defe5f78d83100c06adf3",
+    "report.html": "9d7eabf9051d9b93df7c4890833ffb8ee66372dd6dd9ec96052cb4ac344b41d9"
+  },
+  "protocol": "tiresias_jforex_reconciliation_v1",
+  "reference_run": "4e59e20a16b74fc7bd16ea7dad80d02d",
+  "reference_sha256": "70d290b5cd182061d157799fd37884cc92c0ce459c820df312d296d42b9863bc",
+  "status": "partial_reconciliation",
+  "swaps": [
+    {
+      "at": "2025-09-08T21:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.0617",
+      "points": "-0.617",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-09-09T21:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.06141",
+      "points": "-0.6141",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-09-10T21:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.18402",
+      "points": "-1.8402",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-09-11T21:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.06155",
+      "points": "-0.6155",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-09-12T21:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.06154",
+      "points": "-0.6154",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-09-15T21:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.06169",
+      "points": "-0.6169",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-09-16T21:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.06224",
+      "points": "-0.6224",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-09-17T21:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.18588",
+      "points": "-1.8588",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-09-18T21:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.06182",
+      "points": "-0.6182",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-09-19T21:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.0616",
+      "points": "-0.616",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-09-22T21:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.06191",
+      "points": "-0.6191",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-09-23T21:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.06197",
+      "points": "-0.6197",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-09-24T21:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.1847",
+      "points": "-1.847",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-09-25T21:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.06119",
+      "points": "-0.6119",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-09-26T21:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.06138",
+      "points": "-0.6138",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-09-29T21:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.06151",
+      "points": "-0.6151",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-09-30T21:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.06154",
+      "points": "-0.6154",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-10-01T21:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.18458",
+      "points": "-1.8458",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-10-02T21:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.06145",
+      "points": "-0.6145",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-10-03T21:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.06159",
+      "points": "-0.6159",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-10-06T21:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.06142",
+      "points": "-0.6142",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-10-07T21:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.06114",
+      "points": "-0.6114",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-10-08T21:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.18299",
+      "points": "-1.8299",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-10-09T21:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.06065",
+      "points": "-0.6065",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-10-10T21:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.06093",
+      "points": "-0.6093",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-10-13T21:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.06068",
+      "points": "-0.6068",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-10-14T21:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.06088",
+      "points": "-0.6088",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-12-15T22:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.06164",
+      "points": "-0.6164",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-12-16T22:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.06161",
+      "points": "-0.6161",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-12-17T22:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.18474",
+      "points": "-1.8474",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-12-18T22:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.06148",
+      "points": "-0.6148",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-12-19T22:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.06143",
+      "points": "-0.6143",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-12-22T22:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.06169",
+      "points": "-0.6169",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-12-23T22:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.06186",
+      "points": "-0.6186",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-12-24T22:00:00.000Z",
+      "before_cutoff": true,
+      "derived_usd": "-0.18535",
+      "points": "-1.8535",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-12-25T22:00:00.000Z",
+      "before_cutoff": false,
+      "derived_usd": "-0.06179",
+      "points": "-0.6179",
+      "quantity_eur": "1000.0"
+    },
+    {
+      "at": "2025-12-26T22:00:00.000Z",
+      "before_cutoff": false,
+      "derived_usd": "-0.06175",
+      "points": "-0.6175",
+      "quantity_eur": "1000.0"
+    }
+  ],
+  "zip_sha256": "b8bccb560fe47fc0a42267ca1fbd75e15ef611089930a2a49a413f20acea197c"
+}

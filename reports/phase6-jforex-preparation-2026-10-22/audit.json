@@ -1,0 +1,32 @@
+{
+  "prior_manifests_verified": 14,
+  "prior_report_folders_verified": 13,
+  "source_hashes_preserved": true,
+  "reference_copies_verified": true,
+  "zip_crc_and_file_hashes_verified": true,
+  "installer_not_launched_by_preparation": true,
+  "installer_signed_by": "SWFX SA",
+  "installer_signature_observed": "Valid",
+  "application_code_changed_this_increment": false,
+  "new_application_tests_run": false,
+  "prior_selected_tests_passed": 630,
+  "application_and_manual_accounts_unchanged_during_preparation": true,
+  "reserved_before": {
+    "model_requests": 4,
+    "experiments": 1
+  },
+  "reserved_after": {
+    "model_requests": 4,
+    "experiments": 1
+  },
+  "own_model_requests": 0,
+  "new_backtests": 0,
+  "account_operations": 0,
+  "account_registration_submitted": false,
+  "credentials_read_or_stored": false,
+  "external_orders_sent": false,
+  "external_report_supplied": false,
+  "new_scaled_case_calculated": false,
+  "jforex_strategy_prepared": false,
+  "project_status_edited": false
+}

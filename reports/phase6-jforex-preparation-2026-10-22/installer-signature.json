@@ -1,0 +1,10 @@
+{
+  "status": "Valid",
+  "status_message": "Signature verified.",
+  "subject": "CN=SWFX SA, O=SWFX SA, S=Genève, C=CH",
+  "issuer": "CN=Sectigo Public Code Signing CA R36, O=Sectigo Limited, C=GB",
+  "thumbprint": "C00E5127D23CCC46858F176A5BDC5EBF5BC85BBD",
+  "file_version": "4.23",
+  "product_name": "JForex4 Platform",
+  "product_version": "4.23"
+}

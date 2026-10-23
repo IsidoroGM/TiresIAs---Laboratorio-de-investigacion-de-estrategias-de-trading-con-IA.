@@ -1,0 +1,179 @@
+{
+  "mode": "manual_virtual",
+  "accounts": [
+    {
+      "id": "939fc64b99154073a3c63fdcf075f67e",
+      "configuration": {
+        "account": {
+          "cost_rate": "0.001",
+          "currency": "USD",
+          "id": "manual-valoracion-20261022",
+          "initial_capital": "1000",
+          "quantity": "1"
+        },
+        "mode": "manual_virtual",
+        "pair": "EUR/USD",
+        "protocol": "tiresias_manual_account_v1",
+        "risk": {
+          "fee_tolerance": "0.01",
+          "max_drawdown_fraction": "0.2",
+          "max_orders": 1000,
+          "max_price_age_seconds": 172800
+        }
+      },
+      "state": {
+        "basis": "1.1013002",
+        "cash": "998.8986998",
+        "equity": "999.9986998",
+        "estimated_fee_events": 1,
+        "fees": "0.0011002",
+        "filled_orders": 1,
+        "last_at": "2026-10-22T18:30:09.898Z",
+        "last_reason": null,
+        "last_sequence": 1,
+        "max_drawdown_percent": "0.00013002",
+        "peak": "1000",
+        "price": "1.1",
+        "price_at": "2026-10-22T18:30:09.898Z",
+        "quantity": "1",
+        "realized_pnl": "0",
+        "rejections": 0,
+        "risk_paused": false
+      },
+      "chain_sha256": "f108418a53b41989b634ab8c00bb93c9614761939ae9e214d60ea7afdbbf58ed",
+      "engine_compatible": true,
+      "valuation": {
+        "price_at": "2026-10-22T18:30:09.898Z",
+        "bid": "1.1",
+        "age_seconds": 34.63,
+        "status": "within_age_limit",
+        "unrealized_pnl_usd": "-0.0013002",
+        "source": "user_supplied_unverified",
+        "market_verified": false
+      }
+    }
+  ],
+  "intents": [
+    {
+      "id": "9f5d8447af24449aa97741105858448a",
+      "sha256": "be3e420a95fee6d9b67c310b0457037adec7aec4d886c619d5f6a65f12851675",
+      "data": {
+        "account": "939fc64b99154073a3c63fdcf075f67e",
+        "account_chain_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "created": "2026-10-22T18:30:22.076Z",
+        "engine_sha256": {
+          "conversation_operations.py": "2acd6c7eea9d19835cbfc8951a4445024e804baffd45a8875ffa2eb902ef6925",
+          "tv_contracts.py": "91dda291979f3e9b6db10848396b607100f0a21e3209de25e3ec8a22fd9307e2",
+          "tv_simulation.py": "5461e6485f5a2617691b7d1c252896037817a7392e637b79ec6cb7e9670e9f49"
+        },
+        "mode": "manual_virtual",
+        "operation": {
+          "pair": "EUR/USD",
+          "quantity": "1",
+          "side": "buy"
+        },
+        "preview": {
+          "execution": {
+            "executed_at": "2026-10-22T18:30:09.898Z",
+            "fee": null,
+            "price": "1.1002",
+            "quantity": "1",
+            "sequence": 1,
+            "side": "buy"
+          },
+          "external_order_sent": false,
+          "mode": "manual_virtual",
+          "reason": null,
+          "state": {
+            "basis": "1.1013002",
+            "cash": "998.8986998",
+            "equity": "999.9986998",
+            "estimated_fee_events": 1,
+            "fees": "0.0011002",
+            "filled_orders": 1,
+            "last_at": "2026-10-22T18:30:09.898Z",
+            "last_reason": null,
+            "last_sequence": 1,
+            "max_drawdown_percent": "0.00013002",
+            "peak": "1000",
+            "price": "1.1",
+            "price_at": "2026-10-22T18:30:09.898Z",
+            "quantity": "1",
+            "realized_pnl": "0",
+            "rejections": 0,
+            "risk_paused": false
+          }
+        },
+        "protocol": "tiresias_manual_intent_v1",
+        "quote": {
+          "ask": "1.1002",
+          "at": "2026-10-22T18:30:09.898Z",
+          "bid": "1.1",
+          "source": "user_supplied_unverified"
+        },
+        "request_text": "simula comprar 1 EUR/USD",
+        "session": "0190241d62b543c6b69b4a5db31051d6"
+      },
+      "status": "applied",
+      "result": {
+        "approval": {
+          "approved_at": "2026-10-22T18:30:28.028Z",
+          "intent_sha256": "be3e420a95fee6d9b67c310b0457037adec7aec4d886c619d5f6a65f12851675",
+          "request": {
+            "approve_virtual_execution": true,
+            "intent": "9f5d8447af24449aa97741105858448a",
+            "intent_sha256": "be3e420a95fee6d9b67c310b0457037adec7aec4d886c619d5f6a65f12851675",
+            "request_id": "3d53ccb450bc4bc195cfe0097b92aade"
+          },
+          "session": "0190241d62b543c6b69b4a5db31051d6"
+        },
+        "chain_sha256": "f108418a53b41989b634ab8c00bb93c9614761939ae9e214d60ea7afdbbf58ed",
+        "execution": {
+          "executed_at": "2026-10-22T18:30:09.898Z",
+          "fee": null,
+          "price": "1.1002",
+          "quantity": "1",
+          "sequence": 1,
+          "side": "buy"
+        },
+        "external_order_sent": false,
+        "intent_sha256": "be3e420a95fee6d9b67c310b0457037adec7aec4d886c619d5f6a65f12851675",
+        "mode": "manual_virtual",
+        "reason": null,
+        "state": {
+          "basis": "1.1013002",
+          "cash": "998.8986998",
+          "equity": "999.9986998",
+          "estimated_fee_events": 1,
+          "fees": "0.0011002",
+          "filled_orders": 1,
+          "last_at": "2026-10-22T18:30:09.898Z",
+          "last_reason": null,
+          "last_sequence": 1,
+          "max_drawdown_percent": "0.00013002",
+          "peak": "1000",
+          "price": "1.1",
+          "price_at": "2026-10-22T18:30:09.898Z",
+          "quantity": "1",
+          "realized_pnl": "0",
+          "rejections": 0,
+          "risk_paused": false
+        }
+      }
+    }
+  ],
+  "risk": {
+    "max_drawdown_fraction": "0.2",
+    "max_orders": 1000,
+    "max_price_age_seconds": 172800,
+    "fee_tolerance": "0.01"
+  },
+  "as_of": "2026-10-22T18:30:44.528Z",
+  "valuations": [],
+  "valuation_engine_sha256": {
+    "conversation_operations.py": "2acd6c7eea9d19835cbfc8951a4445024e804baffd45a8875ffa2eb902ef6925",
+    "tv_simulation.py": "5461e6485f5a2617691b7d1c252896037817a7392e637b79ec6cb7e9670e9f49",
+    "tv_contracts.py": "91dda291979f3e9b6db10848396b607100f0a21e3209de25e3ec8a22fd9307e2",
+    "manual_valuation.py": "09e2f79ef7763f3aa733fbfd8c9404c37b8d9345775a84ec259e8ff1ccdbca36"
+  }
+}

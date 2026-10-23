@@ -273,9 +273,10 @@ class ConversationService:
 
     def manual_operations(self, session, action=None, body=None):
         from trading_ai.conversation_operations import ManualOperations
+        from trading_ai.manual_valuation import ManualValuation
         if action is None:
             with self.connection() as conn: self._session(conn, session)
-            return ManualOperations(self.root).overview(session)
+            return ManualValuation(self.root).overview(session)
         with self._condition:
             self._initialize()
             with self.connection() as conn:
@@ -283,7 +284,8 @@ class ConversationService:
                 self._idle(conn, session)
             operations = ManualOperations(self.root)
             handlers = {"accounts": operations.create_account, "reviews": operations.review,
-                        "approvals": operations.approve, "cancellations": operations.cancel}
+                        "approvals": operations.approve, "cancellations": operations.cancel,
+                        "valuations": ManualValuation(self.root).mark}
             if action not in handlers: raise KeyError(action)
             return handlers[action](session, body)
 

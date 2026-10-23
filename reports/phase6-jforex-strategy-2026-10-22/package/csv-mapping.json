@@ -1,0 +1,21 @@
+{
+  "protocol": "tiresias_external_execution_csv_v1",
+  "columns": {
+    "external_id": "external_id",
+    "executed_at": "executed_at",
+    "side": "side",
+    "quantity": "quantity",
+    "price": "price",
+    "fee": "fee",
+    "signal_at": "signal_at"
+  },
+  "delimiter": ",",
+  "decimal_separator": ".",
+  "grouping_separator": null,
+  "sides": {
+    "buy": "buy",
+    "sell": "sell"
+  },
+  "time_format": "iso8601",
+  "quantity_multiplier": "1"
+}

@@ -1,0 +1,96 @@
+{
+  "date": "2026-10-23",
+  "phase_closed": false,
+  "this_increment_committed": false,
+  "this_increment_pushed": false,
+  "published_base_commit": "0bd90113c5ea47731da52a57d26d9b5f6dfeafdc",
+  "tests_passed": 117,
+  "full_suite_run": false,
+  "native_v3_execution_verified": true,
+  "native_v3_reconciliation_saved": "3594870d86b9d25e902b5b22ccf9774fdd1b3eee3e5f9fec317b1db8c6d15d8a",
+  "external_equivalence_verified": false,
+  "source_sha256": {
+    "trading_ai/jforex_reconciliation.py": "2f252d8a5ef4c5912b67039dc329a942e851065b6c256c3a2d9d6548374a4d3b",
+    "trading_ai/lab_static/simulation.js": "06f9793415c6fa7d9113bdf58e701995f030e33ed51a607312d790c53695815f",
+    "tests/test_jforex_reconciliation.py": "f36d2228fe655cdfc54aa78f83deb73289117fe667d991af7bc1b0f6c09becf3",
+    "docs/JFOREX_RECONCILIATION.md": "5448df83fcbf4e2c969787aaa49699edbc742a7fe2059e5f3f17b0b8582e2c10",
+    "docs/NEXT_PHASES.md": "fc3d05924e49f8d271cfd098da807de543cd32ec1bef8d39612218df57861d1f",
+    "integrations/jforex/README.md": "0daedf17b21bafb8f30a44dd46199df2aef6f33225e038e95fa4f22048a1278d"
+  },
+  "unchanged_prior_source_sha256": {
+    "trading_ai/dukascopy_history.py": "a833b160382e10077b204b9633552d6e6087aad819143a37e00d9e20eda43bf4",
+    "tests/test_dukascopy_history.py": "8b5c63297dfba666bea884eab3e8e3c1f02d2cc9396c0f9561c2faf44b23aff6",
+    "trading_ai/dukascopy.py": "d75d748f9aba8fff0dc1638d04f9129f80c541a772716b3b18d80ecd18b856db",
+    "tests/test_dukascopy.py": "e42f588aa19bd65e88f224a5e580ba20f9856d44a88afc91e08d86b27fd5321b",
+    "trading_ai/tv_contracts.py": "91dda291979f3e9b6db10848396b607100f0a21e3209de25e3ec8a22fd9307e2",
+    "trading_ai/tv_reference.py": "473c679f892fd7ca74aaac74567b2ca1cbab5bb165a145714e8d971eec920411",
+    "trading_ai/tv_pine.py": "ba06de509cd7e0e6547c3c896fa4be62d96b19fcfc9afb24e2216dc1223fc5b4",
+    "trading_ai/tv_simulation.py": "5461e6485f5a2617691b7d1c252896037817a7392e637b79ec6cb7e9670e9f49",
+    "trading_ai/market_history.py": "af7794fc6ade37032401fbf03244a386dc96d30928082ceac5dcdec38ed1daaa",
+    "trading_ai/dukascopy_backtest.py": "2071e2d53aed483e6586888d0aaf04a5b2294dc43d492c3e2e82845b66c274bd",
+    "tests/test_market_history.py": "a5511b8867da723e80b6aca2300dfc1c398a890b588976da0334cfbe51533c69",
+    "trading_ai/market_comparison.py": "b00a2fd29d6f10ec38d07070d031124745e403ca557f24fbd2b028a1d0729904",
+    "tests/test_market_comparison.py": "32cdcf2c92b034c7704c636ab420a271cc0cfcc5d802dca886848698b0827cde",
+    "trading_ai/lab_static/simulation.css": "693331d13b1f887f010f5ef573b3fd8a006fa164038bd26997a938834fc8f068",
+    "trading_ai/market_benchmark.py": "5cc4b652ac3763bad617176669e2773b39a56c31946f168b321999a875e228ed",
+    "trading_ai/dukascopy_service.py": "9915f7b81777003f73ecb3cd23dfe5e228e433c69556490230a65bf30f5087b3",
+    "tests/test_market_benchmark.py": "d8c26470b661ecb3a7f21a2ffde01f31332cc54b103a4cb3c69ffbe1bb4a5cbb",
+    "trading_ai/conversation_prices.py": "e66415429c13b911694dc26589d913bbb3b3eb1e466da9dffb359d1218645ed1",
+    "trading_ai/lab_static/chat.css": "fe865a4fc1a79d49b97c69462c40898ec4d335a6dcc313a40ad4c93d1e2d7763",
+    "trading_ai/conversation_explanation.py": "1f96b6eaa2b6e815c7bc34d90a1da0667ff6d195e1d79f468322e84f0e3d29bd",
+    "trading_ai/conversation_provider.py": "dfa8f9bee447a8539b29403f3582eb1b613bb91da5b5735d26f7add9a493371b",
+    "tests/test_conversation_explanation.py": "bad73b26c9fdab72972db12d1dc213f8054d2ead7921d430d8a1b60f0b8bfebf",
+    "tests/test_conversation.py": "087b137d390e7609a04e2be669f946fda06714f36fbee5121abdbf13c78cc7b6",
+    "tests/test_conversation_prices.py": "a963d00f8d33f15daa3df909bb26166c0b0a5b423134ac87f2fd7d0cec442949",
+    "trading_ai/conversation_operations.py": "2acd6c7eea9d19835cbfc8951a4445024e804baffd45a8875ffa2eb902ef6925",
+    "trading_ai/lab.py": "f5adda0d8f962857da9ba3d4d1ec3c7558fe80e9a5c63d14e30e9636c54d8c58",
+    "tests/test_conversation_operations.py": "783257ba92f5e2a32ed83a29c728dea74fddeac7c57f1f03aacf6b4f0b4cb4d8",
+    "trading_ai/manual_valuation.py": "09e2f79ef7763f3aa733fbfd8c9404c37b8d9345775a84ec259e8ff1ccdbca36",
+    "trading_ai/conversation.py": "753b2bf605c0f63f194595c0a3a9bec12384a5f59b4865045fb4a4dac823542b",
+    "trading_ai/lab_static/app.js": "ff29beeaecd9e30040e26358f180d9e7d66a4099212edcc7c4f1344172468811",
+    "tests/test_manual_valuation.py": "3de28f880ee732825c7a7f9faabfd0a6d788afca169ec24b2312d3ce9aa937ae",
+    "trading_ai/execution_comparison.py": "a7890acebe7131627e56764394d77c643f63b3a57a16924744f8d72f171dfc82",
+    "tests/test_execution_comparison.py": "9a0a7819ca9165e9ad6b57546fcd7d833e575d49a611903727abfce76639d2a4"
+  },
+  "intentionally_changed_prior_sources": {
+    "trading_ai/jforex_reconciliation.py": {
+      "previous": "cbb315b84b0421cf85847ac689a6e651d2e07c1be156d77c918e108c640b3092",
+      "current": "2f252d8a5ef4c5912b67039dc329a942e851065b6c256c3a2d9d6548374a4d3b"
+    },
+    "trading_ai/lab_static/simulation.js": {
+      "previous": "3a2addc6d51338015729484d8e29c062756eec7c09adb01ae688589c53b8659e",
+      "current": "06f9793415c6fa7d9113bdf58e701995f030e33ed51a607312d790c53695815f"
+    },
+    "tests/test_jforex_reconciliation.py": {
+      "previous": "d33e377fcc18f7b6f71cb5b35fa026e6c7985a0354c048abedb7e106e7e740fc",
+      "current": "f36d2228fe655cdfc54aa78f83deb73289117fe667d991af7bc1b0f6c09becf3"
+    },
+    "integrations/jforex/README.md": {
+      "previous": "480cbaa7f507f5097aee8404dac67278485ad29d2bf4339da170e8d29d376782",
+      "current": "0daedf17b21bafb8f30a44dd46199df2aef6f33225e038e95fa4f22048a1278d"
+    },
+    "docs/JFOREX_RECONCILIATION.md": {
+      "previous": "add9ed3a8953a26d5c84533a2ff5be115c5bbfbea9d19eec35a31d63b89e87a0",
+      "current": "5448df83fcbf4e2c969787aaa49699edbc742a7fe2059e5f3f17b0b8582e2c10"
+    }
+  },
+  "prior_manifest_count": 19,
+  "evidence_sha256": {
+    "focused-tests.log": "347879977553166ca82d191f3c85e09dc969010cdd07164e20f06ad67df8ac0c",
+    "native-original-hashes.json": "5f18142bed680910dfb72b330601048c2faa1521e3fe2d26f0b57e922b6ee845",
+    "prior-evidence-audit.json": "2fe7d3409bb95382e970e723087fd48eaeac4129f808d894095d1146db210905",
+    "README.md": "a4b2e5ab99399c5f4a72ba9985111ce5bd30a58cba415c1c85c5da02b11b8f09",
+    "saved-reconciliation.json": "5578b0afdf3c8912ea71f2f3782274d83a8b7a6fc870897be1587523c657211a",
+    "store-preservation-audit.json": "44ad2921cfe37ef74f757f84314b716122dd0dd25f32038ffad86ed432e6282e",
+    "tested-source/docs/JFOREX_RECONCILIATION.md": "5448df83fcbf4e2c969787aaa49699edbc742a7fe2059e5f3f17b0b8582e2c10",
+    "tested-source/docs/NEXT_PHASES.md": "fc3d05924e49f8d271cfd098da807de543cd32ec1bef8d39612218df57861d1f",
+    "tested-source/integrations/jforex/README.md": "0daedf17b21bafb8f30a44dd46199df2aef6f33225e038e95fa4f22048a1278d",
+    "tested-source/tests/test_jforex_reconciliation.py": "f36d2228fe655cdfc54aa78f83deb73289117fe667d991af7bc1b0f6c09becf3",
+    "tested-source/trading_ai/jforex_reconciliation.py": "2f252d8a5ef4c5912b67039dc329a942e851065b6c256c3a2d9d6548374a4d3b",
+    "tested-source/trading_ai/lab_static/simulation.js": "06f9793415c6fa7d9113bdf58e701995f030e33ed51a607312d790c53695815f",
+    "ui-captures.png": "e7acdce6f42bc23a4c524cb1c78a6e7683aadc5e016eaa7bb65ed78fbdcebf19",
+    "ui-summary.png": "63baf5cf97b2e847e2f4377117e6d6c11e8486cd7e97960e50e11816ad8a5718",
+    "ui.png": "778976c121ce440f45fbe82c23a5dff1050c4f0100ae7b09c964e900d8d9b417",
+    "verification.json": "2a25a32b7ac2cdeb71db5fd80266f7600375fce742f04dc7ff3f448d3975ce3b"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "reports/phase6-chat-explanations-2026-10-22/manifest.json": {
+    "sha256": "eb7c8deba883d7644cdb7cec06200b2b3b2cf3232efffaf4233d15d6c711cf09",
+    "files_verified": 23
+  },
+  "reports/phase6-chat-operations-2026-10-22/manifest.json": {
+    "sha256": "86c21e14009c52e1a621cd357f7961ae5667cb37a7aafd0f865427f9c9c509f0",
+    "files_verified": 17
+  },
+  "reports/phase6-chat-prices-2026-10-22/manifest.json": {
+    "sha256": "6d845ad71d4fa8f576de9bba46add00dc4d14b48481bfcd92eebb20936177a03",
+    "files_verified": 22
+  },
+  "reports/phase6-dukascopy-2026-10-22/manifest.json": {
+    "sha256": "13c2db6ced404bfda2c027941c7f26a337b1c1414fc0198a85d1f475a117dce0",
+    "files_verified": 4
+  },
+  "reports/phase6-dukascopy-history-2026-10-22/manifest.json": {
+    "sha256": "ed24975b6240ce126573fd2d6889543977b47f5d1a4eb3226a9bd4701642f473",
+    "files_verified": 15
+  },
+  "reports/phase6-dukascopy-paired-2026-10-22/manifest.json": {
+    "sha256": "97e4bd116ca6b6fd1e5af9dc17ac514f6a6c92ca65b05925cf995ec25c759b99",
+    "files_verified": 4
+  },
+  "reports/phase6-dukascopy-spread-2026-10-22/manifest.json": {
+    "sha256": "12ff01f0a6597ecb0098794338ce6f75084df518a13652f625935e9998ae8f0b",
+    "files_verified": 17
+  },
+  "reports/phase6-execution-comparison-2026-10-22/manifest.json": {
+    "sha256": "02bd41172e34c900951621107ef90d88b078b4164685fb262f7fff7bab4ccc51",
+    "files_verified": 23
+  },
+  "reports/phase6-execution-comparison-2026-10-22/results/manifest.json": {
+    "sha256": "eba3bb4e9e82039c0adc6e36c4bb569846c1019258e83a285f775b50955dd04e",
+    "files_verified": 6
+  },
+  "reports/phase6-jforex-native-calendar-2026-10-23/manifest.json": {
+    "sha256": "8216b66e8bb6a1d5020ac6e9819e5e772e6c744cd139cc9790021ba728fc5649",
+    "files_verified": 10
+  },
+  "reports/phase6-jforex-preparation-2026-10-22/manifest.json": {
+    "sha256": "58b09f0dcc5f5606d9801aeb3623549a117b38f7e9acce95fb12a53b6b3f5232",
+    "files_verified": 14
+  },
+  "reports/phase6-jforex-strategy-2026-10-22/manifest.json": {
+    "sha256": "0871338050ea7c427a53e423cf99880d047b41087493860c3c51676b3049236c",
+    "files_verified": 38
+  },
+  "reports/phase6-manual-valuation-2026-10-22/manifest.json": {
+    "sha256": "fa64db07bcce55af4b5cac38ba81d6d6446b4d367c71b37cffe0c15782ca9778",
+    "files_verified": 14
+  },
+  "reports/phase6-market-history-import-2026-10-22/manifest.json": {
+    "sha256": "a82877711ee4b970a1c071be78ca5b79cbff4da4e9e29e1aee2c8f7e56a379c1",
+    "files_verified": 24
+  },
+  "reports/phase6-period-validation-2026-10-22/manifest.json": {
+    "sha256": "ef3df186b7a85839597cd047eb387968505895f38d303f07d4056868c8d48c79",
+    "files_verified": 30
+  },
+  "reports/phase6-reference-costs-2026-10-22/manifest.json": {
+    "sha256": "57720c8455f7a6c5f7becb202645e2180266e9ead71a175a5ca3ff386905a5f9",
+    "files_verified": 34
+  },
+  "reports/publication-2026-10-22/manifest.json": {
+    "sha256": "bdc268ee86e835932d8f1f1fe3fd5cbe17d7d0db81dc6e8c7d57dd26bd3bbc91",
+    "files_verified": 6
+  }
+}

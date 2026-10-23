@@ -1,0 +1,33 @@
+{
+  "tests_passed": 117,
+  "jforex_reconciliation_tests": 46,
+  "lab_tests": 51,
+  "tv_service_tests": 20,
+  "full_suite_run": false,
+  "omissions": 0,
+  "node_syntax_checked": true,
+  "native_v3_run_verified": true,
+  "native_v2_same_file_hashes": [
+    "daily.csv",
+    "hourly.csv",
+    "calendar.csv",
+    "executions.csv"
+  ],
+  "native_exported_sessions_match_python": true,
+  "native_api_final_equity_matches_html": true,
+  "exact_cutoff_equity_verified": false,
+  "api_quote_synchronization_verified": false,
+  "per_fill_commission_verified": false,
+  "saved_record_verified_via_live_get": true,
+  "idempotence_checked": true,
+  "ui_verified": true,
+  "accounts_modified": false,
+  "new_own_model_calls": 0,
+  "new_own_python_backtests": 0,
+  "own_native_tests_started": 0,
+  "global_reserved_unchanged": {
+    "model_requests": 4,
+    "experiments": 1
+  },
+  "previous_248_tests_not_rerun": true
+}

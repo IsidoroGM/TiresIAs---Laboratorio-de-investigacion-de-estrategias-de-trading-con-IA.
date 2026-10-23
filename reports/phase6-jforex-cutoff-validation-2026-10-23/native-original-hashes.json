@@ -1,0 +1,54 @@
+{
+  "temporary-report.html": {
+    "sha256": "ec1a8c6c1dced240e947bd43f079cd7797603b4087b9a67bf46a82e0f4eea86b",
+    "bytes": 43537
+  },
+  "saved-report.html": {
+    "sha256": "7b95065cc2d5de94a79f64de929d3e9e9d976b3bd2a328f8896639a8443ad392",
+    "bytes": 43536
+  },
+  "messages.csv": {
+    "sha256": "504384172694a074f1eadd4ef06ac9aab9ea5175b0e4b9b4f850ea3783f7e1a7",
+    "bytes": 135
+  },
+  "strategy-reviewed.java": {
+    "sha256": "06b2f3c9cae71f9df14b5a66a988bb9a5a589adaddc115f09a79d31c6cc003b0",
+    "bytes": 25831
+  },
+  "native-export/account-snapshots.csv": {
+    "sha256": "f915f37b901e53ea0a4039984b227a196fcec3bb0d89071d1e24ce171705346e",
+    "bytes": 449
+  },
+  "native-export/calendar.csv": {
+    "sha256": "91fa827a83051c286e7c412984a8fb074213014372c08790557b4cf60c3758f8",
+    "bytes": 4968
+  },
+  "native-export/daily.csv": {
+    "sha256": "36a941f6c484a7316571e55f0f3e8d09003af9cc7534f370f62b401085454fb3",
+    "bytes": 65239
+  },
+  "native-export/events.csv": {
+    "sha256": "d51ee32ca6fc45c14c1397fcad0b6171f3b3b7b3c03f964ea08ecdf1994d88d1",
+    "bytes": 6345
+  },
+  "native-export/executions.csv": {
+    "sha256": "7da9dfd7867ae8b7f4efc6c5a562e916a6b6513ffd748acb6395056616291f30",
+    "bytes": 568
+  },
+  "native-export/hourly.csv": {
+    "sha256": "f157d0282eb09656220bf232d157d60f42ed7e832d2de6b7a1a00de514d3809c",
+    "bytes": 1018921
+  },
+  "native-export/metadata.json": {
+    "sha256": "a9a7eb33b06b28e82c8c326cf7d39d828c3c22e0b3b72d62ac4c7248a0596921",
+    "bytes": 1121
+  },
+  "native-export/order-snapshots.csv": {
+    "sha256": "c01707873d9967cb2cd5096c529e31267ff01910975a04fa7a403b51ee742fce",
+    "bytes": 904
+  },
+  "native-export/orders.csv": {
+    "sha256": "4b53e679b06eb8dbf1eaa766f82a144818a6c2972e4e8a20f4e4e054101e5c70",
+    "bytes": 318
+  }
+}

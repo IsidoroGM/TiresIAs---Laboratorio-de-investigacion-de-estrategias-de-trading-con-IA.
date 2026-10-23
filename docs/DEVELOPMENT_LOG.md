@@ -2010,3 +2010,287 @@ comprobación completa adicional se interrumpe por el coste de las campañas ant
 con salida parcial conservada y sin declararla completa o aprobada. No se modifica
 PROJECT_STATUS en esta publicación. Detalle en `reports/publication-2026-10-22/`.
 El identificador del commit y la confirmación del push se comunicarán tras publicarlo.
+
+
+### 22/10/2026 — Publicación confirmada y valoración manual sin operación
+
+El commit 0bd90113c5ea47731da52a57d26d9b5f6dfeafdc queda publicado en origin/main.
+Push y consulta posterior de refs/heads/main confirman el mismo SHA, sin diferencias
+local/remoto y con árbol limpio antes de continuar. Incluye los avances acumulados
+hasta las operaciones manuales; FASE 6 permanece abierta.
+
+Después del push se implementa manual_valuation, un avance local adicional. Reutiliza
+la base y transición de riesgo manual existentes sin cambiar sus huellas ni migrar
+la base. Otra aprobación de BID/ASK y fecha UTC, vinculada al estado y código,
+actualiza patrimonio, caída y pausa sin cambiar saldo, EUR, comisiones, resultado
+realizado o número de operaciones. Un asiento atómico conserva origen y aprobación;
+repeticiones, cambios de cuenta/motor e instantes incompatibles se comprueban.
+Las intenciones pendientes con otra cadena quedan bloqueadas hasta revisarlas.
+
+586 pruebas seleccionadas aprobadas, 24 nuevas; caché desactivada y temporal GUID
+exclusivo. No se ejecuta otra colección completa. La interfaz muestra antigüedad
+que avanza, avisos de datos ausentes/futuros/caducados, resultado no realizado y
+últimas valoraciones. La lectura usa una instantánea y no opera ni llama al modelo.
+
+En navegador se abre una cuenta de ejemplo con 1.000 USD y se compra 1 EUR a ASK
+artificial 1,1002; después se valora a BID artificial 1,09, sin otro fill o comisión.
+Patrimonio 999,9886998 USD y resultado no realizado −0,0113002 USD, con la posición
+virtual aún abierta. No es evidencia de rendimiento de una estrategia. Una petición
+adicional del usuario en la aplicación se conserva sin atribuirla al ensayo.
+
+Evidencia en `reports/phase6-manual-valuation-2026-10-22/`. Este avance posterior
+queda local, sin segundo commit/push. PROJECT_STATUS no cambia; FASE 6 sigue abierta.
+
+### 22/10/2026 — Contraste de ejecuciones y elección de JForex
+
+Se implementa execution_comparison: CSV UTF-8 con mapa, unidades, zona, metadatos
+y tolerancias explícitos frente a una prueba BID/ASK guardada. Alinea por acción
+y fecha únicas, conserva ausencias y ambigüedades, compara con aritmética decimal
+y no convierte costes desconocidos en cero. Una fila inválida impide comparar un
+subconjunto silencioso. Coincidir no autentica origen, formato o motor externo.
+
+La interfaz ofrece una vista previa sin escritura y un guardado revisado aparte,
+vinculado a su huella. Archiva CSV, resultado, resumen y copias de la simulación y
+precios; lecturas verifican huellas sin recalcular o tocar cuentas. El catálogo
+consulta metadatos acotados. Cambiar controles invalida también respuestas de
+vista previa pendientes. No cambian los motores de cuenta manual o de backtest.
+
+630 pruebas seleccionadas aprobadas en 56,20 s, incluidas 44 del nuevo comparador;
+temporal GUID exclusivo y caché desactivada. No se ejecuta la colección completa.
+En navegador se carga un CSV artificial derivado de las tres ejecuciones guardadas
+del tramo 2025: precio +0,0001, otra ejecución +60 segundos y una comisión vacía.
+Se alinean tres parejas, se detectan dos filas con diferencias y el coste desconocido.
+Se revisa y archiva el resultado sin nuevos backtests, peticiones al modelo o asientos.
+
+El usuario elige JForex/Dukascopy. Su documentación del SDK describe informes HTML;
+el lector CSV no se presenta como adaptador de ese formato. Queda pendiente obtener
+un original con su configuración para implementar y probar la conversión y realizar
+el contraste externo real. Evidencias en `reports/phase6-execution-comparison-2026-10-22/`.
+Este incremento permanece local, sin commit/push; PROJECT_STATUS no cambia y FASE 6
+sigue abierta.
+
+### 22/10/2026 — Preparación de JForex y comprobación de requisitos
+
+Se revisan las fuentes oficiales de instalación, probador histórico, unidades de
+órdenes y modo TEST. No se encuentra JForex en registro o directorios habituales
+del entorno normal del usuario; se evita concluir que no existe una instalación
+portable. Java y Maven están disponibles. Se descarga el instalador oficial Windows
+4.23 en `.local/jforex/downloads/`, sin ejecutarlo. Authenticode devuelve Valid y
+firmante SWFX SA; se guardan URL HTTPS, tamaño y SHA-256.
+
+Se identifica un requisito nuevo: la referencia de 1 EUR no respeta el mínimo API
+de 1.000 unidades EUR/USD. Se archiva su configuración intacta y se propone un
+caso nuevo con 1.000 EUR y 1.000.000 USD hipotéticos, sin calcularlo. No se convierte
+el caso antiguo ni se afirma equivalencia de velas, costes o motores. La guía
+JFOREX_SETUP separa instalación/acceso de la preparación de estrategia, comprobación
+de datos y obtención del informe HTML nativo. La estrategia Java aún no se genera
+ni se declara compilada o probada.
+
+Este paso prepara documentos y archivos de referencia; no cambia código de la
+aplicación y no repite pruebas del motor. Se verifican 14 manifiestos de 13 informes
+anteriores (incluido un manifiesto de archivo interno) y las fuentes conservadas,
+sin nuevos backtests, llamadas al modelo,
+cuentas o asientos. Evidencias en `reports/phase6-jforex-preparation-2026-10-22/`.
+Sin instalación, formularios, credenciales o aceptación de condiciones. Los avances
+siguen locales, sin commit/push, y PROJECT_STATUS permanece intacto.
+
+### 22/10/2026 — Estrategia de JForex exclusiva del probador histórico
+
+El usuario confirma JForex y acceso demo. Se localizan JForex 4.23 y su API demo
+4.9.8, sin consultar credenciales ni iniciar un cliente. Se implementa
+`integrations/jforex/TiresiasSmaUtcTester.java`, compilada con JDK 25 y destino
+Java 21 contra el JAR instalado. La compilación dentro de JForex sigue pendiente.
+
+El código rechaza motores DEMO/LIVE antes de archivos, suscripciones u órdenes y
+repite la guarda en callbacks y envíos. Exige un tester USD nuevo con capital
+indicado y apalancamiento 1:1. Congela parámetros, agrupa ticks por sesión UTC,
+calcula cruces SMA causales con Decimal de 28 dígitos y solicita compra/cierre
+largo al primer tick de la siguiente sesión observada. No sustituye fills nativos
+por aperturas previstas ni cierra posiciones desde onStop. Las diferencias entre
+ticks/interpolación y nuestros H1 siguen pendientes de comprobación.
+
+Exporta sesiones, H1 BID/ASK, peticiones, mensajes, partes de ejecuciones y costes
+agregados. Los costes por fill e identificadores ausentes no se inventan. Un cierre
+nativo anterior no recibe una señal posterior; se explicita que la señal procede
+de nuestra petición y no prueba causalidad nativa. Fallos, final no observado,
+rechazos o datos incompatibles quedan visibles y no provocan un reenvío automático.
+
+Se fija protocolo antes de una sola referencia Python nueva: capital hipotético
+1.000.000 USD, cantidad 1.000 EUR y comisión supuesta 0,001. Resultado
+`4e59e20a16b74fc7bd16ea7dad80d02d`, 307 sesiones y tres ejecuciones. Se conserva
+intacto el caso anterior de 1 EUR y no se cambia el presupuesto del chat.
+
+660 pruebas seleccionadas aprobadas, 30 nuevas de JForex, sin omisiones y con
+temporal GUID/caché desactivada. Los dobles offline implementan las interfaces del
+JAR real; no ejecutan el tester. También se reproduce la secuencia de aperturas y
+cierres de la referencia preservada para contrastar SMA y peticiones. Sus fills y
+comisiones son artificiales: no constituyen validación externa ni rendimiento JForex.
+
+Se entrega fuente Java, guía y mapa CSV. Falta compilar/ejecutar dentro de JForex,
+recibir HTML/exportaciones originales y conciliar datos, ejecuciones y costes.
+No se implementa a ciegas el lector HTML. Evidencias en
+`reports/phase6-jforex-strategy-2026-10-22/`. Núcleo Python, cuentas, modelos y
+evidencias anteriores permanecen intactos. Avance local, sin commit/push y sin
+actualizar PROJECT_STATUS; FASE 6 permanece abierta.
+
+Después se intenta consultar la ventana abierta de JForex con Windows Computer Use.
+La solicitud de acceso a la aplicación caduca antes de concederse; no se obtiene
+captura ni se envían acciones a su interfaz. Se deja registrada la limitación y
+se pregunta si reintentar el acceso o realizar la prueba manualmente con el paquete.
+No es un fallo de compilación nativa observado: esa comprobación sigue pendiente.
+
+### 23/10/2026 — Primer ensayo nativo de JForex y calendario de mercado
+
+El usuario compila la estrategia en el editor de JForex y facilita tres informes
+originales. Los dos primeros fallan al iniciar por configuración incompleta (método
+vacío, capital inicial insuficiente) y moneda EUR. El tercero confirma USD, capital
+1.000.000 y el método horario previsto. Procesa 23.137 ticks y 5.784 barras H1,
+pero solicita una compra el sábado 30/08/2025 a las 00:07:30 UTC. El tester responde
+`System offline` y `ORDER_SUBMIT_REJECTED`; no confirma operaciones y no completa
+la ventana. Las interpolaciones incluían días y horas de mercado cerrado.
+
+Se corrige el adaptador Java usando `IDataService.isOfflineTime(time, instrument)`
+de la API instalada. Los ticks cerrados no entran en sesiones/SMA ni provocan
+peticiones. El viernes se completa al primer tick admitido tras la reapertura,
+manteniendo la fecha de la señal; no se reenvían órdenes rechazadas. El calendario
+ausente/fallido detiene la prueba. El protocolo v2 añade intervalos/contador de ticks
+omitidos y contenido/motivos de mensajes nativos; conserva los H1 sin filtrar.
+
+35 pruebas locales aprobadas (5 adicionales) contra la API real con dobles offline,
+sin omisiones. Comprueban el hueco de cierre, precio constante durante mercado
+abierto, señal/ejecución tras reapertura, final de ventana en cierre, indisponibilidad
+de calendario y conservación del motivo del rechazo. No representan un nuevo
+ensayo nativo. Los originales privados se archivan con SHA-256 bajo `.local/` y se
+conservan las evidencias anteriores. Falta reimportar y compilar el fuente v2 en
+JCloud y repetir el ensayo. Sin cambios de motores Python, backtests/modelos nuevos,
+commit/push o PROJECT_STATUS; FASE 6 sigue abierta.
+
+### 23/10/2026 — Ensayo JForex v2 completo y primer contraste nativo
+
+El usuario reimporta y ejecuta la revisión corregida. El HTML
+`TiresiasSmaUtcTester_23102026_120254.html` y sus exportaciones completan la ventana
+sin fallos. Se procesan 24.488 ticks, se omiten 9.880 de períodos cerrados y se
+confirman tres ejecuciones de 1.000 EUR (compra, venta, compra), dejando 1.000 EUR
+abiertos. El HTML informa de patrimonio final 999.988,68 USD: -11,32 USD respecto
+al millón inicial. Esta cifra corresponde al corte del informe nativo.
+
+Una revisión independiente reconstruye 6.122 H1 a partir de 8.592 barras y los
+52 intervalos de calendario. Las aperturas coinciden con la fuente de referencia;
+se detectan cinco diferencias OHLC en tres velas. Los agregados de las 307 sesiones
+mantienen exactamente la huella canónica de Python y coinciden con daily.csv, SMA
+y señales. No se sustituyen datos ni se vuelve a calcular un backtest Python.
+
+Las funciones puras del comparador emparejan las tres ejecuciones con ventana H1
+de 3.600 segundos y tolerancia temporal cero: mismo precio, cantidad y señal, pero
+fecha nativa 450 segundos posterior. Las comisiones por fill quedan desconocidas;
+estado `differences`, sin guardar registros en la app ni modificar cuentas/modelos.
+
+El HTML muestra 0,06 USD de comisiones y los agregados de órdenes suman 0,05 USD.
+El informe incorpora dos swaps posteriores al corte de estrategia del 25/12 y su
+valoración no coincide en fecha con la de Python. La columna v2 denominada
+remaining_amount_millions refleja IOrder.getAmount, que en la orden cerrada sigue
+mostrando 0,001: la posición se revisa mediante fills netos y estado, sin tratar ese
+valor como cantidad abierta. Se conservan explícitas estas limitaciones y no se
+declara contabilidad final reconciliada ni equivalencia completa.
+
+Originales archivados y verificados byte a byte bajo `.local/`; revisión pública
+sin identificadores de cuenta en `reports/phase6-jforex-native-review-2026-10-23/`.
+Se verifican 17 manifiestos anteriores y fuentes de motores, referencia y
+PROJECT_STATUS intactos. No cambia el adaptador: se conservan sus 35 pruebas ya
+aprobadas y no se repiten. Siguiente paso: conciliar costes/valoración al mismo
+corte e incorporar la evidencia al flujo de contraste. Sin commit/push ni cierre
+de fase.
+
+### 23/10/2026 — Conciliación al corte e integración del paquete nativo
+
+Se implementa `jforex_reconciliation.py`: lector acotado del ZIP de HTML y archivos
+de la estrategia TEST H1/4-OHLC BID, perfiles v2/v3, con límites, nombres exactos,
+sin extracción de rutas ni ejecución de HTML/scripts. Verifica coherencia de
+capital, moneda, SMA, fechas, posiciones/horas y cantidades de swaps contra fills;
+reconstruye sesiones independientemente de la huella de referencia. La app añade
+vista previa, aprobación ligada a su huella, archivo idempotente con referencia
+congelada y consulta/catalogación sin recalcular estrategias.
+
+Se conserva el paquete real v2 como conciliación
+`e09d030c7635c6542cd53b030874afb51ad162b8305853a2d13b55e42ff96681`.
+Al 25/12/2025 00:00 UTC: bruto -7,79 USD; swaps derivados previos -3,01376 USD y
+posteriores -0,12354 USD. HTML/eventos publican comisión 0,06 USD y las órdenes
+suman 0,05 USD. Las reconstrucciones resultan -10,86376 y -10,85376 USD, frente a
+-11,29553 USD de Python con sus costes supuestos. Se identifican como escenarios
+diagnósticos, no observaciones nativas ni intervalo certificado. Quedan parcial,
+sin reparto de comisión por fill ni equivalencia completa.
+
+La estrategia v3 captura cuenta/órdenes al primer tick desde el corte y al final.
+Conserva fecha real, objetivo, cotización, equity/base equity informativos,
+balance EOD anterior, precios ajustados, P/L, comisión agregada y exposición por
+historial. No cierra posiciones ni crea operaciones para obtener las capturas.
+Renombra el importe bruto API como native_amount_millions y expone aparte la
+cantidad abierta de entradas menos cierres. Una captura posterior no se retrodata;
+el posible retraso de IAccount queda explícito. Su ejecución nativa está pendiente.
+
+248 pruebas seleccionadas aprobadas, sin omisiones: 42 del lector/conciliación,
+37 de Java contra la API instalada y los componentes de comparador, servicio,
+simulador e interfaz afectados. Sintaxis JavaScript comprobada. Se verifica la
+ficha real en el navegador y se conserva captura visual. El guardado del análisis
+mantiene intactas once huellas de almacenes existentes, incluidos cuentas y chat.
+Sin backtests Python nuevos, solicitudes al modelo, operaciones reales,
+commit/push ni cambio de PROJECT_STATUS. FASE 6 continúa abierta.
+
+### 23/10/2026 — Capturas nativas v3 y valoración por instante real
+
+Se recibe `TiresiasSmaUtcTester_23102026_125636.html`, sin errores, junto con sus
+exportaciones v3. Se archivan y verifican trece archivos originales/revisados bajo
+`.local/jforex/prueba-historica-01/revision-v3-ec1a8c6c1dce/`, sin sobreescribir
+los ensayos previos. Las 307 sesiones/señales y los tres fills coinciden con v2;
+queda exposición larga de 1.000 EUR. No se vuelve a ejecutar un backtest Python.
+
+La API publica patrimonio 999.989,14 USD al 25/12/2025 00:07:30 UTC, 450 s después
+del corte objetivo, y 999.988,68 USD al 26/12 23:52:30 UTC. Esta última lectura
+coincide con el HTML final (-11,32 USD). La lectura inicial no se retrodata al corte
+ni certifica sincronización con la cotización; el balance EOD no se usa como caja.
+
+El adaptador añade reconstrucciones por captura con su BID, posición de fills,
+swaps y eventos de comisión hasta la fecha real, frente al agregado de órdenes
+de esa misma captura como escenario independiente. Guarda la diferencia respecto
+a la API sin asignarle una causa. No descuenta swaps del P/L ajustado de órdenes.
+Al primer tick quedan diferencias +0,06376/+0,05376 USD; al final +0,0073/-0,0027.
+Los totales publicados 0,06/0,05 USD y el coste por fill desconocido siguen visibles.
+La ficha presenta valores/fechas, retraso y tablas de cada observación.
+
+Conciliación guardada con referencia congelada:
+`3594870d86b9d25e902b5b22ccf9774fdd1b3eee3e5f9fec317b1db8c6d15d8a`.
+Guardado ligado a la vista previa, verificado por GET e idempotencia; dieciocho
+huellas de almacenes/registro v2/PROJECT_STATUS intactas y presupuesto global
+sin cambios (4 solicitudes de modelo, 1 experimento). 117 pruebas seleccionadas
+aprobadas, incluidas 46 de conciliación; sintaxis JavaScript y ficha en navegador
+verificadas. No cambian la estrategia Java ni los motores Python. Las 248 pruebas
+del incremento anterior permanecen como evidencia histórica, sin atribuirlas a
+otra ejecución. Evidencia nueva en
+`reports/phase6-jforex-cutoff-validation-2026-10-23/`.
+
+Siguiente trabajo: diferencias temporales de ejecución y alcance de costes antes
+de ampliar el contraste. No se pide repetir el mismo ensayo para capturas que ya
+se conservan. FASE 6 sigue abierta, sin commit/push ni cambio de PROJECT_STATUS.
+
+### 23/10/2026 — Preparación del commit y push autorizados
+
+El usuario solicita publicar los avances pendientes. Se comprueba que el remoto
+main conserva el commit base `0bd90113c5ea47731da52a57d26d9b5f6dfeafdc`.
+La entrega reúne valoración manual sin operación, comparación de ejecuciones,
+estrategia exclusiva TEST y conciliación de JForex con capturas nativas v3.
+Se corrige en README la referencia obsoleta a la ejecución v3 aún pendiente.
+
+La revisión verifica veinte manifiestos de evidencias y las fuentes vigentes
+comprobadas en los incrementos anteriores. Se conservan sus bytes y resultados,
+incluidos los indicadores de publicación pendientes que describen aquel momento;
+no se reescriben retrospectivamente. Las 117 pruebas seleccionadas del último
+incremento permanecen acreditadas; no se repite la colección completa. Sintaxis
+JavaScript comprobada. Los originales nativos privados y almacenes de `.local/`
+permanecen fuera de Git. Se comprobarán también los bytes protegidos del índice
+antes de crear el commit.
+
+La publicación no cierra FASE 6 ni modifica PROJECT_STATUS. El siguiente incremento
+debe explicar y modelar expresamente el desfase temporal Python/JForex y delimitar
+los costes comparables antes de ampliar la prueba a otros períodos. No se solicita
+otra ejecución idéntica para capturas ya recibidas. La confirmación del commit y
+del push se comunica después de comprobar la rama remota.

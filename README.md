@@ -1289,6 +1289,18 @@ SMA 20/60 frente a comprar/mantener y efectivo, con cuatro tasas supuestas fijas
 sin elegir parámetros o comisiones por su resultado.
 El [modo manual de operaciones virtuales](docs/MANUAL_OPERATIONS.md) permite revisar
 y aprobar peticiones EUR/USD con precios BID/ASK aportados y controles del simulador.
+La [valoración manual](docs/MANUAL_VALUATION.md) actualiza patrimonio y antigüedad
+del precio sin generar otra compra o venta.
+El [contraste de ejecuciones](docs/EXECUTION_COMPARISON.md) compara un CSV aportado
+con un resultado BID/ASK guardado, muestra diferencias y archiva originales tras
+su revisión. La [conciliación de JForex](docs/JFOREX_RECONCILIATION.md) incorpora
+el HTML y las exportaciones TEST en un ZIP, separa costes/cortes y conserva las
+discrepancias sin importar operaciones a cuentas.
+La [estrategia para el probador de JForex](integrations/jforex/README.md) completa
+ensayos nativos con las revisiones v2 y v3. La v3 conserva capturas de cuenta y
+posición cerca del corte y al final, ya verificadas e incorporadas a la app. Sus
+fechas reales, diferencias temporales y discrepancias de comisiones permanecen
+visibles; la equivalencia completa de costes y resultados sigue sin verificar.
 Las [explicaciones contrastadas](docs/CHAT_EXPLANATIONS.md) utilizan el criterio
 registrado y texto compuesto por Python; el modelo selecciona aspectos de la evidencia.
 El [chat con históricos BID/ASK](docs/CHAT_PRICES.md) conecta propuestas SMA con

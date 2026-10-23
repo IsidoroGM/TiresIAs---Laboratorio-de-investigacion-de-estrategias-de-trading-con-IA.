@@ -1,0 +1,3 @@
+"native_order_id","label","state","remaining_amount_millions","aggregate_commission_usd","entry_parts","close_parts"
+"offline-order-1","Tiresias_c260368e735c4363afc087ebb2abf407","CLOSED","0.0","3.579","1","1"
+"offline-order-2","Tiresias_d4c1e99ff5694c95baeb52d9b2a48c03","FILLED","0.001","1.234","1","0"

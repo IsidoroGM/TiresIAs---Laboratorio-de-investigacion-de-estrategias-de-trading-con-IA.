@@ -1,0 +1,37 @@
+[
+  {
+    "open_at": "2025-02-03T19:00:00.000Z",
+    "field": "bid_close",
+    "native": "1.02843",
+    "reference": "1.02851",
+    "native_minus_reference": "-0.00008"
+  },
+  {
+    "open_at": "2025-02-03T19:00:00.000Z",
+    "field": "ask_close",
+    "native": "1.02847",
+    "reference": "1.02855",
+    "native_minus_reference": "-0.00008"
+  },
+  {
+    "open_at": "2025-03-03T10:00:00.000Z",
+    "field": "ask_high",
+    "native": "1.04444",
+    "reference": "1.04451",
+    "native_minus_reference": "-0.00007"
+  },
+  {
+    "open_at": "2025-10-27T15:00:00.000Z",
+    "field": "bid_close",
+    "native": "1.16352",
+    "reference": "1.16346",
+    "native_minus_reference": "0.00006"
+  },
+  {
+    "open_at": "2025-10-27T15:00:00.000Z",
+    "field": "ask_close",
+    "native": "1.16356",
+    "reference": "1.1635",
+    "native_minus_reference": "0.00006"
+  }
+]

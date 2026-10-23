@@ -1,0 +1,23 @@
+{
+  "tests_passed": 248,
+  "jforex_parser_tests": 42,
+  "java_strategy_tests": 37,
+  "execution_comparison_tests": 44,
+  "tv_service_tests": 20,
+  "tv_simulation_tests": 25,
+  "lab_tests": 51,
+  "lab_performance_tests": 29,
+  "full_suite_run": false,
+  "omissions": 0,
+  "node_syntax_checked": true,
+  "native_v3_run_verified": false,
+  "native_v2_reconciliation_visible_in_browser": true,
+  "live_api_matches_saved": true,
+  "global_reserved_unchanged": {
+    "model_requests": 4,
+    "experiments": 1
+  },
+  "new_own_model_calls": 0,
+  "new_own_python_backtests": 0,
+  "accounts_modified": false
+}

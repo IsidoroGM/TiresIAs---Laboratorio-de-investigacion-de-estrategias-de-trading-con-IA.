@@ -1,0 +1,12 @@
+{
+  "id": "4e59e20a16b74fc7bd16ea7dad80d02d",
+  "result_sha256": "70d290b5cd182061d157799fd37884cc92c0ce459c820df312d296d42b9863bc",
+  "parameters": {
+    "dataset": "prices-2d270636ded54ffea90922ef1e75714f",
+    "capital": "1000000",
+    "quantity": "1000",
+    "commission_rate": "0.001"
+  },
+  "origin": "new_python_backtest_on_preserved_prices_not_external_report",
+  "old_reference_unchanged": true
+}

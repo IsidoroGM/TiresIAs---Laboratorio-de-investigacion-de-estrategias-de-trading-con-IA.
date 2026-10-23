@@ -1,0 +1,34 @@
+{
+  "saved": {
+    "id": "3594870d86b9d25e902b5b22ccf9774fdd1b3eee3e5f9fec317b1db8c6d15d8a",
+    "created": true
+  },
+  "preview_sha256": "3594870d86b9d25e902b5b22ccf9774fdd1b3eee3e5f9fec317b1db8c6d15d8a",
+  "unchanged_store_sha256": {
+    "docs\\PROJECT_STATUS.md": "9efc811155e314d6a0df14d19a4f38fd83467e52ea3e82117f83402bc41da5bb",
+    ".local\\campaign-ledger\\registry.sqlite3": "384ed60c64d9939b54edcaeda5000bef2224c26875f5bf93d40cb009a396d602",
+    ".local\\conversations\\chat.sqlite3": "3bfae040fd86c15366d1c5a05a47453d043f978f1877dcf6998bc8f6f2b88da7",
+    ".local\\manual-simulation\\ledger.sqlite3": "4588e784ae1c2d97fbfd675b04bb61a60d023166ed0d943a7769796c10905c78",
+    ".local\\phase6-ui-20261021\\.local\\simulation\\ledger.sqlite3": "3bafc1ff407f24d3a9f30f6fd1cc5ecfc0713abe29aca53a85c680da6b221eaa",
+    ".local\\phase6-cross-component-20261021\\.local\\simulation\\ledger.sqlite3": "eba07b8ddd3439dc42f57feb377afb93b8821711e3cf830fc3c06071b9fbc8e7",
+    ".local\\phase6-check-20261021-c\\.local\\simulation\\ledger.sqlite3": "a223b922ed916096096173b5dd2e917ca583aeb5ef17b33cd5deaf602fa8bccc",
+    ".local\\phase6-check-20261021-b\\.local\\simulation\\ledger.sqlite3": "c8ad4c2234ed6f3b3fe30ea3e00bd396972f038aca0e9a9d2389249f7af5abfe",
+    ".local\\phase6-check-20261021-a\\.local\\simulation\\ledger.sqlite3": "1530bd82d546cd42af9f1eef235bf9f6aecc5a3c99ca7ad1ad5144d426514ee3",
+    ".local\\phase5-2-check\\1ec1b93d6d73402f916eaccaee34c0bc\\.local\\conversations\\chat.sqlite3": "406dce7b9398783d4e56293adebf951128d602b77bf5569917cae384b94b2b5c",
+    ".local\\campaign-ledger-audits\\261a7f9f850e425f906a78148e04add9\\registry-snapshot.sqlite3": "d96dd03413d8d53676b670faebbcafdbe6111bbf6e8273601c82f100452bcb56",
+    ".local\\jforex-reconciliations\\e09d030c7635c6542cd53b030874afb51ad162b8305853a2d13b55e42ff96681\\manifest.json": "70638940a569d4b70433e344e51a63a4d45cbbb8f0cb01309cbe226e02da6393",
+    ".local\\jforex-reconciliations\\e09d030c7635c6542cd53b030874afb51ad162b8305853a2d13b55e42ff96681\\original.zip": "b8bccb560fe47fc0a42267ca1fbd75e15ef611089930a2a49a413f20acea197c",
+    ".local\\jforex-reconciliations\\e09d030c7635c6542cd53b030874afb51ad162b8305853a2d13b55e42ff96681\\reconciliation.json": "e09d030c7635c6542cd53b030874afb51ad162b8305853a2d13b55e42ff96681",
+    ".local\\jforex-reconciliations\\e09d030c7635c6542cd53b030874afb51ad162b8305853a2d13b55e42ff96681\\reference-input-daily.json": "c8bedfee89a0db929b8d5cde954c4aee80b6ff08020349d44b38e95e0876b121",
+    ".local\\jforex-reconciliations\\e09d030c7635c6542cd53b030874afb51ad162b8305853a2d13b55e42ff96681\\reference-input-manifest.json": "1c2ebdd4137eefdfd661c53306d40a778b8f59fc97c77d50e4acad5b663acb59",
+    ".local\\jforex-reconciliations\\e09d030c7635c6542cd53b030874afb51ad162b8305853a2d13b55e42ff96681\\reference-simulation.json": "db1f26d776e298b353ef288094ffcf6d2e3a03c3cca71cffc56ff9034c59884b",
+    ".local\\jforex-reconciliations\\e09d030c7635c6542cd53b030874afb51ad162b8305853a2d13b55e42ff96681\\summary.json": "ed27386869937888d0781f197df468808550673b9595e5a3ffd0e4130bd24da3"
+  },
+  "reserved_unchanged": {
+    "model_requests": 4,
+    "experiments": 1
+  },
+  "live_api_matches_saved": true,
+  "idempotence_checked": true,
+  "native_v2_record_unchanged": "e09d030c7635c6542cd53b030874afb51ad162b8305853a2d13b55e42ff96681"
+}

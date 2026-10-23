@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-22",
+  "user_confirms_jforex_and_demo_access": true,
+  "observed_installation_version": "4.23",
+  "local_api_version": "4.9.8",
+  "local_api_jar_sha256": "a57f1ca97932469e91f9de71802ba4920e77b4e044dabc0c868c5b717672923b",
+  "original_reference": "72061a4aa7a0455cb400edcc580cb964",
+  "original_reference_sha256": "69b7208f21a53d1f6b6c7ffe60d00c303fdbcba22f9ebdb18f9b82a1115375c0",
+  "new_reference_parameters": {
+    "dataset": "prices-2d270636ded54ffea90922ef1e75714f",
+    "capital": "1000000",
+    "quantity": "1000",
+    "commission_rate": "0.001"
+  },
+  "strategy_interval_utc": {
+    "start_date": "2025-01-01",
+    "end_date_exclusive": "2025-12-25"
+  },
+  "comparison_scope": "same fixed SMA20/60 rules and original prices; no optimization",
+  "java_validation": "compile against installed API, run interface doubles offline, replay same fixed daily prices",
+  "native_jforex_tester_run_by_agent": false,
+  "native_jforex_compilation_verified": false,
+  "external_report_supplied": false,
+  "new_local_research_backtests_authorized": 1,
+  "own_model_requests": 0,
+  "account_operations": 0,
+  "external_orders_sent": false,
+  "phase_closed": false,
+  "commit_or_push_authorized_this_increment": false
+}

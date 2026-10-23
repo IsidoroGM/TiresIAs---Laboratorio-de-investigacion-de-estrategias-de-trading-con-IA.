@@ -1,0 +1,31 @@
+{
+  "method": "independent stdlib CSV, Decimal, UTC and SHA256; no project imports",
+  "prior_manifests_verified": 15,
+  "prior_report_folders_verified": 14,
+  "core_sources_preserved": true,
+  "original_prices_and_old_reference_preserved": true,
+  "same_session_sma_and_request_times_verified": 307,
+  "sparse_offline_replay_only": true,
+  "replay_fills_and_fees_artificial": true,
+  "native_jforex_engine_used": false,
+  "native_platform_compilation_verified": false,
+  "external_report_supplied": false,
+  "external_equivalence_verified": false,
+  "new_local_research_backtests": 1,
+  "new_native_backtests": 0,
+  "own_model_requests": 0,
+  "reserved_before": {
+    "model_requests": 4,
+    "experiments": 1
+  },
+  "reserved_after": {
+    "model_requests": 4,
+    "experiments": 1
+  },
+  "existing_manual_accounts_preserved": true,
+  "strategy_accounts_and_inbox_unchanged": true,
+  "account_operations": 0,
+  "credentials_read_or_stored": false,
+  "external_orders_sent": false,
+  "user_messages_copied": false
+}

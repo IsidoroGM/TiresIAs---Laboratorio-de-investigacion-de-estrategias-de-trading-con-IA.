@@ -36,6 +36,11 @@ más EUR valorados al último BID aportado; puede estar desactualizado. Se muest
 resultado realizado, comisiones y posición. La comisión de compra se incorpora
 al coste de adquisición; el resultado realizado se reconoce al vender.
 
+La [valoración manual sin operación](MANUAL_VALUATION.md) permite aportar otro
+BID/ASK con fecha y actualizar patrimonio, resultado no realizado y riesgo sin
+alterar efectivo, cantidad, comisiones ni número de operaciones. Su ficha muestra
+antigüedad y estado del precio, sin presentarlo como cotización verificada.
+
 Se reutiliza la transición contable y de riesgo del simulador existente, sin
 cambiarlo ni representar esta operación como un fill de estrategia. Límites:
 largos, EUR/USD, sin apalancamiento ni compras acumuladas; máximo por orden revisado

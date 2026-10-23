@@ -1,0 +1,171 @@
+{
+  "reference_run": "4e59e20a16b74fc7bd16ea7dad80d02d",
+  "reference_sha256": "70d290b5cd182061d157799fd37884cc92c0ce459c820df312d296d42b9863bc",
+  "csv_sha256": "7da9dfd7867ae8b7f4efc6c5a562e916a6b6513ffd748acb6395056616291f30",
+  "mapping": {
+    "protocol": "tiresias_external_execution_csv_v1",
+    "columns": {
+      "external_id": "external_id",
+      "executed_at": "executed_at",
+      "side": "side",
+      "quantity": "quantity",
+      "price": "price",
+      "fee": "fee",
+      "signal_at": "signal_at"
+    },
+    "delimiter": ",",
+    "decimal_separator": ".",
+    "grouping_separator": null,
+    "sides": {
+      "buy": "buy",
+      "sell": "sell"
+    },
+    "time_format": "iso8601",
+    "quantity_multiplier": "1"
+  },
+  "policy": {
+    "price_tolerance": "0",
+    "quantity_tolerance": "0",
+    "fee_tolerance": "0",
+    "time_tolerance_seconds": 0,
+    "alignment_window_seconds": 3600
+  },
+  "declaration": {
+    "pair": "EUR/USD",
+    "currency": "USD",
+    "strategy": "sma",
+    "fast": 20,
+    "slow": 60,
+    "start_date": "2025-01-01",
+    "end_date_exclusive": "2025-12-25",
+    "producer": "JForex TEST, user-supplied HTML and strategy CSV",
+    "origin": "user_supplied_external",
+    "sessions_sha256": "b4be02050a80778f306a2dd4734d9b27ffaf59a92f7a956832870168f7b03be9"
+  },
+  "comparison": {
+    "reference_rows": 3,
+    "external_rows": 3,
+    "pairs": [
+      {
+        "reference": {
+          "index": 1,
+          "side": "buy",
+          "executed_at": "2025-09-08T00:00:00.000Z",
+          "signal_at": "2025-09-08T00:00:00.000Z",
+          "quantity": "1000",
+          "price": "1.17127",
+          "fee": "1.17127"
+        },
+        "external": {
+          "line": 2,
+          "external_id": null,
+          "side": "buy",
+          "executed_at": "2025-09-08T00:07:30.000Z",
+          "quantity": "1000",
+          "price": "1.17127",
+          "fee": null,
+          "signal_at": "2025-09-08T00:00:00.000Z"
+        },
+        "differences": [
+          {
+            "field": "executed_at",
+            "python": "2025-09-08T00:00:00.000Z",
+            "external": "2025-09-08T00:07:30.000Z",
+            "external_minus_python_seconds": 450.0
+          }
+        ],
+        "unknown_fields": [
+          "fee"
+        ]
+      },
+      {
+        "reference": {
+          "index": 2,
+          "side": "sell",
+          "executed_at": "2025-10-15T00:00:00.000Z",
+          "signal_at": "2025-10-15T00:00:00.000Z",
+          "quantity": "1000",
+          "price": "1.1603",
+          "fee": "1.1603"
+        },
+        "external": {
+          "line": 3,
+          "external_id": null,
+          "side": "sell",
+          "executed_at": "2025-10-15T00:07:30.000Z",
+          "quantity": "1000",
+          "price": "1.1603",
+          "fee": null,
+          "signal_at": "2025-10-15T00:00:00.000Z"
+        },
+        "differences": [
+          {
+            "field": "executed_at",
+            "python": "2025-10-15T00:00:00.000Z",
+            "external": "2025-10-15T00:07:30.000Z",
+            "external_minus_python_seconds": 450.0
+          }
+        ],
+        "unknown_fields": [
+          "fee"
+        ]
+      },
+      {
+        "reference": {
+          "index": 3,
+          "side": "buy",
+          "executed_at": "2025-12-14T22:00:00.000Z",
+          "signal_at": "2025-12-13T00:00:00.000Z",
+          "quantity": "1000",
+          "price": "1.17396",
+          "fee": "1.17396"
+        },
+        "external": {
+          "line": 4,
+          "external_id": null,
+          "side": "buy",
+          "executed_at": "2025-12-14T22:07:30.000Z",
+          "quantity": "1000",
+          "price": "1.17396",
+          "fee": null,
+          "signal_at": "2025-12-13T00:00:00.000Z"
+        },
+        "differences": [
+          {
+            "field": "executed_at",
+            "python": "2025-12-14T22:00:00.000Z",
+            "external": "2025-12-14T22:07:30.000Z",
+            "external_minus_python_seconds": 450.0
+          }
+        ],
+        "unknown_fields": [
+          "fee"
+        ]
+      }
+    ],
+    "missing": [],
+    "extra": [],
+    "ambiguous": [],
+    "metadata_differences": [],
+    "metadata_unknown": [],
+    "reference_metadata": {
+      "pair": "EUR/USD",
+      "currency": "USD",
+      "strategy": "sma",
+      "fast": 20,
+      "slow": 60,
+      "start_date": "2025-01-01",
+      "end_date_exclusive": "2025-12-25",
+      "sessions_sha256": "b4be02050a80778f306a2dd4734d9b27ffaf59a92f7a956832870168f7b03be9"
+    },
+    "errors": [],
+    "unknown_fields": [
+      "fee"
+    ],
+    "status": "differences"
+  },
+  "saved_to_app": false,
+  "accounting_processed": false,
+  "external_equivalence_verified": false,
+  "alignment_policy_reason": "One declared H1 candle for unique pairing; all 450-second differences remain visible with zero time tolerance."
+}

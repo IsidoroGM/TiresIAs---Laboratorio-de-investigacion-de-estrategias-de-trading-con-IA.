@@ -1,0 +1,33 @@
+{
+  "status": "native_order_submission_rejected",
+  "account_currency": "USD",
+  "initial_equity": "1000000",
+  "declared_feed_parameter": "candles_h1_4ohlc_bid",
+  "request_time": "2025-08-30T00:07:30Z",
+  "request_weekday": "Saturday",
+  "native_message": "System offline",
+  "orders_total": 0,
+  "processed_ticks": 23137,
+  "exported_daily_rows": 242,
+  "exported_hourly_rows": 5784,
+  "exported_flat_both_zero_volume_hours": 1656,
+  "strategy_window_end_observed": false,
+  "native_equivalence_verified": false,
+  "original_files_sha256": {
+    "temporary-report.html": "f0a6963ece8545a05f4545d913f37404a4dfabd365b0c798e2d64d14dc224342",
+    "saved-report.html": "cbd08ae09721fd5c7bf6c8bf8873704aa9ebd413a9f9eb6b0e423cf91dda77ab",
+    "messages.csv": "f15bdc3bb183a703f8a9fb57b962bfb24fd20e10f64e3f70c0d8e8d899f7eafb",
+    "strategy-before-fix.java": "ddb612acb7db24fc82b5a507911110116cd23e2bd8edc370578ddb564334b365",
+    "native-export/daily.csv": "b2291957b69854193eb2387b3b14c6da5e84ae2a85344ede50f9d707fe465beb",
+    "native-export/events.csv": "c325b95c9eeb9741a838b8e65453ccdbb5183028552fe58849ab547c743c8076",
+    "native-export/executions.csv": "43b2518e0a2f36ae0f36090265ebd68363bbc86872f88c9d751598701a2110ad",
+    "native-export/failure.txt": "c44c22a31ac52b1d7117114362772723a00b012fa5377ac260862fee8dff5c8e",
+    "native-export/hourly.csv": "f96f62da2d4994b3bbb0834ab89a52a8edc5c80ad36604caf8791fafa004c6df",
+    "native-export/metadata.json": "a35b4935a8ce24831fded59ab28854847b3ed77cb51325dfe834163065761a4d",
+    "native-export/orders.csv": "981a4c2b8da3ea78f007fdd835063aa18e0392c86894087068e8fee115fa7b44"
+  },
+  "originals_kept_private_under_ignored_local_directory": true,
+  "fix_revision": "sma_utc_test_v2_native_calendar",
+  "fix_native_execution_verified": false,
+  "fix_local_interface_double_tests_passed": 35
+}

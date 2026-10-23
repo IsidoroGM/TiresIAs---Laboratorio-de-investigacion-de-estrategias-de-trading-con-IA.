@@ -260,8 +260,10 @@ async function conversationPage(token,session) {
   add(panel,history,jobs,form);
   const draft=add(el("section",null,"card section"),el("h2","Estrategia y prueba histórica"));add(panel,draft);
   const manual=add(el('section',null,'card section'),el('h2','Operaciones virtuales manuales'));add(panel,manual);
+  let manualRefresh=()=>{};
   async function manualView(){
     const current=await api('/api/chat/'+session+'/manual-operations');if(token!==navigation)return;
+    const queriedAt=performance.now(),ageNodes=[];
     manual.replaceChildren(el('h2','Operaciones virtuales manuales'),notice('Cuentas manuales independientes de los backtests. Precios BID/ASK aportados por ti, sin verificación de mercado. Comprar usa ASK y valorar o vender usa BID. Guardar una intención no ejecuta; requiere otra aprobación.'));
     const failures=el('div');failures.setAttribute('role','alert');add(manual,failures);
     function input(form,label,value,type='text'){const node=el('input');node.type=type;node.value=value;node.required=true;node.setAttribute('aria-label',label);add(form,add(el('label',label,'field'),node));return node;}
@@ -270,6 +272,17 @@ async function conversationPage(token,session) {
     if(current.accounts.length){
       add(manual,table(['CUENTA MANUAL','EFECTIVO USD','EUR','PATRIMONIO USD','RESULTADO REALIZADO USD','COMISIONES USD'],current.accounts.map(item=>[item.configuration.account.id,item.state.cash,item.state.quantity,item.state.equity,item.state.realized_pnl,item.state.fees])));
       add(manual,el('p','El patrimonio usa el último BID aportado; no es una cotización actual verificada. Riesgo: caída máxima '+fmt(Number(current.risk.max_drawdown_fraction)*100,0)+' %, hasta '+current.risk.max_orders+' compras y precio de hasta '+fmt(current.risk.max_price_age_seconds/3600,0)+' horas.','meta'));
+      add(manual,el('p','Estado consultado: '+at(current.as_of)+'. La antigüedad avanza sin modificar la cuenta.','meta'));
+      const valuationNames={missing:'Sin precio aportado',future:'Fecha futura · revisar',stale:'Precio desactualizado',within_age_limit:'Dentro del límite de antigüedad · precio no verificado'};
+      for(const account of current.accounts){
+        const value=account.valuation,summary=el('summary','Valoración de '+account.configuration.account.id+' · '+valuationNames[value.status]),box=add(el('details'),summary),status=notice(valuationNames[value.status],value.status==='within_age_limit'?'':'warn'),info=dl([['Último BID aportado',value.bid??'Sin precio'],['Fecha UTC del precio',value.price_at??'Sin fecha'],['Antigüedad',value.age_seconds===null?'Desconocida':fmt(value.age_seconds/3600,2)+' horas'],['Resultado no realizado USD',value.unrealized_pnl_usd??'Sin precio'],['Pausa de riesgo',account.state.risk_paused?'Sí':'No']]);
+        add(box,status,info);ageNodes.push({account,value,summary,status,age:info.querySelectorAll('dd')[2]});
+        const markForm=el('form',null,'chat-composer'),markGrid=el('div',null,'chat-fields');add(markForm,markGrid);
+        const markBid=input(markGrid,'BID para valorar '+account.configuration.account.id,''),markAsk=input(markGrid,'ASK de referencia para valorar '+account.configuration.account.id,''),markAt=input(markForm,'Fecha UTC para valorar '+account.configuration.account.id,new Date().toISOString());
+        const markCheck=checkbox(markForm,'Reviso la cotización aportada para '+account.configuration.account.id+'. Apruebo actualizar solo la valoración, sin comprar ni vender.'),markButton=el('button','Actualizar valoración de '+account.configuration.account.id,'primary');markButton.type='submit';markButton.disabled=!account.engine_compatible;add(markForm,markButton);add(box,markForm);add(manual,box);
+        markForm.addEventListener('submit',async event=>{event.preventDefault();if(!markCheck.checked){failures.replaceChildren(notice('Confirma la revisión de la valoración.','error'));return;}markButton.disabled=true;await perform('valuations',{account:account.id,chain_sha256:account.chain_sha256,engine_sha256:current.valuation_engine_sha256,quote:{bid:markBid.value,ask:markAsk.value,at:markAt.value},approve_manual_valuation:true});if(markButton.isConnected)markButton.disabled=false;});
+      }
+      manualRefresh=()=>{const reference=Date.parse(current.as_of)+(performance.now()-queriedAt);for(const item of ageNodes){const age=item.value.price_at===null?null:(reference-Date.parse(item.value.price_at))/1000,status=age===null?'missing':age<0?'future':age>item.account.configuration.risk.max_price_age_seconds?'stale':'within_age_limit';item.summary.textContent='Valoración de '+item.account.configuration.account.id+' · '+valuationNames[status];item.status.textContent=valuationNames[status];item.status.className='notice '+(status==='within_age_limit'?'':'warn');item.age.textContent=age===null?'Desconocida':fmt(age/3600,2)+' horas';}};
       const form=el('form',null,'chat-composer'),select=el('select');select.setAttribute('aria-label','Cuenta manual para la operación');for(const account of current.accounts){const option=el('option',account.configuration.account.id+' · límite '+account.configuration.account.quantity+' EUR'+(account.engine_compatible?'':' · motor cambiado'));option.value=account.id;add(select,option);}add(form,add(el('label','Cuenta manual para la operación','field'),select));
       const text=input(form,'Petición de operación virtual','simula comprar 1 EUR/USD'),grid=el('div',null,'chat-fields');add(form,grid);
       const bid=input(grid,'BID manual (USD por EUR)',''),ask=input(grid,'ASK manual (USD por EUR)',''),when=input(form,'Instante UTC de la cotización manual',new Date().toISOString());
@@ -292,6 +305,7 @@ async function conversationPage(token,session) {
       if(intent.result)add(box,dl([['Resultado del simulador',intent.result.reason||'Aplicado una sola vez'],['Efectivo USD',intent.result.state.cash],['EUR',intent.result.state.quantity],['Patrimonio USD',intent.result.state.equity],['Resultado realizado USD',intent.result.state.realized_pnl]]));
       add(box,disclosure('Intención, aprobación y resultado originales',intent));add(manual,box);
     }
+    if(current.valuations?.length){add(manual,el('h3','Valoraciones sin operación · últimas 200'),table(['CUENTA','FECHA DEL PRECIO','BID','PATRIMONIO USD'],current.valuations.map(item=>[current.accounts.find(account=>account.id===item.account)?.configuration.account.id||item.account,item.record.quote.at,item.record.quote.bid,item.record.state.equity])),disclosure('Valoraciones y procedencia originales',current.valuations));}
   }
   await manualView();if(token!==navigation)return;
   let dirty=false,lastRevision=null,historyFingerprint="",jobsFingerprint="";
@@ -352,7 +366,7 @@ async function conversationPage(token,session) {
     if((latest?.id||null)!==lastRevision&&!dirty){lastRevision=latest?.id||null;renderDraft(latest,busy);}
     else if(!draft.querySelector("form"))renderDraft(latest,busy);
     draft.querySelectorAll("button").forEach(node=>{node.disabled=busy||(node.dataset.test==="true"&&dirty);});
-    showContext();
+    showContext();manualRefresh();
   }
   function showContext(){contextNotice.textContent="Contexto explícito: "+Math.min(Number(count.value),data.messages.length)+" mensajes anteriores, más tu mensaje y la evidencia elegida. Si supera la capacidad, se rechaza sin recortar."+(resultSelect.value?' Con resultado adjunto, el modelo selecciona aspectos; Python redacta la explicación y comprueba el criterio. Para proponer otra estrategia, elige Sin resultado adjunto.':'');}
   count.addEventListener('change',showContext);resultSelect.addEventListener('change',showContext);

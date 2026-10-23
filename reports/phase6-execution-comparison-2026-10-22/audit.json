@@ -1,0 +1,44 @@
+{
+  "method": "stdlib Decimal, CSV and UTC times; no comparator/engine imports",
+  "independent_rows": [
+    {
+      "reference_index": 1,
+      "price_delta": "0.00010",
+      "time_delta_seconds": 0.0,
+      "fee_delta": "0E-8"
+    },
+    {
+      "reference_index": 2,
+      "price_delta": "0.0000",
+      "time_delta_seconds": 60.0,
+      "fee_delta": "0E-7"
+    },
+    {
+      "reference_index": 3,
+      "price_delta": "0.00000",
+      "time_delta_seconds": 0.0,
+      "fee_delta": null
+    }
+  ],
+  "synthetic_example_only": true,
+  "external_provider_chosen": "JForex / Dukascopy",
+  "real_external_report_supplied": false,
+  "browser_preview_and_separate_save_verified": true,
+  "saved_detail_reload_verified": true,
+  "archived_inputs_verified": true,
+  "manual_account_states_and_chains_preserved": true,
+  "strategy_accounts_and_inbox_unchanged": true,
+  "reserved_before": {
+    "model_requests": 4,
+    "experiments": 1
+  },
+  "reserved_after": {
+    "model_requests": 4,
+    "experiments": 1
+  },
+  "own_model_requests": 0,
+  "new_backtests": 0,
+  "user_messages_copied": false,
+  "account_operations": 0,
+  "external_orders_sent": false
+}

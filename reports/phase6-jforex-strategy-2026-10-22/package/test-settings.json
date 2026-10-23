@@ -1,0 +1,23 @@
+{
+  "protocol": "tiresias_jforex_test_preparation_v1",
+  "origin": "source_and_python_reference_not_external_report",
+  "reference_run": "4e59e20a16b74fc7bd16ea7dad80d02d",
+  "reference_sha256": "70d290b5cd182061d157799fd37884cc92c0ce459c820df312d296d42b9863bc",
+  "java_source_sha256": "ddb612acb7db24fc82b5a507911110116cd23e2bd8edc370578ddb564334b365",
+  "tester_currency": "USD",
+  "tester_initial_capital": "1000000",
+  "tester_leverage": "1",
+  "quantity_eur": "1000",
+  "fast": 20,
+  "slow": 60,
+  "start_date": "2025-01-01",
+  "end_date_exclusive": "2025-12-25",
+  "tester_sample_start_utc": "2025-01-01T00:00:00Z",
+  "tester_sample_end_utc": "2025-12-27T00:00:00Z",
+  "declared_feed": "candles_h1_4ohlc_bid",
+  "native_platform_compilation_verified": false,
+  "native_platform_run_verified": false,
+  "external_equivalence_verified": false,
+  "per_execution_fees_unknown": true,
+  "api_dependency_redistributed": false
+}

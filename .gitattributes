@@ -61,5 +61,11 @@ reports/publication-*/** -text whitespace=-blank-at-eol,space-before-tab,cr-at-e
 tests/test_conversation*.py -text
 tests/test_dukascopy*.py -text
 tests/test_market*.py -text
+tests/test_manual*.py -text
+tests/test_execution*.py -text
+integrations/jforex/** -text
+tests/jforex/** -text
+tests/test_jforex_strategy.py -text
+tests/test_jforex_reconciliation.py -text
 # Esta salida histórica de pytest conserva también los espacios del diagnóstico.
 reports/phase4-campaign-memory-2026-10-20/focused-tests.xml -text whitespace=-blank-at-eol,space-before-tab,cr-at-eol

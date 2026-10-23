@@ -1,0 +1,16 @@
+{
+  "jforex_installation_and_running_window_discovered": true,
+  "tool": "Windows Computer Use",
+  "operation": "get_window_state",
+  "result": "Computer Use app approval timed out",
+  "window_access_granted": false,
+  "app_input_actions_sent": 0,
+  "authentication_dialogs_automated": false,
+  "credential_files_read": false,
+  "passwords_or_keys_requested": false,
+  "window_title_copied_to_report": false,
+  "screenshots_copied_to_report": false,
+  "native_jforex_compilation_verified": false,
+  "native_jforex_tester_run": false,
+  "user_preference_question_pending": "retry application access or use the prepared package manually"
+}

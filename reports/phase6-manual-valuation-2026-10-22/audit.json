@@ -1,0 +1,21 @@
+{
+  "method": "independent_stdlib_decimal_from_fixed_example_prices",
+  "project_modules_imported": false,
+  "cash": "998.8986998",
+  "equity": "999.9886998",
+  "unrealized_pnl_usd": "-0.0113002",
+  "unchanged_fill_count": 1,
+  "unchanged_purchase_fee": "0.0011002",
+  "valuation_rows": 1,
+  "existing_manual_account_preserved": true,
+  "browser_review_and_mark_verified": true,
+  "live_age_display_verified": true,
+  "user_messages_copied": false,
+  "reserved_observed_after_demo": {
+    "model_requests": 4,
+    "experiments": 1
+  },
+  "own_model_requests": 0,
+  "own_backtests": 0,
+  "synthetic_example_only": true
+}

@@ -1,0 +1,126 @@
+{
+  "date": "2026-10-22",
+  "phase_closed": false,
+  "published_base_commit": "0bd90113c5ea47731da52a57d26d9b5f6dfeafdc",
+  "this_increment_committed": false,
+  "this_increment_pushed": false,
+  "preparation_only": true,
+  "application_code_changed": false,
+  "new_tests_run": false,
+  "new_backtests": 0,
+  "own_model_requests": 0,
+  "external_orders_sent": false,
+  "external_equivalence_pending": true,
+  "installer_executed": false,
+  "prior_evidence_verified": {
+    "reports/phase6-chat-explanations-2026-10-22/manifest.json": {
+      "sha256": "eb7c8deba883d7644cdb7cec06200b2b3b2cf3232efffaf4233d15d6c711cf09",
+      "files_verified": 23
+    },
+    "reports/phase6-chat-operations-2026-10-22/manifest.json": {
+      "sha256": "86c21e14009c52e1a621cd357f7961ae5667cb37a7aafd0f865427f9c9c509f0",
+      "files_verified": 17
+    },
+    "reports/phase6-chat-prices-2026-10-22/manifest.json": {
+      "sha256": "6d845ad71d4fa8f576de9bba46add00dc4d14b48481bfcd92eebb20936177a03",
+      "files_verified": 22
+    },
+    "reports/phase6-dukascopy-2026-10-22/manifest.json": {
+      "sha256": "13c2db6ced404bfda2c027941c7f26a337b1c1414fc0198a85d1f475a117dce0",
+      "files_verified": 4
+    },
+    "reports/phase6-dukascopy-history-2026-10-22/manifest.json": {
+      "sha256": "ed24975b6240ce126573fd2d6889543977b47f5d1a4eb3226a9bd4701642f473",
+      "files_verified": 15
+    },
+    "reports/phase6-dukascopy-paired-2026-10-22/manifest.json": {
+      "sha256": "97e4bd116ca6b6fd1e5af9dc17ac514f6a6c92ca65b05925cf995ec25c759b99",
+      "files_verified": 4
+    },
+    "reports/phase6-dukascopy-spread-2026-10-22/manifest.json": {
+      "sha256": "12ff01f0a6597ecb0098794338ce6f75084df518a13652f625935e9998ae8f0b",
+      "files_verified": 17
+    },
+    "reports/phase6-execution-comparison-2026-10-22/manifest.json": {
+      "sha256": "02bd41172e34c900951621107ef90d88b078b4164685fb262f7fff7bab4ccc51",
+      "files_verified": 23
+    },
+    "reports/phase6-execution-comparison-2026-10-22/results/manifest.json": {
+      "sha256": "eba3bb4e9e82039c0adc6e36c4bb569846c1019258e83a285f775b50955dd04e",
+      "files_verified": 6
+    },
+    "reports/phase6-manual-valuation-2026-10-22/manifest.json": {
+      "sha256": "fa64db07bcce55af4b5cac38ba81d6d6446b4d367c71b37cffe0c15782ca9778",
+      "files_verified": 14
+    },
+    "reports/phase6-market-history-import-2026-10-22/manifest.json": {
+      "sha256": "a82877711ee4b970a1c071be78ca5b79cbff4da4e9e29e1aee2c8f7e56a379c1",
+      "files_verified": 24
+    },
+    "reports/phase6-period-validation-2026-10-22/manifest.json": {
+      "sha256": "ef3df186b7a85839597cd047eb387968505895f38d303f07d4056868c8d48c79",
+      "files_verified": 30
+    },
+    "reports/phase6-reference-costs-2026-10-22/manifest.json": {
+      "sha256": "57720c8455f7a6c5f7becb202645e2180266e9ead71a175a5ca3ff386905a5f9",
+      "files_verified": 34
+    },
+    "reports/publication-2026-10-22/manifest.json": {
+      "sha256": "bdc268ee86e835932d8f1f1fe3fd5cbe17d7d0db81dc6e8c7d57dd26bd3bbc91",
+      "files_verified": 6
+    }
+  },
+  "unchanged_prior_source_sha256": {
+    "trading_ai/dukascopy_history.py": "a833b160382e10077b204b9633552d6e6087aad819143a37e00d9e20eda43bf4",
+    "tests/test_dukascopy_history.py": "8b5c63297dfba666bea884eab3e8e3c1f02d2cc9396c0f9561c2faf44b23aff6",
+    "trading_ai/dukascopy.py": "d75d748f9aba8fff0dc1638d04f9129f80c541a772716b3b18d80ecd18b856db",
+    "tests/test_dukascopy.py": "e42f588aa19bd65e88f224a5e580ba20f9856d44a88afc91e08d86b27fd5321b",
+    "trading_ai/tv_contracts.py": "91dda291979f3e9b6db10848396b607100f0a21e3209de25e3ec8a22fd9307e2",
+    "trading_ai/tv_reference.py": "473c679f892fd7ca74aaac74567b2ca1cbab5bb165a145714e8d971eec920411",
+    "trading_ai/tv_pine.py": "ba06de509cd7e0e6547c3c896fa4be62d96b19fcfc9afb24e2216dc1223fc5b4",
+    "trading_ai/tv_simulation.py": "5461e6485f5a2617691b7d1c252896037817a7392e637b79ec6cb7e9670e9f49",
+    "trading_ai/market_history.py": "af7794fc6ade37032401fbf03244a386dc96d30928082ceac5dcdec38ed1daaa",
+    "trading_ai/dukascopy_backtest.py": "2071e2d53aed483e6586888d0aaf04a5b2294dc43d492c3e2e82845b66c274bd",
+    "tests/test_market_history.py": "a5511b8867da723e80b6aca2300dfc1c398a890b588976da0334cfbe51533c69",
+    "trading_ai/market_comparison.py": "b00a2fd29d6f10ec38d07070d031124745e403ca557f24fbd2b028a1d0729904",
+    "tests/test_market_comparison.py": "32cdcf2c92b034c7704c636ab420a271cc0cfcc5d802dca886848698b0827cde",
+    "trading_ai/lab_static/simulation.css": "693331d13b1f887f010f5ef573b3fd8a006fa164038bd26997a938834fc8f068",
+    "trading_ai/market_benchmark.py": "5cc4b652ac3763bad617176669e2773b39a56c31946f168b321999a875e228ed",
+    "trading_ai/dukascopy_service.py": "9915f7b81777003f73ecb3cd23dfe5e228e433c69556490230a65bf30f5087b3",
+    "tests/test_market_benchmark.py": "d8c26470b661ecb3a7f21a2ffde01f31332cc54b103a4cb3c69ffbe1bb4a5cbb",
+    "trading_ai/conversation_prices.py": "e66415429c13b911694dc26589d913bbb3b3eb1e466da9dffb359d1218645ed1",
+    "trading_ai/lab_static/chat.css": "fe865a4fc1a79d49b97c69462c40898ec4d335a6dcc313a40ad4c93d1e2d7763",
+    "trading_ai/conversation_explanation.py": "1f96b6eaa2b6e815c7bc34d90a1da0667ff6d195e1d79f468322e84f0e3d29bd",
+    "trading_ai/conversation_provider.py": "dfa8f9bee447a8539b29403f3582eb1b613bb91da5b5735d26f7add9a493371b",
+    "tests/test_conversation_explanation.py": "bad73b26c9fdab72972db12d1dc213f8054d2ead7921d430d8a1b60f0b8bfebf",
+    "tests/test_conversation.py": "087b137d390e7609a04e2be669f946fda06714f36fbee5121abdbf13c78cc7b6",
+    "tests/test_conversation_prices.py": "a963d00f8d33f15daa3df909bb26166c0b0a5b423134ac87f2fd7d0cec442949",
+    "trading_ai/conversation_operations.py": "2acd6c7eea9d19835cbfc8951a4445024e804baffd45a8875ffa2eb902ef6925",
+    "trading_ai/lab.py": "f5adda0d8f962857da9ba3d4d1ec3c7558fe80e9a5c63d14e30e9636c54d8c58",
+    "tests/test_conversation_operations.py": "783257ba92f5e2a32ed83a29c728dea74fddeac7c57f1f03aacf6b4f0b4cb4d8",
+    "trading_ai/manual_valuation.py": "09e2f79ef7763f3aa733fbfd8c9404c37b8d9345775a84ec259e8ff1ccdbca36",
+    "trading_ai/conversation.py": "753b2bf605c0f63f194595c0a3a9bec12384a5f59b4865045fb4a4dac823542b",
+    "trading_ai/lab_static/app.js": "ff29beeaecd9e30040e26358f180d9e7d66a4099212edcc7c4f1344172468811",
+    "tests/test_manual_valuation.py": "3de28f880ee732825c7a7f9faabfd0a6d788afca169ec24b2312d3ce9aa937ae",
+    "trading_ai/execution_comparison.py": "a7890acebe7131627e56764394d77c643f63b3a57a16924744f8d72f171dfc82",
+    "trading_ai/tv_service.py": "c81fa9f0c8280bc42000474671221072a5d402b0350ae398fba861a0e93241d2",
+    "trading_ai/lab_static/simulation.js": "5efb351e673e2dddb4f23ddf875a7cb379f56da3b14167eb69f20e26f8671f14",
+    "tests/test_execution_comparison.py": "9a0a7819ca9165e9ad6b57546fcd7d833e575d49a611903727abfce76639d2a4"
+  },
+  "evidence_sha256": {
+    "audit.json": "25d18ce86e7ecc14cad3d6aee08a9ecec060e7ea501e24c003ba1f34a1a9bdcf",
+    "bundle/configuration.json": "b813737ed5fc94b8b4a55b8ac8de3bb50146a67d0f4e2babc258705865206346",
+    "bundle/JFOREX_SETUP.md": "4af789260d93da4eee997fdaada80e0b25a6c0fc005db934fac831402de36ab8",
+    "bundle/package-manifest.json": "e7f36c3f3f1c38264729fbae4764a7bdc5d056706da348ed701bb7647dcd220f",
+    "bundle/python-reference/fills.csv": "f637739f677e9d2e5a81f6345dc4703f5501aa99cf06580a8f15acee2e308c39",
+    "bundle/python-reference/input-daily.json": "c8bedfee89a0db929b8d5cde954c4aee80b6ff08020349d44b38e95e0876b121",
+    "bundle/python-reference/input-manifest.json": "1c2ebdd4137eefdfd661c53306d40a778b8f59fc97c77d50e4acad5b663acb59",
+    "bundle/python-reference/simulation.json": "86c71acb9088beb65f478d6cc1999fd42e6e2f39fc67c7b1ae38b0e4bbf3ec0c",
+    "installer-download.json": "f2cf5a34539456d20a5ad3768cd70efbb2529e3506123ef7112114ac310f5b5b",
+    "installer-signature.json": "41ea8b79e3e71ac97f04d3be6abf4d8279e733284dcfb38a6ce2bd28daa7fb0b",
+    "jforex-preparation.zip": "f4c494aba061a3dd8a3f71e8cbc249b0070ef8e9803601c6851d5eacee9b33a6",
+    "preparation-source/download_jforex_setup.py": "8491d33217220d7173b2207c92642dc0cff2b9ac71eb3b182d335898df120311",
+    "preparation-source/prepare_jforex_evidence.py": "97a4cf2abfd80445fd6bbd4de3059778f1e5e930150d9ebc58e2e8547c515f3b",
+    "README.md": "7551414fc6749567d3a41a61686a4d222dc4ba632fb1b3b4c562494645abcda8"
+  }
+}

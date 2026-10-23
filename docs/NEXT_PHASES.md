@@ -171,8 +171,50 @@ concreta, controles del simulador y asiento atómico. No interpreta operaciones 
 mediante el LLM ni obtiene precios automáticamente. Se conserva separado de los fills
 de estrategia y del inbox externo; no completa el contraste externo pendiente.
 
+Las cuentas manuales también permiten revisar y registrar otra valoración BID/ASK
+sin comprar ni vender, con antigüedad, resultado no realizado y riesgo visibles.
+Los cambios invalidan intenciones revisadas con un estado anterior. Las cotizaciones
+siguen aportadas por el usuario y sin comprobación automática de mercado.
+
 El siguiente desarrollo de FASE 6 debe completar el contraste externo de Pine y
 datos equivalentes, adaptar una exportación real conservando sus originales y
 ampliar el modo manual del chat si se acuerdan otras reglas o una fuente de cotizaciones.
 La conexión HTTPS de alertas se habilitará únicamente tras revisar capacidades,
 cuenta y configuración. FASE 5.2 está completada localmente; FASE 6 permanece abierta.
+
+Ya existe un comparador genérico de CSV de ejecuciones frente a resultados BID/ASK
+guardados: mapa y origen explícitos, vista previa, diferencias y archivo de
+originales sin efectos contables. El ensayo de interfaz usa un ejemplo artificial;
+no acredita equivalencia externa. El usuario elige JForex/Dukascopy como siguiente
+fuente. El próximo paso es obtener un informe HTML original del tester con sus
+ajustes, adaptar su detalle real y contrastar reglas y ejecuciones. La
+[guía del comparador](EXECUTION_COMPARISON.md) describe el contrato y lo pendiente.
+
+La [preparación de JForex](JFOREX_SETUP.md) identifica una incompatibilidad de
+tamaño: la referencia Python usa 1 EUR y la API documenta un mínimo de 1.000.
+Se calcula un caso escalado independiente, conservando el anterior. Tras preparar
+la descarga oficial firmada, el usuario confirma instalación y demo. La estrategia
+Java exclusiva TEST está implementada y compila contra su API 4.9.8;
+30 casos offline comprueban guardas,
+señales, unidades y exportaciones. Una referencia Python nueva usa las cantidades
+escaladas con los mismos datos. Quedan pendientes compilar/ejecutar en el tester,
+recibir su HTML y exportaciones, comprobar los precios y conciliar los resultados.
+La [guía de la estrategia](../integrations/jforex/README.md) fija la primera prueba.
+
+**Avance del 23/10/2026:** el ensayo nativo v2 ya completa la ventana con tres
+ejecuciones; sesiones y señales coinciden, con diferencias temporales de +450 s.
+La [conciliación nativa](JFOREX_RECONCILIATION.md) incorpora los originales al flujo
+de la app, conserva su referencia y muestra cortes, swaps y comisiones discordantes.
+La revisión v3 actual añade capturas de cuenta/órdenes al corte y corrige la
+semántica del importe nativo frente a exposición abierta. El ensayo v3 posterior
+ya está verificado y guardado: la API publica 999.989,14 USD al 25/12/2025 00:07:30
+UTC y 999.988,68 USD al final, coincidente con el HTML. La primera captura llega
+450 s después del corte, sin prueba de sincronización exacta. La app reconstruye
+ambos instantes conservando diferencias y comisiones discordantes. No es necesario
+repetir este ensayo para obtener las capturas que ya tenemos.
+
+Siguiente incremento: tratar explícitamente las diferencias de ejecución respecto
+a las aperturas Python y fijar el alcance de costes comparables, sin alterar los
+resultados congelados ni repartir comisiones desconocidas. Después se podrá ampliar
+el contraste a otro período y estrategia. La equivalencia completa y el cierre
+de FASE 6 siguen pendientes.

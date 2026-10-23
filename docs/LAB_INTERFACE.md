@@ -223,3 +223,33 @@ con BID/ASK aportado y aprobar después la intención concreta. Se muestran prev
 confirmación, efectivo, posición, patrimonio y resultado realizado. La
 [guía manual](MANUAL_OPERATIONS.md) detalla límites y controles. Los precios no se
 verifican como mercado actual y estas operaciones no cambian los backtests anteriores.
+
+En **Valoración de cada cuenta manual** se consultan BID, fecha, antigüedad,
+resultado no realizado y pausa de riesgo. **Actualizar valoración** requiere
+revisión explícita del precio y estado concretos; no compra, vende o cobra otra
+comisión. El resumen avisa de precios ausentes, futuros o desactualizados, y la
+antigüedad avanza sin borrar el formulario. [Detalle](MANUAL_VALUATION.md).
+
+**Contrastar informes de operaciones** compara un CSV con una prueba BID/ASK
+guardada. También se accede desde sus operaciones mediante **Contrastar estas
+ejecuciones con un informe aportado**. Se revisan mapa, unidades, origen,
+configuración y tolerancias antes de mostrar una vista previa sin guardado.
+Después se archivan original y copias de referencia con una aprobación separada.
+Las filas sin pareja, ambigüedades, diferencias y costes desconocidos quedan
+visibles. La coincidencia de campos no verifica el motor externo. El
+[lector genérico y el siguiente adaptador de JForex](EXECUTION_COMPARISON.md)
+se distinguen de la importación contable del inbox; aquí ninguna cuenta cambia.
+
+**Conciliar costes y valoración de JForex** añade el recorrido del paquete nativo
+TEST: referencia guardada, ZIP con HTML y exportaciones, vista previa y guardado
+de la conciliación concreta. Muestra el corte común, resultado bruto, swaps
+anteriores/posteriores y discrepancias de comisiones. Las reconstrucciones se
+distinguen de las capturas informativas de la API, con su instante real y posible
+retraso. La ficha de la primera prueba ya está guardada, con estado parcial.
+El ensayo v3 también está guardado. La ficha muestra el patrimonio API y la fecha
+real, sus 450 s de retraso respecto al corte y la valoración de cada captura con
+cotización y costes hasta ese instante. Conserva las diferencias frente a las
+reconstrucciones y la coincidencia del patrimonio final con el HTML, sin certificar
+sincronización ni equivalencia completa. El [detalle](JFOREX_RECONCILIATION.md)
+explica archivos, controles y precisión. Consultar no ejecuta estrategias ni altera
+cuentas o consumo.

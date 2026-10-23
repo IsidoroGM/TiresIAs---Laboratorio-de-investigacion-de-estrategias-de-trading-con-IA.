@@ -7,6 +7,8 @@ import threading
 
 from trading_ai.data import SUPPORTED_PAIRS
 from trading_ai.dukascopy_service import DukascopyResearch
+from trading_ai.execution_comparison import ExecutionComparisons, POLICY, declaration_template, mapping_template
+from trading_ai.jforex_reconciliation import JForexReconciliations
 from trading_ai.tv_contracts import checksum, fields, hash_id, make_contract
 from trading_ai.tv_io import COLUMNS
 from trading_ai.tv_io import BundleRepository, import_csv, preview_csv
@@ -18,6 +20,8 @@ class SimulationService:
         self.root = root
         self.ledger, self.bundles = SimulationLedger(root), BundleRepository(root)
         self.dukascopy = DukascopyResearch(root)
+        self.executions = ExecutionComparisons(root)
+        self.jforex = JForexReconciliations(root)
         self._writer = threading.Lock()
 
     def overview(self):
@@ -26,6 +30,9 @@ class SimulationService:
                                      "delimiter": ",", "decimal_separator": ".", "grouping_separator": None,
                                      "sides": {"buy": "buy", "sell": "sell"}, "time_format": "iso8601", "sequence_mode": "column", "source_is_simulated": True},
                 "supported_pairs": list(SUPPORTED_PAIRS), "external_connection": False, "dukascopy": self.dukascopy.overview(),
+                "execution_comparisons": self.executions.overview(), "execution_mapping_template": mapping_template(),
+                "execution_policy_template": dict(POLICY), "execution_declaration_template": declaration_template(),
+                "jforex_reconciliations": self.jforex.overview(),
                 "notice": "FASE 6 en desarrollo: paquetes Pine sin compilación externa, cuentas virtuales y recepción local de eventos aportados."}
 
     def get(self, resource, identity):
@@ -36,6 +43,8 @@ class SimulationService:
         if resource == "price-histories": return self.dukascopy.dataset(identity)
         if resource == "market-comparisons": return self.dukascopy.comparison(identity)
         if resource == "market-benchmarks": return self.dukascopy.benchmark_result(identity)
+        if resource == "execution-comparisons": return self.executions.get(identity)
+        if resource == "jforex-reconciliations": return self.jforex.get(identity)
         raise KeyError(resource)
 
     @staticmethod
@@ -54,6 +63,22 @@ class SimulationService:
     def _action(self, body):
         if not isinstance(body, dict): raise ValueError("Acción JSON requerida.")
         action = body.get("action")
+        if action in ("preview_jforex_reconciliation", "save_jforex_reconciliation"):
+            expected = ("action", "run", "name", "zip_base64", "html_timezone")
+            if action == "save_jforex_reconciliation": expected += ("approve_preview_sha256",)
+            fields(body, expected, "conciliación JForex")
+            values = {key:body[key] for key in ("run","name","html_timezone")}
+            values["raw"] = self._csv({"csv_base64":body["zip_base64"]})
+            if action == "preview_jforex_reconciliation": return self.jforex.preview(**values)
+            return self.jforex.save(approval_sha256=body["approve_preview_sha256"], **values)
+        if action in ("preview_execution_comparison", "save_execution_comparison"):
+            expected = ("action", "run", "name", "csv_base64", "mapping", "tolerances", "metadata")
+            if action == "save_execution_comparison": expected += ("approve_preview_sha256",)
+            fields(body, expected, "contraste de ejecuciones")
+            values = {key: body[key] for key in ("run", "name", "mapping", "tolerances", "metadata")}
+            values["raw"] = self._csv(body)
+            if action == "preview_execution_comparison": return self.executions.preview(**values)
+            return self.executions.save(approval_sha256=body["approve_preview_sha256"], **values)
         if action == "benchmark_price_history":
             fields(body, ("action", "dataset", "capital", "quantity"), "referencias y costes")
             return self.dukascopy.benchmark(dataset=body["dataset"], capital=body["capital"], quantity=body["quantity"])
